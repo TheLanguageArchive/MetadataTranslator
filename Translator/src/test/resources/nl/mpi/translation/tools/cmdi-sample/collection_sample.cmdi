@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CMD xmlns="http://www.clarin.eu/cmd/"
+     xmlns:ann="http://www.clarin.eu"
+     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+     xsi:schemaLocation="http://www.clarin.eu/cmd/ http://catalog.clarin.eu/ds/ComponentRegistry/rest/registry/profiles/clarin.eu:cr1:p_1345561703620/xsd" CMDVersion="1.1">
+    <Header>
+	<MdCreator>MdCreator0</MdCreator>
+	<MdCreationDate>2006-05-04</MdCreationDate>
+	<MdSelfLink>hdl:123-456</MdSelfLink>
+	<MdProfile>clarin.eu:cr1:p_1345561703620</MdProfile>
+	<MdCollectionDisplayName>MdCollectionDisplayName0</MdCollectionDisplayName>
+    </Header>
+    <Resources>
+	<ResourceProxyList>
+	    <ResourceProxy id="ID001">
+		<ResourceType>Metadata</ResourceType>
+		<ResourceRef>subcollection.cmdi</ResourceRef>
+	    </ResourceProxy>
+	    <ResourceProxy id="ID003">
+		<ResourceType>Metadata</ResourceType>
+		<ResourceRef>http://www.clarin.eu/cmd/example/collection/lrt/lrt-1001.cmdi</ResourceRef>
+	    </ResourceProxy>
+	</ResourceProxyList>
+	<JournalFileProxyList />
+	<ResourceRelationList />
+	<IsPartOfList>
+	</IsPartOfList>
+    </Resources>
+    <Components>
+	<collection >
+	    <CollectionInfo ref="ID001" ComponentId="clarin.eu:cr1:c_1345561703619">
+		<Name xml:lang="en-US">Name0</Name>
+		<Title xml:lang="en-US">Title0</Title>
+		<Owner xml:lang="en-US">Owner0</Owner>
+		<ISO639  ComponentId="clarin.eu:cr1:c_1271859438110">
+		    <iso-639-3-code>aaa</iso-639-3-code>
+		</ISO639>
+		<ISO639 ref="ID003" ComponentId="clarin.eu:cr1:c_1271859438110">
+		    <iso-639-3-code>aaa</iso-639-3-code>
+		</ISO639>
+		<Modality  ComponentId="clarin.eu:cr1:c_1271859438127">
+		    <Modality>Unknown</Modality>
+		    <Description  ComponentId="clarin.eu:cr1:c_1271859438118">
+			<Description LanguageID="LanguageID3" xml:lang="en-US">Description1</Description>
+		    </Description>
+		</Modality>
+		<TimeCoverage >
+		    <StartYear>2006</StartYear>
+		    <EndYear>2006</EndYear>
+		</TimeCoverage>
+		<Description  ComponentId="clarin.eu:cr1:c_1271859438118">
+		    <Description LanguageID="LanguageID7" xml:lang="en-US">Description2</Description>
+		</Description>
+	    </CollectionInfo>
+	    <License ref="ID001" ComponentId="clarin.eu:cr1:c_1345561703649">
+		<DistributionType>public</DistributionType>
+		<LicenseName>LicenseName0</LicenseName>
+		<LicenseURL>http://www.oxygenxml.com/</LicenseURL>
+		<NonCommercialUsageOnly>false</NonCommercialUsageOnly>
+		<UsageReportRequired>false</UsageReportRequired>
+		<ModificationsRequireRedeposition>false</ModificationsRequireRedeposition>
+	    </License>
+	    <Contact ref="ID003" ComponentId="clarin.eu:cr1:c_1271859438113">
+		<Person>Person0</Person>
+		<Address>Address0</Address>
+		<Email>Email0</Email>
+		<Organisation xml:lang="en-US">Organisation0</Organisation>
+		<Telephone>Telephone0</Telephone>
+		<Website>http://www.oxygenxml.com/</Website>
+	    </Contact>
+	</collection>
+    </Components>
+</CMD>

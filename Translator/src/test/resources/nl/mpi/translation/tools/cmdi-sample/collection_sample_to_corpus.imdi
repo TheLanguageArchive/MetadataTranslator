@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<METATRANSCRIPT xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xmlns="http://www.mpi.nl/IMDI/Schema/IMDI"
+		FormatId="IMDI 3.0"
+		Originator="COLLECTION2CORPUS.xsl"
+		Type="CORPUS"
+		Version="0"
+		xsi:schemaLocation="http://www.mpi.nl/IMDI/Schema/IMDI http://www.mpi.nl/IMDI/Schema/IMDI_3.0.xsd"
+		Date="2006-05-04"
+		ArchiveHandle="hdl:123-456@format=imdi">
+    <Corpus>
+	<CorpusLink Name="">http://my-service/translate?in=http%3A%2F%2Fmy-collection%2Fsubcollection.cmdi&amp;outFormat=imdi</CorpusLink>
+	<CorpusLink Name="">http://my-service/translate?in=http%3A%2F%2Fwww.clarin.eu%2Fcmd%2Fexample%2Fcollection%2Flrt%2Flrt-1001.cmdi&amp;outFormat=imdi</CorpusLink>
+	<Name>Name0</Name>
+	<Title/>
+	<Description LanguageId="" Link="">Description2</Description>
+    </Corpus>
+</METATRANSCRIPT>

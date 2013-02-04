@@ -1,0 +1,992 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<METATRANSCRIPT xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xmlns="http://www.mpi.nl/IMDI/Schema/IMDI"
+		FormatId="IMDI 3.0"
+		Originator="IPROSLA2IMDI.xsl"
+		Type="SESSION"
+		Version="0"
+		xsi:schemaLocation="http://www.mpi.nl/IMDI/Schema/IMDI http://www.mpi.nl/IMDI/Schema/IMDI_3.0.xsd"
+		Date="2006-05-04"
+		ArchiveHandle="hdl:123-456@format=imdi">
+    <Session>
+	<Name>ResourceShortName0 ResourceShortName1</Name>
+	<Title/>
+	<Date>2006-05-04</Date>
+	<Description LanguageId="" Link="">Description0 Description1</Description>
+	<MDGroup>
+	    <Location>
+		<Continent Link="http://www.mpi.nl/IMDI/Schema/Continents.xml" Type="ClosedVocabulary"/>
+		<Country Link="http://www.mpi.nl/IMDI/Schema/Countries.xml" Type="OpenVocabulary"/>
+		<Region>Region0</Region>
+		<Address>Address4</Address>
+	    </Location>
+	    <Project>
+		<Name>Name0</Name>
+		<Title>Title0</Title>
+		<Id>ID0 ID1</Id>
+		<Contact>
+		    <Name>Person0</Name>
+		    <Address>Address0</Address>
+		    <Email>Email0</Email>
+		    <Organisation>Organisation0</Organisation>
+		</Contact>
+		<Description LanguageId="" Link="">Description2</Description>
+	    </Project>
+	    <Keys/>
+	    <Content>
+		<Genre Link="http://www.mpi.nl/IMDI/Schema/Content-Genre.xml" Type="OpenVocabulary">Genre0</Genre>
+		<SubGenre Link="http://www.mpi.nl/IMDI/Schema/Content-SubGenre.xml"
+			  Type="OpenVocabularyList">SubGenre0
+		</SubGenre>
+		<Task Link="http://www.mpi.nl/IMDI/Schema/Content-Task.xml" Type="OpenVocabulary"/>
+		<Modalities Link="http://www.mpi.nl/IMDI/Schema/Content-Modalities.xml"
+			    Type="OpenVocabularyList">Modalities0
+		</Modalities>
+		<Subject Link="http://www.mpi.nl/IMDI/Schema/Content-Subject.xml"
+			 Type="OpenVocabularyList">Subject0
+		</Subject>
+		<CommunicationContext>
+		    <Interactivity Link="http://www.mpi.nl/IMDI/Schema/Content-Interactivity.xml"
+				   Type="ClosedVocabulary">Unknown
+		    </Interactivity>
+		    <PlanningType Link="http://www.mpi.nl/IMDI/Schema/Content-PlanningType.xml"
+				  Type="ClosedVocabulary">Unknown
+		    </PlanningType>
+		    <Involvement Link="http://www.mpi.nl/IMDI/Schema/Content-Involvement.xml"
+				 Type="ClosedVocabulary">Unknown
+		    </Involvement>
+		    <SocialContext Link="http://www.mpi.nl/IMDI/Schema/Content-SocialContext.xml"
+				   Type="ClosedVocabulary">Unknown
+		    </SocialContext>
+		    <EventStructure Link="http://www.mpi.nl/IMDI/Schema/Content-EventStructure.xml"
+				    Type="ClosedVocabulary">Unknown
+		    </EventStructure>
+		    <Channel Link="http://www.mpi.nl/IMDI/Schema/Content-Channel.xml"
+			     Type="ClosedVocabulary">Unknown
+		    </Channel>
+		</CommunicationContext>
+		<Languages>
+		    <Description LanguageId="" Link=""/>
+		</Languages>
+		<Keys/>
+		<Description LanguageId="" Link="">Description4</Description>
+	    </Content>
+	    <Actors>
+		<Actor>
+		    <Role Link="http://www.mpi.nl/IMDI/Schema/Actor-Role.xml" Type="OpenVocabularyList">Role0</Role>
+		    <Name>Pseudonym0</Name>
+		    <FullName/>
+		    <Code/>
+		    <FamilySocialRole Link="http://www.mpi.nl/IMDI/Schema/Actor-FamilySocialRole.xml"
+				      Type="OpenVocabularyList">FamilySocialRole0
+		    </FamilySocialRole>
+		    <Languages>
+			<Description LanguageId="" Link="">Description6 Description7</Description>
+			<Language>
+			    <Id>ISO639-3:aaa</Id>
+			    <Name Link="http://www.mpi.nl/IMDI/Schema/MPI-Languages.xml" Type="OpenVocabulary">LanguageName0 LanguageName1</Name>
+			    <MotherTongue Type="ClosedVocabulary"/>
+			    <PrimaryLanguage Type="ClosedVocabulary"/>
+			    <Description LanguageId="ISO639-2:eng" Link=""/>
+			</Language>
+			<Language>
+			    <Id>ISO639-3:aaa</Id>
+			    <Name Link="http://www.mpi.nl/IMDI/Schema/MPI-Languages.xml" Type="OpenVocabulary">LanguageName2 LanguageName3</Name>
+			    <MotherTongue Type="ClosedVocabulary"/>
+			    <PrimaryLanguage Type="ClosedVocabulary"/>
+			    <Description LanguageId="ISO639-2:eng" Link=""/>
+			</Language>
+		    </Languages>
+		    <EthnicGroup/>
+		    <Age/>
+		    <BirthDate/>
+		    <Sex Link="http://www.mpi.nl/IMDI/Schema/Actor-Sex.xml" Type="ClosedVocabulary">Male</Sex>
+		    <Education/>
+		    <Anonymized Link="http://www.mpi.nl/IMDI/Schema/Boolean.xml" Type="ClosedVocabulary">Unspecified</Anonymized>
+		    <Contact>
+			<Name/>
+			<Address/>
+			<Email/>
+			<Organisation/>
+		    </Contact>
+		    <Keys/>
+		    <Description LanguageId="" Link=""/>
+		</Actor>
+		<Actor>
+		    <Role Link="http://www.mpi.nl/IMDI/Schema/Actor-Role.xml" Type="OpenVocabularyList">Role1</Role>
+		    <Name>Pseudonym1</Name>
+		    <FullName/>
+		    <Code/>
+		    <FamilySocialRole Link="http://www.mpi.nl/IMDI/Schema/Actor-FamilySocialRole.xml"
+				      Type="OpenVocabularyList">FamilySocialRole1
+		    </FamilySocialRole>
+		    <Languages>
+			<Description LanguageId="" Link="">Description8 Description9</Description>
+			<Language>
+			    <Id>ISO639-3:aaa</Id>
+			    <Name Link="http://www.mpi.nl/IMDI/Schema/MPI-Languages.xml" Type="OpenVocabulary">LanguageName4 LanguageName5</Name>
+			    <MotherTongue Type="ClosedVocabulary"/>
+			    <PrimaryLanguage Type="ClosedVocabulary"/>
+			    <Description LanguageId="ISO639-2:eng" Link=""/>
+			</Language>
+			<Language>
+			    <Id>ISO639-3:aaa</Id>
+			    <Name Link="http://www.mpi.nl/IMDI/Schema/MPI-Languages.xml" Type="OpenVocabulary">LanguageName6 LanguageName7</Name>
+			    <MotherTongue Type="ClosedVocabulary"/>
+			    <PrimaryLanguage Type="ClosedVocabulary"/>
+			    <Description LanguageId="ISO639-2:eng" Link=""/>
+			</Language>
+		    </Languages>
+		    <EthnicGroup/>
+		    <Age/>
+		    <BirthDate/>
+		    <Sex Link="http://www.mpi.nl/IMDI/Schema/Actor-Sex.xml" Type="ClosedVocabulary">Male</Sex>
+		    <Education/>
+		    <Anonymized Link="http://www.mpi.nl/IMDI/Schema/Boolean.xml" Type="ClosedVocabulary">Unspecified</Anonymized>
+		    <Contact>
+			<Name/>
+			<Address/>
+			<Email/>
+			<Organisation/>
+		    </Contact>
+		    <Keys/>
+		    <Description LanguageId="" Link=""/>
+		</Actor>
+		<Actor>
+		    <Role Link="http://www.mpi.nl/IMDI/Schema/Actor-Role.xml" Type="OpenVocabularyList">Researcher</Role>
+		    <Name>FullName0</Name>
+		    <FullName>FullName0</FullName>
+		    <Code/>
+		    <FamilySocialRole Link="http://www.mpi.nl/IMDI/Schema/Actor-FamilySocialRole.xml"
+				      Type="OpenVocabularyList"/>
+		    <Languages>
+			<Description LanguageId="" Link="">Description12</Description>
+			<Language>
+			    <Id>ISO639-3:aaa</Id>
+			    <Name Link="http://www.mpi.nl/IMDI/Schema/MPI-Languages.xml" Type="OpenVocabulary">LanguageName8</Name>
+			    <MotherTongue Type="ClosedVocabulary"/>
+			    <PrimaryLanguage Type="ClosedVocabulary"/>
+			    <Description LanguageId="ISO639-2:eng" Link=""/>
+			</Language>
+			<Language>
+			    <Id>ISO639-3:aaa</Id>
+			    <Name Link="http://www.mpi.nl/IMDI/Schema/MPI-Languages.xml" Type="OpenVocabulary">LanguageName10</Name>
+			    <MotherTongue Type="ClosedVocabulary"/>
+			    <PrimaryLanguage Type="ClosedVocabulary"/>
+			    <Description LanguageId="ISO639-2:eng" Link=""/>
+			</Language>
+		    </Languages>
+		    <EthnicGroup/>
+		    <Age/>
+		    <BirthDate/>
+		    <Sex Link="http://www.mpi.nl/IMDI/Schema/Actor-Sex.xml" Type="ClosedVocabulary">Male</Sex>
+		    <Education/>
+		    <Anonymized Link="http://www.mpi.nl/IMDI/Schema/Boolean.xml" Type="ClosedVocabulary">Unspecified</Anonymized>
+		    <Contact>
+			<Name>Person4</Name>
+			<Address>Address5</Address>
+			<Email>Email4</Email>
+			<Organisation>Organisation4</Organisation>
+		    </Contact>
+		    <Keys/>
+		    <Description LanguageId="" Link="">Description10</Description>
+		</Actor>
+		<Actor>
+		    <Role Link="http://www.mpi.nl/IMDI/Schema/Actor-Role.xml" Type="OpenVocabularyList">Researcher</Role>
+		    <Name>FullName1</Name>
+		    <FullName>FullName1</FullName>
+		    <Code/>
+		    <FamilySocialRole Link="http://www.mpi.nl/IMDI/Schema/Actor-FamilySocialRole.xml"
+				      Type="OpenVocabularyList"/>
+		    <Languages>
+			<Description LanguageId="" Link="">Description16</Description>
+			<Language>
+			    <Id>ISO639-3:aaa</Id>
+			    <Name Link="http://www.mpi.nl/IMDI/Schema/MPI-Languages.xml" Type="OpenVocabulary">LanguageName12</Name>
+			    <MotherTongue Type="ClosedVocabulary"/>
+			    <PrimaryLanguage Type="ClosedVocabulary"/>
+			    <Description LanguageId="ISO639-2:eng" Link=""/>
+			</Language>
+		    </Languages>
+		    <EthnicGroup/>
+		    <Age/>
+		    <BirthDate/>
+		    <Sex Link="http://www.mpi.nl/IMDI/Schema/Actor-Sex.xml" Type="ClosedVocabulary">Male</Sex>
+		    <Education/>
+		    <Anonymized Link="http://www.mpi.nl/IMDI/Schema/Boolean.xml" Type="ClosedVocabulary">Unspecified</Anonymized>
+		    <Contact>
+			<Name>Person6</Name>
+			<Address>Address7</Address>
+			<Email>Email6</Email>
+			<Organisation>Organisation6</Organisation>
+		    </Contact>
+		    <Keys/>
+		    <Description LanguageId="" Link="">Description14</Description>
+		</Actor>
+	    </Actors>
+	</MDGroup>
+	<Resources>
+	    <MediaFile>
+		<ResourceLink/>
+		<Type Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Type.xml" Type="ClosedVocabulary">Unknown</Type>
+		<Format Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Format.xml" Type="OpenVocabulary"/>
+		<Size/>
+		<Quality Link="http://www.mpi.nl/IMDI/Schema/Quality.xml" Type="ClosedVocabulary">1</Quality>
+		<RecordingConditions>RecordingConditions0</RecordingConditions>
+		<TimePosition>
+		    <Start>Unspecified</Start>
+		    <End>Unspecified</End>
+		</TimePosition>
+		<Access>
+		    <Availability>Availability0 Availability1</Availability>
+		    <Date>Unspecified</Date>
+		    <Owner/>
+		    <Publisher/>
+		    <Contact>
+			<Name/>
+			<Address/>
+			<Email/>
+			<Organisation/>
+		    </Contact>
+		    <Description LanguageId="" Link=""/>
+		</Access>
+		<Description LanguageId="" Link="">Description18 Description19</Description>
+		<Keys/>
+	    </MediaFile>
+	    <MediaFile>
+		<ResourceLink>myvideo.mpg</ResourceLink>
+		<Type Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Type.xml" Type="ClosedVocabulary">Unknown</Type>
+		<Format Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Format.xml" Type="OpenVocabulary"/>
+		<Size/>
+		<Quality Link="http://www.mpi.nl/IMDI/Schema/Quality.xml" Type="ClosedVocabulary">1</Quality>
+		<RecordingConditions>RecordingConditions1</RecordingConditions>
+		<TimePosition>
+		    <Start>Unspecified</Start>
+		    <End>Unspecified</End>
+		</TimePosition>
+		<Access>
+		    <Availability>Availability2 Availability3</Availability>
+		    <Date>Unspecified</Date>
+		    <Owner/>
+		    <Publisher/>
+		    <Contact>
+			<Name/>
+			<Address/>
+			<Email/>
+			<Organisation/>
+		    </Contact>
+		    <Description LanguageId="" Link=""/>
+		</Access>
+		<Description LanguageId="" Link="">Description20 Description21</Description>
+		<Keys/>
+	    </MediaFile>
+	    <MediaFile>
+		<ResourceLink>myvideo.mpg</ResourceLink>
+		<Type Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Type.xml" Type="ClosedVocabulary">Unknown</Type>
+		<Format Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Format.xml" Type="OpenVocabulary"/>
+		<Size/>
+		<Quality Link="http://www.mpi.nl/IMDI/Schema/Quality.xml" Type="ClosedVocabulary">1</Quality>
+		<RecordingConditions>RecordingConditions2</RecordingConditions>
+		<TimePosition>
+		    <Start>Unspecified</Start>
+		    <End>Unspecified</End>
+		</TimePosition>
+		<Access>
+		    <Availability>Availability8 Availability9</Availability>
+		    <Date>Unspecified</Date>
+		    <Owner/>
+		    <Publisher/>
+		    <Contact>
+			<Name/>
+			<Address/>
+			<Email/>
+			<Organisation/>
+		    </Contact>
+		    <Description LanguageId="" Link=""/>
+		</Access>
+		<Description LanguageId="" Link="">Description30 Description31</Description>
+		<Keys/>
+	    </MediaFile>
+	    <MediaFile>
+		<ResourceLink>myannotation.eaf</ResourceLink>
+		<Type Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Type.xml" Type="ClosedVocabulary">Unknown</Type>
+		<Format Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Format.xml" Type="OpenVocabulary"/>
+		<Size/>
+		<Quality Link="http://www.mpi.nl/IMDI/Schema/Quality.xml" Type="ClosedVocabulary">1</Quality>
+		<RecordingConditions>RecordingConditions3</RecordingConditions>
+		<TimePosition>
+		    <Start>Unspecified</Start>
+		    <End>Unspecified</End>
+		</TimePosition>
+		<Access>
+		    <Availability>Availability10 Availability11</Availability>
+		    <Date>Unspecified</Date>
+		    <Owner/>
+		    <Publisher/>
+		    <Contact>
+			<Name/>
+			<Address/>
+			<Email/>
+			<Organisation/>
+		    </Contact>
+		    <Description LanguageId="" Link=""/>
+		</Access>
+		<Description LanguageId="" Link="">Description32 Description33</Description>
+		<Keys/>
+	    </MediaFile>
+	    <WrittenResource>
+		<ResourceLink>myannotation.eaf</ResourceLink>
+		<MediaResourceLink/>
+		<Date>Unspecified</Date>
+		<Type Link="http://www.mpi.nl/IMDI/Schema/WrittenResource-Type.xml"
+		      Type="OpenVocabulary">Type2
+		</Type>
+		<SubType Link="http://www.mpi.nl/IMDI/Schema/WrittenResource-SubType.xml"
+			 Type="OpenVocabularyList">SubType0
+		</SubType>
+		<Format Link="http://www.mpi.nl/IMDI/Schema/WrittenResource-Format.xml"
+			Type="OpenVocabulary">Format0
+		</Format>
+		<Size/>
+		<Validation>
+		    <Type Link="http://www.mpi.nl/IMDI/Schema/Validation-Type.xml"
+			  Type="ClosedVocabulary"/>
+		    <Methodology Link="http://www.mpi.nl/IMDI/Schema/Validation-Methodology.xml"
+				 Type="ClosedVocabulary"/>
+		    <Level>Unspecified</Level>
+		    <Description LanguageId="" Link=""/>
+		</Validation>
+		<Derivation Link="http://www.mpi.nl/IMDI/Schema/WrittenResource-Derivation.xml"
+			    Type="ClosedVocabulary"/>
+		<CharacterEncoding/>
+		<ContentEncoding/>
+		<LanguageId>LanguageId0</LanguageId>
+		<Anonymized Link="http://www.mpi.nl/IMDI/Schema/Boolean.xml" Type="ClosedVocabulary">Unspecified</Anonymized>
+		<Access>
+		    <Availability>Availability4 Availability5</Availability>
+		    <Date>Unspecified</Date>
+		    <Owner/>
+		    <Publisher/>
+		    <Contact>
+			<Name/>
+			<Address/>
+			<Email/>
+			<Organisation/>
+		    </Contact>
+		    <Description LanguageId="" Link=""/>
+		</Access>
+		<Description LanguageId="" Link="">Description22 Description23</Description>
+		<Keys/>
+	    </WrittenResource>
+	    <WrittenResource>
+		<ResourceLink>myannotation.eaf</ResourceLink>
+		<MediaResourceLink/>
+		<Date>Unspecified</Date>
+		<Type Link="http://www.mpi.nl/IMDI/Schema/WrittenResource-Type.xml"
+		      Type="OpenVocabulary">Type3
+		</Type>
+		<SubType Link="http://www.mpi.nl/IMDI/Schema/WrittenResource-SubType.xml"
+			 Type="OpenVocabularyList">SubType1
+		</SubType>
+		<Format Link="http://www.mpi.nl/IMDI/Schema/WrittenResource-Format.xml"
+			Type="OpenVocabulary">Format1
+		</Format>
+		<Size/>
+		<Validation>
+		    <Type Link="http://www.mpi.nl/IMDI/Schema/Validation-Type.xml"
+			  Type="ClosedVocabulary"/>
+		    <Methodology Link="http://www.mpi.nl/IMDI/Schema/Validation-Methodology.xml"
+				 Type="ClosedVocabulary"/>
+		    <Level>Unspecified</Level>
+		    <Description LanguageId="" Link=""/>
+		</Validation>
+		<Derivation Link="http://www.mpi.nl/IMDI/Schema/WrittenResource-Derivation.xml"
+			    Type="ClosedVocabulary"/>
+		<CharacterEncoding/>
+		<ContentEncoding/>
+		<LanguageId>LanguageId1</LanguageId>
+		<Anonymized Link="http://www.mpi.nl/IMDI/Schema/Boolean.xml" Type="ClosedVocabulary">Unspecified</Anonymized>
+		<Access>
+		    <Availability>Availability6 Availability7</Availability>
+		    <Date>Unspecified</Date>
+		    <Owner/>
+		    <Publisher/>
+		    <Contact>
+			<Name/>
+			<Address/>
+			<Email/>
+			<Organisation/>
+		    </Contact>
+		    <Description LanguageId="" Link=""/>
+		</Access>
+		<Description LanguageId="" Link="">Description24 Description25</Description>
+		<Keys/>
+	    </WrittenResource>
+	    <WrittenResource>
+		<ResourceLink/>
+		<MediaResourceLink/>
+		<Date>Unspecified</Date>
+		<Type Link="http://www.mpi.nl/IMDI/Schema/WrittenResource-Type.xml"
+		      Type="OpenVocabulary">Type6
+		</Type>
+		<SubType Link="http://www.mpi.nl/IMDI/Schema/WrittenResource-SubType.xml"
+			 Type="OpenVocabularyList">SubType2
+		</SubType>
+		<Format Link="http://www.mpi.nl/IMDI/Schema/WrittenResource-Format.xml"
+			Type="OpenVocabulary">Format2
+		</Format>
+		<Size/>
+		<Validation>
+		    <Type Link="http://www.mpi.nl/IMDI/Schema/Validation-Type.xml"
+			  Type="ClosedVocabulary"/>
+		    <Methodology Link="http://www.mpi.nl/IMDI/Schema/Validation-Methodology.xml"
+				 Type="ClosedVocabulary"/>
+		    <Level>Unspecified</Level>
+		    <Description LanguageId="" Link=""/>
+		</Validation>
+		<Derivation Link="http://www.mpi.nl/IMDI/Schema/WrittenResource-Derivation.xml"
+			    Type="ClosedVocabulary"/>
+		<CharacterEncoding/>
+		<ContentEncoding/>
+		<LanguageId>LanguageId2</LanguageId>
+		<Anonymized Link="http://www.mpi.nl/IMDI/Schema/Boolean.xml" Type="ClosedVocabulary">Unspecified</Anonymized>
+		<Access>
+		    <Availability>Availability12 Availability13</Availability>
+		    <Date>Unspecified</Date>
+		    <Owner/>
+		    <Publisher/>
+		    <Contact>
+			<Name/>
+			<Address/>
+			<Email/>
+			<Organisation/>
+		    </Contact>
+		    <Description LanguageId="" Link=""/>
+		</Access>
+		<Description LanguageId="" Link="">Description34 Description35</Description>
+		<Keys/>
+	    </WrittenResource>
+	    <WrittenResource>
+		<ResourceLink>myannotation.eaf</ResourceLink>
+		<MediaResourceLink/>
+		<Date>Unspecified</Date>
+		<Type Link="http://www.mpi.nl/IMDI/Schema/WrittenResource-Type.xml"
+		      Type="OpenVocabulary">Type7
+		</Type>
+		<SubType Link="http://www.mpi.nl/IMDI/Schema/WrittenResource-SubType.xml"
+			 Type="OpenVocabularyList">SubType3
+		</SubType>
+		<Format Link="http://www.mpi.nl/IMDI/Schema/WrittenResource-Format.xml"
+			Type="OpenVocabulary">Format3
+		</Format>
+		<Size/>
+		<Validation>
+		    <Type Link="http://www.mpi.nl/IMDI/Schema/Validation-Type.xml"
+			  Type="ClosedVocabulary"/>
+		    <Methodology Link="http://www.mpi.nl/IMDI/Schema/Validation-Methodology.xml"
+				 Type="ClosedVocabulary"/>
+		    <Level>Unspecified</Level>
+		    <Description LanguageId="" Link=""/>
+		</Validation>
+		<Derivation Link="http://www.mpi.nl/IMDI/Schema/WrittenResource-Derivation.xml"
+			    Type="ClosedVocabulary"/>
+		<CharacterEncoding/>
+		<ContentEncoding/>
+		<LanguageId>LanguageId3</LanguageId>
+		<Anonymized Link="http://www.mpi.nl/IMDI/Schema/Boolean.xml" Type="ClosedVocabulary">Unspecified</Anonymized>
+		<Access>
+		    <Availability>Availability14 Availability15</Availability>
+		    <Date>Unspecified</Date>
+		    <Owner/>
+		    <Publisher/>
+		    <Contact>
+			<Name/>
+			<Address/>
+			<Email/>
+			<Organisation/>
+		    </Contact>
+		    <Description LanguageId="" Link=""/>
+		</Access>
+		<Description LanguageId="" Link="">Description36 Description37</Description>
+		<Keys/>
+	    </WrittenResource>
+	    <Source>
+		<Id>Id2</Id>
+		<Format Link="http://www.mpi.nl/IMDI/Schema/Source-Format.xml" Type="OpenVocabulary">VideoTapeFormat0</Format>
+		<Quality>1</Quality>
+		<TimePosition>
+		    <Start>Unspecified</Start>
+		    <End>Unspecified</End>
+		</TimePosition>
+		<Access>
+		    <Availability/>
+		    <Date/>
+		    <Owner/>
+		    <Publisher/>
+		    <Contact>
+			<Name/>
+			<Address/>
+			<Email/>
+			<Organisation/>
+		    </Contact>
+		    <Description LanguageId="" Link=""/>
+		</Access>
+		<Description LanguageId="" Link="">Description26 Description27</Description>
+		<Keys/>
+	    </Source>
+	    <Source>
+		<Id>Id3</Id>
+		<Format Link="http://www.mpi.nl/IMDI/Schema/Source-Format.xml" Type="OpenVocabulary">VideoTapeFormat1</Format>
+		<Quality>1</Quality>
+		<TimePosition>
+		    <Start>Unspecified</Start>
+		    <End>Unspecified</End>
+		</TimePosition>
+		<Access>
+		    <Availability/>
+		    <Date/>
+		    <Owner/>
+		    <Publisher/>
+		    <Contact>
+			<Name/>
+			<Address/>
+			<Email/>
+			<Organisation/>
+		    </Contact>
+		    <Description LanguageId="" Link=""/>
+		</Access>
+		<Description LanguageId="" Link="">Description28 Description29</Description>
+		<Keys/>
+	    </Source>
+	    <Source>
+		<Id>Id6</Id>
+		<Format Link="http://www.mpi.nl/IMDI/Schema/Source-Format.xml" Type="OpenVocabulary">VideoTapeFormat2</Format>
+		<Quality>1</Quality>
+		<TimePosition>
+		    <Start>Unspecified</Start>
+		    <End>Unspecified</End>
+		</TimePosition>
+		<Access>
+		    <Availability/>
+		    <Date/>
+		    <Owner/>
+		    <Publisher/>
+		    <Contact>
+			<Name/>
+			<Address/>
+			<Email/>
+			<Organisation/>
+		    </Contact>
+		    <Description LanguageId="" Link=""/>
+		</Access>
+		<Description LanguageId="" Link="">Description38 Description39</Description>
+		<Keys/>
+	    </Source>
+	    <Source>
+		<Id>Id7</Id>
+		<Format Link="http://www.mpi.nl/IMDI/Schema/Source-Format.xml" Type="OpenVocabulary">VideoTapeFormat3</Format>
+		<Quality>1</Quality>
+		<TimePosition>
+		    <Start>Unspecified</Start>
+		    <End>Unspecified</End>
+		</TimePosition>
+		<Access>
+		    <Availability/>
+		    <Date/>
+		    <Owner/>
+		    <Publisher/>
+		    <Contact>
+			<Name/>
+			<Address/>
+			<Email/>
+			<Organisation/>
+		    </Contact>
+		    <Description LanguageId="" Link=""/>
+		</Access>
+		<Description LanguageId="" Link="">Description40 Description41</Description>
+		<Keys/>
+	    </Source>
+	    <MediaFile>
+		<ResourceLink/>
+		<Type Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Type.xml" Type="ClosedVocabulary">Unknown</Type>
+		<Format Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Format.xml" Type="OpenVocabulary"/>
+		<Size/>
+		<Quality Link="http://www.mpi.nl/IMDI/Schema/Quality.xml" Type="ClosedVocabulary">1</Quality>
+		<RecordingConditions>RecordingConditions0</RecordingConditions>
+		<TimePosition>
+		    <Start>Unspecified</Start>
+		    <End>Unspecified</End>
+		</TimePosition>
+		<Access>
+		    <Availability>Availability0 Availability1</Availability>
+		    <Date>Unspecified</Date>
+		    <Owner/>
+		    <Publisher/>
+		    <Contact>
+			<Name/>
+			<Address/>
+			<Email/>
+			<Organisation/>
+		    </Contact>
+		    <Description LanguageId="" Link=""/>
+		</Access>
+		<Description LanguageId="" Link="">Description18 Description19</Description>
+		<Keys/>
+	    </MediaFile>
+	    <MediaFile>
+		<ResourceLink>myvideo.mpg</ResourceLink>
+		<Type Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Type.xml" Type="ClosedVocabulary">Unknown</Type>
+		<Format Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Format.xml" Type="OpenVocabulary"/>
+		<Size/>
+		<Quality Link="http://www.mpi.nl/IMDI/Schema/Quality.xml" Type="ClosedVocabulary">1</Quality>
+		<RecordingConditions>RecordingConditions1</RecordingConditions>
+		<TimePosition>
+		    <Start>Unspecified</Start>
+		    <End>Unspecified</End>
+		</TimePosition>
+		<Access>
+		    <Availability>Availability2 Availability3</Availability>
+		    <Date>Unspecified</Date>
+		    <Owner/>
+		    <Publisher/>
+		    <Contact>
+			<Name/>
+			<Address/>
+			<Email/>
+			<Organisation/>
+		    </Contact>
+		    <Description LanguageId="" Link=""/>
+		</Access>
+		<Description LanguageId="" Link="">Description20 Description21</Description>
+		<Keys/>
+	    </MediaFile>
+	    <MediaFile>
+		<ResourceLink>myvideo.mpg</ResourceLink>
+		<Type Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Type.xml" Type="ClosedVocabulary">Unknown</Type>
+		<Format Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Format.xml" Type="OpenVocabulary"/>
+		<Size/>
+		<Quality Link="http://www.mpi.nl/IMDI/Schema/Quality.xml" Type="ClosedVocabulary">1</Quality>
+		<RecordingConditions>RecordingConditions2</RecordingConditions>
+		<TimePosition>
+		    <Start>Unspecified</Start>
+		    <End>Unspecified</End>
+		</TimePosition>
+		<Access>
+		    <Availability>Availability8 Availability9</Availability>
+		    <Date>Unspecified</Date>
+		    <Owner/>
+		    <Publisher/>
+		    <Contact>
+			<Name/>
+			<Address/>
+			<Email/>
+			<Organisation/>
+		    </Contact>
+		    <Description LanguageId="" Link=""/>
+		</Access>
+		<Description LanguageId="" Link="">Description30 Description31</Description>
+		<Keys/>
+	    </MediaFile>
+	    <MediaFile>
+		<ResourceLink>myannotation.eaf</ResourceLink>
+		<Type Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Type.xml" Type="ClosedVocabulary">Unknown</Type>
+		<Format Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Format.xml" Type="OpenVocabulary"/>
+		<Size/>
+		<Quality Link="http://www.mpi.nl/IMDI/Schema/Quality.xml" Type="ClosedVocabulary">1</Quality>
+		<RecordingConditions>RecordingConditions3</RecordingConditions>
+		<TimePosition>
+		    <Start>Unspecified</Start>
+		    <End>Unspecified</End>
+		</TimePosition>
+		<Access>
+		    <Availability>Availability10 Availability11</Availability>
+		    <Date>Unspecified</Date>
+		    <Owner/>
+		    <Publisher/>
+		    <Contact>
+			<Name/>
+			<Address/>
+			<Email/>
+			<Organisation/>
+		    </Contact>
+		    <Description LanguageId="" Link=""/>
+		</Access>
+		<Description LanguageId="" Link="">Description32 Description33</Description>
+		<Keys/>
+	    </MediaFile>
+	    <WrittenResource>
+		<ResourceLink>myannotation.eaf</ResourceLink>
+		<MediaResourceLink/>
+		<Date>Unspecified</Date>
+		<Type Link="http://www.mpi.nl/IMDI/Schema/WrittenResource-Type.xml"
+		      Type="OpenVocabulary">Type2
+		</Type>
+		<SubType Link="http://www.mpi.nl/IMDI/Schema/WrittenResource-SubType.xml"
+			 Type="OpenVocabularyList">SubType0
+		</SubType>
+		<Format Link="http://www.mpi.nl/IMDI/Schema/WrittenResource-Format.xml"
+			Type="OpenVocabulary">Format0
+		</Format>
+		<Size/>
+		<Validation>
+		    <Type Link="http://www.mpi.nl/IMDI/Schema/Validation-Type.xml"
+			  Type="ClosedVocabulary"/>
+		    <Methodology Link="http://www.mpi.nl/IMDI/Schema/Validation-Methodology.xml"
+				 Type="ClosedVocabulary"/>
+		    <Level>Unspecified</Level>
+		    <Description LanguageId="" Link=""/>
+		</Validation>
+		<Derivation Link="http://www.mpi.nl/IMDI/Schema/WrittenResource-Derivation.xml"
+			    Type="ClosedVocabulary"/>
+		<CharacterEncoding/>
+		<ContentEncoding/>
+		<LanguageId>LanguageId0</LanguageId>
+		<Anonymized Link="http://www.mpi.nl/IMDI/Schema/Boolean.xml" Type="ClosedVocabulary">Unspecified</Anonymized>
+		<Access>
+		    <Availability>Availability4 Availability5</Availability>
+		    <Date>Unspecified</Date>
+		    <Owner/>
+		    <Publisher/>
+		    <Contact>
+			<Name/>
+			<Address/>
+			<Email/>
+			<Organisation/>
+		    </Contact>
+		    <Description LanguageId="" Link=""/>
+		</Access>
+		<Description LanguageId="" Link="">Description22 Description23</Description>
+		<Keys/>
+	    </WrittenResource>
+	    <WrittenResource>
+		<ResourceLink>myannotation.eaf</ResourceLink>
+		<MediaResourceLink/>
+		<Date>Unspecified</Date>
+		<Type Link="http://www.mpi.nl/IMDI/Schema/WrittenResource-Type.xml"
+		      Type="OpenVocabulary">Type3
+		</Type>
+		<SubType Link="http://www.mpi.nl/IMDI/Schema/WrittenResource-SubType.xml"
+			 Type="OpenVocabularyList">SubType1
+		</SubType>
+		<Format Link="http://www.mpi.nl/IMDI/Schema/WrittenResource-Format.xml"
+			Type="OpenVocabulary">Format1
+		</Format>
+		<Size/>
+		<Validation>
+		    <Type Link="http://www.mpi.nl/IMDI/Schema/Validation-Type.xml"
+			  Type="ClosedVocabulary"/>
+		    <Methodology Link="http://www.mpi.nl/IMDI/Schema/Validation-Methodology.xml"
+				 Type="ClosedVocabulary"/>
+		    <Level>Unspecified</Level>
+		    <Description LanguageId="" Link=""/>
+		</Validation>
+		<Derivation Link="http://www.mpi.nl/IMDI/Schema/WrittenResource-Derivation.xml"
+			    Type="ClosedVocabulary"/>
+		<CharacterEncoding/>
+		<ContentEncoding/>
+		<LanguageId>LanguageId1</LanguageId>
+		<Anonymized Link="http://www.mpi.nl/IMDI/Schema/Boolean.xml" Type="ClosedVocabulary">Unspecified</Anonymized>
+		<Access>
+		    <Availability>Availability6 Availability7</Availability>
+		    <Date>Unspecified</Date>
+		    <Owner/>
+		    <Publisher/>
+		    <Contact>
+			<Name/>
+			<Address/>
+			<Email/>
+			<Organisation/>
+		    </Contact>
+		    <Description LanguageId="" Link=""/>
+		</Access>
+		<Description LanguageId="" Link="">Description24 Description25</Description>
+		<Keys/>
+	    </WrittenResource>
+	    <WrittenResource>
+		<ResourceLink/>
+		<MediaResourceLink/>
+		<Date>Unspecified</Date>
+		<Type Link="http://www.mpi.nl/IMDI/Schema/WrittenResource-Type.xml"
+		      Type="OpenVocabulary">Type6
+		</Type>
+		<SubType Link="http://www.mpi.nl/IMDI/Schema/WrittenResource-SubType.xml"
+			 Type="OpenVocabularyList">SubType2
+		</SubType>
+		<Format Link="http://www.mpi.nl/IMDI/Schema/WrittenResource-Format.xml"
+			Type="OpenVocabulary">Format2
+		</Format>
+		<Size/>
+		<Validation>
+		    <Type Link="http://www.mpi.nl/IMDI/Schema/Validation-Type.xml"
+			  Type="ClosedVocabulary"/>
+		    <Methodology Link="http://www.mpi.nl/IMDI/Schema/Validation-Methodology.xml"
+				 Type="ClosedVocabulary"/>
+		    <Level>Unspecified</Level>
+		    <Description LanguageId="" Link=""/>
+		</Validation>
+		<Derivation Link="http://www.mpi.nl/IMDI/Schema/WrittenResource-Derivation.xml"
+			    Type="ClosedVocabulary"/>
+		<CharacterEncoding/>
+		<ContentEncoding/>
+		<LanguageId>LanguageId2</LanguageId>
+		<Anonymized Link="http://www.mpi.nl/IMDI/Schema/Boolean.xml" Type="ClosedVocabulary">Unspecified</Anonymized>
+		<Access>
+		    <Availability>Availability12 Availability13</Availability>
+		    <Date>Unspecified</Date>
+		    <Owner/>
+		    <Publisher/>
+		    <Contact>
+			<Name/>
+			<Address/>
+			<Email/>
+			<Organisation/>
+		    </Contact>
+		    <Description LanguageId="" Link=""/>
+		</Access>
+		<Description LanguageId="" Link="">Description34 Description35</Description>
+		<Keys/>
+	    </WrittenResource>
+	    <WrittenResource>
+		<ResourceLink>myannotation.eaf</ResourceLink>
+		<MediaResourceLink/>
+		<Date>Unspecified</Date>
+		<Type Link="http://www.mpi.nl/IMDI/Schema/WrittenResource-Type.xml"
+		      Type="OpenVocabulary">Type7
+		</Type>
+		<SubType Link="http://www.mpi.nl/IMDI/Schema/WrittenResource-SubType.xml"
+			 Type="OpenVocabularyList">SubType3
+		</SubType>
+		<Format Link="http://www.mpi.nl/IMDI/Schema/WrittenResource-Format.xml"
+			Type="OpenVocabulary">Format3
+		</Format>
+		<Size/>
+		<Validation>
+		    <Type Link="http://www.mpi.nl/IMDI/Schema/Validation-Type.xml"
+			  Type="ClosedVocabulary"/>
+		    <Methodology Link="http://www.mpi.nl/IMDI/Schema/Validation-Methodology.xml"
+				 Type="ClosedVocabulary"/>
+		    <Level>Unspecified</Level>
+		    <Description LanguageId="" Link=""/>
+		</Validation>
+		<Derivation Link="http://www.mpi.nl/IMDI/Schema/WrittenResource-Derivation.xml"
+			    Type="ClosedVocabulary"/>
+		<CharacterEncoding/>
+		<ContentEncoding/>
+		<LanguageId>LanguageId3</LanguageId>
+		<Anonymized Link="http://www.mpi.nl/IMDI/Schema/Boolean.xml" Type="ClosedVocabulary">Unspecified</Anonymized>
+		<Access>
+		    <Availability>Availability14 Availability15</Availability>
+		    <Date>Unspecified</Date>
+		    <Owner/>
+		    <Publisher/>
+		    <Contact>
+			<Name/>
+			<Address/>
+			<Email/>
+			<Organisation/>
+		    </Contact>
+		    <Description LanguageId="" Link=""/>
+		</Access>
+		<Description LanguageId="" Link="">Description36 Description37</Description>
+		<Keys/>
+	    </WrittenResource>
+	    <Source>
+		<Id>Id2</Id>
+		<Format Link="http://www.mpi.nl/IMDI/Schema/Source-Format.xml" Type="OpenVocabulary">VideoTapeFormat0</Format>
+		<Quality>1</Quality>
+		<TimePosition>
+		    <Start>Unspecified</Start>
+		    <End>Unspecified</End>
+		</TimePosition>
+		<Access>
+		    <Availability/>
+		    <Date/>
+		    <Owner/>
+		    <Publisher/>
+		    <Contact>
+			<Name/>
+			<Address/>
+			<Email/>
+			<Organisation/>
+		    </Contact>
+		    <Description LanguageId="" Link=""/>
+		</Access>
+		<Description LanguageId="" Link="">Description26 Description27</Description>
+		<Keys/>
+	    </Source>
+	    <Source>
+		<Id>Id3</Id>
+		<Format Link="http://www.mpi.nl/IMDI/Schema/Source-Format.xml" Type="OpenVocabulary">VideoTapeFormat1</Format>
+		<Quality>1</Quality>
+		<TimePosition>
+		    <Start>Unspecified</Start>
+		    <End>Unspecified</End>
+		</TimePosition>
+		<Access>
+		    <Availability/>
+		    <Date/>
+		    <Owner/>
+		    <Publisher/>
+		    <Contact>
+			<Name/>
+			<Address/>
+			<Email/>
+			<Organisation/>
+		    </Contact>
+		    <Description LanguageId="" Link=""/>
+		</Access>
+		<Description LanguageId="" Link="">Description28 Description29</Description>
+		<Keys/>
+	    </Source>
+	    <Source>
+		<Id>Id6</Id>
+		<Format Link="http://www.mpi.nl/IMDI/Schema/Source-Format.xml" Type="OpenVocabulary">VideoTapeFormat2</Format>
+		<Quality>1</Quality>
+		<TimePosition>
+		    <Start>Unspecified</Start>
+		    <End>Unspecified</End>
+		</TimePosition>
+		<Access>
+		    <Availability/>
+		    <Date/>
+		    <Owner/>
+		    <Publisher/>
+		    <Contact>
+			<Name/>
+			<Address/>
+			<Email/>
+			<Organisation/>
+		    </Contact>
+		    <Description LanguageId="" Link=""/>
+		</Access>
+		<Description LanguageId="" Link="">Description38 Description39</Description>
+		<Keys/>
+	    </Source>
+	    <Source>
+		<Id>Id7</Id>
+		<Format Link="http://www.mpi.nl/IMDI/Schema/Source-Format.xml" Type="OpenVocabulary">VideoTapeFormat3</Format>
+		<Quality>1</Quality>
+		<TimePosition>
+		    <Start>Unspecified</Start>
+		    <End>Unspecified</End>
+		</TimePosition>
+		<Access>
+		    <Availability/>
+		    <Date/>
+		    <Owner/>
+		    <Publisher/>
+		    <Contact>
+			<Name/>
+			<Address/>
+			<Email/>
+			<Organisation/>
+		    </Contact>
+		    <Description LanguageId="" Link=""/>
+		</Access>
+		<Description LanguageId="" Link="">Description40 Description41</Description>
+		<Keys/>
+	    </Source>
+	</Resources>
+	<References/>
+    </Session>
+</METATRANSCRIPT>

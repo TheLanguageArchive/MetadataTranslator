@@ -1,0 +1,5 @@
+Changes for:
+MetadataTranslator-${project.artifactId}-${project.version}-r${buildNumber}
+
+
+This is the first release of the MetadataTranslator.

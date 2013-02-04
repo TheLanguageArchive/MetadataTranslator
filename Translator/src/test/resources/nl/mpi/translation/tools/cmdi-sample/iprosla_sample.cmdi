@@ -1,0 +1,454 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CMD xmlns="http://www.clarin.eu/cmd/"
+     xmlns:dcr="http://www.isocat.org/ns/dcr"
+     xmlns:ann="http://www.clarin.eu"
+     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+     xsi:schemaLocation="http://www.clarin.eu/cmd/ http://catalog.clarin.eu/ds/ComponentRegistry/rest/registry/profiles/clarin.eu:cr1:p_1331113992512/xsd" CMDVersion="1.1">
+    <Header>
+	<MdCreator>MdCreator0</MdCreator>
+	<MdCreationDate>2006-05-04</MdCreationDate>
+	<MdSelfLink>hdl:123-456</MdSelfLink>
+	<MdProfile>clarin.eu:cr1:p_1331113992512</MdProfile>
+	<MdCollectionDisplayName>MdCollectionDisplayName0</MdCollectionDisplayName>
+    </Header>
+    <Resources>
+	<ResourceProxyList>
+	    <ResourceProxy id="ID001">
+		<ResourceType mimetype="mimetype1">Resource</ResourceType>
+		<ResourceRef>myvideo.mpg</ResourceRef>
+	    </ResourceProxy>
+	    <ResourceProxy id="ID003">
+		<ResourceType mimetype="mimetype3">Resource</ResourceType>
+		<ResourceRef>myannotation.eaf</ResourceRef>
+	    </ResourceProxy>
+	</ResourceProxyList>
+	<JournalFileProxyList />
+	<ResourceRelationList />
+	<IsPartOfList>
+	    <IsPartOf>http://www.oxygenxml.com/</IsPartOf>
+	    <IsPartOf>http://www.oxygenxml.com/</IsPartOf>
+	</IsPartOfList>
+    </Resources>
+    <Components>
+	<SL-IPROSLA >
+	    <SL-Session  ComponentId="clarin.eu:cr1:c_1331113992533">
+		<ResourceShortName xml:lang="en-US">ResourceShortName0</ResourceShortName>
+		<ResourceShortName xml:lang="en-US">ResourceShortName1</ResourceShortName>
+		<Description  ComponentId="clarin.eu:cr1:c_1271859438118">
+		    <Description LanguageID="LanguageID1" xml:lang="en-US">Description0</Description>
+		    <Description LanguageID="LanguageID3" xml:lang="en-US">Description1</Description>
+		</Description>
+	    </SL-Session>
+	    <Project  ComponentId="clarin.eu:cr1:c_1271859438125">
+		<Name xml:lang="en-US">Name0</Name>
+		<Title xml:lang="en-US">Title0</Title>
+		<ID>ID0</ID>
+		<ID>ID1</ID>
+		<Funder xml:lang="en-US">Funder0</Funder>
+		<Website>http://www.oxygenxml.com/</Website>
+		<Description ref="ID003" ComponentId="clarin.eu:cr1:c_1271859438118">
+		    <Description LanguageID="LanguageID5" xml:lang="en-US">Description2</Description>
+		</Description>
+		<Contact  ComponentId="clarin.eu:cr1:c_1271859438113">
+		    <Person>Person0</Person>
+		    <Address>Address0</Address>
+		    <Email>Email0</Email>
+		    <Organisation xml:lang="en-US">Organisation0</Organisation>
+		    <Telephone>Telephone0</Telephone>
+		    <Website>http://www.oxygenxml.com/</Website>
+		</Contact>
+		<Duration  ComponentId="clarin.eu:cr1:c_1271859438116">
+		    <StartYear>StartYear0</StartYear>
+		    <CompletionYear>CompletionYear0</CompletionYear>
+		</Duration>
+	    </Project>
+	    <Location  ComponentId="clarin.eu:cr1:c_1271859438112">
+		<Address>Address4</Address>
+		<Region>Region0</Region>
+		<Country ref="ID003" ComponentId="clarin.eu:cr1:c_1271859438104">
+		    <Code>AD</Code>
+		</Country>
+		<Continent  ComponentId="clarin.eu:cr1:c_1271859438105">
+		    <Code>AF</Code>
+		</Continent>
+	    </Location>
+	    <SL-Content ref="ID001" ComponentId="clarin.eu:cr1:c_1331113992515">
+		<Genre>Genre0</Genre>
+		<SubGenre>SubGenre0</SubGenre>
+		<Modalities>Modalities0</Modalities>
+		<Subject>Subject0</Subject>
+		<Description ref="ID003" ComponentId="clarin.eu:cr1:c_1271859438118">
+		    <Description LanguageID="LanguageID9" xml:lang="en-US">Description4</Description>
+		</Description>
+		<CommunicationContext ref="ID001" ComponentId="clarin.eu:cr1:c_1271859438150">
+		    <Interactivity>Unknown</Interactivity>
+		    <PlanningType>Unknown</PlanningType>
+		    <Involvement>Unknown</Involvement>
+		    <SocialContext>Unknown</SocialContext>
+		    <EventStructure>Unknown</EventStructure>
+		    <Channel>Unknown</Channel>
+		</CommunicationContext>
+	    </SL-Content>
+	    <SL-ActorSigner-ChildLanguage  ComponentId="clarin.eu:cr1:c_1331113992507">
+		<Pseudonym>Pseudonym0</Pseudonym>
+		<Role>Role0</Role>
+		<FamilySocialRole>FamilySocialRole0</FamilySocialRole>
+		<Age></Age>
+		<Sex>Male</Sex>
+		<Deafness>Deaf</Deafness>
+		<Handedness>Right-handed</Handedness>
+		<SignLanguageExperienceAcquisitionLocation>SignLanguageExperienceAcquisitionLocation0</SignLanguageExperienceAcquisitionLocation>
+		<DeafnessMother>Deaf</DeafnessMother>
+		<DeafnessFather>Deaf</DeafnessFather>
+		<DeafnessPartner>Deaf</DeafnessPartner>
+		<CodeMixing>CodeMixing0</CodeMixing>
+		<ActorLanguages  ComponentId="clarin.eu:cr1:c_1271859438153">
+		    <Description ref="ID003" ComponentId="clarin.eu:cr1:c_1271859438118">
+			<Description LanguageID="LanguageID13" xml:lang="en-US">Description6</Description>
+			<Description LanguageID="LanguageID15" xml:lang="en-US">Description7</Description>
+		    </Description>
+		    <ActorLanguage ref="ID001" ComponentId="clarin.eu:cr1:c_1271859438147">
+			<Language ref="ID003" ComponentId="clarin.eu:cr1:c_1271859438111">
+			    <LanguageName xml:lang="en-US">LanguageName0</LanguageName>
+			    <LanguageName xml:lang="en-US">LanguageName1</LanguageName>
+			    <ISO639  ComponentId="clarin.eu:cr1:c_1271859438110">
+				<iso-639-3-code>aaa</iso-639-3-code>
+			    </ISO639>
+			</Language>
+		    </ActorLanguage>
+		    <ActorLanguage  ComponentId="clarin.eu:cr1:c_1271859438147">
+			<Language  ComponentId="clarin.eu:cr1:c_1271859438111">
+			    <LanguageName xml:lang="en-US">LanguageName2</LanguageName>
+			    <LanguageName xml:lang="en-US">LanguageName3</LanguageName>
+			    <ISO639  ComponentId="clarin.eu:cr1:c_1271859438110">
+				<iso-639-3-code>aaa</iso-639-3-code>
+			    </ISO639>
+			</Language>
+		    </ActorLanguage>
+		</ActorLanguages>
+	    </SL-ActorSigner-ChildLanguage>
+	    <SL-ActorSigner-ChildLanguage ref="ID003" ComponentId="clarin.eu:cr1:c_1331113992507">
+		<Pseudonym>Pseudonym1</Pseudonym>
+		<Role>Role1</Role>
+		<FamilySocialRole>FamilySocialRole1</FamilySocialRole>
+		<Age></Age>
+		<Sex>Male</Sex>
+		<Deafness>Deaf</Deafness>
+		<Handedness>Right-handed</Handedness>
+		<SignLanguageExperienceAcquisitionLocation>SignLanguageExperienceAcquisitionLocation1</SignLanguageExperienceAcquisitionLocation>
+		<DeafnessMother>Deaf</DeafnessMother>
+		<DeafnessFather>Deaf</DeafnessFather>
+		<DeafnessPartner>Deaf</DeafnessPartner>
+		<CodeMixing>CodeMixing1</CodeMixing>
+		<ActorLanguages  ComponentId="clarin.eu:cr1:c_1271859438153">
+		    <Description ref="ID003" ComponentId="clarin.eu:cr1:c_1271859438118">
+			<Description LanguageID="LanguageID17" xml:lang="en-US">Description8</Description>
+			<Description LanguageID="LanguageID19" xml:lang="en-US">Description9</Description>
+		    </Description>
+		    <ActorLanguage ref="ID001" ComponentId="clarin.eu:cr1:c_1271859438147">
+			<Language ref="ID001" ComponentId="clarin.eu:cr1:c_1271859438111">
+			    <LanguageName xml:lang="en-US">LanguageName4</LanguageName>
+			    <LanguageName xml:lang="en-US">LanguageName5</LanguageName>
+			    <ISO639 ref="ID003" ComponentId="clarin.eu:cr1:c_1271859438110">
+				<iso-639-3-code>aaa</iso-639-3-code>
+			    </ISO639>
+			</Language>
+		    </ActorLanguage>
+		    <ActorLanguage ref="ID001" ComponentId="clarin.eu:cr1:c_1271859438147">
+			<Language  ComponentId="clarin.eu:cr1:c_1271859438111">
+			    <LanguageName xml:lang="en-US">LanguageName6</LanguageName>
+			    <LanguageName xml:lang="en-US">LanguageName7</LanguageName>
+			    <ISO639 ref="ID001" ComponentId="clarin.eu:cr1:c_1271859438110">
+				<iso-639-3-code>aaa</iso-639-3-code>
+			    </ISO639>
+			</Language>
+		    </ActorLanguage>
+		</ActorLanguages>
+	    </SL-ActorSigner-ChildLanguage>
+	    <SL-ActorResearcher ref="ID003" ComponentId="clarin.eu:cr1:c_1331113992522">
+		<FullName>FullName0</FullName>
+		<Role>Researcher</Role>
+		<Sex>Male</Sex>
+		<Deafness>Deaf</Deafness>
+		<Contact ref="ID001" ComponentId="clarin.eu:cr1:c_1271859438113">
+		    <Person>Person4</Person>
+		    <Address>Address5</Address>
+		    <Email>Email4</Email>
+		    <Organisation xml:lang="en-US">Organisation4</Organisation>
+		    <Telephone>Telephone4</Telephone>
+		    <Website>http://www.oxygenxml.com/</Website>
+		</Contact>
+		<Description ref="ID001" ComponentId="clarin.eu:cr1:c_1271859438118">
+		    <Description LanguageID="LanguageID21" xml:lang="en-US">Description10</Description>
+		</Description>
+		<ActorLanguages  ComponentId="clarin.eu:cr1:c_1271859438153">
+		    <Description ref="ID001" ComponentId="clarin.eu:cr1:c_1271859438118">
+			<Description LanguageID="LanguageID25" xml:lang="en-US">Description12</Description>
+		    </Description>
+		    <ActorLanguage  ComponentId="clarin.eu:cr1:c_1271859438147">
+			<Language  ComponentId="clarin.eu:cr1:c_1271859438111">
+			    <LanguageName xml:lang="en-US">LanguageName8</LanguageName>
+			    <ISO639 ref="ID003" ComponentId="clarin.eu:cr1:c_1271859438110">
+				<iso-639-3-code>aaa</iso-639-3-code>
+			    </ISO639>
+			</Language>
+		    </ActorLanguage>
+		    <ActorLanguage  ComponentId="clarin.eu:cr1:c_1271859438147">
+			<Language  ComponentId="clarin.eu:cr1:c_1271859438111">
+			    <LanguageName xml:lang="en-US">LanguageName10</LanguageName>
+			    <ISO639 ref="ID003" ComponentId="clarin.eu:cr1:c_1271859438110">
+				<iso-639-3-code>aaa</iso-639-3-code>
+			    </ISO639>
+			</Language>
+		    </ActorLanguage>
+		</ActorLanguages>
+	    </SL-ActorResearcher>
+	    <SL-ActorResearcher ref="ID001" ComponentId="clarin.eu:cr1:c_1331113992522">
+		<FullName>FullName1</FullName>
+		<Role>Researcher</Role>
+		<Sex>Male</Sex>
+		<Deafness>Deaf</Deafness>
+		<Contact ref="ID001" ComponentId="clarin.eu:cr1:c_1271859438113">
+		    <Person>Person6</Person>
+		    <Address>Address7</Address>
+		    <Email>Email6</Email>
+		    <Organisation xml:lang="en-US">Organisation6</Organisation>
+		    <Telephone>Telephone6</Telephone>
+		    <Website>http://www.oxygenxml.com/</Website>
+		</Contact>
+		<Description ref="ID001" ComponentId="clarin.eu:cr1:c_1271859438118">
+		    <Description LanguageID="LanguageID29" xml:lang="en-US">Description14</Description>
+		</Description>
+		<ActorLanguages ref="ID001" ComponentId="clarin.eu:cr1:c_1271859438153">
+		    <Description ref="ID001" ComponentId="clarin.eu:cr1:c_1271859438118">
+			<Description LanguageID="LanguageID33" xml:lang="en-US">Description16</Description>
+		    </Description>
+		    <ActorLanguage ref="ID003" ComponentId="clarin.eu:cr1:c_1271859438147">
+			<Language ref="ID001" ComponentId="clarin.eu:cr1:c_1271859438111">
+			    <LanguageName xml:lang="en-US">LanguageName12</LanguageName>
+			    <ISO639 ref="ID001" ComponentId="clarin.eu:cr1:c_1271859438110">
+				<iso-639-3-code>aaa</iso-639-3-code>
+			    </ISO639>
+			</Language>
+		    </ActorLanguage>
+		</ActorLanguages>
+	    </SL-ActorResearcher>
+	    <SL-Resources ref="ID001" ComponentId="clarin.eu:cr1:c_1331113992516">
+		<LicenseName>LicenseName0</LicenseName>
+		<LicenseURL>LicenseURL0</LicenseURL>
+		<LicenseDescription>LicenseDescription0</LicenseDescription>
+		<MultipleCamerasNumber>MultipleCamerasNumber0</MultipleCamerasNumber>
+		<SL-MediaFile  ComponentId="clarin.eu:cr1:c_1331113992517">
+		    <Id>Id0</Id>
+		    <Type>Unknown</Type>
+		    <Quality>1</Quality>
+		    <RecordingConditions>RecordingConditions0</RecordingConditions>
+		    <CameraViewpoint>CameraViewpoint0</CameraViewpoint>
+		    <Description ref="ID001" ComponentId="clarin.eu:cr1:c_1271859438118">
+			<Description LanguageID="LanguageID37" xml:lang="en-US">Description18</Description>
+			<Description LanguageID="LanguageID39" xml:lang="en-US">Description19</Description>
+		    </Description>
+		    <SL-TimePositionAndDuration ref="ID001" ComponentId="clarin.eu:cr1:c_1337778924950">
+		    </SL-TimePositionAndDuration>
+		    <Access  ComponentId="clarin.eu:cr1:c_1271859438124">
+			<Availability xml:lang="en-US">Availability0</Availability>
+			<Availability xml:lang="en-US">Availability1</Availability>
+			<Contact ref="ID003" ComponentId="clarin.eu:cr1:c_1271859438113">
+			</Contact>
+			<Contact  ComponentId="clarin.eu:cr1:c_1271859438113">
+			</Contact>
+		    </Access>
+		</SL-MediaFile>
+		<SL-MediaFile ref="ID001" ComponentId="clarin.eu:cr1:c_1331113992517">
+		    <Id>Id1</Id>
+		    <Type>Unknown</Type>
+		    <Quality>1</Quality>
+		    <RecordingConditions>RecordingConditions1</RecordingConditions>
+		    <CameraViewpoint>CameraViewpoint1</CameraViewpoint>
+		    <Description  ComponentId="clarin.eu:cr1:c_1271859438118">
+			<Description LanguageID="LanguageID41" xml:lang="en-US">Description20</Description>
+			<Description LanguageID="LanguageID43" xml:lang="en-US">Description21</Description>
+		    </Description>
+		    <SL-TimePositionAndDuration  ComponentId="clarin.eu:cr1:c_1337778924950">
+		    </SL-TimePositionAndDuration>
+		    <Access  ComponentId="clarin.eu:cr1:c_1271859438124">
+			<Availability xml:lang="en-US">Availability2</Availability>
+			<Availability xml:lang="en-US">Availability3</Availability>
+			<Contact ref="ID001" ComponentId="clarin.eu:cr1:c_1271859438113">
+			</Contact>
+			<Contact ref="ID003" ComponentId="clarin.eu:cr1:c_1271859438113">
+			</Contact>
+		    </Access>
+		</SL-MediaFile>
+		<SL-AnnotationDocument ref="ID003" ComponentId="clarin.eu:cr1:c_1331113992519">
+		    <Type>Type2</Type>
+		    <SubType>SubType0</SubType>
+		    <Format>Format0</Format>
+		    <LanguageId>LanguageId0</LanguageId>
+		    <Access  ComponentId="clarin.eu:cr1:c_1271859438124">
+			<Availability xml:lang="en-US">Availability4</Availability>
+			<Availability xml:lang="en-US">Availability5</Availability>
+			<Contact ref="ID003" ComponentId="clarin.eu:cr1:c_1271859438113">
+			</Contact>
+			<Contact ref="ID001" ComponentId="clarin.eu:cr1:c_1271859438113">
+			</Contact>
+		    </Access>
+		    <Description ref="ID003" ComponentId="clarin.eu:cr1:c_1271859438118">
+			<Description LanguageID="LanguageID45" xml:lang="en-US">Description22</Description>
+			<Description LanguageID="LanguageID47" xml:lang="en-US">Description23</Description>
+		    </Description>
+		</SL-AnnotationDocument>
+		<SL-AnnotationDocument ref="ID003" ComponentId="clarin.eu:cr1:c_1331113992519">
+		    <Type>Type3</Type>
+		    <SubType>SubType1</SubType>
+		    <Format>Format1</Format>
+		    <LanguageId>LanguageId1</LanguageId>
+		    <Access ref="ID003" ComponentId="clarin.eu:cr1:c_1271859438124">
+			<Availability xml:lang="en-US">Availability6</Availability>
+			<Availability xml:lang="en-US">Availability7</Availability>
+			<Contact ref="ID003" ComponentId="clarin.eu:cr1:c_1271859438113">
+			</Contact>
+			<Contact ref="ID001" ComponentId="clarin.eu:cr1:c_1271859438113">
+			</Contact>
+		    </Access>
+		    <Description ref="ID003" ComponentId="clarin.eu:cr1:c_1271859438118">
+			<Description LanguageID="LanguageID49" xml:lang="en-US">Description24</Description>
+			<Description LanguageID="LanguageID51" xml:lang="en-US">Description25</Description>
+		    </Description>
+		</SL-AnnotationDocument>
+		<SL-SourceVideo ref="ID003" ComponentId="clarin.eu:cr1:c_1331113992520">
+		    <Id>Id2</Id>
+		    <VideoTapeFormat>VideoTapeFormat0</VideoTapeFormat>
+		    <Quality>1</Quality>
+		    <CameraViewpoint>CameraViewpoint2</CameraViewpoint>
+		    <SL-TimePositionAndDuration  ComponentId="clarin.eu:cr1:c_1337778924950">
+		    </SL-TimePositionAndDuration>
+		    <Description  ComponentId="clarin.eu:cr1:c_1271859438118">
+			<Description LanguageID="LanguageID53" xml:lang="en-US">Description26</Description>
+			<Description LanguageID="LanguageID55" xml:lang="en-US">Description27</Description>
+		    </Description>
+		</SL-SourceVideo>
+		<SL-SourceVideo  ComponentId="clarin.eu:cr1:c_1331113992520">
+		    <Id>Id3</Id>
+		    <VideoTapeFormat>VideoTapeFormat1</VideoTapeFormat>
+		    <Quality>1</Quality>
+		    <CameraViewpoint>CameraViewpoint3</CameraViewpoint>
+		    <SL-TimePositionAndDuration ref="ID003" ComponentId="clarin.eu:cr1:c_1337778924950">
+		    </SL-TimePositionAndDuration>
+		    <Description  ComponentId="clarin.eu:cr1:c_1271859438118">
+			<Description LanguageID="LanguageID57" xml:lang="en-US">Description28</Description>
+			<Description LanguageID="LanguageID59" xml:lang="en-US">Description29</Description>
+		    </Description>
+		</SL-SourceVideo>
+	    </SL-Resources>
+	    <SL-Resources ref="ID003" ComponentId="clarin.eu:cr1:c_1331113992516">
+		<LicenseName>LicenseName1</LicenseName>
+		<LicenseURL>LicenseURL1</LicenseURL>
+		<LicenseDescription>LicenseDescription1</LicenseDescription>
+		<MultipleCamerasNumber>MultipleCamerasNumber1</MultipleCamerasNumber>
+		<SL-MediaFile ref="ID001" ComponentId="clarin.eu:cr1:c_1331113992517">
+		    <Id>Id4</Id>
+		    <Type>Unknown</Type>
+		    <Quality>1</Quality>
+		    <RecordingConditions>RecordingConditions2</RecordingConditions>
+		    <CameraViewpoint>CameraViewpoint4</CameraViewpoint>
+		    <Description ref="ID003" ComponentId="clarin.eu:cr1:c_1271859438118">
+			<Description LanguageID="LanguageID61" xml:lang="en-US">Description30</Description>
+			<Description LanguageID="LanguageID63" xml:lang="en-US">Description31</Description>
+		    </Description>
+		    <SL-TimePositionAndDuration ref="ID001" ComponentId="clarin.eu:cr1:c_1337778924950">
+		    </SL-TimePositionAndDuration>
+		    <Access  ComponentId="clarin.eu:cr1:c_1271859438124">
+			<Availability xml:lang="en-US">Availability8</Availability>
+			<Availability xml:lang="en-US">Availability9</Availability>
+			<Contact ref="ID001" ComponentId="clarin.eu:cr1:c_1271859438113">
+			</Contact>
+			<Contact ref="ID003" ComponentId="clarin.eu:cr1:c_1271859438113">
+			</Contact>
+		    </Access>
+		</SL-MediaFile>
+		<SL-MediaFile ref="ID003" ComponentId="clarin.eu:cr1:c_1331113992517">
+		    <Id>Id5</Id>
+		    <Type>Unknown</Type>
+		    <Quality>1</Quality>
+		    <RecordingConditions>RecordingConditions3</RecordingConditions>
+		    <CameraViewpoint>CameraViewpoint5</CameraViewpoint>
+		    <Description  ComponentId="clarin.eu:cr1:c_1271859438118">
+			<Description LanguageID="LanguageID65" xml:lang="en-US">Description32</Description>
+			<Description LanguageID="LanguageID67" xml:lang="en-US">Description33</Description>
+		    </Description>
+		    <SL-TimePositionAndDuration ref="ID003" ComponentId="clarin.eu:cr1:c_1337778924950">
+		    </SL-TimePositionAndDuration>
+		    <Access ref="ID003" ComponentId="clarin.eu:cr1:c_1271859438124">
+			<Availability xml:lang="en-US">Availability10</Availability>
+			<Availability xml:lang="en-US">Availability11</Availability>
+			<Contact ref="ID001" ComponentId="clarin.eu:cr1:c_1271859438113">
+			</Contact>
+			<Contact ref="ID001" ComponentId="clarin.eu:cr1:c_1271859438113">
+			</Contact>
+		    </Access>
+		</SL-MediaFile>
+		<SL-AnnotationDocument  ComponentId="clarin.eu:cr1:c_1331113992519">
+		    <Type>Type6</Type>
+		    <SubType>SubType2</SubType>
+		    <Format>Format2</Format>
+		    <LanguageId>LanguageId2</LanguageId>
+		    <Access ref="ID001" ComponentId="clarin.eu:cr1:c_1271859438124">
+			<Availability xml:lang="en-US">Availability12</Availability>
+			<Availability xml:lang="en-US">Availability13</Availability>
+			<Contact  ComponentId="clarin.eu:cr1:c_1271859438113">
+			</Contact>
+			<Contact  ComponentId="clarin.eu:cr1:c_1271859438113">
+			</Contact>
+		    </Access>
+		    <Description ref="ID001" ComponentId="clarin.eu:cr1:c_1271859438118">
+			<Description LanguageID="LanguageID69" xml:lang="en-US">Description34</Description>
+			<Description LanguageID="LanguageID71" xml:lang="en-US">Description35</Description>
+		    </Description>
+		</SL-AnnotationDocument>
+		<SL-AnnotationDocument ref="ID003" ComponentId="clarin.eu:cr1:c_1331113992519">
+		    <Type>Type7</Type>
+		    <SubType>SubType3</SubType>
+		    <Format>Format3</Format>
+		    <LanguageId>LanguageId3</LanguageId>
+		    <Access  ComponentId="clarin.eu:cr1:c_1271859438124">
+			<Availability xml:lang="en-US">Availability14</Availability>
+			<Availability xml:lang="en-US">Availability15</Availability>
+			<Contact ref="ID003" ComponentId="clarin.eu:cr1:c_1271859438113">
+			</Contact>
+			<Contact ref="ID001" ComponentId="clarin.eu:cr1:c_1271859438113">
+			</Contact>
+		    </Access>
+		    <Description  ComponentId="clarin.eu:cr1:c_1271859438118">
+			<Description LanguageID="LanguageID73" xml:lang="en-US">Description36</Description>
+			<Description LanguageID="LanguageID75" xml:lang="en-US">Description37</Description>
+		    </Description>
+		</SL-AnnotationDocument>
+		<SL-SourceVideo ref="ID003" ComponentId="clarin.eu:cr1:c_1331113992520">
+		    <Id>Id6</Id>
+		    <VideoTapeFormat>VideoTapeFormat2</VideoTapeFormat>
+		    <Quality>1</Quality>
+		    <CameraViewpoint>CameraViewpoint6</CameraViewpoint>
+		    <SL-TimePositionAndDuration ref="ID003" ComponentId="clarin.eu:cr1:c_1337778924950">
+		    </SL-TimePositionAndDuration>
+		    <Description ref="ID003" ComponentId="clarin.eu:cr1:c_1271859438118">
+			<Description LanguageID="LanguageID77" xml:lang="en-US">Description38</Description>
+			<Description LanguageID="LanguageID79" xml:lang="en-US">Description39</Description>
+		    </Description>
+		</SL-SourceVideo>
+		<SL-SourceVideo  ComponentId="clarin.eu:cr1:c_1331113992520">
+		    <Id>Id7</Id>
+		    <VideoTapeFormat>VideoTapeFormat3</VideoTapeFormat>
+		    <Quality>1</Quality>
+		    <CameraViewpoint>CameraViewpoint7</CameraViewpoint>
+		    <SL-TimePositionAndDuration ref="ID001" ComponentId="clarin.eu:cr1:c_1337778924950">
+		    </SL-TimePositionAndDuration>
+		    <Description ref="ID001" ComponentId="clarin.eu:cr1:c_1271859438118">
+			<Description LanguageID="LanguageID81" xml:lang="en-US">Description40</Description>
+			<Description LanguageID="LanguageID83" xml:lang="en-US">Description41</Description>
+		    </Description>
+		</SL-SourceVideo>
+	    </SL-Resources>
+	</SL-IPROSLA>
+    </Components>
+</CMD>

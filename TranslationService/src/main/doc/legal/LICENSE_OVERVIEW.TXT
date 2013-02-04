@@ -1,0 +1,20 @@
+The following dependencies use MOZILLA PUBLIC LICENSE version 1.0:
+------------------------------------------------------------------
+Saxon-HE.jar
+
+The following dependencies use CDDL version 1.0:
+-------------------------------------------------------------
+jsr311-api.jar
+
+The following dependencies use GPL version 2:
+-------------------------------------------------------------
+jersey.jar
+
+The following dependencies use a MIT license:
+----------------------------------------------
+slf4j-api.jar
+slf4j-jdk14.jar
+
+asm has its own BSD based license, owned by JSON.org
+----------------------------------------------------
+asm.jar

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/">
+
+	<appender name="ROLL" class="org.apache.log4j.RollingFileAppender">
+		<!-- The active file to log to -->
+		<param name="file" value="${catalina.base}/logs/translation-service.log" />
+		<param name="MaxFileSize" value="1MB" />
+		<!-- Keep the last 5 files -->
+    	<param name="MaxBackupIndex" value="5"/>
+		<param name="append" value="true" />
+		<param name="encoding" value="UTF-8" />
+
+		<layout class="org.apache.log4j.PatternLayout">
+			<!-- The log message pattern -->
+			<param name="ConversionPattern" value="[%t] %d{HH:mm:ss,SSS} %-5p %l - %m%n" />
+		</layout>
+	</appender>
+
+	<appender name="STDOUT" class="org.apache.log4j.ConsoleAppender">
+		<param name="Target" value="System.out" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d %-5p %t %c - %m%n" />
+		</layout>
+	</appender>
+
+
+	<logger name="nl.mpi.translation.services" additivity="false">
+		<level value="INFO" />
+		<appender-ref ref="${log-output}" />
+	</logger>
+
+	<logger name="nl.mpi.translation.tools" additivity="false">
+		<level value="INFO" />
+		<appender-ref ref="${log-output}" />
+	</logger>
+
+	<logger name="org.springframework.beans" additivity="false">
+		<level value="INFO" />
+		<appender-ref ref="${log-output}" />
+	</logger>
+
+	<root>
+		<priority value="WARN" />
+		<appender-ref ref="${log-output}" />
+	</root>
+
+</log4j:configuration>

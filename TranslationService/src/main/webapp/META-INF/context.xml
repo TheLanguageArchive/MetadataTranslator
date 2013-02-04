@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context path="/TranslationService">
+	<WatchedResource>WEB-INF/web.xml</WatchedResource>
+	<Parameter name="allowFileProtocol" value="false" override="true" description="Whether or not file:/// protocol is allowed in the 'in=' URL parameter."/>  
+</Context>
+
+

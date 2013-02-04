@@ -1,0 +1,27 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans-3.0.xsd 
+	http://www.springframework.org/schema/context
+	http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+ 
+    <!-- Context for testing the translation service with mock implementations -->
+    
+    <!-- This enables injection of the translator bean into the service object -->
+    <context:component-scan base-package="nl.mpi.translation.services" />
+ 
+    <!-- Context for mocking -->
+    <bean id="mockery" class="org.jmock.integration.junit4.JUnit4Mockery" />
+    
+    <!-- Factory that creates mock objects in this mock context -->
+    <bean id="mockObjectsFactory" class="nl.mpi.translation.services.MockObjectsFactory">
+	<constructor-arg ref="mockery" />
+    </bean>
+    
+    <!-- Mocked translator -->
+    <bean id="translator" factory-bean="mockObjectsFactory" factory-method="newTranslator" />
+    
+    <!-- Mocked handle resolver -->
+    <bean id="handleResolver" factory-bean="mockObjectsFactory" factory-method="newHandleResolver" />
+</beans>

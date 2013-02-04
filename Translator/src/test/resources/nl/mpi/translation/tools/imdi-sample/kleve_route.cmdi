@@ -1,0 +1,484 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CMD xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+     xmlns="http://www.clarin.eu/cmd/"
+     CMDVersion="1.1"
+     xsi:schemaLocation="http://www.clarin.eu/cmd/ http://catalog.clarin.eu/ds/ComponentRegistry/rest/registry/profiles/clarin.eu:cr1:p_1271859438204/xsd">
+   <Header>
+      <MdCreator>imdi2clarin.xsl</MdCreator>
+      <MdCreationDate>xx</MdCreationDate>
+      <MdSelfLink>hdl:1839/00-0000-0000-0009-294C-9@format=cmdi</MdSelfLink>
+      <MdProfile>clarin.eu:cr1:p_1271859438204</MdProfile>
+   </Header>
+   <Resources>
+      <ResourceProxyList>
+         <ResourceProxy id="xx">
+            <ResourceType mimetype="video/x-mpeg1">Resource</ResourceType>
+            <ResourceRef>hdl:1839/00-0000-0000-0009-294E-5</ResourceRef>
+         </ResourceProxy>
+         <ResourceProxy id="xx">
+            <ResourceType mimetype="video/mp4">Resource</ResourceType>
+            <ResourceRef>hdl:1839/00-0000-0000-0009-294F-C</ResourceRef>
+         </ResourceProxy>
+         <ResourceProxy id="xx">
+            <ResourceType mimetype="audio/x-wav">Resource</ResourceType>
+            <ResourceRef>hdl:1839/00-0000-0000-0009-2950-E</ResourceRef>
+         </ResourceProxy>
+         <ResourceProxy id="xx">
+            <ResourceType mimetype="image/jpeg">Resource</ResourceType>
+            <ResourceRef>hdl:1839/00-0000-0000-0009-3C7E-F</ResourceRef>
+         </ResourceProxy>
+         <ResourceProxy id="xx">
+            <ResourceType mimetype="image/tiff">Resource</ResourceType>
+            <ResourceRef>hdl:1839/00-0000-0000-0009-3C80-2</ResourceRef>
+         </ResourceProxy>
+         <ResourceProxy id="xx">
+            <ResourceType mimetype="text/x-eaf+xml">Resource</ResourceType>
+            <ResourceRef>hdl:1839/00-0000-0000-0009-2951-C</ResourceRef>
+         </ResourceProxy>
+      </ResourceProxyList>
+      <JournalFileProxyList/>
+      <ResourceRelationList/>
+   </Resources>
+   <Components>
+      <Session>
+         <Name>kleve-route</Name>
+         <Title>route description to Kleve</Title>
+         <Date>2002-10-30</Date>
+         <descriptions>
+            <Description LanguageId="ISO639-2:eng">This  recording was made to generate a freely available test resource including speech and gestures. The annotations were created by Peter and Kita who is gesture researcher at the MPI for Psycholinguistics.</Description>
+            <Description LanguageId="ISO639-2:ger">Diese Aufnahme wurde erzeugt, um eine frei verfügbare Test Resource zur Verfügung stellen zu können, die Sprache und Gestik umfasst. Die Annotationen wurden von Peter und Kita, dem Gestik Researcher am MPI erzeugt.</Description>
+         </descriptions>
+         <MDGroup>
+            <Location>
+               <Continent>Europe</Continent>
+               <Country>Netherlands</Country>
+               <Region/>
+               <Address>Wundtlaan 1, Nijmegen</Address>
+            </Location>
+            <Project>
+               <Name>Peter Wittenburg</Name>
+               <Title>Route description test resource</Title>
+               <Id/>
+               <Contact>
+                  <Name>Peter Wittenburg</Name>
+                  <Address>Wundtlaan 1, 6525 XD Nijmegen</Address>
+                  <Email>peter.wittenburg@mpi.nl</Email>
+                  <Organisation>Max Planck Institute for Psycholinguistics</Organisation>
+               </Contact>
+               <descriptions>
+                  <Description LanguageId=""/>
+               </descriptions>
+            </Project>
+            <Keys>
+               <Key Name="conversion.IMDI.1.9to3.0.warning">Unknown mapping of Genre: conversation|explanation|unspecified --&gt; ???</Key>
+            </Keys>
+            <Content>
+               <Genre>Unspecified</Genre>
+               <SubGenre>Unspecified</SubGenre>
+               <Task>route description</Task>
+               <Modalities>Speech; Gestures</Modalities>
+               <CommunicationContext>
+                  <Interactivity>interactive</Interactivity>
+                  <PlanningType>semi-spontaneous</PlanningType>
+                  <Involvement>elicited</Involvement>
+                  <SocialContext>Unspecified</SocialContext>
+                  <EventStructure>Unspecified</EventStructure>
+                  <Channel>Unspecified</Channel>
+               </CommunicationContext>
+               <Content_Languages>
+                  <descriptions>
+                     <Description LanguageId=""/>
+                  </descriptions>
+                  <Content_Language>
+                     <Id>ISO639-3:eng</Id>
+                     <Name>English</Name>
+                     <descriptions>
+                        <Description LanguageId=""/>
+                     </descriptions>
+                  </Content_Language>
+               </Content_Languages>
+               <Keys>
+                  <Key Name="IMDI__1_9.Interactional">conversation</Key>
+                  <Key Name="IMDI__1_9.Discursive">explanation</Key>
+                  <Key Name="IMDI__1_9.Interactional">Unspecified</Key>
+               </Keys>
+               <descriptions>
+                  <Description LanguageId="ISO639:eng">This file was generated from an IMDI 1.9 file and transformed to IMDI 3.0. The substructure of Genre is replaced by two elements named "Genre" and "SubGenre". The original content of Genre substructure was: Interactional = 'conversation', Discursive = 'explanation', Performance = 'Unspecified'. These values have been added as Keys to the Content information.</Description>
+                  <Description LanguageId="ISO639:eng">Peter explains how to come from Nijmegen to Kleve by car, such that Kita would be able to get there.</Description>
+               </descriptions>
+            </Content>
+            <Actors>
+               <descriptions>
+                  <Description LanguageId=""/>
+               </descriptions>
+               <Actor>
+                  <Role>interviewee</Role>
+                  <Name>Peter</Name>
+                  <FullName>Peter Wittenburg</FullName>
+                  <Code>W</Code>
+                  <FamilySocialRole>Unspecified</FamilySocialRole>
+                  <EthnicGroup/>
+                  <Age>Unknown</Age>
+                  <BirthDate>Unspecified</BirthDate>
+                  <Sex>Unknown</Sex>
+                  <Education>university</Education>
+                  <Anonymized>true</Anonymized>
+                  <Contact>
+                     <Name/>
+                     <Address/>
+                     <Email/>
+                     <Organisation/>
+                  </Contact>
+                  <Keys/>
+                  <descriptions>
+                     <Description LanguageId=""/>
+                  </descriptions>
+                  <Actor_Languages>
+                     <descriptions>
+                        <Description LanguageId=""/>
+                     </descriptions>
+                     <Actor_Language>
+                        <Id>ISO639-3:nld</Id>
+                        <Name>Dutch</Name>
+                        <descriptions>
+                           <Description LanguageId=""/>
+                        </descriptions>
+                     </Actor_Language>
+                     <Actor_Language>
+                        <Id>ISO639-3:deu</Id>
+                        <Name>German</Name>
+                        <descriptions>
+                           <Description LanguageId=""/>
+                        </descriptions>
+                     </Actor_Language>
+                     <Actor_Language>
+                        <Id>ISO639-3:eng</Id>
+                        <Name>English</Name>
+                        <descriptions>
+                           <Description LanguageId=""/>
+                        </descriptions>
+                     </Actor_Language>
+                  </Actor_Languages>
+               </Actor>
+               <Actor>
+                  <Role>interviewer</Role>
+                  <Name>Kita</Name>
+                  <FullName>Sotaro Kita</FullName>
+                  <Code>k</Code>
+                  <FamilySocialRole>Unspecified</FamilySocialRole>
+                  <EthnicGroup/>
+                  <Age>Unknown</Age>
+                  <BirthDate>Unspecified</BirthDate>
+                  <Sex>Unknown</Sex>
+                  <Education>university</Education>
+                  <Anonymized>true</Anonymized>
+                  <Contact>
+                     <Name/>
+                     <Address/>
+                     <Email/>
+                     <Organisation/>
+                  </Contact>
+                  <Keys/>
+                  <descriptions>
+                     <Description LanguageId=""/>
+                  </descriptions>
+                  <Actor_Languages>
+                     <descriptions>
+                        <Description LanguageId=""/>
+                     </descriptions>
+                     <Actor_Language>
+                        <Id>ISO639-3:eng</Id>
+                        <Name>English</Name>
+                        <descriptions>
+                           <Description LanguageId=""/>
+                        </descriptions>
+                     </Actor_Language>
+                     <Actor_Language>
+                        <Id>ISO639-3:jpn</Id>
+                        <Name>Japanese</Name>
+                        <descriptions>
+                           <Description LanguageId=""/>
+                        </descriptions>
+                     </Actor_Language>
+                  </Actor_Languages>
+               </Actor>
+               <Actor>
+                  <Role>Collector</Role>
+                  <Name>Peter Wittenburg</Name>
+                  <FullName>Peter Wittenburg</FullName>
+                  <Code>Unspecified</Code>
+                  <FamilySocialRole>Unspecified</FamilySocialRole>
+                  <EthnicGroup/>
+                  <Age>Unspecified</Age>
+                  <BirthDate>Unspecified</BirthDate>
+                  <Sex>Unspecified</Sex>
+                  <Education/>
+                  <Anonymized>false</Anonymized>
+                  <Contact>
+                     <Name>Peter Wittenburg</Name>
+                     <Address>Wundtlaan 1, 6525 XD Nijmegen</Address>
+                     <Email>peter.wittenburg@mpi.nl</Email>
+                     <Organisation>Max-Planck-Institute for Psycholinguistics</Organisation>
+                  </Contact>
+                  <Keys/>
+                  <descriptions>
+                     <Description LanguageId=""/>
+                  </descriptions>
+                  <Actor_Languages/>
+               </Actor>
+               <Actor>
+                  <Role>Annotator</Role>
+                  <Name>Peter Wittenburg, Sotaro Kita</Name>
+                  <FullName>Peter Wittenburg, Sotaro Kita</FullName>
+                  <Code>Unspecified</Code>
+                  <FamilySocialRole>Unspecified</FamilySocialRole>
+                  <EthnicGroup>Unspecified</EthnicGroup>
+                  <Age>Unspecified</Age>
+                  <BirthDate>Unspecified</BirthDate>
+                  <Sex>Unspecified</Sex>
+                  <Education>Unspecified</Education>
+                  <Anonymized>false</Anonymized>
+                  <Contact>
+                     <Name/>
+                     <Address/>
+                     <Email/>
+                     <Organisation/>
+                  </Contact>
+                  <Keys/>
+                  <descriptions>
+                     <Description LanguageId=""/>
+                  </descriptions>
+                  <Actor_Languages/>
+               </Actor>
+            </Actors>
+         </MDGroup>
+         <Resources>
+            <MediaFile ref="xx">
+               <ResourceLink>file:/data/corpora/qfs1/media-archive/demo/pewi/Metadata/../Media/elan-example1.mpg</ResourceLink>
+               <Type>video</Type>
+               <Format>video/x-mpeg1</Format>
+               <Size/>
+               <Quality>Unknown</Quality>
+               <RecordingConditions>excellent</RecordingConditions>
+               <TimePosition>
+                  <Start>Unknown</Start>
+                  <End>Unknown</End>
+               </TimePosition>
+               <Access>
+                  <Availability>openly available</Availability>
+                  <Date>2003-02-12</Date>
+                  <Owner>MPI for Psycholinguistics</Owner>
+                  <Publisher/>
+                  <Contact>
+                     <Name>Romuald Skiba</Name>
+                     <Address/>
+                     <Email/>
+                     <Organisation/>
+                  </Contact>
+                  <descriptions>
+                     <Description LanguageId=""/>
+                  </descriptions>
+               </Access>
+               <descriptions>
+                  <Description LanguageId=""/>
+               </descriptions>
+               <Keys/>
+            </MediaFile>
+            <MediaFile ref="xx">
+               <ResourceLink>file:/data/corpora/qfs1/media-archive/demo/pewi/Metadata/../Media/elan-example1.mp4</ResourceLink>
+               <Type>video</Type>
+               <Format>video/mp4</Format>
+               <Size/>
+               <Quality>Unknown</Quality>
+               <RecordingConditions>excellent</RecordingConditions>
+               <TimePosition>
+                  <Start>Unknown</Start>
+                  <End>Unknown</End>
+               </TimePosition>
+               <Access>
+                  <Availability>openly available</Availability>
+                  <Date>2003-02-12</Date>
+                  <Owner>MPI for Psycholinguistics</Owner>
+                  <Publisher/>
+                  <Contact>
+                     <Name>Romuald Skiba</Name>
+                     <Address/>
+                     <Email/>
+                     <Organisation/>
+                  </Contact>
+                  <descriptions>
+                     <Description LanguageId=""/>
+                  </descriptions>
+               </Access>
+               <descriptions>
+                  <Description LanguageId=""/>
+               </descriptions>
+               <Keys/>
+            </MediaFile>
+            <MediaFile ref="xx">
+               <ResourceLink>file:/data/corpora/qfs1/media-archive/demo/pewi/Metadata/../Media/elan-example1.wav</ResourceLink>
+               <Type>audio</Type>
+               <Format>audio/x-wav</Format>
+               <Size/>
+               <Quality>5</Quality>
+               <RecordingConditions>excellent</RecordingConditions>
+               <TimePosition>
+                  <Start>Unknown</Start>
+                  <End>Unknown</End>
+               </TimePosition>
+               <Access>
+                  <Availability>openly available</Availability>
+                  <Date>2003-02-12</Date>
+                  <Owner>MPI for Psycholinguistics</Owner>
+                  <Publisher/>
+                  <Contact>
+                     <Name>Romuald Skiba</Name>
+                     <Address/>
+                     <Email/>
+                     <Organisation/>
+                  </Contact>
+                  <descriptions>
+                     <Description LanguageId=""/>
+                  </descriptions>
+               </Access>
+               <descriptions>
+                  <Description LanguageId=""/>
+               </descriptions>
+               <Keys/>
+            </MediaFile>
+            <MediaFile ref="xx">
+               <ResourceLink>file:/data/corpora/qfs1/media-archive/demo/pewi/Metadata/../Media/route_to_kleve.jpg</ResourceLink>
+               <Type>image</Type>
+               <Format>image/jpeg</Format>
+               <Size/>
+               <Quality>Unspecified</Quality>
+               <RecordingConditions>screenshot from http://www.viamichelin.nl</RecordingConditions>
+               <TimePosition>
+                  <Start>Unspecified</Start>
+                  <End>Unspecified</End>
+               </TimePosition>
+               <Access>
+                  <Availability/>
+                  <Date>Unspecified</Date>
+                  <Owner/>
+                  <Publisher/>
+                  <Contact>
+                     <Name/>
+                     <Address/>
+                     <Email/>
+                     <Organisation/>
+                  </Contact>
+                  <descriptions>
+                     <Description LanguageId=""/>
+                  </descriptions>
+               </Access>
+               <descriptions>
+                  <Description LanguageId="ISO639-2:eng">This image is a screenshot from the planner http://www.viamichelin.nl/</Description>
+               </descriptions>
+               <Keys>
+                  <Key Name="Title">Route to Kleve</Key>
+                  <Key Name="Date">2008-05-26</Key>
+                  <Key Name="Lexical term">Route map</Key>
+               </Keys>
+            </MediaFile>
+            <MediaFile ref="xx">
+               <ResourceLink>file:/data/corpora/qfs1/media-archive/demo/pewi/Metadata/../Media/route_to_kleve.tiff</ResourceLink>
+               <Type>image</Type>
+               <Format>image/tiff</Format>
+               <Size/>
+               <Quality>Unspecified</Quality>
+               <RecordingConditions>screenshot from http://www.viamichelin.nl/</RecordingConditions>
+               <TimePosition>
+                  <Start>Unspecified</Start>
+                  <End>Unspecified</End>
+               </TimePosition>
+               <Access>
+                  <Availability/>
+                  <Date>Unspecified</Date>
+                  <Owner/>
+                  <Publisher/>
+                  <Contact>
+                     <Name/>
+                     <Address/>
+                     <Email/>
+                     <Organisation/>
+                  </Contact>
+                  <descriptions>
+                     <Description LanguageId=""/>
+                  </descriptions>
+               </Access>
+               <descriptions>
+                  <Description LanguageId="ISO639-2:eng">This image is a screenshot from the planner http://www.viamichelin.nl/</Description>
+               </descriptions>
+               <Keys>
+                  <Key Name="Title">Route to Kleve (map)</Key>
+               </Keys>
+            </MediaFile>
+            <WrittenResource ref="xx">
+               <ResourceLink>file:/data/corpora/qfs1/media-archive/demo/pewi/Metadata/../Annotations/elan-example1.eaf</ResourceLink>
+               <MediaResourceLink/>
+               <Date>1900-10-30</Date>
+               <Type>Annotation</Type>
+               <SubType>orthography,  phonetic,  gesture</SubType>
+               <Format>text/x-eaf+xml</Format>
+               <Size>Unspecified</Size>
+               <Derivation>Annotation</Derivation>
+               <CharacterEncoding>Unicode UTF-8</CharacterEncoding>
+               <ContentEncoding>no special schema</ContentEncoding>
+               <LanguageId/>
+               <Anonymized>true</Anonymized>
+               <Validation>
+                  <Type>Unspecified</Type>
+                  <Methodology>Unspecified</Methodology>
+                  <Level>Unspecified</Level>
+                  <descriptions>
+                     <Description LanguageId=""/>
+                  </descriptions>
+               </Validation>
+               <Access>
+                  <Availability/>
+                  <Date>2003-02-12</Date>
+                  <Owner/>
+                  <Publisher/>
+                  <Contact>
+                     <Name/>
+                     <Address/>
+                     <Email/>
+                     <Organisation/>
+                  </Contact>
+                  <descriptions>
+                     <Description LanguageId=""/>
+                  </descriptions>
+               </Access>
+               <descriptions>
+                  <Description LanguageId=""/>
+               </descriptions>
+               <Keys/>
+            </WrittenResource>
+            <Anonyms>
+               <ResourceLink/>
+               <Access>
+                  <Availability/>
+                  <Date>2002-12-09</Date>
+                  <Owner/>
+                  <Publisher/>
+                  <Contact>
+                     <Name/>
+                     <Address/>
+                     <Email/>
+                     <Organisation/>
+                  </Contact>
+                  <descriptions>
+                     <Description LanguageId=""/>
+                  </descriptions>
+               </Access>
+            </Anonyms>
+         </Resources>
+         <References>
+            <descriptions>
+               <Description LanguageId=""/>
+            </descriptions>
+         </References>
+      </Session>
+   </Components>
+</CMD>

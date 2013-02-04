@@ -1,0 +1,391 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<METATRANSCRIPT xmlns="http://www.mpi.nl/IMDI/Schema/IMDI"
+                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                ArchiveHandle="hdl:1839/00-0000-0000-0009-294C-9"
+                Date="2008-05-27"
+                FormatId="IMDI 3.0"
+                Originator="jacrin"
+                Type="SESSION"
+                Version="6"
+                xsi:schemaLocation="http://www.mpi.nl/IMDI/Schema/IMDI ./IMDI_3.0.xsd">
+    <History>NAME:IMDI_1_9_TO_3_0 DATE:2004-03-17T15:51:32-02:00.</History>
+    <Session>
+        <Name>kleve-route</Name>
+        <Title>route description to Kleve</Title>
+        <Date>2002-10-30</Date>
+        <Description LanguageId="ISO639-2:eng" Link="">This  recording was made to generate a freely available test resource including speech and gestures. The annotations were created by Peter and Kita who is gesture researcher at the MPI for Psycholinguistics.</Description>
+        <Description LanguageId="ISO639-2:ger" Link="">Diese Aufnahme wurde erzeugt, um eine frei verfügbare Test Resource zur Verfügung stellen zu können, die Sprache und Gestik umfasst. Die Annotationen wurden von Peter und Kita, dem Gestik Researcher am MPI erzeugt.</Description>
+        <MDGroup>
+            <Location>
+                <Continent Link="http://www.mpi.nl/IMDI/Schema/Continents.xml" Type="ClosedVocabulary">Europe</Continent>
+                <Country Link="http://www.mpi.nl/IMDI/Schema/Countries.xml" Type="ClosedVocabulary">Netherlands</Country>
+                <Region/>
+                <Address>Wundtlaan 1, Nijmegen</Address>
+            </Location>
+            <Project>
+                <Name>Peter Wittenburg</Name>
+                <Title>Route description test resource</Title>
+                <Id/>
+                <Contact>
+                    <Name>Peter Wittenburg</Name>
+                    <Address>Wundtlaan 1, 6525 XD Nijmegen</Address>
+                    <Email>peter.wittenburg@mpi.nl</Email>
+                    <Organisation>Max Planck Institute for Psycholinguistics</Organisation>
+                </Contact>
+                <Description LanguageId="" Link=""/>
+            </Project>
+            <Keys>
+                <Key Name="conversion.IMDI.1.9to3.0.warning" Type="OpenVocabulary">Unknown mapping of Genre: conversation|explanation|unspecified --&gt; ???</Key>
+            </Keys>
+            <Content>
+                <Genre Link="http://www.mpi.nl/IMDI/Schema/Content-Genre.xml" Type="OpenVocabulary">Unspecified</Genre>
+                <SubGenre Link="http://www.mpi.nl/IMDI/Schema/Content-SubGenre-Discourse.xml"
+                      Type="OpenVocabulary">Unspecified</SubGenre>
+                <Task Link="http://www.mpi.nl/IMDI/Schema/Content-Task.xml" Type="OpenVocabulary">route description</Task>
+                <Modalities Link="http://www.mpi.nl/IMDI/Schema/Content-Modalities.xml"
+                        Type="OpenVocabularyList">Speech; Gestures</Modalities>
+                <CommunicationContext>
+                    <Interactivity Link="http://www.mpi.nl/IMDI/Schema/Content-Interactivity.xml"
+                              Type="ClosedVocabulary">interactive</Interactivity>
+                    <PlanningType Link="http://www.mpi.nl/IMDI/Schema/Content-PlanningType.xml"
+                             Type="ClosedVocabulary">semi-spontaneous</PlanningType>
+                    <Involvement Link="http://www.mpi.nl/IMDI/Schema/Content-Involvement.xml"
+                            Type="ClosedVocabulary">elicited</Involvement>
+                    <SocialContext Link="" Type="OpenVocabulary">Unspecified</SocialContext>
+                    <EventStructure Link="" Type="OpenVocabulary">Unspecified</EventStructure>
+                    <Channel Link="" Type="OpenVocabulary">Unspecified</Channel>
+                </CommunicationContext>
+                <Languages>
+                    <Description LanguageId="" Link=""/>
+                    <Language>
+                        <Id>ISO639-3:eng</Id>
+                        <Name Link="http://www.mpi.nl/IMDI/Schema/IMDI-Languages.xml" Type="OpenVocabulary">English</Name>
+                        <Description LanguageId="" Link=""/>
+                    </Language>
+                </Languages>
+                <Keys>
+                    <Key Link="http://www.mpi.nl/IMDI/Schema/Content-Genre-Interactional.xml"
+                    Name="IMDI__1_9.Interactional"
+                    Type="OpenVocabularyList">conversation</Key>
+                    <Key Link="http://www.mpi.nl/IMDI/Schema/Content-Genre-Discursive.xml"
+                    Name="IMDI__1_9.Discursive"
+                    Type="OpenVocabularyList">explanation</Key>
+                    <Key Link="http://www.mpi.nl/IMDI/Schema/Content-Genre-Performance.xml"
+                    Name="IMDI__1_9.Interactional"
+                    Type="OpenVocabularyList">Unspecified</Key>
+                </Keys>
+                <Description LanguageId="ISO639:eng" Link="">This file was generated from an IMDI 1.9 file and transformed to IMDI 3.0. The substructure of Genre is replaced by two elements named "Genre" and "SubGenre". The original content of Genre substructure was: Interactional = 'conversation', Discursive = 'explanation', Performance = 'Unspecified'. These values have been added as Keys to the Content information.</Description>
+                <Description LanguageId="ISO639:eng" Link="">Peter explains how to come from Nijmegen to Kleve by car, such that Kita would be able to get there.</Description>
+            </Content>
+            <Actors>
+                <Description LanguageId="" Link=""/>
+                <Actor>
+                    <Role Link="http://www.mpi.nl/IMDI/Schema/Actor-Role.xml" Type="OpenVocabulary">interviewee</Role>
+                    <Name>Peter</Name>
+                    <FullName>Peter Wittenburg</FullName>
+                    <Code>W</Code>
+                    <FamilySocialRole Link="http://www.mpi.nl/IMDI/Schema/Actor-FamilySocialRole.xml"
+                                 Type="OpenVocabularyList">Unspecified</FamilySocialRole>
+                    <Languages>
+                        <Description LanguageId="" Link=""/>
+                        <Language>
+                            <Id>ISO639-3:nld</Id>
+                            <Name Link="http://www.mpi.nl/IMDI/Schema/IMDI-Languages.xml" Type="OpenVocabulary">Dutch</Name>
+                            <Description LanguageId="" Link=""/>
+                        </Language>
+                        <Language>
+                            <Id>ISO639-3:deu</Id>
+                            <Name Link="http://www.mpi.nl/IMDI/Schema/IMDI-Languages.xml" Type="OpenVocabulary">German</Name>
+                            <Description LanguageId="" Link=""/>
+                        </Language>
+                        <Language>
+                            <Id>ISO639-3:eng</Id>
+                            <Name Link="http://www.mpi.nl/IMDI/Schema/IMDI-Languages.xml" Type="OpenVocabulary">English</Name>
+                            <Description LanguageId="" Link=""/>
+                        </Language>
+                    </Languages>
+                    <EthnicGroup Type="OpenVocabulary"/>
+                    <Age>Unknown</Age>
+                    <BirthDate>Unspecified</BirthDate>
+                    <Sex Type="OpenVocabulary">Unknown</Sex>
+                    <Education>university</Education>
+                    <Anonymized Type="ClosedVocabulary">true</Anonymized>
+                    <Contact/>
+                    <Keys/>
+                    <Description LanguageId="" Link=""/>
+                </Actor>
+                <Actor>
+                    <Role Link="http://www.mpi.nl/IMDI/Schema/Actor-Role.xml" Type="OpenVocabulary">interviewer</Role>
+                    <Name>Kita</Name>
+                    <FullName>Sotaro Kita</FullName>
+                    <Code>k</Code>
+                    <FamilySocialRole Link="http://www.mpi.nl/IMDI/Schema/Actor-FamilySocialRole.xml"
+                                 Type="OpenVocabularyList">Unspecified</FamilySocialRole>
+                    <Languages>
+                        <Description LanguageId="" Link=""/>
+                        <Language>
+                            <Id>ISO639-3:eng</Id>
+                            <Name Link="http://www.mpi.nl/IMDI/Schema/IMDI-Languages.xml" Type="OpenVocabulary">English</Name>
+                            <Description LanguageId="" Link=""/>
+                        </Language>
+                        <Language>
+                            <Id>ISO639-3:jpn</Id>
+                            <Name Link="http://www.mpi.nl/IMDI/Schema/IMDI-Languages.xml" Type="OpenVocabulary">Japanese</Name>
+                            <Description LanguageId="" Link=""/>
+                        </Language>
+                    </Languages>
+                    <EthnicGroup Type="OpenVocabulary"/>
+                    <Age>Unknown</Age>
+                    <BirthDate>Unspecified</BirthDate>
+                    <Sex Type="OpenVocabulary">Unknown</Sex>
+                    <Education>university</Education>
+                    <Anonymized Type="ClosedVocabulary">true</Anonymized>
+                    <Contact/>
+                    <Keys/>
+                    <Description LanguageId="" Link=""/>
+                </Actor>
+                <Actor>
+                    <Role Link="http://www.mpi.nl/IMDI/Schema/Actor-Role.xml" Type="OpenVocabulary">Collector</Role>
+                    <Name>Peter Wittenburg</Name>
+                    <FullName>Peter Wittenburg</FullName>
+                    <Code>Unspecified</Code>
+                    <FamilySocialRole Link="http://www.mpi.nl/IMDI/Schema/Actor-FamilySocialRole.xml"
+                                 Type="OpenVocabularyList">Unspecified</FamilySocialRole>
+                    <Languages/>
+                    <EthnicGroup Type="OpenVocabulary"/>
+                    <Age>Unspecified</Age>
+                    <BirthDate>Unspecified</BirthDate>
+                    <Sex Type="OpenVocabulary">Unspecified</Sex>
+                    <Education/>
+                    <Anonymized Type="ClosedVocabulary">false</Anonymized>
+                    <Contact>
+                        <Name>Peter Wittenburg</Name>
+                        <Address>Wundtlaan 1, 6525 XD Nijmegen</Address>
+                        <Email>peter.wittenburg@mpi.nl</Email>
+                        <Organisation>Max-Planck-Institute for Psycholinguistics</Organisation>
+                    </Contact>
+                    <Keys/>
+                    <Description LanguageId="" Link=""/>
+                </Actor>
+                <Actor ResourceRef="N0x80564c0.0x808aa60">
+                    <Role Link="http://www.mpi.nl/IMDI/Schema/Actor-Role.xml" Type="OpenVocabulary">Annotator</Role>
+                    <Name>Peter Wittenburg, Sotaro Kita</Name>
+                    <FullName>Peter Wittenburg, Sotaro Kita</FullName>
+                    <Code>Unspecified</Code>
+                    <FamilySocialRole Link="http://www.mpi.nl/IMDI/Schema/Actor-FamilySocialRole.xml"
+                                 Type="OpenVocabularyList">Unspecified</FamilySocialRole>
+                    <Languages/>
+                    <EthnicGroup Type="OpenVocabulary">Unspecified</EthnicGroup>
+                    <Age>Unspecified</Age>
+                    <BirthDate>Unspecified</BirthDate>
+                    <Sex Type="OpenVocabulary">Unspecified</Sex>
+                    <Education>Unspecified</Education>
+                    <Anonymized Type="ClosedVocabulary">false</Anonymized>
+                    <Contact/>
+                    <Keys/>
+                    <Description LanguageId="" Link=""/>
+                </Actor>
+            </Actors>
+        </MDGroup>
+        <Resources>
+            <MediaFile ResourceId="N0x80564c0.0x808a1a0">
+                <ResourceLink ArchiveHandle="hdl:1839/00-0000-0000-0009-294E-5">file:/data/corpora/qfs1/media-archive/demo/pewi/Metadata/../Media/elan-example1.mpg</ResourceLink>
+                <Type Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Type.xml" Type="ClosedVocabulary">video</Type>
+                <Format Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Format.xml" Type="OpenVocabulary">video/x-mpeg1</Format>
+                <Size/>
+                <Quality>Unknown</Quality>
+                <RecordingConditions>excellent</RecordingConditions>
+                <TimePosition>
+                    <Start>Unknown</Start>
+                    <End>Unknown</End>
+                </TimePosition>
+                <Access>
+                    <Availability Type="OpenVocabulary">openly available</Availability>
+                    <Date>2003-02-12</Date>
+                    <Owner>MPI for Psycholinguistics</Owner>
+                    <Publisher/>
+                    <Contact>
+                        <Name>Romuald Skiba</Name>
+                        <Address/>
+                        <Email/>
+                        <Organisation/>
+                    </Contact>
+                    <Description LanguageId="" Link=""/>
+                </Access>
+                <Description LanguageId="" Link=""/>
+                <Keys/>
+            </MediaFile>
+            <MediaFile ResourceId="MF-1">
+                <ResourceLink ArchiveHandle="hdl:1839/00-0000-0000-0009-294F-C">file:/data/corpora/qfs1/media-archive/demo/pewi/Metadata/../Media/elan-example1.mp4</ResourceLink>
+                <Type Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Type.xml" Type="ClosedVocabulary">video</Type>
+                <Format Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Format.xml" Type="OpenVocabulary">video/mp4</Format>
+                <Size/>
+                <Quality>Unknown</Quality>
+                <RecordingConditions>excellent</RecordingConditions>
+                <TimePosition>
+                    <Start>Unknown</Start>
+                    <End>Unknown</End>
+                </TimePosition>
+                <Access>
+                    <Availability Type="OpenVocabulary">openly available</Availability>
+                    <Date>2003-02-12</Date>
+                    <Owner>MPI for Psycholinguistics</Owner>
+                    <Publisher/>
+                    <Contact>
+                        <Name>Romuald Skiba</Name>
+                        <Address/>
+                        <Email/>
+                        <Organisation/>
+                    </Contact>
+                    <Description LanguageId="" Link=""/>
+                </Access>
+                <Description LanguageId="" Link=""/>
+                <Keys/>
+            </MediaFile>
+            <MediaFile ResourceId="N0x80564c0.0x808a600">
+                <ResourceLink ArchiveHandle="hdl:1839/00-0000-0000-0009-2950-E">file:/data/corpora/qfs1/media-archive/demo/pewi/Metadata/../Media/elan-example1.wav</ResourceLink>
+                <Type Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Type.xml" Type="ClosedVocabulary">audio</Type>
+                <Format Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Format.xml" Type="OpenVocabulary">audio/x-wav</Format>
+                <Size/>
+                <Quality>5</Quality>
+                <RecordingConditions>excellent</RecordingConditions>
+                <TimePosition>
+                    <Start>Unknown</Start>
+                    <End>Unknown</End>
+                </TimePosition>
+                <Access>
+                    <Availability Type="OpenVocabulary">openly available</Availability>
+                    <Date>2003-02-12</Date>
+                    <Owner>MPI for Psycholinguistics</Owner>
+                    <Publisher/>
+                    <Contact>
+                        <Name>Romuald Skiba</Name>
+                        <Address/>
+                        <Email/>
+                        <Organisation/>
+                    </Contact>
+                    <Description LanguageId="" Link=""/>
+                </Access>
+                <Description LanguageId="" Link=""/>
+                <Keys/>
+            </MediaFile>
+            <MediaFile ResourceId="MF-2">
+                <ResourceLink ArchiveHandle="hdl:1839/00-0000-0000-0009-3C7E-F">file:/data/corpora/qfs1/media-archive/demo/pewi/Metadata/../Media/route_to_kleve.jpg</ResourceLink>
+                <Type Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Type.xml" Type="ClosedVocabulary">image</Type>
+                <Format Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Format.xml" Type="OpenVocabulary">image/jpeg</Format>
+                <Size/>
+                <Quality>Unspecified</Quality>
+                <RecordingConditions>screenshot from http://www.viamichelin.nl</RecordingConditions>
+                <TimePosition>
+                    <Start>Unspecified</Start>
+                    <End>Unspecified</End>
+                </TimePosition>
+                <Access>
+                    <Availability Type="OpenVocabulary"/>
+                    <Date>Unspecified</Date>
+                    <Owner/>
+                    <Publisher/>
+                    <Contact>
+                        <Name/>
+                        <Address/>
+                        <Email/>
+                        <Organisation/>
+                    </Contact>
+                    <Description LanguageId="" Link=""/>
+                </Access>
+                <Description LanguageId="ISO639-2:eng" Link="">This image is a screenshot from the planner http://www.viamichelin.nl/</Description>
+                <Keys>
+                    <Key Name="Title" Type="OpenVocabulary">Route to Kleve</Key>
+                    <Key Name="Date" Type="OpenVocabulary">2008-05-26</Key>
+                    <Key Name="Lexical term" Type="OpenVocabulary">Route map</Key>
+                </Keys>
+            </MediaFile>
+            <MediaFile ResourceId="MF-4">
+                <ResourceLink ArchiveHandle="hdl:1839/00-0000-0000-0009-3C80-2">file:/data/corpora/qfs1/media-archive/demo/pewi/Metadata/../Media/route_to_kleve.tiff</ResourceLink>
+                <Type Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Type.xml" Type="ClosedVocabulary">image</Type>
+                <Format Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Format.xml" Type="OpenVocabulary">image/tiff</Format>
+                <Size/>
+                <Quality>Unspecified</Quality>
+                <RecordingConditions>screenshot from http://www.viamichelin.nl/</RecordingConditions>
+                <TimePosition>
+                    <Start>Unspecified</Start>
+                    <End>Unspecified</End>
+                </TimePosition>
+                <Access>
+                    <Availability Type="OpenVocabulary"/>
+                    <Date>Unspecified</Date>
+                    <Owner/>
+                    <Publisher/>
+                    <Contact>
+                        <Name/>
+                        <Address/>
+                        <Email/>
+                        <Organisation/>
+                    </Contact>
+                    <Description LanguageId="" Link=""/>
+                </Access>
+                <Description LanguageId="ISO639-2:eng" Link="">This image is a screenshot from the planner http://www.viamichelin.nl/</Description>
+                <Keys>
+                    <Key Name="Title" Type="OpenVocabulary">Route to Kleve (map)</Key>
+                </Keys>
+            </MediaFile>
+            <WrittenResource ResourceId="N0x80564c0.0x808aa60">
+                <ResourceLink ArchiveHandle="hdl:1839/00-0000-0000-0009-2951-C">file:/data/corpora/qfs1/media-archive/demo/pewi/Metadata/../Annotations/elan-example1.eaf</ResourceLink>
+                <MediaResourceLink/>
+                <Date>1900-10-30</Date>
+                <Type Type="OpenVocabulary">Annotation</Type>
+                <SubType Link="http://www.mpi.nl/IMDI/Schema/AnnotationUnit-Type.xml"
+                     Type="OpenVocabularyList">orthography,  phonetic,  gesture</SubType>
+                <Format Link="http://www.mpi.nl/IMDI/Schema/AnnotationUnit-Format.xml"
+                    Type="OpenVocabulary">text/x-eaf+xml</Format>
+                <Size Type="OpenVocabulary">Unspecified</Size>
+                <Validation>
+                    <Type Link="http://www.mpi.nl/IMDI/Schema/Validation-Type.xml"
+                     Type="ClosedVocabulary">Unspecified</Type>
+                    <Methodology Link="http://www.mpi.nl/IMDI/Schema/Validation-Methodology.xml"
+                            Type="ClosedVocabulary">Unspecified</Methodology>
+                    <Level>Unspecified</Level>
+                    <Description LanguageId="" Link=""/>
+                </Validation>
+                <Derivation Link="http://www.mpi.nl/IMDI/Schema/WrittenResource-Derivation.xml"
+                        Type="ClosedVocabulary"
+                        XXX-Type="FixedCV">Annotation</Derivation>
+                <CharacterEncoding>Unicode UTF-8</CharacterEncoding>
+                <ContentEncoding>no special schema</ContentEncoding>
+                <LanguageId Type="OpenVocabulary"/>
+                <Anonymized Type="ClosedVocabulary">true</Anonymized>
+                <Access>
+                    <Availability Type="OpenVocabulary"/>
+                    <Date>2003-02-12</Date>
+                    <Owner/>
+                    <Publisher/>
+                    <Contact/>
+                    <Description/>
+                </Access>
+                <Description LanguageId="" Link=""/>
+                <Keys/>
+            </WrittenResource>
+            
+            
+            <Anonyms>
+                <ResourceLink/>
+                <Access>
+                    <Availability Type="OpenVocabulary"/>
+                    <Date>2002-12-09</Date>
+                    <Owner/>
+                    <Publisher/>
+                    <Contact>
+                        <Name/>
+                        <Address/>
+                        <Email/>
+                        <Organisation/>
+                    </Contact>
+                    <Description LanguageId="" Link=""/>
+                </Access>
+            </Anonyms>
+        </Resources>
+        <References>
+            <Description LanguageId="" Link=""/>
+        </References>
+    </Session>
+</METATRANSCRIPT>
