@@ -1,4 +1,4 @@
-MetadataTranslator-${project.artifactId}-${project.version}-r${buildNumber}
+MetadataTranslator ${project.artifactId}-${project.version}-r${buildNumber}
 
  What is it?
  -----------

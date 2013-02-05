@@ -5,12 +5,12 @@
 
     <parent>
 	<groupId>nl.mpi.translation</groupId>
-	<artifactId>MetadataTranslator</artifactId>
+	<artifactId>metadata-translator-parent</artifactId>
 	<version>1.1-SNAPSHOT</version>
     </parent>
 
-    <groupId>nl.mpi.translation.services</groupId>
-    <artifactId>TranslationService</artifactId>
+    <groupId>nl.mpi.translation</groupId>
+    <artifactId>metadata-translation-service</artifactId>
     <version>1.1-SNAPSHOT</version>
     <name>CMDI &lt;-&gt; IMDI translation service webapp</name>
     <url>http://tla.mpi.nl</url>
@@ -24,9 +24,9 @@
 
     <dependencies>
 	<dependency>
-	    <groupId>nl.mpi.translation.tools</groupId>
-	    <artifactId>Translator</artifactId>
-	    <version>1.1-STAGING</version>
+	    <groupId>${project.groupId}</groupId>
+	    <artifactId>metadata-translator</artifactId>
+	    <version>${project.version}</version>
 	</dependency>
 	<dependency>
 	    <groupId>javax.servlet</groupId>
@@ -159,7 +159,7 @@
 	</dependency>
     </dependencies>
     <build>
-	<finalName>${project.parent.artifactId}-${project.version}-r${buildNumber}</finalName>
+	<finalName>${project.artifactId}-${project.version}-r${buildNumber}</finalName>
 	<plugins>
 	    <plugin>
 		<groupId>org.apache.tomcat.maven</groupId>

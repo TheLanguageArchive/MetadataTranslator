@@ -10,7 +10,7 @@
     </parent>
 
     <groupId>nl.mpi.translation</groupId>
-    <artifactId>MetadataTranslator</artifactId>
+    <artifactId>metadata-translator-parent</artifactId>
     <version>1.1-SNAPSHOT</version>
     <name>CMDI &lt;-&gt; IMDI metadata translator</name>
     <url>http://www.tla.mpi.nl</url>

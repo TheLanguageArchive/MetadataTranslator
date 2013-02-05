@@ -5,12 +5,12 @@
  
     <parent>
 	<groupId>nl.mpi.translation</groupId>
-	<artifactId>MetadataTranslator</artifactId>
+	<artifactId>metadata-translator-parent</artifactId>
 	<version>1.1-SNAPSHOT</version>
     </parent>
 
-    <groupId>nl.mpi.translation.tools</groupId>
-    <artifactId>Translator</artifactId>
+    <groupId>nl.mpi.translation</groupId>
+    <artifactId>metadata-translator</artifactId>
     <version>1.1-SNAPSHOT</version>
     <name>CMDI &lt;-&gt; IMDI translation library</name>
     <url>http://www.tla.mpi.nl</url>
