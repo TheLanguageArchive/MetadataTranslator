@@ -34,6 +34,7 @@ import javax.xml.transform.Transformer;
 import javax.xml.transform.TransformerConfigurationException;
 import javax.xml.transform.TransformerException;
 import javax.xml.transform.TransformerFactory;
+import javax.xml.transform.TransformerFactoryConfigurationError;
 import javax.xml.transform.stax.StAXSource;
 import javax.xml.transform.stream.StreamResult;
 import javax.xml.transform.stream.StreamSource;
@@ -55,6 +56,7 @@ import org.slf4j.LoggerFactory;
 public class TranslatorImpl implements Translator {
 
     private final static Logger logger = LoggerFactory.getLogger(TranslatorImpl.class);
+    private final static String SAXON_TRANSFORMER_IMPL_CLASS_NAME = "net.sf.saxon.TransformerFactoryImpl";
     private final static String cmdi2imdiStyleSheet = "templates/cmdi2imdi/cmdi2imdiMaster.xslt";
     private final static String imdi2cmdiStyleSheet = "templates/imdi2cmdi/imdi2cmdi.xslt";
     private final TransformerFactory transfFactory;
@@ -69,11 +71,11 @@ public class TranslatorImpl implements Translator {
      * @throws IOException
      */
     public TranslatorImpl() throws TransformerConfigurationException, IOException {
-	System.setProperty("javax.xml.transform.TransformerFactory",
-		"net.sf.saxon.TransformerFactoryImpl");
+	transfFactory = createTransformerFactory();
+	logger.debug("Instantiated XML transformer factory of type {}", transfFactory.getClass());
 
-	transfFactory = TransformerFactory.newInstance();
 	xmlInputFactory = XMLInputFactory.newInstance();
+	logger.debug("Instantiated XML input factory of type {}", xmlInputFactory.getClass());
 
 	//Create a source with the cmdi2imdi stylesheet
 	URL xsltURL = this.getClass().getClassLoader().getResource(cmdi2imdiStyleSheet);
@@ -101,6 +103,28 @@ public class TranslatorImpl implements Translator {
 	logger.debug("Using XSLT Transformer: '{}'", cmdi2imdiCachedXSLT.getClass());
 	logger.debug("Using CMDI2IMDI stylesheet: '{}'", cmdi2imdiStyleSheet);
 	logger.debug("Using IMDI2CMDI stylesheet: '{}'", imdi2cmdiStyleSheet);
+    }
+
+    /**
+     * Creates a new transformer factory, using Saxon as the preferred implementation. Falls back to the default procedure through
+     * {@link TransformerFactory#newInstance()}.
+     *
+     * @return an implementation instance of TransformerFactory, never null
+     * @throws TransformerFactoryConfigurationError as thrown by {@link TransformerFactory#newInstance() } in case the Saxon implementation
+     * cannot be instantiated
+     */
+    private TransformerFactory createTransformerFactory() throws TransformerFactoryConfigurationError {
+	try {
+	    // Try Saxon first:
+	    logger.debug("Trying to get instance of '{}' transformer implementation", SAXON_TRANSFORMER_IMPL_CLASS_NAME);
+	    return TransformerFactory.newInstance(SAXON_TRANSFORMER_IMPL_CLASS_NAME, null);
+	} catch (TransformerFactoryConfigurationError tfc) {
+	    // Backup plan: use whatever is available to Java through the default procedure 
+	    logger.warn("Could not load class for Saxon transformer, trying default as backup. This will probably lead to runtime errors!");
+	    logger.debug("javax.xml.transform.TransformerFactory={}", System.getProperty("javax.xml.transform.TransformerFactory"));
+	    logger.debug("Exception thrown by TransformerFactory.newInstance()", tfc);
+	    return TransformerFactory.newInstance();
+	}
     }
 
     /**
