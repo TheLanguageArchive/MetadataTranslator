@@ -198,6 +198,12 @@
 			    <targetPath>WEB-INF/lib/legal</targetPath>
 			</resource>
 		    </webResources>
+		    <archive>
+			<manifestEntries>
+			    <!-- Add project version number to manifest -->
+			    <Service-Version>${project.version}</Service-Version>
+			</manifestEntries>
+		    </archive>
 		</configuration>
 	    </plugin>
 	    <plugin>
@@ -244,7 +250,7 @@
 		<log-output>STDOUT</log-output>
 	    </properties>
 	    <build>
-		<finalName>${project.parent.artifactId}-${project.version}</finalName>
+		<finalName>${project.artifactId}-${project.version}</finalName>
 	    </build>
 	</profile>
     </profiles>
