@@ -17,7 +17,8 @@
     <description>A Jersey JAX-RS service to translate from CMDI to IMDI and vice-versa.</description>
 
     <properties>
-	<log-output>ROLL</log-output>
+	<log.appender>ROLL</log.appender>
+	<log.level.translationservice>INFO</log.level.translationservice>
 	<jersey.version>1.16</jersey.version>
 	<spring.version>3.0.0.RELEASE</spring.version>
     </properties>
@@ -247,7 +248,8 @@
   			-->
 	    <id>development</id>
 	    <properties>
-		<log-output>STDOUT</log-output>
+		<log.appender>STDOUT</log.appender>
+		<log.level.translationservice>DEBUG</log.level.translationservice>
 	    </properties>
 	    <build>
 		<finalName>${project.artifactId}-${project.version}</finalName>

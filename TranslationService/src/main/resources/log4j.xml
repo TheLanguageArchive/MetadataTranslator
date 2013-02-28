@@ -4,7 +4,7 @@
 
 	<appender name="ROLL" class="org.apache.log4j.RollingFileAppender">
 		<!-- The active file to log to -->
-		<param name="file" value="${catalina.base}/logs/translation-service.log" />
+		<param name="file" value="${catalina.home}/logs/translation-service.log" />
 		<param name="MaxFileSize" value="1MB" />
 		<!-- Keep the last 5 files -->
     	<param name="MaxBackupIndex" value="5"/>
@@ -26,23 +26,23 @@
 
 
 	<logger name="nl.mpi.translation.services" additivity="false">
-		<level value="INFO" />
-		<appender-ref ref="${log-output}" />
+		<level value="${log.level.translationservice}" />
+		<appender-ref ref="${log.appender}" />
 	</logger>
 
 	<logger name="nl.mpi.translation.tools" additivity="false">
-		<level value="INFO" />
-		<appender-ref ref="${log-output}" />
+		<level value="${log.level.translationservice}" />
+		<appender-ref ref="${log.appender}" />
 	</logger>
 
 	<logger name="org.springframework.beans" additivity="false">
 		<level value="INFO" />
-		<appender-ref ref="${log-output}" />
+		<appender-ref ref="${log.appender}" />
 	</logger>
 
 	<root>
 		<priority value="WARN" />
-		<appender-ref ref="${log-output}" />
+		<appender-ref ref="${log.appender}" />
 	</root>
 
 </log4j:configuration>
