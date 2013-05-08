@@ -58,6 +58,7 @@ public class TranslatorImplTest {
     // URIs used in sample expectations
     public static final String SERVICE_URI = "http://my-service/translate";
     public static final String COLLECTION_BASE_URI = "http://my-collection";
+    public static final String ORIGINAL_LOCATION_PLACEHOLDER = "{ORIGINAL_LOCATION}";
     /**
      * Instance to test on (new instance gets created for each test in {@link #setUp() })
      */
@@ -84,7 +85,7 @@ public class TranslatorImplTest {
 	// Request translation
 	String result = instance.getIMDI(cmdiFileURL, SERVICE_URI);
 	// Compare to expectation (loaded from resource)
-	assertTranslationResult(COLLECTION_TO_CORPUS_IMDI, normalizeSourceLocation(result));
+	assertTranslationResult(COLLECTION_TO_CORPUS_IMDI, normalizeImdiOutput(result, cmdiFileURL));
     }
 
     /**
@@ -98,7 +99,7 @@ public class TranslatorImplTest {
 	// Request translation
 	String result = instance.getIMDI(cmdiFileURL, SERVICE_URI);
 	// Compare to expectation (loaded from resource)
-	assertTranslationResult(COLLECTION_TO_CORPUS_IMDI, normalizeSourceLocation(result));
+	assertTranslationResult(COLLECTION_TO_CORPUS_IMDI, normalizeImdiOutput(result, cmdiFileURL));
     }
 
     /**
@@ -112,7 +113,7 @@ public class TranslatorImplTest {
 	// Request translation
 	String result = instance.getIMDI(cmdiFileURL, SERVICE_URI);
 	// Compare to expectation (loaded from resource)
-	assertTranslationResult(IPROSLA_TO_SESSION_IMDI, normalizeSourceLocation(result));
+	assertTranslationResult(IPROSLA_TO_SESSION_IMDI, normalizeImdiOutput(result, cmdiFileURL));
     }
 
     /**
@@ -205,6 +206,18 @@ public class TranslatorImplTest {
     }
 
     /**
+     * Wrapper for {@link #normalizeSourceLocation(java.lang.String) } and {@link #normalizeOriginator(java.lang.String, java.lang.String) }
+     *
+     * @param xml xml to normalize
+     * @param cmdiFileUrl url of transformed CMDI
+     * @return normalized xml
+     * @throws UnsupportedEncodingException
+     */
+    private String normalizeImdiOutput(String xml, URL cmdiFileUrl) throws UnsupportedEncodingException {
+	return normalizeSourceLocation(normalizeOriginator(xml, cmdiFileUrl.toString()));
+    }
+
+    /**
      * Replaces the resource locations with a generic placeholder (http://my-collection) used in the examples
      *
      * @param xml xml to normalize
@@ -215,6 +228,17 @@ public class TranslatorImplTest {
 	return xml.replace(
 		URLEncoder.encode(getClass().getResource(CMDI_SAMPLES_LOCATION).toString(), "UTF-8"),
 		URLEncoder.encode(COLLECTION_BASE_URI, "UTF-8"));
+    }
+
+    /**
+     * Replaces the original location with a generic placeholder
+     *
+     * @param xml xml to normalize
+     * @param originalLocation original location of the transformed file
+     * @return normalized XML
+     */
+    private String normalizeOriginator(String xml, String originalLocation) {
+	return xml.replace(originalLocation, ORIGINAL_LOCATION_PLACEHOLDER);
     }
 
     /**

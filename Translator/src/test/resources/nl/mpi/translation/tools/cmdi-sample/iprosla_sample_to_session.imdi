@@ -2,7 +2,7 @@
 <METATRANSCRIPT xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 		xmlns="http://www.mpi.nl/IMDI/Schema/IMDI"
 		FormatId="IMDI 3.0"
-		Originator="IPROSLA2IMDI.xsl"
+		Originator="Metadata Translator: iprosla2imdi.xslt {ORIGINAL_LOCATION}"
 		Type="SESSION"
 		Version="0"
 		xsi:schemaLocation="http://www.mpi.nl/IMDI/Schema/IMDI http://www.mpi.nl/IMDI/Schema/IMDI_3.0.xsd"

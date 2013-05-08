@@ -8,7 +8,6 @@
         <METATRANSCRIPT xmlns="http://www.mpi.nl/IMDI/Schema/IMDI"
             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"            
             FormatId="IMDI 3.0"
-            Originator="COLLECTION2CORPUS.xsl"
             Type="CORPUS"
             Version="0"
             xsi:schemaLocation="http://www.mpi.nl/IMDI/Schema/IMDI http://www.mpi.nl/IMDI/Schema/IMDI_3.0.xsd">
@@ -16,6 +15,9 @@
             <xsl:attribute name="ArchiveHandle">
                 <xsl:value-of select="tla:getHandle(//Header/MdSelfLink, 'imdi')"/>
             </xsl:attribute>
+	    <xsl:attribute name="Originator">
+		<xsl:value-of select="concat('Metadata Translator: collection2corpus.xslt ', $source-location)" />
+	    </xsl:attribute>
             <Corpus>
                 <xsl:apply-templates select="//collection" mode="COLLECTION2CORPUS"/>
                 <xsl:apply-templates select="//ResourceProxy" mode="COLLECTION2CORPUS"/>
