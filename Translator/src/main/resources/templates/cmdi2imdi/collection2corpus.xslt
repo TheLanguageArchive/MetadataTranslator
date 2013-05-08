@@ -14,10 +14,10 @@
             <xsl:attribute name="Date"><xsl:value-of select="$datum"/></xsl:attribute>
             <xsl:attribute name="ArchiveHandle">
                 <xsl:value-of select="tla:getHandle(//Header/MdSelfLink, 'imdi')"/>
+            </xsl:attribute>            
+            <xsl:attribute name="Originator">
+                <xsl:value-of select="tla:create-originator('collection2corpus.xslt', //Header/MdSelfLink)" />
             </xsl:attribute>
-	    <xsl:attribute name="Originator">
-		<xsl:value-of select="concat('Metadata Translator: collection2corpus.xslt ', $source-location)" />
-	    </xsl:attribute>
             <Corpus>
                 <xsl:apply-templates select="//collection" mode="COLLECTION2CORPUS"/>
                 <xsl:apply-templates select="//ResourceProxy" mode="COLLECTION2CORPUS"/>

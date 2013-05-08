@@ -49,6 +49,8 @@ public class TranslatorImplTest {
     public static final String COLLECTION_TO_CORPUS_IMDI = CMDI_SAMPLES_LOCATION + "/collection_sample_to_corpus.imdi";
     public static final String IPROSLA_CMDI = CMDI_SAMPLES_LOCATION + "/iprosla_sample.cmdi";
     public static final String IPROSLA_TO_SESSION_IMDI = CMDI_SAMPLES_LOCATION + "/iprosla_sample_to_session.imdi";
+    public static final String IPROSLA_NO_SELFLINK_CMDI = CMDI_SAMPLES_LOCATION + "/iprosla_sample_no_selflink.cmdi";
+    public static final String IPROSLA_NO_SELFLINK_TO_SESSION_IMDI = CMDI_SAMPLES_LOCATION + "/iprosla_sample_no_selflink_to_session.imdi";
     public static final String OTHER_CMDI = CMDI_SAMPLES_LOCATION + "/other_sample.cmdi";
     // IMDI Sample locations
     public static final String IMDI_SAMPLES_LOCATION = "/nl/mpi/translation/tools/imdi-sample";
@@ -103,7 +105,8 @@ public class TranslatorImplTest {
     }
 
     /**
-     * Requests translation of an IPROSLA (profile clarin.eu:cr1:p_1331113992512) instance
+     * Requests translation of an IPROSLA (profile clarin.eu:cr1:p_1331113992512) instance with a self link.
+     * Self link should be used as reference to original document.
      */
     @Test
     public void testGetIMDIForIPROSLA() throws Exception {
@@ -114,6 +117,21 @@ public class TranslatorImplTest {
 	String result = instance.getIMDI(cmdiFileURL, SERVICE_URI);
 	// Compare to expectation (loaded from resource)
 	assertTranslationResult(IPROSLA_TO_SESSION_IMDI, normalizeImdiOutput(result, cmdiFileURL));
+    }
+
+    /**
+     * Requests translation of an IPROSLA (profile clarin.eu:cr1:p_1331113992512) instance without a self link.
+     * Source location should be used as reference to original document instead and IMDI archive handle should be empty
+     */
+    @Test
+    public void testGetIMDIForIPROSLANoSelflink() throws Exception {
+	URL cmdiFileURL = getClass().getResource(IPROSLA_NO_SELFLINK_CMDI);
+	logger.info("Testing translation of IPROSLA instance to IMDI");
+	logger.debug(cmdiFileURL.toString());
+	// Request translation
+	String result = instance.getIMDI(cmdiFileURL, SERVICE_URI);
+	// Compare to expectation (loaded from resource)
+	assertTranslationResult(IPROSLA_NO_SELFLINK_TO_SESSION_IMDI, normalizeImdiOutput(result, cmdiFileURL));
     }
 
     /**

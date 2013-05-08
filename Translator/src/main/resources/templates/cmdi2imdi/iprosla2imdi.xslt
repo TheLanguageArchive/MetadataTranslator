@@ -15,9 +15,9 @@
             <xsl:attribute name="ArchiveHandle">
                 <xsl:value-of select="tla:getHandle(//Header/MdSelfLink, 'imdi')"/>
             </xsl:attribute>
-	    <xsl:attribute name="Originator">
-		<xsl:value-of select="concat('Metadata Translator: iprosla2imdi.xslt ', $source-location)" />
-	    </xsl:attribute>
+            <xsl:attribute name="Originator">
+                <xsl:value-of select="tla:create-originator('iprosla2imdi.xslt', //Header/MdSelfLink)" />
+            </xsl:attribute>
             <Session>
                 <xsl:apply-templates select="//Header" mode="IPROSLA2IMDI"/>
                 <xsl:apply-templates select="//SL-IPROSLA" mode="IPROSLA2IMDI"/>
