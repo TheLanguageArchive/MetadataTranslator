@@ -1,19 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xsl:stylesheet xmlns="http://www.mpi.nl/IMDI/Schema/IMDI" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="2.0" xpath-default-namespace="http://www.clarin.eu/cmd/">
+<xsl:stylesheet xmlns="http://www.mpi.nl/IMDI/Schema/IMDI" 
+    xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+    xmlns:tla="http://tla.mpi.nl" 
+    version="2.0" xpath-default-namespace="http://www.clarin.eu/cmd/">
+    
     <xsl:template name="IPROSLA2IMDI">
         <METATRANSCRIPT xmlns="http://www.mpi.nl/IMDI/Schema/IMDI"
             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"            
             FormatId="IMDI 3.0"
-            Originator="IPROSLA2IMDI.xsl"
             Type="SESSION"
             Version="0"
             xsi:schemaLocation="http://www.mpi.nl/IMDI/Schema/IMDI http://www.mpi.nl/IMDI/Schema/IMDI_3.0.xsd">
             <xsl:attribute name="Date"><xsl:value-of select="$datum"/></xsl:attribute>
             <xsl:attribute name="ArchiveHandle">
-                <xsl:choose>
-                    <xsl:when test="starts-with(//Header/MdSelfLink, 'hdl')">
-                        <xsl:value-of select="//Header/MdSelfLink" />@format=imdi</xsl:when>
-                </xsl:choose>
+                <xsl:value-of select="tla:getHandle(//Header/MdSelfLink, 'imdi')"/>
+            </xsl:attribute>
+            <xsl:attribute name="Originator">
+                <xsl:value-of select="tla:create-originator('iprosla2imdi.xslt', //Header/MdSelfLink)" />
             </xsl:attribute>
             <Session>
                 <xsl:apply-templates select="//Header" mode="IPROSLA2IMDI"/>

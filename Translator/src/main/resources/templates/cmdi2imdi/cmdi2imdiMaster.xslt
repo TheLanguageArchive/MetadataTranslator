@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xsl:stylesheet xmlns="http://www.mpi.nl/IMDI/Schema/IMDI" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="2.0" xpath-default-namespace="http://www.clarin.eu/cmd/">
+<xsl:stylesheet xmlns="http://www.mpi.nl/IMDI/Schema/IMDI" 
+    xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+    xmlns:tla="http://tla.mpi.nl"
+    version="2.0" xpath-default-namespace="http://www.clarin.eu/cmd/">
     
     <xsl:include href="iprosla2imdi.xslt"/>
     <xsl:include href="collection2corpus.xslt"/>
     <xsl:include href="../util/identity.xslt"/>
-    
+    <xsl:include href="../util/handle.xslt"/>
     
     <xsl:output method="xml" version="1.0" encoding="UTF-8" indent="yes" />
     
@@ -35,4 +38,17 @@
         </xsl:choose>
     </xsl:template>
 
+    <xsl:function name="tla:create-originator">
+        <xsl:param name="schema-name" />
+        <xsl:param name="self-link" />
+        <xsl:choose>
+            <xsl:when test="string-length($self-link) &gt; 0">
+                <xsl:value-of select="concat('Metadata Translator: ', $schema-name, ' ', $self-link)" />                    
+            </xsl:when>
+            <xsl:otherwise>
+                <xsl:value-of select="concat('Metadata Translator: ', $schema-name, ' ', $source-location)" />
+            </xsl:otherwise>
+        </xsl:choose>
+    </xsl:function>
+    
 </xsl:stylesheet>

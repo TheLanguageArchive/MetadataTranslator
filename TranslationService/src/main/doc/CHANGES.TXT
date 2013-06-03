@@ -1,5 +1,10 @@
-Changes for:
-${project.artifactId}-${project.version}-r${buildNumber}
+Current version: ${project.artifactId}-${project.version}-r${buildNumber}
 
+Changes for metadata-translator-1.1:
+- Reference to original IMDI is added to header of generated CMDI's (#2920)
+- Improved detection of handle URIs
+- No longer setting global TransformerFactory property
+- Added /version resource to service which provides runtime version info
 
-This is the first release of the MetadataTranslator.
+Changes for metadata-translator-1.0:
+- This is the first release of the MetadataTranslator.

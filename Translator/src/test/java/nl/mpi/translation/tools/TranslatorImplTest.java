@@ -49,6 +49,8 @@ public class TranslatorImplTest {
     public static final String COLLECTION_TO_CORPUS_IMDI = CMDI_SAMPLES_LOCATION + "/collection_sample_to_corpus.imdi";
     public static final String IPROSLA_CMDI = CMDI_SAMPLES_LOCATION + "/iprosla_sample.cmdi";
     public static final String IPROSLA_TO_SESSION_IMDI = CMDI_SAMPLES_LOCATION + "/iprosla_sample_to_session.imdi";
+    public static final String IPROSLA_NO_SELFLINK_CMDI = CMDI_SAMPLES_LOCATION + "/iprosla_sample_no_selflink.cmdi";
+    public static final String IPROSLA_NO_SELFLINK_TO_SESSION_IMDI = CMDI_SAMPLES_LOCATION + "/iprosla_sample_no_selflink_to_session.imdi";
     public static final String OTHER_CMDI = CMDI_SAMPLES_LOCATION + "/other_sample.cmdi";
     // IMDI Sample locations
     public static final String IMDI_SAMPLES_LOCATION = "/nl/mpi/translation/tools/imdi-sample";
@@ -58,6 +60,7 @@ public class TranslatorImplTest {
     // URIs used in sample expectations
     public static final String SERVICE_URI = "http://my-service/translate";
     public static final String COLLECTION_BASE_URI = "http://my-collection";
+    public static final String ORIGINAL_LOCATION_PLACEHOLDER = "{ORIGINAL_LOCATION}";
     /**
      * Instance to test on (new instance gets created for each test in {@link #setUp() })
      */
@@ -84,7 +87,7 @@ public class TranslatorImplTest {
 	// Request translation
 	String result = instance.getIMDI(cmdiFileURL, SERVICE_URI);
 	// Compare to expectation (loaded from resource)
-	assertTranslationResult(COLLECTION_TO_CORPUS_IMDI, normalizeSourceLocation(result));
+	assertTranslationResult(COLLECTION_TO_CORPUS_IMDI, normalizeImdiOutput(result, cmdiFileURL));
     }
 
     /**
@@ -98,11 +101,12 @@ public class TranslatorImplTest {
 	// Request translation
 	String result = instance.getIMDI(cmdiFileURL, SERVICE_URI);
 	// Compare to expectation (loaded from resource)
-	assertTranslationResult(COLLECTION_TO_CORPUS_IMDI, normalizeSourceLocation(result));
+	assertTranslationResult(COLLECTION_TO_CORPUS_IMDI, normalizeImdiOutput(result, cmdiFileURL));
     }
 
     /**
-     * Requests translation of an IPROSLA (profile clarin.eu:cr1:p_1331113992512) instance
+     * Requests translation of an IPROSLA (profile clarin.eu:cr1:p_1331113992512) instance with a self link.
+     * Self link should be used as reference to original document.
      */
     @Test
     public void testGetIMDIForIPROSLA() throws Exception {
@@ -112,7 +116,22 @@ public class TranslatorImplTest {
 	// Request translation
 	String result = instance.getIMDI(cmdiFileURL, SERVICE_URI);
 	// Compare to expectation (loaded from resource)
-	assertTranslationResult(IPROSLA_TO_SESSION_IMDI, normalizeSourceLocation(result));
+	assertTranslationResult(IPROSLA_TO_SESSION_IMDI, normalizeImdiOutput(result, cmdiFileURL));
+    }
+
+    /**
+     * Requests translation of an IPROSLA (profile clarin.eu:cr1:p_1331113992512) instance without a self link.
+     * Source location should be used as reference to original document instead and IMDI archive handle should be empty
+     */
+    @Test
+    public void testGetIMDIForIPROSLANoSelflink() throws Exception {
+	URL cmdiFileURL = getClass().getResource(IPROSLA_NO_SELFLINK_CMDI);
+	logger.info("Testing translation of IPROSLA instance to IMDI");
+	logger.debug(cmdiFileURL.toString());
+	// Request translation
+	String result = instance.getIMDI(cmdiFileURL, SERVICE_URI);
+	// Compare to expectation (loaded from resource)
+	assertTranslationResult(IPROSLA_NO_SELFLINK_TO_SESSION_IMDI, normalizeImdiOutput(result, cmdiFileURL));
     }
 
     /**
@@ -205,6 +224,18 @@ public class TranslatorImplTest {
     }
 
     /**
+     * Wrapper for {@link #normalizeSourceLocation(java.lang.String) } and {@link #normalizeOriginator(java.lang.String, java.lang.String) }
+     *
+     * @param xml xml to normalize
+     * @param cmdiFileUrl url of transformed CMDI
+     * @return normalized xml
+     * @throws UnsupportedEncodingException
+     */
+    private String normalizeImdiOutput(String xml, URL cmdiFileUrl) throws UnsupportedEncodingException {
+	return normalizeSourceLocation(normalizeOriginator(xml, cmdiFileUrl.toString()));
+    }
+
+    /**
      * Replaces the resource locations with a generic placeholder (http://my-collection) used in the examples
      *
      * @param xml xml to normalize
@@ -215,6 +246,17 @@ public class TranslatorImplTest {
 	return xml.replace(
 		URLEncoder.encode(getClass().getResource(CMDI_SAMPLES_LOCATION).toString(), "UTF-8"),
 		URLEncoder.encode(COLLECTION_BASE_URI, "UTF-8"));
+    }
+
+    /**
+     * Replaces the original location with a generic placeholder
+     *
+     * @param xml xml to normalize
+     * @param originalLocation original location of the transformed file
+     * @return normalized XML
+     */
+    private String normalizeOriginator(String xml, String originalLocation) {
+	return xml.replace(originalLocation, ORIGINAL_LOCATION_PLACEHOLDER);
     }
 
     /**
