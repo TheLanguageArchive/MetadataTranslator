@@ -19,11 +19,12 @@ installation.
 
 5. On the unpacked .was:
 5.1. Set up WEB-INF/classes/log4j.xml for desired logging.
-5.2. Set up tomcat context parameter 'allowFileProtocol' (true/false). See META-INF/context.xml 
-Warning, setting up 'allowFileProtocol' to 'true' raises security problems.
+5.2. Set up tomcat context parameter 'allowFileProtocol' (true/false). See 
+META-INF/context.xml. Warning, setting up 'allowFileProtocol' to 'true' raises
+security problems.
 
-7. Start Tomcat.
+6. Start Tomcat.
 
-
- 
+7. Check whether the correct version of the application is running by browsing
+to {applicationBaseUrl}/version
 
