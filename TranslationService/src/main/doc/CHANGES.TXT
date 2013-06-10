@@ -1,5 +1,12 @@
 Current version: ${project.artifactId}-${project.version}-r${buildNumber}
 
+Changes for metadata-translator-1.1.2:
+- Tranformation of handle URI's to simple handle URI's (without scheme) when
+recursively creating links to the translation service.
+
+Changes for metadata-translator-1.1.1:
+- Added ArchiveHandle attribute to IMDI corpus translations of CMDI collections
+
 Changes for metadata-translator-1.1:
 - Reference to original IMDI is added to header of generated CMDI's (#2920)
 - Improved detection of handle URIs

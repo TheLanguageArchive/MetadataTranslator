@@ -10,7 +10,8 @@
 		ArchiveHandle="hdl:123-456@format=imdi">
     <Corpus>
 	<CorpusLink Name="">http://my-service/translate?in=http%3A%2F%2Fmy-collection%2Fsubcollection.cmdi&amp;outFormat=imdi</CorpusLink>
-	<CorpusLink Name="">http://my-service/translate?in=http%3A%2F%2Fwww.clarin.eu%2Fcmd%2Fexample%2Fcollection%2Flrt%2Flrt-1001.cmdi&amp;outFormat=imdi</CorpusLink>
+	<CorpusLink Name="">http://my-service/translate?in=http%3A%2F%2Finfra.clarin.eu%2Fcmd%2Fexample%2Fcollection%2Flrt%2Flrt-1001.cmdi&amp;outFormat=imdi</CorpusLink>
+	<CorpusLink Name="" ArchiveHandle="hdl:1234/5678@format=imdi">http://my-service/translate?in=1234/5678&amp;outFormat=imdi</CorpusLink>
 	<Name>Name0</Name>
 	<Title/>
 	<Description LanguageId="" Link="">Description2</Description>

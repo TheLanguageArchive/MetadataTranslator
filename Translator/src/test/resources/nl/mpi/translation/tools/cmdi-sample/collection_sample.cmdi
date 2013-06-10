@@ -16,10 +16,14 @@
 		<ResourceType>Metadata</ResourceType>
 		<ResourceRef>subcollection.cmdi</ResourceRef>
 	    </ResourceProxy>
-	    <ResourceProxy id="ID003">
-		<ResourceType>Metadata</ResourceType>
-		<ResourceRef>http://www.clarin.eu/cmd/example/collection/lrt/lrt-1001.cmdi</ResourceRef>
-	    </ResourceProxy>
+		<ResourceProxy id="ID003">
+			<ResourceType>Metadata</ResourceType>
+			<ResourceRef>http://infra.clarin.eu/cmd/example/collection/lrt/lrt-1001.cmdi</ResourceRef>
+		</ResourceProxy>
+		<ResourceProxy id="ID004">
+			<ResourceType>Metadata</ResourceType>
+			<ResourceRef>hdl:1234/5678</ResourceRef>
+		</ResourceProxy>
 	</ResourceProxyList>
 	<JournalFileProxyList />
 	<ResourceRelationList />
