@@ -33,7 +33,7 @@
                      <xsl:if test="string-length($handle) > 0">
                          <xsl:attribute name="ArchiveHandle" select="tla:getHandle(ResourceRef, 'imdi')" />
                      </xsl:if>
-                     <xsl:value-of select="concat($service-base-uri, '?in=', encode-for-uri(resolve-uri(ResourceRef, $source-location)), '&amp;outFormat=imdi')"/>
+                     <xsl:value-of select="tla:getTranslationUri(ResourceRef, 'imdi')"/>
                  </CorpusLink>
              </xsl:when>
           </xsl:choose> 
