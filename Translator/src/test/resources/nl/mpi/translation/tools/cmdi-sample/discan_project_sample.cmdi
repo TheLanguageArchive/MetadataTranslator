@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CMD xmlns="http://www.clarin.eu/cmd/"
+     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+     CMDVersion="1.1"
+     xsi:schemaLocation="http://www.clarin.eu/cmd/ http://catalog.clarin.eu/ds/ComponentRegistry/rest/registry/profiles/clarin.eu:cr1:p_1361876010525/xsd ">
+   <Header>
+      <MdCreator>Vis00003</MdCreator>
+      <MdCreationDate>2013-02-27+01:00</MdCreationDate>
+      <MdProfile>clarin.eu:cr1:p_1361876010525</MdProfile>
+   </Header>
+   <Resources>
+      <ResourceProxyList>
+         <ResourceProxy id="res_847cc34b-e26b-4aca-bb71-36ae41c46eb3">
+            <ResourceType>Metadata</ResourceType>
+            <ResourceRef>Degand22/degand22_PAULA_corpus.cmdi</ResourceRef>
+         </ResourceProxy>
+         <ResourceProxy id="res_cb67709c-3992-49bf-80f1-cdaed39b0322">
+            <ResourceType>Metadata</ResourceType>
+            <ResourceRef>PanderMaatSanders/pandermaat_en_sanders_PAULA_corpus.cmdi</ResourceRef>
+         </ResourceProxy>
+         <ResourceProxy id="res_641e2146-24c9-4311-9594-328348d01a49">
+            <ResourceType>Metadata</ResourceType>
+            <ResourceRef>Persoon/persoon_PAULA_corpus.cmdi</ResourceRef>
+         </ResourceProxy>
+         <ResourceProxy id="res_7abcfdae-405d-463d-971d-5f647c4be493">
+            <ResourceType>Metadata</ResourceType>
+            <ResourceRef>Pit_narrdow/pit_narrdow_PAULA_corpus.cmdi</ResourceRef>
+         </ResourceProxy>
+         <ResourceProxy id="res_16d077c2-cf31-44db-b3c6-9146c5f8fe7d">
+            <ResourceType>Metadata</ResourceType>
+            <ResourceRef>Pit_totadow/pit_totadow_PAULA_corpus.cmdi</ResourceRef>
+         </ResourceProxy>
+         <ResourceProxy id="res_1d48f762-5c7f-4b12-8821-0ca8f84c111e">
+            <ResourceType>Metadata</ResourceType>
+            <ResourceRef>SandersSpooren/sander_spooren_PAULA_corpus.cmdi</ResourceRef>
+         </ResourceProxy>
+         <ResourceProxy id="res_17764bef-6f3c-44e7-bfbe-b962be57f12b">
+            <ResourceType>Metadata</ResourceType>
+            <ResourceRef>Stukker_daardoor/stukker_daardoor_PAULA_corpus.cmdi</ResourceRef>
+         </ResourceProxy>
+         <ResourceProxy id="res_dedf8a40-baa7-4875-a505-7e3c6e4a551d">
+            <ResourceType>Metadata</ResourceType>
+            <ResourceRef>Stukker_daarom/stukker_daarom_PAULA_corpus.cmdi</ResourceRef>
+         </ResourceProxy>
+         <ResourceProxy id="res_2a102c9f-06db-4fae-a800-65954d38c3f6">
+            <ResourceType>Metadata</ResourceType>
+            <ResourceRef>Stukker_dus/stukker_dus_PAULA_corpus.cmdi</ResourceRef>
+         </ResourceProxy>
+      </ResourceProxyList>
+      <JournalFileProxyList/>
+      <ResourceRelationList/>
+   </Resources>
+   <Components>
+      <DiscAn_Project>
+         <Project>
+            <ProjectName>DiscAn</ProjectName>
+            <ProjectTitle>Towards a Discourse Annotation system for Dutch language corpora</ProjectTitle>
+            <ProjectID/>
+            <Funder>CLARIN-NL</Funder>
+            <Institution>
+               <Department>Department of Humanities</Department>
+               <Organisation>Utrecht University</Organisation>
+               <Location>
+                  <Address>Trans 10, 3512 JK, Utrecht</Address>
+                  <Country>
+                     <CountryName>Netherlands</CountryName>
+                     <CountryCoding>NL</CountryCoding>
+                  </Country>
+               </Location>
+               <Contact>
+                  <Person>Prof. dr. Ted Sanders</Person>
+                  <Role>Coordinator</Role>
+                  <Address>Trans 10, 3512 JK, Utrecht / Korte Nieuwstraat 2-4</Address>
+                  <Email>T.J.M.Sanders@uu.nl</Email>
+                  <Department>Department of Humanities</Department>
+                  <Organisation>Utrecht University</Organisation>
+                  <TelephoneNumber>+31 30 2536080</TelephoneNumber>
+                  <FaxNumber>+31 30 2536000</FaxNumber>
+                  <Url>http://www.let.uu.nl/~ted.sanders/personal/</Url>
+               </Contact>
+            </Institution>
+            <Cooperations>
+               
+               <Cooperation>
+                  <CooperationPartner>Daan Broeder; Max Planck Institute</CooperationPartner>
+                  
+                  <Department>The Language Archive</Department>
+                  
+                  <Organisation>Max Planck Institute</Organisation>
+                  <Url>http://www.mpi.nl/</Url>
+                  <Descriptions>
+                     <Description>Infrastructure specialist, Data Provider and/or Technology Provider</Description>
+                  </Descriptions>
+               </Cooperation>
+            </Cooperations>
+            <Contact>
+               <Person>Prof. dr. Ted Sanders</Person>
+               <Role>Coordinator</Role>
+               <Address>Trans 10, 3512 JK, Utrecht / Korte Nieuwstraat 2-4</Address>
+               <Email>T.J.M.Sanders@uu.nl</Email>
+               <Department>Department of Humanities</Department>
+               <Organisation>Utrecht University</Organisation>
+               <TelephoneNumber>+31 30 2536080</TelephoneNumber>
+               <FaxNumber>+31 30 2536000</FaxNumber>
+               <Url>http://www.let.uu.nl/~ted.sanders/personal/</Url>
+            </Contact>
+            <Contact>
+               <Person>Daan Broeder</Person>
+               <Role>Deputy head TLA; Infrastructure specialist, Data Provider and/or Technology Provider in DiscAn Project</Role>
+               <Address>Wundtlaan 1, 6525 XD, Nijmegen, The Netherlands</Address>
+               <Email>daan.broeder@mpi.nl</Email>
+               <Department>The Language Archive</Department>
+               <Organisation>Max Planck Institute for Psycholinguistics</Organisation>
+               <TelephoneNumber>+31 24 3521103</TelephoneNumber>
+               <FaxNumber>+31 24 3521213</FaxNumber>
+               <Url>http://www.mpi.nl/people/broeder-daan</Url>
+            </Contact>
+            <Contact>
+               <Person>Dr. Kirsten Vis</Person>
+               <Role>User, Data Provider</Role>
+               <Address>Trans 10, 3512 JK Utrecht, Netherlands</Address>
+               <Email>k.vis@uu.nl</Email>
+               <Department>Department of Humanities</Department>
+               <Organisation>Utrecht University</Organisation>
+               <TelephoneNumber>+31 30 2538757</TelephoneNumber>
+               <FaxNumber>+31 30 2536000</FaxNumber>
+               <Url>http://www.uu.nl/hum/staff/KVis/0</Url>
+            </Contact>
+            <Duration>
+               <StartYear>2012</StartYear>
+               <CompletionYear>2013</CompletionYear>
+            </Duration>
+         </Project>
+         <Access>
+            <Contact>
+               <Person>Prof. dr. Ted Sanders</Person>
+               <Role>Coordinator</Role>
+               <Address>Trans 10, 3512 JK, Utrecht / Korte Nieuwstraat 2-4</Address>
+               <Email>T.J.M.Sanders@uu.nl</Email>
+               <Department>Department of Humanities</Department>
+               <Organisation>Utrecht University</Organisation>
+               <TelephoneNumber>+31 30 2536080</TelephoneNumber>
+               <FaxNumber>+31 30 2536000</FaxNumber>
+               <Url>http://www.let.uu.nl/~ted.sanders/personal/</Url>
+            </Contact>
+         </Access>
+         <Annotation>
+            <AnnotationMode>manual</AnnotationMode>
+            <AnnotationStandoff>stand-off</AnnotationStandoff>
+            <AnnotationFormat>xml (PAULA XML)</AnnotationFormat>
+            <SegmentationUnits>
+               <SegmentationUnit>lexeme</SegmentationUnit>
+               <SegmentationUnit>grammatical sentence</SegmentationUnit>
+               <SegmentationUnit>discourse unit</SegmentationUnit>
+               <SegmentationUnit>text</SegmentationUnit>
+               <SegmentationUnit>phrase</SegmentationUnit>
+               <Descriptions>
+                  <Description>The features annotated in the DiscAn Project relate to differ segmentation units; some to the entire text, others to grammatical sentences, and others to words or phrases.</Description>
+               </Descriptions>
+            </SegmentationUnits>
+            <AnnotationTypes>
+               
+               <AnnotationType>
+                  <AnnotationLevelType>discourse level</AnnotationLevelType>
+                  <AnnotationMode>manual</AnnotationMode>
+                  <TagsetInfo/>
+               </AnnotationType>
+               <Descriptions>
+                  <Description>The DiscAn corpus has been annotated manually with discourse information,  represented in the DiscAn tagset. This tagset is designed as a minimal set of features that any discourse annotation should contain, and to reflect the discourse annotations in e.g. RST and the Penn Discourse Treebank.</Description>
+               </Descriptions>
+            </AnnotationTypes>
+            <AnnotationToolInfo>
+               <AnnotationTool>ANNIS2</AnnotationTool>
+               <ToolType/>
+               <Version/>
+               <Url/>
+               <Descriptions>
+                  <Description/>
+               </Descriptions>
+            </AnnotationToolInfo>
+         </Annotation>
+         <Documentations>
+            <Documentation/>
+         </Documentations>
+      </DiscAn_Project>
+   </Components>
+</CMD>
