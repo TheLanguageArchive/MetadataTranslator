@@ -21,23 +21,9 @@
             </xsl:attribute>
             <Corpus>
                 <xsl:apply-templates select="//DiscAn_Project"/>
-                <xsl:apply-templates select="//ResourceProxy" mode="DISCANPROJECT2CORPUS"/>
+                <xsl:apply-templates select="//ResourceProxy" mode="COLLECTION2CORPUS"/>
             </Corpus>
         </METATRANSCRIPT>
-    </xsl:template>
-    
-    <xsl:template match="ResourceProxy" mode="DISCANPROJECT2CORPUS">
-         <xsl:choose>
-             <xsl:when test="child::ResourceType = 'Metadata'">
-                 <CorpusLink Name="">
-                     <xsl:variable name="handle" select="tla:getHandle(ResourceRef, 'imdi')"/>
-                     <xsl:if test="string-length($handle) > 0">
-                         <xsl:attribute name="ArchiveHandle" select="tla:getHandle(ResourceRef, 'imdi')" />
-                     </xsl:if>
-                     <xsl:value-of select="tla:getTranslationUri(ResourceRef, 'imdi')"/>
-                 </CorpusLink>
-             </xsl:when>
-          </xsl:choose> 
     </xsl:template>
     
     <xsl:template match="DiscAn_Project">
@@ -53,11 +39,6 @@
             <Keys>
                 <Key Name="Duration.StartYear"><xsl:value-of select="Project/Duration/StartYear"/></Key>
                 <Key Name="Duration.CompletionYear"><xsl:value-of select="Project/Duration/CompletionYear"/></Key>
-                <Key Name="Annotation.AnnotationMode"><xsl:value-of select="Annotation/AnnotationMode"/></Key>
-                <Key Name="Annotation.AnnotationStandoff"><xsl:value-of select="Annotation/AnnotationStandoff"/></Key>
-                <Key Name="Annotation.AnnotationFormat"><xsl:value-of select="Annotation/AnnotationFormat"/></Key>
-                <xsl:apply-templates select="Annotation/SegmentationUnits/SegmentationUnit"/>
-                <Key Name="Annotation.SegmentationUnits.Description"><xsl:value-of select="Annotation/SegmentationUnits/Descriptions/Description"></xsl:value-of></Key>
             </Keys>
             <Content>
                 <Genre>Discourse</Genre>
@@ -66,6 +47,11 @@
                 <Languages>
                 </Languages>
                 <Keys>
+                    <Key Name="Annotation.AnnotationMode"><xsl:value-of select="Annotation/AnnotationMode"/></Key>
+                    <Key Name="Annotation.AnnotationStandoff"><xsl:value-of select="Annotation/AnnotationStandoff"/></Key>
+                    <Key Name="Annotation.AnnotationFormat"><xsl:value-of select="Annotation/AnnotationFormat"/></Key>
+                    <xsl:apply-templates select="Annotation/SegmentationUnits/SegmentationUnit"/>
+                    <Key Name="Annotation.SegmentationUnits.Description"><xsl:value-of select="Annotation/SegmentationUnits/Descriptions/Description"></xsl:value-of></Key>
                 </Keys>
             </Content>
             <Actors>
