@@ -7,6 +7,7 @@
     <xsl:include href="iprosla2imdi.xslt"/>
     <xsl:include href="collection2corpus.xslt"/>
     <xsl:include href="discanproject2corpus.xslt"/>
+    <xsl:include href="discantextcorpus2corpus.xslt"/>
     <xsl:include href="../util/identity.xslt"/>
     <xsl:include href="../util/handle.xslt"/>
     
@@ -29,6 +30,10 @@
             <xsl:when test="'clarin.eu:cr1:p_1361876010525' = CMD/Header/MdProfile">
                 <xsl:call-template name="DISCANPROJECT2CORPUS" />
             </xsl:when>            
+            <xsl:when test="'clarin.eu:cr1:p_1361876010653' = CMD/Header/MdProfile">
+                <xsl:call-template name="DISCANTEXTCORPUS2CORPUS" />
+            </xsl:when>            
+            
             <!-- Add new profile templates here -->
 			<!--        
 			<xsl:when test="exists(//Components/WHAT-EVER)">
