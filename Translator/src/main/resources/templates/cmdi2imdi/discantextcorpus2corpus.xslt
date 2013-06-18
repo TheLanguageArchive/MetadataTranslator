@@ -17,7 +17,7 @@
                 <xsl:value-of select="tla:getHandle(//Header/MdSelfLink, 'imdi')"/>
             </xsl:attribute>            
             <xsl:attribute name="Originator">
-                <xsl:value-of select="tla:create-originator('discanproject2corpus.xslt', //Header/MdSelfLink)" />
+                <xsl:value-of select="tla:create-originator('discantextcorpus2corpus.xslt', //Header/MdSelfLink)" />
             </xsl:attribute>
             <Corpus>
                 <xsl:apply-templates select="//DiscAn_TextCorpus"/>
