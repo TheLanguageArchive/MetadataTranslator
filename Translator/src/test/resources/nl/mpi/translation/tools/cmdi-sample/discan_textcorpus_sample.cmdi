@@ -1,0 +1,584 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CMD xmlns="http://www.clarin.eu/cmd/"
+     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+     CMDVersion="1.1"
+     xsi:schemaLocation="http://www.clarin.eu/cmd/ http://catalog.clarin.eu/ds/ComponentRegistry/rest/registry/profiles/clarin.eu:cr1:p_1361876010653/xsd ">
+   <Header>
+      <MdCreator>Vis00003</MdCreator>
+      <MdCreationDate>2013-04-03+01:00</MdCreationDate>
+      <MdProfile>clarin.eu:cr1:p_1361876010653</MdProfile>
+   </Header>
+   <Resources>
+      <ResourceProxyList>
+         <ResourceProxy id="ma0202653-49f4-4607-80b8-054e15c64467">
+            <ResourceType mimetype="text/xml">Metadata</ResourceType>
+            <ResourceRef>Persoon_1.cmdi</ResourceRef>
+         </ResourceProxy>
+         <ResourceProxy id="m05d2de91-4e80-46af-bfea-4dcd8293aa2b">
+            <ResourceType mimetype="text/xml">Metadata</ResourceType>
+            <ResourceRef>Persoon_10.cmdi</ResourceRef>
+         </ResourceProxy>
+         <ResourceProxy id="mc2c89cc7-e369-4997-82d7-fcd7d8bd0e94">
+            <ResourceType mimetype="text/xml">Metadata</ResourceType>
+            <ResourceRef>Persoon_100.cmdi</ResourceRef>
+         </ResourceProxy>
+         <ResourceProxy id="m64b85b8e-8aa1-4c99-b047-0966fe2778a4">
+            <ResourceType mimetype="text/xml">Metadata</ResourceType>
+            <ResourceRef>Persoon_101.cmdi</ResourceRef>
+         </ResourceProxy>
+         <ResourceProxy id="m3742a063-e5c9-43f4-bc99-2245bf5566d2">
+            <ResourceType mimetype="text/xml">Metadata</ResourceType>
+            <ResourceRef>Persoon_102.cmdi</ResourceRef>
+         </ResourceProxy>
+         <ResourceProxy id="mc39840a1-c21b-4afa-a750-08b32c1bc0ca">
+            <ResourceType mimetype="text/xml">Metadata</ResourceType>
+            <ResourceRef>Persoon_103.cmdi</ResourceRef>
+         </ResourceProxy>
+         <ResourceProxy id="m130e1d70-91ef-418f-b5b2-16f2615cd158">
+            <ResourceType mimetype="text/xml">Metadata</ResourceType>
+            <ResourceRef>Persoon_104.cmdi</ResourceRef>
+         </ResourceProxy>
+         <ResourceProxy id="m26e13837-88ab-4a44-955b-655da7d433c8">
+            <ResourceType mimetype="text/xml">Metadata</ResourceType>
+            <ResourceRef>Persoon_105.cmdi</ResourceRef>
+         </ResourceProxy>
+         <ResourceProxy id="m62fb7aaa-2483-466e-aa84-0b46d9a6ec09">
+            <ResourceType mimetype="text/xml">Metadata</ResourceType>
+            <ResourceRef>Persoon_11.cmdi</ResourceRef>
+         </ResourceProxy>
+         <ResourceProxy id="m22869c69-2103-4d9a-ada8-8401227ac078">
+            <ResourceType mimetype="text/xml">Metadata</ResourceType>
+            <ResourceRef>Persoon_12.cmdi</ResourceRef>
+         </ResourceProxy>
+         <ResourceProxy id="m396aeb98-2d74-4d9b-a857-43e25341e5c4">
+            <ResourceType mimetype="text/xml">Metadata</ResourceType>
+            <ResourceRef>Persoon_13.cmdi</ResourceRef>
+         </ResourceProxy>
+         <ResourceProxy id="md97bbd47-3487-411d-b255-f475307fdb47">
+            <ResourceType mimetype="text/xml">Metadata</ResourceType>
+            <ResourceRef>Persoon_14.cmdi</ResourceRef>
+         </ResourceProxy>
+         <ResourceProxy id="me91a249a-c5ab-42be-b26e-678c426102ca">
+            <ResourceType mimetype="text/xml">Metadata</ResourceType>
+            <ResourceRef>Persoon_15.cmdi</ResourceRef>
+         </ResourceProxy>
+         <ResourceProxy id="mb4039c12-b8b7-401f-a46a-c29a19d3eb61">
+            <ResourceType mimetype="text/xml">Metadata</ResourceType>
+            <ResourceRef>Persoon_16.cmdi</ResourceRef>
+         </ResourceProxy>
+         <ResourceProxy id="m76c2105e-c408-4d1e-a5a9-ae5d7fdd20c1">
+            <ResourceType mimetype="text/xml">Metadata</ResourceType>
+            <ResourceRef>Persoon_17.cmdi</ResourceRef>
+         </ResourceProxy>
+         <ResourceProxy id="m98c8f1af-ff69-46ad-a9fb-97f1461972d2">
+            <ResourceType mimetype="text/xml">Metadata</ResourceType>
+            <ResourceRef>Persoon_18.cmdi</ResourceRef>
+         </ResourceProxy>
+         <ResourceProxy id="m9647a999-d494-4430-981b-2d8f1736e007">
+            <ResourceType mimetype="text/xml">Metadata</ResourceType>
+            <ResourceRef>Persoon_19.cmdi</ResourceRef>
+         </ResourceProxy>
+         <ResourceProxy id="m676d2a6b-8056-4d19-b41e-7d97858bda69">
+            <ResourceType mimetype="text/xml">Metadata</ResourceType>
+            <ResourceRef>Persoon_2.cmdi</ResourceRef>
+         </ResourceProxy>
+         <ResourceProxy id="m22d46e1e-58f4-42bf-978a-4b0d040b5c08">
+            <ResourceType mimetype="text/xml">Metadata</ResourceType>
+            <ResourceRef>Persoon_20.cmdi</ResourceRef>
+         </ResourceProxy>
+         <ResourceProxy id="m90edd547-7a1a-4fff-be01-eb17f98e0c4d">
+            <ResourceType mimetype="text/xml">Metadata</ResourceType>
+            <ResourceRef>Persoon_21.cmdi</ResourceRef>
+         </ResourceProxy>
+         <ResourceProxy id="mf2ac471b-2a92-42a2-acaf-c3ad2e042aae">
+            <ResourceType mimetype="text/xml">Metadata</ResourceType>
+            <ResourceRef>Persoon_22.cmdi</ResourceRef>
+         </ResourceProxy>
+         <ResourceProxy id="m2511ce65-82f1-4570-9e7c-3d0d5a65ef68">
+            <ResourceType mimetype="text/xml">Metadata</ResourceType>
+            <ResourceRef>Persoon_23.cmdi</ResourceRef>
+         </ResourceProxy>
+         <ResourceProxy id="m05b969f3-2108-4cc6-8a86-88608a063608">
+            <ResourceType mimetype="text/xml">Metadata</ResourceType>
+            <ResourceRef>Persoon_24.cmdi</ResourceRef>
+         </ResourceProxy>
+         <ResourceProxy id="m7996ceb5-5a25-4cd7-b803-e831119f1013">
+            <ResourceType mimetype="text/xml">Metadata</ResourceType>
+            <ResourceRef>Persoon_25.cmdi</ResourceRef>
+         </ResourceProxy>
+         <ResourceProxy id="m0708f426-3b95-4cd3-a0df-5209e78da682">
+            <ResourceType mimetype="text/xml">Metadata</ResourceType>
+            <ResourceRef>Persoon_26.cmdi</ResourceRef>
+         </ResourceProxy>
+         <ResourceProxy id="m43373651-f706-4e15-acb5-55c33ba13ad8">
+            <ResourceType mimetype="text/xml">Metadata</ResourceType>
+            <ResourceRef>Persoon_27.cmdi</ResourceRef>
+         </ResourceProxy>
+         <ResourceProxy id="m5faa3d15-490e-493b-b29c-bcd2d723ec00">
+            <ResourceType mimetype="text/xml">Metadata</ResourceType>
+            <ResourceRef>Persoon_28.cmdi</ResourceRef>
+         </ResourceProxy>
+         <ResourceProxy id="m38910c10-a4f4-4313-9f76-f80fd1027036">
+            <ResourceType mimetype="text/xml">Metadata</ResourceType>
+            <ResourceRef>Persoon_29.cmdi</ResourceRef>
+         </ResourceProxy>
+         <ResourceProxy id="m6e65b7ce-7857-4c3a-bf27-48b7a06e3964">
+            <ResourceType mimetype="text/xml">Metadata</ResourceType>
+            <ResourceRef>Persoon_3.cmdi</ResourceRef>
+         </ResourceProxy>
+         <ResourceProxy id="m00736fe9-67e6-4363-9055-2e6d88c99ae5">
+            <ResourceType mimetype="text/xml">Metadata</ResourceType>
+            <ResourceRef>Persoon_30.cmdi</ResourceRef>
+         </ResourceProxy>
+         <ResourceProxy id="m7186f10d-bfe3-4bf9-b204-74748902d3dc">
+            <ResourceType mimetype="text/xml">Metadata</ResourceType>
+            <ResourceRef>Persoon_31.cmdi</ResourceRef>
+         </ResourceProxy>
+         <ResourceProxy id="m9e28faff-c9d1-419c-a3cb-3e213c6082e6">
+            <ResourceType mimetype="text/xml">Metadata</ResourceType>
+            <ResourceRef>Persoon_32.cmdi</ResourceRef>
+         </ResourceProxy>
+         <ResourceProxy id="md1c9a7ea-a51f-4ff6-bf13-227d36ff31eb">
+            <ResourceType mimetype="text/xml">Metadata</ResourceType>
+            <ResourceRef>Persoon_33.cmdi</ResourceRef>
+         </ResourceProxy>
+         <ResourceProxy id="m4da41e29-ad08-450c-b9ac-123f39c016a6">
+            <ResourceType mimetype="text/xml">Metadata</ResourceType>
+            <ResourceRef>Persoon_34.cmdi</ResourceRef>
+         </ResourceProxy>
+         <ResourceProxy id="m8dad81c1-b51a-4fcd-be12-25d9b9d2e888">
+            <ResourceType mimetype="text/xml">Metadata</ResourceType>
+            <ResourceRef>Persoon_35.cmdi</ResourceRef>
+         </ResourceProxy>
+         <ResourceProxy id="m5a6fb480-1aed-4e32-8302-ff774120004d">
+            <ResourceType mimetype="text/xml">Metadata</ResourceType>
+            <ResourceRef>Persoon_36.cmdi</ResourceRef>
+         </ResourceProxy>
+         <ResourceProxy id="ma91e0636-605c-445a-9833-b62a1693032b">
+            <ResourceType mimetype="text/xml">Metadata</ResourceType>
+            <ResourceRef>Persoon_37.cmdi</ResourceRef>
+         </ResourceProxy>
+         <ResourceProxy id="m719e0f9e-d7f4-4231-93ce-c96cdf86f510">
+            <ResourceType mimetype="text/xml">Metadata</ResourceType>
+            <ResourceRef>Persoon_38.cmdi</ResourceRef>
+         </ResourceProxy>
+         <ResourceProxy id="ma7605a73-994d-440c-9598-6d6381a2e4db">
+            <ResourceType mimetype="text/xml">Metadata</ResourceType>
+            <ResourceRef>Persoon_39.cmdi</ResourceRef>
+         </ResourceProxy>
+         <ResourceProxy id="m20053689-e131-4b5b-8d67-7652c973098b">
+            <ResourceType mimetype="text/xml">Metadata</ResourceType>
+            <ResourceRef>Persoon_4.cmdi</ResourceRef>
+         </ResourceProxy>
+         <ResourceProxy id="m610a9550-8b51-48cd-b460-68bced903bab">
+            <ResourceType mimetype="text/xml">Metadata</ResourceType>
+            <ResourceRef>Persoon_40.cmdi</ResourceRef>
+         </ResourceProxy>
+         <ResourceProxy id="m37181346-e854-458a-b996-dae962e0ba3f">
+            <ResourceType mimetype="text/xml">Metadata</ResourceType>
+            <ResourceRef>Persoon_41.cmdi</ResourceRef>
+         </ResourceProxy>
+         <ResourceProxy id="m1501f6f6-c389-417a-8daa-5f3c7a0257e5">
+            <ResourceType mimetype="text/xml">Metadata</ResourceType>
+            <ResourceRef>Persoon_42.cmdi</ResourceRef>
+         </ResourceProxy>
+         <ResourceProxy id="mfddf9fd9-4791-4c6d-86d8-ead8cf6541b9">
+            <ResourceType mimetype="text/xml">Metadata</ResourceType>
+            <ResourceRef>Persoon_43.cmdi</ResourceRef>
+         </ResourceProxy>
+         <ResourceProxy id="me0282658-3216-4838-949a-cb69649780f8">
+            <ResourceType mimetype="text/xml">Metadata</ResourceType>
+            <ResourceRef>Persoon_44.cmdi</ResourceRef>
+         </ResourceProxy>
+         <ResourceProxy id="m686bc5fe-bf19-4a6d-823c-cc993c0cda2b">
+            <ResourceType mimetype="text/xml">Metadata</ResourceType>
+            <ResourceRef>Persoon_45.cmdi</ResourceRef>
+         </ResourceProxy>
+         <ResourceProxy id="m11a96fa7-a303-4a3b-b2a8-3b3e5b138350">
+            <ResourceType mimetype="text/xml">Metadata</ResourceType>
+            <ResourceRef>Persoon_46.cmdi</ResourceRef>
+         </ResourceProxy>
+         <ResourceProxy id="mbda7153a-d3a9-4dae-a156-a1ad09b71230">
+            <ResourceType mimetype="text/xml">Metadata</ResourceType>
+            <ResourceRef>Persoon_47.cmdi</ResourceRef>
+         </ResourceProxy>
+         <ResourceProxy id="m0fd285bc-89ce-4b3a-9567-ab81d363ce6a">
+            <ResourceType mimetype="text/xml">Metadata</ResourceType>
+            <ResourceRef>Persoon_48.cmdi</ResourceRef>
+         </ResourceProxy>
+         <ResourceProxy id="mdefcff69-1c42-4971-890c-406509a0ba56">
+            <ResourceType mimetype="text/xml">Metadata</ResourceType>
+            <ResourceRef>Persoon_49.cmdi</ResourceRef>
+         </ResourceProxy>
+         <ResourceProxy id="m0b5a9108-57e3-4c46-80e8-c67d4d1681c6">
+            <ResourceType mimetype="text/xml">Metadata</ResourceType>
+            <ResourceRef>Persoon_5.cmdi</ResourceRef>
+         </ResourceProxy>
+         <ResourceProxy id="mc73dfc9b-1ba1-4593-8fb0-95ae34501a9b">
+            <ResourceType mimetype="text/xml">Metadata</ResourceType>
+            <ResourceRef>Persoon_50.cmdi</ResourceRef>
+         </ResourceProxy>
+         <ResourceProxy id="m5271951f-0d84-4515-a493-40e65e51e034">
+            <ResourceType mimetype="text/xml">Metadata</ResourceType>
+            <ResourceRef>Persoon_51.cmdi</ResourceRef>
+         </ResourceProxy>
+         <ResourceProxy id="m81b54633-37ec-4afd-8a51-22e53d3d425c">
+            <ResourceType mimetype="text/xml">Metadata</ResourceType>
+            <ResourceRef>Persoon_52.cmdi</ResourceRef>
+         </ResourceProxy>
+         <ResourceProxy id="mabb73db2-21e3-422b-a352-2bd973e660d2">
+            <ResourceType mimetype="text/xml">Metadata</ResourceType>
+            <ResourceRef>Persoon_53.cmdi</ResourceRef>
+         </ResourceProxy>
+         <ResourceProxy id="m19fc7444-2d9d-473d-a602-009c171f0cf8">
+            <ResourceType mimetype="text/xml">Metadata</ResourceType>
+            <ResourceRef>Persoon_54.cmdi</ResourceRef>
+         </ResourceProxy>
+         <ResourceProxy id="m0877ca1d-e9ae-4a17-8fa1-8a4d11ac0876">
+            <ResourceType mimetype="text/xml">Metadata</ResourceType>
+            <ResourceRef>Persoon_55.cmdi</ResourceRef>
+         </ResourceProxy>
+         <ResourceProxy id="me9e398ed-67a1-4539-8a7c-d70e3f97374f">
+            <ResourceType mimetype="text/xml">Metadata</ResourceType>
+            <ResourceRef>Persoon_56.cmdi</ResourceRef>
+         </ResourceProxy>
+         <ResourceProxy id="m6c48b4a1-187f-4f89-81a2-1d4dd20a0dce">
+            <ResourceType mimetype="text/xml">Metadata</ResourceType>
+            <ResourceRef>Persoon_57.cmdi</ResourceRef>
+         </ResourceProxy>
+         <ResourceProxy id="mae9ec066-f210-4960-93c1-07487ee76a5c">
+            <ResourceType mimetype="text/xml">Metadata</ResourceType>
+            <ResourceRef>Persoon_58.cmdi</ResourceRef>
+         </ResourceProxy>
+         <ResourceProxy id="m29db1cdf-9bc5-4183-a675-9baab4e3aca2">
+            <ResourceType mimetype="text/xml">Metadata</ResourceType>
+            <ResourceRef>Persoon_59.cmdi</ResourceRef>
+         </ResourceProxy>
+         <ResourceProxy id="mc4a96233-62a4-4dae-b408-40240140e368">
+            <ResourceType mimetype="text/xml">Metadata</ResourceType>
+            <ResourceRef>Persoon_6.cmdi</ResourceRef>
+         </ResourceProxy>
+         <ResourceProxy id="m5e1a21cd-8f90-4226-9f47-d91e3a681593">
+            <ResourceType mimetype="text/xml">Metadata</ResourceType>
+            <ResourceRef>Persoon_60.cmdi</ResourceRef>
+         </ResourceProxy>
+         <ResourceProxy id="maafc4031-7bd3-43c6-b112-9c2e3c807a68">
+            <ResourceType mimetype="text/xml">Metadata</ResourceType>
+            <ResourceRef>Persoon_61.cmdi</ResourceRef>
+         </ResourceProxy>
+         <ResourceProxy id="m8f8bd2c8-3fa4-4f22-847c-a0bea85ea2ca">
+            <ResourceType mimetype="text/xml">Metadata</ResourceType>
+            <ResourceRef>Persoon_62.cmdi</ResourceRef>
+         </ResourceProxy>
+         <ResourceProxy id="mb707f453-854c-49d2-89a5-6ffcce2126a5">
+            <ResourceType mimetype="text/xml">Metadata</ResourceType>
+            <ResourceRef>Persoon_63.cmdi</ResourceRef>
+         </ResourceProxy>
+         <ResourceProxy id="m2022267a-fde5-4669-aa8f-c51e7c5c5a7d">
+            <ResourceType mimetype="text/xml">Metadata</ResourceType>
+            <ResourceRef>Persoon_64.cmdi</ResourceRef>
+         </ResourceProxy>
+         <ResourceProxy id="md9a28a56-bd2d-4de5-9dd1-affce01b4a4f">
+            <ResourceType mimetype="text/xml">Metadata</ResourceType>
+            <ResourceRef>Persoon_65.cmdi</ResourceRef>
+         </ResourceProxy>
+         <ResourceProxy id="m8b73d499-6637-426e-9cd8-e4a8c8c6c473">
+            <ResourceType mimetype="text/xml">Metadata</ResourceType>
+            <ResourceRef>Persoon_66.cmdi</ResourceRef>
+         </ResourceProxy>
+         <ResourceProxy id="m0672c510-5be6-4610-a13a-a9a40df6642a">
+            <ResourceType mimetype="text/xml">Metadata</ResourceType>
+            <ResourceRef>Persoon_67.cmdi</ResourceRef>
+         </ResourceProxy>
+         <ResourceProxy id="m5f5e4ee2-1a2e-4b7d-a59f-7e16097d6fd9">
+            <ResourceType mimetype="text/xml">Metadata</ResourceType>
+            <ResourceRef>Persoon_68.cmdi</ResourceRef>
+         </ResourceProxy>
+         <ResourceProxy id="ma1a49a05-4a81-4d25-b105-182998510561">
+            <ResourceType mimetype="text/xml">Metadata</ResourceType>
+            <ResourceRef>Persoon_69.cmdi</ResourceRef>
+         </ResourceProxy>
+         <ResourceProxy id="m7230f40d-521c-42c0-bcaa-09dbb8a668e6">
+            <ResourceType mimetype="text/xml">Metadata</ResourceType>
+            <ResourceRef>Persoon_7.cmdi</ResourceRef>
+         </ResourceProxy>
+         <ResourceProxy id="m2213f9f4-c9e3-46dd-9e04-ef7d764a80a2">
+            <ResourceType mimetype="text/xml">Metadata</ResourceType>
+            <ResourceRef>Persoon_70.cmdi</ResourceRef>
+         </ResourceProxy>
+         <ResourceProxy id="mcee791a9-98e7-4573-a36d-3597db0c4fa8">
+            <ResourceType mimetype="text/xml">Metadata</ResourceType>
+            <ResourceRef>Persoon_71.cmdi</ResourceRef>
+         </ResourceProxy>
+         <ResourceProxy id="mda6ce487-7355-493f-ab7b-67f71da096dc">
+            <ResourceType mimetype="text/xml">Metadata</ResourceType>
+            <ResourceRef>Persoon_72.cmdi</ResourceRef>
+         </ResourceProxy>
+         <ResourceProxy id="m64cb8708-94a4-4504-890b-79117aab7804">
+            <ResourceType mimetype="text/xml">Metadata</ResourceType>
+            <ResourceRef>Persoon_73.cmdi</ResourceRef>
+         </ResourceProxy>
+         <ResourceProxy id="m2169ccf8-f4c4-4f30-b260-bb6d63ea7760">
+            <ResourceType mimetype="text/xml">Metadata</ResourceType>
+            <ResourceRef>Persoon_74.cmdi</ResourceRef>
+         </ResourceProxy>
+         <ResourceProxy id="m5fd205b5-08e3-4aa9-aa09-d6e8c3fc57a3">
+            <ResourceType mimetype="text/xml">Metadata</ResourceType>
+            <ResourceRef>Persoon_75.cmdi</ResourceRef>
+         </ResourceProxy>
+         <ResourceProxy id="mad968352-cf5f-4a8a-a0b8-eef980da2c82">
+            <ResourceType mimetype="text/xml">Metadata</ResourceType>
+            <ResourceRef>Persoon_76.cmdi</ResourceRef>
+         </ResourceProxy>
+         <ResourceProxy id="m3c91a969-423c-4d08-9835-aedd904b2d6c">
+            <ResourceType mimetype="text/xml">Metadata</ResourceType>
+            <ResourceRef>Persoon_77.cmdi</ResourceRef>
+         </ResourceProxy>
+         <ResourceProxy id="m63338967-d848-4d23-884c-e89405cb6050">
+            <ResourceType mimetype="text/xml">Metadata</ResourceType>
+            <ResourceRef>Persoon_78.cmdi</ResourceRef>
+         </ResourceProxy>
+         <ResourceProxy id="m258a73d1-8e25-4396-82cb-a0e4aea4f076">
+            <ResourceType mimetype="text/xml">Metadata</ResourceType>
+            <ResourceRef>Persoon_79.cmdi</ResourceRef>
+         </ResourceProxy>
+         <ResourceProxy id="ma1ba5faa-d05b-44c3-854a-aac3ef399419">
+            <ResourceType mimetype="text/xml">Metadata</ResourceType>
+            <ResourceRef>Persoon_8.cmdi</ResourceRef>
+         </ResourceProxy>
+         <ResourceProxy id="m230fbf54-627d-4478-afa4-2d43457fa78e">
+            <ResourceType mimetype="text/xml">Metadata</ResourceType>
+            <ResourceRef>Persoon_80.cmdi</ResourceRef>
+         </ResourceProxy>
+         <ResourceProxy id="mdb894639-c0cd-4576-a905-6b3055e9a9ed">
+            <ResourceType mimetype="text/xml">Metadata</ResourceType>
+            <ResourceRef>Persoon_81.cmdi</ResourceRef>
+         </ResourceProxy>
+         <ResourceProxy id="m1bf1d097-0ca2-4e4e-92a6-f83eee754ccc">
+            <ResourceType mimetype="text/xml">Metadata</ResourceType>
+            <ResourceRef>Persoon_82.cmdi</ResourceRef>
+         </ResourceProxy>
+         <ResourceProxy id="mdb26fe00-d35c-4652-af72-d52014e0bed4">
+            <ResourceType mimetype="text/xml">Metadata</ResourceType>
+            <ResourceRef>Persoon_83.cmdi</ResourceRef>
+         </ResourceProxy>
+         <ResourceProxy id="m2f81128f-755d-4b5e-90b5-fe84723f5521">
+            <ResourceType mimetype="text/xml">Metadata</ResourceType>
+            <ResourceRef>Persoon_84.cmdi</ResourceRef>
+         </ResourceProxy>
+         <ResourceProxy id="mce7e06ad-70fd-4651-b6bf-baf502084030">
+            <ResourceType mimetype="text/xml">Metadata</ResourceType>
+            <ResourceRef>Persoon_85.cmdi</ResourceRef>
+         </ResourceProxy>
+         <ResourceProxy id="m9ac6e124-617d-4ae3-9f1a-334e7cf706d2">
+            <ResourceType mimetype="text/xml">Metadata</ResourceType>
+            <ResourceRef>Persoon_86.cmdi</ResourceRef>
+         </ResourceProxy>
+         <ResourceProxy id="m7687a1d8-3fc1-4df5-892e-eb1d3a797bdb">
+            <ResourceType mimetype="text/xml">Metadata</ResourceType>
+            <ResourceRef>Persoon_87.cmdi</ResourceRef>
+         </ResourceProxy>
+         <ResourceProxy id="m2dad0eba-7dcb-40fb-bebc-0a17a479feae">
+            <ResourceType mimetype="text/xml">Metadata</ResourceType>
+            <ResourceRef>Persoon_88.cmdi</ResourceRef>
+         </ResourceProxy>
+         <ResourceProxy id="m02e900fc-8252-455c-8e30-f8cf6e8f6e35">
+            <ResourceType mimetype="text/xml">Metadata</ResourceType>
+            <ResourceRef>Persoon_89.cmdi</ResourceRef>
+         </ResourceProxy>
+         <ResourceProxy id="md2189a53-f5d4-4e56-9062-877d372b6aef">
+            <ResourceType mimetype="text/xml">Metadata</ResourceType>
+            <ResourceRef>Persoon_9.cmdi</ResourceRef>
+         </ResourceProxy>
+         <ResourceProxy id="m693a89de-1bf2-4564-b8ce-b906c7f98810">
+            <ResourceType mimetype="text/xml">Metadata</ResourceType>
+            <ResourceRef>Persoon_90.cmdi</ResourceRef>
+         </ResourceProxy>
+         <ResourceProxy id="m89d7e8d1-5782-40fb-9d6d-067e04bdcb8a">
+            <ResourceType mimetype="text/xml">Metadata</ResourceType>
+            <ResourceRef>Persoon_91.cmdi</ResourceRef>
+         </ResourceProxy>
+         <ResourceProxy id="m8bc0d0a3-095e-449f-8903-4f3c1705508a">
+            <ResourceType mimetype="text/xml">Metadata</ResourceType>
+            <ResourceRef>Persoon_92.cmdi</ResourceRef>
+         </ResourceProxy>
+         <ResourceProxy id="m06248890-51c8-4505-8729-5866fb4d5bdf">
+            <ResourceType mimetype="text/xml">Metadata</ResourceType>
+            <ResourceRef>Persoon_93.cmdi</ResourceRef>
+         </ResourceProxy>
+         <ResourceProxy id="m85bb9e90-94ae-4013-a67b-236f4066f3e3">
+            <ResourceType mimetype="text/xml">Metadata</ResourceType>
+            <ResourceRef>Persoon_94.cmdi</ResourceRef>
+         </ResourceProxy>
+         <ResourceProxy id="ma741d56e-f816-4ab2-914d-c5434ec6ff14">
+            <ResourceType mimetype="text/xml">Metadata</ResourceType>
+            <ResourceRef>Persoon_95.cmdi</ResourceRef>
+         </ResourceProxy>
+         <ResourceProxy id="m99168ed5-7b01-4758-9af5-95501f1d9585">
+            <ResourceType mimetype="text/xml">Metadata</ResourceType>
+            <ResourceRef>Persoon_96.cmdi</ResourceRef>
+         </ResourceProxy>
+         <ResourceProxy id="mb02da021-ccd1-4bd4-b65c-b77c2a02021c">
+            <ResourceType mimetype="text/xml">Metadata</ResourceType>
+            <ResourceRef>Persoon_97.cmdi</ResourceRef>
+         </ResourceProxy>
+         <ResourceProxy id="m5c39c4ce-d957-4859-bfea-46acd1130bf5">
+            <ResourceType mimetype="text/xml">Metadata</ResourceType>
+            <ResourceRef>Persoon_98.cmdi</ResourceRef>
+         </ResourceProxy>
+         <ResourceProxy id="m97f903b2-c05f-44db-b60b-e524706f39e5">
+            <ResourceType mimetype="text/xml">Metadata</ResourceType>
+            <ResourceRef>Persoon_99.cmdi</ResourceRef>
+         </ResourceProxy>
+      </ResourceProxyList>
+      <JournalFileProxyList/>
+      <ResourceRelationList/>
+   </Resources>
+   <Components>
+      <DiscAn_TextCorpus>
+         <GeneralInfo>
+            <ResourceName>Persoon</ResourceName>
+            <ResourceTitle>Persoon</ResourceTitle>
+            <ResourceClass>Corpus</ResourceClass>
+            <Version>1</Version>
+            <Descriptions>
+               <Description>The Persoon subcorpus was compiled for a study of the causal connectives 'want' and 'omdat' in Dutch spontaneous conversations. It consists of cases from the Corpus of Spoken Dutch (Corpus Gesproken Nederlands, CGN).</Description>
+            </Descriptions>
+         </GeneralInfo>
+         
+         
+         <Project>
+            <ProjectTitle>Persoon</ProjectTitle>
+            <Contact>
+               <Person>Prof.dr. Ted Sanders</Person>
+               <Role>Project supervisor</Role>
+               <Address>Trans 10, NL-3512 JK Utrecht</Address>
+               <Email>Trans 10, NL-3512 JK Utrecht</Email>
+               <Department>Utrecht Institute of Linguistics, Faculty of Humanities</Department>
+               <Organisation>Utrecht University</Organisation>
+               <TelephoneNumber>+31 30 253 6080</TelephoneNumber>
+               <FaxNumber>+31 30 253 6000</FaxNumber>
+               <Url>http://www.let.uu.nl/~ted.sanders/personal/</Url>
+            </Contact>
+         </Project>
+         <Publications>
+            <Publication>
+               <PublicationTitle>Een coördinerende omdat-constructie in gesproken Nederlands? Tekstlinguïstische en prosodische aspecten</PublicationTitle>
+               
+               <Author>Ingrid Persoon</Author>
+               <Author>Prof.dr. Ted Sanders</Author>
+               <Author>Dr. Hugo Quené</Author>
+               <Author>Prof.dr. Arie Verhagen</Author>
+               <Descriptions>
+                  <Description>Persoon, I., Sanders, T., Quené, H. &amp; A. Verhagen (2010). Een coördinerende omdat-constructie in gesproken Nederlands? Tekstlinguïstische en prosodische aspecten. Nederlandse Taalkunde, 15, 259-282.</Description>
+               </Descriptions>
+            </Publication>
+            
+            
+         </Publications>
+         <Documentations>
+            <Documentation>
+               <DocumentationType>coding manual</DocumentationType>
+               <FileName>analysemodel functionele eigenschappen A.doc</FileName>
+               <DocumentationLanguages>
+                  
+                  <DocumentationLanguage>
+                     <Language>
+                        <LanguageName>Dutch</LanguageName>
+                        <ISO639>
+                           <iso-639-3-code>nld</iso-639-3-code>
+                        </ISO639>
+                     </Language>
+                  </DocumentationLanguage>
+               </DocumentationLanguages>
+            </Documentation>
+            <Documentation>
+               <DocumentationType>Documentation</DocumentationType>
+               <FileName>Documentation of DiscAn corpus.pdf</FileName>
+               <DocumentationLanguages>
+                  <DocumentationLanguage>
+                     <Language>
+                        <LanguageName>English</LanguageName>
+                        <ISO639>
+                           <iso-639-3-code>eng</iso-639-3-code>
+                        </ISO639>
+                     </Language>
+                  </DocumentationLanguage>
+               </DocumentationLanguages>
+            </Documentation>
+         </Documentations>
+         <CorpusContext>
+            <CorpusType>general corpus</CorpusType>
+            
+            <TemporalClassification>synchronic</TemporalClassification>
+         </CorpusContext>
+         <Creation>
+            <Creators>
+               
+               <Creator>
+                  <Contact>
+                     <Person>Ingrid Persoon</Person>
+                     <Role>Corpus developer</Role>
+                     <Address>not available</Address>
+                     <Email>not available</Email>
+                     <Department>not available</Department>
+                     <Organisation>not available</Organisation>
+                     <TelephoneNumber>not available</TelephoneNumber>
+                     <FaxNumber>not available</FaxNumber>
+                     <Url>not available</Url>
+                  </Contact>
+               </Creator>
+            </Creators>
+            <Annotation>
+               <AnnotationMode>manual</AnnotationMode>
+               <AnnotationStandoff>stand-off</AnnotationStandoff>
+               <AnnotationFormat>Microsoft Excel</AnnotationFormat>
+               <SegmentationUnits>
+                  <SegmentationUnit>discourse unit</SegmentationUnit>
+                  
+               </SegmentationUnits>
+               <AnnotationTypes>
+                  <AnnotationType>
+                     <AnnotationLevelType>discourse level</AnnotationLevelType>
+                     
+                     <AnnotationMode>manual</AnnotationMode>
+                  </AnnotationType>
+                  
+               </AnnotationTypes>
+            </Annotation>
+            
+            <Source>
+               <OriginalSource>Corpus of Spoken Dutch (Corpus Gesproken Nederlands, CGN)</OriginalSource>
+               <SourceType>spontaneous face-to-face conversation</SourceType>
+            </Source>
+         </Creation>
+         
+         <SubjectLanguages>
+            <NoLanguages>monolingual</NoLanguages>
+            <SubjectLanguage>
+               <DominantLanguage>true</DominantLanguage>
+               <Language>
+                  <LanguageName>Dutch</LanguageName>
+                  <ISO639>
+                     <iso-639-3-code>nld</iso-639-3-code>
+                  </ISO639>
+               </Language>
+            </SubjectLanguage>
+         </SubjectLanguages>
+         
+         <SizeInfo>
+            <TotalSize>
+               <Size>105</Size>
+               <SizeUnit>cases; occurrences of causal connectives 'want' and 'omdat'</SizeUnit>
+               <Descriptions>
+                  <Description>100 omdat + 102 want uit kranten (D-Coi); 100 omdat + 100 want uit conversatie (CGN); 51 omdat + 100 want uit chat (Chat-corpus)</Description>
+               </Descriptions>
+            </TotalSize>
+         </SizeInfo>
+         <ModalityInfo>
+            
+            <Modalities>spoken</Modalities>
+         </ModalityInfo>
+      </DiscAn_TextCorpus>
+   </Components>
+</CMD>

@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CMD xmlns="http://www.clarin.eu/cmd/"
+     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+     CMDVersion="1.1"
+     xsi:schemaLocation="http://www.clarin.eu/cmd/ http://catalog.clarin.eu/ds/ComponentRegistry/rest/registry/profiles/clarin.eu:cr1:p_1366895758243/xsd ">
+   <Header/>
+   <Resources>
+      <ResourceProxyList>
+         <ResourceProxy id="rbace7544-fa3d-43a1-85f5-18d40c532cc2">
+            <ResourceType mimetype="text/xml">Resource</ResourceType>
+            <ResourceRef>hdl:1234-abc</ResourceRef>
+         </ResourceProxy>
+         <ResourceProxy id="r288f55c5-2419-4764-b3b5-b1e94bfadaba">
+            <ResourceType mimetype="text/xml">Resource</ResourceType>
+            <ResourceRef>http://hdl.handle.net/5678-xyz</ResourceRef>
+         </ResourceProxy>
+         <ResourceProxy id="r0a963b89-626e-4f6a-b3d3-c7daa627860f">
+            <ResourceType mimetype="text/xml">Resource</ResourceType>
+            <ResourceRef>Degand_2_2_awo_NRC_1/Degand_2_2_awo_NRC_1.feat_Admin_corpus.xml</ResourceRef>
+         </ResourceProxy>
+         <ResourceProxy id="r0985249c-2772-48fb-91e3-47795fb50db2">
+            <ResourceType mimetype="text/xml">Resource</ResourceType>
+            <ResourceRef>Degand_2_2_awo_NRC_1/Degand_2_2_awo_NRC_1.feat_Admin_dataset.xml</ResourceRef>
+         </ResourceProxy>
+         <ResourceProxy id="r8d2d5652-fa7d-49cd-8d9b-8de551c5839c">
+            <ResourceType mimetype="text/xml">Resource</ResourceType>
+            <ResourceRef>Degand_2_2_awo_NRC_1/Degand_2_2_awo_NRC_1.feat_Admin_fragm_nr.xml</ResourceRef>
+         </ResourceProxy>
+         <ResourceProxy id="r654b2824-9580-4225-8db9-2c8f5c7d1625">
+            <ResourceType mimetype="text/xml">Resource</ResourceType>
+            <ResourceRef>Degand_2_2_awo_NRC_1/Degand_2_2_awo_NRC_1.feat_Rel_BasicOp.xml</ResourceRef>
+         </ResourceProxy>
+         <ResourceProxy id="rc96c8a7b-a9c4-4c2e-8a8d-b4a9d1115e59">
+            <ResourceType mimetype="text/xml">Resource</ResourceType>
+            <ResourceRef>Degand_2_2_awo_NRC_1/Degand_2_2_awo_NRC_1.feat_Rel_Conn.xml</ResourceRef>
+         </ResourceProxy>
+         <ResourceProxy id="r3a7cd1ba-7bbf-4eb6-b6ba-80ddc752bb1b">
+            <ResourceType mimetype="text/xml">Resource</ResourceType>
+            <ResourceRef>Degand_2_2_awo_NRC_1/Degand_2_2_awo_NRC_1.feat_Rel_LingMark.xml</ResourceRef>
+         </ResourceProxy>
+         <ResourceProxy id="r4162a443-2e23-4544-9917-086267fcab7c">
+            <ResourceType mimetype="text/xml">Resource</ResourceType>
+            <ResourceRef>Degand_2_2_awo_NRC_1/Degand_2_2_awo_NRC_1.feat_Rel_Order.xml</ResourceRef>
+         </ResourceProxy>
+         <ResourceProxy id="r30cd3b9e-c19d-4a35-b02c-8b55e0c16350">
+            <ResourceType mimetype="text/xml">Resource</ResourceType>
+            <ResourceRef>Degand_2_2_awo_NRC_1/Degand_2_2_awo_NRC_1.feat_Rel_Pol.xml</ResourceRef>
+         </ResourceProxy>
+         <ResourceProxy id="rf4e3ce9e-4351-4875-93b8-afa7dc6ff49a">
+            <ResourceType mimetype="text/xml">Resource</ResourceType>
+            <ResourceRef>Degand_2_2_awo_NRC_1/Degand_2_2_awo_NRC_1.feat_Rel_SrceofCoh.xml</ResourceRef>
+         </ResourceProxy>
+         <ResourceProxy id="r6519df5f-be2a-46b3-ada7-e82531f071b9">
+            <ResourceType mimetype="text/xml">Resource</ResourceType>
+            <ResourceRef>Degand_2_2_awo_NRC_1/Degand_2_2_awo_NRC_1.feat_Rel_SubjofConsc.xml</ResourceRef>
+         </ResourceProxy>
+         <ResourceProxy id="r07bfcbb0-43c6-46d2-9576-2ca98d0a3b7d">
+            <ResourceType mimetype="text/xml">Resource</ResourceType>
+            <ResourceRef>Degand_2_2_awo_NRC_1/Degand_2_2_awo_NRC_1.feat_Rel_Vol.xml</ResourceRef>
+         </ResourceProxy>
+         <ResourceProxy id="raf096871-f2d6-4b2e-a99a-de69392fe082">
+            <ResourceType mimetype="text/xml">Resource</ResourceType>
+            <ResourceRef>Degand_2_2_awo_NRC_1/Degand_2_2_awo_NRC_1.feat_Segm_ModS1.xml</ResourceRef>
+         </ResourceProxy>
+         <ResourceProxy id="r495fbc4d-1358-49f1-b3b9-5a13efb81a8c">
+            <ResourceType mimetype="text/xml">Resource</ResourceType>
+            <ResourceRef>Degand_2_2_awo_NRC_1/Degand_2_2_awo_NRC_1.feat_Segm_ModS2.xml</ResourceRef>
+         </ResourceProxy>
+         <ResourceProxy id="rff25372c-861f-4f9b-ab69-2c1c92980e3b">
+            <ResourceType mimetype="text/xml">Resource</ResourceType>
+            <ResourceRef>Degand_2_2_awo_NRC_1/Degand_2_2_awo_NRC_1.grouping.xml</ResourceRef>
+         </ResourceProxy>
+         <ResourceProxy id="r184c4279-4b85-4d79-ae3f-6dca5b861ab0">
+            <ResourceType mimetype="text/xml">Resource</ResourceType>
+            <ResourceRef>Degand_2_2_awo_NRC_1/Degand_2_2_awo_NRC_1.seg.xml</ResourceRef>
+         </ResourceProxy>
+         <ResourceProxy id="r505b496d-927c-4719-8e71-8aaa754dba50">
+            <ResourceType mimetype="text/xml">Resource</ResourceType>
+            <ResourceRef>Degand_2_2_awo_NRC_1/Degand_2_2_awo_NRC_1.text.xml</ResourceRef>
+         </ResourceProxy>
+         <ResourceProxy id="rff92f085-7d36-4d4b-a112-74231a5c15ff">
+            <ResourceType mimetype="text/xml">Resource</ResourceType>
+            <ResourceRef>Degand_2_2_awo_NRC_1/Degand_2_2_awo_NRC_1.tok.xml</ResourceRef>
+         </ResourceProxy>
+         <ResourceProxy id="ra6678249-adf0-4fb0-a279-440714228463">
+            <ResourceType mimetype="text/xml">Resource</ResourceType>
+            <ResourceRef>Degand_2_2_awo_NRC_1/Degand_2_2_awo_NRC_1.values.xml</ResourceRef>
+         </ResourceProxy>
+      </ResourceProxyList>
+      <JournalFileProxyList/>
+      <ResourceRelationList/>
+   </Resources>
+   <Components>
+      <DiscAn_Case>
+         <ProjectName>Degand22</ProjectName>
+         <TextTitle>Familievete over grafschrift</TextTitle>
+         <TextType>newspaper</TextType>
+         <TotalSize>
+            <Number>1148</Number>
+            <SizeUnit>word</SizeUnit>
+         </TotalSize>
+         <Language>
+            <LanguageName>Dutch</LanguageName>
+            <ISO639>
+               <iso-639-3-code>nld</iso-639-3-code>
+            </ISO639>
+         </Language>
+         <Source_DiscAn>
+            <SourceName>NRC</SourceName>
+            <Publication_DiscAn>
+               <PublicationName>NRC</PublicationName>
+               
+               <PublicationDate>1994-01-18</PublicationDate>
+               <PublicationTime>1994</PublicationTime>
+            </Publication_DiscAn>
+         </Source_DiscAn>
+         <Author_DiscAn>
+            <Name>FRITS ABRAHAMS</Name>
+         </Author_DiscAn>
+         <ModalityInfo>
+            <Modalities>written</Modalities>
+         </ModalityInfo>
+         <DiscAn_AnnotatedFeatures>
+            <SubcorpusName>Degand_2_2_awo_NRC</SubcorpusName>
+            <NameDataset> </NameDataset>
+            <FragmentID>30</FragmentID>
+            <BasicOperation>causal</BasicOperation>
+            <Connective>aangezien</Connective>
+            <LinguisticMarking>yes</LinguisticMarking>
+            <SegmentOrder>basic</SegmentOrder>
+            <Polarity>positive</Polarity>
+            <SourceofCoherence>epistemic</SourceofCoherence>
+            <SubjectofConsciousness>secondary speaker/author</SubjectofConsciousness>
+            <Volitionality>not applicable</Volitionality>
+            <ModalityFirstSegment>judgment</ModalityFirstSegment>
+            <ModalitySecondSegment>fact</ModalitySecondSegment>
+         </DiscAn_AnnotatedFeatures>
+      </DiscAn_Case>
+   </Components>
+</CMD>

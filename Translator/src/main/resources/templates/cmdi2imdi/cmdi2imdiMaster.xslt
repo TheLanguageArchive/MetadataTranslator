@@ -1,11 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet xmlns="http://www.mpi.nl/IMDI/Schema/IMDI" 
     xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:tla="http://tla.mpi.nl"
     version="2.0" xpath-default-namespace="http://www.clarin.eu/cmd/">
     
     <xsl:include href="iprosla2imdi.xslt"/>
     <xsl:include href="collection2corpus.xslt"/>
+    <xsl:include href="discanproject2corpus.xslt"/>
+    <xsl:include href="discantextcorpus2corpus.xslt"/>
+    <xsl:include href="discancase2imdi.xslt"/>
     <xsl:include href="../util/identity.xslt"/>
     <xsl:include href="../util/handle.xslt"/>
     
@@ -19,12 +23,22 @@
     
     <xsl:template match="/">
         <xsl:choose>
-            <xsl:when test="'clarin.eu:cr1:p_1331113992512' = CMD/Header/MdProfile">
+            <xsl:when test="contains(/CMD/@xsi:schemaLocation, 'http://catalog.clarin.eu/ds/ComponentRegistry/rest/registry/profiles/clarin.eu:cr1:p_1331113992512/xsd')">
                 <xsl:call-template name="IPROSLA2IMDI"/>
             </xsl:when>
-            <xsl:when test="'clarin.eu:cr1:p_1345561703620' = CMD/Header/MdProfile">
+            <xsl:when test="contains(/CMD/@xsi:schemaLocation, 'http://catalog.clarin.eu/ds/ComponentRegistry/rest/registry/profiles/clarin.eu:cr1:p_1345561703620/xsd')">
                 <xsl:call-template name="COLLECTION2CORPUS" />
             </xsl:when>
+            <xsl:when test="contains(/CMD/@xsi:schemaLocation, 'http://catalog.clarin.eu/ds/ComponentRegistry/rest/registry/profiles/clarin.eu:cr1:p_1361876010525/xsd')">
+                <xsl:call-template name="DISCANPROJECT2CORPUS" />
+            </xsl:when>            
+            <xsl:when test="contains(/CMD/@xsi:schemaLocation, 'http://catalog.clarin.eu/ds/ComponentRegistry/rest/registry/profiles/clarin.eu:cr1:p_1361876010653/xsd')">
+                <xsl:call-template name="DISCANTEXTCORPUS2CORPUS" />
+            </xsl:when>            
+            <xsl:when test="contains(/CMD/@xsi:schemaLocation, 'http://catalog.clarin.eu/ds/ComponentRegistry/rest/registry/profiles/clarin.eu:cr1:p_1366895758243/xsd')">
+                <xsl:call-template name="DISCANCASE2IMDI" />
+            </xsl:when> 
+            
             <!-- Add new profile templates here -->
 			<!--        
 			<xsl:when test="exists(//Components/WHAT-EVER)">
