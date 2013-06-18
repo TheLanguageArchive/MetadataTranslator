@@ -28,7 +28,7 @@
     
     <xsl:template match="DiscAn_TextCorpus">
         <Name><xsl:value-of select="GeneralInfo/ResourceName"/></Name>
-        <Title><xsl:value-of select="GeneralInfo/ResourceTitle"/></Title>
+        <Title>DiscAn: <xsl:value-of select="GeneralInfo/ResourceTitle"/></Title>
         <Description><xsl:value-of select="GeneralInfo/Descriptions/Description"/></Description>
         <MDGroup>
             <Location>

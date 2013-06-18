@@ -8,11 +8,11 @@
       <ResourceProxyList>
          <ResourceProxy id="rbace7544-fa3d-43a1-85f5-18d40c532cc2">
             <ResourceType mimetype="text/xml">Resource</ResourceType>
-            <ResourceRef>Degand_2_2_awo_NRC_1/Degand_2_2_awo_NRC_1.anno.xml</ResourceRef>
+            <ResourceRef>hdl:1234-abc</ResourceRef>
          </ResourceProxy>
          <ResourceProxy id="r288f55c5-2419-4764-b3b5-b1e94bfadaba">
             <ResourceType mimetype="text/xml">Resource</ResourceType>
-            <ResourceRef>Degand_2_2_awo_NRC_1/Degand_2_2_awo_NRC_1.const.xml</ResourceRef>
+            <ResourceRef>http://hdl.handle.net/5678-xyz</ResourceRef>
          </ResourceProxy>
          <ResourceProxy id="r0a963b89-626e-4f6a-b3d3-c7daa627860f">
             <ResourceType mimetype="text/xml">Resource</ResourceType>

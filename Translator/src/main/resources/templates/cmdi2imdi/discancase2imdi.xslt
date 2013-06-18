@@ -22,7 +22,7 @@
                 <xsl:apply-templates select="//Header" mode="DISCANCASE2IMDI"/>
                 <xsl:apply-templates select="//Components/DiscAn_Case" mode="DISCANCASE2IMDI"/>
                 <Resources>
-                    <xsl:apply-templates select="//ResourceProxyList/ResourceProxy" mode="DISCANCASE2IMDI" />
+                    <xsl:apply-templates select="//ResourceProxy" mode="DISCANCASE2IMDI" />
                 </Resources>
             </Session>
         </METATRANSCRIPT>
@@ -49,8 +49,7 @@
             <Keys>
             </Keys>
             <Content>
-                <Genre>Discourse</Genre>
-                <SubGenre><xsl:value-of select="TextType" /></SubGenre>
+                <Genre><xsl:value-of select="TextType" /></Genre>
                 <CommunicationContext>
                 </CommunicationContext>
                 <Languages>
@@ -96,7 +95,16 @@
     
     <xsl:template match="ResourceProxy" mode="DISCANCASE2IMDI">
         <WrittenResource>
-            <ResourceLink><xsl:value-of select="ResourceRef"/></ResourceLink>
+            <ResourceLink>
+                <xsl:variable name="handle" select="tla:getBaseHandle(ResourceRef)"/>
+                <xsl:choose>
+                    <xsl:when  test="$handle">
+                        <xsl:value-of select="concat('hdl:',$handle)"/>
+                    </xsl:when>
+                    <xsl:otherwise>
+                        <xsl:value-of select="ResourceRef"/>
+                    </xsl:otherwise>
+                </xsl:choose></ResourceLink>
             <MediaResourceLink></MediaResourceLink>
             <Date></Date>
             <Type>Annotation</Type>
