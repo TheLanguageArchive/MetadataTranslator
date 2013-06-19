@@ -3,6 +3,9 @@ Current version: ${project.artifactId}-${project.version}-r${buildNumber}
 Changes for metadata-translator-1.2:
 - ...
 
+Changes for metadata-translator-1.1.3:
+- Added stylesheets for DiscAn profiles
+
 Changes for metadata-translator-1.1.2:
 - Tranformation of handle URI's to simple handle URI's (without scheme) when
 recursively creating links to the translation service.
