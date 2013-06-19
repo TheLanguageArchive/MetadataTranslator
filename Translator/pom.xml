@@ -6,12 +6,12 @@
     <parent>
 	<groupId>nl.mpi.translation</groupId>
 	<artifactId>metadata-translator-parent</artifactId>
-	<version>1.1.3-STAGING</version>
+	<version>1.1.3</version>
     </parent>
 
     <groupId>nl.mpi.translation</groupId>
     <artifactId>metadata-translator</artifactId>
-    <version>1.1.3-STAGING</version>
+    <version>1.1.3</version>
     <name>CMDI &lt;-&gt; IMDI translation library</name>
     <url>http://www.tla.mpi.nl</url>
     <description>A library providing methods to translate from CMDI to IMDI
