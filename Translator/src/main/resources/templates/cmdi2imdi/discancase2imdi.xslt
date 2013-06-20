@@ -31,7 +31,7 @@
     <xsl:template match="Header" mode="DISCANCASE2IMDI"/>        
     
     <xsl:template match="DiscAn_Case" mode="DISCANCASE2IMDI">
-        <Name><xsl:value-of select="TextTitle"/></Name>
+        <Name><xsl:value-of select="concat(DiscAn_AnnotatedFeatures/SubcorpusName, ' ', DiscAn_AnnotatedFeatures/FragmentID)"/></Name>
         <Title><xsl:value-of select="TextTitle"/></Title>
         <Date><xsl:value-of select="Source_DiscAn/Publication_DiscAn/PublicationDate"/></Date>
         <MDGroup>
@@ -99,7 +99,7 @@
                 <xsl:variable name="handle" select="tla:getBaseHandle(ResourceRef)"/>
                 <xsl:choose>
                     <xsl:when  test="$handle">
-                        <xsl:value-of select="concat('hdl:',$handle)"/>
+                        <xsl:value-of select="concat('http://hdl.handle.net/',$handle)"/>
                     </xsl:when>
                     <xsl:otherwise>
                         <xsl:value-of select="ResourceRef"/>
