@@ -77,32 +77,39 @@ public class TranslatorImpl implements Translator {
 	xmlInputFactory = XMLInputFactory.newInstance();
 	logger.debug("Instantiated XML input factory of type {}", xmlInputFactory.getClass());
 
-	//Create a source with the cmdi2imdi stylesheet
-	URL xsltURL = this.getClass().getClassLoader().getResource(cmdi2imdiStyleSheet);
-	if (xsltURL == null) {
-	    throw new FileNotFoundException("CMDI2IMDI stylesheet: '" + cmdi2imdiStyleSheet
-		    + "' (no such file or directory)");
-	}
-	Source sourceXSLT = new StreamSource(xsltURL.openStream(), xsltURL.toExternalForm());
-
-	//Create a cached cmdi 2 imdi the transformer
-	cmdi2imdiCachedXSLT = transfFactory.newTemplates(sourceXSLT);
-
-	//Create a source with the imdi2cmdi stylesheet
-	xsltURL = this.getClass().getClassLoader().getResource(imdi2cmdiStyleSheet);
-	if (xsltURL == null) {
-	    throw new FileNotFoundException("CMDI2IMDI stylesheet: '" + imdi2cmdiStyleSheet
-		    + "' (no such file or directory)");
-	}
-	sourceXSLT = new StreamSource(xsltURL.openStream(), xsltURL.toExternalForm());
-
-	//Create a cached imdi 2 cmdi the transformer
-	imdi2cmdiCachedXSLT = transfFactory.newTemplates(sourceXSLT);
+	cmdi2imdiCachedXSLT = initCmdi2CmdiXslt();
+	imdi2cmdiCachedXSLT = initImdi2CmdiXslt();
 
 	logger.info("Translator initialized");
 	logger.debug("Using XSLT Transformer: '{}'", cmdi2imdiCachedXSLT.getClass());
 	logger.debug("Using CMDI2IMDI stylesheet: '{}'", cmdi2imdiStyleSheet);
 	logger.debug("Using IMDI2CMDI stylesheet: '{}'", imdi2cmdiStyleSheet);
+    }
+
+    private Templates initCmdi2CmdiXslt() throws FileNotFoundException, TransformerConfigurationException, IOException {
+	//Create a source with the cmdi2imdi stylesheet
+	final URL xsltURL = this.getClass().getClassLoader().getResource(cmdi2imdiStyleSheet);
+	if (xsltURL == null) {
+	    throw new FileNotFoundException("CMDI2IMDI stylesheet: '" + cmdi2imdiStyleSheet
+		    + "' (no such file or directory)");
+	}
+	final Source sourceXSLT = new StreamSource(xsltURL.openStream(), xsltURL.toExternalForm());
+
+	//Create a cached cmdi 2 imdi the transformer
+	return transfFactory.newTemplates(sourceXSLT);
+    }
+
+    private Templates initImdi2CmdiXslt() throws IOException, FileNotFoundException, TransformerConfigurationException {
+	//Create a source with the imdi2cmdi stylesheet
+	final URL xsltURL = this.getClass().getClassLoader().getResource(imdi2cmdiStyleSheet);
+	if (xsltURL == null) {
+	    throw new FileNotFoundException("IMDI2IMDI stylesheet: '" + imdi2cmdiStyleSheet
+		    + "' (no such file or directory)");
+	}
+	final Source sourceXSLT = new StreamSource(xsltURL.openStream(), xsltURL.toExternalForm());
+
+	//Create a cached imdi 2 cmdi the transformer
+	return transfFactory.newTemplates(sourceXSLT);
     }
 
     /**
@@ -142,33 +149,39 @@ public class TranslatorImpl implements Translator {
     public String getIMDI(URL cmdiFileURL, String serviceURI) throws TransformerException, XMLStreamException, IOException {
 
 	//set up input
-	InputStream input = cmdiFileURL.openStream();
-	XMLStreamReader xmlStreamReader = xmlInputFactory.createXMLStreamReader(input, "UTF-8");
-	Source source = new StAXSource(xmlStreamReader);
+	final InputStream input = cmdiFileURL.openStream();
+	try {
+	    final XMLStreamReader xmlStreamReader = xmlInputFactory.createXMLStreamReader(input, "UTF-8");
+	    try {
+		final Source source = new StAXSource(xmlStreamReader);
 
-	//set up output
-	StringWriter sw = new StringWriter();
-	Result result = new StreamResult(sw);
+		//set up output
+		final StringWriter sw = new StringWriter();
+		final Result result = new StreamResult(sw);
 
-	//return the original document for documents already with imdi extension. 
-	if (!cmdiFileURL.toString().endsWith(".imdi")) {
-	    if (!cmdiFileURL.toString().endsWith(".cmdi")) {
-		logger.warn("Input document language could not be confirmed! IMDI assumed.");
+		//return the original document for documents already with imdi extension. 
+		if (!cmdiFileURL.toString().endsWith(".imdi")) {
+		    if (!cmdiFileURL.toString().endsWith(".cmdi")) {
+			logger.warn("Input document language could not be confirmed! IMDI assumed.");
+		    }
+		    //translate document
+		    final Transformer transformer = cmdi2imdiCachedXSLT.newTransformer();
+		    transformer.setParameter("service-base-uri", serviceURI);
+		    transformer.setParameter("source-location", cmdiFileURL.toString());
+		    transformer.transform(source, result);
+		} else {
+		    logger.warn("Input document seems to be already IMDI! Returning original document.");
+		    writeURLContentsToStream(cmdiFileURL, sw);
+		}
+
+		sw.flush();
+		return sw.toString();
+	    } finally {
+		xmlStreamReader.close();
 	    }
-	    //translate document
-	    Transformer transformer = cmdi2imdiCachedXSLT.newTransformer();
-	    transformer.setParameter("service-base-uri", serviceURI);
-	    transformer.setParameter("source-location", cmdiFileURL.toString());
-	    transformer.transform(source, result);
-	} else {
-	    logger.warn("Input document seems to be already IMDI! Returning original document.");
-	    writeURLContentsToStream(cmdiFileURL, sw);
+	} finally {
+	    input.close();
 	}
-
-	sw.flush();
-	input.close();
-	xmlStreamReader.close();
-	return sw.toString();
     }
 
     /**
@@ -186,42 +199,51 @@ public class TranslatorImpl implements Translator {
     public String getCMDI(URL imdiFileURL, String serviceURI) throws TransformerException, XMLStreamException, IOException {
 
 	//set up input
-	InputStream input = imdiFileURL.openStream();
-	XMLStreamReader xmlStreamReader = xmlInputFactory.createXMLStreamReader(input, "UTF-8");
-	Source source = new StAXSource(xmlStreamReader);
+	final InputStream input = imdiFileURL.openStream();
+	try {
+	    XMLStreamReader xmlStreamReader = xmlInputFactory.createXMLStreamReader(input, "UTF-8");
+	    try {
+		final Source source = new StAXSource(xmlStreamReader);
 
-	//set up output
-	StringWriter sw = new StringWriter();
-	Result result = new StreamResult(sw);
+		//set up output
+		final StringWriter sw = new StringWriter();
+		final Result result = new StreamResult(sw);
 
-	//return the original document for documents already with cmdi extension. 
-	if (!imdiFileURL.toString().endsWith(".cmdi")) {
-	    if (!imdiFileURL.toString().endsWith(".imdi")) {
-		logger.warn("Input document language could not be confirmed! CMDI assumed.");
+		//return the original document for documents already with cmdi extension. 
+		if (!imdiFileURL.toString().endsWith(".cmdi")) {
+		    if (!imdiFileURL.toString().endsWith(".imdi")) {
+			logger.warn("Input document language could not be confirmed! CMDI assumed.");
+		    }
+		    //translate document
+		    Transformer transformer = imdi2cmdiCachedXSLT.newTransformer();
+		    transformer.setParameter("service-base-uri", serviceURI);
+		    transformer.setParameter("source-location", imdiFileURL.toString());
+		    transformer.transform(source, result);
+		} else {
+		    logger.warn("Input document seems to be already CMDI! Returning original document.");
+		    writeURLContentsToStream(imdiFileURL, sw);
+		}
+
+		sw.flush();
+		return sw.toString();
+	    } finally {
+		xmlStreamReader.close();
 	    }
-	    //translate document
-	    Transformer transformer = imdi2cmdiCachedXSLT.newTransformer();
-	    transformer.setParameter("service-base-uri", serviceURI);
-	    transformer.setParameter("source-location", imdiFileURL.toString());
-	    transformer.transform(source, result);
-	} else {
-	    logger.warn("Input document seems to be already CMDI! Returning original document.");
-	    writeURLContentsToStream(imdiFileURL, sw);
+	} finally {
+	    input.close();
 	}
-
-	sw.flush();
-	input.close();
-	xmlStreamReader.close();
-	return sw.toString();
     }
 
     private void writeURLContentsToStream(URL cmdiFileURL, StringWriter sw) throws IOException {
 	final InputStream ulrInputStream = cmdiFileURL.openConnection().getInputStream();
 	final BufferedReader rd = new BufferedReader(new InputStreamReader(ulrInputStream, "UTF-8"));
-	String line;
-	while ((line = rd.readLine()) != null) {
-	    sw.write(line);
+	try {
+	    String line;
+	    while ((line = rd.readLine()) != null) {
+		sw.write(line);
+	    }
+	} finally {
+	    rd.close();
 	}
-	rd.close();
     }
 }
