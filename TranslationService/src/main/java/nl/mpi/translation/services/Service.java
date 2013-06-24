@@ -2,6 +2,7 @@ package nl.mpi.translation.services;
 
 import java.io.IOException;
 import java.net.MalformedURLException;
+import java.net.URI;
 import java.net.URL;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -61,8 +62,6 @@ public class Service {
     @GET
     @Produces(MediaType.TEXT_XML + " ;charset=UTF-8")
     public Response translate(@QueryParam("in") String location, @QueryParam("outFormat") String outFormat) {
-	String output;
-
 	if (location == null || location.equals("")) {
 	    logger.warn("Invalid request: '{}'", uriInfo.getRequestUri());
 	    return Response.status(Status.BAD_REQUEST).build();
@@ -72,30 +71,13 @@ public class Service {
 	    final long initTime = System.currentTimeMillis();
 
 	    //get location of file to translate
-	    URL inputFileURL = this.resolveLocation(location);
-	    location = inputFileURL.toString();
-
-	    //translate file based on specified output format/language
-	    if (translator == null) {
-		logger.error("Could not process request: Translator instance is null");
-		return Response.serverError().build();
-	    }
-
-	    if (outFormat != null && (outFormat.toLowerCase().equals("imdi"))) {
-		logger.info("Requested IMDI translation for file: '{}'", location);
-		output = translator.getIMDI(inputFileURL, uriInfo.getAbsolutePath().toString());
-		logger.info("IMDI file returned in: {} ms", (System.currentTimeMillis() - initTime));
-	    } else if (outFormat != null && (outFormat.toLowerCase().equals("cmdi"))) {
-		logger.info("Requested CMDI translation for file: '{}'", location);
-		output = translator.getCMDI(inputFileURL, uriInfo.getAbsolutePath().toString());
-		logger.info("CMDI file returned in: {} ms", (System.currentTimeMillis() - initTime));
+	    final URL inputFileURL = this.resolveLocation(location);
+	    if (detectLoop(inputFileURL)) {
+		logger.error("Input location is in this service: {}. Potential loop: denying request, sending error response instead.", inputFileURL);
+		return Response.serverError().entity("Error: potential loop detected").build();
 	    } else {
-		//default is CMDI to IMDI
-		logger.warn("Unknown output format requested: '{}'. IMDI assumed.\nGenerating IMDI translation for file: '{}'", outFormat, location);
-		output = translator.getIMDI(inputFileURL, uriInfo.getAbsolutePath().toString());
-		logger.info("IMDI file returned in: {} ms", (System.currentTimeMillis() - initTime));
+		return translate(inputFileURL, outFormat, initTime);
 	    }
-
 	} catch (TransformerException e) {
 	    logger.error("Error running transformation: ", e);
 	    return Response.serverError().build();
@@ -106,18 +88,25 @@ public class Service {
 	    logger.error("Error reading input file: ", e);
 	    return Response.status(Status.NOT_FOUND).build();
 	}
+    }
 
-	Response.ResponseBuilder response = Response.ok(output);
-
-	// Expires 30 seconds from now.
-	//TODO: tune or remove!
-	CacheControl cc = new CacheControl();
-	cc.setMaxAge(30);
-	cc.setNoCache(false);
-	response.cacheControl(cc);
-
-	return response.build();
-
+    private String getOutput(String outFormat, final URL inputFileURL, final long initTime) throws XMLStreamException, IOException, TransformerException {
+	final String output;
+	if (outFormat != null && (outFormat.toLowerCase().equals("imdi"))) {
+	    logger.info("Requested IMDI translation for file: '{}'", inputFileURL);
+	    output = translator.getIMDI(inputFileURL, uriInfo.getAbsolutePath().toString());
+	    logger.debug("IMDI file returned in: {} ms", (System.currentTimeMillis() - initTime));
+	} else if (outFormat != null && (outFormat.toLowerCase().equals("cmdi"))) {
+	    logger.info("Requested CMDI translation for file: '{}'", inputFileURL);
+	    output = translator.getCMDI(inputFileURL, uriInfo.getAbsolutePath().toString());
+	    logger.debug("CMDI file returned in: {} ms", (System.currentTimeMillis() - initTime));
+	} else {
+	    //default is CMDI to IMDI
+	    logger.warn("Unknown output format requested: '{}'. IMDI assumed.\nGenerating IMDI translation for file: '{}'", outFormat, inputFileURL);
+	    output = translator.getIMDI(inputFileURL, uriInfo.getAbsolutePath().toString());
+	    logger.debug("IMDI file returned in: {} ms", (System.currentTimeMillis() - initTime));
+	}
+	return output;
     }
 
     /**
@@ -166,5 +155,37 @@ public class Service {
     private boolean fileProtocolAllowed() {
 	final String paramValue = servletContext.getInitParameter("allowFileProtocol");
 	return paramValue != null && Boolean.valueOf(paramValue);
+    }
+
+    private Response translate(final URL inputFileURL, String outFormat, final long initTime) throws XMLStreamException, TransformerException, IOException {
+	//translate file based on specified output format/language
+	if (translator == null) {
+	    logger.error("Could not process request: Translator instance is null");
+	    return Response.serverError().build();
+	}
+	String output = getOutput(outFormat, inputFileURL, initTime);
+
+	final Response.ResponseBuilder response = Response.ok(output);
+
+	// Expires 30 seconds from now.
+	//TODO: tune or remove!
+	CacheControl cc = new CacheControl();
+	cc.setMaxAge(30);
+	cc.setNoCache(false);
+	response.cacheControl(cc);
+
+	return response.build();
+    }
+
+    /**
+     * Detects whether request has the potential to cause a loop by checking if the input URL's host and path match
+     * this service's host and path
+     *
+     * @param inputUrl current input URL
+     * @return whether a loop was detected
+     */
+    private boolean detectLoop(final URL inputUrl) {
+	final URI serviceUrl = uriInfo.getAbsolutePath();
+	return inputUrl.getHost().equals(serviceUrl.getHost()) && inputUrl.getPath().equals(serviceUrl.getPath());
     }
 }

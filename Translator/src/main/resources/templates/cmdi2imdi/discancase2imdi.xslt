@@ -74,21 +74,23 @@
                 </Keys>
             </Content>
             <Actors>
-                <Actor>
-                    <Role>Author</Role>
-                    <Name><xsl:value-of select="Author_DiscAn/Name"/></Name>
-                    <FullName></FullName>
-                    <Code></Code>
-                    <FamilySocialRole></FamilySocialRole>
-                    <Languages></Languages>
-                    <EthnicGroup></EthnicGroup>
-                    <Age></Age>
-                    <BirthDate></BirthDate>
-                    <Sex></Sex>
-                    <Education></Education>
-                    <Anonymized>false</Anonymized>
-                    <Keys></Keys>
-                </Actor>
+                <xsl:if test="Author_DiscAn">
+                    <Actor>
+                        <Role>Author</Role>
+                        <Name><xsl:value-of select="Author_DiscAn/Name"/></Name>
+                        <FullName><xsl:value-of select="Author_DiscAn/Name"/></FullName>
+                        <Code></Code>
+                        <FamilySocialRole></FamilySocialRole>
+                        <Languages></Languages>
+                        <EthnicGroup></EthnicGroup>
+                        <Age></Age>
+                        <BirthDate></BirthDate>
+                        <Sex></Sex>
+                        <Education></Education>
+                        <Anonymized>false</Anonymized>
+                        <Keys></Keys>
+                    </Actor>
+                </xsl:if>
             </Actors>
         </MDGroup>
     </xsl:template>

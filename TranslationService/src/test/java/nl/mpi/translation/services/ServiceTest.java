@@ -40,11 +40,11 @@ public class ServiceTest extends AbstractServiceTest {
     public ServiceTest() {
 	// Build app descriptor without context parameters
 	super(new WebAppDescriptor.Builder(Service.class.getPackage().getName())
-	    .servletClass(SpringServlet.class)
-	    .contextParam("contextConfigLocation", "classpath:testApplicationContext.xml")
-	    .contextListenerClass(ContextLoaderListener.class).build());
+		.servletClass(SpringServlet.class)
+		.contextParam("contextConfigLocation", "classpath:testApplicationContext.xml")
+		.contextListenerClass(ContextLoaderListener.class).build());
     }
-    
+
     /**
      * Test of translate method, of class Service.
      */
@@ -146,5 +146,13 @@ public class ServiceTest extends AbstractServiceTest {
 		.queryParam("in", URLEncoder.encode("file:///local/file", "UTF-8"))
 		.get(ClientResponse.class);
 	assertEquals(403, response.getStatus());
+    }
+
+    @Test
+    public void testLoopInInput() throws Exception {
+	final WebResource resource = resource().path("/translate");
+	ClientResponse response = resource.queryParam("in", URLEncoder.encode(resource.getURI().toString(), "UTF-8"))
+		.get(ClientResponse.class);
+	assertEquals(500, response.getStatus());
     }
 }

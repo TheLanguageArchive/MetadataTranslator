@@ -20,13 +20,13 @@
                 <xsl:value-of select="tla:create-originator('discantextcorpus2corpus.xslt', //Header/MdSelfLink)" />
             </xsl:attribute>
             <Corpus>
-                <xsl:apply-templates select="//DiscAn_TextCorpus"/>
+                <xsl:apply-templates select="//DiscAn_TextCorpus" mode="DISCANTEXTCORPUS2CORPUS"/>
                 <xsl:apply-templates select="//ResourceProxy" mode="COLLECTION2CORPUS"/>
             </Corpus>
         </METATRANSCRIPT>
     </xsl:template>
     
-    <xsl:template match="DiscAn_TextCorpus">
+    <xsl:template match="DiscAn_TextCorpus" mode="DISCANTEXTCORPUS2CORPUS">
         <Name><xsl:value-of select="GeneralInfo/ResourceName"/></Name>
         <Title>DiscAn: <xsl:value-of select="GeneralInfo/ResourceTitle"/></Title>
         <Description><xsl:value-of select="GeneralInfo/Descriptions/Description"/></Description>
@@ -35,7 +35,7 @@
                 <Continent>Europe</Continent>
                 <Country>Netherlands</Country>
             </Location>
-            <xsl:apply-templates select="Project"/>
+            <xsl:apply-templates select="Project" mode="DISCANTEXTCORPUS2CORPUS"/>
             <Keys>
                 <xsl:for-each select="Publications/Publication">
                     <Key Name="Publication.Description"><xsl:value-of select="Descriptions/Description"/></Key>
@@ -47,7 +47,7 @@
                 <CommunicationContext>
                 </CommunicationContext>
                 <Languages>
-                    <xsl:apply-templates select="SubjectLanguages/SubjectLanguage" />
+                    <xsl:apply-templates select="SubjectLanguages/SubjectLanguage"  mode="DISCANTEXTCORPUS2CORPUS"/>
                 </Languages>
                 <Keys>
                     <Key Name="SizeInfo.TotalSize.Size"><xsl:value-of select="SizeInfo/TotalSize/Size"></xsl:value-of></Key>
@@ -62,12 +62,12 @@
                 </Keys>
             </Content>
             <Actors>
-                <xsl:apply-templates select="Creation/Creators/Creator/Contact" />
+                <xsl:apply-templates select="Creation/Creators/Creator/Contact"  mode="DISCANTEXTCORPUS2CORPUS"/>
             </Actors>
         </MDGroup>    
     </xsl:template>
     
-    <xsl:template match="Project">
+    <xsl:template match="Project" mode="DISCANTEXTCORPUS2CORPUS">
         <Project>
             <Name><xsl:value-of select="ProjectTitle"/></Name>
             <Title><xsl:value-of select="ProjectTitle"/></Title>
@@ -82,14 +82,14 @@
         </Project>
     </xsl:template>
 
-    <xsl:template match="SubjectLanguage">
+    <xsl:template match="SubjectLanguage" mode="DISCANTEXTCORPUS2CORPUS">
         <Language>
             <Id>ISO639-3:<xsl:value-of select="Language/ISO639/iso-639-3-code"/></Id>
             <Name><xsl:value-of select="Language/LanguageName"/></Name>
         </Language>
     </xsl:template>
     
-    <xsl:template match="Creator/Contact">
+    <xsl:template match="Creator/Contact" mode="DISCANTEXTCORPUS2CORPUS">
         <Actor>
             <Role><xsl:value-of select="Role" /></Role>
             <Name><xsl:value-of select="Person" /></Name>
