@@ -235,15 +235,19 @@ public class TranslatorImpl implements Translator {
     }
 
     private void writeURLContentsToStream(URL cmdiFileURL, StringWriter sw) throws IOException {
-	final InputStream ulrInputStream = cmdiFileURL.openConnection().getInputStream();
-	final BufferedReader rd = new BufferedReader(new InputStreamReader(ulrInputStream, "UTF-8"));
+	final InputStream urlInputStream = cmdiFileURL.openConnection().getInputStream();
 	try {
-	    String line;
-	    while ((line = rd.readLine()) != null) {
-		sw.write(line);
+	    final BufferedReader rd = new BufferedReader(new InputStreamReader(urlInputStream, "UTF-8"));
+	    try {
+		String line;
+		while ((line = rd.readLine()) != null) {
+		    sw.write(line);
+		}
+	    } finally {
+		rd.close();
 	    }
 	} finally {
-	    rd.close();
+	    urlInputStream.close();
 	}
     }
 }
