@@ -27,6 +27,7 @@ import java.net.URL;
 import javax.xml.stream.XMLInputFactory;
 import javax.xml.stream.XMLStreamException;
 import javax.xml.stream.XMLStreamReader;
+import javax.xml.transform.ErrorListener;
 import javax.xml.transform.Result;
 import javax.xml.transform.Source;
 import javax.xml.transform.Templates;
@@ -38,6 +39,7 @@ import javax.xml.transform.TransformerFactoryConfigurationError;
 import javax.xml.transform.stax.StAXSource;
 import javax.xml.transform.stream.StreamResult;
 import javax.xml.transform.stream.StreamSource;
+import nl.mpi.translation.tools.util.TranslationServiceErrorListener;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -72,6 +74,7 @@ public class TranslatorImpl implements Translator {
      */
     public TranslatorImpl() throws TransformerConfigurationException, IOException {
 	transfFactory = createTransformerFactory();
+	transfFactory.setErrorListener(new TranslationServiceErrorListener(logger));
 	logger.debug("Instantiated XML transformer factory of type {}", transfFactory.getClass());
 
 	xmlInputFactory = XMLInputFactory.newInstance();

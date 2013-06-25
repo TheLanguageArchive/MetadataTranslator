@@ -79,13 +79,13 @@ public class Service {
 		return translate(inputFileURL, outFormat, initTime);
 	    }
 	} catch (TransformerException e) {
-	    logger.error("Error running transformation: ", e);
+	    logger.error("Error running transformation to {} on {}: ", outFormat, location, e);
 	    return Response.serverError().build();
 	} catch (XMLStreamException e) {
-	    logger.error("Error running transformation: ", e);
+	    logger.error("Error running transformation to {} on {}: ", outFormat, location, e);
 	    return Response.serverError().build();
 	} catch (IOException e) {
-	    logger.error("Error reading input file: ", e);
+	    logger.error("Error reading input file to {} on {}: ", outFormat, location, e);
 	    return Response.status(Status.NOT_FOUND).build();
 	}
     }
