@@ -29,7 +29,7 @@
     <developers>
 	<developer>
 	    <id>andmor</id>
-	    <name>AndrŽ Moreira</name>
+	    <name>Andrï¿½ Moreira</name>
 	    <email>andmor@mpi.nl</email>
 	    <organization>MPI</organization>
 	    <timezone>+1</timezone>
@@ -76,7 +76,7 @@
 	</dependency>
     </dependencies>
     
-    <reporting>
+    <build>
 	<plugins>
 	    <plugin>
 		<groupId>org.codehaus.mojo</groupId>
@@ -89,5 +89,5 @@
 		</configuration>
 	    </plugin>
 	</plugins>
-    </reporting>
+    </build>
 </project>
