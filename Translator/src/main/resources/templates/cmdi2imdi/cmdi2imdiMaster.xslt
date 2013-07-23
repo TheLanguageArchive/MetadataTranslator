@@ -10,6 +10,7 @@
     <xsl:include href="discanproject2corpus.xslt"/>
     <xsl:include href="discantextcorpus2corpus.xslt"/>
     <xsl:include href="discancase2imdi.xslt"/>
+    <xsl:include href="soundbites2imdi.xslt"/>
     <xsl:include href="../util/identity.xslt"/>
     <xsl:include href="../util/handle.xslt"/>
     
@@ -38,6 +39,9 @@
             <xsl:when test="contains(/CMD/@xsi:schemaLocation, 'http://catalog.clarin.eu/ds/ComponentRegistry/rest/registry/profiles/clarin.eu:cr1:p_1366895758243/xsd')">
                 <xsl:call-template name="DISCANCASE2IMDI" />
             </xsl:when> 
+            <xsl:when test="contains(/CMD/@xsi:schemaLocation, 'http://catalog.clarin.eu/ds/ComponentRegistry/rest/registry/profiles/clarin.eu:cr1:p_1328259700928/xsd')">
+                <xsl:call-template name="SOUNDBITES2IMDI" />
+            </xsl:when>
             
             <!-- Add new profile templates here -->
 			<!--        
