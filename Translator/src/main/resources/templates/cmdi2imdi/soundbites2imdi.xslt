@@ -42,8 +42,10 @@
             <xsl:value-of select="SESSION/Name"/>
         </Name>
         <Title/>
-        <Date><xsl:value-of select="CreationYear"/></Date>
-
+        <Date><xsl:choose>            
+            <xsl:when test="CreationYear != ''"><xsl:value-of select="CreationYear"/></xsl:when>
+            <xsl:otherwise>Unspecified</xsl:otherwise>
+        </xsl:choose></Date>
         <MDGroup>
             <xsl:apply-templates select="GeoLocation" mode="SOUNDBITES2IMDI"/>
             <Project>
@@ -104,7 +106,11 @@
                 <xsl:for-each select="child::Topic">
                     <xsl:choose>
                         <xsl:when test="not(position() = last())">
-                            <xsl:value-of select="." /><xsl:text>, </xsl:text>
+                            <xsl:value-of select="." />
+                            <xsl:if test="not(ends-with(.,','))">
+                                <xsl:text>,</xsl:text>
+                            </xsl:if>
+                            <xsl:text> </xsl:text>
                         </xsl:when>
                         <xsl:otherwise>
                             <xsl:value-of select="." />
