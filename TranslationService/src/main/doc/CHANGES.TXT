@@ -1,5 +1,8 @@
 Current version: ${project.artifactId}-${project.version}-r${buildNumber}
 
+Changes for metadata-translator-1.1.5:
+- Updated stylesheet for IMDI to CMDI translation
+
 Changes for metadata-translator-1.1.4:
 - Added loop detection on input location
 - Default log level for own package set to WARN
