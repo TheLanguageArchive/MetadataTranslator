@@ -6,12 +6,12 @@
     <parent>
 	<groupId>nl.mpi.translation</groupId>
 	<artifactId>metadata-translator-parent</artifactId>
-	<version>1.1.5-STAGING</version>
+	<version>1.1.5</version>
     </parent>
 
     <groupId>nl.mpi.translation</groupId>
     <artifactId>metadata-translation-service</artifactId>
-    <version>1.1.5-STAGING</version>
+    <version>1.1.5</version>
     <name>CMDI &lt;-&gt; IMDI translation service webapp</name>
     <url>http://tla.mpi.nl</url>
     <description>A Jersey JAX-RS service to translate from CMDI to IMDI and vice-versa.</description>
