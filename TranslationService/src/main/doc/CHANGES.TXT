@@ -1,5 +1,8 @@
 Current version: ${project.artifactId}-${project.version}-r${buildNumber}
 
+Changes for metadata-translator-1.1.7:
+- Updated stylesheet for soundbites
+
 Changes for metadata-translator-1.1.6:
 - Added stylesheet for soundbites
 
