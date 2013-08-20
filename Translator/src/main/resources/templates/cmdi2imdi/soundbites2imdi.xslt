@@ -39,7 +39,12 @@
     
     <xsl:template match="Soundbites-recording" mode="SOUNDBITES2IMDI">
         <Name>
-            <xsl:value-of select="SESSION/Name"/>
+            <xsl:choose>
+                <xsl:when test="SESSION/Name">Unknown Name</xsl:when>
+                <xsl:otherwise>
+                    <xsl:value-of select="SESSION/Name"/>
+                </xsl:otherwise>
+            </xsl:choose>            
         </Name>
         <Title/>
         <Date><xsl:choose>            
