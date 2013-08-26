@@ -151,7 +151,7 @@
     <xsl:template match="TechnicalMetadata" mode="SOUNDBITES2IMDI">
         <MediaFile>
             <xsl:variable name="id"><xsl:value-of select="@ref" /></xsl:variable>
-            <ResourceLink><xsl:value-of select="ancestor::Components/preceding-sibling::Resources/ResourceProxyList/ResourceProxy[@id=$id]/ResourceRef" /></ResourceLink>
+            <ResourceLink><xsl:apply-templates select="//Resources/ResourceProxyList/ResourceProxy[@id=$id]" mode="create-resource-link-content" /></ResourceLink>
             <Type Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Type.xml" Type="ClosedVocabulary"><xsl:value-of select="substring-before(child::MimeType,'/')" /></Type>
             <Format Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Format.xml" Type="OpenVocabulary"><xsl:value-of select="child::MimeType" /></Format>
             <Size><xsl:value-of select="child::Size/TotalSize[last()]/Number" /><xsl:text> </xsl:text><xsl:value-of select="child::Size/TotalSize[last()]/SizeUnit" /></Size>

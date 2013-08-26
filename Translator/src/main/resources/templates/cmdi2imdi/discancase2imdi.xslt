@@ -97,16 +97,7 @@
     
     <xsl:template match="ResourceProxy" mode="DISCANCASE2IMDI">
         <WrittenResource>
-            <ResourceLink>
-                <xsl:variable name="handle" select="tla:getBaseHandle(ResourceRef)"/>
-                <xsl:choose>
-                    <xsl:when  test="$handle">
-                        <xsl:value-of select="concat('http://hdl.handle.net/',$handle)"/>
-                    </xsl:when>
-                    <xsl:otherwise>
-                        <xsl:value-of select="ResourceRef"/>
-                    </xsl:otherwise>
-                </xsl:choose></ResourceLink>
+            <ResourceLink><xsl:apply-templates select="." mode="create-resource-link-content"/></ResourceLink>
             <MediaResourceLink></MediaResourceLink>
             <Date></Date>
             <Type>Annotation</Type>

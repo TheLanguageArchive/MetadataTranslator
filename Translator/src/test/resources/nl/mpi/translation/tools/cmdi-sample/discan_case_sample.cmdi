@@ -3,7 +3,10 @@
      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
      CMDVersion="1.1"
      xsi:schemaLocation="http://www.clarin.eu/cmd/ http://catalog.clarin.eu/ds/ComponentRegistry/rest/registry/profiles/clarin.eu:cr1:p_1366895758243/xsd ">
-   <Header/>
+   <Header>
+       <MdCreationDate>2013-01-01</MdCreationDate>
+       <MdSelfLink>hdl:1234</MdSelfLink>
+   </Header>
    <Resources>
       <ResourceProxyList>
          <ResourceProxy id="rbace7544-fa3d-43a1-85f5-18d40c532cc2">

@@ -52,6 +52,8 @@ public class TranslatorImplTest {
     public static final String IPROSLA_NO_SELFLINK_CMDI = CMDI_SAMPLES_LOCATION + "/iprosla_sample_no_selflink.cmdi";
     public static final String IPROSLA_NO_SELFLINK_TO_SESSION_IMDI = CMDI_SAMPLES_LOCATION + "/iprosla_sample_no_selflink_to_session.imdi";
     public static final String OTHER_CMDI = CMDI_SAMPLES_LOCATION + "/other_sample.cmdi";
+    public static final String DISCAN_CASE_CMDI = CMDI_SAMPLES_LOCATION + "/discan_case_sample.cmdi";
+    public static final String DISCAN_CASE__TO_SESSION_IMDI = CMDI_SAMPLES_LOCATION + "/discan_case_sample_to_session.imdi";
     // IMDI Sample locations
     public static final String IMDI_SAMPLES_LOCATION = "/nl/mpi/translation/tools/imdi-sample";
     public static final String IMDI_SAMPLE = IMDI_SAMPLES_LOCATION + "/kleve_route.imdi";
@@ -81,13 +83,8 @@ public class TranslatorImplTest {
      */
     @Test
     public void testGetIMDIForCollection() throws Exception {
-	URL cmdiFileURL = getClass().getResource(COLLECTION_CMDI);
 	logger.info("Testing translation of collection file to IMDI");
-	logger.debug(cmdiFileURL.toString());
-	// Request translation
-	String result = instance.getIMDI(cmdiFileURL, SERVICE_URI);
-	// Compare to expectation (loaded from resource)
-	assertTranslationResult(COLLECTION_TO_CORPUS_IMDI, normalizeImdiOutput(result, cmdiFileURL));
+	testGetIMDI(COLLECTION_CMDI, COLLECTION_TO_CORPUS_IMDI);
     }
 
     /**
@@ -95,13 +92,17 @@ public class TranslatorImplTest {
      */
     @Test
     public void testGetIMDIForCollectionAsXML() throws Exception {
-	URL cmdiFileURL = getClass().getResource(COLLECTION_XML);
 	logger.info("Testing translation of .xml CMDI file to IMDI");
-	logger.debug(cmdiFileURL.toString());
-	// Request translation
-	String result = instance.getIMDI(cmdiFileURL, SERVICE_URI);
-	// Compare to expectation (loaded from resource)
-	assertTranslationResult(COLLECTION_TO_CORPUS_IMDI, normalizeImdiOutput(result, cmdiFileURL));
+	testGetIMDI(COLLECTION_XML, COLLECTION_TO_CORPUS_IMDI);
+    }
+
+    /**
+     * Requests translation of an DiscAn instance
+     */
+    @Test
+    public void testGetIMDIForDiscAn() throws Exception {
+	logger.info("Testing translation of DiscAn case instance to IMDI");
+	testGetIMDI(DISCAN_CASE_CMDI, DISCAN_CASE__TO_SESSION_IMDI);
     }
 
     /**
@@ -110,13 +111,8 @@ public class TranslatorImplTest {
      */
     @Test
     public void testGetIMDIForIPROSLA() throws Exception {
-	URL cmdiFileURL = getClass().getResource(IPROSLA_CMDI);
 	logger.info("Testing translation of IPROSLA instance to IMDI");
-	logger.debug(cmdiFileURL.toString());
-	// Request translation
-	String result = instance.getIMDI(cmdiFileURL, SERVICE_URI);
-	// Compare to expectation (loaded from resource)
-	assertTranslationResult(IPROSLA_TO_SESSION_IMDI, normalizeImdiOutput(result, cmdiFileURL));
+	testGetIMDI(IPROSLA_CMDI, IPROSLA_TO_SESSION_IMDI);
     }
 
     /**
@@ -125,13 +121,8 @@ public class TranslatorImplTest {
      */
     @Test
     public void testGetIMDIForIPROSLANoSelflink() throws Exception {
-	URL cmdiFileURL = getClass().getResource(IPROSLA_NO_SELFLINK_CMDI);
 	logger.info("Testing translation of IPROSLA instance to IMDI");
-	logger.debug(cmdiFileURL.toString());
-	// Request translation
-	String result = instance.getIMDI(cmdiFileURL, SERVICE_URI);
-	// Compare to expectation (loaded from resource)
-	assertTranslationResult(IPROSLA_NO_SELFLINK_TO_SESSION_IMDI, normalizeImdiOutput(result, cmdiFileURL));
+	testGetIMDI(IPROSLA_NO_SELFLINK_CMDI, IPROSLA_NO_SELFLINK_TO_SESSION_IMDI);
     }
 
     /**
@@ -202,6 +193,21 @@ public class TranslatorImplTest {
 	String result = instance.getCMDI(inputFileURL, SERVICE_URI);
 	// Expecting output to be identical to input
 	assertTranslationResult(COLLECTION_CMDI, result);
+    }
+
+    /**
+     * Requests translation from IMDI to CMDI
+     *
+     * @param cmdiResource resource location of cmdi to translate
+     * @param targetImdiResource resource location of normalized target result
+     */
+    private void testGetIMDI(String cmdiResource, String targetImdiResource) throws Exception {
+	final URL cmdiFileURL = getClass().getResource(cmdiResource);
+	logger.debug(cmdiFileURL.toString());
+	// Request translation
+	final String result = instance.getIMDI(cmdiFileURL, SERVICE_URI);
+	// Compare to expectation (loaded from resource)
+	assertTranslationResult(targetImdiResource, normalizeImdiOutput(result, cmdiFileURL));
     }
 
     /**

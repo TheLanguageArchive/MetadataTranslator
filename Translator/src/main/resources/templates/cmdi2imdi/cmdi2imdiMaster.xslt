@@ -69,4 +69,18 @@
         </xsl:choose>
     </xsl:function>
     
+    <xsl:template match="ResourceProxy" mode="create-resource-link-content">
+        <xsl:variable name="handle" select="tla:getBaseHandle(ResourceRef)"/>
+        <xsl:choose>
+            <xsl:when  test="$handle">
+                <xsl:attribute name="ArchiveHandle">
+                    <xsl:value-of select="concat('http://hdl.handle.net/',$handle)"/>
+                </xsl:attribute>
+            </xsl:when>
+            <xsl:otherwise>
+                <xsl:value-of select="ResourceRef"/>
+            </xsl:otherwise>
+        </xsl:choose>
+    </xsl:template>
+    
 </xsl:stylesheet>

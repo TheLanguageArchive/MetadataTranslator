@@ -1,0 +1,698 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<METATRANSCRIPT xmlns="http://www.mpi.nl/IMDI/Schema/IMDI"
+                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                xmlns:tla="http://tla.mpi.nl"
+                FormatId="IMDI 3.0"
+                Type="SESSION"
+                Version="0"
+                xsi:schemaLocation="http://www.mpi.nl/IMDI/Schema/IMDI http://www.mpi.nl/IMDI/Schema/IMDI_3.0.xsd"
+                Date="2013-01-01"
+                ArchiveHandle="hdl:1234@format=imdi"
+                Originator="Metadata Translator: discancase2imdi.xslt hdl:1234">
+   <Session>
+      <Name>Degand_2_2_awo_NRC 30</Name>
+      <Title>Familievete over grafschrift</Title>
+      <Date>1994-01-18</Date>
+      <MDGroup>
+         <Location>
+            <Continent/>
+            <Country/>
+         </Location>
+         <Project>
+            <Name>Degand22</Name>
+            <Title>DiscAn: Degand22</Title>
+            <Id/>
+            <Contact/>
+         </Project>
+         <Keys/>
+         <Content>
+            <Genre>newspaper</Genre>
+            <CommunicationContext/>
+            <Languages>
+               <Language>
+                  <Id>ISO639-3:nld</Id>
+                  <Name>Dutch</Name>
+               </Language>
+            </Languages>
+            <Keys>
+               <Key Name="TotalSize.Number">1148</Key>
+               <Key Name="TotalSize.SizeUnit">word</Key>
+               <Key Name="Source.SourceName">NRC</Key>
+               <Key Name="ModalityInfo.Modalities">written</Key>
+               <Key Name="AnnotatedFeatures.SubcorpusName">Degand_2_2_awo_NRC</Key>
+               <Key Name="AnnotatedFeatures.NameDataset"> </Key>
+               <Key Name="AnnotatedFeatures.FragmentID">30</Key>
+               <Key Name="AnnotatedFeatures.BasicOperation">causal</Key>
+               <Key Name="AnnotatedFeatures.Connective">aangezien</Key>
+               <Key Name="AnnotatedFeatures.LinguisticMarking">yes</Key>
+               <Key Name="AnnotatedFeatures.SegmentOrder">basic</Key>
+               <Key Name="AnnotatedFeatures.Polarity">positive</Key>
+               <Key Name="AnnotatedFeatures.SourceofCoherence">epistemic</Key>
+               <Key Name="AnnotatedFeatures.SubjectofConsciousness">secondary speaker/author</Key>
+               <Key Name="AnnotatedFeatures.Volitionality">not applicable</Key>
+               <Key Name="AnnotatedFeatures.ModalityFirstSegment">judgment</Key>
+               <Key Name="AnnotatedFeatures.ModalitySecondSegment">fact</Key>
+            </Keys>
+         </Content>
+         <Actors>
+            <Actor>
+               <Role>Author</Role>
+               <Name>FRITS ABRAHAMS</Name>
+               <FullName>FRITS ABRAHAMS</FullName>
+               <Code/>
+               <FamilySocialRole/>
+               <Languages/>
+               <EthnicGroup/>
+               <Age/>
+               <BirthDate/>
+               <Sex/>
+               <Education/>
+               <Anonymized>false</Anonymized>
+               <Keys/>
+            </Actor>
+         </Actors>
+      </MDGroup>
+      <Resources>
+         <WrittenResource>
+            <ResourceLink ArchiveHandle="http://hdl.handle.net/1234-abc"/>
+            <MediaResourceLink/>
+            <Date/>
+            <Type>Annotation</Type>
+            <SubType/>
+            <Format>text/xml</Format>
+            <Size/>
+            <Validation>
+               <Type/>
+               <Methodology/>
+            </Validation>
+            <Derivation/>
+            <CharacterEncoding/>
+            <ContentEncoding/>
+            <LanguageId/>
+            <Anonymized>false</Anonymized>
+            <Access>
+               <Availability/>
+               <Date/>
+               <Owner/>
+               <Publisher/>
+               <Contact>
+                  <Name>Prof. dr. Ted Sanders</Name>
+                  <Address>Trans 10, 3512 JK, Utrecht / Korte Nieuwstraat 2-4</Address>
+                  <Email>T.J.M.Sanders@uu.nl</Email>
+                  <Organisation>Utrecht University</Organisation>
+               </Contact>
+            </Access>
+            <Keys/>
+         </WrittenResource>
+         <WrittenResource>
+            <ResourceLink ArchiveHandle="http://hdl.handle.net/5678-xyz"/>
+            <MediaResourceLink/>
+            <Date/>
+            <Type>Annotation</Type>
+            <SubType/>
+            <Format>text/xml</Format>
+            <Size/>
+            <Validation>
+               <Type/>
+               <Methodology/>
+            </Validation>
+            <Derivation/>
+            <CharacterEncoding/>
+            <ContentEncoding/>
+            <LanguageId/>
+            <Anonymized>false</Anonymized>
+            <Access>
+               <Availability/>
+               <Date/>
+               <Owner/>
+               <Publisher/>
+               <Contact>
+                  <Name>Prof. dr. Ted Sanders</Name>
+                  <Address>Trans 10, 3512 JK, Utrecht / Korte Nieuwstraat 2-4</Address>
+                  <Email>T.J.M.Sanders@uu.nl</Email>
+                  <Organisation>Utrecht University</Organisation>
+               </Contact>
+            </Access>
+            <Keys/>
+         </WrittenResource>
+         <WrittenResource>
+            <ResourceLink>Degand_2_2_awo_NRC_1/Degand_2_2_awo_NRC_1.feat_Admin_corpus.xml</ResourceLink>
+            <MediaResourceLink/>
+            <Date/>
+            <Type>Annotation</Type>
+            <SubType/>
+            <Format>text/xml</Format>
+            <Size/>
+            <Validation>
+               <Type/>
+               <Methodology/>
+            </Validation>
+            <Derivation/>
+            <CharacterEncoding/>
+            <ContentEncoding/>
+            <LanguageId/>
+            <Anonymized>false</Anonymized>
+            <Access>
+               <Availability/>
+               <Date/>
+               <Owner/>
+               <Publisher/>
+               <Contact>
+                  <Name>Prof. dr. Ted Sanders</Name>
+                  <Address>Trans 10, 3512 JK, Utrecht / Korte Nieuwstraat 2-4</Address>
+                  <Email>T.J.M.Sanders@uu.nl</Email>
+                  <Organisation>Utrecht University</Organisation>
+               </Contact>
+            </Access>
+            <Keys/>
+         </WrittenResource>
+         <WrittenResource>
+            <ResourceLink>Degand_2_2_awo_NRC_1/Degand_2_2_awo_NRC_1.feat_Admin_dataset.xml</ResourceLink>
+            <MediaResourceLink/>
+            <Date/>
+            <Type>Annotation</Type>
+            <SubType/>
+            <Format>text/xml</Format>
+            <Size/>
+            <Validation>
+               <Type/>
+               <Methodology/>
+            </Validation>
+            <Derivation/>
+            <CharacterEncoding/>
+            <ContentEncoding/>
+            <LanguageId/>
+            <Anonymized>false</Anonymized>
+            <Access>
+               <Availability/>
+               <Date/>
+               <Owner/>
+               <Publisher/>
+               <Contact>
+                  <Name>Prof. dr. Ted Sanders</Name>
+                  <Address>Trans 10, 3512 JK, Utrecht / Korte Nieuwstraat 2-4</Address>
+                  <Email>T.J.M.Sanders@uu.nl</Email>
+                  <Organisation>Utrecht University</Organisation>
+               </Contact>
+            </Access>
+            <Keys/>
+         </WrittenResource>
+         <WrittenResource>
+            <ResourceLink>Degand_2_2_awo_NRC_1/Degand_2_2_awo_NRC_1.feat_Admin_fragm_nr.xml</ResourceLink>
+            <MediaResourceLink/>
+            <Date/>
+            <Type>Annotation</Type>
+            <SubType/>
+            <Format>text/xml</Format>
+            <Size/>
+            <Validation>
+               <Type/>
+               <Methodology/>
+            </Validation>
+            <Derivation/>
+            <CharacterEncoding/>
+            <ContentEncoding/>
+            <LanguageId/>
+            <Anonymized>false</Anonymized>
+            <Access>
+               <Availability/>
+               <Date/>
+               <Owner/>
+               <Publisher/>
+               <Contact>
+                  <Name>Prof. dr. Ted Sanders</Name>
+                  <Address>Trans 10, 3512 JK, Utrecht / Korte Nieuwstraat 2-4</Address>
+                  <Email>T.J.M.Sanders@uu.nl</Email>
+                  <Organisation>Utrecht University</Organisation>
+               </Contact>
+            </Access>
+            <Keys/>
+         </WrittenResource>
+         <WrittenResource>
+            <ResourceLink>Degand_2_2_awo_NRC_1/Degand_2_2_awo_NRC_1.feat_Rel_BasicOp.xml</ResourceLink>
+            <MediaResourceLink/>
+            <Date/>
+            <Type>Annotation</Type>
+            <SubType/>
+            <Format>text/xml</Format>
+            <Size/>
+            <Validation>
+               <Type/>
+               <Methodology/>
+            </Validation>
+            <Derivation/>
+            <CharacterEncoding/>
+            <ContentEncoding/>
+            <LanguageId/>
+            <Anonymized>false</Anonymized>
+            <Access>
+               <Availability/>
+               <Date/>
+               <Owner/>
+               <Publisher/>
+               <Contact>
+                  <Name>Prof. dr. Ted Sanders</Name>
+                  <Address>Trans 10, 3512 JK, Utrecht / Korte Nieuwstraat 2-4</Address>
+                  <Email>T.J.M.Sanders@uu.nl</Email>
+                  <Organisation>Utrecht University</Organisation>
+               </Contact>
+            </Access>
+            <Keys/>
+         </WrittenResource>
+         <WrittenResource>
+            <ResourceLink>Degand_2_2_awo_NRC_1/Degand_2_2_awo_NRC_1.feat_Rel_Conn.xml</ResourceLink>
+            <MediaResourceLink/>
+            <Date/>
+            <Type>Annotation</Type>
+            <SubType/>
+            <Format>text/xml</Format>
+            <Size/>
+            <Validation>
+               <Type/>
+               <Methodology/>
+            </Validation>
+            <Derivation/>
+            <CharacterEncoding/>
+            <ContentEncoding/>
+            <LanguageId/>
+            <Anonymized>false</Anonymized>
+            <Access>
+               <Availability/>
+               <Date/>
+               <Owner/>
+               <Publisher/>
+               <Contact>
+                  <Name>Prof. dr. Ted Sanders</Name>
+                  <Address>Trans 10, 3512 JK, Utrecht / Korte Nieuwstraat 2-4</Address>
+                  <Email>T.J.M.Sanders@uu.nl</Email>
+                  <Organisation>Utrecht University</Organisation>
+               </Contact>
+            </Access>
+            <Keys/>
+         </WrittenResource>
+         <WrittenResource>
+            <ResourceLink>Degand_2_2_awo_NRC_1/Degand_2_2_awo_NRC_1.feat_Rel_LingMark.xml</ResourceLink>
+            <MediaResourceLink/>
+            <Date/>
+            <Type>Annotation</Type>
+            <SubType/>
+            <Format>text/xml</Format>
+            <Size/>
+            <Validation>
+               <Type/>
+               <Methodology/>
+            </Validation>
+            <Derivation/>
+            <CharacterEncoding/>
+            <ContentEncoding/>
+            <LanguageId/>
+            <Anonymized>false</Anonymized>
+            <Access>
+               <Availability/>
+               <Date/>
+               <Owner/>
+               <Publisher/>
+               <Contact>
+                  <Name>Prof. dr. Ted Sanders</Name>
+                  <Address>Trans 10, 3512 JK, Utrecht / Korte Nieuwstraat 2-4</Address>
+                  <Email>T.J.M.Sanders@uu.nl</Email>
+                  <Organisation>Utrecht University</Organisation>
+               </Contact>
+            </Access>
+            <Keys/>
+         </WrittenResource>
+         <WrittenResource>
+            <ResourceLink>Degand_2_2_awo_NRC_1/Degand_2_2_awo_NRC_1.feat_Rel_Order.xml</ResourceLink>
+            <MediaResourceLink/>
+            <Date/>
+            <Type>Annotation</Type>
+            <SubType/>
+            <Format>text/xml</Format>
+            <Size/>
+            <Validation>
+               <Type/>
+               <Methodology/>
+            </Validation>
+            <Derivation/>
+            <CharacterEncoding/>
+            <ContentEncoding/>
+            <LanguageId/>
+            <Anonymized>false</Anonymized>
+            <Access>
+               <Availability/>
+               <Date/>
+               <Owner/>
+               <Publisher/>
+               <Contact>
+                  <Name>Prof. dr. Ted Sanders</Name>
+                  <Address>Trans 10, 3512 JK, Utrecht / Korte Nieuwstraat 2-4</Address>
+                  <Email>T.J.M.Sanders@uu.nl</Email>
+                  <Organisation>Utrecht University</Organisation>
+               </Contact>
+            </Access>
+            <Keys/>
+         </WrittenResource>
+         <WrittenResource>
+            <ResourceLink>Degand_2_2_awo_NRC_1/Degand_2_2_awo_NRC_1.feat_Rel_Pol.xml</ResourceLink>
+            <MediaResourceLink/>
+            <Date/>
+            <Type>Annotation</Type>
+            <SubType/>
+            <Format>text/xml</Format>
+            <Size/>
+            <Validation>
+               <Type/>
+               <Methodology/>
+            </Validation>
+            <Derivation/>
+            <CharacterEncoding/>
+            <ContentEncoding/>
+            <LanguageId/>
+            <Anonymized>false</Anonymized>
+            <Access>
+               <Availability/>
+               <Date/>
+               <Owner/>
+               <Publisher/>
+               <Contact>
+                  <Name>Prof. dr. Ted Sanders</Name>
+                  <Address>Trans 10, 3512 JK, Utrecht / Korte Nieuwstraat 2-4</Address>
+                  <Email>T.J.M.Sanders@uu.nl</Email>
+                  <Organisation>Utrecht University</Organisation>
+               </Contact>
+            </Access>
+            <Keys/>
+         </WrittenResource>
+         <WrittenResource>
+            <ResourceLink>Degand_2_2_awo_NRC_1/Degand_2_2_awo_NRC_1.feat_Rel_SrceofCoh.xml</ResourceLink>
+            <MediaResourceLink/>
+            <Date/>
+            <Type>Annotation</Type>
+            <SubType/>
+            <Format>text/xml</Format>
+            <Size/>
+            <Validation>
+               <Type/>
+               <Methodology/>
+            </Validation>
+            <Derivation/>
+            <CharacterEncoding/>
+            <ContentEncoding/>
+            <LanguageId/>
+            <Anonymized>false</Anonymized>
+            <Access>
+               <Availability/>
+               <Date/>
+               <Owner/>
+               <Publisher/>
+               <Contact>
+                  <Name>Prof. dr. Ted Sanders</Name>
+                  <Address>Trans 10, 3512 JK, Utrecht / Korte Nieuwstraat 2-4</Address>
+                  <Email>T.J.M.Sanders@uu.nl</Email>
+                  <Organisation>Utrecht University</Organisation>
+               </Contact>
+            </Access>
+            <Keys/>
+         </WrittenResource>
+         <WrittenResource>
+            <ResourceLink>Degand_2_2_awo_NRC_1/Degand_2_2_awo_NRC_1.feat_Rel_SubjofConsc.xml</ResourceLink>
+            <MediaResourceLink/>
+            <Date/>
+            <Type>Annotation</Type>
+            <SubType/>
+            <Format>text/xml</Format>
+            <Size/>
+            <Validation>
+               <Type/>
+               <Methodology/>
+            </Validation>
+            <Derivation/>
+            <CharacterEncoding/>
+            <ContentEncoding/>
+            <LanguageId/>
+            <Anonymized>false</Anonymized>
+            <Access>
+               <Availability/>
+               <Date/>
+               <Owner/>
+               <Publisher/>
+               <Contact>
+                  <Name>Prof. dr. Ted Sanders</Name>
+                  <Address>Trans 10, 3512 JK, Utrecht / Korte Nieuwstraat 2-4</Address>
+                  <Email>T.J.M.Sanders@uu.nl</Email>
+                  <Organisation>Utrecht University</Organisation>
+               </Contact>
+            </Access>
+            <Keys/>
+         </WrittenResource>
+         <WrittenResource>
+            <ResourceLink>Degand_2_2_awo_NRC_1/Degand_2_2_awo_NRC_1.feat_Rel_Vol.xml</ResourceLink>
+            <MediaResourceLink/>
+            <Date/>
+            <Type>Annotation</Type>
+            <SubType/>
+            <Format>text/xml</Format>
+            <Size/>
+            <Validation>
+               <Type/>
+               <Methodology/>
+            </Validation>
+            <Derivation/>
+            <CharacterEncoding/>
+            <ContentEncoding/>
+            <LanguageId/>
+            <Anonymized>false</Anonymized>
+            <Access>
+               <Availability/>
+               <Date/>
+               <Owner/>
+               <Publisher/>
+               <Contact>
+                  <Name>Prof. dr. Ted Sanders</Name>
+                  <Address>Trans 10, 3512 JK, Utrecht / Korte Nieuwstraat 2-4</Address>
+                  <Email>T.J.M.Sanders@uu.nl</Email>
+                  <Organisation>Utrecht University</Organisation>
+               </Contact>
+            </Access>
+            <Keys/>
+         </WrittenResource>
+         <WrittenResource>
+            <ResourceLink>Degand_2_2_awo_NRC_1/Degand_2_2_awo_NRC_1.feat_Segm_ModS1.xml</ResourceLink>
+            <MediaResourceLink/>
+            <Date/>
+            <Type>Annotation</Type>
+            <SubType/>
+            <Format>text/xml</Format>
+            <Size/>
+            <Validation>
+               <Type/>
+               <Methodology/>
+            </Validation>
+            <Derivation/>
+            <CharacterEncoding/>
+            <ContentEncoding/>
+            <LanguageId/>
+            <Anonymized>false</Anonymized>
+            <Access>
+               <Availability/>
+               <Date/>
+               <Owner/>
+               <Publisher/>
+               <Contact>
+                  <Name>Prof. dr. Ted Sanders</Name>
+                  <Address>Trans 10, 3512 JK, Utrecht / Korte Nieuwstraat 2-4</Address>
+                  <Email>T.J.M.Sanders@uu.nl</Email>
+                  <Organisation>Utrecht University</Organisation>
+               </Contact>
+            </Access>
+            <Keys/>
+         </WrittenResource>
+         <WrittenResource>
+            <ResourceLink>Degand_2_2_awo_NRC_1/Degand_2_2_awo_NRC_1.feat_Segm_ModS2.xml</ResourceLink>
+            <MediaResourceLink/>
+            <Date/>
+            <Type>Annotation</Type>
+            <SubType/>
+            <Format>text/xml</Format>
+            <Size/>
+            <Validation>
+               <Type/>
+               <Methodology/>
+            </Validation>
+            <Derivation/>
+            <CharacterEncoding/>
+            <ContentEncoding/>
+            <LanguageId/>
+            <Anonymized>false</Anonymized>
+            <Access>
+               <Availability/>
+               <Date/>
+               <Owner/>
+               <Publisher/>
+               <Contact>
+                  <Name>Prof. dr. Ted Sanders</Name>
+                  <Address>Trans 10, 3512 JK, Utrecht / Korte Nieuwstraat 2-4</Address>
+                  <Email>T.J.M.Sanders@uu.nl</Email>
+                  <Organisation>Utrecht University</Organisation>
+               </Contact>
+            </Access>
+            <Keys/>
+         </WrittenResource>
+         <WrittenResource>
+            <ResourceLink>Degand_2_2_awo_NRC_1/Degand_2_2_awo_NRC_1.grouping.xml</ResourceLink>
+            <MediaResourceLink/>
+            <Date/>
+            <Type>Annotation</Type>
+            <SubType/>
+            <Format>text/xml</Format>
+            <Size/>
+            <Validation>
+               <Type/>
+               <Methodology/>
+            </Validation>
+            <Derivation/>
+            <CharacterEncoding/>
+            <ContentEncoding/>
+            <LanguageId/>
+            <Anonymized>false</Anonymized>
+            <Access>
+               <Availability/>
+               <Date/>
+               <Owner/>
+               <Publisher/>
+               <Contact>
+                  <Name>Prof. dr. Ted Sanders</Name>
+                  <Address>Trans 10, 3512 JK, Utrecht / Korte Nieuwstraat 2-4</Address>
+                  <Email>T.J.M.Sanders@uu.nl</Email>
+                  <Organisation>Utrecht University</Organisation>
+               </Contact>
+            </Access>
+            <Keys/>
+         </WrittenResource>
+         <WrittenResource>
+            <ResourceLink>Degand_2_2_awo_NRC_1/Degand_2_2_awo_NRC_1.seg.xml</ResourceLink>
+            <MediaResourceLink/>
+            <Date/>
+            <Type>Annotation</Type>
+            <SubType/>
+            <Format>text/xml</Format>
+            <Size/>
+            <Validation>
+               <Type/>
+               <Methodology/>
+            </Validation>
+            <Derivation/>
+            <CharacterEncoding/>
+            <ContentEncoding/>
+            <LanguageId/>
+            <Anonymized>false</Anonymized>
+            <Access>
+               <Availability/>
+               <Date/>
+               <Owner/>
+               <Publisher/>
+               <Contact>
+                  <Name>Prof. dr. Ted Sanders</Name>
+                  <Address>Trans 10, 3512 JK, Utrecht / Korte Nieuwstraat 2-4</Address>
+                  <Email>T.J.M.Sanders@uu.nl</Email>
+                  <Organisation>Utrecht University</Organisation>
+               </Contact>
+            </Access>
+            <Keys/>
+         </WrittenResource>
+         <WrittenResource>
+            <ResourceLink>Degand_2_2_awo_NRC_1/Degand_2_2_awo_NRC_1.text.xml</ResourceLink>
+            <MediaResourceLink/>
+            <Date/>
+            <Type>Annotation</Type>
+            <SubType/>
+            <Format>text/xml</Format>
+            <Size/>
+            <Validation>
+               <Type/>
+               <Methodology/>
+            </Validation>
+            <Derivation/>
+            <CharacterEncoding/>
+            <ContentEncoding/>
+            <LanguageId/>
+            <Anonymized>false</Anonymized>
+            <Access>
+               <Availability/>
+               <Date/>
+               <Owner/>
+               <Publisher/>
+               <Contact>
+                  <Name>Prof. dr. Ted Sanders</Name>
+                  <Address>Trans 10, 3512 JK, Utrecht / Korte Nieuwstraat 2-4</Address>
+                  <Email>T.J.M.Sanders@uu.nl</Email>
+                  <Organisation>Utrecht University</Organisation>
+               </Contact>
+            </Access>
+            <Keys/>
+         </WrittenResource>
+         <WrittenResource>
+            <ResourceLink>Degand_2_2_awo_NRC_1/Degand_2_2_awo_NRC_1.tok.xml</ResourceLink>
+            <MediaResourceLink/>
+            <Date/>
+            <Type>Annotation</Type>
+            <SubType/>
+            <Format>text/xml</Format>
+            <Size/>
+            <Validation>
+               <Type/>
+               <Methodology/>
+            </Validation>
+            <Derivation/>
+            <CharacterEncoding/>
+            <ContentEncoding/>
+            <LanguageId/>
+            <Anonymized>false</Anonymized>
+            <Access>
+               <Availability/>
+               <Date/>
+               <Owner/>
+               <Publisher/>
+               <Contact>
+                  <Name>Prof. dr. Ted Sanders</Name>
+                  <Address>Trans 10, 3512 JK, Utrecht / Korte Nieuwstraat 2-4</Address>
+                  <Email>T.J.M.Sanders@uu.nl</Email>
+                  <Organisation>Utrecht University</Organisation>
+               </Contact>
+            </Access>
+            <Keys/>
+         </WrittenResource>
+         <WrittenResource>
+            <ResourceLink>Degand_2_2_awo_NRC_1/Degand_2_2_awo_NRC_1.values.xml</ResourceLink>
+            <MediaResourceLink/>
+            <Date/>
+            <Type>Annotation</Type>
+            <SubType/>
+            <Format>text/xml</Format>
+            <Size/>
+            <Validation>
+               <Type/>
+               <Methodology/>
+            </Validation>
+            <Derivation/>
+            <CharacterEncoding/>
+            <ContentEncoding/>
+            <LanguageId/>
+            <Anonymized>false</Anonymized>
+            <Access>
+               <Availability/>
+               <Date/>
+               <Owner/>
+               <Publisher/>
+               <Contact>
+                  <Name>Prof. dr. Ted Sanders</Name>
+                  <Address>Trans 10, 3512 JK, Utrecht / Korte Nieuwstraat 2-4</Address>
+                  <Email>T.J.M.Sanders@uu.nl</Email>
+                  <Organisation>Utrecht University</Organisation>
+               </Contact>
+            </Access>
+            <Keys/>
+         </WrittenResource>
+      </Resources>
+   </Session>
+</METATRANSCRIPT>

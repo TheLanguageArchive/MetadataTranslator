@@ -176,16 +176,16 @@
     </xsl:template>    
     
     <xsl:template match="SL-Resources" mode="IPROSLA2IMDI">
-        <xsl:apply-templates select="//SL-MediaFile" mode="IPROSLA2IMDI"/>
-        <xsl:apply-templates select="//SL-AnnotationDocument" mode="IPROSLA2IMDI"/>
-        <xsl:apply-templates select="//SL-SourceVideo" mode="IPROSLA2IMDI"/>
+        <xsl:apply-templates select="SL-MediaFile" mode="IPROSLA2IMDI"/>
+        <xsl:apply-templates select="SL-AnnotationDocument" mode="IPROSLA2IMDI"/>
+        <xsl:apply-templates select="SL-SourceVideo" mode="IPROSLA2IMDI"/>
     </xsl:template>
     
     
     <xsl:template match="SL-AnnotationDocument" mode="IPROSLA2IMDI">
         <WrittenResource>
             <xsl:variable name="id"><xsl:value-of select="@ref" /></xsl:variable>
-            <ResourceLink><xsl:value-of select="ancestor::Components/preceding-sibling::Resources/ResourceProxyList/ResourceProxy[@id=$id]/ResourceRef" /></ResourceLink>
+            <ResourceLink><xsl:apply-templates select="//Resources/ResourceProxyList/ResourceProxy[@id=$id]" mode="create-resource-link-content"/></ResourceLink>
             <MediaResourceLink/>
             <Date>Unspecified</Date>
             <Type Link="http://www.mpi.nl/IMDI/Schema/WrittenResource-Type.xml" Type="OpenVocabulary"><xsl:value-of select="child::Type"/></Type>
@@ -224,7 +224,7 @@
     <xsl:template match="SL-MediaFile" mode="IPROSLA2IMDI">
         <MediaFile>
             <xsl:variable name="id"><xsl:value-of select="@ref" /></xsl:variable>
-            <ResourceLink><xsl:value-of select="ancestor::Components/preceding-sibling::Resources/ResourceProxyList/ResourceProxy[@id=$id]/ResourceRef" /></ResourceLink>
+            <ResourceLink><xsl:apply-templates select="//Resources/ResourceProxyList/ResourceProxy[@id=$id]" mode="create-resource-link-content"/></ResourceLink>
             <Type Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Type.xml" Type="ClosedVocabulary"><xsl:value-of select="child::Type"/></Type>
             <Format Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Format.xml" Type="OpenVocabulary"/>
             <Size/>
