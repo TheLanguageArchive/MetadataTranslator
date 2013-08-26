@@ -54,6 +54,8 @@ public class TranslatorImplTest {
     public static final String OTHER_CMDI = CMDI_SAMPLES_LOCATION + "/other_sample.cmdi";
     public static final String DISCAN_CASE_CMDI = CMDI_SAMPLES_LOCATION + "/discan_case_sample.cmdi";
     public static final String DISCAN_CASE__TO_SESSION_IMDI = CMDI_SAMPLES_LOCATION + "/discan_case_sample_to_session.imdi";
+    public static final String SOUNDBITES_CMDI = CMDI_SAMPLES_LOCATION + "/soundbites_sample.cmdi";
+    public static final String SOUNDBITES_TO_SESSION_IMDI = CMDI_SAMPLES_LOCATION + "/soundbites_sample_to_session.imdi";
     // IMDI Sample locations
     public static final String IMDI_SAMPLES_LOCATION = "/nl/mpi/translation/tools/imdi-sample";
     public static final String IMDI_SAMPLE = IMDI_SAMPLES_LOCATION + "/kleve_route.imdi";
@@ -103,6 +105,15 @@ public class TranslatorImplTest {
     public void testGetIMDIForDiscAn() throws Exception {
 	logger.info("Testing translation of DiscAn case instance to IMDI");
 	testGetIMDI(DISCAN_CASE_CMDI, DISCAN_CASE__TO_SESSION_IMDI);
+    }
+    
+    /**
+     * Requests translation of an DiscAn instance
+     */
+    @Test
+    public void testGetIMDIForSoundBites() throws Exception {
+	logger.info("Testing translation of DiscAn case instance to IMDI");
+	testGetIMDI(SOUNDBITES_CMDI, SOUNDBITES_TO_SESSION_IMDI);
     }
 
     /**
