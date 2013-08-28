@@ -88,7 +88,7 @@
 	</MDGroup>
 	<Resources>
 	    <MediaFile>
-		<ResourceLink ArchiveHandle="http://hdl.handle.net/1839/00-A1B73BA0-EA20-47CB-9476-467970128820"/>
+		<ResourceLink ArchiveHandle="hdl:1839/00-A1B73BA0-EA20-47CB-9476-467970128820"/>
 		<Type Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Type.xml"
 		  Type="ClosedVocabulary">audio</Type>
 		<Format Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Format.xml"

@@ -227,7 +227,7 @@
 	</MDGroup>
 	<Resources>
 	    <MediaFile>
-		<ResourceLink ArchiveHandle="http://hdl.handle.net/1234"/>
+		<ResourceLink ArchiveHandle="hdl:1234"/>
 		<Type Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Type.xml"
 		  Type="ClosedVocabulary">Unknown</Type>
 		<Format Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Format.xml"

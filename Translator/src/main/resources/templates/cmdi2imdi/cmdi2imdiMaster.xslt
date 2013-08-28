@@ -74,7 +74,7 @@
         <xsl:choose>
             <xsl:when  test="$handle">
                 <xsl:attribute name="ArchiveHandle">
-                    <xsl:value-of select="concat('http://hdl.handle.net/',$handle)"/>
+                    <xsl:value-of select="concat('hdl:',$handle)"/>
                 </xsl:attribute>
             </xsl:when>
             <xsl:otherwise>
