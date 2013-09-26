@@ -45,7 +45,7 @@
         </Name>
         <Title/>   
         <xsl:for-each select="CollectionInfo/Description/Description">
-            <Description Link="">
+            <Description>
                 <xsl:attribute name="LanguageId" select="concat('ISO639-2:',@xml:lang)" />
                 <xsl:variable name="id"><xsl:value-of select="ancestor::Description/@ref" /></xsl:variable>
                 <xsl:variable name="handle" select="tla:getBaseHandle(ancestor::Components/preceding-sibling::Resources/ResourceProxyList/ResourceProxy[@id=$id]/ResourceRef)"/>
@@ -56,7 +56,9 @@
                         </xsl:attribute>
                     </xsl:when>
                     <xsl:otherwise>
-                        <xsl:value-of select="ResourceRef"/>
+			<xsl:attribute name="Link">
+			    <xsl:value-of select="ancestor::Components/preceding-sibling::Resources/ResourceProxyList/ResourceProxy[@id=$id]/ResourceRef"/>
+                        </xsl:attribute>
                     </xsl:otherwise>
                 </xsl:choose>                
                 <xsl:value-of select="."/>

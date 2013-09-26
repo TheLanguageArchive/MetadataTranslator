@@ -16,14 +16,14 @@
 		<ResourceType>Metadata</ResourceType>
 		<ResourceRef>subcollection.cmdi</ResourceRef>
 	    </ResourceProxy>
-		<ResourceProxy id="ID003">
-			<ResourceType>Metadata</ResourceType>
-			<ResourceRef>http://infra.clarin.eu/cmd/example/collection/lrt/lrt-1001.cmdi</ResourceRef>
-		</ResourceProxy>
-		<ResourceProxy id="ID004">
-			<ResourceType>Metadata</ResourceType>
-			<ResourceRef>hdl:1234/5678</ResourceRef>
-		</ResourceProxy>
+	    <ResourceProxy id="ID003">
+		<ResourceType>Metadata</ResourceType>
+		<ResourceRef>http://infra.clarin.eu/cmd/example/collection/lrt/lrt-1001.cmdi</ResourceRef>
+	    </ResourceProxy>
+	    <ResourceProxy id="ID004">
+		<ResourceType>Metadata</ResourceType>
+		<ResourceRef>hdl:1234/5678</ResourceRef>
+	    </ResourceProxy>
 	</ResourceProxyList>
 	<JournalFileProxyList />
 	<ResourceRelationList />
@@ -32,7 +32,7 @@
     </Resources>
     <Components>
 	<collection >
-	    <CollectionInfo ref="ID001" ComponentId="clarin.eu:cr1:c_1345561703619">
+	    <CollectionInfo ComponentId="clarin.eu:cr1:c_1345561703619">
 		<Name xml:lang="en-US">Name0</Name>
 		<Title xml:lang="en-US">Title0</Title>
 		<Owner xml:lang="en-US">Owner0</Owner>
@@ -52,7 +52,10 @@
 		    <StartYear>2006</StartYear>
 		    <EndYear>2006</EndYear>
 		</TimeCoverage>
-		<Description  ComponentId="clarin.eu:cr1:c_1271859438118">
+		<Description  ComponentId="clarin.eu:cr1:c_1271859438118" ref="ID001">
+		    <Description LanguageID="LanguageID7" xml:lang="en-GB">Description1</Description>
+		</Description>
+		<Description  ComponentId="clarin.eu:cr1:c_1271859438118" ref="ID004">
 		    <Description LanguageID="LanguageID7" xml:lang="en-US">Description2</Description>
 		</Description>
 	    </CollectionInfo>

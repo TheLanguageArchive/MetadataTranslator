@@ -32,7 +32,7 @@
     </Resources>
     <Components>
 	<collection >
-	    <CollectionInfo ref="ID001" ComponentId="clarin.eu:cr1:c_1345561703619">
+	    <CollectionInfo ComponentId="clarin.eu:cr1:c_1345561703619">
 		<Name xml:lang="en-US">Name0</Name>
 		<Title xml:lang="en-US">Title0</Title>
 		<Owner xml:lang="en-US">Owner0</Owner>
@@ -52,7 +52,10 @@
 		    <StartYear>2006</StartYear>
 		    <EndYear>2006</EndYear>
 		</TimeCoverage>
-		<Description  ComponentId="clarin.eu:cr1:c_1271859438118">
+		<Description  ComponentId="clarin.eu:cr1:c_1271859438118" ref="ID001">
+		    <Description LanguageID="LanguageID7" xml:lang="en-GB">Description1</Description>
+		</Description>
+		<Description  ComponentId="clarin.eu:cr1:c_1271859438118" ref="ID004">
 		    <Description LanguageID="LanguageID7" xml:lang="en-US">Description2</Description>
 		</Description>
 	    </CollectionInfo>
