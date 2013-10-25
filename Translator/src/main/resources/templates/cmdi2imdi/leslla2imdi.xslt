@@ -51,7 +51,8 @@
             </Actors>
         </MDGroup>
         <Resources>
-            <xsl:apply-templates select="child::Resources" mode="LESLLA2IMDI"/>
+            <xsl:apply-templates select="//Resources/MediaFile" mode="LESLLA2IMDI"/>
+            <xsl:apply-templates select="//Resources/WrittenResource" mode="LESLLA2IMDI"/>
         </Resources>
         <References>
         </References>
@@ -197,20 +198,7 @@
       </Language>
     </xsl:template>
     
-    
-    
-    
-    
-    
-    
-    <xsl:template match="Resources" mode="LESLLA2IMDI">
-        <xsl:apply-templates select="//MediaFile" mode="LESLLA2IMDI"/>
-        <xsl:apply-templates select="//AnnotationDocument" mode="LESLLA2IMDI"/>
-        <xsl:apply-templates select="//SourceVideo" mode="LESLLA2IMDI"/>
-    </xsl:template>
-    
-    
-    <xsl:template match="AnnotationDocument" mode="LESLLA2IMDI">
+    <xsl:template match="WrittenResource" mode="LESLLA2IMDI">
         <WrittenResource>
             <xsl:variable name="id"><xsl:value-of select="@ref" /></xsl:variable>
             <ResourceLink><xsl:value-of select="ancestor::Components/preceding-sibling::Resources/ResourceProxyList/ResourceProxy[@id=$id]/ResourceRef" /></ResourceLink>
