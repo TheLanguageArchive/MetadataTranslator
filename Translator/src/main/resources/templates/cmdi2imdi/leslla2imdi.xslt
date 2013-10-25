@@ -31,7 +31,9 @@
         <Name>
             <xsl:value-of select="Name"/>
         </Name>
-        <Title/>
+        <Title>
+            <xsl:value-of select="Title"/>
+        </Title>
         <Date><xsl:choose>            
             <xsl:when test="Date != ''"><xsl:value-of select="tla:parse-leslla-date(Date)"/></xsl:when>
             <xsl:otherwise>Unspecified</xsl:otherwise>
@@ -44,8 +46,8 @@
             <xsl:apply-templates select="Project" mode="LESLLA2IMDI"/>
             <xsl:apply-templates select="Content" mode="LESLLA2IMDI"/>
             <Actors>
-                <xsl:apply-templates select="//ActorSigner-ChildLanguage" mode="LESLLA2IMDI"/>
-                <xsl:apply-templates select="//ActorResearcher" mode="LESLLA2IMDI"/>
+                <Description><xsl:value-of select="Actors/Description/Description" /></Description>
+                <xsl:apply-templates select="//Actor" mode="LESLLA2IMDI"/>                
             </Actors>
         </MDGroup>
         <Resources>
@@ -99,10 +101,10 @@
     <xsl:template match="Content" mode="LESLLA2IMDI">
         <Content>
             <Genre Link="http://www.mpi.nl/IMDI/Schema/Content-Genre.xml" Type="OpenVocabulary"><xsl:value-of select="child::Genre"/></Genre>
-            <SubGenre Link="http://www.mpi.nl/IMDI/Schema/Content-SubGenre.xml" Type="OpenVocabularyList"><xsl:value-of select="child::SubGenre"/></SubGenre>
-            <Task Link="http://www.mpi.nl/IMDI/Schema/Content-Task.xml" Type="OpenVocabulary" />
+            <SubGenre Link="http://www.mpi.nl/IMDI/Schema/Content-SubGenre.xml" Type="OpenVocabularyList" />
+            <Task Link="http://www.mpi.nl/IMDI/Schema/Content-Task.xml" Type="OpenVocabulary"><xsl:value-of select="child::Task"/></Task>
             <Modalities Link="http://www.mpi.nl/IMDI/Schema/Content-Modalities.xml" Type="OpenVocabularyList"><xsl:value-of select="child::Modalities"/></Modalities>
-            <Subject Link="http://www.mpi.nl/IMDI/Schema/Content-Subject.xml" Type="OpenVocabularyList"><xsl:value-of select="child::Subject"/></Subject>
+            <Subject Link="http://www.mpi.nl/IMDI/Schema/Content-Subject.xml" Type="OpenVocabularyList"/>
             <CommunicationContext>
                 <Interactivity Link="http://www.mpi.nl/IMDI/Schema/Content-Interactivity.xml" Type="ClosedVocabulary"><xsl:value-of select="child::CommunicationContext/Interactivity"/></Interactivity>
                 <PlanningType Link="http://www.mpi.nl/IMDI/Schema/Content-PlanningType.xml" Type="ClosedVocabulary"><xsl:value-of select="child::CommunicationContext/PlanningType"/></PlanningType>
@@ -113,78 +115,93 @@
             </CommunicationContext>
             <Languages>
                 <Description LanguageId="" Link=""/>
+                <xsl:apply-templates select="child::Languages/Language" mode="LESLLA2IMDI"/>
             </Languages>
-            <Keys />            
+            <Keys>
+                 <Key Name="Cycle"><xsl:value-of select="Cycle"/></Key>
+                 <Key Name="Experimentor"><xsl:value-of select="Experimentor"/></Key>                
+            </Keys>            
             <Description LanguageId="" Link=""><xsl:value-of select="child::Description/Description"/></Description>
         </Content>
     </xsl:template>
     
-    <xsl:template match="ActorSigner-ChildLanguage" mode="LESLLA2IMDI">
+    <xsl:template match="Language" mode="LESLLA2IMDI">
+        <Language>
+            <Id>ISO639-3:<xsl:value-of select="child::LanguageID"/></Id>
+            <Name Link="http://www.mpi.nl/IMDI/Schema/MPI-Languages.xml" Type="OpenVocabulary"><xsl:value-of select="child::LanguageName"/></Name>
+            <Dominant Type="ClosedVocabulary"><xsl:value-of select="tla:yesno-to-boolean(child::Dominant)"/></Dominant>
+            <SourceLanguage Type="ClosedVocabulary"><xsl:value-of select="tla:yesno-to-boolean(child::SourceLanguage)"/></SourceLanguage>
+            <TargetLanguage Type="ClosedVocabulary"><xsl:value-of select="tla:yesno-to-boolean(child::TargetLanguage)"/></TargetLanguage>
+        </Language>
+    </xsl:template>    
+    
+    <xsl:template match="Actor" mode="LESLLA2IMDI">
         <Actor>
             <Role Link="http://www.mpi.nl/IMDI/Schema/Actor-Role.xml" Type="OpenVocabularyList"><xsl:value-of select="child::Role"/></Role>
-            <Name><xsl:value-of select="child::Pseudonym"/></Name>
-            <FullName/>
-            <Code />
-            <FamilySocialRole Link="http://www.mpi.nl/IMDI/Schema/Actor-FamilySocialRole.xml" Type="OpenVocabularyList"><xsl:value-of select="child::FamilySocialRole"/></FamilySocialRole>
-            <Languages>
-                <Description LanguageId="" Link=""><xsl:value-of select="child::ActorLanguages/Description/Description"/></Description>
-                <xsl:apply-templates select="descendant::ActorLanguage" mode="LESLLA2IMDI"/>
-            </Languages>
-            <EthnicGroup/>
-            <Age><xsl:value-of select="child::Age"/></Age>
-            <BirthDate />
-            <Sex Link="http://www.mpi.nl/IMDI/Schema/Actor-Sex.xml" Type="ClosedVocabulary"><xsl:value-of select="child::Sex"/></Sex>
-            <Education />
-            <Anonymized Link="http://www.mpi.nl/IMDI/Schema/Boolean.xml" Type="ClosedVocabulary">Unspecified</Anonymized>
-            <Contact>
-                <Name/>
-                <Address/>
-                <Email/>
-                <Organisation/>
-            </Contact>
-            <Keys />            
-            <Description LanguageId="" Link=""/>
-        </Actor>
-    </xsl:template>
-    
-    
-    <xsl:template match="ActorResearcher" mode="LESLLA2IMDI">
-        <Actor>
-            <Role Link="http://www.mpi.nl/IMDI/Schema/Actor-Role.xml" Type="OpenVocabularyList"><xsl:value-of select="child::Role"/></Role>
-            <Name><xsl:value-of select="child::FullName"/></Name>
+            <Name><xsl:value-of select="child::Name"/></Name>
             <FullName><xsl:value-of select="child::FullName"/></FullName>
-            <Code />
-            <FamilySocialRole Link="http://www.mpi.nl/IMDI/Schema/Actor-FamilySocialRole.xml" Type="OpenVocabularyList" />
+            <Code><xsl:value-of select="child::Code" /></Code>
+            <FamilySocialRole Link="http://www.mpi.nl/IMDI/Schema/Actor-FamilySocialRole.xml" Type="OpenVocabularyList"><xsl:value-of select="child::FamilySocialRole"></xsl:value-of></FamilySocialRole>
             <Languages>
-                <Description LanguageId="" Link=""><xsl:value-of select="child::ActorLanguages/Description/Description"/></Description>
-                <xsl:apply-templates select="descendant::ActorLanguage" mode="LESLLA2IMDI"></xsl:apply-templates>
+                <Description LanguageId="" Link=""><xsl:value-of select="child::Languages/Description/Description"/></Description>
+                <xsl:apply-templates select="descendant::MotherTongue" mode="LESLLA2IMDI" />
+                <xsl:apply-templates select="descendant::HomeLanguage" mode="LESLLA2IMDI" />
             </Languages>
-            <EthnicGroup/>
-            <Age />
-            <BirthDate />
+            <EthnicGroup><xsl:value-of select="child::EthnicGroup"></xsl:value-of></EthnicGroup>
+            <Age><xsl:value-of select="child::Age"></xsl:value-of></Age>
+            <BirthDate><xsl:value-of select="child::BirthDate"></xsl:value-of></BirthDate>
             <Sex Link="http://www.mpi.nl/IMDI/Schema/Actor-Sex.xml" Type="ClosedVocabulary"><xsl:value-of select="child::Sex"/></Sex>
-            <Education />
-            <Anonymized Link="http://www.mpi.nl/IMDI/Schema/Boolean.xml" Type="ClosedVocabulary">Unspecified</Anonymized>
+            <Education><xsl:value-of select="child::Education"></xsl:value-of></Education>
+            <Anonymized Link="http://www.mpi.nl/IMDI/Schema/Boolean.xml" Type="ClosedVocabulary"><xsl:value-of select="child::Anonymized"></xsl:value-of></Anonymized>
             <Contact>
                 <Name><xsl:value-of select="child::Contact/Person"/></Name>
                 <Address><xsl:value-of select="child::Contact/Address"/></Address>
                 <Email><xsl:value-of select="child::Contact/Email"/></Email>
                 <Organisation><xsl:value-of select="child::Contact/Organisation"/></Organisation>
             </Contact>
-            <Keys />            
+            <Keys>
+                <xsl:if test="Contact.Telephone != ''"><Key Name="Contact.Telephone"><xsl:value-of select="Contact/Telephone"/></Key></xsl:if>
+                <xsl:if test="Contact.Website != ''"><Key Name="Contact.Website"><xsl:value-of select="Contact/Website"/></Key></xsl:if>
+                <xsl:if test="OriginParticipant != ''"><Key Name="OriginParticipant"><xsl:value-of select="OriginParticipant"/></Key></xsl:if>
+                <xsl:if test="OriginParents != ''"><Key Name="OriginParents"><xsl:value-of select="OriginParents"/></Key></xsl:if>
+                <xsl:if test="FamilyStructure != ''"><Key Name="FamilyStructure"><xsl:value-of select="FamilyStructure"/></Key></xsl:if>
+                <xsl:if test="FamilyAge != ''"><Key Name="FamilyAge"><xsl:value-of select="FamilyAge"/></Key></xsl:if>
+                <xsl:if test="FriendsStructure != ''"><Key Name="FriendsStructure"><xsl:value-of select="FriendsStructure"/></Key></xsl:if>
+                <xsl:if test="ResidenceHistory != ''"><Key Name="ResidenceHistory"><xsl:value-of select="ResidenceHistory"/></Key></xsl:if>
+                <xsl:if test="Grade != ''"><Key Name="Grade"><xsl:value-of select="Grade"/></Key></xsl:if>
+                <xsl:if test="BirthCountry != ''"><Key Name="BirthCountry"><xsl:value-of select="BirthCountry"/></Key></xsl:if>
+                <xsl:if test="AgeAtImmigration != ''"><Key Name="AgeAtImmigration"><xsl:value-of select="AgeAtImmigration"/></Key></xsl:if>
+                <xsl:if test="LevelOfBilingualism != ''"><Key Name="LevelOfBilingualism"><xsl:value-of select="LevelOfBilingualism"/></Key></xsl:if>
+                <xsl:if test="LanguageMode != ''"><Key Name="LanguageMode"><xsl:value-of select="LanguageMode"/></Key></xsl:if>
+                <xsl:if test="Literacy != ''"><Key Name="Literacy"><xsl:value-of select="Literacy"/></Key></xsl:if>
+            </Keys>           
             <Description LanguageId="" Link=""><xsl:value-of select="child::Description/Description"/></Description>
         </Actor>
     </xsl:template>
     
-    <xsl:template match="ActorLanguage" mode="LESLLA2IMDI">
-        <Language>
-            <Id>ISO639-3:<xsl:value-of select="child::Language/ISO639/iso-639-3-code"/></Id>
-            <Name Link="http://www.mpi.nl/IMDI/Schema/MPI-Languages.xml" Type="OpenVocabulary"><xsl:value-of select="child::Language/LanguageName"/></Name>
-            <MotherTongue Type="ClosedVocabulary"><xsl:value-of select="child::MotherTongue"/></MotherTongue>
-            <PrimaryLanguage Type="ClosedVocabulary"><xsl:value-of select="child::PrimaryLanguage"/></PrimaryLanguage>
-            <Description LanguageId="ISO639-2:eng" Link=""><xsl:value-of select="child::Description/Description"/></Description>
-        </Language>
-    </xsl:template>    
+  
+    <xsl:template match="MotherTongue" mode="LESLLA2IMDI">
+      <Language>
+          <Id>ISO639-3:<xsl:value-of select="child::Language/LanguageID"/></Id>
+          <Name Link="http://www.mpi.nl/IMDI/Schema/MPI-Languages.xml" Type="OpenVocabulary"><xsl:value-of select="child::Language/LanguageName"/></Name>
+          <MotherTongue Type="ClosedVocabulary">true</MotherTongue>
+          <PrimaryLanguage Type="ClosedVocabulary">false</PrimaryLanguage>
+      </Language>
+    </xsl:template>
+    <xsl:template match="HomeLanguage" mode="LESLLA2IMDI">
+      <Language>
+          <Id>ISO639-3:<xsl:value-of select="child::Language/LanguageID"/></Id>
+          <Name Link="http://www.mpi.nl/IMDI/Schema/MPI-Languages.xml" Type="OpenVocabulary"><xsl:value-of select="child::Language/LanguageName"/></Name>
+          <MotherTongue Type="ClosedVocabulary">false</MotherTongue>
+          <PrimaryLanguage Type="ClosedVocabulary">true</PrimaryLanguage>
+      </Language>
+    </xsl:template>
+    
+    
+    
+    
+    
+    
     
     <xsl:template match="Resources" mode="LESLLA2IMDI">
         <xsl:apply-templates select="//MediaFile" mode="LESLLA2IMDI"/>
@@ -324,5 +341,18 @@
         </xsl:variable>
         <xsl:value-of select="concat($year,'-',$month,'-',$day)"></xsl:value-of>
     </xsl:function>
-    
+
+    <xsl:function name="tla:yesno-to-boolean">
+        <xsl:param name="input" />
+        <xsl:variable name="output">
+            <xsl:choose>
+                <xsl:when test="$input = 'yes'">true</xsl:when>
+                <xsl:when test="$input = 'no'">false</xsl:when>
+                <xsl:otherwise>Unspecified</xsl:otherwise>
+            </xsl:choose>
+        </xsl:variable>
+        <xsl:value-of select="$output"></xsl:value-of>
+    </xsl:function>
+
+
 </xsl:stylesheet>
