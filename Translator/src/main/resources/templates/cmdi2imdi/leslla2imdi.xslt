@@ -53,9 +53,9 @@
         <Resources>
             <xsl:apply-templates select="//Resources/MediaFile" mode="LESLLA2IMDI"/>
             <xsl:apply-templates select="//Resources/WrittenResource" mode="LESLLA2IMDI"/>
+            <xsl:apply-templates select="//Anonyms" mode="LESLLA2IMDI"/>
         </Resources>
-        <References>
-        </References>
+        <xsl:apply-templates select="References" mode="LESLLA2IMDI"/>
     </xsl:template>
     
     <xsl:template match="Project" mode="LESLLA2IMDI">
@@ -244,7 +244,12 @@
             <Type Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Type.xml" Type="ClosedVocabulary"><xsl:value-of select="child::Type"/></Type>
             <Format Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Format.xml" Type="OpenVocabulary"/>
             <Size/>
-            <Quality Link="http://www.mpi.nl/IMDI/Schema/Quality.xml" Type="ClosedVocabulary"><xsl:value-of select="child::Quality"/></Quality>
+            <Quality Link="http://www.mpi.nl/IMDI/Schema/Quality.xml" Type="ClosedVocabulary">
+                <xsl:choose >
+                    <xsl:when test="child::Quality"><xsl:value-of select="child::Quality"/></xsl:when>
+                    <xsl:otherwise>Unspecified</xsl:otherwise>
+                </xsl:choose>
+            </Quality>
             <RecordingConditions><xsl:value-of select="child::RecordingConditions"/></RecordingConditions>
             <TimePosition>
                 <Start><xsl:choose>
@@ -274,37 +279,30 @@
         </MediaFile>
     </xsl:template>
     
-    <xsl:template match="SourceVideo" mode="LESLLA2IMDI">
-        <Source>
-            <Id><xsl:value-of select="child::Id"/></Id>
-            <Format Link="http://www.mpi.nl/IMDI/Schema/Source-Format.xml" Type="OpenVocabulary"><xsl:value-of select="child::VideoTapeFormat"/></Format>
-            <Quality><xsl:value-of select="child::Quality"/></Quality>
-            <TimePosition>
-                <Start><xsl:choose>
-                    <xsl:when test="string-length(child::TimePositionAndDuration/Start) &gt; 0"><xsl:value-of select="child::TimePositionAndDuration/Start"/></xsl:when>
-                    <xsl:otherwise>Unspecified</xsl:otherwise>
-                </xsl:choose></Start>
-                <End><xsl:choose>
-                    <xsl:when test="string-length(child::TimePositionAndDuration/End) &gt; 0"><xsl:value-of select="child::TimePositionAndDuration/End"/></xsl:when>
-                    <xsl:otherwise>Unspecified</xsl:otherwise>
-                </xsl:choose></End>
-            </TimePosition>
+    <xsl:template match="Anonyms" mode="LESLLA2IMDI">
+        <Anonyms>
+            <ResourceLink><xsl:value-of select="ResourceLink"/></ResourceLink>
             <Access>
-                <Availability/>
-                <Date/>
-                <Owner/>
-                <Publisher/>
+                <Availability><xsl:value-of select="Access/Availability"/></Availability>
+                <Date><xsl:value-of select="Access/Date"/></Date>
+                <Owner><xsl:value-of select="Access/Owner"/></Owner>
+                <Publisher><xsl:value-of select="Access/Publisher"/></Publisher>
                 <Contact>
-                    <Name/>
-                    <Address/>
-                    <Email/>
-                    <Organisation/>
+                    <Name><xsl:value-of select="Access/Contact/Person"/></Name>
                 </Contact>
-                <Description LanguageId="" Link=""/>
+                <xsl:if test="Access/Description/Description">
+                    <Description><xsl:value-of select="Access/Description/Description"/></Description>
+                </xsl:if>
             </Access>
-            <Description LanguageId="" Link=""><xsl:value-of select="child::Description/Description"/></Description>
-            <Keys />            
-        </Source>
+        </Anonyms>
+    </xsl:template>
+    
+    <xsl:template match="References" mode="LESLLA2IMDI">
+        <References>
+            <xsl:for-each select="Description/Description">
+                <Description><xsl:value-of select="."/></Description>
+            </xsl:for-each>               
+        </References>
     </xsl:template>
 
     <xsl:function name="tla:parse-leslla-date">
