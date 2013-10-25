@@ -323,20 +323,22 @@
         <xsl:param name="input-date" />
         <xsl:variable name="day" select="format-number(number(substring-before($input-date,'-')),'00')"/>
         <xsl:variable name="year" select="substring-after(substring-after($input-date,'-'),'-')"/>             
+        <xsl:variable name="month-string" select="substring-before(substring-after($input-date,'-'),'-')" />
         <xsl:variable name="month">
             <xsl:choose>
-                <xsl:when test="substring-before(substring-after($input-date,'-'),'-') = 'Jan'">01</xsl:when>
-                <xsl:when test="substring-after($input-date,'-') = 'Feb'">02</xsl:when>
-                <xsl:when test="substring-after($input-date,'-') = 'Mar'">03</xsl:when>
-                <xsl:when test="substring-after($input-date,'-') = 'Apr'">04</xsl:when>
-                <xsl:when test="substring-after($input-date,'-') = 'May'">05</xsl:when>
-                <xsl:when test="substring-after($input-date,'-') = 'Jun'">06</xsl:when>
-                <xsl:when test="substring-after($input-date,'-') = 'Jul'">07</xsl:when>
-                <xsl:when test="substring-after($input-date,'-') = 'Aug'">08</xsl:when>
-                <xsl:when test="substring-after($input-date,'-') = 'Sep'">09</xsl:when>
-                <xsl:when test="substring-after($input-date,'-') = 'Oct'">10</xsl:when>
-                <xsl:when test="substring-after($input-date,'-') = 'Nov'">11</xsl:when>
-                <xsl:when test="substring-after($input-date,'-') = 'Dec'">12</xsl:when>
+                <xsl:when test="$month-string = 'Jan'">01</xsl:when>
+                <xsl:when test="$month-string = 'Feb'">02</xsl:when>
+                <xsl:when test="$month-string = 'Mar'">03</xsl:when>
+                <xsl:when test="$month-string = 'Apr'">04</xsl:when>
+                <xsl:when test="$month-string = 'May'">05</xsl:when>
+                <xsl:when test="$month-string = 'Jun'">06</xsl:when>
+                <xsl:when test="$month-string = 'Jul'">07</xsl:when>
+                <xsl:when test="$month-string = 'Aug'">08</xsl:when>
+                <xsl:when test="$month-string = 'Sep'">09</xsl:when>
+                <xsl:when test="$month-string = 'Oct'">10</xsl:when>
+                <xsl:when test="$month-string = 'Nov'">11</xsl:when>
+                <xsl:when test="$month-string = 'Dec'">12</xsl:when>
+                <xsl:otherwise>??</xsl:otherwise>
             </xsl:choose>
         </xsl:variable>
         <xsl:value-of select="concat($year,'-',$month,'-',$day)"></xsl:value-of>
