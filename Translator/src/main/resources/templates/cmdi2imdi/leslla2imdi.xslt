@@ -323,8 +323,8 @@
         <xsl:param name="input-date" />
         <xsl:variable name="day" select="format-number(number(substring-before($input-date,'-')),'00')"/>
         <xsl:variable name="year" select="substring-after(substring-after($input-date,'-'),'-')"/>             
-        <xsl:variable name="month-string" select="substring-before(substring-after($input-date,'-'),'-')" />
         <xsl:variable name="month">
+            <xsl:variable name="month-string" select="substring-before(substring-after($input-date,'-'),'-')" />
             <xsl:choose>
                 <xsl:when test="$month-string = 'Jan'">01</xsl:when>
                 <xsl:when test="$month-string = 'Feb'">02</xsl:when>
