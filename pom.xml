@@ -6,12 +6,12 @@
     <parent>
 	<artifactId>parent</artifactId>
 	<groupId>nl.mpi</groupId>
-	<version>1.6.4</version>
+	<version>1.7.0</version>
     </parent>
 
     <groupId>nl.mpi.translation</groupId>
     <artifactId>metadata-translator-parent</artifactId>
-    <version>1.3-SNAPSHOT</version>
+    <version>1.3-TESTING</version>
     <name>CMDI &lt;-&gt; IMDI metadata translator</name>
     <url>http://www.tla.mpi.nl</url>
     <description>A converter from CMDI to IMDI and vice-versa. This is an aggregator pom
