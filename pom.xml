@@ -11,7 +11,7 @@
 
     <groupId>nl.mpi.translation</groupId>
     <artifactId>metadata-translator-parent</artifactId>
-    <version>1.3-TESTING</version>
+    <version>1.3-STAGING</version>
     <name>CMDI &lt;-&gt; IMDI metadata translator</name>
     <url>http://www.tla.mpi.nl</url>
     <description>A converter from CMDI to IMDI and vice-versa. This is an aggregator pom
@@ -29,7 +29,7 @@
     <developers>
 	<developer>
 	    <id>andmor</id>
-	    <name>Andr� Moreira</name>
+	    <name>André Moreira</name>
 	    <email>andmor@mpi.nl</email>
 	    <organization>MPI</organization>
 	    <timezone>+1</timezone>
