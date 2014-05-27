@@ -24,10 +24,10 @@ Please see the file called CHANGES.TXT
 The documentation available as of the date of this release:
 
 User manual and documentation:
-Not yet!
+Not available!
 
 Project wiki:
-Not yet!
+Not available!
 
 
  Installation

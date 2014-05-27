@@ -5,19 +5,19 @@ Software requirements:
 ----------------------
 1. Server oriented OS capable of running the specified version of Tomcat.
 
-2. Apache Tomcat 5.5.x . Other JAVA servlet containers should be possible but were not tested.
+2. Apache Tomcat 6.x . Other JAVA servlet containers should be possible but were not tested.
 
 
 Installation:
 -------------
-1. Download and install Apache Tomcat 5.5.x from:
+1. Download and install Apache Tomcat 6.x from:
 http://tomcat.apache.org
 See available documentation.
 
 2. Deploy MetadataTranslator-${project.artifactId}-${project.version}-r${buildNumber}.war to your Tomcat
 installation.
 
-5. On the unpacked .was:
+5. On the unpacked .war:
 5.1. Set up WEB-INF/classes/log4j.xml for desired logging.
 5.2. Set up tomcat context parameter 'allowFileProtocol' (true/false). See 
 META-INF/context.xml. Warning, setting up 'allowFileProtocol' to 'true' raises
