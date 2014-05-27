@@ -5,4 +5,4 @@ to the servlet container where MetadataTranslator was previously running.
 
 
 Previously installed version:
-N/A
+1.1.7-r37971
