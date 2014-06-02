@@ -37,14 +37,19 @@ public class HttpHandleResolver implements HandleResolver {
     public URL resolveHandle(URL inputFileURL) throws IOException {
 	final HttpURLConnection httpURLconnection = (HttpURLConnection) inputFileURL.openConnection();
 	httpURLconnection.setInstanceFollowRedirects(false);
-	if (httpURLconnection.getResponseCode() == 303) {
-	    final String resolvedHandleURL = httpURLconnection.getHeaderField("Location");
-	    httpURLconnection.setInstanceFollowRedirects(true);
-	    inputFileURL = new URL(resolvedHandleURL);
-	    logger.debug("Handle resolves to: '{}'", resolvedHandleURL);
-	} else {
-	    logger.error("Cannot resolve handle '{}'", inputFileURL);
-	    throw new IOException();
+	switch (httpURLconnection.getResponseCode()) {
+		case 301:
+		case 302:
+		case 303:
+		case 307:
+		    final String resolvedHandleURL = httpURLconnection.getHeaderField("Location");
+		    httpURLconnection.setInstanceFollowRedirects(true);
+		    inputFileURL = new URL(resolvedHandleURL);
+		    logger.debug("Handle resolves to: '{}'", resolvedHandleURL);
+		    break;
+		default:
+		    logger.error("Cannot resolve handle '{}'", inputFileURL);
+		    throw new IOException();
 	}
 	return inputFileURL;
     }
