@@ -65,7 +65,7 @@ requested "outFormat", the original document is returned.
 the input file is assumed to be "imdi" or "cmdi" if the "outFormat" parameter is "cmdi" or "imdi" respectively.
 Taking into account the assumption made in (1).
 
-See INTALL.TXT for usage examples.
+See INSTALL.TXT for usage examples.
 
 User manual and documentation:
 See above.
