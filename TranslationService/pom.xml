@@ -6,7 +6,7 @@
     <parent>
 	<groupId>nl.mpi.translation</groupId>
 	<artifactId>metadata-translator-parent</artifactId>
-	<version>1.3-STAGING</version>
+	<version>1.3.1-STAGING</version>
     </parent>
 
     <artifactId>metadata-translation-service</artifactId>
