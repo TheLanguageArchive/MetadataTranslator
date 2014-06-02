@@ -28,3 +28,10 @@ security problems.
 7. Check whether the correct version of the application is running by browsing
 to {applicationBaseUrl}/version
 
+8. You can check and monitor if the running service is working properly by checking the following URL's:
+CMDI to IMDI:
+https://corpus1.mpi.nl/ds/TranslationService/translate?in=1839/00-37EBCC6D-04A5-4598-88E2-E0F390D5FCE1&outFormat=imdi
+(handle matches "leslla" CMDI collection)
+IMDI to CMDI:
+https://corpus1.mpi.nl/ds/TranslationService/translate?in=1839/00-0000-0000-0009-294C-9&outFormat=cmdi
+(handle matches "kleve-route" IMDI on the Demo PeWi corpus)

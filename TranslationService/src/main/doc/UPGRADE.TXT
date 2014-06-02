@@ -3,6 +3,3 @@ To upgrade from the previous version:
 Deploy MetadataTranslator-${project.artifactId}-${project.version}-r${buildNumber}.war 
 to the servlet container where MetadataTranslator was previously running. 
 
-
-Previously installed version:
-1.1.7-r37971
