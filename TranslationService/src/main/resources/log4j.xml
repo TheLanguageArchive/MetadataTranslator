@@ -5,9 +5,8 @@
 	<appender name="ROLL" class="org.apache.log4j.DailyRollingFileAppender">
 		<!-- The active file to log to -->
 		<param name="file" value="${catalina.base}/logs/translation-service.log" />
-		<param name="MaxFileSize" value="1MB" />
+		<param name="DatePattern" value=".yyyy-MM-dd" />
 		<!-- Keep the last 5 files -->
-    	<param name="MaxBackupIndex" value="5"/>
 		<param name="append" value="true" />
 		<param name="encoding" value="UTF-8" />
 
