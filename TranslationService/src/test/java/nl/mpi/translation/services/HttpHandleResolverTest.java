@@ -30,7 +30,7 @@ public class HttpHandleResolverTest {
 
     // Handle to the "Route to Kleve" resource
     public static final String HANDLE_URI = "http://hdl.handle.net/1839/00-0000-0000-0009-3C7E-F";
-    public static final String HANDLE_RESOLVED_URI = "http://corpus1.mpi.nl/qfs1/media-archive/demo/pewi/Media/route_to_kleve.jpg";
+    public static final String HANDLE_RESOLVED_URI = "https://corpus1.mpi.nl/media-archive/demo/pewi/Media/route_to_kleve.jpg";
 
     /**
      * Test of resolveHandle method, of class HttpHandleResolver.
