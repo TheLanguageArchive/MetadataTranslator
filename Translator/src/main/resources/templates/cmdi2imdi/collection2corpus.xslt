@@ -54,12 +54,10 @@
                         <xsl:attribute name="ArchiveHandle">
                             <xsl:value-of select="concat('hdl:',$handle)"/>
                         </xsl:attribute>
-                    </xsl:when>
-                    <xsl:otherwise>
-			<xsl:attribute name="Link">
-			    <xsl:value-of select="ancestor::Components/preceding-sibling::Resources/ResourceProxyList/ResourceProxy[@id=$id]/ResourceRef"/>
+                        <xsl:attribute name="Link">
+                            <xsl:value-of select="ancestor::Components/preceding-sibling::Resources/ResourceProxyList/ResourceProxy[@id=$id]/ResourceRef/text()"/>
                         </xsl:attribute>
-                    </xsl:otherwise>
+                    </xsl:when>       
                 </xsl:choose>                
                 <xsl:value-of select="."/>
             </Description>       
