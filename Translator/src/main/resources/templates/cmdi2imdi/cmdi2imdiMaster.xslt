@@ -7,6 +7,7 @@
     
     <xsl:include href="iprosla2imdi.xslt"/>
     <xsl:include href="collection2corpus.xslt"/>
+    <xsl:include href="minimalcollection2corpus.xslt"/>
     <xsl:include href="discanproject2corpus.xslt"/>
     <xsl:include href="discantextcorpus2corpus.xslt"/>
     <xsl:include href="discancase2imdi.xslt"/>
@@ -31,6 +32,9 @@
             <xsl:when test="contains(/CMD/@xsi:schemaLocation, 'http://catalog.clarin.eu/ds/ComponentRegistry/rest/registry/profiles/clarin.eu:cr1:p_1345561703620/xsd')">
                 <xsl:call-template name="COLLECTION2CORPUS" />
             </xsl:when>
+            <xsl:when test="contains(/CMD/@xsi:schemaLocation, 'http://catalog.clarin.eu/ds/ComponentRegistry/rest/registry/profiles/clarin.eu:cr1:p_1284723009187/xsd')">
+                <xsl:call-template name="MINIMALCOLLECTION2CORPUS" />
+            </xsl:when>            
             <xsl:when test="contains(/CMD/@xsi:schemaLocation, 'http://catalog.clarin.eu/ds/ComponentRegistry/rest/registry/profiles/clarin.eu:cr1:p_1361876010525/xsd')">
                 <xsl:call-template name="DISCANPROJECT2CORPUS" />
             </xsl:when>            
