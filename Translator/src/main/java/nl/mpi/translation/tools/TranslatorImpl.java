@@ -162,8 +162,9 @@ public class TranslatorImpl implements Translator {
 		final Result result = new StreamResult(sw);
 
 		//return the original document for documents already with imdi extension. 
-		if (!cmdiFileURL.toString().endsWith(".imdi")) {
-		    if (!cmdiFileURL.toString().endsWith(".cmdi")) {
+		if (!cmdiFileURL.toString().endsWith(".imdi")) { //TODO: case insensitive check
+		    if (!cmdiFileURL.toString().endsWith(".cmdi")) { //TODO: case insensitive check
+                        //TODO: throw an exception instead
 			logger.warn("Input document language could not be confirmed! IMDI assumed.");
 		    }
 		    //translate document
@@ -212,8 +213,9 @@ public class TranslatorImpl implements Translator {
 		final Result result = new StreamResult(sw);
 
 		//return the original document for documents already with cmdi extension. 
-		if (!imdiFileURL.toString().endsWith(".cmdi")) {
-		    if (!imdiFileURL.toString().endsWith(".imdi")) {
+		if (!imdiFileURL.toString().endsWith(".cmdi")) { //TODO: case insensitive check
+		    if (!imdiFileURL.toString().endsWith(".imdi")) { //TODO: case insensitive check
+                        //TODO: throw exception instead!
 			logger.warn("Input document language could not be confirmed! CMDI assumed.");
 		    }
 		    //translate document
