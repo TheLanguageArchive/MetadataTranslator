@@ -34,7 +34,7 @@
                      <xsl:if test="string-length($handle) > 0">
                          <xsl:attribute name="ArchiveHandle" select="substring-before(tla:getBaseHandle(ResourceRef),'@')" />
                      </xsl:if>
-                     <xsl:value-of select="CorpusLinkContent"/>                     
+                     <xsl:value-of select="//CorpusLink[@ref=$idref]/CorpusLinkContent"/>                     
                  </CorpusLink>
              </xsl:when>
           </xsl:choose> 
