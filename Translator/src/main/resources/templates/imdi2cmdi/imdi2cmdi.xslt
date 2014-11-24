@@ -24,7 +24,7 @@ $LastChangedDate: 2013-08-14 11:25:31 +0200 (Wed, 14 Aug 2013) $
     URI. Omit this if you are unsure. -->
 	<xsl:param name="uri-base" select="base-uri()"/>
 	
-	<xsl:param name="localURI" select="false()"/>
+	<xsl:param name="localURI" select="true()"/>
 	
 	<xsl:variable name="lang-top" select="document('sil_to_iso6393.xml')/languages"/>
 	<xsl:key name="iso-lookup" match="lang" use="sil"/>
