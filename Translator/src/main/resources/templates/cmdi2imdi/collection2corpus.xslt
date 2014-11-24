@@ -62,6 +62,9 @@
                 <xsl:value-of select="."/>
             </Description>       
         </xsl:for-each>
+    	<xsl:if test="empty(CollectionInfo/Description/Description)">
+    		<Description />
+    	</xsl:if>
     </xsl:template>
 
 </xsl:stylesheet>

@@ -4,7 +4,7 @@ $Rev: 3378 $
 $LastChangedDate: 2013-08-14 11:25:31 +0200 (Wed, 14 Aug 2013) $
 -->
 <xsl:stylesheet xmlns="http://www.clarin.eu/cmd/" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-    version="2.0" xpath-default-namespace="http://www.mpi.nl/IMDI/Schema/IMDI">
+	version="2.0" xpath-default-namespace="http://www.mpi.nl/IMDI/Schema/IMDI" xmlns:imdi="http://www.mpi.nl/IMDI/Schema/IMDI" xmlns:lat="http://lat.mpi.nl/">
     <!-- this is a version of imdi2clarin.xsl that batch processes a whole directory structure of imdi files, call it from the command line like this:
         java -jar saxon8.jar -it main batch-imdi2clarin.xsl
         the last template in this file has to be modified to reflect the actual directory name
@@ -22,13 +22,42 @@ $LastChangedDate: 2013-08-14 11:25:31 +0200 (Wed, 14 Aug 2013) $
     instead. All links (ResourceProxy elements) that contain relative
     paths are resolved into absolute URIs in the context of the base
     URI. Omit this if you are unsure. -->
-    <xsl:param name="uri-base"/>
-
+	<xsl:param name="uri-base" select="base-uri()"/>
+	
+	<xsl:param name="localURI" select="false()"/>
+	
+	<xsl:variable name="lang-top" select="document('sil_to_iso6393.xml')/languages"/>
+	<xsl:key name="iso-lookup" match="lang" use="sil"/>
+	
     <!-- definition of the SRU-searchable collections at TLA (for use later on) -->
     <xsl:variable name="SruSearchable">childes,ESF corpus,IFA corpus,MPI CGN,talkbank</xsl:variable>
+    
 
+	<!-- fix the closed vocabularies -->
+	<xsl:template match="@*|node()" mode="fixVocab">
+		<xsl:copy>
+			<xsl:apply-templates select="@*|node()" mode="#current"/>
+		</xsl:copy>
+	</xsl:template>
+	
+	<xsl:template match="*[@Type='ClosedVocabulary'][exists(@Link)][normalize-space()='']" mode="fixVocab">
+		<xsl:copy>
+			<xsl:apply-templates select="@*" mode="#current"/>
+			<xsl:text>Unspecified</xsl:text>
+		</xsl:copy>
+	</xsl:template>
+	
+	<xsl:template match="/">
+		<xsl:variable name="fixVocab">
+			<xsl:apply-templates mode="fixVocab"/>
+		</xsl:variable>
+		<xsl:apply-templates select="$fixVocab/*"/>
+	</xsl:template>
+	
+	<!-- do the IMDI to CMDI conversion -->
     <xsl:template name="metatranscriptDelegate">
         <xsl:param name="profile"/>
+        <xsl:param name="type"/>
         <Header>
             <MdCreator>imdi2clarin.xsl</MdCreator>
             <MdCreationDate>
@@ -65,6 +94,14 @@ $LastChangedDate: 2013-08-14 11:25:31 +0200 (Wed, 14 Aug 2013) $
                     <ResourceRef>http://cqlservlet.mpi.nl/</ResourceRef>
                 </ResourceProxy>
                 </xsl:if>
+                <xsl:if test="$type='corpus' and starts-with(normalize-space(@ArchiveHandle), 'hdl:1839/')">
+                    <ResourceProxy id="searchpage">
+                        <ResourceType>SearchPage</ResourceType>
+                        <ResourceRef>
+                            <xsl:text>http://corpus1.mpi.nl/ds/trova/search.jsp?handle=</xsl:text>
+                            <xsl:value-of select="@ArchiveHandle"/></ResourceRef>
+                    </ResourceProxy>
+                </xsl:if>
             </ResourceProxyList>
             <JournalFileProxyList> </JournalFileProxyList>
             <ResourceRelationList> </ResourceRelationList>
@@ -78,85 +115,266 @@ $LastChangedDate: 2013-08-14 11:25:31 +0200 (Wed, 14 Aug 2013) $
     <xsl:template match="METATRANSCRIPT">
         <xsl:choose>
             <xsl:when test=".[@Type='SESSION'] or .[@Type='SESSION.Profile']">
-                <CMD CMDVersion="1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-                    xsi:schemaLocation="http://www.clarin.eu/cmd/ http://catalog.clarin.eu/ds/ComponentRegistry/rest/registry/profiles/clarin.eu:cr1:p_1271859438204/xsd">
+            	<xsl:variable name="profile" select="'clarin.eu:cr1:p_1407745712035'"/>
+                <CMD CMDVersion="1.1" xmlns:xsii="http://www.w3.org/2001/XMLSchema-instance"
+                    xsii:schemaLocation="http://www.clarin.eu/cmd/ http://catalog.clarin.eu/ds/ComponentRegistry/rest/registry/profiles/{$profile}/xsd">
                     <xsl:call-template name="metatranscriptDelegate">
-                        <xsl:with-param name="profile"
-                            >clarin.eu:cr1:p_1271859438204</xsl:with-param>
+                        <xsl:with-param name="type" select="'session'"/>
+                        <xsl:with-param name="profile" select="$profile"/>
                     </xsl:call-template>
                 </CMD>
             </xsl:when>
             <xsl:when test=".[@Type='CORPUS'] or .[@Type='CORPUS.Profile']">
+            	<xsl:variable name="profile" select="'clarin.eu:cr1:p_1407745712064'"/>
                 <CMD CMDVersion="1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-                    xsi:schemaLocation="http://www.clarin.eu/cmd/ http://catalog.clarin.eu/ds/ComponentRegistry/rest/registry/profiles/clarin.eu:cr1:p_1274880881885/xsd">
+                    xsi:schemaLocation="http://www.clarin.eu/cmd/ http://catalog.clarin.eu/ds/ComponentRegistry/rest/registry/profiles/{$profile}/xsd">
                     <xsl:call-template name="metatranscriptDelegate">
-                        <xsl:with-param name="profile"
-                            >clarin.eu:cr1:p_1274880881885</xsl:with-param>
+                        <xsl:with-param name="type" select="'corpus'"/>
+                        <xsl:with-param name="profile" select="$profile"/>
                     </xsl:call-template>
                 </CMD>
             </xsl:when>
             <xsl:otherwise>
-                <!--                Currently we are only processing 'SESSION' and 'CORPUS' types. The error displayed can be used to filter out erroneous files after processing-->
-                ERROR: Invalid METATRANSCRIPT Type! </xsl:otherwise>
+                <!-- Currently we are only processing 'SESSION' and 'CORPUS' types. The error displayed can be used to filter out erroneous files after processing-->
+            	<xsl:message terminate="yes">ERROR: Invalid METATRANSCRIPT Type!</xsl:message>
+            </xsl:otherwise>
         </xsl:choose>
     </xsl:template>
 
 
     <xsl:template match="Corpus">
-        <imdi-corpus>
-            <Corpus>
-                <xsl:apply-templates select="child::Name"/>
-                <xsl:apply-templates select="child::Title"/>
-                <xsl:if test="exists(child::Description)">
-                    <descriptions>
-                        <xsl:variable name="reflist">
-                            <xsl:for-each select="Description">
-                                <xsl:if test="not(normalize-space(@ArchiveHandle)='') or not(normalize-space(@Link)='')">
-                                    <xsl:value-of select="generate-id()"/>
-                                    <xsl:text> </xsl:text>
-                                </xsl:if>
-                            </xsl:for-each> 
-                        </xsl:variable>
-                        
-                        <xsl:attribute name="ref" select="normalize-space($reflist)"></xsl:attribute>
-                        
-                        <xsl:for-each select="Description">
-                        <Description>
-                            <xsl:attribute name="LanguageId" select="@LanguageId"/>
-                            <xsl:value-of select="."/>
-                        </Description>
-                        </xsl:for-each>
-                        
-                    </descriptions>
-                </xsl:if>
-                <xsl:if test="exists(child::CorpusLink)">
-                    <xsl:for-each select="CorpusLink">
-                        <CorpusLink>
-                            <CorpusLinkContent>
-                                <!--<xsl:attribute name="ArchiveHandle" select="@ArchiveHandle"/>-->
-                                <xsl:attribute name="Name" select="@Name"/>
-                                <xsl:value-of select="."/>
-                            </CorpusLinkContent>
-                        </CorpusLink>
+        <lat-corpus>
+            <xsl:apply-templates select="child::Name"/>
+            <xsl:apply-templates select="child::Title"/>
+            <xsl:variable name="descriptions" select="Description[normalize-space(@ArchiveHandle)='' and normalize-space(@Link)=''][normalize-space(.)!='']"/>
+            <xsl:variable name="infoLinks" select="Description[normalize-space(@ArchiveHandle)!='' or normalize-space(@Link)!='']"/>
+            <xsl:if test="exists($descriptions)">
+                <descriptions>
+                    <xsl:for-each select="$descriptions">
+                    	<Description>
+                    		<xsl:call-template name="xmlLang"/>
+                    		<xsl:value-of select="."/>
+                    	</Description>
                     </xsl:for-each>
-                </xsl:if>
-            </Corpus>
-        </imdi-corpus>
+                </descriptions>
+            </xsl:if>
+            <xsl:for-each select="$infoLinks">
+            	<InfoLink ref="{generate-id(.)}">
+            		<Description>
+            			<xsl:call-template name="xmlLang"/>
+            			<xsl:value-of select="."/>
+            		</Description>
+            	</InfoLink>
+            </xsl:for-each>
+            <xsl:if test="exists(child::CorpusLink)">
+                <xsl:for-each select="CorpusLink">
+                    <CorpusLink ref="{generate-id(.)}">
+                        <CorpusLinkContent>
+                            <!--<xsl:attribute name="ArchiveHandle" select="@ArchiveHandle"/>-->
+                            <xsl:attribute name="Name" select="@Name"/>
+                            <xsl:value-of select="."/>
+                        </CorpusLinkContent>
+                    </CorpusLink>
+                </xsl:for-each>
+            </xsl:if>
+            <xsl:if test="normalize-space(@CatalogueLink)!=''">
+            	<!--<xsl:variable name="cat" select="resolve-uri(@CatalogueLink,$uri-base)"/>-->
+            	<xsl:variable name="cat" select="replace(@CatalogueHandle,'hdl:','http://hdl.handle.net/')"/>
+            	<xsl:choose>
+            		<xsl:when test="doc-available($cat)">
+            			<xsl:variable name="catalogue" select="doc($cat)"/>
+            			<xsl:for-each select="$catalogue/METATRANSCRIPT/Catalogue">
+            				<Catalogue>
+            					<!-- CMD Elements -->
+            					<xsl:for-each select="ContentType[normalize-space()!='']">
+            						<ContentType>
+            							<xsl:value-of select="."/>
+            						</ContentType>
+            					</xsl:for-each>
+            					<xsl:if test="normalize-space(SmallestAnnotationUnit)!=''">
+            						<SmallestAnnotationUnit>
+            							<xsl:value-of select="SmallestAnnotationUnit"/>
+            						</SmallestAnnotationUnit>
+            					</xsl:if>
+            					<xsl:if test="normalize-space(Date)!=''">
+            						<Date>
+            							<xsl:value-of select="Date"/>
+            						</Date>
+            					</xsl:if>
+            					<xsl:for-each select="Publisher[normalize-space()!='']">
+            						<Publisher>
+            							<xsl:value-of select="."/>
+            						</Publisher>
+            					</xsl:for-each>
+            					<xsl:for-each select="Author[normalize-space()!='']">
+            						<Author>
+            							<xsl:value-of select="."/>
+            						</Author>
+            					</xsl:for-each>
+            					<xsl:if test="normalize-space(Size)!=''">
+            						<Size>
+            							<xsl:value-of select="Size"/>
+            						</Size>
+            					</xsl:if>
+            					<xsl:if test="normalize-space(DistributionForm)!=''">
+            						<DistributionForm>
+            							<xsl:value-of select="DistributionForm"/>
+            						</DistributionForm>
+            					</xsl:if>
+            					<xsl:if test="normalize-space(Pricing)!=''">
+            						<Pricing>
+            							<xsl:value-of select="Pricing"/>
+            						</Pricing>
+            					</xsl:if>
+            					<xsl:if test="normalize-space(ContactPerson)!=''">
+            						<ContactPerson>
+            							<xsl:value-of select="ContactPerson"/>
+            						</ContactPerson>
+            					</xsl:if>
+            					<xsl:if test="normalize-space(Publications)!=''">
+            						<Publications>
+            							<xsl:value-of select="Publications"/>
+            						</Publications>
+            					</xsl:if>
+            					<!-- CMD Components -->
+            					<xsl:variable name="descriptions" select="Description[normalize-space()!='']"/>
+            					<xsl:if test="exists($descriptions)">
+            						<descriptions>
+            							<xsl:for-each select="$descriptions">
+            								<Description>
+            									<xsl:call-template name="xmlLang"/>
+            									<xsl:value-of select="."/>
+            								</Description>
+            							</xsl:for-each>
+            						</descriptions>
+            					</xsl:if>
+            					<xsl:variable name="doclangs" select="DocumentLanguages/Language[normalize-space()!='']"/>
+            					<xsl:if test="exists($doclangs)">
+            						<Document_Languages>
+            							<xsl:for-each select="$doclangs">
+            								<Document_Language>
+            									<Id>
+            										<xsl:value-of select=" ./Id"/>
+            									</Id>
+            									<Name>
+            										<xsl:value-of select=" ./Name"/>
+            									</Name>
+            								</Document_Language>
+            							</xsl:for-each>
+            						</Document_Languages>
+            					</xsl:if>
+            					<xsl:variable name="sublangs" select="SubjectLanguages/Language[normalize-space()!='']"/>
+            					<xsl:if test="exists($sublangs)">
+            						<Subject_Languages>
+            							<xsl:for-each select="$sublangs">
+            								<Subject_Language>
+            									<Id>
+            										<xsl:value-of select=" ./Id"/>
+            									</Id>
+            									<Name>
+            										<xsl:value-of select=" ./Name"/>
+            									</Name>
+            									<Dominant>
+            										<xsl:choose>
+            											<xsl:when test="normalize-space(Dominant)!=''">
+            												<xsl:value-of select="Dominant"/>
+            											</xsl:when>
+            											<xsl:otherwise>
+            												<xsl:text>Unspecified</xsl:text>
+            											</xsl:otherwise>
+            										</xsl:choose>
+            									</Dominant>
+            									<SourceLanguage>
+            										<xsl:choose>
+            											<xsl:when test="normalize-space(SourceLanguage)!=''">
+            												<xsl:value-of select="SourceLanguage"/>
+            											</xsl:when>
+            											<xsl:otherwise>
+            												<xsl:text>Unspecified</xsl:text>
+            											</xsl:otherwise>
+            										</xsl:choose>
+            									</SourceLanguage>
+            									<TargetLanguage>
+            										<xsl:choose>
+            											<xsl:when test="normalize-space(TargetLanguage)!=''">
+            												<xsl:value-of select="TargetLanguage"/>
+            											</xsl:when>
+            											<xsl:otherwise>
+            												<xsl:text>Unspecified</xsl:text>
+            											</xsl:otherwise>
+            										</xsl:choose>
+            									</TargetLanguage>
+            									<xsl:variable name="descriptions" select="Description[normalize-space()!='']"/>
+            									<xsl:if test="exists($descriptions)">
+            										<descriptions>
+            											<xsl:for-each select="$descriptions">
+            												<Description>
+            													<xsl:call-template name="xmlLang"/>
+            													<xsl:value-of select="."/>
+            												</Description>
+            											</xsl:for-each>
+            										</descriptions>
+            									</xsl:if>
+            								</Subject_Language>
+            							</xsl:for-each>
+            						</Subject_Languages>
+            					</xsl:if>
+            					<xsl:apply-templates select="Location"/>
+            					<xsl:if test="exists(Format/*[normalize-space()!=''])">
+            						<Format>
+            							<xsl:for-each select="Format/*[normalize-space()!='']">
+            								<xsl:variable name="name" select="local-name()"/>
+            								<xsl:for-each select="tokenize(.,',')">
+            									<xsl:element name="{$name}">
+            										<xsl:value-of select="normalize-space(.)"/>
+            									</xsl:element>
+            								</xsl:for-each>
+            							</xsl:for-each>
+            						</Format>
+            					</xsl:if>
+            					<xsl:if test="exists(Quality/*[normalize-space()!=''])">
+            						<Quality>
+            							<xsl:for-each select="Quality/*[normalize-space()!='']">
+            								<xsl:variable name="name" select="local-name()"/>
+            								<xsl:for-each select="tokenize(.,',')">
+            									<xsl:element name="{$name}">
+            										<xsl:value-of select="normalize-space(.)"/>
+            									</xsl:element>
+            								</xsl:for-each>
+            							</xsl:for-each>
+            						</Quality>
+            					</xsl:if>
+            					<!-- TODO -->
+            					<xsl:apply-templates select="Project"/>
+            					<xsl:apply-templates select="Access"/>
+            					<xsl:apply-templates select="Keys"/>
+            				</Catalogue>
+            			</xsl:for-each>
+            		</xsl:when>
+            		<xsl:otherwise>
+            			<xsl:message>WRN: IMDI catalogue file[<xsl:value-of select="$cat"/>] couldn't be loaded!</xsl:message>
+            		</xsl:otherwise>
+            	</xsl:choose>
+            </xsl:if>
+        </lat-corpus>
     </xsl:template>
 
     <xsl:template match="Corpus" mode="linking">
         <xsl:for-each select="CorpusLink">
-            <ResourceProxy id="{generate-id()}">
+            <ResourceProxy id="{generate-id(.)}">
                 <!-- Do we have both archive handle and link (text content)? -->
                 <xsl:if test="not(normalize-space(./@ArchiveHandle)='' or normalize-space(.)='')">
-                    <!-- Archive handle is kept, but original link is lost in CDMI. Keep content in a comment. -->
+                    <!-- Archive handle is kept, but original link is lost in CMDI. Keep content in a comment. -->
                     <xsl:comment>
                         <xsl:value-of select="."/>
                     </xsl:comment>
                 </xsl:if>
                 <ResourceType>Metadata</ResourceType>
-                <ResourceRef>
-                    <xsl:choose>
+            	<ResourceRef>
+            		<xsl:if test="$localURI">
+            			<xsl:attribute name="lat:localURI" select="."/>
+            		</xsl:if>
+            		<xsl:choose>
                         <!-- Check for archive handle attribute -->
                         <xsl:when test="not(normalize-space(./@ArchiveHandle)='')">
                             <xsl:choose>
@@ -186,29 +404,30 @@ $LastChangedDate: 2013-08-14 11:25:31 +0200 (Wed, 14 Aug 2013) $
     <!-- Create ResourceProxy for MediaFile and WrittenResource -->
     <xsl:template match="Resources" mode="linking">
         <xsl:for-each select="MediaFile">
-            <xsl:call-template name="CreateResourceProxyTypeResource"/>        
+            <xsl:call-template name="CreateResourceProxyTypeResource"/>
         </xsl:for-each>
         <xsl:for-each select="WrittenResource">
             <xsl:call-template name="CreateResourceProxyTypeResource"/>
         </xsl:for-each>
+    	<xsl:for-each select="Anonyms">
+    		<xsl:call-template name="CreateResourceProxyTypeResource"/>
+    	</xsl:for-each>
     </xsl:template>
-    
-    <!-- Create ResourceProxy for Info files -->
-    <xsl:template match="//Description[@ArchiveHandle or @Link]" mode="linking">
-        <xsl:call-template name="CreateResourceProxyTypeResource"/>
-    </xsl:template> 
     
     <!-- to be called during the creation of the ResourceProxyList (in linking mode) -->
     <xsl:template name="CreateResourceProxyTypeResource">
-        <ResourceProxy id="{generate-id()}">
+        <ResourceProxy id="{generate-id(.)}">
             <ResourceType>
                 <xsl:if test="exists(Format) and not(empty(Format))">
                     <xsl:attribute name="mimetype">
                         <xsl:value-of select="./Format"/>
                     </xsl:attribute>
                 </xsl:if>Resource</ResourceType>
-            <ResourceRef>
-                <xsl:choose>
+        	<ResourceRef>
+        		<xsl:if test="$localURI">
+        			<xsl:attribute name="lat:localURI" select="ResourceLink"/>
+        		</xsl:if>
+        		<xsl:choose>
                     <xsl:when test="not(normalize-space(ResourceLink/@ArchiveHandle)='')">
                         <xsl:value-of select="ResourceLink/@ArchiveHandle"/>
                     </xsl:when>
@@ -216,52 +435,77 @@ $LastChangedDate: 2013-08-14 11:25:31 +0200 (Wed, 14 Aug 2013) $
                         <xsl:value-of
                             select="resolve-uri(normalize-space(ResourceLink/.), $uri-base)"/>
                     </xsl:when>
-                    <!-- for info files the @ArchiveHandle or @Link is part of the Description element - preference for ArchiveHandle -->
-                    <xsl:when test="not(normalize-space(@ArchiveHandle)='')">
-                        <xsl:value-of select="@ArchiveHandle"/>
-                    </xsl:when>
-                    <xsl:when test="not(normalize-space(@Link)='')">
-                        <xsl:value-of select="@Link"/>
-                    </xsl:when>
                 </xsl:choose>
             </ResourceRef>
         </ResourceProxy>
     </xsl:template>
 
-
+	<!-- Create ResourceProxy for Info files -->
+	<xsl:template match="//Description[@ArchiveHandle or @Link]" mode="linking">
+		<xsl:variable name="res">
+			<xsl:choose>
+				<xsl:when test="normalize-space(@ArchiveHandle)!=''">
+					<xsl:value-of select="@ArchiveHandle"/>
+				</xsl:when>
+				<xsl:when test="normalize-space(@Link)!=''">
+					<xsl:value-of select="@Link"/>
+				</xsl:when>
+			</xsl:choose>
+		</xsl:variable>
+		<xsl:if test="normalize-space($res)!=''">
+			<ResourceProxy id="{generate-id(.)}">
+				<ResourceType>
+					<xsl:choose>
+						<xsl:when test="ends-with(@Link,'.html') or ends-with($res,'.htm')">
+							<xsl:attribute name="mimetype" select="'text/html'"/>
+						</xsl:when>
+						<xsl:when test="ends-with(@Link,'.pdf')">
+							<xsl:attribute name="mimetype" select="'application/pdf'"/>
+						</xsl:when>
+					</xsl:choose>
+					<xsl:text>Resource</xsl:text>
+				</ResourceType>
+				<ResourceRef>
+					<xsl:if test="$localURI and normalize-space(@Link)!=''">
+						<xsl:attribute name="lat:localURI" select="@Link"/>
+					</xsl:if>
+					<xsl:value-of select="$res"/>
+				</ResourceRef>
+			</ResourceProxy>
+		</xsl:if>
+	</xsl:template> 
+	
+	
 
     <xsl:template match="Session">
-        <Session>
+        <lat-session>
             <xsl:apply-templates select="child::Name"/>
             <xsl:apply-templates select="child::Title"/>
             <xsl:apply-templates select="child::Date"/>
-            <xsl:if test="exists(child::Description)">
-                <descriptions>
-                    <xsl:variable name="reflist">
-                        <xsl:for-each select="Description">
-                            <xsl:if test="not(normalize-space(@ArchiveHandle)='') or not(normalize-space(@Link)='')">
-                                <xsl:value-of select="generate-id()"/>
-                                <xsl:text> </xsl:text>
-                            </xsl:if>
-                        </xsl:for-each> 
-                    </xsl:variable>
-                    
-                    <xsl:if test="not(normalize-space($reflist)='')">
-                        <xsl:attribute name="ref" select="normalize-space($reflist)"></xsl:attribute>
-                    </xsl:if>
-
-                    <xsl:for-each select="Description">
-                        <Description>
-                            <xsl:attribute name="LanguageId" select="@LanguageId"/>
-                            <xsl:value-of select="."/>
-                        </Description>
-                    </xsl:for-each>
-                </descriptions>
-            </xsl:if>
-            <xsl:apply-templates select="child::MDGroup"/>
+        	<xsl:variable name="descriptions" select="Description[normalize-space(@ArchiveHandle)='' and normalize-space(@Link)=''][normalize-space(.)!='']"/>
+        	<xsl:variable name="infoLinks" select="Description[normalize-space(@ArchiveHandle)!='' or normalize-space(@Link)!='']"/>
+        	<xsl:if test="exists($descriptions)">
+        		<descriptions>
+        			<xsl:for-each select="$descriptions">
+        				<Description>
+        					<xsl:call-template name="xmlLang"/>
+        					<xsl:value-of select="."/>
+        				</Description>
+        			</xsl:for-each>
+        		</descriptions>
+        	</xsl:if>
+        	<xsl:for-each select="$infoLinks">
+        		<InfoLink ref="{generate-id(.)}">
+        			<Description>
+        				<xsl:call-template name="xmlLang"/>
+        				<xsl:value-of select="."/>
+        			</Description>
+        		</InfoLink>
+        	</xsl:for-each>
+        	<xsl:apply-templates select="child::MDGroup"/>
             <xsl:apply-templates select="child::Resources" mode="regular"/>
             <xsl:apply-templates select="child::References"/>
-        </Session>
+        </lat-session>
     </xsl:template>
 
     <xsl:template match="child::Name">
@@ -283,19 +527,24 @@ $LastChangedDate: 2013-08-14 11:25:31 +0200 (Wed, 14 Aug 2013) $
     </xsl:template>
 
     <xsl:template match="child::MDGroup">
-        <MDGroup>
-            <xsl:apply-templates select="child::Location"/>
-            <xsl:apply-templates select="child::Project"/>
-            <xsl:apply-templates select="child::Keys"/>
-            <xsl:apply-templates select="child::Content"/>
-            <xsl:apply-templates select="child::Actors"/>
-        </MDGroup>
+        <xsl:apply-templates select="child::Location"/>
+        <xsl:apply-templates select="child::Project"/>
+        <xsl:apply-templates select="child::Keys"/>
+        <xsl:apply-templates select="child::Content"/>
+        <xsl:apply-templates select="child::Actors"/>
     </xsl:template>
 
     <xsl:template match="Location">
         <Location>
             <Continent>
-                <xsl:value-of select="child::Continent"/>
+            	<xsl:choose>
+            		<xsl:when test="normalize-space(Continent)!=''">
+            			<xsl:value-of select="child::Continent"/>
+            		</xsl:when>
+            		<xsl:otherwise>
+            			<xsl:text>Unspecified</xsl:text>
+            		</xsl:otherwise>
+            	</xsl:choose>
             </Continent>
             <Country>
                 <xsl:value-of select="child::Country"/>
@@ -329,7 +578,7 @@ $LastChangedDate: 2013-08-14 11:25:31 +0200 (Wed, 14 Aug 2013) $
                 <descriptions>
                     <xsl:for-each select="Description">
                         <Description>
-                            <xsl:attribute name="LanguageId" select="@LanguageId"/>
+                        	<xsl:call-template name="xmlLang"/>
                             <xsl:value-of select="."/>
                         </Description>
                     </xsl:for-each>
@@ -356,16 +605,18 @@ $LastChangedDate: 2013-08-14 11:25:31 +0200 (Wed, 14 Aug 2013) $
     </xsl:template>
 
     <xsl:template match="Keys">
-        <Keys>
-            <xsl:for-each select="Key">
-                <Key>
-                    <xsl:attribute name="Name">
-                        <xsl:value-of select="@Name"/>
-                    </xsl:attribute>
-                    <xsl:value-of select="."/>
-                </Key>
-            </xsl:for-each>
-        </Keys>
+    	<xsl:if test="exists(Key)">
+    		<Keys>
+    			<xsl:for-each select="Key">
+    				<Key>
+    					<xsl:attribute name="Name">
+    						<xsl:value-of select="@Name"/>
+    					</xsl:attribute>
+    					<xsl:value-of select="."/>
+    				</Key>
+    			</xsl:for-each>
+    		</Keys>
+    	</xsl:if>
     </xsl:template>
 
     <xsl:template match="Content">
@@ -400,7 +651,7 @@ $LastChangedDate: 2013-08-14 11:25:31 +0200 (Wed, 14 Aug 2013) $
                 <descriptions>
                     <xsl:for-each select="Description">
                         <Description>
-                            <xsl:attribute name="LanguageId" select="@LanguageId"/>
+                        	<xsl:call-template name="xmlLang"/>
                             <xsl:value-of select="."/>
                         </Description>
                     </xsl:for-each>
@@ -446,53 +697,70 @@ $LastChangedDate: 2013-08-14 11:25:31 +0200 (Wed, 14 Aug 2013) $
     </xsl:template>
 
     <xsl:template match="Languages" mode="content">
-        <Content_Languages>
-            <xsl:if test="exists(child::Description)">
-                <descriptions>
-                    <xsl:for-each select="Description">
-                        <Description>
-                            <xsl:attribute name="LanguageId" select="@LanguageId"/>
-                            <xsl:value-of select="."/>
-                        </Description>
-                    </xsl:for-each>
-                </descriptions>
-            </xsl:if>
-            <xsl:for-each select="Language">
-                <Content_Language>
-                    <Id>
-                        <xsl:value-of select=" ./Id"/>
-                    </Id>
-                    <Name>
-                        <xsl:value-of select=" ./Name"/>
-                    </Name>
-                    <xsl:if test="exists(child::Dominant)">
-                        <Dominant>
-                            <xsl:value-of select=" ./Dominant"/>
-                        </Dominant>
-                    </xsl:if>
-                    <xsl:if test="exists(child::SourceLanguage)">
-                        <SourceLanguage>
-                            <xsl:value-of select=" ./SourceLanguage"/>
-                        </SourceLanguage>
-                    </xsl:if>
-                    <xsl:if test="exists(child::TargetLanguage)">
-                        <TargetLanguage>
-                            <xsl:value-of select=" ./TargetLanguage"/>
-                        </TargetLanguage>
-                    </xsl:if>
-                    <xsl:if test="exists(child::Description)">
-                        <descriptions>
-                            <xsl:for-each select="Description">
-                                <Description>
-                                    <xsl:attribute name="LanguageId" select="@LanguageId"/>
-                                    <xsl:value-of select="."/>
-                                </Description>
-                            </xsl:for-each>
-                        </descriptions>
-                    </xsl:if>
-                </Content_Language>
-            </xsl:for-each>
-        </Content_Languages>
+    	<xsl:if test="exists(Description[normalize-space(.)!='']|Language)">
+    		<Content_Languages>
+    			<xsl:if test="exists(child::Description)">
+    				<descriptions>
+    					<xsl:for-each select="Description">
+    						<Description>
+    							<xsl:call-template name="xmlLang"/>
+    							<xsl:value-of select="."/>
+    						</Description>
+    					</xsl:for-each>
+    				</descriptions>
+    			</xsl:if>
+    			<xsl:for-each select="Language">
+    				<Content_Language>
+    					<Id>
+    						<xsl:value-of select=" ./Id"/>
+    					</Id>
+    					<Name>
+    						<xsl:value-of select=" ./Name"/>
+    					</Name>
+    					<Dominant>
+    						<xsl:choose>
+    							<xsl:when test="normalize-space(Dominant)!=''">
+    								<xsl:value-of select="Dominant"/>
+    							</xsl:when>
+    							<xsl:otherwise>
+    								<xsl:text>Unspecified</xsl:text>
+    							</xsl:otherwise>
+    						</xsl:choose>
+    					</Dominant>
+    					<SourceLanguage>
+    						<xsl:choose>
+    							<xsl:when test="normalize-space(SourceLanguage)!=''">
+    								<xsl:value-of select="SourceLanguage"/>
+    							</xsl:when>
+    							<xsl:otherwise>
+    								<xsl:text>Unspecified</xsl:text>
+    							</xsl:otherwise>
+    						</xsl:choose>
+    					</SourceLanguage>
+    					<TargetLanguage>
+    						<xsl:choose>
+    							<xsl:when test="normalize-space(TargetLanguage)!=''">
+    								<xsl:value-of select="TargetLanguage"/>
+    							</xsl:when>
+    							<xsl:otherwise>
+    								<xsl:text>Unspecified</xsl:text>
+    							</xsl:otherwise>
+    						</xsl:choose>
+    					</TargetLanguage>
+    					<xsl:if test="exists(child::Description)">
+    						<descriptions>
+    							<xsl:for-each select="Description">
+    								<Description>
+    									<xsl:call-template name="xmlLang"/>
+    									<xsl:value-of select="."/>
+    								</Description>
+    							</xsl:for-each>
+    						</descriptions>
+    					</xsl:if>
+    				</Content_Language>
+    			</xsl:for-each>
+    		</Content_Languages>
+    	</xsl:if>
     </xsl:template>
 
     <xsl:template match="Actors">
@@ -501,7 +769,7 @@ $LastChangedDate: 2013-08-14 11:25:31 +0200 (Wed, 14 Aug 2013) $
                 <descriptions>
                     <xsl:for-each select="Description">
                         <Description>
-                            <xsl:attribute name="LanguageId" select="@LanguageId"/>
+                        	<xsl:call-template name="xmlLang"/>
                             <xsl:value-of select="."/>
                         </Description>
                     </xsl:for-each>
@@ -548,7 +816,7 @@ $LastChangedDate: 2013-08-14 11:25:31 +0200 (Wed, 14 Aug 2013) $
                         <descriptions>
                             <xsl:for-each select="Description">
                                 <Description>
-                                    <xsl:attribute name="LanguageId" select="@LanguageId"/>
+                                	<xsl:call-template name="xmlLang"/>
                                     <xsl:value-of select="."/>
                                 </Description>
                             </xsl:for-each>
@@ -566,7 +834,7 @@ $LastChangedDate: 2013-08-14 11:25:31 +0200 (Wed, 14 Aug 2013) $
                 <descriptions>
                     <xsl:for-each select="Description">
                         <Description>
-                            <xsl:attribute name="LanguageId" select="@LanguageId"/>
+                        	<xsl:call-template name="xmlLang"/>
                             <xsl:value-of select="."/>
                         </Description>
                     </xsl:for-each>
@@ -580,21 +848,31 @@ $LastChangedDate: 2013-08-14 11:25:31 +0200 (Wed, 14 Aug 2013) $
                     <Name>
                         <xsl:value-of select=" ./Name"/>
                     </Name>
-                    <xsl:if test="exists(child::MotherTongue)">
-                        <MotherTongue>
-                            <xsl:value-of select=" ./MotherTongue"/>
-                        </MotherTongue>
-                    </xsl:if>
-                    <xsl:if test="exists(child::PrimaryLanguage)">
-                        <PrimaryLanguage>
-                            <xsl:value-of select=" ./PrimaryLanguage"/>
-                        </PrimaryLanguage>
-                    </xsl:if>
+                    <MotherTongue>
+                    	<xsl:choose>
+                    		<xsl:when test="normalize-space(MotherTongue)!=''">
+                    			<xsl:value-of select="MotherTongue"/>
+                    		</xsl:when>
+                    		<xsl:otherwise>
+                    			<xsl:text>Unspecified</xsl:text>
+                    		</xsl:otherwise>
+                    	</xsl:choose>
+                    </MotherTongue>
+                    <PrimaryLanguage>
+                    	<xsl:choose>
+                    		<xsl:when test="normalize-space(PrimaryLanguage)!=''">
+                    			<xsl:value-of select="PrimaryLanguage"/>
+                    		</xsl:when>
+                    		<xsl:otherwise>
+                    			<xsl:text>Unspecified</xsl:text>
+                    		</xsl:otherwise>
+                    	</xsl:choose>
+                    </PrimaryLanguage>
                     <xsl:if test="exists(child::Description)">
                         <descriptions>
                             <xsl:for-each select="Description">
                                 <Description>
-                                    <xsl:attribute name="LanguageId" select="@LanguageId"/>
+                                	<xsl:call-template name="xmlLang"/>
                                     <xsl:value-of select="."/>
                                 </Description>
                             </xsl:for-each>
@@ -616,10 +894,7 @@ $LastChangedDate: 2013-08-14 11:25:31 +0200 (Wed, 14 Aug 2013) $
     </xsl:template>
 
     <xsl:template match="MediaFile">
-        <MediaFile ref="{generate-id()}">
-            <ResourceLink>
-                <xsl:value-of select=" ./ResourceLink"/>
-            </ResourceLink>
+        <MediaFile ref="{generate-id(.)}">
             <Type>
                 <xsl:value-of select=" ./Type"/>
             </Type>
@@ -650,7 +925,7 @@ $LastChangedDate: 2013-08-14 11:25:31 +0200 (Wed, 14 Aug 2013) $
                 <descriptions>
                     <xsl:for-each select="Description">
                         <Description>
-                            <xsl:attribute name="LanguageId" select="@LanguageId"/>
+                        	<xsl:call-template name="xmlLang"/>
                             <xsl:value-of select="."/>
                         </Description>
                     </xsl:for-each>
@@ -679,7 +954,7 @@ $LastChangedDate: 2013-08-14 11:25:31 +0200 (Wed, 14 Aug 2013) $
                 <descriptions>
                     <xsl:for-each select="Description">
                         <Description>
-                            <xsl:attribute name="LanguageId" select="@LanguageId"/>
+                        	<xsl:call-template name="xmlLang"/>
                             <xsl:value-of select="."/>
                         </Description>
                     </xsl:for-each>
@@ -690,12 +965,6 @@ $LastChangedDate: 2013-08-14 11:25:31 +0200 (Wed, 14 Aug 2013) $
 
     <xsl:template match="WrittenResource">
         <WrittenResource ref="{generate-id()}">
-            <ResourceLink>
-                <xsl:value-of select=" ./ResourceLink"/>
-            </ResourceLink>
-            <MediaResourceLink>
-                <xsl:value-of select=" ./MediaResourceLink"/>
-            </MediaResourceLink>
             <Date>
                 <xsl:value-of select=" ./Date"/>
             </Date>
@@ -732,7 +1001,7 @@ $LastChangedDate: 2013-08-14 11:25:31 +0200 (Wed, 14 Aug 2013) $
                 <descriptions>
                     <xsl:for-each select="Description">
                         <Description>
-                            <xsl:attribute name="LanguageId" select="@LanguageId"/>
+                        	<xsl:call-template name="xmlLang"/>
                             <xsl:value-of select="."/>
                         </Description>
                     </xsl:for-each>
@@ -757,7 +1026,7 @@ $LastChangedDate: 2013-08-14 11:25:31 +0200 (Wed, 14 Aug 2013) $
                 <descriptions>
                     <xsl:for-each select="Description">
                         <Description>
-                            <xsl:attribute name="LanguageId" select="@LanguageId"/>
+                        	<xsl:call-template name="xmlLang"/>
                             <xsl:value-of select="."/>
                         </Description>
                     </xsl:for-each>
@@ -806,7 +1075,7 @@ $LastChangedDate: 2013-08-14 11:25:31 +0200 (Wed, 14 Aug 2013) $
                 <descriptions>
                     <xsl:for-each select="Description">
                         <Description>
-                            <xsl:attribute name="LanguageId" select="@LanguageId"/>
+                        	<xsl:call-template name="xmlLang"/>
                             <xsl:value-of select="."/>
                         </Description>
                     </xsl:for-each>
@@ -818,9 +1087,9 @@ $LastChangedDate: 2013-08-14 11:25:31 +0200 (Wed, 14 Aug 2013) $
 
     <xsl:template match="Anonyms">
         <Anonyms>
-            <ResourceLink>
-                <xsl:value-of select=" ./ResourceLink"/>
-            </ResourceLink>
+        	<xsl:if test="exists(ResourceLink[normalize-space(.)!=''])">
+        		<xsl:attribute name="ref" select="generate-id(ResourceLink)"/>
+        	</xsl:if>
             <xsl:apply-templates select="Access"/>
         </Anonyms>
     </xsl:template>
@@ -831,7 +1100,7 @@ $LastChangedDate: 2013-08-14 11:25:31 +0200 (Wed, 14 Aug 2013) $
                 <descriptions>
                     <xsl:for-each select="Description">
                         <Description>
-                            <xsl:attribute name="LanguageId" select="@LanguageId"/>
+                        	<xsl:call-template name="xmlLang"/>
                             <xsl:value-of select="."/>
                         </Description>
                     </xsl:for-each>
@@ -839,6 +1108,62 @@ $LastChangedDate: 2013-08-14 11:25:31 +0200 (Wed, 14 Aug 2013) $
             </xsl:if>
         </References>
     </xsl:template>
+	
+	<xsl:function name="imdi:lang2iso">
+		<xsl:param name="language"/>
+		<xsl:variable name="codeset" select="replace(substring-before($language,':'),' ','')"/>
+		<xsl:variable name="codestr" select="substring-after($language,':')"/>
+		<xsl:variable name="code">
+			<xsl:choose>
+				<xsl:when test="$codeset='ISO639-3'">
+					<xsl:choose>
+						<xsl:when test="$codestr='xxx'">
+							<xsl:message>WRN: IMDI source[<xsl:value-of select="$uri-base"/>]: 'xxx' is a potential valid ISO 639-3 code, but for now mapped to 'und'!</xsl:message>
+							<xsl:value-of select="'und'"/>
+						</xsl:when>
+						<xsl:when test="matches($codestr,'^[a-z]{3}$')">
+							<xsl:value-of select="$codestr"/>
+						</xsl:when>
+						<xsl:otherwise>
+							<xsl:value-of select="'und'"/>
+						</xsl:otherwise>
+					</xsl:choose>
+				</xsl:when>
+				<xsl:when test="$codeset='RFC1766'">
+					<xsl:choose>
+						<xsl:when test="starts-with($codestr,'x-sil-')">
+							<xsl:variable name="iso" select="key('iso-lookup', lower-case(replace($codestr, 'x-sil-', '')), $lang-top)/iso"/>
+							<xsl:choose>
+								<xsl:when test="$iso!='xxx'">
+									<xsl:value-of select="$iso"/>
+								</xsl:when>
+								<xsl:otherwise>
+									<xsl:value-of select="'und'"/>
+								</xsl:otherwise>
+							</xsl:choose>
+						</xsl:when>
+						<xsl:otherwise>
+							<xsl:value-of select="'und'"/>
+						</xsl:otherwise>
+					</xsl:choose>
+				</xsl:when>
+				<xsl:otherwise>
+					<xsl:value-of select="'und'"/>
+				</xsl:otherwise>
+			</xsl:choose>
+		</xsl:variable>
+		<xsl:sequence select="$code"/>
+	</xsl:function>
+	
+	<xsl:template name="xmlLang">
+		<xsl:if test="normalize-space(@LanguageId)!=''">
+			<xsl:variable name="code" select="imdi:lang2iso(normalize-space(@LanguageId))"/>
+			<xsl:if test="$code!='und'">
+				<xsl:attribute name="xml:lang" select="$code"/>
+			</xsl:if>
+		</xsl:if>
+	</xsl:template>
+	
 
     <xsl:template name="main">
         <xsl:for-each
