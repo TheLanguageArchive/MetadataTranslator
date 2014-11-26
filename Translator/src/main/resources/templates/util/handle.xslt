@@ -6,6 +6,15 @@
         If the provided href is a handle, returns it has handle (always with hdl:-prefix). 
         If it is not a handle, returns nothing for easy testing.
     -->
+    <xsl:function name="tla:getHandleWithoutFormat">
+        <xsl:param name="href" />
+        <xsl:param name="outformat" />
+        <xsl:variable name="baseHandle" select="tla:getBaseHandle($href)" />
+        <xsl:if test="$baseHandle">
+            <xsl:value-of select="concat('hdl:',replace($baseHandle,'@format=.+$',''), '@format=', $outformat)" />
+        </xsl:if>
+        <!-- otherwise return nothing -->
+    </xsl:function>
     <xsl:function name="tla:getHandle">
         <xsl:param name="href" />
         <xsl:param name="outformat"/>
