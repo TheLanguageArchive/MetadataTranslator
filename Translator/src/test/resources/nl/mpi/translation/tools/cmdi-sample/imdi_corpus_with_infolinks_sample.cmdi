@@ -1,0 +1,661 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CMD xmlns="http://www.clarin.eu/cmd/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:imdi="http://www.mpi.nl/IMDI/Schema/IMDI" xmlns:lat="http://lat.mpi.nl/" CMDVersion="1.1"
+    xsi:schemaLocation="http://www.clarin.eu/cmd/ http://catalog.clarin.eu/ds/ComponentRegistry/rest/registry/profiles/clarin.eu:cr1:p_1407745712064/xsd">
+    <Header>
+        <MdCreator>imdi2clarin.xsl</MdCreator>
+        <MdCreationDate>2014-11-25</MdCreationDate>
+        <MdSelfLink>hdl:1839/00-0000-0000-0001-305B-C@format=cmdi</MdSelfLink>
+        <MdProfile>clarin.eu:cr1:p_1407745712064</MdProfile>
+    </Header>
+    <Resources>
+        <ResourceProxyList>
+            <ResourceProxy id="d1148342e17">
+                <ResourceType mimetype="text/html">Resource</ResourceType>
+                <ResourceRef lat:localURI="../Info/WelcomeToDOBES.html"
+                    >hdl:1839/00-0000-0000-0004-353C-D</ResourceRef>
+            </ResourceProxy>
+            <ResourceProxy id="d1148342e20">
+                <ResourceType mimetype="text/html">Resource</ResourceType>
+                <ResourceRef lat:localURI="../Info/introduction.html"
+                    >hdl:1839/00-0000-0000-0001-4891-E</ResourceRef>
+            </ResourceProxy>
+            <ResourceProxy id="d1148342e24">
+                <!--../Ache/Corpusstructure/Ache.imdi-->
+                <ResourceType>Metadata</ResourceType>
+                <ResourceRef lat:localURI="../Ache/Corpusstructure/Ache.imdi"
+                    >hdl:1839/00-0000-0000-0014-C52F-7@format=cmdi</ResourceRef>
+            </ResourceProxy>
+            <ResourceProxy id="d1148342e27">
+                <!--../Akhoe/Corpusstructure/Akhoe.imdi-->
+                <ResourceType>Metadata</ResourceType>
+                <ResourceRef lat:localURI="../Akhoe/Corpusstructure/Akhoe.imdi"
+                    >hdl:1839/00-0000-0000-0004-DDF2-2@format=cmdi</ResourceRef>
+            </ResourceProxy>
+            <ResourceProxy id="d1148342e30">
+                <!--../Aweti/Corpusstructure/1.imdi-->
+                <ResourceType>Metadata</ResourceType>
+                <ResourceRef lat:localURI="../Aweti/Corpusstructure/1.imdi"
+                    >hdl:1839/00-0000-0000-0001-305C-A@format=cmdi</ResourceRef>
+            </ResourceProxy>
+            <ResourceProxy id="d1148342e33">
+                <!--../Mawe/Corpusstructure/Mawe.imdi-->
+                <ResourceType>Metadata</ResourceType>
+                <ResourceRef lat:localURI="../Mawe/Corpusstructure/Mawe.imdi"
+                    >hdl:1839/00-0000-0000-0001-3DA2-B@format=cmdi</ResourceRef>
+            </ResourceProxy>
+            <ResourceProxy id="d1148342e36">
+                <!--../Bainounk/Corpusstructure/Bainounk.imdi-->
+                <ResourceType>Metadata</ResourceType>
+                <ResourceRef lat:localURI="../Bainounk/Corpusstructure/Bainounk.imdi"
+                    >hdl:1839/00-0000-0000-0016-3656-0@format=cmdi</ResourceRef>
+            </ResourceProxy>
+            <ResourceProxy id="d1148342e39">
+                <!--../Bakola/Corpusstructure/Bakola.imdi-->
+                <ResourceType>Metadata</ResourceType>
+                <ResourceRef lat:localURI="../Bakola/Corpusstructure/Bakola.imdi"
+                    >hdl:1839/00-0000-0000-0014-C529-A@format=cmdi</ResourceRef>
+            </ResourceProxy>
+            <ResourceProxy id="d1148342e43">
+                <!--../Baure/Corpusstructure/Baure.imdi-->
+                <ResourceType>Metadata</ResourceType>
+                <ResourceRef lat:localURI="../Baure/Corpusstructure/Baure.imdi"
+                    >hdl:1839/00-0000-0000-000D-8382-B@format=cmdi</ResourceRef>
+            </ResourceProxy>
+            <ResourceProxy id="d1148342e46">
+                <!--../Beaver/Corpusstructure/Beaver.imdi-->
+                <ResourceType>Metadata</ResourceType>
+                <ResourceRef lat:localURI="../Beaver/Corpusstructure/Beaver.imdi"
+                    >hdl:1839/00-0000-0000-0001-34B1-5@format=cmdi</ResourceRef>
+            </ResourceProxy>
+            <ResourceProxy id="d1148342e49">
+                <ResourceType>Metadata</ResourceType>
+                <ResourceRef lat:localURI="../Bena_Bena/Corpusstructure/Bena_Bena.imdi"
+                    >file:/lat/corpora/conversion/imdi_to_cmdi/src/dobes_data/Bena_Bena/Corpusstructure/Bena_Bena.imdi.cmdi</ResourceRef>
+            </ResourceProxy>
+            <ResourceProxy id="d1148342e52">
+                <!--../Cashinahua/Corpusstructure/Cashinahua.imdi-->
+                <ResourceType>Metadata</ResourceType>
+                <ResourceRef lat:localURI="../Cashinahua/Corpusstructure/Cashinahua.imdi"
+                    >hdl:1839/00-0000-0000-0008-4070-6@format=cmdi</ResourceRef>
+            </ResourceProxy>
+            <ResourceProxy id="d1148342e55">
+                <!--../Chaco/Corpusstructure/1.imdi-->
+                <ResourceType>Metadata</ResourceType>
+                <ResourceRef lat:localURI="../Chaco/Corpusstructure/1.imdi"
+                    >hdl:1839/00-0000-0000-0001-34DE-7@format=cmdi</ResourceRef>
+            </ResourceProxy>
+            <ResourceProxy id="d1148342e58">
+                <!--../ChintangPuma/Corpusstructure/ChintangPuma.imdi-->
+                <ResourceType>Metadata</ResourceType>
+                <ResourceRef lat:localURI="../ChintangPuma/Corpusstructure/ChintangPuma.imdi"
+                    >hdl:1839/00-0000-0000-0005-24BD-D@format=cmdi</ResourceRef>
+            </ResourceProxy>
+            <ResourceProxy id="d1148342e62">
+                <!--../Chipaya/Corpusstructure/Chipaya.imdi-->
+                <ResourceType>Metadata</ResourceType>
+                <ResourceRef lat:localURI="../Chipaya/Corpusstructure/Chipaya.imdi"
+                    >hdl:1839/00-0000-0000-0008-24CA-F@format=cmdi</ResourceRef>
+            </ResourceProxy>
+            <ResourceProxy id="d1148342e65">
+                <!--../Chipaya_Boecker/Corpusstructure/Chipaya_Boecker.imdi-->
+                <ResourceType>Metadata</ResourceType>
+                <ResourceRef lat:localURI="../Chipaya_Boecker/Corpusstructure/Chipaya_Boecker.imdi"
+                    >hdl:1839/00-0000-0000-0009-FD76-B@format=cmdi</ResourceRef>
+            </ResourceProxy>
+            <ResourceProxy id="d1148342e68">
+                <!--../Chontal/Corpusstructure/Chontal.imdi-->
+                <ResourceType>Metadata</ResourceType>
+                <ResourceRef lat:localURI="../Chontal/Corpusstructure/Chontal.imdi"
+                    >hdl:1839/00-0000-0000-0005-831C-C@format=cmdi</ResourceRef>
+            </ResourceProxy>
+            <ResourceProxy id="d1148342e71">
+                <!--../ECLING/Corpusstructure/ECLING.imdi-->
+                <ResourceType>Metadata</ResourceType>
+                <ResourceRef lat:localURI="../ECLING/Corpusstructure/ECLING.imdi"
+                    >hdl:1839/00-0000-0000-0008-24AD-F@format=cmdi</ResourceRef>
+            </ResourceProxy>
+            <ResourceProxy id="d1148342e74">
+                <!--../Enets/Corpusstructure/Enets_and_Forest_Nenets.imdi-->
+                <ResourceType>Metadata</ResourceType>
+                <ResourceRef lat:localURI="../Enets/Corpusstructure/Enets_and_Forest_Nenets.imdi"
+                    >hdl:1839/00-0000-0000-0008-2194-0@format=cmdi</ResourceRef>
+            </ResourceProxy>
+            <ResourceProxy id="d1148342e77">
+                <!--../Even/Corpusstructure/Even.imdi-->
+                <ResourceType>Metadata</ResourceType>
+                <ResourceRef lat:localURI="../Even/Corpusstructure/Even.imdi"
+                    >hdl:1839/00-0000-0000-000F-2DFE-0@format=cmdi</ResourceRef>
+            </ResourceProxy>
+            <ResourceProxy id="d1148342e81">
+                <!--../Center/Corpusstructure/center.imdi-->
+                <ResourceType>Metadata</ResourceType>
+                <ResourceRef lat:localURI="../Center/Corpusstructure/center.imdi"
+                    >hdl:1839/00-0000-0000-0005-802E-9@format=cmdi</ResourceRef>
+            </ResourceProxy>
+            <ResourceProxy id="d1148342e84">
+                <!--../Gorani/Corpusstructure/Gorani.imdi-->
+                <ResourceType>Metadata</ResourceType>
+                <ResourceRef lat:localURI="../Gorani/Corpusstructure/Gorani.imdi"
+                    >hdl:1839/00-0000-0000-0009-E89B-9@format=cmdi</ResourceRef>
+            </ResourceProxy>
+            <ResourceProxy id="d1148342e87">
+                <!--../Hocank/Corpusstructure/1.imdi-->
+                <ResourceType>Metadata</ResourceType>
+                <ResourceRef lat:localURI="../Hocank/Corpusstructure/1.imdi"
+                    >hdl:1839/00-0000-0000-0001-367F-7@format=cmdi</ResourceRef>
+            </ResourceProxy>
+            <ResourceProxy id="d1148342e90">
+                <!--../Iwaidja/Corpusstructure/1.imdi-->
+                <ResourceType>Metadata</ResourceType>
+                <ResourceRef lat:localURI="../Iwaidja/Corpusstructure/1.imdi"
+                    >hdl:1839/00-0000-0000-0001-3709-6@format=cmdi</ResourceRef>
+            </ResourceProxy>
+            <ResourceProxy id="d1148342e93">
+                <!--../Isubu_Wovia/Corpusstructure/Isubu_Wovia.imdi-->
+                <ResourceType>Metadata</ResourceType>
+                <ResourceRef lat:localURI="../Isubu_Wovia/Corpusstructure/Isubu_Wovia.imdi"
+                    >hdl:1839/00-0000-0000-0015-20BC-5@format=cmdi</ResourceRef>
+            </ResourceProxy>
+            <ResourceProxy id="d1148342e96">
+                <!--../Jaminjungan/Corpusstructure/Jaminjungan.imdi-->
+                <ResourceType>Metadata</ResourceType>
+                <ResourceRef lat:localURI="../Jaminjungan/Corpusstructure/Jaminjungan.imdi"
+                    >hdl:1839/00-0000-0000-0004-DF7A-E@format=cmdi</ResourceRef>
+            </ResourceProxy>
+            <ResourceProxy id="d1148342e100">
+                <!--../Khinalug/Corpusstructure/Khinalug.imdi-->
+                <ResourceType>Metadata</ResourceType>
+                <ResourceRef lat:localURI="../Khinalug/Corpusstructure/Khinalug.imdi"
+                    >hdl:1839/00-0000-0000-0016-2EB3-C@format=cmdi</ResourceRef>
+            </ResourceProxy>
+            <ResourceProxy id="d1148342e103">
+                <!--../Kola-Saami/Corpusstructure/Kola-Saami.imdi-->
+                <ResourceType>Metadata</ResourceType>
+                <ResourceRef lat:localURI="../Kola-Saami/Corpusstructure/Kola-Saami.imdi"
+                    >hdl:1839/00-0000-0000-0005-8A34-E@format=cmdi</ResourceRef>
+            </ResourceProxy>
+            <ResourceProxy id="d1148342e106">
+                <!--../Kuikuro/Corpusstructure/1.imdi-->
+                <ResourceType>Metadata</ResourceType>
+                <ResourceRef lat:localURI="../Kuikuro/Corpusstructure/1.imdi"
+                    >hdl:1839/00-0000-0000-0001-379E-4@format=cmdi</ResourceRef>
+            </ResourceProxy>
+            <ResourceProxy id="d1148342e109">
+                <!--../Kurumba/Corpusstructure/Kurumba.imdi-->
+                <ResourceType>Metadata</ResourceType>
+                <ResourceRef lat:localURI="../Kurumba/Corpusstructure/Kurumba.imdi"
+                    >hdl:1839/00-0000-0000-000D-8383-9@format=cmdi</ResourceRef>
+            </ResourceProxy>
+            <ResourceProxy id="d1148342e112">
+                <!--../Lacandon/Corpusstructure/1.imdi-->
+                <ResourceType>Metadata</ResourceType>
+                <ResourceRef lat:localURI="../Lacandon/Corpusstructure/1.imdi"
+                    >hdl:1839/00-0000-0000-0001-390B-C@format=cmdi</ResourceRef>
+            </ResourceProxy>
+            <ResourceProxy id="d1148342e115">
+                <!--../Minderico/Corpusstructure/Minderico.imdi-->
+                <ResourceType>Metadata</ResourceType>
+                <ResourceRef lat:localURI="../Minderico/Corpusstructure/Minderico.imdi"
+                    >hdl:1839/00-0000-0000-000F-2DFF-A@format=cmdi</ResourceRef>
+            </ResourceProxy>
+            <ResourceProxy id="d1148342e119">
+                <!--../Marquesan/Corpusstructure/1.imdi-->
+                <ResourceType>Metadata</ResourceType>
+                <ResourceRef lat:localURI="../Marquesan/Corpusstructure/1.imdi"
+                    >hdl:1839/00-0000-0000-0001-3B2D-1@format=cmdi</ResourceRef>
+            </ResourceProxy>
+            <ResourceProxy id="d1148342e122">
+                <!--../Movima/Corpusstructure/Movima.imdi-->
+                <ResourceType>Metadata</ResourceType>
+                <ResourceRef lat:localURI="../Movima/Corpusstructure/Movima.imdi"
+                    >hdl:1839/00-0000-0000-0007-DDFD-4@format=cmdi</ResourceRef>
+            </ResourceProxy>
+            <ResourceProxy id="d1148342e125">
+                <!--../Oyda/Corpusstructure/Oyda.imdi-->
+                <ResourceType>Metadata</ResourceType>
+                <ResourceRef lat:localURI="../Oyda/Corpusstructure/Oyda.imdi"
+                    >hdl:1839/00-0000-0000-0016-3694-8@format=cmdi</ResourceRef>
+            </ResourceProxy>
+            <ResourceProxy id="d1148342e128">
+                <!--../Paumotu/Corpusstructure/Paumotu.imdi-->
+                <ResourceType>Metadata</ResourceType>
+                <ResourceRef lat:localURI="../Paumotu/Corpusstructure/Paumotu.imdi"
+                    >hdl:1839/00-0000-0000-000D-B80D-8@format=cmdi</ResourceRef>
+            </ResourceProxy>
+            <ResourceProxy id="d1148342e131">
+                <!--../SalarMonguor/Corpusstructure/SalarMonguor.imdi-->
+                <ResourceType>Metadata</ResourceType>
+                <ResourceRef lat:localURI="../SalarMonguor/Corpusstructure/SalarMonguor.imdi"
+                    >hdl:1839/00-0000-0000-0001-3DA3-5@format=cmdi</ResourceRef>
+            </ResourceProxy>
+            <ResourceProxy id="d1148342e134">
+                <!--../SalibaLogea/Corpusstructure/Saliba_Logea.imdi-->
+                <ResourceType>Metadata</ResourceType>
+                <ResourceRef lat:localURI="../SalibaLogea/Corpusstructure/Saliba_Logea.imdi"
+                    >hdl:1839/00-0000-0000-0008-1484-1@format=cmdi</ResourceRef>
+            </ResourceProxy>
+            <ResourceProxy id="d1148342e138">
+                <!--../Savosavo/Corpusstructure/savosavo.imdi-->
+                <ResourceType>Metadata</ResourceType>
+                <ResourceRef lat:localURI="../Savosavo/Corpusstructure/savosavo.imdi"
+                    >hdl:1839/00-0000-0000-0008-7347-A@format=cmdi</ResourceRef>
+            </ResourceProxy>
+            <ResourceProxy id="d1148342e141">
+                <!--../Semang/Corpusstructure/semang.imdi-->
+                <ResourceType>Metadata</ResourceType>
+                <ResourceRef lat:localURI="../Semang/Corpusstructure/semang.imdi"
+                    >hdl:1839/00-0000-0000-0008-719D-6@format=cmdi</ResourceRef>
+            </ResourceProxy>
+            <ResourceProxy id="d1148342e144">
+                <!--../SemoqBeri_Batek/Corpusstructure/Semoq_Beri_and_Batek.imdi-->
+                <ResourceType>Metadata</ResourceType>
+                <ResourceRef
+                    lat:localURI="../SemoqBeri_Batek/Corpusstructure/Semoq_Beri_and_Batek.imdi"
+                    >hdl:1839/00-0000-0000-000A-2119-E@format=cmdi</ResourceRef>
+            </ResourceProxy>
+            <ResourceProxy id="d1148342e147">
+                <!--../SriLankaMalay/Corpusstructure/Sri_Lanka_Malay.imdi-->
+                <ResourceType>Metadata</ResourceType>
+                <ResourceRef lat:localURI="../SriLankaMalay/Corpusstructure/Sri_Lanka_Malay.imdi"
+                    >hdl:1839/00-0000-0000-0007-DDFE-2@format=cmdi</ResourceRef>
+            </ResourceProxy>
+            <ResourceProxy id="d1148342e150">
+                <!--../Taa/Corpusstructure/Taa.imdi-->
+                <ResourceType>Metadata</ResourceType>
+                <ResourceRef lat:localURI="../Taa/Corpusstructure/Taa.imdi"
+                    >hdl:1839/00-0000-0000-0004-DDF3-4@format=cmdi</ResourceRef>
+            </ResourceProxy>
+            <ResourceProxy id="d1148342e153">
+                <!--../Tangsa_Tai_Singpho/Corpusstructure/1.imdi-->
+                <ResourceType>Metadata</ResourceType>
+                <ResourceRef lat:localURI="../Tangsa_Tai_Singpho/Corpusstructure/1.imdi"
+                    >hdl:1839/00-0000-0000-000D-BB1A-A@format=cmdi</ResourceRef>
+            </ResourceProxy>
+            <ResourceProxy id="d1148342e157">
+                <!--../Teop/Corpusstructure/1.imdi-->
+                <ResourceType>Metadata</ResourceType>
+                <ResourceRef lat:localURI="../Teop/Corpusstructure/1.imdi"
+                    >hdl:1839/00-0000-0000-0001-3DB8-C@format=cmdi</ResourceRef>
+            </ResourceProxy>
+            <ResourceProxy id="d1148342e160">
+                <!--../Tima/Corpusstructure/Tima.imdi-->
+                <ResourceType>Metadata</ResourceType>
+                <ResourceRef lat:localURI="../Tima/Corpusstructure/Tima.imdi"
+                    >hdl:1839/00-0000-0000-0008-2195-8@format=cmdi</ResourceRef>
+            </ResourceProxy>
+            <ResourceProxy id="d1148342e163">
+                <!--../TOFA/Corpusstructure/1.imdi-->
+                <ResourceType>Metadata</ResourceType>
+                <ResourceRef lat:localURI="../TOFA/Corpusstructure/1.imdi"
+                    >hdl:1839/00-0000-0000-0001-3F6C-E@format=cmdi</ResourceRef>
+            </ResourceProxy>
+            <ResourceProxy id="d1148342e166">
+                <!--../Totoli/Corpusstructure/Totoli.imdi-->
+                <ResourceType>Metadata</ResourceType>
+                <ResourceRef lat:localURI="../Totoli/Corpusstructure/Totoli.imdi"
+                    >hdl:1839/00-0000-0000-0005-24BE-F@format=cmdi</ResourceRef>
+            </ResourceProxy>
+            <ResourceProxy id="d1148342e169">
+                <!--../Trumai/Corpusstructure/1.imdi-->
+                <ResourceType>Metadata</ResourceType>
+                <ResourceRef lat:localURI="../Trumai/Corpusstructure/1.imdi"
+                    >hdl:1839/00-0000-0000-0008-3A0E-7@format=cmdi</ResourceRef>
+            </ResourceProxy>
+            <ResourceProxy id="d1148342e172">
+                <!--../Tsafiki/Corpusstructure/1.imdi-->
+                <ResourceType>Metadata</ResourceType>
+                <ResourceRef lat:localURI="../Tsafiki/Corpusstructure/1.imdi"
+                    >hdl:1839/00-0000-0000-0001-46BA-3@format=cmdi</ResourceRef>
+            </ResourceProxy>
+            <ResourceProxy id="d1148342e176">
+                <!--../Vures_Veraa/Corpusstructure/Vures_Veraa.imdi-->
+                <ResourceType>Metadata</ResourceType>
+                <ResourceRef lat:localURI="../Vures_Veraa/Corpusstructure/Vures_Veraa.imdi"
+                    >hdl:1839/00-0000-0000-0009-E89C-6@format=cmdi</ResourceRef>
+            </ResourceProxy>
+            <ResourceProxy id="d1148342e179">
+                <!--../Waimaa/Corpusstructure/1.imdi-->
+                <ResourceType>Metadata</ResourceType>
+                <ResourceRef lat:localURI="../Waimaa/Corpusstructure/1.imdi"
+                    >hdl:1839/00-0000-0000-0001-473A-3@format=cmdi</ResourceRef>
+            </ResourceProxy>
+            <ResourceProxy id="d1148342e182">
+                <!--../Ambrym/Corpusstructure/West_Ambrym_Languages.imdi-->
+                <ResourceType>Metadata</ResourceType>
+                <ResourceRef lat:localURI="../Ambrym/Corpusstructure/West_Ambrym_Languages.imdi"
+                    >hdl:1839/00-0000-0000-000E-1808-8@format=cmdi</ResourceRef>
+            </ResourceProxy>
+            <ResourceProxy id="d1148342e185">
+                <!--../Wichita/Corpusstructure/1.imdi-->
+                <ResourceType>Metadata</ResourceType>
+                <ResourceRef lat:localURI="../Wichita/Corpusstructure/1.imdi"
+                    >hdl:1839/00-0000-0000-0001-483D-C@format=cmdi</ResourceRef>
+            </ResourceProxy>
+            <ResourceProxy id="d1148342e188">
+                <!--../Wooi/Corpusstructure/Wooi.imdi-->
+                <ResourceType>Metadata</ResourceType>
+                <ResourceRef lat:localURI="../Wooi/Corpusstructure/Wooi.imdi"
+                    >hdl:1839/00-0000-0000-0014-C76C-1@format=cmdi</ResourceRef>
+            </ResourceProxy>
+            <ResourceProxy id="d1148342e191">
+                <!--../Yurakare/Corpusstructure/Yurakare.imdi-->
+                <ResourceType>Metadata</ResourceType>
+                <ResourceRef lat:localURI="../Yurakare/Corpusstructure/Yurakare.imdi"
+                    >hdl:1839/00-0000-0000-0008-2196-6@format=cmdi</ResourceRef>
+            </ResourceProxy>
+            <ResourceProxy id="d1148342e195">
+                <!--../Lower_Sorbian/Corpusstructure/Lower_Sorbian.imdi-->
+                <ResourceType>Metadata</ResourceType>
+                <ResourceRef lat:localURI="../Lower_Sorbian/Corpusstructure/Lower_Sorbian.imdi"
+                    >hdl:1839/00-0000-0000-0016-9194-2@format=cmdi</ResourceRef>
+            </ResourceProxy>
+            <ResourceProxy id="d1148342e198">
+                <!--../Bezen/Corpusstructure/Bezen.imdi-->
+                <ResourceType>Metadata</ResourceType>
+                <ResourceRef lat:localURI="../Bezen/Corpusstructure/Bezen.imdi"
+                    >hdl:1839/00-0000-0000-0016-B121-7@format=cmdi</ResourceRef>
+            </ResourceProxy>
+            <ResourceProxy id="d1148342e201">
+                <!--../Morehead/Corpusstructure/Morehead.imdi-->
+                <ResourceType>Metadata</ResourceType>
+                <ResourceRef lat:localURI="../Morehead/Corpusstructure/Morehead.imdi"
+                    >hdl:1839/00-0000-0000-0017-89A2-B@format=cmdi</ResourceRef>
+            </ResourceProxy>
+            <ResourceProxy id="d1148342e204">
+                <!--../Laal/Corpusstructure/Laal.imdi-->
+                <ResourceType>Metadata</ResourceType>
+                <ResourceRef lat:localURI="../Laal/Corpusstructure/Laal.imdi"
+                    >hdl:1839/00-0000-0000-0017-B129-C@format=cmdi</ResourceRef>
+            </ResourceProxy>
+            <ResourceProxy id="d1148342e207">
+                <!--../Referentiality_Project/Corpusstructure/Referentiality_Project.imdi-->
+                <ResourceType>Metadata</ResourceType>
+                <ResourceRef
+                    lat:localURI="../Referentiality_Project/Corpusstructure/Referentiality_Project.imdi"
+                    >hdl:1839/00-0000-0000-0017-BCA6-3@format=cmdi</ResourceRef>
+            </ResourceProxy>
+            <ResourceProxy id="d1148342e210">
+                <!--../Kyanga_Shanga/Corpusstructure/Kyanga_Shanga.imdi-->
+                <ResourceType>Metadata</ResourceType>
+                <ResourceRef lat:localURI="../Kyanga_Shanga/Corpusstructure/Kyanga_Shanga.imdi"
+                    >hdl:1839/00-0000-0000-0017-CFE8-5@format=cmdi</ResourceRef>
+            </ResourceProxy>
+            <ResourceProxy id="d1148342e214">
+                <!--../CELD_Papua/Corpusstructure/CELD_Papua.imdi-->
+                <ResourceType>Metadata</ResourceType>
+                <ResourceRef lat:localURI="../CELD_Papua/Corpusstructure/CELD_Papua.imdi"
+                    >hdl:1839/00-0000-0000-0017-E884-A@format=cmdi</ResourceRef>
+            </ResourceProxy>
+            <ResourceProxy id="d1148342e217">
+                <!--../Bayso_and_Haro/Corpusstructure/Bayso_and_Haro.imdi-->
+                <ResourceType>Metadata</ResourceType>
+                <ResourceRef lat:localURI="../Bayso_and_Haro/Corpusstructure/Bayso_and_Haro.imdi"
+                    >hdl:1839/00-0000-0000-0017-F327-0@format=cmdi</ResourceRef>
+            </ResourceProxy>
+            <ResourceProxy id="d1148342e220">
+                <!--../Shiri_and_Sanzhi/Corpusstructure/Shiri_and_Sanzhi.imdi-->
+                <ResourceType>Metadata</ResourceType>
+                <ResourceRef
+                    lat:localURI="../Shiri_and_Sanzhi/Corpusstructure/Shiri_and_Sanzhi.imdi"
+                    >hdl:1839/00-0000-0000-0018-A4D4-6@format=cmdi</ResourceRef>
+            </ResourceProxy>
+            <ResourceProxy id="d1148342e223">
+                <!--../Rondonia/Corpusstructure/Rondonia.imdi-->
+                <ResourceType>Metadata</ResourceType>
+                <ResourceRef lat:localURI="../Rondonia/Corpusstructure/Rondonia.imdi"
+                    >hdl:1839/00-0000-0000-0019-E76D-1@format=cmdi</ResourceRef>
+            </ResourceProxy>
+            <ResourceProxy id="d1148342e226">
+                <!--../Deline/Corpusstructure/Deline.imdi-->
+                <ResourceType>Metadata</ResourceType>
+                <ResourceRef lat:localURI="../Deline/Corpusstructure/Deline.imdi"
+                    >hdl:1839/00-0000-0000-0019-EE0F-7@format=cmdi</ResourceRef>
+            </ResourceProxy>
+            <ResourceProxy id="d1148342e229">
+                <!--../NsambaanNsongNgong/Corpusstructure/NsambaanNsongNgong.imdi-->
+                <ResourceType>Metadata</ResourceType>
+                <ResourceRef
+                    lat:localURI="../NsambaanNsongNgong/Corpusstructure/NsambaanNsongNgong.imdi"
+                    >hdl:1839/00-0000-0000-001A-9F2B-A@format=cmdi</ResourceRef>
+            </ResourceProxy>
+            <ResourceProxy id="d1148342e233">
+                <!--../Akie/Corpusstructure/Akie.imdi-->
+                <ResourceType>Metadata</ResourceType>
+                <ResourceRef lat:localURI="../Akie/Corpusstructure/Akie.imdi"
+                    >hdl:1839/00-0000-0000-001A-D484-2@format=cmdi</ResourceRef>
+            </ResourceProxy>
+            <ResourceProxy id="d1148342e236">
+                <!--../Aru_languages/Corpusstructure/Aru_languages.imdi-->
+                <ResourceType>Metadata</ResourceType>
+                <ResourceRef lat:localURI="../Aru_languages/Corpusstructure/Aru_languages.imdi"
+                    >hdl:1839/00-0000-0000-001C-903D-9@format=cmdi</ResourceRef>
+            </ResourceProxy>
+            <ResourceProxy id="searchpage">
+                <ResourceType>SearchPage</ResourceType>
+                <ResourceRef>http://corpus1.mpi.nl/ds/trova/search.jsp?handle=hdl:1839/00-0000-0000-0001-305B-C</ResourceRef>
+            </ResourceProxy>
+        </ResourceProxyList>
+        <JournalFileProxyList/>
+        <ResourceRelationList/>
+    </Resources>
+    <Components>
+        <lat-corpus>
+            <Name>DoBeS archive</Name>
+            <Title>Documentation of endangered languages</Title>
+            <descriptions>
+                <Description>Approximately 6500 languages are currently spoken world-wide. It can be assumed that about two-thirds of these languages will become extinct in the 21st century. All languages are intimately interlinked with the culture of their speakers, and all languages and cultures represent specific expressions of human thought and social organisation. Therefore, with every language which becomes extinct priceless intellectual values will be lost forever. The project DOBES will contribute to the conservation of this cultural heritage. The MPI for Psycholinguistics in Nijmegen (NL) will house the data archive which will cover sound material, video recordings, photos, and various textual annotations.</Description>
+            </descriptions>
+            <InfoLink ref="d1148342e17">
+                <Description>Welcome to DOBES</Description>
+            </InfoLink>
+            <InfoLink ref="d1148342e20">
+                <Description>General info</Description>
+            </InfoLink>
+            <CorpusLink ref="d1148342e24">
+                <CorpusLinkContent Name="Aché">../Ache/Corpusstructure/Ache.imdi</CorpusLinkContent>
+            </CorpusLink>
+            <CorpusLink ref="d1148342e27">
+                <CorpusLinkContent Name="≠Akhoe Hai//om">../Akhoe/Corpusstructure/Akhoe.imdi</CorpusLinkContent>
+            </CorpusLink>
+            <CorpusLink ref="d1148342e30">
+                <CorpusLinkContent Name="Awetí">../Aweti/Corpusstructure/1.imdi</CorpusLinkContent>
+            </CorpusLink>
+            <CorpusLink ref="d1148342e33">
+                <CorpusLinkContent Name="Bakairi, Katxuyana and Mawe project">../Mawe/Corpusstructure/Mawe.imdi</CorpusLinkContent>
+            </CorpusLink>
+            <CorpusLink ref="d1148342e36">
+                <CorpusLinkContent Name="Bainounk">../Bainounk/Corpusstructure/Bainounk.imdi</CorpusLinkContent>
+            </CorpusLink>
+            <CorpusLink ref="d1148342e39">
+                <CorpusLinkContent Name="Bakola">../Bakola/Corpusstructure/Bakola.imdi</CorpusLinkContent>
+            </CorpusLink>
+            <CorpusLink ref="d1148342e43">
+                <CorpusLinkContent Name="Baure">../Baure/Corpusstructure/Baure.imdi</CorpusLinkContent>
+            </CorpusLink>
+            <CorpusLink ref="d1148342e46">
+                <CorpusLinkContent Name="Beaver">../Beaver/Corpusstructure/Beaver.imdi</CorpusLinkContent>
+            </CorpusLink>
+            <CorpusLink ref="d1148342e49">
+                <CorpusLinkContent Name="Bena Bena">../Bena_Bena/Corpusstructure/Bena_Bena.imdi</CorpusLinkContent>
+            </CorpusLink>
+            <CorpusLink ref="d1148342e52">
+                <CorpusLinkContent Name="Cashinahua project">../Cashinahua/Corpusstructure/Cashinahua.imdi</CorpusLinkContent>
+            </CorpusLink>
+            <CorpusLink ref="d1148342e55">
+                <CorpusLinkContent Name="Chaco languages">../Chaco/Corpusstructure/1.imdi</CorpusLinkContent>
+            </CorpusLink>
+            <CorpusLink ref="d1148342e58">
+                <CorpusLinkContent Name="Chintang and Puma Documentation Project">../ChintangPuma/Corpusstructure/ChintangPuma.imdi</CorpusLinkContent>
+            </CorpusLink>
+            <CorpusLink ref="d1148342e62">
+                <CorpusLinkContent Name="Chipaya project">../Chipaya/Corpusstructure/Chipaya.imdi</CorpusLinkContent>
+            </CorpusLink>
+            <CorpusLink ref="d1148342e65">
+                <CorpusLinkContent Name="Chipaya project II">../Chipaya_Boecker/Corpusstructure/Chipaya_Boecker.imdi</CorpusLinkContent>
+            </CorpusLink>
+            <CorpusLink ref="d1148342e68">
+                <CorpusLinkContent Name="Chontal">../Chontal/Corpusstructure/Chontal.imdi</CorpusLinkContent>
+            </CorpusLink>
+            <CorpusLink ref="d1148342e71">
+                <CorpusLinkContent Name="ECLING project">../ECLING/Corpusstructure/ECLING.imdi</CorpusLinkContent>
+            </CorpusLink>
+            <CorpusLink ref="d1148342e74">
+                <CorpusLinkContent Name="Enets and Forest Nenets">../Enets/Corpusstructure/Enets_and_Forest_Nenets.imdi</CorpusLinkContent>
+            </CorpusLink>
+            <CorpusLink ref="d1148342e77">
+                <CorpusLinkContent Name="Even">../Even/Corpusstructure/Even.imdi</CorpusLinkContent>
+            </CorpusLink>
+            <CorpusLink ref="d1148342e81">
+                <CorpusLinkContent Name="Gente del Centro / People of the Center">../Center/Corpusstructure/center.imdi</CorpusLinkContent>
+            </CorpusLink>
+            <CorpusLink ref="d1148342e84">
+                <CorpusLinkContent Name="Gorani">../Gorani/Corpusstructure/Gorani.imdi</CorpusLinkContent>
+            </CorpusLink>
+            <CorpusLink ref="d1148342e87">
+                <CorpusLinkContent Name="Hoocąk">../Hocank/Corpusstructure/1.imdi</CorpusLinkContent>
+            </CorpusLink>
+            <CorpusLink ref="d1148342e90">
+                <CorpusLinkContent Name="Iwaidja team">../Iwaidja/Corpusstructure/1.imdi</CorpusLinkContent>
+            </CorpusLink>
+            <CorpusLink ref="d1148342e93">
+                <CorpusLinkContent Name="Isubu and Wovia">../Isubu_Wovia/Corpusstructure/Isubu_Wovia.imdi</CorpusLinkContent>
+            </CorpusLink>
+            <CorpusLink ref="d1148342e96">
+                <CorpusLinkContent Name="Jaminjungan and Eastern Ngumpin">../Jaminjungan/Corpusstructure/Jaminjungan.imdi</CorpusLinkContent>
+            </CorpusLink>
+            <CorpusLink ref="d1148342e100">
+                <CorpusLinkContent Name="Khinalug">../Khinalug/Corpusstructure/Khinalug.imdi</CorpusLinkContent>
+            </CorpusLink>
+            <CorpusLink ref="d1148342e103">
+                <CorpusLinkContent Name="Kola-Sámi Project">../Kola-Saami/Corpusstructure/Kola-Saami.imdi</CorpusLinkContent>
+            </CorpusLink>
+            <CorpusLink ref="d1148342e106">
+                <CorpusLinkContent Name="Kuikuro Team">../Kuikuro/Corpusstructure/1.imdi</CorpusLinkContent>
+            </CorpusLink>
+            <CorpusLink ref="d1148342e109">
+                <CorpusLinkContent Name="Kurumba">../Kurumba/Corpusstructure/Kurumba.imdi</CorpusLinkContent>
+            </CorpusLink>
+            <CorpusLink ref="d1148342e112">
+                <CorpusLinkContent Name="Lacandon Cultural Heritage">../Lacandon/Corpusstructure/1.imdi</CorpusLinkContent>
+            </CorpusLink>
+            <CorpusLink ref="d1148342e115">
+                <CorpusLinkContent Name="Minderico">../Minderico/Corpusstructure/Minderico.imdi</CorpusLinkContent>
+            </CorpusLink>
+            <CorpusLink ref="d1148342e119">
+                <CorpusLinkContent Name="Marquesan team">../Marquesan/Corpusstructure/1.imdi</CorpusLinkContent>
+            </CorpusLink>
+            <CorpusLink ref="d1148342e122">
+                <CorpusLinkContent Name="Movima">../Movima/Corpusstructure/Movima.imdi</CorpusLinkContent>
+            </CorpusLink>
+            <CorpusLink ref="d1148342e125">
+                <CorpusLinkContent Name="Oyda">../Oyda/Corpusstructure/Oyda.imdi</CorpusLinkContent>
+            </CorpusLink>
+            <CorpusLink ref="d1148342e128">
+                <CorpusLinkContent Name="Paumotu">../Paumotu/Corpusstructure/Paumotu.imdi</CorpusLinkContent>
+            </CorpusLink>
+            <CorpusLink ref="d1148342e131">
+                <CorpusLinkContent Name="Salar Monguor Project">../SalarMonguor/Corpusstructure/SalarMonguor.imdi</CorpusLinkContent>
+            </CorpusLink>
+            <CorpusLink ref="d1148342e134">
+                <CorpusLinkContent Name="Saliba/Logea">../SalibaLogea/Corpusstructure/Saliba_Logea.imdi</CorpusLinkContent>
+            </CorpusLink>
+            <CorpusLink ref="d1148342e138">
+                <CorpusLinkContent Name="Savosavo">../Savosavo/Corpusstructure/savosavo.imdi</CorpusLinkContent>
+            </CorpusLink>
+            <CorpusLink ref="d1148342e141">
+                <CorpusLinkContent Name="Semang">../Semang/Corpusstructure/semang.imdi</CorpusLinkContent>
+            </CorpusLink>
+            <CorpusLink ref="d1148342e144">
+                <CorpusLinkContent Name="Semoq Beri and Batek">../SemoqBeri_Batek/Corpusstructure/Semoq_Beri_and_Batek.imdi</CorpusLinkContent>
+            </CorpusLink>
+            <CorpusLink ref="d1148342e147">
+                <CorpusLinkContent Name="Sri Lanka Malay">../SriLankaMalay/Corpusstructure/Sri_Lanka_Malay.imdi</CorpusLinkContent>
+            </CorpusLink>
+            <CorpusLink ref="d1148342e150">
+                <CorpusLinkContent Name="Taa">../Taa/Corpusstructure/Taa.imdi</CorpusLinkContent>
+            </CorpusLink>
+            <CorpusLink ref="d1148342e153">
+                <CorpusLinkContent Name="Tangsa, Tai, Singpho in North East India">../Tangsa_Tai_Singpho/Corpusstructure/1.imdi</CorpusLinkContent>
+            </CorpusLink>
+            <CorpusLink ref="d1148342e157">
+                <CorpusLinkContent Name="Teop">../Teop/Corpusstructure/1.imdi</CorpusLinkContent>
+            </CorpusLink>
+            <CorpusLink ref="d1148342e160">
+                <CorpusLinkContent Name="Tima">../Tima/Corpusstructure/Tima.imdi</CorpusLinkContent>
+            </CorpusLink>
+            <CorpusLink ref="d1148342e163">
+                <CorpusLinkContent Name="Tofa team">../TOFA/Corpusstructure/1.imdi</CorpusLinkContent>
+            </CorpusLink>
+            <CorpusLink ref="d1148342e166">
+                <CorpusLinkContent Name="Totoli">../Totoli/Corpusstructure/Totoli.imdi</CorpusLinkContent>
+            </CorpusLink>
+            <CorpusLink ref="d1148342e169">
+                <CorpusLinkContent Name="Trumai Archive">../Trumai/Corpusstructure/1.imdi</CorpusLinkContent>
+            </CorpusLink>
+            <CorpusLink ref="d1148342e172">
+                <CorpusLinkContent Name="Tsafiki project">../Tsafiki/Corpusstructure/1.imdi</CorpusLinkContent>
+            </CorpusLink>
+            <CorpusLink ref="d1148342e176">
+                <CorpusLinkContent Name="Vurës and Vera'a">../Vures_Veraa/Corpusstructure/Vures_Veraa.imdi</CorpusLinkContent>
+            </CorpusLink>
+            <CorpusLink ref="d1148342e179">
+                <CorpusLinkContent Name="Waima'a team">../Waimaa/Corpusstructure/1.imdi</CorpusLinkContent>
+            </CorpusLink>
+            <CorpusLink ref="d1148342e182">
+                <CorpusLinkContent Name="West Ambrym Languages">../Ambrym/Corpusstructure/West_Ambrym_Languages.imdi</CorpusLinkContent>
+            </CorpusLink>
+            <CorpusLink ref="d1148342e185">
+                <CorpusLinkContent Name="Wichita team">../Wichita/Corpusstructure/1.imdi</CorpusLinkContent>
+            </CorpusLink>
+            <CorpusLink ref="d1148342e188">
+                <CorpusLinkContent Name="Wooi">../Wooi/Corpusstructure/Wooi.imdi</CorpusLinkContent>
+            </CorpusLink>
+            <CorpusLink ref="d1148342e191">
+                <CorpusLinkContent Name="Yurakaré">../Yurakare/Corpusstructure/Yurakare.imdi</CorpusLinkContent>
+            </CorpusLink>
+            <CorpusLink ref="d1148342e195">
+                <CorpusLinkContent Name="Lower Sorbian">../Lower_Sorbian/Corpusstructure/Lower_Sorbian.imdi</CorpusLinkContent>
+            </CorpusLink>
+            <CorpusLink ref="d1148342e198">
+                <CorpusLinkContent Name="Bezen">../Bezen/Corpusstructure/Bezen.imdi</CorpusLinkContent>
+            </CorpusLink>
+            <CorpusLink ref="d1148342e201">
+                <CorpusLinkContent Name="Morehead">../Morehead/Corpusstructure/Morehead.imdi</CorpusLinkContent>
+            </CorpusLink>
+            <CorpusLink ref="d1148342e204">
+                <CorpusLinkContent Name="Laal">../Laal/Corpusstructure/Laal.imdi</CorpusLinkContent>
+            </CorpusLink>
+            <CorpusLink ref="d1148342e207">
+                <CorpusLinkContent Name="Referentiality Project">../Referentiality_Project/Corpusstructure/Referentiality_Project.imdi</CorpusLinkContent>
+            </CorpusLink>
+            <CorpusLink ref="d1148342e210">
+                <CorpusLinkContent Name="Kyanga Shanga">../Kyanga_Shanga/Corpusstructure/Kyanga_Shanga.imdi</CorpusLinkContent>
+            </CorpusLink>
+            <CorpusLink ref="d1148342e214">
+                <CorpusLinkContent Name="CELD Papua">../CELD_Papua/Corpusstructure/CELD_Papua.imdi</CorpusLinkContent>
+            </CorpusLink>
+            <CorpusLink ref="d1148342e217">
+                <CorpusLinkContent Name="Bayso and Haro">../Bayso_and_Haro/Corpusstructure/Bayso_and_Haro.imdi</CorpusLinkContent>
+            </CorpusLink>
+            <CorpusLink ref="d1148342e220">
+                <CorpusLinkContent Name="Shiri and Sanzhi">../Shiri_and_Sanzhi/Corpusstructure/Shiri_and_Sanzhi.imdi</CorpusLinkContent>
+            </CorpusLink>
+            <CorpusLink ref="d1148342e223">
+                <CorpusLinkContent Name="Sudeste de Rondonia - Southeastern Rondonia">../Rondonia/Corpusstructure/Rondonia.imdi</CorpusLinkContent>
+            </CorpusLink>
+            <CorpusLink ref="d1148342e226">
+                <CorpusLinkContent Name="Délı̨nę">../Deline/Corpusstructure/Deline.imdi</CorpusLinkContent>
+            </CorpusLink>
+            <CorpusLink ref="d1148342e229">
+                <CorpusLinkContent Name="Nsambaan Nsong Ngong">../NsambaanNsongNgong/Corpusstructure/NsambaanNsongNgong.imdi</CorpusLinkContent>
+            </CorpusLink>
+            <CorpusLink ref="d1148342e233">
+                <CorpusLinkContent Name="Akie">../Akie/Corpusstructure/Akie.imdi</CorpusLinkContent>
+            </CorpusLink>
+            <CorpusLink ref="d1148342e236">
+                <CorpusLinkContent Name="Aru Languages">../Aru_languages/Corpusstructure/Aru_languages.imdi</CorpusLinkContent>
+            </CorpusLink>
+        </lat-corpus>
+    </Components>
+</CMD>

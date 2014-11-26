@@ -1,0 +1,343 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CMD xmlns:xsii="http://www.w3.org/2001/XMLSchema-instance"
+     xmlns="http://www.clarin.eu/cmd/"
+     xmlns:imdi="http://www.mpi.nl/IMDI/Schema/IMDI"
+     xmlns:lat="http://lat.mpi.nl/"
+     CMDVersion="1.1"
+     xsii:schemaLocation="http://www.clarin.eu/cmd/ http://catalog.clarin.eu/ds/ComponentRegistry/rest/registry/profiles/clarin.eu:cr1:p_1407745712035/xsd">
+   <Header>
+      <MdCreator>imdi2clarin.xsl</MdCreator>
+      <MdCreationDate>2014-11-25</MdCreationDate>
+      <MdSelfLink>hdl:1839/00-0000-0000-0009-56D7-A</MdSelfLink>
+      <MdProfile>clarin.eu:cr1:p_1407745712035</MdProfile>
+   </Header>
+   <Resources>
+      <ResourceProxyList>
+         <ResourceProxy id="d2e403">
+            <ResourceType mimetype="audio/x-wav">Resource</ResourceType>
+            <ResourceRef lat:localURI="../Media/NAR_Annalena_2a.wav">hdl:1839/00-0000-0000-0009-56D9-E</ResourceRef>
+         </ResourceProxy>
+         <ResourceProxy id="d2e462">
+            <ResourceType mimetype="text/x-eaf+xml">Resource</ResourceType>
+            <ResourceRef lat:localURI="../Annotations/NAR_Annalena_2a.eaf">hdl:1839/00-0000-0000-0009-56D8-1</ResourceRef>
+         </ResourceProxy>
+      </ResourceProxyList>
+      <JournalFileProxyList/>
+      <ResourceRelationList/>
+   </Resources>
+   <Components>
+      <lat-session>
+         <Name>NAR_Annalena_2a</Name>
+         <Title>given-new experiment eliciting narratives</Title>
+         <Date>Unspecified</Date>
+         <descriptions>
+            <Description>Child data from an elicited narrative task based on a stimulus set involving reference to a given (introduced) and a new item presented simultaneously. </Description>
+         </descriptions>
+         <Location>
+            <Continent>Europe</Continent>
+            <Country>Germany</Country>
+            <Region/>
+            <Address/>
+         </Location>
+         <Project>
+            <Name>nformation structure in child language: word order in co-ordinate noun phrases in childrens' elicited narratives</Name>
+            <Title/>
+            <Id/>
+            <Contact>
+               <Name/>
+               <Address/>
+               <Email/>
+               <Organisation/>
+            </Contact>
+            <descriptions>
+               <Description>This project wants to investigate effects of information structure (given vs. new) on word order in co-ordinate noun phrases. Word order produced by 3 to 5 year old children acquiring German is studied in an elicited narrative task.</Description>
+            </descriptions>
+         </Project>
+         <Keys>
+            <Key Name="Recording_place">St. Anna Kindergarten</Key>
+         </Keys>
+         <Content>
+            <Genre>Unspecified</Genre>
+            <SubGenre>Unspecified</SubGenre>
+            <Task>elicited production</Task>
+            <Modalities>Speech</Modalities>
+            <CommunicationContext>
+               <Interactivity>interactive</Interactivity>
+               <PlanningType>planned</PlanningType>
+               <Involvement>elicited</Involvement>
+               <SocialContext>Unspecified</SocialContext>
+               <EventStructure>Unspecified</EventStructure>
+               <Channel>Unspecified</Channel>
+            </CommunicationContext>
+            <Content_Languages>
+               <descriptions>
+                  <Description/>
+               </descriptions>
+               <Content_Language>
+                  <Id>ISO639-3:deu</Id>
+                  <Name>German</Name>
+                  <Dominant>Unspecified</Dominant>
+                  <SourceLanguage>Unspecified</SourceLanguage>
+                  <TargetLanguage>Unspecified</TargetLanguage>
+                  <descriptions>
+                     <Description/>
+                  </descriptions>
+               </Content_Language>
+            </Content_Languages>
+            <Keys>
+               <Key Name="IMDI__1_9.Interactional"/>
+               <Key Name="IMDI__1_9.Discursive"/>
+               <Key Name="IMDI__1_9.Interactional"/>
+            </Keys>
+            <descriptions>
+               <Description>This file was generated from an IMDI 1.9 file and transformed to IMDI 3.0. The substructure of Genre is replaced by two elements named "Genre" and "SubGenre". The original content of Genre substructure was: Interactional = '', Discursive = '', Performance = ''. These values have been added as Keys to the Content information. </Description>
+               <Description>Child data from an elicited narrative task based on a stimulus set involving reference to a given (introduced) and a new item presented simultaneously. </Description>
+            </descriptions>
+         </Content>
+         <Actors>
+            <Actor>
+               <Role>Unspecified</Role>
+               <Name>Annalena</Name>
+               <FullName/>
+               <Code>ANNALENA</Code>
+               <FamilySocialRole>Unspecified</FamilySocialRole>
+               <EthnicGroup/>
+               <Age>4;06.00</Age>
+               <BirthDate>Unspecified</BirthDate>
+               <Sex>Female</Sex>
+               <Education/>
+               <Anonymized>Unspecified</Anonymized>
+               <Contact>
+                  <Name/>
+                  <Address/>
+                  <Email/>
+                  <Organisation/>
+               </Contact>
+               <Keys>
+                  <Key Name="BirthDate">2003-05-23</Key>
+               </Keys>
+               <descriptions>
+                  <Description>child</Description>
+               </descriptions>
+               <Actor_Languages>
+                  <descriptions>
+                     <Description/>
+                  </descriptions>
+                  <Actor_Language>
+                     <Id>ISO639-3:deu</Id>
+                     <Name>German</Name>
+                     <MotherTongue>Unspecified</MotherTongue>
+                     <PrimaryLanguage>Unspecified</PrimaryLanguage>
+                     <descriptions>
+                        <Description/>
+                     </descriptions>
+                  </Actor_Language>
+               </Actor_Languages>
+            </Actor>
+            <Actor>
+               <Role>Unspecified</Role>
+               <Name>Angelika Becker</Name>
+               <FullName/>
+               <Code/>
+               <FamilySocialRole>Unspecified</FamilySocialRole>
+               <EthnicGroup/>
+               <Age>Unspecified</Age>
+               <BirthDate>Unspecified</BirthDate>
+               <Sex>Unspecified</Sex>
+               <Education/>
+               <Anonymized>Unspecified</Anonymized>
+               <Contact>
+                  <Name/>
+                  <Address/>
+                  <Email/>
+                  <Organisation/>
+               </Contact>
+               <Keys>
+                  <Key Name="Role">investigator</Key>
+               </Keys>
+               <descriptions>
+                  <Description/>
+               </descriptions>
+               <Actor_Languages>
+                  <descriptions>
+                     <Description/>
+                  </descriptions>
+               </Actor_Languages>
+            </Actor>
+            <Actor>
+               <Role>Unspecified</Role>
+               <Name>Markus van Ackeren</Name>
+               <FullName/>
+               <Code/>
+               <FamilySocialRole>Unspecified</FamilySocialRole>
+               <EthnicGroup/>
+               <Age>Unspecified</Age>
+               <BirthDate>Unspecified</BirthDate>
+               <Sex>Unspecified</Sex>
+               <Education/>
+               <Anonymized>Unspecified</Anonymized>
+               <Contact>
+                  <Name/>
+                  <Address/>
+                  <Email/>
+                  <Organisation/>
+               </Contact>
+               <Keys>
+                  <Key Name="Role">investigator</Key>
+               </Keys>
+               <descriptions>
+                  <Description/>
+               </descriptions>
+               <Actor_Languages>
+                  <descriptions>
+                     <Description/>
+                  </descriptions>
+               </Actor_Languages>
+            </Actor>
+            <Actor>
+               <Role>Collector</Role>
+               <Name>Dimroth &amp; Narasimhan</Name>
+               <FullName>Dimroth &amp; Narasimhan</FullName>
+               <Code>Unspecified</Code>
+               <FamilySocialRole>Unspecified</FamilySocialRole>
+               <EthnicGroup/>
+               <Age>Unspecified</Age>
+               <BirthDate>Unspecified</BirthDate>
+               <Sex>Unspecified</Sex>
+               <Education/>
+               <Anonymized>false</Anonymized>
+               <Contact>
+                  <Name>C. Dimroth &amp; B. Narasimhan</Name>
+                  <Address/>
+                  <Email>Christine.Dimroth@mpi.nl &amp; Bhuvana.Narasimhan@mpi.nl</Email>
+                  <Organisation/>
+               </Contact>
+               <descriptions>
+                  <Description>Description</Description>
+               </descriptions>
+               <Actor_Languages/>
+            </Actor>
+            <Actor>
+               <Role>Annotator</Role>
+               <Name>Angelika Becker</Name>
+               <FullName>Angelika Becker</FullName>
+               <Code>Unspecified</Code>
+               <FamilySocialRole>Unspecified</FamilySocialRole>
+               <EthnicGroup>Unspecified</EthnicGroup>
+               <Age>Unspecified</Age>
+               <BirthDate>Unspecified</BirthDate>
+               <Sex>Unspecified</Sex>
+               <Education>Unspecified</Education>
+               <Anonymized>false</Anonymized>
+               <Contact>
+                  <Name/>
+                  <Address/>
+                  <Email/>
+                  <Organisation/>
+               </Contact>
+               <descriptions>
+                  <Description/>
+               </descriptions>
+               <Actor_Languages/>
+            </Actor>
+         </Actors>
+         <Resources>
+            <MediaFile ref="d2e403">
+               <Type>audio</Type>
+               <Format>audio/x-wav</Format>
+               <Size/>
+               <Quality>Unspecified</Quality>
+               <RecordingConditions/>
+               <TimePosition>
+                  <Start>Unspecified</Start>
+                  <End>Unspecified</End>
+               </TimePosition>
+               <Access>
+                  <Availability/>
+                  <Date>Unspecified</Date>
+                  <Owner/>
+                  <Publisher/>
+                  <Contact>
+                     <Name/>
+                     <Address/>
+                     <Email/>
+                     <Organisation/>
+                  </Contact>
+                  <descriptions>
+                     <Description/>
+                  </descriptions>
+               </Access>
+               <descriptions>
+                  <Description/>
+               </descriptions>
+            </MediaFile>
+            <WrittenResource ref="d2e462">
+               <Date>Unspecified</Date>
+               <Type>Annotation</Type>
+               <SubType/>
+               <Format>text/x-eaf+xml</Format>
+               <Size>Unspecified</Size>
+               <Derivation>Annotation</Derivation>
+               <CharacterEncoding/>
+               <ContentEncoding/>
+               <LanguageId/>
+               <Anonymized>Unspecified</Anonymized>
+               <Validation>
+                  <Type>Unspecified</Type>
+                  <Methodology>Unspecified</Methodology>
+                  <Level>Unspecified</Level>
+                  <descriptions>
+                     <Description/>
+                  </descriptions>
+               </Validation>
+               <Access>
+                  <Availability/>
+                  <Date>Unspecified</Date>
+                  <Owner/>
+                  <Publisher/>
+                  <Contact>
+                     <Name/>
+                     <Address/>
+                     <Email/>
+                     <Organisation/>
+                  </Contact>
+                  <descriptions>
+                     <Description/>
+                  </descriptions>
+               </Access>
+               <descriptions>
+                  <Description/>
+               </descriptions>
+            </WrittenResource>
+            <Source>
+               <Id>Unspecified</Id>
+               <Format>Unspecified</Format>
+               <Quality>Unspecified</Quality>
+               <TimePosition>
+                  <Start>Unspecified</Start>
+                  <End>Unspecified</End>
+               </TimePosition>
+               <Access>
+                  <Availability/>
+                  <Date>Unspecified</Date>
+                  <Owner/>
+                  <Publisher/>
+                  <Contact>
+                     <Name/>
+                     <Address/>
+                     <Email/>
+                     <Organisation/>
+                  </Contact>
+                  <descriptions>
+                     <Description/>
+                  </descriptions>
+               </Access>
+               <descriptions>
+                  <Description/>
+               </descriptions>
+            </Source>
+         </Resources>
+         <References/>
+      </lat-session>
+   </Components>
+</CMD>

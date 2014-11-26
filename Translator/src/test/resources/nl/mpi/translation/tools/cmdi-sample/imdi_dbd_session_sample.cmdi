@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CMD xmlns:xsii="http://www.w3.org/2001/XMLSchema-instance"
+     xmlns="http://www.clarin.eu/cmd/"
+     xmlns:imdi="http://www.mpi.nl/IMDI/Schema/IMDI"
+     xmlns:lat="http://lat.mpi.nl/"
+     CMDVersion="1.1"
+     xsii:schemaLocation="http://www.clarin.eu/cmd/ http://catalog.clarin.eu/ds/ComponentRegistry/rest/registry/profiles/clarin.eu:cr1:p_1407745712035/xsd">
+   <Header>
+      <MdCreator>imdi2clarin.xsl</MdCreator>
+      <MdCreationDate>2014-11-25</MdCreationDate>
+      <MdSelfLink>hdl:1839/00-0000-0000-0008-C15C-6</MdSelfLink>
+      <MdProfile>clarin.eu:cr1:p_1407745712035</MdProfile>
+   </Header>
+   <Resources>
+      <ResourceProxyList>
+         <ResourceProxy id="d2e339">
+            <ResourceType mimetype="audio/x-wav">Resource</ResourceType>
+            <ResourceRef lat:localURI="../Media/dbd_dh_50A.wav">hdl:1839/00-0000-0000-0008-8BD5-A</ResourceRef>
+         </ResourceProxy>
+         <ResourceProxy id="d2e401">
+            <ResourceType>Resource</ResourceType>
+            <ResourceRef lat:localURI="">file:/home/alekoe/projects/being_corpman/cmdification/migration/menzo_output/test-20141112/source/DBD_DH_050A.imdi</ResourceRef>
+         </ResourceProxy>
+      </ResourceProxyList>
+      <JournalFileProxyList/>
+      <ResourceRelationList/>
+   </Resources>
+   <Components>
+      <lat-session>
+         <Name>DBD DH 050A</Name>
+         <Title>DBD_SRN_22_18_08_050A</Title>
+         <Date>Unspecified</Date>
+         <descriptions>
+            <Description>Recording took place during primary school hours (08:30 AM-03:30 PM) at a primary school in a separate classroom. Recording was done by Dorian de Haan (researcher) between 1984-1986.</Description>
+         </descriptions>
+         <Location>
+            <Continent>Europe</Continent>
+            <Country>Netherlands</Country>
+            <Region>Amsterdam</Region>
+            <Address>Unspecified</Address>
+         </Location>
+         <Project>
+            <Name>De Haan Corpus</Name>
+            <Title>De taalsituatie van Surinaamse kinderen op de basisschool in Nederland</Title>
+            <Id/>
+            <Contact>
+               <Name/>
+               <Address/>
+               <Email/>
+               <Organisation/>
+            </Contact>
+            <descriptions>
+               <Description>Goal of this project is to get a clear view of the command of Sarnami and/or Sranan of primary school children of Suriname origin and to study their command of Dutch.</Description>
+            </descriptions>
+         </Project>
+         <Keys>
+            <Key Name="IMDI_file_creator">Marleen van de Vate</Key>
+            <Key Name="IMDI_file_corrector">Linda van Meel</Key>
+         </Keys>
+         <Content>
+            <Genre>Stimuli</Genre>
+            <SubGenre>Story retelling</SubGenre>
+            <Task/>
+            <Modalities>Speech</Modalities>
+            <Subject>a boy and his football</Subject>
+            <CommunicationContext>
+               <Interactivity>non-interactive</Interactivity>
+               <PlanningType>semi-spontaneous</PlanningType>
+               <Involvement>non-elicited</Involvement>
+               <SocialContext>Controlled environment</SocialContext>
+               <EventStructure>Monologue</EventStructure>
+               <Channel>Face to Face</Channel>
+            </CommunicationContext>
+            <Content_Languages>
+               <descriptions>
+                  <Description/>
+               </descriptions>
+               <Content_Language>
+                  <Id>ISO639-3:srn</Id>
+                  <Name>Sranan</Name>
+                  <Dominant>true</Dominant>
+                  <SourceLanguage>Unspecified</SourceLanguage>
+                  <TargetLanguage>true</TargetLanguage>
+                  <descriptions>
+                     <Description/>
+                  </descriptions>
+               </Content_Language>
+               <Content_Language>
+                  <Id>ISO639-3:nld</Id>
+                  <Name>Dutch</Name>
+                  <Dominant>false</Dominant>
+                  <SourceLanguage>Unspecified</SourceLanguage>
+                  <TargetLanguage>false</TargetLanguage>
+                  <descriptions>
+                     <Description/>
+                  </descriptions>
+               </Content_Language>
+            </Content_Languages>
+            <Keys>
+               <Key Name="DBD.LanguageMode">OtherLanguageDominant</Key>
+            </Keys>
+            <descriptions>
+               <Description>The task is to retell a story about a boy and his football. 
+Together the boy and his ball go to a football competition in the park. Unfortunately the boy and his team do not win. After the match he stops to order a fries. He puts his ball in the truck of a car. The car rides off. Fortunately, it stops for a pedestrian crossing where the boy takes his ball back and goes home.</Description>
+            </descriptions>
+         </Content>
+         <Actors>
+            <descriptions>
+               <Description/>
+            </descriptions>
+            <Actor>
+               <Role>Collector</Role>
+               <Name>Dorian</Name>
+               <FullName>Dorian de Haan</FullName>
+               <Code>DH</Code>
+               <FamilySocialRole>Teacher</FamilySocialRole>
+               <EthnicGroup/>
+               <Age>Unspecified</Age>
+               <BirthDate>Unspecified</BirthDate>
+               <Sex>Female</Sex>
+               <Education>Unspecified</Education>
+               <Anonymized>false</Anonymized>
+               <Contact>
+                  <Name/>
+                  <Address/>
+                  <Email/>
+                  <Organisation/>
+               </Contact>
+               <descriptions>
+                  <Description>Dorian de Haan is the coordinator/collector of this project. She is of Dutch origin. She works at the University of Utrecht, The Netherlands, at the Developmental Psychology department.</Description>
+               </descriptions>
+               <Actor_Languages>
+                  <descriptions>
+                     <Description/>
+                  </descriptions>
+                  <Actor_Language>
+                     <Id>ISO639-3:nld</Id>
+                     <Name>Dutch</Name>
+                     <MotherTongue>Unspecified</MotherTongue>
+                     <PrimaryLanguage>Unspecified</PrimaryLanguage>
+                     <descriptions>
+                        <Description/>
+                     </descriptions>
+                  </Actor_Language>
+               </Actor_Languages>
+            </Actor>
+            <Actor>
+               <Role>Speaker/Signer</Role>
+               <Name>Milton</Name>
+               <FullName/>
+               <Code/>
+               <FamilySocialRole>Student</FamilySocialRole>
+               <EthnicGroup>Suriname Creole</EthnicGroup>
+               <Age>Unspecified</Age>
+               <BirthDate>Unspecified</BirthDate>
+               <Sex>Male</Sex>
+               <Education>Unspecified</Education>
+               <Anonymized>false</Anonymized>
+               <Contact>
+                  <Name/>
+                  <Address/>
+                  <Email/>
+                  <Organisation/>
+               </Contact>
+               <descriptions>
+                  <Description>Milton is of Suriname Creole origin. He was born in Suriname, and 3 days before his 5th birthday he arrived in the Netherlands. 
+At home they speak Dutch, but with his little sister (2 years) Milton speaks Sranan. With his stepfather he also speaks Sranan. He finds his command of Dutch and Sranan equal. He is the 3rd child of 5. 
+Same boy as in 45E, 45F, 50B &amp; 53C.</Description>
+               </descriptions>
+               <Actor_Languages>
+                  <descriptions>
+                     <Description/>
+                  </descriptions>
+                  <Actor_Language>
+                     <Id>ISO639-3:srn</Id>
+                     <Name>Sranan</Name>
+                     <MotherTongue>Unspecified</MotherTongue>
+                     <PrimaryLanguage>Unspecified</PrimaryLanguage>
+                     <descriptions>
+                        <Description/>
+                     </descriptions>
+                  </Actor_Language>
+                  <Actor_Language>
+                     <Id>ISO639-3:nld</Id>
+                     <Name>Dutch</Name>
+                     <MotherTongue>Unspecified</MotherTongue>
+                     <PrimaryLanguage>Unspecified</PrimaryLanguage>
+                     <descriptions>
+                        <Description/>
+                     </descriptions>
+                  </Actor_Language>
+               </Actor_Languages>
+            </Actor>
+         </Actors>
+         <Resources>
+            <MediaFile ref="d2e339">
+               <Type>audio</Type>
+               <Format>audio/x-wav</Format>
+               <Size/>
+               <Quality>Unspecified</Quality>
+               <RecordingConditions/>
+               <TimePosition>
+                  <Start>Unspecified</Start>
+                  <End>Unspecified</End>
+               </TimePosition>
+               <Access>
+                  <Availability/>
+                  <Date>Unspecified</Date>
+                  <Owner/>
+                  <Publisher/>
+                  <Contact>
+                     <Name/>
+                     <Address/>
+                     <Email/>
+                     <Organisation/>
+                  </Contact>
+                  <descriptions>
+                     <Description/>
+                  </descriptions>
+               </Access>
+               <descriptions>
+                  <Description/>
+               </descriptions>
+               <Keys>
+                  <Key Name=""/>
+               </Keys>
+            </MediaFile>
+            <Anonyms>
+               <Access>
+                  <Availability/>
+                  <Date>Unspecified</Date>
+                  <Owner/>
+                  <Publisher/>
+                  <Contact>
+                     <Name/>
+                     <Address/>
+                     <Email/>
+                     <Organisation/>
+                  </Contact>
+                  <descriptions>
+                     <Description/>
+                  </descriptions>
+               </Access>
+            </Anonyms>
+         </Resources>
+         <References/>
+      </lat-session>
+   </Components>
+</CMD>

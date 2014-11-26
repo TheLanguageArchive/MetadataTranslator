@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CMD xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+     xmlns="http://www.clarin.eu/cmd/"
+     xmlns:imdi="http://www.mpi.nl/IMDI/Schema/IMDI"
+     xmlns:lat="http://lat.mpi.nl/"
+     CMDVersion="1.1"
+     xsi:schemaLocation="http://www.clarin.eu/cmd/ http://catalog.clarin.eu/ds/ComponentRegistry/rest/registry/profiles/clarin.eu:cr1:p_1407745712064/xsd">
+   <Header>
+      <MdCreator>imdi2clarin.xsl</MdCreator>
+      <MdCreationDate>2014-11-25</MdCreationDate>
+      <MdSelfLink>hdl:1839/00-0000-0000-0008-A408-B</MdSelfLink>
+      <MdProfile>clarin.eu:cr1:p_1407745712064</MdProfile>
+   </Header>
+   <Resources>
+      <ResourceProxyList>
+         <ResourceProxy id="d2e13">
+            <ResourceType>Resource</ResourceType>
+            <ResourceRef lat:localURI="../Info/Info.txt">hdl:1839/00-0000-0000-0008-A4AC-2</ResourceRef>
+         </ResourceProxy>
+         <ResourceProxy id="d2e18"><!--Pilot_study.imdi-->
+            <ResourceType>Metadata</ResourceType>
+            <ResourceRef lat:localURI="Pilot_study.imdi">file:/home/alekoe/projects/being_corpman/cmdification/migration/menzo_output/test-20141112/source/Pilot_study.imdi.cmdi</ResourceRef>
+         </ResourceProxy>
+         <ResourceProxy id="d2e22"><!--Comment.imdi-->
+            <ResourceType>Metadata</ResourceType>
+            <ResourceRef lat:localURI="Comment.imdi">file:/home/alekoe/projects/being_corpman/cmdification/migration/menzo_output/test-20141112/source/Comment.imdi.cmdi</ResourceRef>
+         </ResourceProxy>
+         <ResourceProxy id="d2e25"><!--Magician_I.imdi-->
+            <ResourceType>Metadata</ResourceType>
+            <ResourceRef lat:localURI="Magician_I.imdi">file:/home/alekoe/projects/being_corpman/cmdification/migration/menzo_output/test-20141112/source/Magician_I.imdi.cmdi</ResourceRef>
+         </ResourceProxy>
+         <ResourceProxy id="d2e28"><!--_Input_study.imdi-->
+            <ResourceType>Metadata</ResourceType>
+            <ResourceRef lat:localURI="_Input_study.imdi">file:/home/alekoe/projects/being_corpman/cmdification/migration/menzo_output/test-20141112/source/_Input_study.imdi.cmdi</ResourceRef>
+         </ResourceProxy>
+         <ResourceProxy id="searchpage">
+            <ResourceType>SearchPage</ResourceType>
+            <ResourceRef>http://corpus1.mpi.nl/ds/trova/search.jsp?handle=hdl:1839/00-0000-0000-0008-A408-B</ResourceRef>
+         </ResourceProxy>
+      </ResourceProxyList>
+      <JournalFileProxyList/>
+      <ResourceRelationList/>
+   </Resources>
+   <Components>
+      <lat-corpus>
+         <Name>Word order</Name>
+         <Title>Word order study (a case study - Children and Adults)</Title>
+         <descriptions>
+            <Description>This elicited production study aims to examine the influence of accessibility on word order preferences in children and adults. Partipants were shown pairs of objects in a container (e.g. an egg and a bed), one of which they had seen and labeled immediately before (e.g. the egg). On being asked to describe what they saw, adults produced descriptions in which the "old" object (seen/labeled earlier) was produced first and the "new" object was produced second (e.g. "egg and bed"). Children, on the other hand, preferred the opposite ordering: new-before-old (e.g. "bed and egg").</Description>
+         </descriptions>
+         <InfoLink ref="d2e13">
+            <Description/>
+         </InfoLink>
+         <CorpusLink ref="d2e18">
+            <CorpusLinkContent Name="Basic study">Pilot_study.imdi</CorpusLinkContent>
+         </CorpusLink>
+         <CorpusLink ref="d2e22">
+            <CorpusLinkContent Name="&#34;Comment&#34; study">Comment.imdi</CorpusLinkContent>
+         </CorpusLink>
+         <CorpusLink ref="d2e25">
+            <CorpusLinkContent Name="&#34;Narrative&#34; study">Magician_I.imdi</CorpusLinkContent>
+         </CorpusLink>
+         <CorpusLink ref="d2e28">
+            <CorpusLinkContent Name="&#34;Input&#34; study">_Input_study.imdi</CorpusLinkContent>
+         </CorpusLink>
+         <Catalogue>
+            <descriptions>
+               <Description xml:lang="eng">This elicited production study aims to examine the influence of accessibility on word order preferences in children and adults. Partipants were shown pairs of objects in a container (e.g. an egg and a bed), one of which they had seen and labeled immediately before (e.g. the egg). On being asked to describe what they saw, adults produced descriptions in which the "old" object (seen/labeled earlier) was produced first and the "new" object was produced second (e.g. "egg and bed"). Children, on the other hand, preferred the opposite ordering: new-before-old (e.g. "bed and egg").</Description>
+            </descriptions>
+            <Document_Languages>
+               <Document_Language>
+                  <Id>ISO639-3:eng</Id>
+                  <Name/>
+               </Document_Language>
+            </Document_Languages>
+            <Subject_Languages>
+               <Subject_Language>
+                  <Id>ISO639-3:deu</Id>
+                  <Name>German</Name>
+                  <Dominant>Unknown</Dominant>
+                  <SourceLanguage>Unknown</SourceLanguage>
+                  <TargetLanguage>Unknown</TargetLanguage>
+               </Subject_Language>
+            </Subject_Languages>
+            <Location>
+               <Continent>Europe</Continent>
+               <Country>Germany</Country>
+               <Region/>
+               <Address/>
+            </Location>
+            <Location>
+               <Continent>Europe</Continent>
+               <Country>Netherlands</Country>
+               <Region/>
+               <Address/>
+            </Location>
+            <Format>
+               <Text>x-eaf+xml</Text>
+               <Audio>audio/x-wav</Audio>
+            </Format>
+            <Project>
+               <Name>Information structure in child language: word order in co-ordinate noun phrases in child directed speech</Name>
+               <Title/>
+               <Id/>
+               <Contact>
+                  <Name/>
+                  <Address/>
+                  <Email/>
+                  <Organisation/>
+               </Contact>
+               <descriptions>
+                  <Description>This project wants to investigate if child specific effects of information structure on word order in co-ordinate noun phrases that have been found in 3-5 year old German children are similar to word order in child directed speech. Word order produced by adult care-takers speaking to children of the same age range are compared to the child specific ordering and to a controll group of adults speaking to other adults</Description>
+               </descriptions>
+            </Project>
+            <Project>
+               <Name>Information structure in child language: word order in co-ordinate noun phrases</Name>
+               <Title/>
+               <Id/>
+               <Contact>
+                  <Name/>
+                  <Address/>
+                  <Email/>
+                  <Organisation/>
+               </Contact>
+               <descriptions>
+                  <Description>This project wants to investigate effects of information structure (given vs. new) on word order in co-ordinate noun phrases. Word order produced by 3 to 5 year old children acquiring German as their first language is compared to a controll group of native German speaking adults.</Description>
+               </descriptions>
+            </Project>
+            <Project>
+               <Name>Information structure in child language: word order in co-ordinate noun phrases in 3 to 5 year olds when old item is commented upon</Name>
+               <Title/>
+               <Id/>
+               <Contact>
+                  <Name/>
+                  <Address/>
+                  <Email/>
+                  <Organisation/>
+               </Contact>
+               <descriptions>
+                  <Description>This project wants to investigate effects of information structure (given and commented upon vs. new) on word order in co-ordinate noun phrases. Word order produced by 3 to 5 year old children acquiring German as their first language is studied.</Description>
+               </descriptions>
+            </Project>
+            <Project>
+               <Name>Information structure in child language: word order in co-ordinate noun phrases in childrens' elicited narratives</Name>
+               <Title/>
+               <Id/>
+               <Contact>
+                  <Name/>
+                  <Address/>
+                  <Email/>
+                  <Organisation/>
+               </Contact>
+               <descriptions>
+                  <Description xml:lang="eng">This project wants to investigate effects of information structure (given vs. new) on word order in co-ordinate noun phrases. Word order produced by 3 to 5 year old children acquiring German is studied in an elicited narrative task.</Description>
+               </descriptions>
+            </Project>
+            <Project>
+               <Name>Information structure in child language: word order in co-ordinate noun phrases in 9 year olds</Name>
+               <Title/>
+               <Id/>
+               <Contact>
+                  <Name/>
+                  <Address/>
+                  <Email/>
+                  <Organisation/>
+               </Contact>
+               <descriptions>
+                  <Description>This project wants to investigate effects of information structure (given vs. new) on word order in co-ordinate noun phrases. Word order produced by 9 year old children acquiring German as their first language is compared to a group of 3 to 5 year olds and of native German speaking adults.</Description>
+               </descriptions>
+            </Project>
+            <Access>
+               <Availability/>
+               <Date/>
+               <Owner/>
+               <Publisher/>
+               <Contact>
+                  <Name/>
+                  <Address/>
+                  <Email/>
+                  <Organisation/>
+               </Contact>
+            </Access>
+            <Keys>
+               <Key Name="CorpusImdiLink">http://corpus1.mpi.nl/qfs1/media-archive/acqui_data/ac-word_order/Corpusstructure/word_order.imdi</Key>
+               <Key Name="CorpusBrowserLink">http://corpus1.mpi.nl/ds/imdi_browser/?openpath=MPI566280%23</Key>
+               <Key Name="CorpusArchiveHandle">hdl:1839/00-0000-0000-0008-A408-B</Key>
+               <Key Name="CorpusTreePath">MPI corpora: Acquisition: L1 Acquisition: Word order</Key>
+            </Keys>
+         </Catalogue>
+      </lat-corpus>
+   </Components>
+</CMD>

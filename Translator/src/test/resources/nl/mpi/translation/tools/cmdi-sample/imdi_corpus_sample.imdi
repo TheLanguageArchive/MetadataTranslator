@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<METATRANSCRIPT xmlns="http://www.mpi.nl/IMDI/Schema/IMDI"
+                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                xmlns:tla="http://tla.mpi.nl"
+                FormatId="IMDI 3.0"
+                Type="CORPUS"
+                Version="0"
+                xsi:schemaLocation="http://www.mpi.nl/IMDI/Schema/IMDI http://www.mpi.nl/IMDI/Schema/IMDI_3.0.xsd"
+                ArchiveHandle="hdl:1839/00-0000-0000-0000-6B5B-7@format=imdi"
+                Originator="Metadata Translator: tlacollection2corpus.xslt hdl:1839/00-0000-0000-0000-6B5B-7"
+                Date="2014-11-25">
+   <Corpus>
+      <Name>Language and Cognition</Name>
+      <Title/>
+      <Description LanguageId="">This is the LAC (Language and Cognition) corpus which contains spontaneous, elicited and experimental language data.</Description>
+      <CorpusLink Name="africa">africa.imdi</CorpusLink>
+      <CorpusLink Name="australia">australia.imdi</CorpusLink>
+      <CorpusLink Name="eastasia">eastasia.imdi</CorpusLink>
+      <CorpusLink Name="southeastasia">southeastasia.imdi</CorpusLink>
+      <CorpusLink Name="southasia">southasia.imdi</CorpusLink>
+      <CorpusLink Name="northamerica">northamerica.imdi</CorpusLink>
+      <CorpusLink Name="mesoamerica">mesoamerica.imdi</CorpusLink>
+      <CorpusLink Name="southamerica">southamerica.imdi</CorpusLink>
+      <CorpusLink Name="oceania">oceania.imdi</CorpusLink>
+      <CorpusLink Name="Sign Language">sign.imdi</CorpusLink>
+      <CorpusLink Name="Gesture Projects">../../gesture_data/Corpusstructure/gesture.imdi</CorpusLink>
+      <CorpusLink Name="conferences">../conferences/Corpusstructure/conferences.imdi</CorpusLink>
+      <CorpusLink Name="europe">europe.imdi</CorpusLink>
+      <CorpusLink Name="Stimuli archive">../lc_stimuli_archive/Corpusstructure/lc_stimuli_archive.imdi</CorpusLink>
+      <CorpusLink Name="Lectures and Interviews">../lectures_and_interviews/Corpusstructure/lectures.imdi</CorpusLink>
+      <CorpusLink Name="ERC Interact">../ERC_Interact/Corpusstructure/ERC_Interact.imdi</CorpusLink>
+   </Corpus>
+</METATRANSCRIPT>

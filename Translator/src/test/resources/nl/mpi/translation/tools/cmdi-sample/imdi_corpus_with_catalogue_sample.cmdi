@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CMD xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+     xmlns="http://www.clarin.eu/cmd/"
+     xmlns:imdi="http://www.mpi.nl/IMDI/Schema/IMDI"
+     xmlns:lat="http://lat.mpi.nl/"
+     CMDVersion="1.1"
+     xsi:schemaLocation="http://www.clarin.eu/cmd/ http://catalog.clarin.eu/ds/ComponentRegistry/rest/registry/profiles/clarin.eu:cr1:p_1407745712064/xsd">
+   <Header>
+      <MdCreator>imdi2clarin.xsl</MdCreator>
+      <MdCreationDate>2014-11-25</MdCreationDate>
+      <MdSelfLink>hdl:1839/00-0000-0000-0000-37F1-6</MdSelfLink>
+      <MdProfile>clarin.eu:cr1:p_1407745712064</MdProfile>
+   </Header>
+   <Resources>
+      <ResourceProxyList>
+         <ResourceProxy id="d2e13"><!--1-01.imdi-->
+            <ResourceType>Metadata</ResourceType>
+            <ResourceRef lat:localURI="1-01.imdi">file:/home/alekoe/projects/being_corpman/cmdification/migration/menzo_output/test-20141112/source/1-01.imdi.cmdi</ResourceRef>
+         </ResourceProxy>
+         <ResourceProxy id="d2e16"><!--1-02.imdi-->
+            <ResourceType>Metadata</ResourceType>
+            <ResourceRef lat:localURI="1-02.imdi">file:/home/alekoe/projects/being_corpman/cmdification/migration/menzo_output/test-20141112/source/1-02.imdi.cmdi</ResourceRef>
+         </ResourceProxy>
+         <ResourceProxy id="searchpage">
+            <ResourceType>SearchPage</ResourceType>
+            <ResourceRef>http://corpus1.mpi.nl/ds/trova/search.jsp?handle=hdl:1839/00-0000-0000-0000-37F1-6</ResourceRef>
+         </ResourceProxy>
+      </ResourceProxyList>
+      <JournalFileProxyList/>
+      <ResourceRelationList/>
+   </Resources>
+   <Components>
+      <lat-corpus>
+         <Name>Anke Jolink</Name>
+         <Title>Anke Jolink</Title>
+         <CorpusLink ref="d2e13">
+            <CorpusLinkContent Name="Normal dev">1-01.imdi</CorpusLinkContent>
+         </CorpusLink>
+         <CorpusLink ref="d2e16">
+            <CorpusLinkContent Name="Spec Lang Impairment">1-02.imdi</CorpusLinkContent>
+         </CorpusLink>
+         <Catalogue>
+            <Author>Anke Jolink</Author>
+            <ContactPerson>Anke Jolink</ContactPerson>
+            <Document_Languages>
+               <Document_Language>
+                  <Id>ISO639-3:eng</Id>
+                  <Name/>
+               </Document_Language>
+            </Document_Languages>
+            <Subject_Languages>
+               <Subject_Language>
+                  <Id>ISO639-3:nld</Id>
+                  <Name>Dutch</Name>
+                  <Dominant>Unknown</Dominant>
+                  <SourceLanguage>Unknown</SourceLanguage>
+                  <TargetLanguage>Unknown</TargetLanguage>
+               </Subject_Language>
+            </Subject_Languages>
+            <Location>
+               <Continent>Europe</Continent>
+               <Country>Netherlands</Country>
+               <Region/>
+               <Address>a day-care centre</Address>
+            </Location>
+            <Location>
+               <Continent>Europe</Continent>
+               <Country>Netherlands</Country>
+               <Region/>
+               <Address>a special (nursery) school for children with language- and speech difficulties</Address>
+            </Location>
+            <Format>
+               <Text>x-eaf+xml</Text>
+               <Video>video/mp4</Video>
+               <Video>video/x-mpeg1</Video>
+            </Format>
+            <Project>
+               <Name>Anke Jolink</Name>
+               <Title>The acquisition of finiteness in Dutch- longitudinal study</Title>
+               <Id/>
+               <Contact>
+                  <Name>Anke Jolink</Name>
+                  <Address>Postbus 310, 6500 AH Nijmegen, The Netherlands</Address>
+                  <Email>Anke.Jolink@mpi.nl</Email>
+                  <Organisation>Max Planck Institute for Psycholinguistics</Organisation>
+               </Contact>
+               <descriptions>
+                  <Description xml:lang="eng">This project is part of the larger research project 'The role of finiteness' and focusses on the acquisition of the structural and functional properties of finiteness in Dutch. The aim of this longitudinal study is to explore the developmental stages in the acquisition of finiteness in 6 normally developing Dutch-learning children and 2 children with Specific Language Impairment.</Description>
+               </descriptions>
+            </Project>
+            <Access>
+               <Availability/>
+               <Date/>
+               <Owner/>
+               <Publisher/>
+               <Contact>
+                  <Name/>
+                  <Address/>
+                  <Email/>
+                  <Organisation/>
+               </Contact>
+            </Access>
+            <Keys>
+               <Key Name="CorpusImdiLink">http://corpus1.mpi.nl/qfs1/media-archive/acqui_data/ac-jolink/Corpusstructure/1.imdi</Key>
+               <Key Name="CorpusBrowserLink">http://corpus1.mpi.nl/ds/imdi_browser/?openpath=MPI14321%23</Key>
+               <Key Name="CorpusArchiveHandle">hdl:1839/00-0000-0000-0000-37F1-6</Key>
+               <Key Name="CorpusTreePath">MPI corpora: Acquisition: L1 Acquisition: Anke Jolink</Key>
+            </Keys>
+         </Catalogue>
+      </lat-corpus>
+   </Components>
+</CMD>

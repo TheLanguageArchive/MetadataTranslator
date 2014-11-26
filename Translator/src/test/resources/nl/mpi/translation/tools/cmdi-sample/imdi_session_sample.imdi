@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<METATRANSCRIPT xmlns="http://www.mpi.nl/IMDI/Schema/IMDI"
+                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                xmlns:tla="http://tla.mpi.nl"
+                FormatId="IMDI 3.0"
+                Type="CORPUS"
+                Version="0"
+                xsi:schemaLocation="http://www.mpi.nl/IMDI/Schema/IMDI http://www.mpi.nl/IMDI/Schema/IMDI_3.0.xsd"
+                ArchiveHandle="hdl:1839/00-0000-0000-0009-56D7-A@format=imdi"
+                Originator="Metadata Translator: TLASESSION2IMDISESSION.xslt hdl:1839/00-0000-0000-0009-56D7-A"
+                Date="2014-11-25">
+   <Corpus>
+      <Name>NAR_Annalena_2a</Name>
+      <Title>given-new experiment eliciting narratives</Title>
+      <Description LanguageId="">Child data from an elicited narrative task based on a stimulus set involving reference to a given (introduced) and a new item presented simultaneously. </Description>
+   </Corpus>
+</METATRANSCRIPT>
