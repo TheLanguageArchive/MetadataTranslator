@@ -116,8 +116,8 @@ $LastChangedDate: 2013-08-14 11:25:31 +0200 (Wed, 14 Aug 2013) $
         <xsl:choose>
             <xsl:when test=".[@Type='SESSION'] or .[@Type='SESSION.Profile']">
             	<xsl:variable name="profile" select="'clarin.eu:cr1:p_1407745712035'"/>
-                <CMD CMDVersion="1.1" xmlns:xsii="http://www.w3.org/2001/XMLSchema-instance"
-                    xsii:schemaLocation="http://www.clarin.eu/cmd/ http://catalog.clarin.eu/ds/ComponentRegistry/rest/registry/profiles/{$profile}/xsd">
+                <CMD CMDVersion="1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                    xsi:schemaLocation="http://www.clarin.eu/cmd/ http://catalog.clarin.eu/ds/ComponentRegistry/rest/registry/profiles/{$profile}/xsd">
                     <xsl:call-template name="metatranscriptDelegate">
                         <xsl:with-param name="type" select="'session'"/>
                         <xsl:with-param name="profile" select="$profile"/>
