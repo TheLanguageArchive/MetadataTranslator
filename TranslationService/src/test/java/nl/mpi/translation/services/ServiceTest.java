@@ -21,6 +21,7 @@ import com.sun.jersey.api.client.ClientResponse;
 import com.sun.jersey.api.client.WebResource;
 import com.sun.jersey.spi.spring.container.servlet.SpringServlet;
 import com.sun.jersey.test.framework.WebAppDescriptor;
+import java.net.URI;
 import java.net.URL;
 import java.net.URLEncoder;
 import org.jmock.Expectations;
@@ -123,9 +124,9 @@ public class ServiceTest extends AbstractServiceTest {
 	getMockery().checking(new Expectations() {
 	    {
 		// Resolver will get handle
-		oneOf(getHandleResolver()).resolveHandle(new URL("http://hdl.handle.net/" + handle));
+		oneOf(getHandleResolver()).resolve(URI.create("http://hdl.handle.net/" + handle));
 		// and returns resolved URI
-		will(returnValue(new URL(handleResolvedUri)));
+		will(returnValue(URI.create(handleResolvedUri)));
 
 		// Translator should retrieve resolved URI
 		oneOf(getTranslator()).getIMDI(new URL(handleResolvedUri), resource.getURI().toString());

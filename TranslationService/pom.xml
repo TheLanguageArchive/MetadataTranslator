@@ -113,6 +113,11 @@
 	    <version>${spring.version}</version>
 	    <scope>test</scope>
 	</dependency>
+        <dependency>
+            <groupId>nl.mpi.corpusstructure</groupId>
+            <artifactId>corpus-structure-2-core</artifactId>
+            <version>1.0.3-SNAPSHOT</version>
+        </dependency>
     </dependencies>
     <build>
 	<finalName>${project.artifactId}-${project.version}-r${buildNumber}</finalName>

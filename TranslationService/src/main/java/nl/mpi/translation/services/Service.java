@@ -3,6 +3,7 @@ package nl.mpi.translation.services;
 import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URI;
+import java.net.URISyntaxException;
 import java.net.URL;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -22,6 +23,8 @@ import javax.xml.stream.XMLStreamException;
 import javax.xml.transform.TransformerException;
 
 import javax.ws.rs.WebApplicationException;
+import nl.mpi.archiving.corpusstructure.core.handle.HandleResolver;
+import nl.mpi.archiving.corpusstructure.core.handle.InvalidHandleException;
 
 import nl.mpi.translation.tools.Translator;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,8 +33,8 @@ import org.springframework.stereotype.Component;
 /**
  * JAX-RS translation service for CMDI <-> IMDI conversion.
  * <br/><br/>
- * This class is a singleton so it instantiates one CMDI <-> IMDI
- * TranslatorImpl upon servlet startup.
+ * This class is a singleton so it instantiates one CMDI <-> IMDI TranslatorImpl
+ * upon servlet startup.
  *
  * @author andmor
  *
@@ -53,139 +56,148 @@ public class Service {
     /**
      * Handles the 'translate' (GET) requests.
      *
-     * @param location - The location of the document to translate. Can be and handle
-     * or a full featured URL string.
-     * @param outFormat - The desired output format for the supplied document: <i>IMDI</i>
+     * @param location - The location of the document to translate. Can be and
+     * handle or a full featured URL string.
+     * @param outFormat - The desired output format for the supplied document:
+     * <i>IMDI</i>
      * or <i>CMDI</i>.
      * @return The translated document in the requested format.
      */
     @GET
     @Produces(MediaType.TEXT_XML + " ;charset=UTF-8")
     public Response translate(@QueryParam("in") String location, @QueryParam("outFormat") String outFormat) {
-	if (location == null || location.equals("")) {
-	    logger.warn("Invalid request: '{}'", uriInfo.getRequestUri());
-	    return Response.status(Status.BAD_REQUEST).build();
-	}
+        if (location == null || location.equals("")) {
+            logger.warn("Invalid request: '{}'", uriInfo.getRequestUri());
+            return Response.status(Status.BAD_REQUEST).build();
+        }
 
-	try {
-	    final long initTime = System.currentTimeMillis();
+        try {
+            final long initTime = System.currentTimeMillis();
 
-	    //get location of file to translate
-	    final URL inputFileURL = this.resolveLocation(location);
-	    if (detectLoop(inputFileURL)) {
-		logger.error("Input location is in this service: {}. Potential loop: denying request, sending error response instead.", inputFileURL);
-		return Response.serverError().entity("Error: potential loop detected").build();
-	    } else {
-		return translate(inputFileURL, outFormat, initTime);
-	    }
-	} catch (TransformerException e) {
-	    logger.error("Error running transformation to {} on {}: ", outFormat, location, e);
-	    return Response.serverError().build();
-	} catch (XMLStreamException e) {
-	    logger.error("Error running transformation to {} on {}: ", outFormat, location, e);
-	    return Response.serverError().build();
-	} catch (IOException e) {
-	    logger.error("Error reading input file to {} on {}: ", outFormat, location, e);
-	    return Response.status(Status.NOT_FOUND).build();
-	}
+            //get location of file to translate
+            final URL inputFileURL = this.resolveLocation(location);
+            if (detectLoop(inputFileURL)) {
+                logger.error("Input location is in this service: {}. Potential loop: denying request, sending error response instead.", inputFileURL);
+                return Response.serverError().entity("Error: potential loop detected").build();
+            } else {
+                return translate(inputFileURL, outFormat, initTime);
+            }
+        } catch (TransformerException e) {
+            logger.error("Error running transformation to {} on {}: ", outFormat, location, e);
+            return Response.serverError().build();
+        } catch (XMLStreamException e) {
+            logger.error("Error running transformation to {} on {}: ", outFormat, location, e);
+            return Response.serverError().build();
+        } catch (IOException e) {
+            logger.error("Error reading input file to {} on {}: ", outFormat, location, e);
+            return Response.status(Status.NOT_FOUND).build();
+        } catch(InvalidHandleException e){
+            logger.error("Invalid handle in {}", location, e);
+            return Response.status(Status.BAD_REQUEST).build();
+        }
     }
 
     private String getOutput(String outFormat, final URL inputFileURL, final long initTime) throws XMLStreamException, IOException, TransformerException {
-	final String output;
-	if (outFormat != null && (outFormat.toLowerCase().equals("imdi"))) {
-	    logger.info("Requested IMDI translation for file: '{}'", inputFileURL);
-	    output = translator.getIMDI(inputFileURL, uriInfo.getAbsolutePath().toString());
-	    logger.debug("IMDI file returned in: {} ms", (System.currentTimeMillis() - initTime));
-	} else if (outFormat != null && (outFormat.toLowerCase().equals("cmdi"))) {
-	    logger.info("Requested CMDI translation for file: '{}'", inputFileURL);
-	    output = translator.getCMDI(inputFileURL, uriInfo.getAbsolutePath().toString());
-	    logger.debug("CMDI file returned in: {} ms", (System.currentTimeMillis() - initTime));
-	} else {
-	    //default is CMDI to IMDI
-	    logger.warn("Unknown output format requested: '{}'. IMDI assumed.\nGenerating IMDI translation for file: '{}'", outFormat, inputFileURL);
-	    output = translator.getIMDI(inputFileURL, uriInfo.getAbsolutePath().toString());
-	    logger.debug("IMDI file returned in: {} ms", (System.currentTimeMillis() - initTime));
-	}
-	return output;
+        final String output;
+        if (outFormat != null && (outFormat.toLowerCase().equals("imdi"))) {
+            logger.info("Requested IMDI translation for file: '{}'", inputFileURL);
+            output = translator.getIMDI(inputFileURL, uriInfo.getAbsolutePath().toString());
+            logger.debug("IMDI file returned in: {} ms", (System.currentTimeMillis() - initTime));
+        } else if (outFormat != null && (outFormat.toLowerCase().equals("cmdi"))) {
+            logger.info("Requested CMDI translation for file: '{}'", inputFileURL);
+            output = translator.getCMDI(inputFileURL, uriInfo.getAbsolutePath().toString());
+            logger.debug("CMDI file returned in: {} ms", (System.currentTimeMillis() - initTime));
+        } else {
+            //default is CMDI to IMDI
+            logger.warn("Unknown output format requested: '{}'. IMDI assumed.\nGenerating IMDI translation for file: '{}'", outFormat, inputFileURL);
+            output = translator.getIMDI(inputFileURL, uriInfo.getAbsolutePath().toString());
+            logger.debug("IMDI file returned in: {} ms", (System.currentTimeMillis() - initTime));
+        }
+        return output;
     }
 
     /**
-     * Determines the final URL pointing to the document specified by <b>locationStr</b>.
-     * <br/>This method assumes that <b>locationStr</b>'s starting by a valid protocol
-     * other than: 'http://hdl.handle.net/' are already final URL strings. All other
-     * forms of <b>locationStr</b>'s are resolved as handles.
+     * Determines the final URL pointing to the document specified by
+     * <b>locationStr</b>.
+     * <br/>This method assumes that <b>locationStr</b>'s starting by a valid
+     * protocol other than: 'http://hdl.handle.net/' are already final URL
+     * strings. All other forms of <b>locationStr</b>'s are resolved as handles.
      *
-     * @param locationStr - The location of the document to translate. Can be and handle
-     * or a full featured URL string.
+     * @param locationStr - The location of the document to translate. Can be
+     * and handle or a full featured URL string.
      * @return The resolved URL pointing to the document to translate.
      * @throws IOException
      */
-    private URL resolveLocation(String locationStr) throws IOException {
+    private URL resolveLocation(String locationStr) throws IOException, InvalidHandleException {
 
-	if (!fileProtocolAllowed() && locationStr.startsWith("file://")) {
-	    throw new WebApplicationException(Response.Status.FORBIDDEN);
-	}
+        if (!fileProtocolAllowed() && locationStr.startsWith("file://")) {
+            throw new WebApplicationException(Response.Status.FORBIDDEN);
+        }
 
-	//assume that location strings that do not start by a valid protocol
-	//are a handle codes.
-	if (!(locationStr.startsWith("http://")
-		|| locationStr.startsWith("https://")
-		|| locationStr.startsWith("file://")
-		|| locationStr.startsWith("ftp://")
-		|| locationStr.startsWith("jar://"))) {
-	    locationStr = "http://hdl.handle.net/" + locationStr;
-	}
+        //assume that location strings that do not start by a valid protocol
+        //are a handle codes.
+        if (!(locationStr.startsWith("http://")
+                || locationStr.startsWith("https://")
+                || locationStr.startsWith("file://")
+                || locationStr.startsWith("ftp://")
+                || locationStr.startsWith("jar://"))) {
+            locationStr = "http://hdl.handle.net/" + locationStr;
+        }
 
-	URL inputFileURL;
-	try {
-	    inputFileURL = new URL(locationStr);
-	} catch (MalformedURLException e) {
-	    logger.error("Could generate proper URL for input document!");
-	    throw e;
-	}
+        URL inputFileURL;
+        try {
+            inputFileURL = new URL(locationStr);
+        } catch (MalformedURLException e) {
+            logger.error("Could generate proper URL for input document!");
+            throw e;
+        }
 
-	//if locationStr is an handle, resolve it				
-	if (locationStr.startsWith("http://hdl.handle.net/")) {
-	    return handleResolver.resolveHandle(inputFileURL);
-	} else {
-	    return inputFileURL;
-	}
+        //if locationStr is an handle, resolve it				
+        if (locationStr.startsWith("http://hdl.handle.net/")) {
+            try {
+                return handleResolver.resolve(inputFileURL.toURI()).toURL();
+            } catch (URISyntaxException ex) {
+                throw new RuntimeException(ex);
+            }
+        } else {
+            return inputFileURL;
+        }
     }
 
     private boolean fileProtocolAllowed() {
-	final String paramValue = servletContext.getInitParameter("allowFileProtocol");
-	return paramValue != null && Boolean.valueOf(paramValue);
+        final String paramValue = servletContext.getInitParameter("allowFileProtocol");
+        return paramValue != null && Boolean.valueOf(paramValue);
     }
 
     private Response translate(final URL inputFileURL, String outFormat, final long initTime) throws XMLStreamException, TransformerException, IOException {
-	//translate file based on specified output format/language
-	if (translator == null) {
-	    logger.error("Could not process request: Translator instance is null");
-	    return Response.serverError().build();
-	}
-	String output = getOutput(outFormat, inputFileURL, initTime);
+        //translate file based on specified output format/language
+        if (translator == null) {
+            logger.error("Could not process request: Translator instance is null");
+            return Response.serverError().build();
+        }
+        String output = getOutput(outFormat, inputFileURL, initTime);
 
-	final Response.ResponseBuilder response = Response.ok(output);
+        final Response.ResponseBuilder response = Response.ok(output);
 
-	// Expires 30 seconds from now.
-	//TODO: tune or remove!
-	CacheControl cc = new CacheControl();
-	cc.setMaxAge(30);
-	cc.setNoCache(false);
-	response.cacheControl(cc);
+        // Expires 30 seconds from now.
+        //TODO: tune or remove!
+        CacheControl cc = new CacheControl();
+        cc.setMaxAge(30);
+        cc.setNoCache(false);
+        response.cacheControl(cc);
 
-	return response.build();
+        return response.build();
     }
 
     /**
-     * Detects whether request has the potential to cause a loop by checking if the input URL's host and path match
-     * this service's host and path
+     * Detects whether request has the potential to cause a loop by checking if
+     * the input URL's host and path match this service's host and path
      *
      * @param inputUrl current input URL
      * @return whether a loop was detected
      */
     private boolean detectLoop(final URL inputUrl) {
-	final URI serviceUrl = uriInfo.getAbsolutePath();
-	return inputUrl.getHost().equals(serviceUrl.getHost()) && inputUrl.getPath().equals(serviceUrl.getPath());
+        final URI serviceUrl = uriInfo.getAbsolutePath();
+        return inputUrl.getHost().equals(serviceUrl.getHost()) && inputUrl.getPath().equals(serviceUrl.getPath());
     }
 }

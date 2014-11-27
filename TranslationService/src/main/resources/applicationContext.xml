@@ -9,10 +9,23 @@
     
     <!-- This enables injection of the translator bean into the service object -->
     <context:component-scan base-package="nl.mpi.translation.services" />
- 
+    
+     <!-- Load properties from context.xml via servlet container -->
+    <bean
+        class="org.springframework.web.context.support.ServletContextPropertyPlaceholderConfigurer">
+        <property name="ignoreUnresolvablePlaceholders" value="false" />
+    </bean>
+
     <!-- Running instance of the translator service should use the actual implementations of the translator -->
     <bean id="translator" class="nl.mpi.translation.tools.TranslatorImpl" />
  
-    <!-- Running instance of the translator service should use the http handle resolver --> 
-    <bean id="handleResolver" class="nl.mpi.translation.services.HttpHandleResolver"/>
+
+    <!-- Running instance of the translator service should use the http handle resolver -->     
+    <bean id="handleResolver" class="nl.mpi.archiving.corpusstructure.core.handle.CachingHandleResolver">
+        <!-- Cache resolver results for 5 minutes -->
+        <constructor-arg>
+            <bean class="nl.mpi.archiving.corpusstructure.core.handle.HandleApiResolver" />
+        </constructor-arg>
+        <constructor-arg name="expireTime" value="${nl.mpi.metadatatranslator.handleResolutionCacheExpiry:600}" /> 
+    </bean>
 </beans>

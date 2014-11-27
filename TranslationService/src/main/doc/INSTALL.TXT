@@ -22,6 +22,10 @@ installation.
 5.2. Set up tomcat context parameter 'allowFileProtocol' (true/false). See 
 META-INF/context.xml. Warning, setting up 'allowFileProtocol' to 'true' raises
 security problems.
+5.3. (Optional) The following optional context parameter can be set:
+	'nl.mpi.metadatatranslator.handleResolutionCacheExpiry'
+It determines the amount of time to keep handle resolution results (in seconds).
+Set to 0 to disable caching. Default value is 600 (ten minutes).
 
 6. Start Tomcat.
 

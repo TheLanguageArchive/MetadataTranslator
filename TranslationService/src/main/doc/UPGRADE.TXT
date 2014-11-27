@@ -1,5 +1,15 @@
+GENERAL
+
 To upgrade from the previous version:
 
 Deploy MetadataTranslator-${project.artifactId}-${project.version}-r${buildNumber}.war 
 to the servlet container where MetadataTranslator was previously running. 
 
+UPGRADING FROM ANY EARLIER VERSION TO 1.4
+
+The following optional context parameter can now be set:
+
+	nl.mpi.metadatatranslatorr.handleResolutionCacheExpiry
+	
+It determines the amount of time to keep handle resolution results (in seconds).
+Set to 0 to disable caching. Default value is 600 (ten minutes).

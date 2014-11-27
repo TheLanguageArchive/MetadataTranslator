@@ -17,6 +17,7 @@
  */
 package nl.mpi.translation.services;
 
+import nl.mpi.archiving.corpusstructure.core.handle.HandleResolver;
 import nl.mpi.translation.tools.Translator;
 import org.jmock.Mockery;
 

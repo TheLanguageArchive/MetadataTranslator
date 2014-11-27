@@ -20,6 +20,7 @@ package nl.mpi.translation.services;
 import com.sun.jersey.test.framework.AppDescriptor;
 import com.sun.jersey.test.framework.JerseyTest;
 import com.sun.jersey.test.framework.spi.container.TestContainerException;
+import nl.mpi.archiving.corpusstructure.core.handle.HandleResolver;
 import nl.mpi.translation.tools.Translator;
 import org.jmock.Mockery;
 import org.junit.Before;
