@@ -416,28 +416,30 @@ $LastChangedDate: 2013-08-14 11:25:31 +0200 (Wed, 14 Aug 2013) $
     
     <!-- to be called during the creation of the ResourceProxyList (in linking mode) -->
     <xsl:template name="CreateResourceProxyTypeResource">
-        <ResourceProxy id="{generate-id(.)}">
-            <ResourceType>
-                <xsl:if test="exists(Format) and not(empty(Format))">
-                    <xsl:attribute name="mimetype">
-                        <xsl:value-of select="./Format"/>
-                    </xsl:attribute>
-                </xsl:if>Resource</ResourceType>
-        	<ResourceRef>
-        		<xsl:if test="$localURI">
-        			<xsl:attribute name="lat:localURI" select="ResourceLink"/>
-        		</xsl:if>
-        		<xsl:choose>
-                    <xsl:when test="not(normalize-space(ResourceLink/@ArchiveHandle)='')">
-                        <xsl:value-of select="ResourceLink/@ArchiveHandle"/>
-                    </xsl:when>
-                    <xsl:when test="not($uri-base='')">
-                        <xsl:value-of
-                            select="resolve-uri(normalize-space(ResourceLink/.), $uri-base)"/>
-                    </xsl:when>
-                </xsl:choose>
-            </ResourceRef>
-        </ResourceProxy>
+        <xsl:if test="not(normalize-space(ResourceLink/.) = '')">
+            <ResourceProxy id="{generate-id(.)}">
+                <ResourceType>
+                    <xsl:if test="exists(Format) and not(empty(Format))">
+                        <xsl:attribute name="mimetype">
+                            <xsl:value-of select="./Format"/>
+                        </xsl:attribute>
+                    </xsl:if>Resource</ResourceType>
+            	<ResourceRef>
+            		<xsl:if test="$localURI">
+            			<xsl:attribute name="lat:localURI" select="ResourceLink"/>
+            		</xsl:if>
+            		<xsl:choose>
+                        <xsl:when test="not(normalize-space(ResourceLink/@ArchiveHandle)='')">
+                            <xsl:value-of select="ResourceLink/@ArchiveHandle"/>
+                        </xsl:when>
+                        <xsl:when test="not($uri-base='')">
+                            <xsl:value-of
+                                select="resolve-uri(normalize-space(ResourceLink/.), $uri-base)"/>
+                        </xsl:when>
+                    </xsl:choose>
+                </ResourceRef>
+            </ResourceProxy>
+        </xsl:if>
     </xsl:template>
 
 	<!-- Create ResourceProxy for Info files -->
