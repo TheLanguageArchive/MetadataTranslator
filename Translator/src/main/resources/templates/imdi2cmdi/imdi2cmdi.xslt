@@ -363,7 +363,7 @@ $LastChangedDate: 2013-08-14 11:25:31 +0200 (Wed, 14 Aug 2013) $
         <xsl:for-each select="CorpusLink">
             <ResourceProxy id="{generate-id(.)}">
                 <!-- Do we have both archive handle and link (text content)? -->
-                <xsl:if test="not(normalize-space(./@ArchiveHandle)='' or normalize-space(.)='')">
+                <xsl:if test="not($localURI) and (not(normalize-space(./@ArchiveHandle)='' or normalize-space(.)=''))">
                     <!-- Archive handle is kept, but original link is lost in CMDI. Keep content in a comment. -->
                     <xsl:comment>
                         <xsl:value-of select="."/>
@@ -372,7 +372,7 @@ $LastChangedDate: 2013-08-14 11:25:31 +0200 (Wed, 14 Aug 2013) $
                 <ResourceType>Metadata</ResourceType>
             	<ResourceRef>
             		<xsl:if test="$localURI">
-            			<xsl:attribute name="lat:localURI" select="."/>
+            			<xsl:attribute name="lat:localURI" select="replace(.,'\.imdi','.cmdi')"/>
             		</xsl:if>
             		<xsl:choose>
                         <!-- Check for archive handle attribute -->
@@ -403,10 +403,10 @@ $LastChangedDate: 2013-08-14 11:25:31 +0200 (Wed, 14 Aug 2013) $
 
     <!-- Create ResourceProxy for MediaFile and WrittenResource -->
     <xsl:template match="Resources" mode="linking">
-        <xsl:for-each select="MediaFile">
+    	<xsl:for-each select="MediaFile">
             <xsl:call-template name="CreateResourceProxyTypeResource"/>
         </xsl:for-each>
-        <xsl:for-each select="WrittenResource">
+    	<xsl:for-each select="WrittenResource">
             <xsl:call-template name="CreateResourceProxyTypeResource"/>
         </xsl:for-each>
     	<xsl:for-each select="Anonyms">
@@ -416,30 +416,30 @@ $LastChangedDate: 2013-08-14 11:25:31 +0200 (Wed, 14 Aug 2013) $
     
     <!-- to be called during the creation of the ResourceProxyList (in linking mode) -->
     <xsl:template name="CreateResourceProxyTypeResource">
-        <xsl:if test="not(normalize-space(ResourceLink/.) = '')">
-            <ResourceProxy id="{generate-id(.)}">
-                <ResourceType>
-                    <xsl:if test="exists(Format) and not(empty(Format))">
-                        <xsl:attribute name="mimetype">
-                            <xsl:value-of select="./Format"/>
-                        </xsl:attribute>
-                    </xsl:if>Resource</ResourceType>
-            	<ResourceRef>
-            		<xsl:if test="$localURI">
-            			<xsl:attribute name="lat:localURI" select="ResourceLink"/>
-            		</xsl:if>
-            		<xsl:choose>
-                        <xsl:when test="not(normalize-space(ResourceLink/@ArchiveHandle)='')">
-                            <xsl:value-of select="ResourceLink/@ArchiveHandle"/>
-                        </xsl:when>
-                        <xsl:when test="not($uri-base='')">
-                            <xsl:value-of
-                                select="resolve-uri(normalize-space(ResourceLink/.), $uri-base)"/>
-                        </xsl:when>
-                    </xsl:choose>
-                </ResourceRef>
-            </ResourceProxy>
-        </xsl:if>
+    	<xsl:if test="normalize-space(ResourceLink)!=''">
+    		<ResourceProxy id="{generate-id(ResourceLink)}">
+    			<ResourceType>
+    				<xsl:if test="exists(Format) and not(empty(Format))">
+    					<xsl:attribute name="mimetype">
+    						<xsl:value-of select="./Format"/>
+    					</xsl:attribute>
+    				</xsl:if>Resource</ResourceType>
+    			<ResourceRef>
+    				<xsl:if test="$localURI">
+    					<xsl:attribute name="lat:localURI" select="ResourceLink"/>
+    				</xsl:if>
+    				<xsl:choose>
+    					<xsl:when test="not(normalize-space(ResourceLink/@ArchiveHandle)='')">
+    						<xsl:value-of select="ResourceLink/@ArchiveHandle"/>
+    					</xsl:when>
+    					<xsl:when test="not($uri-base='')">
+    						<xsl:value-of
+    							select="resolve-uri(normalize-space(ResourceLink/.), $uri-base)"/>
+    					</xsl:when>
+    				</xsl:choose>
+    			</ResourceRef>
+    		</ResourceProxy>
+    	</xsl:if>
     </xsl:template>
 
 	<!-- Create ResourceProxy for Info files -->
@@ -896,8 +896,11 @@ $LastChangedDate: 2013-08-14 11:25:31 +0200 (Wed, 14 Aug 2013) $
     </xsl:template>
 
     <xsl:template match="MediaFile">
-        <MediaFile ref="{generate-id(.)}">
-            <Type>
+        <MediaFile>
+        	<xsl:if test="exists(ResourceLink[normalize-space(.)!=''])">
+        		<xsl:attribute name="ref" select="generate-id(ResourceLink)"/>
+        	</xsl:if>
+        	<Type>
                 <xsl:value-of select=" ./Type"/>
             </Type>
             <Format>
@@ -966,8 +969,11 @@ $LastChangedDate: 2013-08-14 11:25:31 +0200 (Wed, 14 Aug 2013) $
     </xsl:template>
 
     <xsl:template match="WrittenResource">
-        <WrittenResource ref="{generate-id()}">
-            <Date>
+        <WrittenResource>
+        	<xsl:if test="exists(ResourceLink[normalize-space(.)!=''])">
+        		<xsl:attribute name="ref" select="generate-id(ResourceLink)"/>
+        	</xsl:if>
+        	<Date>
                 <xsl:value-of select=" ./Date"/>
             </Date>
             <Type>
