@@ -26,6 +26,8 @@ $LastChangedDate: 2013-08-14 11:25:31 +0200 (Wed, 14 Aug 2013) $
 	
 	<xsl:param name="localURI" select="true()"/>
 	
+	<xsl:param name="formatCMDI" select="true()"/>
+	
 	<xsl:variable name="lang-top" select="document('sil_to_iso6393.xml')/languages"/>
 	<xsl:key name="iso-lookup" match="lang" use="sil"/>
 	
@@ -379,9 +381,16 @@ $LastChangedDate: 2013-08-14 11:25:31 +0200 (Wed, 14 Aug 2013) $
                         <xsl:when test="not(normalize-space(./@ArchiveHandle)='')">
                             <xsl:choose>
                                 <!-- MPI handle prefix? Use handle + @format=cmdi suffix -->
-                                <xsl:when test="starts-with(normalize-space(@ArchiveHandle), 'hdl:1839/')"><xsl:value-of select="@ArchiveHandle"/>@format=cmdi</xsl:when>
+                                <xsl:when test="starts-with(normalize-space(@ArchiveHandle), 'hdl:1839/')">
+                                	<xsl:value-of select="@ArchiveHandle"/>
+                                	<xsl:if test="$formatCMDI">
+                                		<xsl:text>@format=cmdi</xsl:text>
+                                	</xsl:if>
+                                </xsl:when>
                                 <!-- Other handle prefix? Use handle (e.g. Lund) -->
-                                <xsl:otherwise><xsl:value-of select="@ArchiveHandle"/></xsl:otherwise>
+                                <xsl:otherwise>
+                                	<xsl:value-of select="@ArchiveHandle"/>
+                                </xsl:otherwise>
                             </xsl:choose>
                         </xsl:when>
                         <!-- Is link a handle? -->
@@ -389,11 +398,11 @@ $LastChangedDate: 2013-08-14 11:25:31 +0200 (Wed, 14 Aug 2013) $
                             <xsl:value-of select="."/>
                         </xsl:when>
                         <!-- Fallback: use original link, append .cmdi. Resolve from base URI if available. -->
-                        <xsl:when test="$uri-base=''"><xsl:value-of select="."/>.cmdi</xsl:when>
+                        <xsl:when test="$uri-base=''">
+                        	<xsl:value-of select="replace(.,'\.imdi','.cmdi')"/>
+                        </xsl:when>
                         <xsl:otherwise>
-                            <xsl:value-of
-                                select="concat(resolve-uri(normalize-space(.), $uri-base), '.cmdi')"
-                            />
+                            <xsl:value-of select="replace(resolve-uri(normalize-space(.), $uri-base),'\.imdi','.cmdi')"/>
                         </xsl:otherwise>
                     </xsl:choose>
                 </ResourceRef>
