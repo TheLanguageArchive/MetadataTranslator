@@ -1,21 +1,15 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<METATRANSCRIPT xmlns="http://www.mpi.nl/IMDI/Schema/IMDI"
-                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-                xmlns:tla="http://tla.mpi.nl"
-                FormatId="IMDI 3.0"
-                Type="CORPUS"
-                Version="0"
-                xsi:schemaLocation="http://www.mpi.nl/IMDI/Schema/IMDI http://www.mpi.nl/IMDI/Schema/IMDI_3.0.xsd"
-                ArchiveHandle="hdl:1839/00-0000-0000-0008-A408-B@format=imdi"
-                Originator="Metadata Translator: tlacollection2corpus.xslt hdl:1839/00-0000-0000-0008-A408-B"
-                Date="2014-11-25">
-   <Corpus>
-      <Name>Word order</Name>
-      <Title>Word order study (a case study - Children and Adults)</Title>
-      <Description LanguageId="">This elicited production study aims to examine the influence of accessibility on word order preferences in children and adults. Partipants were shown pairs of objects in a container (e.g. an egg and a bed), one of which they had seen and labeled immediately before (e.g. the egg). On being asked to describe what they saw, adults produced descriptions in which the "old" object (seen/labeled earlier) was produced first and the "new" object was produced second (e.g. "egg and bed"). Children, on the other hand, preferred the opposite ordering: new-before-old (e.g. "bed and egg").</Description>
-      <CorpusLink Name="Basic study">Pilot_study.imdi</CorpusLink>
-      <CorpusLink Name="&#34;Comment&#34; study">Comment.imdi</CorpusLink>
-      <CorpusLink Name="&#34;Narrative&#34; study">Magician_I.imdi</CorpusLink>
-      <CorpusLink Name="&#34;Input&#34; study">_Input_study.imdi</CorpusLink>
+<?xml version="1.0" encoding="UTF-8"?><METATRANSCRIPT xmlns="http://www.mpi.nl/IMDI/Schema/IMDI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ArchiveHandle="hdl:1839/00-0000-0000-0008-A408-B" Date="2003-01-14" FormatId="IMDI 3.0" Originator="NB" Type="CORPUS" Version="1" xsi:schemaLocation="http://www.mpi.nl/IMDI/Schema/IMDI ./IMDI_3.0.xsd">
+    <History/>
+    <Corpus CatalogueHandle="hdl:1839/00-0000-0000-000D-B6BA-2" CatalogueLink="mpi-corpora_Word-order-0.imdi">
+		    <Name>Word order</Name>
+		    <Title>Word order study (a case study - Children and Adults)</Title>
+		    <Description ArchiveHandle="hdl:1839/00-0000-0000-0008-A4AC-2" LanguageId="ISO639-2:eng" Link="../Info/Info.txt"/>
+      <Description LanguageId="ISO639-2:eng" Link="">This elicited production study aims to examine the influence of accessibility on word order preferences in children and adults. Partipants were shown pairs of objects in a container (e.g. an egg and a bed), one of which they had seen and labeled immediately before (e.g. the egg). On being asked to describe what they saw, adults produced descriptions in which the "old" object (seen/labeled earlier) was produced first and the "new" object was produced second (e.g. "egg and bed"). Children, on the other hand, preferred the opposite ordering: new-before-old (e.g. "bed and egg").</Description>
+	     
+      
+      <CorpusLink ArchiveHandle="hdl:1839/00-0000-0000-0008-CED2-7" Name="Basic study">Pilot_study.imdi</CorpusLink>
+      <CorpusLink ArchiveHandle="hdl:1839/00-0000-0000-0008-CED0-D" Name="&quot;Comment&quot; study">Comment.imdi</CorpusLink>
+      <CorpusLink ArchiveHandle="hdl:1839/00-0000-0000-0008-CED1-2" Name="&quot;Narrative&quot; study">Magician_I.imdi</CorpusLink>
+      <CorpusLink ArchiveHandle="hdl:1839/00-0000-0000-0008-CFEC-A" Name="&quot;Input&quot; study">_Input_study.imdi</CorpusLink>
    </Corpus>
 </METATRANSCRIPT>

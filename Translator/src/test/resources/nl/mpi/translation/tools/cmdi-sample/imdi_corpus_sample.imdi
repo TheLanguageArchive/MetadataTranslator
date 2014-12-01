@@ -1,33 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<METATRANSCRIPT xmlns="http://www.mpi.nl/IMDI/Schema/IMDI"
-                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-                xmlns:tla="http://tla.mpi.nl"
-                FormatId="IMDI 3.0"
-                Type="CORPUS"
-                Version="0"
-                xsi:schemaLocation="http://www.mpi.nl/IMDI/Schema/IMDI http://www.mpi.nl/IMDI/Schema/IMDI_3.0.xsd"
-                ArchiveHandle="hdl:1839/00-0000-0000-0000-6B5B-7@format=imdi"
-                Originator="Metadata Translator: tlacollection2corpus.xslt hdl:1839/00-0000-0000-0000-6B5B-7"
-                Date="2014-11-25">
-   <Corpus>
-      <Name>Language and Cognition</Name>
-      <Title/>
-      <Description LanguageId="">This is the LAC (Language and Cognition) corpus which contains spontaneous, elicited and experimental language data.</Description>
-      <CorpusLink Name="africa">africa.imdi</CorpusLink>
-      <CorpusLink Name="australia">australia.imdi</CorpusLink>
-      <CorpusLink Name="eastasia">eastasia.imdi</CorpusLink>
-      <CorpusLink Name="southeastasia">southeastasia.imdi</CorpusLink>
-      <CorpusLink Name="southasia">southasia.imdi</CorpusLink>
-      <CorpusLink Name="northamerica">northamerica.imdi</CorpusLink>
-      <CorpusLink Name="mesoamerica">mesoamerica.imdi</CorpusLink>
-      <CorpusLink Name="southamerica">southamerica.imdi</CorpusLink>
-      <CorpusLink Name="oceania">oceania.imdi</CorpusLink>
-      <CorpusLink Name="Sign Language">sign.imdi</CorpusLink>
-      <CorpusLink Name="Gesture Projects">../../gesture_data/Corpusstructure/gesture.imdi</CorpusLink>
-      <CorpusLink Name="conferences">../conferences/Corpusstructure/conferences.imdi</CorpusLink>
-      <CorpusLink Name="europe">europe.imdi</CorpusLink>
-      <CorpusLink Name="Stimuli archive">../lc_stimuli_archive/Corpusstructure/lc_stimuli_archive.imdi</CorpusLink>
-      <CorpusLink Name="Lectures and Interviews">../lectures_and_interviews/Corpusstructure/lectures.imdi</CorpusLink>
-      <CorpusLink Name="ERC Interact">../ERC_Interact/Corpusstructure/ERC_Interact.imdi</CorpusLink>
-   </Corpus>
+<METATRANSCRIPT ArchiveHandle="hdl:1839/00-0000-0000-0000-6B5B-7" Date="2005-11-08" FormatId="IMDI 3.0" Originator="NB" Type="CORPUS" Version="3" xmlns="http://www.mpi.nl/IMDI/Schema/IMDI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mpi.nl/IMDI/Schema/IMDI ./IMDI_3.0.xsd">
+    <History>NAME:IMDI_1_9_TO_3_0 DATE:2004-03-17T14:05:36-02:00.</History>
+    <Corpus CorpusStructureService="corpusstructure" SearchService="">
+        <Name>Language and Cognition</Name>
+        <Title/>
+        <Description LanguageId="" Link="">This is the LAC (Language and Cognition) corpus which contains spontaneous, elicited and experimental language data.</Description>
+        <CorpusLink ArchiveHandle="hdl:1839/00-0000-0000-0000-6B5C-5" Name="africa">africa.imdi</CorpusLink>
+        <CorpusLink ArchiveHandle="hdl:1839/00-0000-0000-0000-70E7-D" Name="australia">australia.imdi</CorpusLink>
+        <CorpusLink ArchiveHandle="hdl:1839/00-0000-0000-0000-71F2-2" Name="eastasia">eastasia.imdi</CorpusLink>
+        <CorpusLink ArchiveHandle="hdl:1839/00-0000-0000-0000-720C-C" Name="southeastasia">southeastasia.imdi</CorpusLink>
+        <CorpusLink ArchiveHandle="hdl:1839/00-0000-0000-0000-7640-F" Name="southasia">southasia.imdi</CorpusLink>
+        <CorpusLink ArchiveHandle="hdl:1839/00-0000-0000-0000-76A0-9" Name="northamerica">northamerica.imdi</CorpusLink>
+        <CorpusLink ArchiveHandle="hdl:1839/00-0000-0000-0000-7C26-E" Name="mesoamerica">mesoamerica.imdi</CorpusLink>
+        <CorpusLink ArchiveHandle="hdl:1839/00-0000-0000-0000-82A2-E" Name="southamerica">southamerica.imdi</CorpusLink>
+        <CorpusLink ArchiveHandle="hdl:1839/00-0000-0000-0000-84E0-0" Name="oceania">oceania.imdi</CorpusLink>
+        <CorpusLink ArchiveHandle="hdl:1839/00-0000-0000-0000-C71C-C" Name="Sign Language">sign.imdi</CorpusLink>
+        <CorpusLink ArchiveHandle="hdl:1839/00-0000-0000-0000-C815-F" Name="Gesture Projects">../../gesture_data/Corpusstructure/gesture.imdi</CorpusLink>
+        <CorpusLink ArchiveHandle="hdl:1839/00-0000-0000-0001-1674-E" Name="conferences">../conferences/Corpusstructure/conferences.imdi</CorpusLink>
+        
+        <CorpusLink ArchiveHandle="hdl:1839/00-0000-0000-0001-16E0-F" Name="europe">europe.imdi</CorpusLink>
+        <CorpusLink ArchiveHandle="hdl:1839/00-0000-0000-0004-DEEE-0" Name="Stimuli archive">../lc_stimuli_archive/Corpusstructure/lc_stimuli_archive.imdi</CorpusLink>
+        <CorpusLink ArchiveHandle="hdl:1839/00-0000-0000-0007-F609-6" Name="Lectures and Interviews">../lectures_and_interviews/Corpusstructure/lectures.imdi</CorpusLink>
+	<CorpusLink ArchiveHandle="hdl:1839/00-0000-0000-0015-4B00-3" Name="ERC Interact">../ERC_Interact/Corpusstructure/ERC_Interact.imdi</CorpusLink>
+    </Corpus>
 </METATRANSCRIPT>

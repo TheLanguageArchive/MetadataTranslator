@@ -1,13 +1,214 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <METATRANSCRIPT xmlns="http://www.mpi.nl/IMDI/Schema/IMDI"
                 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-                xmlns:tla="http://tla.mpi.nl"
+                ArchiveHandle="hdl:1839/00-0000-0000-0008-C15C-6"
+                Date="2007-12-09"
                 FormatId="IMDI 3.0"
-                Type="CORPUS"
-                Version="0"
-                xsi:schemaLocation="http://www.mpi.nl/IMDI/Schema/IMDI http://www.mpi.nl/IMDI/Schema/IMDI_3.0.xsd"
-                ArchiveHandle="hdl:1839/00-0000-0000-0008-C15C-6@format=imdi"
-                Originator="Metadata Translator: tlasession2corpus.xslt hdl:1839/00-0000-0000-0008-C15C-6"
-                Date="2014-11-25">
-   <Corpus/>
+                Originator="Editor - Profile:local/DBD_Profile.Profile.xml"
+                Type="SESSION"
+                Version="9"
+                xsi:schemaLocation="http://www.mpi.nl/IMDI/Schema/IMDI ./IMDI_3.0.xsd">
+    <Session>
+        <Name>DBD DH 050A</Name>
+        <Title>DBD_SRN_22_18_08_050A</Title>
+        <Date>Unspecified</Date>
+        <Description LanguageId="ISO639-2:eng" Link="">Recording took place during primary school hours (08:30 AM-03:30 PM) at a primary school in a separate classroom. Recording was done by Dorian de Haan (researcher) between 1984-1986.</Description>
+        <MDGroup>
+            <Location>
+                <Continent Link="http://www.mpi.nl/IMDI/Schema/Continents.xml" Type="ClosedVocabulary">Europe</Continent>
+                <Country Link="http://www.mpi.nl/IMDI/Schema/Countries.xml" Type="ClosedVocabulary">Netherlands</Country>
+                <Region>Amsterdam</Region>
+                <Address>Unspecified</Address>
+            </Location>
+            <Project>
+                <Name>De Haan Corpus</Name>
+                <Title>De taalsituatie van Surinaamse kinderen op de basisschool in Nederland</Title>
+                <Id/>
+                <Contact>
+                    <Name/>
+                    <Address/>
+                    <Email/>
+                    <Organisation/>
+                </Contact>
+                <Description LanguageId="ISO639-2:eng" Link="">Goal of this project is to get a clear view of the command of Sarnami and/or Sranan of primary school children of Suriname origin and to study their command of Dutch.</Description>
+            </Project>
+            <Keys>
+                <Key Name="IMDI_file_creator" Type="OpenVocabulary">Marleen van de Vate</Key>
+                <Key Name="IMDI_file_corrector" Type="OpenVocabulary">Linda van Meel</Key>
+            </Keys>
+            <Content>
+                <Genre Link="http://www.mpi.nl/IMDI/Schema/Content-Genre.xml" Type="OpenVocabulary">Stimuli</Genre>
+                <SubGenre DefaultLink=""
+                      Link="http://www.mpi.nl/IMDI/Schema/Content-SubGenre-Stimuli.xml"
+                      Type="OpenVocabularyList">Story retelling</SubGenre>
+                <Task Link="http://www.mpi.nl/IMDI/Schema/Content-Task.xml" Type="OpenVocabulary"/>
+                <Modalities Link="http://www.mpi.nl/IMDI/Schema/Content-Modalities.xml"
+                        Type="OpenVocabularyList">Speech</Modalities>
+                <Subject DefaultLink="" Link="http://www.mpi.nl/IMDI/Schema/Content-Subject.xml"
+                     Type="OpenVocabularyList">a boy and his football</Subject>
+                <CommunicationContext>
+                    <Interactivity Link="http://www.mpi.nl/IMDI/Schema/Content-Interactivity.xml"
+                              Type="ClosedVocabulary">non-interactive</Interactivity>
+                    <PlanningType Link="http://www.mpi.nl/IMDI/Schema/Content-PlanningType.xml"
+                             Type="ClosedVocabulary">semi-spontaneous</PlanningType>
+                    <Involvement Link="http://www.mpi.nl/IMDI/Schema/Content-Involvement.xml"
+                            Type="ClosedVocabulary">non-elicited</Involvement>
+                    <SocialContext Link="http://www.mpi.nl/IMDI/Schema/Content-SocialContext.xml"
+                              Type="ClosedVocabulary">Controlled environment</SocialContext>
+                    <EventStructure Link="http://www.mpi.nl/IMDI/Schema/Content-EventStructure.xml"
+                               Type="ClosedVocabulary">Monologue</EventStructure>
+                    <Channel Link="http://www.mpi.nl/IMDI/Schema/Content-Channel.xml"
+                        Type="ClosedVocabulary">Face to Face</Channel>
+                </CommunicationContext>
+                <Languages>
+                    <Description LanguageId="" Link=""/>
+                    <Language ResourceRef="">
+                        <Id>ISO639-3:srn</Id>
+                        <Name Link="http://www.mpi.nl/IMDI/Schema/MPI-Languages.xml" Type="OpenVocabulary">Sranan</Name>
+                        <Dominant Type="ClosedVocabulary">true</Dominant>
+                        <SourceLanguage Type="ClosedVocabulary">Unspecified</SourceLanguage>
+                        <TargetLanguage Type="ClosedVocabulary">true</TargetLanguage>
+                        <Description LanguageId="" Link=""/>
+                    </Language>
+                    <Language ResourceRef="">
+                        <Id>ISO639-3:nld</Id>
+                        <Name Link="http://www.mpi.nl/IMDI/Schema/MPI-Languages.xml" Type="OpenVocabulary">Dutch</Name>
+                        <Dominant Type="ClosedVocabulary">false</Dominant>
+                        <SourceLanguage Type="ClosedVocabulary">Unspecified</SourceLanguage>
+                        <TargetLanguage Type="ClosedVocabulary">false</TargetLanguage>
+                        <Description LanguageId="" Link=""/>
+                    </Language>
+                </Languages>
+                <Keys>
+                    <Key DefaultLink="" Name="DBD.LanguageMode" Type="OpenVocabulary">OtherLanguageDominant</Key>
+                </Keys>
+                <Description LanguageId="ISO639-2:eng" Link="">The task is to retell a story about a boy and his football. 
+Together the boy and his ball go to a football competition in the park. Unfortunately the boy and his team do not win. After the match he stops to order a fries. He puts his ball in the truck of a car. The car rides off. Fortunately, it stops for a pedestrian crossing where the boy takes his ball back and goes home.</Description>
+            </Content>
+            <Actors>
+                <Description LanguageId="" Link=""/>
+                <Actor ResourceRef="" XXX-Tag="other">
+                    <Role Link="http://www.mpi.nl/IMDI/Schema/Actor-Role.xml" Type="OpenVocabularyList">Collector</Role>
+                    <Name>Dorian</Name>
+                    <FullName>Dorian de Haan</FullName>
+                    <Code>DH</Code>
+                    <FamilySocialRole Link="http://www.mpi.nl/IMDI/Schema/Actor-FamilySocialRole.xml"
+                                 Type="OpenVocabularyList">Teacher</FamilySocialRole>
+                    <Languages>
+                        <Description LanguageId="" Link=""/>
+                        <Language>
+                            <Id>ISO639-3:nld</Id>
+                            <Name Link="http://www.mpi.nl/IMDI/Schema/MPI-Languages.xml" Type="OpenVocabulary">Dutch</Name>
+                            <MotherTongue Type="ClosedVocabulary">Unspecified</MotherTongue>
+                            <PrimaryLanguage Type="ClosedVocabulary">Unspecified</PrimaryLanguage>
+                            <Description LanguageId="" Link=""/>
+                        </Language>
+                    </Languages>
+                    <EthnicGroup Type="OpenVocabulary"/>
+                    <Age>Unspecified</Age>
+                    <BirthDate>Unspecified</BirthDate>
+                    <Sex Link="http://www.mpi.nl/IMDI/Schema/Actor-Sex.xml" Type="ClosedVocabulary">Female</Sex>
+                    <Education>Unspecified</Education>
+                    <Anonymized Type="ClosedVocabulary">false</Anonymized>
+                    <Contact>
+                        <Name/>
+                        <Address/>
+                        <Email/>
+                        <Organisation/>
+                    </Contact>
+                    <Keys/>
+                    <Description LanguageId="ISO639-2:eng" Link="">Dorian de Haan is the coordinator/collector of this project. She is of Dutch origin. She works at the University of Utrecht, The Netherlands, at the Developmental Psychology department.</Description>
+                </Actor>
+                <Actor ResourceRef="" XXX-Tag="other">
+                    <Role Link="http://www.mpi.nl/IMDI/Schema/Actor-Role.xml" Type="OpenVocabularyList">Speaker/Signer</Role>
+                    <Name>Milton</Name>
+                    <FullName/>
+                    <Code/>
+                    <FamilySocialRole Link="http://www.mpi.nl/IMDI/Schema/Actor-FamilySocialRole.xml"
+                                 Type="OpenVocabularyList">Student</FamilySocialRole>
+                    <Languages>
+                        <Description LanguageId="" Link=""/>
+                        <Language>
+                            <Id>ISO639-3:srn</Id>
+                            <Name Link="http://www.mpi.nl/IMDI/Schema/MPI-Languages.xml" Type="OpenVocabulary">Sranan</Name>
+                            <MotherTongue Type="ClosedVocabulary">Unspecified</MotherTongue>
+                            <PrimaryLanguage Type="ClosedVocabulary">Unspecified</PrimaryLanguage>
+                            <Description LanguageId="" Link=""/>
+                        </Language>
+                        <Language>
+                            <Id>ISO639-3:nld</Id>
+                            <Name Link="http://www.mpi.nl/IMDI/Schema/MPI-Languages.xml" Type="OpenVocabulary">Dutch</Name>
+                            <MotherTongue Type="ClosedVocabulary">Unspecified</MotherTongue>
+                            <PrimaryLanguage Type="ClosedVocabulary">Unspecified</PrimaryLanguage>
+                            <Description LanguageId="" Link=""/>
+                        </Language>
+                    </Languages>
+                    <EthnicGroup Type="OpenVocabulary">Suriname Creole</EthnicGroup>
+                    <Age>Unspecified</Age>
+                    <BirthDate>Unspecified</BirthDate>
+                    <Sex Link="http://www.mpi.nl/IMDI/Schema/Actor-Sex.xml" Type="ClosedVocabulary">Male</Sex>
+                    <Education>Unspecified</Education>
+                    <Anonymized Type="ClosedVocabulary">false</Anonymized>
+                    <Contact>
+                        <Name/>
+                        <Address/>
+                        <Email/>
+                        <Organisation/>
+                    </Contact>
+                    <Keys/>
+                    <Description LanguageId="ISO639-2:eng" Link="">Milton is of Suriname Creole origin. He was born in Suriname, and 3 days before his 5th birthday he arrived in the Netherlands. 
+At home they speak Dutch, but with his little sister (2 years) Milton speaks Sranan. With his stepfather he also speaks Sranan. He finds his command of Dutch and Sranan equal. He is the 3rd child of 5. 
+Same boy as in 45E, 45F, 50B &amp; 53C.</Description>
+                </Actor>
+            </Actors>
+        </MDGroup>
+        <Resources>
+         <MediaFile>
+            <ResourceLink ArchiveHandle="hdl:1839/00-0000-0000-0008-8BD5-A">../Media/dbd_dh_50A.wav</ResourceLink>
+            <Type Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Type.xml" Type="ClosedVocabulary">audio</Type>
+            <Format Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Format.xml" Type="OpenVocabulary">audio/x-wav</Format>
+            <Size/>
+            <Quality Type="ClosedVocabulary">Unspecified</Quality>
+            <RecordingConditions/>
+            <TimePosition>
+               <Start>Unspecified</Start>
+               <End>Unspecified</End>
+            </TimePosition>
+            <Access>
+               <Availability Type="OpenVocabulary"/>
+               <Date>Unspecified</Date>
+               <Owner/>
+               <Publisher/>
+               <Contact>
+                  <Name/>
+                  <Address/>
+                  <Email/>
+                  <Organisation/>
+               </Contact>
+               <Description LanguageId="" Link=""/>
+            </Access>
+            <Description LanguageId="" Link=""/>
+            <Keys>
+               <Key Name="" Type="OpenVocabulary"/>
+            </Keys>
+         </MediaFile>
+            <Anonyms>
+                <ResourceLink/>
+                <Access>
+                    <Availability Type="OpenVocabulary"/>
+                    <Date>Unspecified</Date>
+                    <Owner/>
+                    <Publisher/>
+                    <Contact>
+                        <Name/>
+                        <Address/>
+                        <Email/>
+                        <Organisation/>
+                    </Contact>
+                    <Description LanguageId="" Link=""/>
+                </Access>
+            </Anonyms>
+        </Resources>
+        <References/>
+    </Session>
 </METATRANSCRIPT>

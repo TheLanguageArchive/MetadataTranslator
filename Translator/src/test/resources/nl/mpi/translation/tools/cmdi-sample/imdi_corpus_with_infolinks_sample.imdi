@@ -1,157 +1,99 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <METATRANSCRIPT xmlns="http://www.mpi.nl/IMDI/Schema/IMDI"
                 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-                xmlns:tla="http://tla.mpi.nl"
-                xmlns:lat="http://lat.mpi.nl/"
+                ArchiveHandle="hdl:1839/00-0000-0000-0001-305B-C"
+                Date="2005-06-10"
                 FormatId="IMDI 3.0"
+                Originator="hand rs"
                 Type="CORPUS"
-                Version="0"
-                xsi:schemaLocation="http://www.mpi.nl/IMDI/Schema/IMDI http://www.mpi.nl/IMDI/Schema/IMDI_3.0.xsd"
-                ArchiveHandle="hdl:1839/00-0000-0000-0001-305B-C@format=imdi"
-                Originator="Metadata Translator: tlacollection2corpus.xslt hdl:1839/00-0000-0000-0001-305B-C@format=cmdi"
-                Date="2014-11-25">
-   <Corpus>
-      <Name>DoBeS archive</Name>
-      <Title>Documentation of endangered languages</Title>
-      <Description>Approximately 6500 languages are currently spoken world-wide. It can be assumed that about two-thirds of these languages will become extinct in the 21st century. All languages are intimately interlinked with the culture of their speakers, and all languages and cultures represent specific expressions of human thought and social organisation. Therefore, with every language which becomes extinct priceless intellectual values will be lost forever. The project DOBES will contribute to the conservation of this cultural heritage. The MPI for Psycholinguistics in Nijmegen (NL) will house the data archive which will cover sound material, video recordings, photos, and various textual annotations.</Description>
-      <Description ArchiveHandle="hdl:1839/00-0000-0000-0004-353C-D"
+                Version="4"
+                xsi:schemaLocation="http://www.mpi.nl/IMDI/Schema/IMDI ./IMDI_3.0.xsd">
+    <History>NAME:IMDI_1_9_TO_3_0 DATE:2004-06-03T15:19:09-02:00.</History>
+    <Corpus>
+        <Name>DoBeS archive</Name>
+        <Title>Documentation of endangered languages</Title>
+        <Description LanguageId="" Link="">Approximately 6500 languages are currently spoken world-wide. It can be assumed that about two-thirds of these languages will become extinct in the 21st century. All languages are intimately interlinked with the culture of their speakers, and all languages and cultures represent specific expressions of human thought and social organisation. Therefore, with every language which becomes extinct priceless intellectual values will be lost forever. The project DOBES will contribute to the conservation of this cultural heritage. The MPI for Psycholinguistics in Nijmegen (NL) will house the data archive which will cover sound material, video recordings, photos, and various textual annotations.</Description>
+        <Description ArchiveHandle="hdl:1839/00-0000-0000-0004-353C-D" LanguageId=""
                    Link="../Info/WelcomeToDOBES.html">Welcome to DOBES</Description>
-      <Description ArchiveHandle="hdl:1839/00-0000-0000-0001-4891-E"
+        <Description ArchiveHandle="hdl:1839/00-0000-0000-0001-4891-E" LanguageId=""
                    Link="../Info/introduction.html">General info</Description>
-      <CorpusLink Name="Aché"
-                  ArchiveHandle="hdl:1839/00-0000-0000-0014-C52F-7@format=imdi">../Ache/Corpusstructure/Ache.imdi</CorpusLink>
-      <CorpusLink Name="≠Akhoe Hai//om"
-                  ArchiveHandle="hdl:1839/00-0000-0000-0004-DDF2-2@format=imdi">../Akhoe/Corpusstructure/Akhoe.imdi</CorpusLink>
-      <CorpusLink Name="Awetí"
-                  ArchiveHandle="hdl:1839/00-0000-0000-0001-305C-A@format=imdi">../Aweti/Corpusstructure/1.imdi</CorpusLink>
-      <CorpusLink Name="Bakairi, Katxuyana and Mawe project"
-                  ArchiveHandle="hdl:1839/00-0000-0000-0001-3DA2-B@format=imdi">../Mawe/Corpusstructure/Mawe.imdi</CorpusLink>
-      <CorpusLink Name="Bainounk"
-                  ArchiveHandle="hdl:1839/00-0000-0000-0016-3656-0@format=imdi">../Bainounk/Corpusstructure/Bainounk.imdi</CorpusLink>
-      <CorpusLink Name="Bakola"
-                  ArchiveHandle="hdl:1839/00-0000-0000-0014-C529-A@format=imdi">../Bakola/Corpusstructure/Bakola.imdi</CorpusLink>
-      <CorpusLink Name="Baure"
-                  ArchiveHandle="hdl:1839/00-0000-0000-000D-8382-B@format=imdi">../Baure/Corpusstructure/Baure.imdi</CorpusLink>
-      <CorpusLink Name="Beaver"
-                  ArchiveHandle="hdl:1839/00-0000-0000-0001-34B1-5@format=imdi">../Beaver/Corpusstructure/Beaver.imdi</CorpusLink>
-      <CorpusLink Name="Bena Bena">../Bena_Bena/Corpusstructure/Bena_Bena.imdi</CorpusLink>
-      <CorpusLink Name="Cashinahua project"
-                  ArchiveHandle="hdl:1839/00-0000-0000-0008-4070-6@format=imdi">../Cashinahua/Corpusstructure/Cashinahua.imdi</CorpusLink>
-      <CorpusLink Name="Chaco languages"
-                  ArchiveHandle="hdl:1839/00-0000-0000-0001-34DE-7@format=imdi">../Chaco/Corpusstructure/1.imdi</CorpusLink>
-      <CorpusLink Name="Chintang and Puma Documentation Project"
-                  ArchiveHandle="hdl:1839/00-0000-0000-0005-24BD-D@format=imdi">../ChintangPuma/Corpusstructure/ChintangPuma.imdi</CorpusLink>
-      <CorpusLink Name="Chipaya project"
-                  ArchiveHandle="hdl:1839/00-0000-0000-0008-24CA-F@format=imdi">../Chipaya/Corpusstructure/Chipaya.imdi</CorpusLink>
-      <CorpusLink Name="Chipaya project II"
-                  ArchiveHandle="hdl:1839/00-0000-0000-0009-FD76-B@format=imdi">../Chipaya_Boecker/Corpusstructure/Chipaya_Boecker.imdi</CorpusLink>
-      <CorpusLink Name="Chontal"
-                  ArchiveHandle="hdl:1839/00-0000-0000-0005-831C-C@format=imdi">../Chontal/Corpusstructure/Chontal.imdi</CorpusLink>
-      <CorpusLink Name="ECLING project"
-                  ArchiveHandle="hdl:1839/00-0000-0000-0008-24AD-F@format=imdi">../ECLING/Corpusstructure/ECLING.imdi</CorpusLink>
-      <CorpusLink Name="Enets and Forest Nenets"
-                  ArchiveHandle="hdl:1839/00-0000-0000-0008-2194-0@format=imdi">../Enets/Corpusstructure/Enets_and_Forest_Nenets.imdi</CorpusLink>
-      <CorpusLink Name="Even"
-                  ArchiveHandle="hdl:1839/00-0000-0000-000F-2DFE-0@format=imdi">../Even/Corpusstructure/Even.imdi</CorpusLink>
-      <CorpusLink Name="Gente del Centro / People of the Center"
-                  ArchiveHandle="hdl:1839/00-0000-0000-0005-802E-9@format=imdi">../Center/Corpusstructure/center.imdi</CorpusLink>
-      <CorpusLink Name="Gorani"
-                  ArchiveHandle="hdl:1839/00-0000-0000-0009-E89B-9@format=imdi">../Gorani/Corpusstructure/Gorani.imdi</CorpusLink>
-      <CorpusLink Name="Hoocąk"
-                  ArchiveHandle="hdl:1839/00-0000-0000-0001-367F-7@format=imdi">../Hocank/Corpusstructure/1.imdi</CorpusLink>
-      <CorpusLink Name="Iwaidja team"
-                  ArchiveHandle="hdl:1839/00-0000-0000-0001-3709-6@format=imdi">../Iwaidja/Corpusstructure/1.imdi</CorpusLink>
-      <CorpusLink Name="Isubu and Wovia"
-                  ArchiveHandle="hdl:1839/00-0000-0000-0015-20BC-5@format=imdi">../Isubu_Wovia/Corpusstructure/Isubu_Wovia.imdi</CorpusLink>
-      <CorpusLink Name="Jaminjungan and Eastern Ngumpin"
-                  ArchiveHandle="hdl:1839/00-0000-0000-0004-DF7A-E@format=imdi">../Jaminjungan/Corpusstructure/Jaminjungan.imdi</CorpusLink>
-      <CorpusLink Name="Khinalug"
-                  ArchiveHandle="hdl:1839/00-0000-0000-0016-2EB3-C@format=imdi">../Khinalug/Corpusstructure/Khinalug.imdi</CorpusLink>
-      <CorpusLink Name="Kola-Sámi Project"
-                  ArchiveHandle="hdl:1839/00-0000-0000-0005-8A34-E@format=imdi">../Kola-Saami/Corpusstructure/Kola-Saami.imdi</CorpusLink>
-      <CorpusLink Name="Kuikuro Team"
-                  ArchiveHandle="hdl:1839/00-0000-0000-0001-379E-4@format=imdi">../Kuikuro/Corpusstructure/1.imdi</CorpusLink>
-      <CorpusLink Name="Kurumba"
-                  ArchiveHandle="hdl:1839/00-0000-0000-000D-8383-9@format=imdi">../Kurumba/Corpusstructure/Kurumba.imdi</CorpusLink>
-      <CorpusLink Name="Lacandon Cultural Heritage"
-                  ArchiveHandle="hdl:1839/00-0000-0000-0001-390B-C@format=imdi">../Lacandon/Corpusstructure/1.imdi</CorpusLink>
-      <CorpusLink Name="Minderico"
-                  ArchiveHandle="hdl:1839/00-0000-0000-000F-2DFF-A@format=imdi">../Minderico/Corpusstructure/Minderico.imdi</CorpusLink>
-      <CorpusLink Name="Marquesan team"
-                  ArchiveHandle="hdl:1839/00-0000-0000-0001-3B2D-1@format=imdi">../Marquesan/Corpusstructure/1.imdi</CorpusLink>
-      <CorpusLink Name="Movima"
-                  ArchiveHandle="hdl:1839/00-0000-0000-0007-DDFD-4@format=imdi">../Movima/Corpusstructure/Movima.imdi</CorpusLink>
-      <CorpusLink Name="Oyda"
-                  ArchiveHandle="hdl:1839/00-0000-0000-0016-3694-8@format=imdi">../Oyda/Corpusstructure/Oyda.imdi</CorpusLink>
-      <CorpusLink Name="Paumotu"
-                  ArchiveHandle="hdl:1839/00-0000-0000-000D-B80D-8@format=imdi">../Paumotu/Corpusstructure/Paumotu.imdi</CorpusLink>
-      <CorpusLink Name="Salar Monguor Project"
-                  ArchiveHandle="hdl:1839/00-0000-0000-0001-3DA3-5@format=imdi">../SalarMonguor/Corpusstructure/SalarMonguor.imdi</CorpusLink>
-      <CorpusLink Name="Saliba/Logea"
-                  ArchiveHandle="hdl:1839/00-0000-0000-0008-1484-1@format=imdi">../SalibaLogea/Corpusstructure/Saliba_Logea.imdi</CorpusLink>
-      <CorpusLink Name="Savosavo"
-                  ArchiveHandle="hdl:1839/00-0000-0000-0008-7347-A@format=imdi">../Savosavo/Corpusstructure/savosavo.imdi</CorpusLink>
-      <CorpusLink Name="Semang"
-                  ArchiveHandle="hdl:1839/00-0000-0000-0008-719D-6@format=imdi">../Semang/Corpusstructure/semang.imdi</CorpusLink>
-      <CorpusLink Name="Semoq Beri and Batek"
-                  ArchiveHandle="hdl:1839/00-0000-0000-000A-2119-E@format=imdi">../SemoqBeri_Batek/Corpusstructure/Semoq_Beri_and_Batek.imdi</CorpusLink>
-      <CorpusLink Name="Sri Lanka Malay"
-                  ArchiveHandle="hdl:1839/00-0000-0000-0007-DDFE-2@format=imdi">../SriLankaMalay/Corpusstructure/Sri_Lanka_Malay.imdi</CorpusLink>
-      <CorpusLink Name="Taa"
-                  ArchiveHandle="hdl:1839/00-0000-0000-0004-DDF3-4@format=imdi">../Taa/Corpusstructure/Taa.imdi</CorpusLink>
-      <CorpusLink Name="Tangsa, Tai, Singpho in North East India"
-                  ArchiveHandle="hdl:1839/00-0000-0000-000D-BB1A-A@format=imdi">../Tangsa_Tai_Singpho/Corpusstructure/1.imdi</CorpusLink>
-      <CorpusLink Name="Teop"
-                  ArchiveHandle="hdl:1839/00-0000-0000-0001-3DB8-C@format=imdi">../Teop/Corpusstructure/1.imdi</CorpusLink>
-      <CorpusLink Name="Tima"
-                  ArchiveHandle="hdl:1839/00-0000-0000-0008-2195-8@format=imdi">../Tima/Corpusstructure/Tima.imdi</CorpusLink>
-      <CorpusLink Name="Tofa team"
-                  ArchiveHandle="hdl:1839/00-0000-0000-0001-3F6C-E@format=imdi">../TOFA/Corpusstructure/1.imdi</CorpusLink>
-      <CorpusLink Name="Totoli"
-                  ArchiveHandle="hdl:1839/00-0000-0000-0005-24BE-F@format=imdi">../Totoli/Corpusstructure/Totoli.imdi</CorpusLink>
-      <CorpusLink Name="Trumai Archive"
-                  ArchiveHandle="hdl:1839/00-0000-0000-0008-3A0E-7@format=imdi">../Trumai/Corpusstructure/1.imdi</CorpusLink>
-      <CorpusLink Name="Tsafiki project"
-                  ArchiveHandle="hdl:1839/00-0000-0000-0001-46BA-3@format=imdi">../Tsafiki/Corpusstructure/1.imdi</CorpusLink>
-      <CorpusLink Name="Vurës and Vera'a"
-                  ArchiveHandle="hdl:1839/00-0000-0000-0009-E89C-6@format=imdi">../Vures_Veraa/Corpusstructure/Vures_Veraa.imdi</CorpusLink>
-      <CorpusLink Name="Waima'a team"
-                  ArchiveHandle="hdl:1839/00-0000-0000-0001-473A-3@format=imdi">../Waimaa/Corpusstructure/1.imdi</CorpusLink>
-      <CorpusLink Name="West Ambrym Languages"
-                  ArchiveHandle="hdl:1839/00-0000-0000-000E-1808-8@format=imdi">../Ambrym/Corpusstructure/West_Ambrym_Languages.imdi</CorpusLink>
-      <CorpusLink Name="Wichita team"
-                  ArchiveHandle="hdl:1839/00-0000-0000-0001-483D-C@format=imdi">../Wichita/Corpusstructure/1.imdi</CorpusLink>
-      <CorpusLink Name="Wooi"
-                  ArchiveHandle="hdl:1839/00-0000-0000-0014-C76C-1@format=imdi">../Wooi/Corpusstructure/Wooi.imdi</CorpusLink>
-      <CorpusLink Name="Yurakaré"
-                  ArchiveHandle="hdl:1839/00-0000-0000-0008-2196-6@format=imdi">../Yurakare/Corpusstructure/Yurakare.imdi</CorpusLink>
-      <CorpusLink Name="Lower Sorbian"
-                  ArchiveHandle="hdl:1839/00-0000-0000-0016-9194-2@format=imdi">../Lower_Sorbian/Corpusstructure/Lower_Sorbian.imdi</CorpusLink>
-      <CorpusLink Name="Bezen"
-                  ArchiveHandle="hdl:1839/00-0000-0000-0016-B121-7@format=imdi">../Bezen/Corpusstructure/Bezen.imdi</CorpusLink>
-      <CorpusLink Name="Morehead"
-                  ArchiveHandle="hdl:1839/00-0000-0000-0017-89A2-B@format=imdi">../Morehead/Corpusstructure/Morehead.imdi</CorpusLink>
-      <CorpusLink Name="Laal"
-                  ArchiveHandle="hdl:1839/00-0000-0000-0017-B129-C@format=imdi">../Laal/Corpusstructure/Laal.imdi</CorpusLink>
-      <CorpusLink Name="Referentiality Project"
-                  ArchiveHandle="hdl:1839/00-0000-0000-0017-BCA6-3@format=imdi">../Referentiality_Project/Corpusstructure/Referentiality_Project.imdi</CorpusLink>
-      <CorpusLink Name="Kyanga Shanga"
-                  ArchiveHandle="hdl:1839/00-0000-0000-0017-CFE8-5@format=imdi">../Kyanga_Shanga/Corpusstructure/Kyanga_Shanga.imdi</CorpusLink>
-      <CorpusLink Name="CELD Papua"
-                  ArchiveHandle="hdl:1839/00-0000-0000-0017-E884-A@format=imdi">../CELD_Papua/Corpusstructure/CELD_Papua.imdi</CorpusLink>
-      <CorpusLink Name="Bayso and Haro"
-                  ArchiveHandle="hdl:1839/00-0000-0000-0017-F327-0@format=imdi">../Bayso_and_Haro/Corpusstructure/Bayso_and_Haro.imdi</CorpusLink>
-      <CorpusLink Name="Shiri and Sanzhi"
-                  ArchiveHandle="hdl:1839/00-0000-0000-0018-A4D4-6@format=imdi">../Shiri_and_Sanzhi/Corpusstructure/Shiri_and_Sanzhi.imdi</CorpusLink>
-      <CorpusLink Name="Sudeste de Rondonia - Southeastern Rondonia"
-                  ArchiveHandle="hdl:1839/00-0000-0000-0019-E76D-1@format=imdi">../Rondonia/Corpusstructure/Rondonia.imdi</CorpusLink>
-      <CorpusLink Name="Délı̨nę"
-                  ArchiveHandle="hdl:1839/00-0000-0000-0019-EE0F-7@format=imdi">../Deline/Corpusstructure/Deline.imdi</CorpusLink>
-      <CorpusLink Name="Nsambaan Nsong Ngong"
-                  ArchiveHandle="hdl:1839/00-0000-0000-001A-9F2B-A@format=imdi">../NsambaanNsongNgong/Corpusstructure/NsambaanNsongNgong.imdi</CorpusLink>
-      <CorpusLink Name="Akie"
-                  ArchiveHandle="hdl:1839/00-0000-0000-001A-D484-2@format=imdi">../Akie/Corpusstructure/Akie.imdi</CorpusLink>
-      <CorpusLink Name="Aru Languages"
-                  ArchiveHandle="hdl:1839/00-0000-0000-001C-903D-9@format=imdi">../Aru_languages/Corpusstructure/Aru_languages.imdi</CorpusLink>
+        <CorpusLink ArchiveHandle="hdl:1839/00-0000-0000-0014-C52F-7" Name="Aché">../Ache/Corpusstructure/Ache.imdi</CorpusLink>
+        <CorpusLink ArchiveHandle="hdl:1839/00-0000-0000-0004-DDF2-2" Name="≠Akhoe Hai//om">../Akhoe/Corpusstructure/Akhoe.imdi</CorpusLink>
+        <CorpusLink ArchiveHandle="hdl:1839/00-0000-0000-0001-305C-A" Name="Awetí">../Aweti/Corpusstructure/1.imdi</CorpusLink>
+        <CorpusLink ArchiveHandle="hdl:1839/00-0000-0000-0001-3DA2-B"
+                  Name="Bakairi, Katxuyana and Mawe project">../Mawe/Corpusstructure/Mawe.imdi</CorpusLink>
+	     <CorpusLink ArchiveHandle="hdl:1839/00-0000-0000-0016-3656-0" Name="Bainounk">../Bainounk/Corpusstructure/Bainounk.imdi</CorpusLink>
+	     <CorpusLink ArchiveHandle="hdl:1839/00-0000-0000-0014-C529-A" Name="Bakola">../Bakola/Corpusstructure/Bakola.imdi</CorpusLink>
+	     <CorpusLink ArchiveHandle="hdl:1839/00-0000-0000-000D-8382-B" Name="Baure">../Baure/Corpusstructure/Baure.imdi</CorpusLink>
+        <CorpusLink ArchiveHandle="hdl:1839/00-0000-0000-0001-34B1-5" Name="Beaver">../Beaver/Corpusstructure/Beaver.imdi</CorpusLink>
+
+	     <CorpusLink Name="Bena Bena">../Bena_Bena/Corpusstructure/Bena_Bena.imdi</CorpusLink>
+
+        <CorpusLink ArchiveHandle="hdl:1839/00-0000-0000-0008-4070-6" Name="Cashinahua project">../Cashinahua/Corpusstructure/Cashinahua.imdi</CorpusLink>
+	     <CorpusLink ArchiveHandle="hdl:1839/00-0000-0000-0001-34DE-7" Name="Chaco languages">../Chaco/Corpusstructure/1.imdi</CorpusLink>
+	     <CorpusLink ArchiveHandle="hdl:1839/00-0000-0000-0005-24BD-D"
+                  Name="Chintang and Puma Documentation Project">../ChintangPuma/Corpusstructure/ChintangPuma.imdi</CorpusLink>
+        <CorpusLink ArchiveHandle="hdl:1839/00-0000-0000-0008-24CA-F" Name="Chipaya project">../Chipaya/Corpusstructure/Chipaya.imdi</CorpusLink>
+        <CorpusLink ArchiveHandle="hdl:1839/00-0000-0000-0009-FD76-B" Name="Chipaya project II">../Chipaya_Boecker/Corpusstructure/Chipaya_Boecker.imdi</CorpusLink>
+	     <CorpusLink ArchiveHandle="hdl:1839/00-0000-0000-0005-831C-C" Name="Chontal">../Chontal/Corpusstructure/Chontal.imdi</CorpusLink>
+        <CorpusLink ArchiveHandle="hdl:1839/00-0000-0000-0008-24AD-F" Name="ECLING project">../ECLING/Corpusstructure/ECLING.imdi</CorpusLink>
+        <CorpusLink ArchiveHandle="hdl:1839/00-0000-0000-0008-2194-0"
+                  Name="Enets and Forest Nenets">../Enets/Corpusstructure/Enets_and_Forest_Nenets.imdi</CorpusLink>
+        <CorpusLink ArchiveHandle="hdl:1839/00-0000-0000-000F-2DFE-0" Name="Even">../Even/Corpusstructure/Even.imdi</CorpusLink>
+	     <CorpusLink ArchiveHandle="hdl:1839/00-0000-0000-0005-802E-9"
+                  Name="Gente del Centro / People of the Center">../Center/Corpusstructure/center.imdi</CorpusLink>
+        <CorpusLink ArchiveHandle="hdl:1839/00-0000-0000-0009-E89B-9" Name="Gorani">../Gorani/Corpusstructure/Gorani.imdi</CorpusLink>
+	     <CorpusLink ArchiveHandle="hdl:1839/00-0000-0000-0001-367F-7" Name="Hoocąk">../Hocank/Corpusstructure/1.imdi</CorpusLink>
+	     <CorpusLink ArchiveHandle="hdl:1839/00-0000-0000-0001-3709-6" Name="Iwaidja team">../Iwaidja/Corpusstructure/1.imdi</CorpusLink>
+	     <CorpusLink ArchiveHandle="hdl:1839/00-0000-0000-0015-20BC-5" Name="Isubu and Wovia">../Isubu_Wovia/Corpusstructure/Isubu_Wovia.imdi</CorpusLink>
+	     <CorpusLink ArchiveHandle="hdl:1839/00-0000-0000-0004-DF7A-E"
+                  Name="Jaminjungan and Eastern Ngumpin">../Jaminjungan/Corpusstructure/Jaminjungan.imdi</CorpusLink>
+	     <CorpusLink ArchiveHandle="hdl:1839/00-0000-0000-0016-2EB3-C" Name="Khinalug">../Khinalug/Corpusstructure/Khinalug.imdi</CorpusLink>
+        <CorpusLink ArchiveHandle="hdl:1839/00-0000-0000-0005-8A34-E" Name="Kola-Sámi Project">../Kola-Saami/Corpusstructure/Kola-Saami.imdi</CorpusLink>
+	     <CorpusLink ArchiveHandle="hdl:1839/00-0000-0000-0001-379E-4" Name="Kuikuro Team">../Kuikuro/Corpusstructure/1.imdi</CorpusLink>
+        <CorpusLink ArchiveHandle="hdl:1839/00-0000-0000-000D-8383-9" Name="Kurumba">../Kurumba/Corpusstructure/Kurumba.imdi</CorpusLink>
+        <CorpusLink ArchiveHandle="hdl:1839/00-0000-0000-0001-390B-C"
+                  Name="Lacandon Cultural Heritage">../Lacandon/Corpusstructure/1.imdi</CorpusLink>
+	     <CorpusLink ArchiveHandle="hdl:1839/00-0000-0000-000F-2DFF-A" Name="Minderico">../Minderico/Corpusstructure/Minderico.imdi</CorpusLink>
+	     <CorpusLink ArchiveHandle="hdl:1839/00-0000-0000-0001-3B2D-1" Name="Marquesan team">../Marquesan/Corpusstructure/1.imdi</CorpusLink>
+        <CorpusLink ArchiveHandle="hdl:1839/00-0000-0000-0007-DDFD-4" Name="Movima">../Movima/Corpusstructure/Movima.imdi</CorpusLink>
+	     <CorpusLink ArchiveHandle="hdl:1839/00-0000-0000-0016-3694-8" Name="Oyda">../Oyda/Corpusstructure/Oyda.imdi</CorpusLink>
+        <CorpusLink ArchiveHandle="hdl:1839/00-0000-0000-000D-B80D-8" Name="Paumotu">../Paumotu/Corpusstructure/Paumotu.imdi</CorpusLink>
+	     <CorpusLink ArchiveHandle="hdl:1839/00-0000-0000-0001-3DA3-5" Name="Salar Monguor Project">../SalarMonguor/Corpusstructure/SalarMonguor.imdi</CorpusLink>
+        <CorpusLink ArchiveHandle="hdl:1839/00-0000-0000-0008-1484-1" Name="Saliba/Logea">../SalibaLogea/Corpusstructure/Saliba_Logea.imdi</CorpusLink>
+	     <CorpusLink ArchiveHandle="hdl:1839/00-0000-0000-0008-7347-A" Name="Savosavo">../Savosavo/Corpusstructure/savosavo.imdi</CorpusLink>        
+        <CorpusLink ArchiveHandle="hdl:1839/00-0000-0000-0008-719D-6" Name="Semang">../Semang/Corpusstructure/semang.imdi</CorpusLink>
+        <CorpusLink ArchiveHandle="hdl:1839/00-0000-0000-000A-2119-E" Name="Semoq Beri and Batek">../SemoqBeri_Batek/Corpusstructure/Semoq_Beri_and_Batek.imdi</CorpusLink>
+        <CorpusLink ArchiveHandle="hdl:1839/00-0000-0000-0007-DDFE-2" Name="Sri Lanka Malay">../SriLankaMalay/Corpusstructure/Sri_Lanka_Malay.imdi</CorpusLink>
+        <CorpusLink ArchiveHandle="hdl:1839/00-0000-0000-0004-DDF3-4" Name="Taa">../Taa/Corpusstructure/Taa.imdi</CorpusLink>
+        <CorpusLink ArchiveHandle="hdl:1839/00-0000-0000-000D-BB1A-A"
+                  Name="Tangsa, Tai, Singpho in North East India">../Tangsa_Tai_Singpho/Corpusstructure/1.imdi</CorpusLink>
+        <CorpusLink ArchiveHandle="hdl:1839/00-0000-0000-0001-3DB8-C" Name="Teop">../Teop/Corpusstructure/1.imdi</CorpusLink>
+        <CorpusLink ArchiveHandle="hdl:1839/00-0000-0000-0008-2195-8" Name="Tima">../Tima/Corpusstructure/Tima.imdi</CorpusLink>
+        <CorpusLink ArchiveHandle="hdl:1839/00-0000-0000-0001-3F6C-E" Name="Tofa team">../TOFA/Corpusstructure/1.imdi</CorpusLink>
+        <CorpusLink ArchiveHandle="hdl:1839/00-0000-0000-0005-24BE-F" Name="Totoli">../Totoli/Corpusstructure/Totoli.imdi</CorpusLink>
+	     <CorpusLink ArchiveHandle="hdl:1839/00-0000-0000-0008-3A0E-7" Name="Trumai Archive">../Trumai/Corpusstructure/1.imdi</CorpusLink>
+        <CorpusLink ArchiveHandle="hdl:1839/00-0000-0000-0001-46BA-3" Name="Tsafiki project">../Tsafiki/Corpusstructure/1.imdi</CorpusLink>
+	     <CorpusLink ArchiveHandle="hdl:1839/00-0000-0000-0009-E89C-6" Name="Vurës and Vera'a">../Vures_Veraa/Corpusstructure/Vures_Veraa.imdi</CorpusLink>
+	     <CorpusLink ArchiveHandle="hdl:1839/00-0000-0000-0001-473A-3" Name="Waima'a team">../Waimaa/Corpusstructure/1.imdi</CorpusLink>
+        <CorpusLink ArchiveHandle="hdl:1839/00-0000-0000-000E-1808-8" Name="West Ambrym Languages">../Ambrym/Corpusstructure/West_Ambrym_Languages.imdi</CorpusLink>
+        <CorpusLink ArchiveHandle="hdl:1839/00-0000-0000-0001-483D-C" Name="Wichita team">../Wichita/Corpusstructure/1.imdi</CorpusLink>
+	     <CorpusLink ArchiveHandle="hdl:1839/00-0000-0000-0014-C76C-1" Name="Wooi">../Wooi/Corpusstructure/Wooi.imdi</CorpusLink>
+        <CorpusLink ArchiveHandle="hdl:1839/00-0000-0000-0008-2196-6" Name="Yurakaré">../Yurakare/Corpusstructure/Yurakare.imdi</CorpusLink>
+      <CorpusLink ArchiveHandle="hdl:1839/00-0000-0000-0016-9194-2" Name="Lower Sorbian">../Lower_Sorbian/Corpusstructure/Lower_Sorbian.imdi</CorpusLink>
+      <CorpusLink ArchiveHandle="hdl:1839/00-0000-0000-0016-B121-7" Name="Bezen">../Bezen/Corpusstructure/Bezen.imdi</CorpusLink>
+      <CorpusLink ArchiveHandle="hdl:1839/00-0000-0000-0017-89A2-B" Name="Morehead">../Morehead/Corpusstructure/Morehead.imdi</CorpusLink>
+      <CorpusLink ArchiveHandle="hdl:1839/00-0000-0000-0017-B129-C" Name="Laal">../Laal/Corpusstructure/Laal.imdi</CorpusLink>
+      <CorpusLink ArchiveHandle="hdl:1839/00-0000-0000-0017-BCA6-3" Name="Referentiality Project">../Referentiality_Project/Corpusstructure/Referentiality_Project.imdi</CorpusLink>
+      <CorpusLink ArchiveHandle="hdl:1839/00-0000-0000-0017-CFE8-5" Name="Kyanga Shanga">../Kyanga_Shanga/Corpusstructure/Kyanga_Shanga.imdi</CorpusLink>
+      <CorpusLink ArchiveHandle="hdl:1839/00-0000-0000-0017-E884-A" Name="CELD Papua">../CELD_Papua/Corpusstructure/CELD_Papua.imdi</CorpusLink>
+      <CorpusLink ArchiveHandle="hdl:1839/00-0000-0000-0017-F327-0" Name="Bayso and Haro">../Bayso_and_Haro/Corpusstructure/Bayso_and_Haro.imdi</CorpusLink>
+      <CorpusLink ArchiveHandle="hdl:1839/00-0000-0000-0018-A4D4-6" Name="Shiri and Sanzhi">../Shiri_and_Sanzhi/Corpusstructure/Shiri_and_Sanzhi.imdi</CorpusLink>
+      <CorpusLink ArchiveHandle="hdl:1839/00-0000-0000-0019-E76D-1"
+                  Name="Sudeste de Rondonia - Southeastern Rondonia">../Rondonia/Corpusstructure/Rondonia.imdi</CorpusLink>
+      <CorpusLink ArchiveHandle="hdl:1839/00-0000-0000-0019-EE0F-7" Name="Délı̨nę">../Deline/Corpusstructure/Deline.imdi</CorpusLink>
+      <CorpusLink ArchiveHandle="hdl:1839/00-0000-0000-001A-9F2B-A" Name="Nsambaan Nsong Ngong">../NsambaanNsongNgong/Corpusstructure/NsambaanNsongNgong.imdi</CorpusLink>
+      <CorpusLink ArchiveHandle="hdl:1839/00-0000-0000-001A-D484-2" Name="Akie">../Akie/Corpusstructure/Akie.imdi</CorpusLink>
+      <CorpusLink ArchiveHandle="hdl:1839/00-0000-0000-001C-903D-9" Name="Aru Languages">../Aru_languages/Corpusstructure/Aru_languages.imdi</CorpusLink>
    </Corpus>
 </METATRANSCRIPT>

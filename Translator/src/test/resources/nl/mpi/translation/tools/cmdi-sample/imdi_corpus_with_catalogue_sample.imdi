@@ -1,19 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <METATRANSCRIPT xmlns="http://www.mpi.nl/IMDI/Schema/IMDI"
-                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-                xmlns:tla="http://tla.mpi.nl"
-                FormatId="IMDI 3.0"
-                Type="CORPUS"
-                Version="0"
-                xsi:schemaLocation="http://www.mpi.nl/IMDI/Schema/IMDI http://www.mpi.nl/IMDI/Schema/IMDI_3.0.xsd"
-                ArchiveHandle="hdl:1839/00-0000-0000-0000-37F1-6@format=imdi"
-                Originator="Metadata Translator: tlacollection2corpus.xslt hdl:1839/00-0000-0000-0000-37F1-6"
-                Date="2014-11-25">
-   <Corpus>
-      <Name>Anke Jolink</Name>
-      <Title>Anke Jolink</Title>
-      <Description/>
-      <CorpusLink Name="Normal dev">1-01.imdi</CorpusLink>
-      <CorpusLink Name="Spec Lang Impairment">1-02.imdi</CorpusLink>
-   </Corpus>
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    ArchiveHandle="hdl:1839/00-0000-0000-0000-37F1-6" Date="2004-12-21" FormatId="IMDI 3.0"
+    Originator="corpman" Type="CORPUS" Version="1"
+    xsi:schemaLocation="http://www.mpi.nl/IMDI/Schema/IMDI ./IMDI_3.0.xsd">
+    <Corpus CatalogueHandle="hdl:1839/00-0000-0000-000D-B656-A"
+        CatalogueLink="mpi-corpora_Anke-Jolink-0.imdi">
+        <Name>Anke Jolink</Name>
+        <Title>Anke Jolink</Title>
+        <Description/>
+        <CorpusLink ArchiveHandle="hdl:1839/00-0000-0000-0000-37F2-1" Name="Normal dev"
+            >1-01.imdi</CorpusLink>
+        <CorpusLink ArchiveHandle="hdl:1839/00-0000-0000-0000-391E-1" Name="Spec Lang Impairment"
+            >1-02.imdi</CorpusLink>
+    </Corpus>
 </METATRANSCRIPT>

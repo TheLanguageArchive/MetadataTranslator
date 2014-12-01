@@ -1,13 +1,3795 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<METATRANSCRIPT xmlns="http://www.mpi.nl/IMDI/Schema/IMDI"
-                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-                xmlns:tla="http://tla.mpi.nl"
-                FormatId="IMDI 3.0"
-                Type="CORPUS"
-                Version="0"
-                xsi:schemaLocation="http://www.mpi.nl/IMDI/Schema/IMDI http://www.mpi.nl/IMDI/Schema/IMDI_3.0.xsd"
-                ArchiveHandle="hdl:1839/00-0000-0000-0009-A043-8@format=imdi"
-                Originator="Metadata Translator: tlasession2corpus.xslt hdl:1839/00-0000-0000-0009-A043-8"
-                Date="2014-11-25">
-   <Corpus/>
+<METATRANSCRIPT xmlns="http://www.mpi.nl/IMDI/Schema/IMDI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ArchiveHandle="hdl:1839/00-0000-0000-0009-A043-8" Date="2008-04-15" FormatId="IMDI 3.0" Originator="Editor - Profile:local/CNGT.Profile.xml" Type="SESSION" Version="2" xsi:schemaLocation="http://www.mpi.nl/IMDI/Schema/IMDI ./IMDI_3.0.xsd">
+    <Session>
+        <Name>CNGT1416-CNGT1424</Name>
+        <Title>CNGT1416-CNGT1424</Title>
+        <Date>2008-02-27</Date>
+        <Description LanguageId="" Link=""/>
+        <MDGroup>
+            <Location>
+                <Continent Link="http://www.mpi.nl/IMDI/Schema/Continents.xml" Type="ClosedVocabulary">Europe</Continent>
+                <Country Link="http://www.mpi.nl/IMDI/Schema/Countries.xml" Type="ClosedVocabulary">Netherlands</Country>
+                <Region>Unspecified</Region>
+                <Address>Nijmegen</Address>
+            </Location>
+            <Project>
+                <Name>Corpus NGT</Name>
+                <Title>Corpus Nederlandse Gebarentaal (Corpus Sign Language of the Netherlands)</Title>
+                <Id/>
+                <Contact>
+                    <Name/>
+                    <Address>Radboud University Nijmegen, Linguistics Department, PO Box 9103, 6500 HD NIJMEGEN, THE NETHERLANDS</Address>
+                    <Email/>
+                    <Organisation>Radboud University Nijmegen</Organisation>
+                </Contact>
+                <Description LanguageId="ISO639-2:eng" Link="">CNGT is a project funded by the Dutch Science Foundation (NWO), aimed at collecting a large data set for Sign Language of the Netherlands. All data are available online for researchers, educators and the general audience. The use of all files is restricted by a Creative Commons license.</Description>
+            </Project>
+            <Keys>
+                <Key Name="CreativeCommonsLicense.MediaFiles" Type="OpenVocabulary">Attribution, Noncommercial, Share-Alike</Key>
+                <Key Name="CreativeCommonsLicense.MediaFiles.URL" Type="OpenVocabulary">http://creativecommons.org/licenses/by-nc-sa/3.0/nl</Key>
+                <Key Name="CreativeCommonsLicense.AnnotationFiles" Type="OpenVocabulary">Attribution, Noncommercial, Share-Alike</Key>
+                <Key Name="CreativeCommonsLicense.AnnotationFiles.URL" Type="OpenVocabulary">http://creativecommons.org/licenses/by-nc-sa/3.0/nl</Key>
+            </Keys>
+            <Content>
+                <Genre Link="http://www.mpi.nl/IMDI/Schema/Content-Genre.xml" Type="ClosedVocabulary">Fiction</Genre>
+                <SubGenre DefaultLink="" Link="http://www.mpi.nl/IMDI/Schema/Content-SubGenre.xml" Type="OpenVocabularyList">Cartoon</SubGenre>
+                <Task Link="http://www.mpi.nl/IMDI/Schema/Content-Task.xml" Type="OpenVocabulary">Story telling</Task>
+                <Modalities Link="http://www.mpi.nl/IMDI/Schema/Content-Modalities.xml" Type="OpenVocabularyList">signs</Modalities>
+                <Subject Link="http://www.mpi.nl/IMDI/Schema/Content-Subject.xml" Type="OpenVocabularyList">Canary Row (Tweety &amp; Sylvester)</Subject>
+                <CommunicationContext>
+                    <Interactivity Link="http://www.mpi.nl/IMDI/Schema/Content-Interactivity.xml" Type="ClosedVocabulary">semi-interactive</Interactivity>
+                    <PlanningType Link="http://www.mpi.nl/IMDI/Schema/Content-PlanningType.xml" Type="ClosedVocabulary">semi-spontaneous</PlanningType>
+                    <Involvement Link="http://www.mpi.nl/IMDI/Schema/Content-Involvement.xml" Type="ClosedVocabulary">non-elicited</Involvement>
+                    <SocialContext Link="http://www.mpi.nl/IMDI/Schema/Content-SocialContext.xml" Type="OpenVocabulary">Controlled environment</SocialContext>
+                    <EventStructure Link="http://www.mpi.nl/IMDI/Schema/Content-EventStructure.xml" Type="OpenVocabulary">Monologue</EventStructure>
+                    <Channel Link="http://www.mpi.nl/IMDI/Schema/Content-Channel.xml" Type="ClosedVocabulary">Face to Face</Channel>
+                </CommunicationContext>
+                <Languages>
+                    <Description LanguageId="" Link=""/>
+                    <Language ResourceRef="">
+                        <Id>RFC1766:x-sil-DSE</Id>
+                        <Name DefaultLink="" Link="http://www.mpi.nl/IMDI/Schema/MPI-Languages.xml" Type="OpenVocabulary">Dutch Sign Language</Name>
+                        <Dominant>true</Dominant>
+                        <SourceLanguage>Unspecified</SourceLanguage>
+                        <TargetLanguage>Unspecified</TargetLanguage>
+                        <Description LanguageId="ISO639-2:eng" Link="">"Dutch Sign Language" is the term used in the SIL list of languages; the more common English name of the language is "Sign Language of the Netherlands", abbreviated as SLN. The common Dutch name is "Nederlandse Gebarentaal", abbreviated as NGT.</Description>
+                    </Language>
+                </Languages>
+                <Keys>
+                    <Key Name="ElicitationMethod" Type="OpenVocabulary">video prompt</Key>
+                    <Key Name="Interpreting.Source" Type="OpenVocabulary">Unspecified</Key>
+                    <Key Name="Interpreting.Target" Type="OpenVocabulary">Unspecified</Key>
+                    <Key Name="Interpreting.Visibility" Type="ClosedVocabulary">Unspecified</Key>
+                    <Key Name="Interpreting.Audience" Type="ClosedVocabulary">Unspecified</Key>
+                </Keys>
+                <Description LanguageId="ISO639-2:eng" Link="">The signers take turns to tell what happens in the cartoon Canary Row. There are 8 fragments.
+
+1. Sylvester looks out a building with binoculars. When the spots Tweety bird in the building opposite, he runs out and into the other building. But he gets thrown out (because there are no pets allowed in that building)
+
+2. Sylvester tries to get to Tweety by climbing up a drainpipe. When he gets up there, Tweety runs into a panic and Sylvester is thrown out of the window by the old lady.
+
+3. Sylvester tries again to get to Tweety by climbing through the drainpipe. Tweety dumps a bowling ball in the drainpipe, which Sylvester swallows. Sylvester falls out of the drainpipe and he rolls down the street into a bowling centre.
+
+4. Sylvester lures a monkey to him with a banana. He disguises a the monkey and climbs up the drainpipe. He chases Tweety and searches all through the appartment when Tweety hides. The old lady gives him a coin,  then knocks him out with her umbrella.
+
+5. Sylvester overhears the receptionist talking to the old lady who says she's leaving. He then acts as a hotel boy, offering to carrying the old lady's luggage. He takes it out, throws away a trunk and runs away with the bird cage. Instead of Tweety, the old lady appears to be in the cage and she hits Sylvester on the head and chases after him.
+
+6. Sylvester constructs a see-saw and uses a weight to lauch himself, so that he can get to Tweety in the window sill. He succeeds in grabbing Tweety. When he comes back to the ground and chases, the weight falls on top of him and completely flattens him.
+
+7. Sylvester calculates and makes drawings of the distance between his window and Tweetys, then swings over by a rope from his own building towards Tweetys window. However, instead he hits a wall and glides down. 
+
+8. Sylvester tries to move to Tweety's window by the tram lines. However, there's a tram coming, and Sylvester is hit by the current every time the tram contacts his feet. The tram, which is driven by Tweety and the old lady.
+
+CNGT1416 - CR1 (false start)
+CNGT1417 - CR1
+CNGT1418 - CR2
+CNGT1419 - CR3
+CNGT1420 - CR4
+CNGT1421 - CR5
+CNGT1422 - CR6
+CNGT1423 - CR7
+CNGT1424 - CR8
+</Description>
+            </Content>
+            <Actors>
+                <Description LanguageId="" Link=""/>
+                <Actor ResourceRef="">
+                    <Role DefaultLink="" Link="http://www.mpi.nl/IMDI/Schema/Actor-Role.xml" Type="ClosedVocabularyList">Speaker/Signer</Role>
+                    <Name>S062</Name>
+                    <FullName/>
+                    <Code>S062</Code>
+                    <FamilySocialRole DefaultLink="" Link="http://www.mpi.nl/IMDI/Schema/Actor-FamilySocialRole.xml" Type="OpenVocabularyList">Unspecified</FamilySocialRole>
+                    <Languages>
+                        <Description LanguageId="" Link=""/>
+                        <Language ResourceRef="">
+                            <Id>RFC1766:x-sil-DSE</Id>
+                            <Name Link="http://www.mpi.nl/IMDI/Schema/MPI-Languages.xml" Type="OpenVocabulary">Dutch Sign Language</Name>
+                            <Dominant>true</Dominant>
+                            <SourceLanguage>Unspecified</SourceLanguage>
+                            <TargetLanguage>Unspecified</TargetLanguage>
+                            <Description LanguageId="ISO639-2:eng" Link="">"Dutch Sign Language" is the term used in the SIL list of languages; the more common English name of the language is "Sign Language of the Netherlands", abbreviated as SLN. The common Dutch name is "Nederlandse Gebarentaal", abbreviated as NGT.</Description>
+                        </Language>
+                        <Language>
+                            <Id>RFC1766:x-sil-DUT</Id>
+                            <Name Link="http://www.mpi.nl/IMDI/Schema/MPI-Languages.xml" Type="OpenVocabulary">Dutch</Name>
+                            <MotherTongue>true</MotherTongue>
+                            <PrimaryLanguage>true</PrimaryLanguage>
+                            <Description LanguageId="" Link=""/>
+                        </Language>
+                    </Languages>
+                    <EthnicGroup Type="OpenVocabulary"/>
+                    <Age>61</Age>
+                    <BirthDate>Unspecified</BirthDate>
+                    <Sex DefaultLink="" Link="http://www.mpi.nl/IMDI/Schema/Actor-Sex.xml" Type="ClosedVocabulary">Female</Sex>
+                    <Education>Unspecified</Education>
+                    <Anonymized>true</Anonymized>
+                    <Contact>
+                        <Name/>
+                        <Address/>
+                        <Email/>
+                        <Organisation/>
+                    </Contact>
+                    <Keys>
+                        <Key Name="Deafness.Status" Type="OpenVocabulary">deaf</Key>
+                        <Key Name="SignLanguageExperience.ExposureAge" Type="OpenVocabulary">8;0.0</Key>
+                        <Key DefaultLink="" Name="Handedness" Type="OpenVocabulary">Right-handed</Key>
+                        <Key DefaultLink="" Name="Region" Type="OpenVocabulary">Rotterdam</Key>
+                    </Keys>
+                    <Description LanguageId="" Link=""/>
+                </Actor>
+                <Actor ResourceRef="">
+                    <Role DefaultLink="" Link="http://www.mpi.nl/IMDI/Schema/Actor-Role.xml" Type="ClosedVocabularyList">Speaker/Signer</Role>
+                    <Name>S061</Name>
+                    <FullName/>
+                    <Code>S061</Code>
+                    <FamilySocialRole DefaultLink="" Link="http://www.mpi.nl/IMDI/Schema/Actor-FamilySocialRole.xml" Type="OpenVocabularyList">Unspecified</FamilySocialRole>
+                    <Languages>
+                        <Description LanguageId="" Link=""/>
+                        <Language ResourceRef="">
+                            <Id>RFC1766:x-sil-DSE</Id>
+                            <Name Link="http://www.mpi.nl/IMDI/Schema/MPI-Languages.xml" Type="OpenVocabulary">Dutch Sign Language</Name>
+                            <Dominant>true</Dominant>
+                            <SourceLanguage>Unspecified</SourceLanguage>
+                            <TargetLanguage>Unspecified</TargetLanguage>
+                            <Description LanguageId="ISO639-2:eng" Link="">"Dutch Sign Language" is the term used in the SIL list of languages; the more common English name of the language is "Sign Language of the Netherlands", abbreviated as SLN. The common Dutch name is "Nederlandse Gebarentaal", abbreviated as NGT.</Description>
+                        </Language>
+                        <Language>
+                            <Id>RFC1766:x-sil-DUT</Id>
+                            <Name Link="http://www.mpi.nl/IMDI/Schema/MPI-Languages.xml" Type="OpenVocabulary">Dutch</Name>
+                            <MotherTongue>true</MotherTongue>
+                            <PrimaryLanguage>true</PrimaryLanguage>
+                            <Description LanguageId="" Link=""/>
+                        </Language>
+                    </Languages>
+                    <EthnicGroup Type="OpenVocabulary"/>
+                    <Age>71</Age>
+                    <BirthDate>Unspecified</BirthDate>
+                    <Sex DefaultLink="" Link="http://www.mpi.nl/IMDI/Schema/Actor-Sex.xml" Type="ClosedVocabulary">Female</Sex>
+                    <Education>Unspecified</Education>
+                    <Anonymized>true</Anonymized>
+                    <Contact>
+                        <Name/>
+                        <Address/>
+                        <Email/>
+                        <Organisation/>
+                    </Contact>
+                    <Keys>
+                        <Key Name="Deafness.Status" Type="ClosedVocabulary">deaf</Key>
+                        <Key Name="SignLanguageExperience.ExposureAge" Type="OpenVocabulary">8;0.0</Key>
+                        <Key DefaultLink="" Name="Handedness" Type="OpenVocabulary">Right-handed</Key>
+                        <Key DefaultLink="" Name="Region" Type="OpenVocabulary">Rotterdam</Key>
+                    </Keys>
+                    <Description LanguageId="" Link=""/>
+                </Actor>
+                <Actor ResourceRef="">
+                    <Role Type="OpenVocabulary">Recorder</Role>
+                    <Name>Johan Ros</Name>
+                    <FullName>Johan Ros</FullName>
+                    <Code>JR</Code>
+                    <FamilySocialRole Type="OpenVocabulary">Unspecified</FamilySocialRole>
+                    <Languages>
+                        <Description LanguageId="" Link=""/>
+                        <Language>
+                            <Id>RFC1766:x-sil-DSE</Id>
+                            <Name Link="http://www.mpi.nl/IMDI/Schema/MPI-Languages.xml" Type="OpenVocabulary">Dutch Sign Language</Name>
+                            <MotherTongue>true</MotherTongue>
+                            <PrimaryLanguage>true</PrimaryLanguage>
+                            <Description LanguageId="" Link=""/>
+                        </Language>
+                        <Language>
+                            <Id>RFC1766:x-sil-DUT</Id>
+                            <Name Link="http://www.mpi.nl/IMDI/Schema/MPI-Languages.xml" Type="OpenVocabulary">Dutch</Name>
+                            <MotherTongue>false</MotherTongue>
+                            <PrimaryLanguage>false</PrimaryLanguage>
+                            <Description LanguageId="" Link=""/>
+                        </Language>
+                    </Languages>
+                    <EthnicGroup Type="OpenVocabulary">Deaf</EthnicGroup>
+                    <Age>Unspecified</Age>
+                    <BirthDate>Unspecified</BirthDate>
+                    <Sex Type="OpenVocabulary">Male</Sex>
+                    <Education/>
+                    <Anonymized>false</Anonymized>
+                    <Contact>
+                        <Name/>
+                        <Address/>
+                        <Email/>
+                        <Organisation/>
+                    </Contact>
+                    <Keys/>
+                    <Description LanguageId="" Link=""/>
+                </Actor>
+                <Actor ResourceRef="">
+                    <Role DefaultLink="" Link="http://www.mpi.nl/IMDI/Schema/Actor-Role.xml" Type="ClosedVocabularyList">Researcher</Role>
+                    <Name>Onno Crasborn</Name>
+                    <FullName>Onno Crasborn</FullName>
+                    <Code>OC</Code>
+                    <FamilySocialRole DefaultLink="" Link="http://www.mpi.nl/IMDI/Schema/Actor-FamilySocialRole.xml" Type="OpenVocabularyList">Unspecified</FamilySocialRole>
+                    <Languages>
+                        <Description LanguageId="" Link=""/>
+                    </Languages>
+                    <EthnicGroup Type="OpenVocabulary"/>
+                    <Age>Unspecified</Age>
+                    <BirthDate>Unspecified</BirthDate>
+                    <Sex DefaultLink="" Link="http://www.mpi.nl/IMDI/Schema/Actor-Sex.xml" Type="ClosedVocabulary">Male</Sex>
+                    <Education/>
+                    <Anonymized>false</Anonymized>
+                    <Contact>
+                        <Name/>
+                        <Address/>
+                        <Email/>
+                        <Organisation/>
+                    </Contact>
+                    <Keys/>
+                    <Description LanguageId="" Link=""/>
+                </Actor>
+                <Actor ResourceRef="">
+                    <Role DefaultLink="" Link="http://www.mpi.nl/IMDI/Schema/Actor-Role.xml" Type="ClosedVocabularyList">Researcher</Role>
+                    <Name>Inge Zwitserlood</Name>
+                    <FullName>Inge Zwitserlood</FullName>
+                    <Code>IZ</Code>
+                    <FamilySocialRole DefaultLink="" Link="http://www.mpi.nl/IMDI/Schema/Actor-FamilySocialRole.xml" Type="OpenVocabularyList">Unspecified</FamilySocialRole>
+                    <Languages>
+                        <Description LanguageId="" Link=""/>
+                    </Languages>
+                    <EthnicGroup Type="OpenVocabulary"/>
+                    <Age>Unspecified</Age>
+                    <BirthDate>Unspecified</BirthDate>
+                    <Sex DefaultLink="" Link="http://www.mpi.nl/IMDI/Schema/Actor-Sex.xml" Type="ClosedVocabulary">Female</Sex>
+                    <Education/>
+                    <Anonymized>false</Anonymized>
+                    <Contact>
+                        <Name/>
+                        <Address/>
+                        <Email/>
+                        <Organisation/>
+                    </Contact>
+                    <Keys/>
+                    <Description LanguageId="" Link=""/>
+                </Actor>
+            </Actors>
+        </MDGroup>
+        <Resources>
+<MediaFile>
+<ResourceLink ArchiveHandle="hdl:1839/00-0000-0000-0010-1AF6-1">../../../../Public/Media/CNGT1424.mp4</ResourceLink>
+        <Type Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Type.xml" Type="ClosedVocabulary">video</Type>
+        <Format Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Format.xml" Type="OpenVocabulary">video/mp4</Format>
+        <Size>1698901</Size>
+        <Quality>Unspecified</Quality>
+        <RecordingConditions/>
+        <TimePosition>
+          <Start>Unspecified</Start>
+          <End>Unspecified</End>
+        </TimePosition>
+        <Access>
+          <Availability/>
+          <Date>Unspecified</Date>
+          <Owner/>
+          <Publisher/>
+          <Contact>
+            <Name/>
+            <Address/>
+            <Email/>
+            <Organisation/>
+          </Contact>
+          <Description LanguageId="" Link=""/>
+        </Access>
+        <Description LanguageId="" Link=""/>
+        <Keys>
+          <Key Name=""/>
+        </Keys>
+      </MediaFile>
+<MediaFile>
+<ResourceLink ArchiveHandle="hdl:1839/00-0000-0000-0010-1AF7-A">../../../../Public/Media/CNGT1423.mp4</ResourceLink>
+        <Type Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Type.xml" Type="ClosedVocabulary">video</Type>
+        <Format Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Format.xml" Type="OpenVocabulary">video/mp4</Format>
+        <Size>2657953</Size>
+        <Quality>Unspecified</Quality>
+        <RecordingConditions/>
+        <TimePosition>
+          <Start>Unspecified</Start>
+          <End>Unspecified</End>
+        </TimePosition>
+        <Access>
+          <Availability/>
+          <Date>Unspecified</Date>
+          <Owner/>
+          <Publisher/>
+          <Contact>
+            <Name/>
+            <Address/>
+            <Email/>
+            <Organisation/>
+          </Contact>
+          <Description LanguageId="" Link=""/>
+        </Access>
+        <Description LanguageId="" Link=""/>
+        <Keys>
+          <Key Name=""/>
+        </Keys>
+      </MediaFile>
+<MediaFile>
+<ResourceLink ArchiveHandle="hdl:1839/00-0000-0000-0010-1AF8-C">../../../../Public/Media/CNGT1422.mp4</ResourceLink>
+        <Type Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Type.xml" Type="ClosedVocabulary">video</Type>
+        <Format Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Format.xml" Type="OpenVocabulary">video/mp4</Format>
+        <Size>1991835</Size>
+        <Quality>Unspecified</Quality>
+        <RecordingConditions/>
+        <TimePosition>
+          <Start>Unspecified</Start>
+          <End>Unspecified</End>
+        </TimePosition>
+        <Access>
+          <Availability/>
+          <Date>Unspecified</Date>
+          <Owner/>
+          <Publisher/>
+          <Contact>
+            <Name/>
+            <Address/>
+            <Email/>
+            <Organisation/>
+          </Contact>
+          <Description LanguageId="" Link=""/>
+        </Access>
+        <Description LanguageId="" Link=""/>
+        <Keys>
+          <Key Name=""/>
+        </Keys>
+      </MediaFile>
+<MediaFile>
+<ResourceLink ArchiveHandle="hdl:1839/00-0000-0000-0010-1AF9-4">../../../../Public/Media/CNGT1421.mp4</ResourceLink>
+        <Type Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Type.xml" Type="ClosedVocabulary">video</Type>
+        <Format Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Format.xml" Type="OpenVocabulary">video/mp4</Format>
+        <Size>5716748</Size>
+        <Quality>Unspecified</Quality>
+        <RecordingConditions/>
+        <TimePosition>
+          <Start>Unspecified</Start>
+          <End>Unspecified</End>
+        </TimePosition>
+        <Access>
+          <Availability/>
+          <Date>Unspecified</Date>
+          <Owner/>
+          <Publisher/>
+          <Contact>
+            <Name/>
+            <Address/>
+            <Email/>
+            <Organisation/>
+          </Contact>
+          <Description LanguageId="" Link=""/>
+        </Access>
+        <Description LanguageId="" Link=""/>
+        <Keys>
+          <Key Name=""/>
+        </Keys>
+      </MediaFile>
+<MediaFile>
+<ResourceLink ArchiveHandle="hdl:1839/00-0000-0000-0010-1AFA-F">../../../../Public/Media/CNGT1420.mp4</ResourceLink>
+        <Type Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Type.xml" Type="ClosedVocabulary">video</Type>
+        <Format Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Format.xml" Type="OpenVocabulary">video/mp4</Format>
+        <Size>2505647</Size>
+        <Quality>Unspecified</Quality>
+        <RecordingConditions/>
+        <TimePosition>
+          <Start>Unspecified</Start>
+          <End>Unspecified</End>
+        </TimePosition>
+        <Access>
+          <Availability/>
+          <Date>Unspecified</Date>
+          <Owner/>
+          <Publisher/>
+          <Contact>
+            <Name/>
+            <Address/>
+            <Email/>
+            <Organisation/>
+          </Contact>
+          <Description LanguageId="" Link=""/>
+        </Access>
+        <Description LanguageId="" Link=""/>
+        <Keys>
+          <Key Name=""/>
+        </Keys>
+      </MediaFile>
+<MediaFile>
+<ResourceLink ArchiveHandle="hdl:1839/00-0000-0000-0010-1AFB-1">../../../../Public/Media/CNGT1419.mp4</ResourceLink>
+        <Type Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Type.xml" Type="ClosedVocabulary">video</Type>
+        <Format Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Format.xml" Type="OpenVocabulary">video/mp4</Format>
+        <Size>2828332</Size>
+        <Quality>Unspecified</Quality>
+        <RecordingConditions/>
+        <TimePosition>
+          <Start>Unspecified</Start>
+          <End>Unspecified</End>
+        </TimePosition>
+        <Access>
+          <Availability/>
+          <Date>Unspecified</Date>
+          <Owner/>
+          <Publisher/>
+          <Contact>
+            <Name/>
+            <Address/>
+            <Email/>
+            <Organisation/>
+          </Contact>
+          <Description LanguageId="" Link=""/>
+        </Access>
+        <Description LanguageId="" Link=""/>
+        <Keys>
+          <Key Name=""/>
+        </Keys>
+      </MediaFile>
+<MediaFile>
+<ResourceLink ArchiveHandle="hdl:1839/00-0000-0000-0010-1AFC-E">../../../../Public/Media/CNGT1418.mp4</ResourceLink>
+        <Type Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Type.xml" Type="ClosedVocabulary">video</Type>
+        <Format Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Format.xml" Type="OpenVocabulary">video/mp4</Format>
+        <Size>1595161</Size>
+        <Quality>Unspecified</Quality>
+        <RecordingConditions/>
+        <TimePosition>
+          <Start>Unspecified</Start>
+          <End>Unspecified</End>
+        </TimePosition>
+        <Access>
+          <Availability/>
+          <Date>Unspecified</Date>
+          <Owner/>
+          <Publisher/>
+          <Contact>
+            <Name/>
+            <Address/>
+            <Email/>
+            <Organisation/>
+          </Contact>
+          <Description LanguageId="" Link=""/>
+        </Access>
+        <Description LanguageId="" Link=""/>
+        <Keys>
+          <Key Name=""/>
+        </Keys>
+      </MediaFile>
+<MediaFile>
+<ResourceLink ArchiveHandle="hdl:1839/00-0000-0000-0010-1AFD-E">../../../../Public/Media/CNGT1417.mp4</ResourceLink>
+        <Type Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Type.xml" Type="ClosedVocabulary">video</Type>
+        <Format Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Format.xml" Type="OpenVocabulary">video/mp4</Format>
+        <Size>3648828</Size>
+        <Quality>Unspecified</Quality>
+        <RecordingConditions/>
+        <TimePosition>
+          <Start>Unspecified</Start>
+          <End>Unspecified</End>
+        </TimePosition>
+        <Access>
+          <Availability/>
+          <Date>Unspecified</Date>
+          <Owner/>
+          <Publisher/>
+          <Contact>
+            <Name/>
+            <Address/>
+            <Email/>
+            <Organisation/>
+          </Contact>
+          <Description LanguageId="" Link=""/>
+        </Access>
+        <Description LanguageId="" Link=""/>
+        <Keys>
+          <Key Name=""/>
+        </Keys>
+      </MediaFile>
+<MediaFile>
+<ResourceLink ArchiveHandle="hdl:1839/00-0000-0000-0010-1AFE-F">../../../../Public/Media/CNGT1416.mp4</ResourceLink>
+        <Type Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Type.xml" Type="ClosedVocabulary">video</Type>
+        <Format Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Format.xml" Type="OpenVocabulary">video/mp4</Format>
+        <Size>1644966</Size>
+        <Quality>Unspecified</Quality>
+        <RecordingConditions/>
+        <TimePosition>
+          <Start>Unspecified</Start>
+          <End>Unspecified</End>
+        </TimePosition>
+        <Access>
+          <Availability/>
+          <Date>Unspecified</Date>
+          <Owner/>
+          <Publisher/>
+          <Contact>
+            <Name/>
+            <Address/>
+            <Email/>
+            <Organisation/>
+          </Contact>
+          <Description LanguageId="" Link=""/>
+        </Access>
+        <Description LanguageId="" Link=""/>
+        <Keys>
+          <Key Name=""/>
+        </Keys>
+      </MediaFile>
+         <MediaFile>
+            <ResourceLink ArchiveHandle="hdl:1839/00-0000-0000-000A-060F-7">../../../../Public/Media/CNGT1416.mpg</ResourceLink>
+            <Type Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Type.xml" Type="ClosedVocabulary">video</Type>
+            <Format Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Format.xml" Type="OpenVocabulary">video/x-mpeg1</Format>
+            <Size/>
+            <Quality>Unspecified</Quality>
+            <RecordingConditions/>
+            <TimePosition>
+               <Start>Unspecified</Start>
+               <End>Unspecified</End>
+            </TimePosition>
+            <Access>
+               <Availability Type="OpenVocabulary"/>
+               <Date>Unspecified</Date>
+               <Owner/>
+               <Publisher/>
+               <Contact>
+                  <Name/>
+                  <Address/>
+                  <Email/>
+                  <Organisation/>
+               </Contact>
+               <Description LanguageId="" Link=""/>
+            </Access>
+            <Description LanguageId="" Link=""/>
+            <Keys>
+               <Key Name="" Type="OpenVocabulary"/>
+            </Keys>
+         </MediaFile>
+         <MediaFile>
+            <ResourceLink ArchiveHandle="hdl:1839/00-0000-0000-000A-060E-5">../../../../Public/Media/CNGT1417.mpg</ResourceLink>
+            <Type Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Type.xml" Type="ClosedVocabulary">video</Type>
+            <Format Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Format.xml" Type="OpenVocabulary">video/x-mpeg1</Format>
+            <Size/>
+            <Quality>Unspecified</Quality>
+            <RecordingConditions/>
+            <TimePosition>
+               <Start>Unspecified</Start>
+               <End>Unspecified</End>
+            </TimePosition>
+            <Access>
+               <Availability Type="OpenVocabulary"/>
+               <Date>Unspecified</Date>
+               <Owner/>
+               <Publisher/>
+               <Contact>
+                  <Name/>
+                  <Address/>
+                  <Email/>
+                  <Organisation/>
+               </Contact>
+               <Description LanguageId="" Link=""/>
+            </Access>
+            <Description LanguageId="" Link=""/>
+            <Keys>
+               <Key Name="" Type="OpenVocabulary"/>
+            </Keys>
+         </MediaFile>
+         <MediaFile>
+            <ResourceLink ArchiveHandle="hdl:1839/00-0000-0000-000A-060D-4">../../../../Public/Media/CNGT1418.mpg</ResourceLink>
+            <Type Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Type.xml" Type="ClosedVocabulary">video</Type>
+            <Format Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Format.xml" Type="OpenVocabulary">video/x-mpeg1</Format>
+            <Size/>
+            <Quality>Unspecified</Quality>
+            <RecordingConditions/>
+            <TimePosition>
+               <Start>Unspecified</Start>
+               <End>Unspecified</End>
+            </TimePosition>
+            <Access>
+               <Availability Type="OpenVocabulary"/>
+               <Date>Unspecified</Date>
+               <Owner/>
+               <Publisher/>
+               <Contact>
+                  <Name/>
+                  <Address/>
+                  <Email/>
+                  <Organisation/>
+               </Contact>
+               <Description LanguageId="" Link=""/>
+            </Access>
+            <Description LanguageId="" Link=""/>
+            <Keys>
+               <Key Name="" Type="OpenVocabulary"/>
+            </Keys>
+         </MediaFile>
+         <MediaFile>
+            <ResourceLink ArchiveHandle="hdl:1839/00-0000-0000-000A-060C-9">../../../../Public/Media/CNGT1419.mpg</ResourceLink>
+            <Type Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Type.xml" Type="ClosedVocabulary">video</Type>
+            <Format Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Format.xml" Type="OpenVocabulary">video/x-mpeg1</Format>
+            <Size/>
+            <Quality>Unspecified</Quality>
+            <RecordingConditions/>
+            <TimePosition>
+               <Start>Unspecified</Start>
+               <End>Unspecified</End>
+            </TimePosition>
+            <Access>
+               <Availability Type="OpenVocabulary"/>
+               <Date>Unspecified</Date>
+               <Owner/>
+               <Publisher/>
+               <Contact>
+                  <Name/>
+                  <Address/>
+                  <Email/>
+                  <Organisation/>
+               </Contact>
+               <Description LanguageId="" Link=""/>
+            </Access>
+            <Description LanguageId="" Link=""/>
+            <Keys>
+               <Key Name="" Type="OpenVocabulary"/>
+            </Keys>
+         </MediaFile>
+         <MediaFile>
+            <ResourceLink ArchiveHandle="hdl:1839/00-0000-0000-000A-060B-0">../../../../Public/Media/CNGT1420.mpg</ResourceLink>
+            <Type Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Type.xml" Type="ClosedVocabulary">video</Type>
+            <Format Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Format.xml" Type="OpenVocabulary">video/x-mpeg1</Format>
+            <Size/>
+            <Quality>Unspecified</Quality>
+            <RecordingConditions/>
+            <TimePosition>
+               <Start>Unspecified</Start>
+               <End>Unspecified</End>
+            </TimePosition>
+            <Access>
+               <Availability Type="OpenVocabulary"/>
+               <Date>Unspecified</Date>
+               <Owner/>
+               <Publisher/>
+               <Contact>
+                  <Name/>
+                  <Address/>
+                  <Email/>
+                  <Organisation/>
+               </Contact>
+               <Description LanguageId="" Link=""/>
+            </Access>
+            <Description LanguageId="" Link=""/>
+            <Keys>
+               <Key Name="" Type="OpenVocabulary"/>
+            </Keys>
+         </MediaFile>
+         <MediaFile>
+            <ResourceLink ArchiveHandle="hdl:1839/00-0000-0000-000A-060A-E">../../../../Public/Media/CNGT1421.mpg</ResourceLink>
+            <Type Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Type.xml" Type="ClosedVocabulary">video</Type>
+            <Format Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Format.xml" Type="OpenVocabulary">video/x-mpeg1</Format>
+            <Size/>
+            <Quality>Unspecified</Quality>
+            <RecordingConditions/>
+            <TimePosition>
+               <Start>Unspecified</Start>
+               <End>Unspecified</End>
+            </TimePosition>
+            <Access>
+               <Availability Type="OpenVocabulary"/>
+               <Date>Unspecified</Date>
+               <Owner/>
+               <Publisher/>
+               <Contact>
+                  <Name/>
+                  <Address/>
+                  <Email/>
+                  <Organisation/>
+               </Contact>
+               <Description LanguageId="" Link=""/>
+            </Access>
+            <Description LanguageId="" Link=""/>
+            <Keys>
+               <Key Name="" Type="OpenVocabulary"/>
+            </Keys>
+         </MediaFile>
+         <MediaFile>
+            <ResourceLink ArchiveHandle="hdl:1839/00-0000-0000-000A-0609-3">../../../../Public/Media/CNGT1422.mpg</ResourceLink>
+            <Type Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Type.xml" Type="ClosedVocabulary">video</Type>
+            <Format Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Format.xml" Type="OpenVocabulary">video/x-mpeg1</Format>
+            <Size/>
+            <Quality>Unspecified</Quality>
+            <RecordingConditions/>
+            <TimePosition>
+               <Start>Unspecified</Start>
+               <End>Unspecified</End>
+            </TimePosition>
+            <Access>
+               <Availability Type="OpenVocabulary"/>
+               <Date>Unspecified</Date>
+               <Owner/>
+               <Publisher/>
+               <Contact>
+                  <Name/>
+                  <Address/>
+                  <Email/>
+                  <Organisation/>
+               </Contact>
+               <Description LanguageId="" Link=""/>
+            </Access>
+            <Description LanguageId="" Link=""/>
+            <Keys>
+               <Key Name="" Type="OpenVocabulary"/>
+            </Keys>
+         </MediaFile>
+         <MediaFile>
+            <ResourceLink ArchiveHandle="hdl:1839/00-0000-0000-000A-0608-1">../../../../Public/Media/CNGT1423.mpg</ResourceLink>
+            <Type Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Type.xml" Type="ClosedVocabulary">video</Type>
+            <Format Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Format.xml" Type="OpenVocabulary">video/x-mpeg1</Format>
+            <Size/>
+            <Quality>Unspecified</Quality>
+            <RecordingConditions/>
+            <TimePosition>
+               <Start>Unspecified</Start>
+               <End>Unspecified</End>
+            </TimePosition>
+            <Access>
+               <Availability Type="OpenVocabulary"/>
+               <Date>Unspecified</Date>
+               <Owner/>
+               <Publisher/>
+               <Contact>
+                  <Name/>
+                  <Address/>
+                  <Email/>
+                  <Organisation/>
+               </Contact>
+               <Description LanguageId="" Link=""/>
+            </Access>
+            <Description LanguageId="" Link=""/>
+            <Keys>
+               <Key Name="" Type="OpenVocabulary"/>
+            </Keys>
+         </MediaFile>
+         <MediaFile>
+            <ResourceLink ArchiveHandle="hdl:1839/00-0000-0000-000A-0607-A">../../../../Public/Media/CNGT1424.mpg</ResourceLink>
+            <Type Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Type.xml" Type="ClosedVocabulary">video</Type>
+            <Format Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Format.xml" Type="OpenVocabulary">video/x-mpeg1</Format>
+            <Size/>
+            <Quality>Unspecified</Quality>
+            <RecordingConditions/>
+            <TimePosition>
+               <Start>Unspecified</Start>
+               <End>Unspecified</End>
+            </TimePosition>
+            <Access>
+               <Availability Type="OpenVocabulary"/>
+               <Date>Unspecified</Date>
+               <Owner/>
+               <Publisher/>
+               <Contact>
+                  <Name/>
+                  <Address/>
+                  <Email/>
+                  <Organisation/>
+               </Contact>
+               <Description LanguageId="" Link=""/>
+            </Access>
+            <Description LanguageId="" Link=""/>
+            <Keys>
+               <Key Name="" Type="OpenVocabulary"/>
+            </Keys>
+         </MediaFile>
+<MediaFile>
+<ResourceLink ArchiveHandle="hdl:1839/00-0000-0000-000F-7BC2-3">../Media/CNGT1416_S061_b.mp4</ResourceLink>
+        <Type Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Type.xml" Type="ClosedVocabulary">video</Type>
+        <Format Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Format.xml" Type="OpenVocabulary">video/mp4</Format>
+        <Size>1397495</Size>
+        <Quality>Unspecified</Quality>
+        <RecordingConditions/>
+        <TimePosition>
+          <Start>Unspecified</Start>
+          <End>Unspecified</End>
+        </TimePosition>
+        <Access>
+          <Availability/>
+          <Date>Unspecified</Date>
+          <Owner/>
+          <Publisher/>
+          <Contact>
+            <Name/>
+            <Address/>
+            <Email/>
+            <Organisation/>
+          </Contact>
+          <Description LanguageId="" Link=""/>
+        </Access>
+        <Description LanguageId="" Link=""/>
+        <Keys>
+          <Key Name=""/>
+        </Keys>
+      </MediaFile>
+<MediaFile>
+<ResourceLink ArchiveHandle="hdl:1839/00-0000-0000-000F-7BC3-1">../Media/CNGT1416_S062_b.mp4</ResourceLink>
+        <Type Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Type.xml" Type="ClosedVocabulary">video</Type>
+        <Format Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Format.xml" Type="OpenVocabulary">video/mp4</Format>
+        <Size>1439784</Size>
+        <Quality>Unspecified</Quality>
+        <RecordingConditions/>
+        <TimePosition>
+          <Start>Unspecified</Start>
+          <End>Unspecified</End>
+        </TimePosition>
+        <Access>
+          <Availability/>
+          <Date>Unspecified</Date>
+          <Owner/>
+          <Publisher/>
+          <Contact>
+            <Name/>
+            <Address/>
+            <Email/>
+            <Organisation/>
+          </Contact>
+          <Description LanguageId="" Link=""/>
+        </Access>
+        <Description LanguageId="" Link=""/>
+        <Keys>
+          <Key Name=""/>
+        </Keys>
+      </MediaFile>
+<MediaFile>
+<ResourceLink ArchiveHandle="hdl:1839/00-0000-0000-000F-7BC4-0">../Media/CNGT1416_S061_f.mp4</ResourceLink>
+        <Type Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Type.xml" Type="ClosedVocabulary">video</Type>
+        <Format Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Format.xml" Type="OpenVocabulary">video/mp4</Format>
+        <Size>1158638</Size>
+        <Quality>Unspecified</Quality>
+        <RecordingConditions/>
+        <TimePosition>
+          <Start>Unspecified</Start>
+          <End>Unspecified</End>
+        </TimePosition>
+        <Access>
+          <Availability/>
+          <Date>Unspecified</Date>
+          <Owner/>
+          <Publisher/>
+          <Contact>
+            <Name/>
+            <Address/>
+            <Email/>
+            <Organisation/>
+          </Contact>
+          <Description LanguageId="" Link=""/>
+        </Access>
+        <Description LanguageId="" Link=""/>
+        <Keys>
+          <Key Name=""/>
+        </Keys>
+      </MediaFile>
+<MediaFile>
+<ResourceLink ArchiveHandle="hdl:1839/00-0000-0000-000F-7BC5-A">../Media/CNGT1416_S062_f.mp4</ResourceLink>
+        <Type Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Type.xml" Type="ClosedVocabulary">video</Type>
+        <Format Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Format.xml" Type="OpenVocabulary">video/mp4</Format>
+        <Size>1187337</Size>
+        <Quality>Unspecified</Quality>
+        <RecordingConditions/>
+        <TimePosition>
+          <Start>Unspecified</Start>
+          <End>Unspecified</End>
+        </TimePosition>
+        <Access>
+          <Availability/>
+          <Date>Unspecified</Date>
+          <Owner/>
+          <Publisher/>
+          <Contact>
+            <Name/>
+            <Address/>
+            <Email/>
+            <Organisation/>
+          </Contact>
+          <Description LanguageId="" Link=""/>
+        </Access>
+        <Description LanguageId="" Link=""/>
+        <Keys>
+          <Key Name=""/>
+        </Keys>
+      </MediaFile>
+<MediaFile>
+<ResourceLink ArchiveHandle="hdl:1839/00-0000-0000-000F-7BC6-C">../Media/CNGT1417_S061_b.mp4</ResourceLink>
+        <Type Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Type.xml" Type="ClosedVocabulary">video</Type>
+        <Format Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Format.xml" Type="OpenVocabulary">video/mp4</Format>
+        <Size>3291598</Size>
+        <Quality>Unspecified</Quality>
+        <RecordingConditions/>
+        <TimePosition>
+          <Start>Unspecified</Start>
+          <End>Unspecified</End>
+        </TimePosition>
+        <Access>
+          <Availability/>
+          <Date>Unspecified</Date>
+          <Owner/>
+          <Publisher/>
+          <Contact>
+            <Name/>
+            <Address/>
+            <Email/>
+            <Organisation/>
+          </Contact>
+          <Description LanguageId="" Link=""/>
+        </Access>
+        <Description LanguageId="" Link=""/>
+        <Keys>
+          <Key Name=""/>
+        </Keys>
+      </MediaFile>
+<MediaFile>
+<ResourceLink ArchiveHandle="hdl:1839/00-0000-0000-000F-7BC7-6">../Media/CNGT1417_S062_b.mp4</ResourceLink>
+        <Type Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Type.xml" Type="ClosedVocabulary">video</Type>
+        <Format Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Format.xml" Type="OpenVocabulary">video/mp4</Format>
+        <Size>3366013</Size>
+        <Quality>Unspecified</Quality>
+        <RecordingConditions/>
+        <TimePosition>
+          <Start>Unspecified</Start>
+          <End>Unspecified</End>
+        </TimePosition>
+        <Access>
+          <Availability/>
+          <Date>Unspecified</Date>
+          <Owner/>
+          <Publisher/>
+          <Contact>
+            <Name/>
+            <Address/>
+            <Email/>
+            <Organisation/>
+          </Contact>
+          <Description LanguageId="" Link=""/>
+        </Access>
+        <Description LanguageId="" Link=""/>
+        <Keys>
+          <Key Name=""/>
+        </Keys>
+      </MediaFile>
+<MediaFile>
+<ResourceLink ArchiveHandle="hdl:1839/00-0000-0000-000F-7BC8-8">../Media/CNGT1417_S061_f.mp4</ResourceLink>
+        <Type Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Type.xml" Type="ClosedVocabulary">video</Type>
+        <Format Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Format.xml" Type="OpenVocabulary">video/mp4</Format>
+        <Size>2781963</Size>
+        <Quality>Unspecified</Quality>
+        <RecordingConditions/>
+        <TimePosition>
+          <Start>Unspecified</Start>
+          <End>Unspecified</End>
+        </TimePosition>
+        <Access>
+          <Availability/>
+          <Date>Unspecified</Date>
+          <Owner/>
+          <Publisher/>
+          <Contact>
+            <Name/>
+            <Address/>
+            <Email/>
+            <Organisation/>
+          </Contact>
+          <Description LanguageId="" Link=""/>
+        </Access>
+        <Description LanguageId="" Link=""/>
+        <Keys>
+          <Key Name=""/>
+        </Keys>
+      </MediaFile>
+<MediaFile>
+<ResourceLink ArchiveHandle="hdl:1839/00-0000-0000-000F-7BC9-2">../Media/CNGT1417_S062_f.mp4</ResourceLink>
+        <Type Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Type.xml" Type="ClosedVocabulary">video</Type>
+        <Format Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Format.xml" Type="OpenVocabulary">video/mp4</Format>
+        <Size>2814785</Size>
+        <Quality>Unspecified</Quality>
+        <RecordingConditions/>
+        <TimePosition>
+          <Start>Unspecified</Start>
+          <End>Unspecified</End>
+        </TimePosition>
+        <Access>
+          <Availability/>
+          <Date>Unspecified</Date>
+          <Owner/>
+          <Publisher/>
+          <Contact>
+            <Name/>
+            <Address/>
+            <Email/>
+            <Organisation/>
+          </Contact>
+          <Description LanguageId="" Link=""/>
+        </Access>
+        <Description LanguageId="" Link=""/>
+        <Keys>
+          <Key Name=""/>
+        </Keys>
+      </MediaFile>
+<MediaFile>
+<ResourceLink ArchiveHandle="hdl:1839/00-0000-0000-000F-7BCA-4">../Media/CNGT1418_S061_b.mp4</ResourceLink>
+        <Type Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Type.xml" Type="ClosedVocabulary">video</Type>
+        <Format Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Format.xml" Type="OpenVocabulary">video/mp4</Format>
+        <Size>1426767</Size>
+        <Quality>Unspecified</Quality>
+        <RecordingConditions/>
+        <TimePosition>
+          <Start>Unspecified</Start>
+          <End>Unspecified</End>
+        </TimePosition>
+        <Access>
+          <Availability/>
+          <Date>Unspecified</Date>
+          <Owner/>
+          <Publisher/>
+          <Contact>
+            <Name/>
+            <Address/>
+            <Email/>
+            <Organisation/>
+          </Contact>
+          <Description LanguageId="" Link=""/>
+        </Access>
+        <Description LanguageId="" Link=""/>
+        <Keys>
+          <Key Name=""/>
+        </Keys>
+      </MediaFile>
+<MediaFile>
+<ResourceLink ArchiveHandle="hdl:1839/00-0000-0000-000F-7BCB-D">../Media/CNGT1418_S062_b.mp4</ResourceLink>
+        <Type Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Type.xml" Type="ClosedVocabulary">video</Type>
+        <Format Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Format.xml" Type="OpenVocabulary">video/mp4</Format>
+        <Size>1397701</Size>
+        <Quality>Unspecified</Quality>
+        <RecordingConditions/>
+        <TimePosition>
+          <Start>Unspecified</Start>
+          <End>Unspecified</End>
+        </TimePosition>
+        <Access>
+          <Availability/>
+          <Date>Unspecified</Date>
+          <Owner/>
+          <Publisher/>
+          <Contact>
+            <Name/>
+            <Address/>
+            <Email/>
+            <Organisation/>
+          </Contact>
+          <Description LanguageId="" Link=""/>
+        </Access>
+        <Description LanguageId="" Link=""/>
+        <Keys>
+          <Key Name=""/>
+        </Keys>
+      </MediaFile>
+<MediaFile>
+<ResourceLink ArchiveHandle="hdl:1839/00-0000-0000-000F-7BCC-1">../Media/CNGT1418_S061_f.mp4</ResourceLink>
+        <Type Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Type.xml" Type="ClosedVocabulary">video</Type>
+        <Format Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Format.xml" Type="OpenVocabulary">video/mp4</Format>
+        <Size>1177302</Size>
+        <Quality>Unspecified</Quality>
+        <RecordingConditions/>
+        <TimePosition>
+          <Start>Unspecified</Start>
+          <End>Unspecified</End>
+        </TimePosition>
+        <Access>
+          <Availability/>
+          <Date>Unspecified</Date>
+          <Owner/>
+          <Publisher/>
+          <Contact>
+            <Name/>
+            <Address/>
+            <Email/>
+            <Organisation/>
+          </Contact>
+          <Description LanguageId="" Link=""/>
+        </Access>
+        <Description LanguageId="" Link=""/>
+        <Keys>
+          <Key Name=""/>
+        </Keys>
+      </MediaFile>
+<MediaFile>
+<ResourceLink ArchiveHandle="hdl:1839/00-0000-0000-000F-7BCD-7">../Media/CNGT1418_S062_f.mp4</ResourceLink>
+        <Type Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Type.xml" Type="ClosedVocabulary">video</Type>
+        <Format Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Format.xml" Type="OpenVocabulary">video/mp4</Format>
+        <Size>1143917</Size>
+        <Quality>Unspecified</Quality>
+        <RecordingConditions/>
+        <TimePosition>
+          <Start>Unspecified</Start>
+          <End>Unspecified</End>
+        </TimePosition>
+        <Access>
+          <Availability/>
+          <Date>Unspecified</Date>
+          <Owner/>
+          <Publisher/>
+          <Contact>
+            <Name/>
+            <Address/>
+            <Email/>
+            <Organisation/>
+          </Contact>
+          <Description LanguageId="" Link=""/>
+        </Access>
+        <Description LanguageId="" Link=""/>
+        <Keys>
+          <Key Name=""/>
+        </Keys>
+      </MediaFile>
+<MediaFile>
+<ResourceLink ArchiveHandle="hdl:1839/00-0000-0000-000F-7BCE-5">../Media/CNGT1419_S061_b.mp4</ResourceLink>
+        <Type Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Type.xml" Type="ClosedVocabulary">video</Type>
+        <Format Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Format.xml" Type="OpenVocabulary">video/mp4</Format>
+        <Size>2527161</Size>
+        <Quality>Unspecified</Quality>
+        <RecordingConditions/>
+        <TimePosition>
+          <Start>Unspecified</Start>
+          <End>Unspecified</End>
+        </TimePosition>
+        <Access>
+          <Availability/>
+          <Date>Unspecified</Date>
+          <Owner/>
+          <Publisher/>
+          <Contact>
+            <Name/>
+            <Address/>
+            <Email/>
+            <Organisation/>
+          </Contact>
+          <Description LanguageId="" Link=""/>
+        </Access>
+        <Description LanguageId="" Link=""/>
+        <Keys>
+          <Key Name=""/>
+        </Keys>
+      </MediaFile>
+<MediaFile>
+<ResourceLink ArchiveHandle="hdl:1839/00-0000-0000-000F-7BCF-3">../Media/CNGT1419_S062_b.mp4</ResourceLink>
+        <Type Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Type.xml" Type="ClosedVocabulary">video</Type>
+        <Format Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Format.xml" Type="OpenVocabulary">video/mp4</Format>
+        <Size>2608957</Size>
+        <Quality>Unspecified</Quality>
+        <RecordingConditions/>
+        <TimePosition>
+          <Start>Unspecified</Start>
+          <End>Unspecified</End>
+        </TimePosition>
+        <Access>
+          <Availability/>
+          <Date>Unspecified</Date>
+          <Owner/>
+          <Publisher/>
+          <Contact>
+            <Name/>
+            <Address/>
+            <Email/>
+            <Organisation/>
+          </Contact>
+          <Description LanguageId="" Link=""/>
+        </Access>
+        <Description LanguageId="" Link=""/>
+        <Keys>
+          <Key Name=""/>
+        </Keys>
+      </MediaFile>
+<MediaFile>
+<ResourceLink ArchiveHandle="hdl:1839/00-0000-0000-000F-7BD0-3">../Media/CNGT1419_S061_f.mp4</ResourceLink>
+        <Type Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Type.xml" Type="ClosedVocabulary">video</Type>
+        <Format Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Format.xml" Type="OpenVocabulary">video/mp4</Format>
+        <Size>2128331</Size>
+        <Quality>Unspecified</Quality>
+        <RecordingConditions/>
+        <TimePosition>
+          <Start>Unspecified</Start>
+          <End>Unspecified</End>
+        </TimePosition>
+        <Access>
+          <Availability/>
+          <Date>Unspecified</Date>
+          <Owner/>
+          <Publisher/>
+          <Contact>
+            <Name/>
+            <Address/>
+            <Email/>
+            <Organisation/>
+          </Contact>
+          <Description LanguageId="" Link=""/>
+        </Access>
+        <Description LanguageId="" Link=""/>
+        <Keys>
+          <Key Name=""/>
+        </Keys>
+      </MediaFile>
+<MediaFile>
+<ResourceLink ArchiveHandle="hdl:1839/00-0000-0000-000F-7BD1-1">../Media/CNGT1419_S062_f.mp4</ResourceLink>
+        <Type Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Type.xml" Type="ClosedVocabulary">video</Type>
+        <Format Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Format.xml" Type="OpenVocabulary">video/mp4</Format>
+        <Size>2176686</Size>
+        <Quality>Unspecified</Quality>
+        <RecordingConditions/>
+        <TimePosition>
+          <Start>Unspecified</Start>
+          <End>Unspecified</End>
+        </TimePosition>
+        <Access>
+          <Availability/>
+          <Date>Unspecified</Date>
+          <Owner/>
+          <Publisher/>
+          <Contact>
+            <Name/>
+            <Address/>
+            <Email/>
+            <Organisation/>
+          </Contact>
+          <Description LanguageId="" Link=""/>
+        </Access>
+        <Description LanguageId="" Link=""/>
+        <Keys>
+          <Key Name=""/>
+        </Keys>
+      </MediaFile>
+<MediaFile>
+<ResourceLink ArchiveHandle="hdl:1839/00-0000-0000-000F-7BD2-0">../Media/CNGT1420_S061_b.mp4</ResourceLink>
+        <Type Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Type.xml" Type="ClosedVocabulary">video</Type>
+        <Format Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Format.xml" Type="OpenVocabulary">video/mp4</Format>
+        <Size>2234796</Size>
+        <Quality>Unspecified</Quality>
+        <RecordingConditions/>
+        <TimePosition>
+          <Start>Unspecified</Start>
+          <End>Unspecified</End>
+        </TimePosition>
+        <Access>
+          <Availability/>
+          <Date>Unspecified</Date>
+          <Owner/>
+          <Publisher/>
+          <Contact>
+            <Name/>
+            <Address/>
+            <Email/>
+            <Organisation/>
+          </Contact>
+          <Description LanguageId="" Link=""/>
+        </Access>
+        <Description LanguageId="" Link=""/>
+        <Keys>
+          <Key Name=""/>
+        </Keys>
+      </MediaFile>
+<MediaFile>
+<ResourceLink ArchiveHandle="hdl:1839/00-0000-0000-000F-7BD3-A">../Media/CNGT1420_S062_b.mp4</ResourceLink>
+        <Type Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Type.xml" Type="ClosedVocabulary">video</Type>
+        <Format Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Format.xml" Type="OpenVocabulary">video/mp4</Format>
+        <Size>2235869</Size>
+        <Quality>Unspecified</Quality>
+        <RecordingConditions/>
+        <TimePosition>
+          <Start>Unspecified</Start>
+          <End>Unspecified</End>
+        </TimePosition>
+        <Access>
+          <Availability/>
+          <Date>Unspecified</Date>
+          <Owner/>
+          <Publisher/>
+          <Contact>
+            <Name/>
+            <Address/>
+            <Email/>
+            <Organisation/>
+          </Contact>
+          <Description LanguageId="" Link=""/>
+        </Access>
+        <Description LanguageId="" Link=""/>
+        <Keys>
+          <Key Name=""/>
+        </Keys>
+      </MediaFile>
+<MediaFile>
+<ResourceLink ArchiveHandle="hdl:1839/00-0000-0000-000F-7BD4-C">../Media/CNGT1420_S061_f.mp4</ResourceLink>
+        <Type Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Type.xml" Type="ClosedVocabulary">video</Type>
+        <Format Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Format.xml" Type="OpenVocabulary">video/mp4</Format>
+        <Size>1870201</Size>
+        <Quality>Unspecified</Quality>
+        <RecordingConditions/>
+        <TimePosition>
+          <Start>Unspecified</Start>
+          <End>Unspecified</End>
+        </TimePosition>
+        <Access>
+          <Availability/>
+          <Date>Unspecified</Date>
+          <Owner/>
+          <Publisher/>
+          <Contact>
+            <Name/>
+            <Address/>
+            <Email/>
+            <Organisation/>
+          </Contact>
+          <Description LanguageId="" Link=""/>
+        </Access>
+        <Description LanguageId="" Link=""/>
+        <Keys>
+          <Key Name=""/>
+        </Keys>
+      </MediaFile>
+<MediaFile>
+<ResourceLink ArchiveHandle="hdl:1839/00-0000-0000-000F-7BD5-6">../Media/CNGT1420_S062_f.mp4</ResourceLink>
+        <Type Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Type.xml" Type="ClosedVocabulary">video</Type>
+        <Format Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Format.xml" Type="OpenVocabulary">video/mp4</Format>
+        <Size>1862392</Size>
+        <Quality>Unspecified</Quality>
+        <RecordingConditions/>
+        <TimePosition>
+          <Start>Unspecified</Start>
+          <End>Unspecified</End>
+        </TimePosition>
+        <Access>
+          <Availability/>
+          <Date>Unspecified</Date>
+          <Owner/>
+          <Publisher/>
+          <Contact>
+            <Name/>
+            <Address/>
+            <Email/>
+            <Organisation/>
+          </Contact>
+          <Description LanguageId="" Link=""/>
+        </Access>
+        <Description LanguageId="" Link=""/>
+        <Keys>
+          <Key Name=""/>
+        </Keys>
+      </MediaFile>
+<MediaFile>
+<ResourceLink ArchiveHandle="hdl:1839/00-0000-0000-000F-7BD6-8">../Media/CNGT1421_S061_b.mp4</ResourceLink>
+        <Type Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Type.xml" Type="ClosedVocabulary">video</Type>
+        <Format Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Format.xml" Type="OpenVocabulary">video/mp4</Format>
+        <Size>5213406</Size>
+        <Quality>Unspecified</Quality>
+        <RecordingConditions/>
+        <TimePosition>
+          <Start>Unspecified</Start>
+          <End>Unspecified</End>
+        </TimePosition>
+        <Access>
+          <Availability/>
+          <Date>Unspecified</Date>
+          <Owner/>
+          <Publisher/>
+          <Contact>
+            <Name/>
+            <Address/>
+            <Email/>
+            <Organisation/>
+          </Contact>
+          <Description LanguageId="" Link=""/>
+        </Access>
+        <Description LanguageId="" Link=""/>
+        <Keys>
+          <Key Name=""/>
+        </Keys>
+      </MediaFile>
+<MediaFile>
+<ResourceLink ArchiveHandle="hdl:1839/00-0000-0000-000F-7BD7-2">../Media/CNGT1421_S062_b.mp4</ResourceLink>
+        <Type Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Type.xml" Type="ClosedVocabulary">video</Type>
+        <Format Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Format.xml" Type="OpenVocabulary">video/mp4</Format>
+        <Size>5141343</Size>
+        <Quality>Unspecified</Quality>
+        <RecordingConditions/>
+        <TimePosition>
+          <Start>Unspecified</Start>
+          <End>Unspecified</End>
+        </TimePosition>
+        <Access>
+          <Availability/>
+          <Date>Unspecified</Date>
+          <Owner/>
+          <Publisher/>
+          <Contact>
+            <Name/>
+            <Address/>
+            <Email/>
+            <Organisation/>
+          </Contact>
+          <Description LanguageId="" Link=""/>
+        </Access>
+        <Description LanguageId="" Link=""/>
+        <Keys>
+          <Key Name=""/>
+        </Keys>
+      </MediaFile>
+<MediaFile>
+<ResourceLink ArchiveHandle="hdl:1839/00-0000-0000-000F-7BD8-4">../Media/CNGT1421_S061_f.mp4</ResourceLink>
+        <Type Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Type.xml" Type="ClosedVocabulary">video</Type>
+        <Format Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Format.xml" Type="OpenVocabulary">video/mp4</Format>
+        <Size>4420762</Size>
+        <Quality>Unspecified</Quality>
+        <RecordingConditions/>
+        <TimePosition>
+          <Start>Unspecified</Start>
+          <End>Unspecified</End>
+        </TimePosition>
+        <Access>
+          <Availability/>
+          <Date>Unspecified</Date>
+          <Owner/>
+          <Publisher/>
+          <Contact>
+            <Name/>
+            <Address/>
+            <Email/>
+            <Organisation/>
+          </Contact>
+          <Description LanguageId="" Link=""/>
+        </Access>
+        <Description LanguageId="" Link=""/>
+        <Keys>
+          <Key Name=""/>
+        </Keys>
+      </MediaFile>
+<MediaFile>
+<ResourceLink ArchiveHandle="hdl:1839/00-0000-0000-000F-7BD9-D">../Media/CNGT1421_S062_f.mp4</ResourceLink>
+        <Type Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Type.xml" Type="ClosedVocabulary">video</Type>
+        <Format Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Format.xml" Type="OpenVocabulary">video/mp4</Format>
+        <Size>4383486</Size>
+        <Quality>Unspecified</Quality>
+        <RecordingConditions/>
+        <TimePosition>
+          <Start>Unspecified</Start>
+          <End>Unspecified</End>
+        </TimePosition>
+        <Access>
+          <Availability/>
+          <Date>Unspecified</Date>
+          <Owner/>
+          <Publisher/>
+          <Contact>
+            <Name/>
+            <Address/>
+            <Email/>
+            <Organisation/>
+          </Contact>
+          <Description LanguageId="" Link=""/>
+        </Access>
+        <Description LanguageId="" Link=""/>
+        <Keys>
+          <Key Name=""/>
+        </Keys>
+      </MediaFile>
+<MediaFile>
+<ResourceLink ArchiveHandle="hdl:1839/00-0000-0000-000F-7BDA-1">../Media/CNGT1422_S061_b.mp4</ResourceLink>
+        <Type Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Type.xml" Type="ClosedVocabulary">video</Type>
+        <Format Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Format.xml" Type="OpenVocabulary">video/mp4</Format>
+        <Size>1809144</Size>
+        <Quality>Unspecified</Quality>
+        <RecordingConditions/>
+        <TimePosition>
+          <Start>Unspecified</Start>
+          <End>Unspecified</End>
+        </TimePosition>
+        <Access>
+          <Availability/>
+          <Date>Unspecified</Date>
+          <Owner/>
+          <Publisher/>
+          <Contact>
+            <Name/>
+            <Address/>
+            <Email/>
+            <Organisation/>
+          </Contact>
+          <Description LanguageId="" Link=""/>
+        </Access>
+        <Description LanguageId="" Link=""/>
+        <Keys>
+          <Key Name=""/>
+        </Keys>
+      </MediaFile>
+<MediaFile>
+<ResourceLink ArchiveHandle="hdl:1839/00-0000-0000-000F-7BDB-9">../Media/CNGT1422_S062_b.mp4</ResourceLink>
+        <Type Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Type.xml" Type="ClosedVocabulary">video</Type>
+        <Format Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Format.xml" Type="OpenVocabulary">video/mp4</Format>
+        <Size>1710424</Size>
+        <Quality>Unspecified</Quality>
+        <RecordingConditions/>
+        <TimePosition>
+          <Start>Unspecified</Start>
+          <End>Unspecified</End>
+        </TimePosition>
+        <Access>
+          <Availability/>
+          <Date>Unspecified</Date>
+          <Owner/>
+          <Publisher/>
+          <Contact>
+            <Name/>
+            <Address/>
+            <Email/>
+            <Organisation/>
+          </Contact>
+          <Description LanguageId="" Link=""/>
+        </Access>
+        <Description LanguageId="" Link=""/>
+        <Keys>
+          <Key Name=""/>
+        </Keys>
+      </MediaFile>
+<MediaFile>
+<ResourceLink ArchiveHandle="hdl:1839/00-0000-0000-000F-7BDC-B">../Media/CNGT1422_S061_f.mp4</ResourceLink>
+        <Type Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Type.xml" Type="ClosedVocabulary">video</Type>
+        <Format Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Format.xml" Type="OpenVocabulary">video/mp4</Format>
+        <Size>1485964</Size>
+        <Quality>Unspecified</Quality>
+        <RecordingConditions/>
+        <TimePosition>
+          <Start>Unspecified</Start>
+          <End>Unspecified</End>
+        </TimePosition>
+        <Access>
+          <Availability/>
+          <Date>Unspecified</Date>
+          <Owner/>
+          <Publisher/>
+          <Contact>
+            <Name/>
+            <Address/>
+            <Email/>
+            <Organisation/>
+          </Contact>
+          <Description LanguageId="" Link=""/>
+        </Access>
+        <Description LanguageId="" Link=""/>
+        <Keys>
+          <Key Name=""/>
+        </Keys>
+      </MediaFile>
+<MediaFile>
+<ResourceLink ArchiveHandle="hdl:1839/00-0000-0000-000F-7BDD-3">../Media/CNGT1422_S062_f.mp4</ResourceLink>
+        <Type Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Type.xml" Type="ClosedVocabulary">video</Type>
+        <Format Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Format.xml" Type="OpenVocabulary">video/mp4</Format>
+        <Size>1448269</Size>
+        <Quality>Unspecified</Quality>
+        <RecordingConditions/>
+        <TimePosition>
+          <Start>Unspecified</Start>
+          <End>Unspecified</End>
+        </TimePosition>
+        <Access>
+          <Availability/>
+          <Date>Unspecified</Date>
+          <Owner/>
+          <Publisher/>
+          <Contact>
+            <Name/>
+            <Address/>
+            <Email/>
+            <Organisation/>
+          </Contact>
+          <Description LanguageId="" Link=""/>
+        </Access>
+        <Description LanguageId="" Link=""/>
+        <Keys>
+          <Key Name=""/>
+        </Keys>
+      </MediaFile>
+<MediaFile>
+<ResourceLink ArchiveHandle="hdl:1839/00-0000-0000-000F-7BDE-F">../Media/CNGT1423_S061_b.mp4</ResourceLink>
+        <Type Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Type.xml" Type="ClosedVocabulary">video</Type>
+        <Format Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Format.xml" Type="OpenVocabulary">video/mp4</Format>
+        <Size>2320057</Size>
+        <Quality>Unspecified</Quality>
+        <RecordingConditions/>
+        <TimePosition>
+          <Start>Unspecified</Start>
+          <End>Unspecified</End>
+        </TimePosition>
+        <Access>
+          <Availability/>
+          <Date>Unspecified</Date>
+          <Owner/>
+          <Publisher/>
+          <Contact>
+            <Name/>
+            <Address/>
+            <Email/>
+            <Organisation/>
+          </Contact>
+          <Description LanguageId="" Link=""/>
+        </Access>
+        <Description LanguageId="" Link=""/>
+        <Keys>
+          <Key Name=""/>
+        </Keys>
+      </MediaFile>
+<MediaFile>
+<ResourceLink ArchiveHandle="hdl:1839/00-0000-0000-000F-7BDF-A">../Media/CNGT1423_S062_b.mp4</ResourceLink>
+        <Type Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Type.xml" Type="ClosedVocabulary">video</Type>
+        <Format Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Format.xml" Type="OpenVocabulary">video/mp4</Format>
+        <Size>2338709</Size>
+        <Quality>Unspecified</Quality>
+        <RecordingConditions/>
+        <TimePosition>
+          <Start>Unspecified</Start>
+          <End>Unspecified</End>
+        </TimePosition>
+        <Access>
+          <Availability/>
+          <Date>Unspecified</Date>
+          <Owner/>
+          <Publisher/>
+          <Contact>
+            <Name/>
+            <Address/>
+            <Email/>
+            <Organisation/>
+          </Contact>
+          <Description LanguageId="" Link=""/>
+        </Access>
+        <Description LanguageId="" Link=""/>
+        <Keys>
+          <Key Name=""/>
+        </Keys>
+      </MediaFile>
+<MediaFile>
+<ResourceLink ArchiveHandle="hdl:1839/00-0000-0000-000F-7BE0-0">../Media/CNGT1423_S061_f.mp4</ResourceLink>
+        <Type Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Type.xml" Type="ClosedVocabulary">video</Type>
+        <Format Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Format.xml" Type="OpenVocabulary">video/mp4</Format>
+        <Size>1950142</Size>
+        <Quality>Unspecified</Quality>
+        <RecordingConditions/>
+        <TimePosition>
+          <Start>Unspecified</Start>
+          <End>Unspecified</End>
+        </TimePosition>
+        <Access>
+          <Availability/>
+          <Date>Unspecified</Date>
+          <Owner/>
+          <Publisher/>
+          <Contact>
+            <Name/>
+            <Address/>
+            <Email/>
+            <Organisation/>
+          </Contact>
+          <Description LanguageId="" Link=""/>
+        </Access>
+        <Description LanguageId="" Link=""/>
+        <Keys>
+          <Key Name=""/>
+        </Keys>
+      </MediaFile>
+<MediaFile>
+<ResourceLink ArchiveHandle="hdl:1839/00-0000-0000-000F-7BE1-A">../Media/CNGT1423_S062_f.mp4</ResourceLink>
+        <Type Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Type.xml" Type="ClosedVocabulary">video</Type>
+        <Format Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Format.xml" Type="OpenVocabulary">video/mp4</Format>
+        <Size>1994372</Size>
+        <Quality>Unspecified</Quality>
+        <RecordingConditions/>
+        <TimePosition>
+          <Start>Unspecified</Start>
+          <End>Unspecified</End>
+        </TimePosition>
+        <Access>
+          <Availability/>
+          <Date>Unspecified</Date>
+          <Owner/>
+          <Publisher/>
+          <Contact>
+            <Name/>
+            <Address/>
+            <Email/>
+            <Organisation/>
+          </Contact>
+          <Description LanguageId="" Link=""/>
+        </Access>
+        <Description LanguageId="" Link=""/>
+        <Keys>
+          <Key Name=""/>
+        </Keys>
+      </MediaFile>
+<MediaFile>
+<ResourceLink ArchiveHandle="hdl:1839/00-0000-0000-000F-7BE2-C">../Media/CNGT1424_S061_b.mp4</ResourceLink>
+        <Type Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Type.xml" Type="ClosedVocabulary">video</Type>
+        <Format Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Format.xml" Type="OpenVocabulary">video/mp4</Format>
+        <Size>1531622</Size>
+        <Quality>Unspecified</Quality>
+        <RecordingConditions/>
+        <TimePosition>
+          <Start>Unspecified</Start>
+          <End>Unspecified</End>
+        </TimePosition>
+        <Access>
+          <Availability/>
+          <Date>Unspecified</Date>
+          <Owner/>
+          <Publisher/>
+          <Contact>
+            <Name/>
+            <Address/>
+            <Email/>
+            <Organisation/>
+          </Contact>
+          <Description LanguageId="" Link=""/>
+        </Access>
+        <Description LanguageId="" Link=""/>
+        <Keys>
+          <Key Name=""/>
+        </Keys>
+      </MediaFile>
+<MediaFile>
+<ResourceLink ArchiveHandle="hdl:1839/00-0000-0000-000F-7BE3-6">../Media/CNGT1424_S062_b.mp4</ResourceLink>
+        <Type Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Type.xml" Type="ClosedVocabulary">video</Type>
+        <Format Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Format.xml" Type="OpenVocabulary">video/mp4</Format>
+        <Size>1466410</Size>
+        <Quality>Unspecified</Quality>
+        <RecordingConditions/>
+        <TimePosition>
+          <Start>Unspecified</Start>
+          <End>Unspecified</End>
+        </TimePosition>
+        <Access>
+          <Availability/>
+          <Date>Unspecified</Date>
+          <Owner/>
+          <Publisher/>
+          <Contact>
+            <Name/>
+            <Address/>
+            <Email/>
+            <Organisation/>
+          </Contact>
+          <Description LanguageId="" Link=""/>
+        </Access>
+        <Description LanguageId="" Link=""/>
+        <Keys>
+          <Key Name=""/>
+        </Keys>
+      </MediaFile>
+<MediaFile>
+<ResourceLink ArchiveHandle="hdl:1839/00-0000-0000-000F-7BE4-8">../Media/CNGT1424_S061_f.mp4</ResourceLink>
+        <Type Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Type.xml" Type="ClosedVocabulary">video</Type>
+        <Format Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Format.xml" Type="OpenVocabulary">video/mp4</Format>
+        <Size>1277736</Size>
+        <Quality>Unspecified</Quality>
+        <RecordingConditions/>
+        <TimePosition>
+          <Start>Unspecified</Start>
+          <End>Unspecified</End>
+        </TimePosition>
+        <Access>
+          <Availability/>
+          <Date>Unspecified</Date>
+          <Owner/>
+          <Publisher/>
+          <Contact>
+            <Name/>
+            <Address/>
+            <Email/>
+            <Organisation/>
+          </Contact>
+          <Description LanguageId="" Link=""/>
+        </Access>
+        <Description LanguageId="" Link=""/>
+        <Keys>
+          <Key Name=""/>
+        </Keys>
+      </MediaFile>
+<MediaFile>
+<ResourceLink ArchiveHandle="hdl:1839/00-0000-0000-000F-7BE5-2">../Media/CNGT1424_S062_f.mp4</ResourceLink>
+        <Type Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Type.xml" Type="ClosedVocabulary">video</Type>
+        <Format Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Format.xml" Type="OpenVocabulary">video/mp4</Format>
+        <Size>1235843</Size>
+        <Quality>Unspecified</Quality>
+        <RecordingConditions/>
+        <TimePosition>
+          <Start>Unspecified</Start>
+          <End>Unspecified</End>
+        </TimePosition>
+        <Access>
+          <Availability/>
+          <Date>Unspecified</Date>
+          <Owner/>
+          <Publisher/>
+          <Contact>
+            <Name/>
+            <Address/>
+            <Email/>
+            <Organisation/>
+          </Contact>
+          <Description LanguageId="" Link=""/>
+        </Access>
+        <Description LanguageId="" Link=""/>
+        <Keys>
+          <Key Name=""/>
+        </Keys>
+      </MediaFile>
+<MediaFile>
+<ResourceLink ArchiveHandle="hdl:1839/00-0000-0000-000F-7BE6-4">../Media/CNGT1416_S061_t.mp4</ResourceLink>
+        <Type Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Type.xml" Type="ClosedVocabulary">video</Type>
+        <Format Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Format.xml" Type="OpenVocabulary">video/mp4</Format>
+        <Size>1191277</Size>
+        <Quality>Unspecified</Quality>
+        <RecordingConditions/>
+        <TimePosition>
+          <Start>Unspecified</Start>
+          <End>Unspecified</End>
+        </TimePosition>
+        <Access>
+          <Availability/>
+          <Date>Unspecified</Date>
+          <Owner/>
+          <Publisher/>
+          <Contact>
+            <Name/>
+            <Address/>
+            <Email/>
+            <Organisation/>
+          </Contact>
+          <Description LanguageId="" Link=""/>
+        </Access>
+        <Description LanguageId="" Link=""/>
+        <Keys>
+          <Key Name=""/>
+        </Keys>
+      </MediaFile>
+<MediaFile>
+<ResourceLink ArchiveHandle="hdl:1839/00-0000-0000-000F-7BE7-D">../Media/CNGT1416_S062_t.mp4</ResourceLink>
+        <Type Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Type.xml" Type="ClosedVocabulary">video</Type>
+        <Format Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Format.xml" Type="OpenVocabulary">video/mp4</Format>
+        <Size>1214627</Size>
+        <Quality>Unspecified</Quality>
+        <RecordingConditions/>
+        <TimePosition>
+          <Start>Unspecified</Start>
+          <End>Unspecified</End>
+        </TimePosition>
+        <Access>
+          <Availability/>
+          <Date>Unspecified</Date>
+          <Owner/>
+          <Publisher/>
+          <Contact>
+            <Name/>
+            <Address/>
+            <Email/>
+            <Organisation/>
+          </Contact>
+          <Description LanguageId="" Link=""/>
+        </Access>
+        <Description LanguageId="" Link=""/>
+        <Keys>
+          <Key Name=""/>
+        </Keys>
+      </MediaFile>
+<MediaFile>
+<ResourceLink ArchiveHandle="hdl:1839/00-0000-0000-000F-7BE8-3">../Media/CNGT1417_S061_t.mp4</ResourceLink>
+        <Type Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Type.xml" Type="ClosedVocabulary">video</Type>
+        <Format Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Format.xml" Type="OpenVocabulary">video/mp4</Format>
+        <Size>2832733</Size>
+        <Quality>Unspecified</Quality>
+        <RecordingConditions/>
+        <TimePosition>
+          <Start>Unspecified</Start>
+          <End>Unspecified</End>
+        </TimePosition>
+        <Access>
+          <Availability/>
+          <Date>Unspecified</Date>
+          <Owner/>
+          <Publisher/>
+          <Contact>
+            <Name/>
+            <Address/>
+            <Email/>
+            <Organisation/>
+          </Contact>
+          <Description LanguageId="" Link=""/>
+        </Access>
+        <Description LanguageId="" Link=""/>
+        <Keys>
+          <Key Name=""/>
+        </Keys>
+      </MediaFile>
+<MediaFile>
+<ResourceLink ArchiveHandle="hdl:1839/00-0000-0000-000F-7BE9-9">../Media/CNGT1417_S062_t.mp4</ResourceLink>
+        <Type Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Type.xml" Type="ClosedVocabulary">video</Type>
+        <Format Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Format.xml" Type="OpenVocabulary">video/mp4</Format>
+        <Size>2862726</Size>
+        <Quality>Unspecified</Quality>
+        <RecordingConditions/>
+        <TimePosition>
+          <Start>Unspecified</Start>
+          <End>Unspecified</End>
+        </TimePosition>
+        <Access>
+          <Availability/>
+          <Date>Unspecified</Date>
+          <Owner/>
+          <Publisher/>
+          <Contact>
+            <Name/>
+            <Address/>
+            <Email/>
+            <Organisation/>
+          </Contact>
+          <Description LanguageId="" Link=""/>
+        </Access>
+        <Description LanguageId="" Link=""/>
+        <Keys>
+          <Key Name=""/>
+        </Keys>
+      </MediaFile>
+<MediaFile>
+<ResourceLink ArchiveHandle="hdl:1839/00-0000-0000-000F-7BEA-B">../Media/CNGT1418_S061_t.mp4</ResourceLink>
+        <Type Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Type.xml" Type="ClosedVocabulary">video</Type>
+        <Format Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Format.xml" Type="OpenVocabulary">video/mp4</Format>
+        <Size>1204336</Size>
+        <Quality>Unspecified</Quality>
+        <RecordingConditions/>
+        <TimePosition>
+          <Start>Unspecified</Start>
+          <End>Unspecified</End>
+        </TimePosition>
+        <Access>
+          <Availability/>
+          <Date>Unspecified</Date>
+          <Owner/>
+          <Publisher/>
+          <Contact>
+            <Name/>
+            <Address/>
+            <Email/>
+            <Organisation/>
+          </Contact>
+          <Description LanguageId="" Link=""/>
+        </Access>
+        <Description LanguageId="" Link=""/>
+        <Keys>
+          <Key Name=""/>
+        </Keys>
+      </MediaFile>
+<MediaFile>
+<ResourceLink ArchiveHandle="hdl:1839/00-0000-0000-000F-7BEB-5">../Media/CNGT1418_S062_t.mp4</ResourceLink>
+        <Type Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Type.xml" Type="ClosedVocabulary">video</Type>
+        <Format Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Format.xml" Type="OpenVocabulary">video/mp4</Format>
+        <Size>1189698</Size>
+        <Quality>Unspecified</Quality>
+        <RecordingConditions/>
+        <TimePosition>
+          <Start>Unspecified</Start>
+          <End>Unspecified</End>
+        </TimePosition>
+        <Access>
+          <Availability/>
+          <Date>Unspecified</Date>
+          <Owner/>
+          <Publisher/>
+          <Contact>
+            <Name/>
+            <Address/>
+            <Email/>
+            <Organisation/>
+          </Contact>
+          <Description LanguageId="" Link=""/>
+        </Access>
+        <Description LanguageId="" Link=""/>
+        <Keys>
+          <Key Name=""/>
+        </Keys>
+      </MediaFile>
+<MediaFile>
+<ResourceLink ArchiveHandle="hdl:1839/00-0000-0000-000F-7BEC-F">../Media/CNGT1419_S061_t.mp4</ResourceLink>
+        <Type Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Type.xml" Type="ClosedVocabulary">video</Type>
+        <Format Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Format.xml" Type="OpenVocabulary">video/mp4</Format>
+        <Size>2149859</Size>
+        <Quality>Unspecified</Quality>
+        <RecordingConditions/>
+        <TimePosition>
+          <Start>Unspecified</Start>
+          <End>Unspecified</End>
+        </TimePosition>
+        <Access>
+          <Availability/>
+          <Date>Unspecified</Date>
+          <Owner/>
+          <Publisher/>
+          <Contact>
+            <Name/>
+            <Address/>
+            <Email/>
+            <Organisation/>
+          </Contact>
+          <Description LanguageId="" Link=""/>
+        </Access>
+        <Description LanguageId="" Link=""/>
+        <Keys>
+          <Key Name=""/>
+        </Keys>
+      </MediaFile>
+<MediaFile>
+<ResourceLink ArchiveHandle="hdl:1839/00-0000-0000-000F-7BED-A">../Media/CNGT1419_S062_t.mp4</ResourceLink>
+        <Type Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Type.xml" Type="ClosedVocabulary">video</Type>
+        <Format Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Format.xml" Type="OpenVocabulary">video/mp4</Format>
+        <Size>2212690</Size>
+        <Quality>Unspecified</Quality>
+        <RecordingConditions/>
+        <TimePosition>
+          <Start>Unspecified</Start>
+          <End>Unspecified</End>
+        </TimePosition>
+        <Access>
+          <Availability/>
+          <Date>Unspecified</Date>
+          <Owner/>
+          <Publisher/>
+          <Contact>
+            <Name/>
+            <Address/>
+            <Email/>
+            <Organisation/>
+          </Contact>
+          <Description LanguageId="" Link=""/>
+        </Access>
+        <Description LanguageId="" Link=""/>
+        <Keys>
+          <Key Name=""/>
+        </Keys>
+      </MediaFile>
+<MediaFile>
+<ResourceLink ArchiveHandle="hdl:1839/00-0000-0000-000F-7BEE-3">../Media/CNGT1420_S061_t.mp4</ResourceLink>
+        <Type Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Type.xml" Type="ClosedVocabulary">video</Type>
+        <Format Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Format.xml" Type="OpenVocabulary">video/mp4</Format>
+        <Size>1922949</Size>
+        <Quality>Unspecified</Quality>
+        <RecordingConditions/>
+        <TimePosition>
+          <Start>Unspecified</Start>
+          <End>Unspecified</End>
+        </TimePosition>
+        <Access>
+          <Availability/>
+          <Date>Unspecified</Date>
+          <Owner/>
+          <Publisher/>
+          <Contact>
+            <Name/>
+            <Address/>
+            <Email/>
+            <Organisation/>
+          </Contact>
+          <Description LanguageId="" Link=""/>
+        </Access>
+        <Description LanguageId="" Link=""/>
+        <Keys>
+          <Key Name=""/>
+        </Keys>
+      </MediaFile>
+<MediaFile>
+<ResourceLink ArchiveHandle="hdl:1839/00-0000-0000-000F-7BEF-1">../Media/CNGT1420_S062_t.mp4</ResourceLink>
+        <Type Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Type.xml" Type="ClosedVocabulary">video</Type>
+        <Format Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Format.xml" Type="OpenVocabulary">video/mp4</Format>
+        <Size>1907048</Size>
+        <Quality>Unspecified</Quality>
+        <RecordingConditions/>
+        <TimePosition>
+          <Start>Unspecified</Start>
+          <End>Unspecified</End>
+        </TimePosition>
+        <Access>
+          <Availability/>
+          <Date>Unspecified</Date>
+          <Owner/>
+          <Publisher/>
+          <Contact>
+            <Name/>
+            <Address/>
+            <Email/>
+            <Organisation/>
+          </Contact>
+          <Description LanguageId="" Link=""/>
+        </Access>
+        <Description LanguageId="" Link=""/>
+        <Keys>
+          <Key Name=""/>
+        </Keys>
+      </MediaFile>
+<MediaFile>
+<ResourceLink ArchiveHandle="hdl:1839/00-0000-0000-000F-7BF0-C">../Media/CNGT1421_S061_t.mp4</ResourceLink>
+        <Type Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Type.xml" Type="ClosedVocabulary">video</Type>
+        <Format Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Format.xml" Type="OpenVocabulary">video/mp4</Format>
+        <Size>4479236</Size>
+        <Quality>Unspecified</Quality>
+        <RecordingConditions/>
+        <TimePosition>
+          <Start>Unspecified</Start>
+          <End>Unspecified</End>
+        </TimePosition>
+        <Access>
+          <Availability/>
+          <Date>Unspecified</Date>
+          <Owner/>
+          <Publisher/>
+          <Contact>
+            <Name/>
+            <Address/>
+            <Email/>
+            <Organisation/>
+          </Contact>
+          <Description LanguageId="" Link=""/>
+        </Access>
+        <Description LanguageId="" Link=""/>
+        <Keys>
+          <Key Name=""/>
+        </Keys>
+      </MediaFile>
+<MediaFile>
+<ResourceLink ArchiveHandle="hdl:1839/00-0000-0000-000F-7BF1-6">../Media/CNGT1421_S062_t.mp4</ResourceLink>
+        <Type Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Type.xml" Type="ClosedVocabulary">video</Type>
+        <Format Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Format.xml" Type="OpenVocabulary">video/mp4</Format>
+        <Size>4439495</Size>
+        <Quality>Unspecified</Quality>
+        <RecordingConditions/>
+        <TimePosition>
+          <Start>Unspecified</Start>
+          <End>Unspecified</End>
+        </TimePosition>
+        <Access>
+          <Availability/>
+          <Date>Unspecified</Date>
+          <Owner/>
+          <Publisher/>
+          <Contact>
+            <Name/>
+            <Address/>
+            <Email/>
+            <Organisation/>
+          </Contact>
+          <Description LanguageId="" Link=""/>
+        </Access>
+        <Description LanguageId="" Link=""/>
+        <Keys>
+          <Key Name=""/>
+        </Keys>
+      </MediaFile>
+<MediaFile>
+<ResourceLink ArchiveHandle="hdl:1839/00-0000-0000-000F-7BF2-8">../Media/CNGT1422_S061_t.mp4</ResourceLink>
+        <Type Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Type.xml" Type="ClosedVocabulary">video</Type>
+        <Format Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Format.xml" Type="OpenVocabulary">video/mp4</Format>
+        <Size>1531116</Size>
+        <Quality>Unspecified</Quality>
+        <RecordingConditions/>
+        <TimePosition>
+          <Start>Unspecified</Start>
+          <End>Unspecified</End>
+        </TimePosition>
+        <Access>
+          <Availability/>
+          <Date>Unspecified</Date>
+          <Owner/>
+          <Publisher/>
+          <Contact>
+            <Name/>
+            <Address/>
+            <Email/>
+            <Organisation/>
+          </Contact>
+          <Description LanguageId="" Link=""/>
+        </Access>
+        <Description LanguageId="" Link=""/>
+        <Keys>
+          <Key Name=""/>
+        </Keys>
+      </MediaFile>
+<MediaFile>
+<ResourceLink ArchiveHandle="hdl:1839/00-0000-0000-000F-7BF3-2">../Media/CNGT1422_S062_t.mp4</ResourceLink>
+        <Type Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Type.xml" Type="ClosedVocabulary">video</Type>
+        <Format Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Format.xml" Type="OpenVocabulary">video/mp4</Format>
+        <Size>1474174</Size>
+        <Quality>Unspecified</Quality>
+        <RecordingConditions/>
+        <TimePosition>
+          <Start>Unspecified</Start>
+          <End>Unspecified</End>
+        </TimePosition>
+        <Access>
+          <Availability/>
+          <Date>Unspecified</Date>
+          <Owner/>
+          <Publisher/>
+          <Contact>
+            <Name/>
+            <Address/>
+            <Email/>
+            <Organisation/>
+          </Contact>
+          <Description LanguageId="" Link=""/>
+        </Access>
+        <Description LanguageId="" Link=""/>
+        <Keys>
+          <Key Name=""/>
+        </Keys>
+      </MediaFile>
+<MediaFile>
+<ResourceLink ArchiveHandle="hdl:1839/00-0000-0000-000F-7BF4-4">../Media/CNGT1423_S061_t.mp4</ResourceLink>
+        <Type Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Type.xml" Type="ClosedVocabulary">video</Type>
+        <Format Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Format.xml" Type="OpenVocabulary">video/mp4</Format>
+        <Size>1987388</Size>
+        <Quality>Unspecified</Quality>
+        <RecordingConditions/>
+        <TimePosition>
+          <Start>Unspecified</Start>
+          <End>Unspecified</End>
+        </TimePosition>
+        <Access>
+          <Availability/>
+          <Date>Unspecified</Date>
+          <Owner/>
+          <Publisher/>
+          <Contact>
+            <Name/>
+            <Address/>
+            <Email/>
+            <Organisation/>
+          </Contact>
+          <Description LanguageId="" Link=""/>
+        </Access>
+        <Description LanguageId="" Link=""/>
+        <Keys>
+          <Key Name=""/>
+        </Keys>
+      </MediaFile>
+<MediaFile>
+<ResourceLink ArchiveHandle="hdl:1839/00-0000-0000-000F-7BF5-D">../Media/CNGT1423_S062_t.mp4</ResourceLink>
+        <Type Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Type.xml" Type="ClosedVocabulary">video</Type>
+        <Format Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Format.xml" Type="OpenVocabulary">video/mp4</Format>
+        <Size>2018172</Size>
+        <Quality>Unspecified</Quality>
+        <RecordingConditions/>
+        <TimePosition>
+          <Start>Unspecified</Start>
+          <End>Unspecified</End>
+        </TimePosition>
+        <Access>
+          <Availability/>
+          <Date>Unspecified</Date>
+          <Owner/>
+          <Publisher/>
+          <Contact>
+            <Name/>
+            <Address/>
+            <Email/>
+            <Organisation/>
+          </Contact>
+          <Description LanguageId="" Link=""/>
+        </Access>
+        <Description LanguageId="" Link=""/>
+        <Keys>
+          <Key Name=""/>
+        </Keys>
+      </MediaFile>
+<MediaFile>
+<ResourceLink ArchiveHandle="hdl:1839/00-0000-0000-000F-7BF6-1">../Media/CNGT1424_S061_t.mp4</ResourceLink>
+        <Type Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Type.xml" Type="ClosedVocabulary">video</Type>
+        <Format Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Format.xml" Type="OpenVocabulary">video/mp4</Format>
+        <Size>1303978</Size>
+        <Quality>Unspecified</Quality>
+        <RecordingConditions/>
+        <TimePosition>
+          <Start>Unspecified</Start>
+          <End>Unspecified</End>
+        </TimePosition>
+        <Access>
+          <Availability/>
+          <Date>Unspecified</Date>
+          <Owner/>
+          <Publisher/>
+          <Contact>
+            <Name/>
+            <Address/>
+            <Email/>
+            <Organisation/>
+          </Contact>
+          <Description LanguageId="" Link=""/>
+        </Access>
+        <Description LanguageId="" Link=""/>
+        <Keys>
+          <Key Name=""/>
+        </Keys>
+      </MediaFile>
+<MediaFile>
+<ResourceLink ArchiveHandle="hdl:1839/00-0000-0000-000F-7BF7-9">../Media/CNGT1424_S062_t.mp4</ResourceLink>
+        <Type Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Type.xml" Type="ClosedVocabulary">video</Type>
+        <Format Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Format.xml" Type="OpenVocabulary">video/mp4</Format>
+        <Size>1272392</Size>
+        <Quality>Unspecified</Quality>
+        <RecordingConditions/>
+        <TimePosition>
+          <Start>Unspecified</Start>
+          <End>Unspecified</End>
+        </TimePosition>
+        <Access>
+          <Availability/>
+          <Date>Unspecified</Date>
+          <Owner/>
+          <Publisher/>
+          <Contact>
+            <Name/>
+            <Address/>
+            <Email/>
+            <Organisation/>
+          </Contact>
+          <Description LanguageId="" Link=""/>
+        </Access>
+        <Description LanguageId="" Link=""/>
+        <Keys>
+          <Key Name=""/>
+        </Keys>
+      </MediaFile>
+            <MediaFile>
+                <ResourceLink ArchiveHandle="hdl:1839/00-0000-0000-0009-A066-E">../Media/CNGT1424_S062_t.mpg</ResourceLink>
+                <Type Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Type.xml" Type="ClosedVocabulary">Unspecified</Type>
+                <Format Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Format.xml" Type="OpenVocabulary">video/x-mpeg1</Format>
+                <Size/>
+                <Quality>Unspecified</Quality>
+                <RecordingConditions/>
+                <TimePosition>
+                    <Start>Unspecified</Start>
+                    <End>Unspecified</End>
+                </TimePosition>
+                <Access>
+                    <Availability Type="OpenVocabularyList"/>
+                    <Date>Unspecified</Date>
+                    <Owner/>
+                    <Publisher/>
+                    <Contact/>
+                </Access>
+                <Keys/>
+            </MediaFile>
+            <MediaFile>
+                <ResourceLink ArchiveHandle="hdl:1839/00-0000-0000-0009-A05A-3">../Media/CNGT1424_S061_t.mpg</ResourceLink>
+                <Type Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Type.xml" Type="ClosedVocabulary">Unspecified</Type>
+                <Format Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Format.xml" Type="OpenVocabulary">video/x-mpeg1</Format>
+                <Size/>
+                <Quality>Unspecified</Quality>
+                <RecordingConditions/>
+                <TimePosition>
+                    <Start>Unspecified</Start>
+                    <End>Unspecified</End>
+                </TimePosition>
+                <Access>
+                    <Availability Type="OpenVocabularyList"/>
+                    <Date>Unspecified</Date>
+                    <Owner/>
+                    <Publisher/>
+                    <Contact/>
+                </Access>
+                <Keys/>
+            </MediaFile>
+            <MediaFile>
+                <ResourceLink ArchiveHandle="hdl:1839/00-0000-0000-0009-A057-6">../Media/CNGT1423_S062_t.mpg</ResourceLink>
+                <Type Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Type.xml" Type="ClosedVocabulary">Unspecified</Type>
+                <Format Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Format.xml" Type="OpenVocabulary">video/x-mpeg1</Format>
+                <Size/>
+                <Quality>Unspecified</Quality>
+                <RecordingConditions/>
+                <TimePosition>
+                    <Start>Unspecified</Start>
+                    <End>Unspecified</End>
+                </TimePosition>
+                <Access>
+                    <Availability Type="OpenVocabularyList"/>
+                    <Date>Unspecified</Date>
+                    <Owner/>
+                    <Publisher/>
+                    <Contact/>
+                </Access>
+                <Keys/>
+            </MediaFile>
+            <MediaFile>
+                <ResourceLink ArchiveHandle="hdl:1839/00-0000-0000-0009-A054-6">../Media/CNGT1423_S061_t.mpg</ResourceLink>
+                <Type Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Type.xml" Type="ClosedVocabulary">Unspecified</Type>
+                <Format Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Format.xml" Type="OpenVocabulary">video/x-mpeg1</Format>
+                <Size/>
+                <Quality>Unspecified</Quality>
+                <RecordingConditions/>
+                <TimePosition>
+                    <Start>Unspecified</Start>
+                    <End>Unspecified</End>
+                </TimePosition>
+                <Access>
+                    <Availability Type="OpenVocabularyList"/>
+                    <Date>Unspecified</Date>
+                    <Owner/>
+                    <Publisher/>
+                    <Contact/>
+                </Access>
+                <Keys/>
+            </MediaFile>
+            <MediaFile>
+                <ResourceLink ArchiveHandle="hdl:1839/00-0000-0000-0009-A079-C">../Media/CNGT1422_S062_t.mpg</ResourceLink>
+                <Type Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Type.xml" Type="ClosedVocabulary">Unspecified</Type>
+                <Format Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Format.xml" Type="OpenVocabulary">video/x-mpeg1</Format>
+                <Size/>
+                <Quality>Unspecified</Quality>
+                <RecordingConditions/>
+                <TimePosition>
+                    <Start>Unspecified</Start>
+                    <End>Unspecified</End>
+                </TimePosition>
+                <Access>
+                    <Availability Type="OpenVocabularyList"/>
+                    <Date>Unspecified</Date>
+                    <Owner/>
+                    <Publisher/>
+                    <Contact/>
+                </Access>
+                <Keys/>
+            </MediaFile>
+            <MediaFile>
+                <ResourceLink ArchiveHandle="hdl:1839/00-0000-0000-0009-A076-1">../Media/CNGT1422_S061_t.mpg</ResourceLink>
+                <Type Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Type.xml" Type="ClosedVocabulary">Unspecified</Type>
+                <Format Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Format.xml" Type="OpenVocabulary">video/x-mpeg1</Format>
+                <Size/>
+                <Quality>Unspecified</Quality>
+                <RecordingConditions/>
+                <TimePosition>
+                    <Start>Unspecified</Start>
+                    <End>Unspecified</End>
+                </TimePosition>
+                <Access>
+                    <Availability Type="OpenVocabularyList"/>
+                    <Date>Unspecified</Date>
+                    <Owner/>
+                    <Publisher/>
+                    <Contact/>
+                </Access>
+                <Keys/>
+            </MediaFile>
+            <MediaFile>
+                <ResourceLink ArchiveHandle="hdl:1839/00-0000-0000-0009-A073-F">../Media/CNGT1421_S062_t.mpg</ResourceLink>
+                <Type Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Type.xml" Type="ClosedVocabulary">Unspecified</Type>
+                <Format Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Format.xml" Type="OpenVocabulary">video/x-mpeg1</Format>
+                <Size/>
+                <Quality>Unspecified</Quality>
+                <RecordingConditions/>
+                <TimePosition>
+                    <Start>Unspecified</Start>
+                    <End>Unspecified</End>
+                </TimePosition>
+                <Access>
+                    <Availability Type="OpenVocabularyList"/>
+                    <Date>Unspecified</Date>
+                    <Owner/>
+                    <Publisher/>
+                    <Contact/>
+                </Access>
+                <Keys/>
+            </MediaFile>
+            <MediaFile>
+                <ResourceLink ArchiveHandle="hdl:1839/00-0000-0000-0009-A047-F">../Media/CNGT1421_S061_t.mpg</ResourceLink>
+                <Type Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Type.xml" Type="ClosedVocabulary">Unspecified</Type>
+                <Format Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Format.xml" Type="OpenVocabulary">video/x-mpeg1</Format>
+                <Size/>
+                <Quality>Unspecified</Quality>
+                <RecordingConditions/>
+                <TimePosition>
+                    <Start>Unspecified</Start>
+                    <End>Unspecified</End>
+                </TimePosition>
+                <Access>
+                    <Availability Type="OpenVocabularyList"/>
+                    <Date>Unspecified</Date>
+                    <Owner/>
+                    <Publisher/>
+                    <Contact/>
+                </Access>
+                <Keys/>
+            </MediaFile>
+            <MediaFile>
+                <ResourceLink ArchiveHandle="hdl:1839/00-0000-0000-0009-A071-F">../Media/CNGT1420_S062_t.mpg</ResourceLink>
+                <Type Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Type.xml" Type="ClosedVocabulary">Unspecified</Type>
+                <Format Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Format.xml" Type="OpenVocabulary">video/x-mpeg1</Format>
+                <Size/>
+                <Quality>Unspecified</Quality>
+                <RecordingConditions/>
+                <TimePosition>
+                    <Start>Unspecified</Start>
+                    <End>Unspecified</End>
+                </TimePosition>
+                <Access>
+                    <Availability Type="OpenVocabularyList"/>
+                    <Date>Unspecified</Date>
+                    <Owner/>
+                    <Publisher/>
+                    <Contact/>
+                </Access>
+                <Keys/>
+            </MediaFile>
+            <MediaFile>
+                <ResourceLink ArchiveHandle="hdl:1839/00-0000-0000-0009-A06E-F">../Media/CNGT1420_S061_t.mpg</ResourceLink>
+                <Type Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Type.xml" Type="ClosedVocabulary">Unspecified</Type>
+                <Format Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Format.xml" Type="OpenVocabulary">video/x-mpeg1</Format>
+                <Size/>
+                <Quality>Unspecified</Quality>
+                <RecordingConditions/>
+                <TimePosition>
+                    <Start>Unspecified</Start>
+                    <End>Unspecified</End>
+                </TimePosition>
+                <Access>
+                    <Availability Type="OpenVocabularyList"/>
+                    <Date>Unspecified</Date>
+                    <Owner/>
+                    <Publisher/>
+                    <Contact/>
+                </Access>
+                <Keys/>
+            </MediaFile>
+            <MediaFile>
+                <ResourceLink ArchiveHandle="hdl:1839/00-0000-0000-0009-A06B-E">../Media/CNGT1419_S062_t.mpg</ResourceLink>
+                <Type Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Type.xml" Type="ClosedVocabulary">Unspecified</Type>
+                <Format Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Format.xml" Type="OpenVocabulary">video/x-mpeg1</Format>
+                <Size/>
+                <Quality>Unspecified</Quality>
+                <RecordingConditions/>
+                <TimePosition>
+                    <Start>Unspecified</Start>
+                    <End>Unspecified</End>
+                </TimePosition>
+                <Access>
+                    <Availability Type="OpenVocabularyList"/>
+                    <Date>Unspecified</Date>
+                    <Owner/>
+                    <Publisher/>
+                    <Contact/>
+                </Access>
+                <Keys/>
+            </MediaFile>
+            <MediaFile>
+                <ResourceLink ArchiveHandle="hdl:1839/00-0000-0000-0009-A068-3">../Media/CNGT1419_S061_t.mpg</ResourceLink>
+                <Type Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Type.xml" Type="ClosedVocabulary">Unspecified</Type>
+                <Format Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Format.xml" Type="OpenVocabulary">video/x-mpeg1</Format>
+                <Size/>
+                <Quality>Unspecified</Quality>
+                <RecordingConditions/>
+                <TimePosition>
+                    <Start>Unspecified</Start>
+                    <End>Unspecified</End>
+                </TimePosition>
+                <Access>
+                    <Availability Type="OpenVocabularyList"/>
+                    <Date>Unspecified</Date>
+                    <Owner/>
+                    <Publisher/>
+                    <Contact/>
+                </Access>
+                <Keys/>
+            </MediaFile>
+            <MediaFile>
+                <ResourceLink ArchiveHandle="hdl:1839/00-0000-0000-0009-A063-F">../Media/CNGT1418_S062_t.mpg</ResourceLink>
+                <Type Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Type.xml" Type="ClosedVocabulary">Unspecified</Type>
+                <Format Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Format.xml" Type="OpenVocabulary">video/x-mpeg1</Format>
+                <Size/>
+                <Quality>Unspecified</Quality>
+                <RecordingConditions/>
+                <TimePosition>
+                    <Start>Unspecified</Start>
+                    <End>Unspecified</End>
+                </TimePosition>
+                <Access>
+                    <Availability Type="OpenVocabularyList"/>
+                    <Date>Unspecified</Date>
+                    <Owner/>
+                    <Publisher/>
+                    <Contact/>
+                </Access>
+                <Keys/>
+            </MediaFile>
+            <MediaFile>
+                <ResourceLink ArchiveHandle="hdl:1839/00-0000-0000-0009-A060-4">../Media/CNGT1418_S061_t.mpg</ResourceLink>
+                <Type Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Type.xml" Type="ClosedVocabulary">Unspecified</Type>
+                <Format Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Format.xml" Type="OpenVocabulary">video/x-mpeg1</Format>
+                <Size/>
+                <Quality>Unspecified</Quality>
+                <RecordingConditions/>
+                <TimePosition>
+                    <Start>Unspecified</Start>
+                    <End>Unspecified</End>
+                </TimePosition>
+                <Access>
+                    <Availability Type="OpenVocabularyList"/>
+                    <Date>Unspecified</Date>
+                    <Owner/>
+                    <Publisher/>
+                    <Contact/>
+                </Access>
+                <Keys/>
+            </MediaFile>
+            <MediaFile>
+                <ResourceLink ArchiveHandle="hdl:1839/00-0000-0000-0009-A05D-E">../Media/CNGT1417_S062_t.mpg</ResourceLink>
+                <Type Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Type.xml" Type="ClosedVocabulary">Unspecified</Type>
+                <Format Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Format.xml" Type="OpenVocabulary">video/x-mpeg1</Format>
+                <Size/>
+                <Quality>Unspecified</Quality>
+                <RecordingConditions/>
+                <TimePosition>
+                    <Start>Unspecified</Start>
+                    <End>Unspecified</End>
+                </TimePosition>
+                <Access>
+                    <Availability Type="OpenVocabularyList"/>
+                    <Date>Unspecified</Date>
+                    <Owner/>
+                    <Publisher/>
+                    <Contact/>
+                </Access>
+                <Keys/>
+            </MediaFile>
+            <MediaFile>
+                <ResourceLink ArchiveHandle="hdl:1839/00-0000-0000-0009-A051-8">../Media/CNGT1417_S061_t.mpg</ResourceLink>
+                <Type Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Type.xml" Type="ClosedVocabulary">Unspecified</Type>
+                <Format Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Format.xml" Type="OpenVocabulary">video/x-mpeg1</Format>
+                <Size/>
+                <Quality>Unspecified</Quality>
+                <RecordingConditions/>
+                <TimePosition>
+                    <Start>Unspecified</Start>
+                    <End>Unspecified</End>
+                </TimePosition>
+                <Access>
+                    <Availability Type="OpenVocabularyList"/>
+                    <Date>Unspecified</Date>
+                    <Owner/>
+                    <Publisher/>
+                    <Contact/>
+                </Access>
+                <Keys/>
+            </MediaFile>
+            <MediaFile>
+                <ResourceLink ArchiveHandle="hdl:1839/00-0000-0000-0009-A04D-7">../Media/CNGT1416_S062_t.mpg</ResourceLink>
+                <Type Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Type.xml" Type="ClosedVocabulary">Unspecified</Type>
+                <Format Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Format.xml" Type="OpenVocabulary">video/x-mpeg1</Format>
+                <Size/>
+                <Quality>Unspecified</Quality>
+                <RecordingConditions/>
+                <TimePosition>
+                    <Start>Unspecified</Start>
+                    <End>Unspecified</End>
+                </TimePosition>
+                <Access>
+                    <Availability Type="OpenVocabularyList"/>
+                    <Date>Unspecified</Date>
+                    <Owner/>
+                    <Publisher/>
+                    <Contact/>
+                </Access>
+                <Keys/>
+            </MediaFile>
+            <MediaFile>
+                <ResourceLink ArchiveHandle="hdl:1839/00-0000-0000-0009-A04A-0">../Media/CNGT1416_S061_t.mpg</ResourceLink>
+                <Type Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Type.xml" Type="ClosedVocabulary">Unspecified</Type>
+                <Format Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Format.xml" Type="OpenVocabulary">video/x-mpeg1</Format>
+                <Size/>
+                <Quality>Unspecified</Quality>
+                <RecordingConditions/>
+                <TimePosition>
+                    <Start>Unspecified</Start>
+                    <End>Unspecified</End>
+                </TimePosition>
+                <Access>
+                    <Availability Type="OpenVocabularyList"/>
+                    <Date>Unspecified</Date>
+                    <Owner/>
+                    <Publisher/>
+                    <Contact/>
+                </Access>
+                <Keys/>
+            </MediaFile>
+            <MediaFile>
+                <ResourceLink ArchiveHandle="hdl:1839/00-0000-0000-0009-A064-C">../Media/CNGT1424_S062_f.mpg</ResourceLink>
+                <Type Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Type.xml" Type="ClosedVocabulary">Unspecified</Type>
+                <Format Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Format.xml" Type="OpenVocabulary">video/x-mpeg1</Format>
+                <Size/>
+                <Quality>Unspecified</Quality>
+                <RecordingConditions/>
+                <TimePosition>
+                    <Start>Unspecified</Start>
+                    <End>Unspecified</End>
+                </TimePosition>
+                <Access>
+                    <Availability Type="OpenVocabularyList"/>
+                    <Date>Unspecified</Date>
+                    <Owner/>
+                    <Publisher/>
+                    <Contact/>
+                </Access>
+                <Keys/>
+            </MediaFile>
+            <MediaFile>
+                <ResourceLink ArchiveHandle="hdl:1839/00-0000-0000-0009-A059-5">../Media/CNGT1424_S061_f.mpg</ResourceLink>
+                <Type Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Type.xml" Type="ClosedVocabulary">Unspecified</Type>
+                <Format Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Format.xml" Type="OpenVocabulary">video/x-mpeg1</Format>
+                <Size/>
+                <Quality>Unspecified</Quality>
+                <RecordingConditions/>
+                <TimePosition>
+                    <Start>Unspecified</Start>
+                    <End>Unspecified</End>
+                </TimePosition>
+                <Access>
+                    <Availability Type="OpenVocabularyList"/>
+                    <Date>Unspecified</Date>
+                    <Owner/>
+                    <Publisher/>
+                    <Contact/>
+                </Access>
+                <Keys/>
+            </MediaFile>
+            <MediaFile>
+                <ResourceLink ArchiveHandle="hdl:1839/00-0000-0000-0009-A05B-7">../Media/CNGT1424_S062_b.mpg</ResourceLink>
+                <Type Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Type.xml" Type="ClosedVocabulary">Unspecified</Type>
+                <Format Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Format.xml" Type="OpenVocabulary">video/x-mpeg1</Format>
+                <Size/>
+                <Quality>Unspecified</Quality>
+                <RecordingConditions/>
+                <TimePosition>
+                    <Start>Unspecified</Start>
+                    <End>Unspecified</End>
+                </TimePosition>
+                <Access>
+                    <Availability Type="OpenVocabularyList"/>
+                    <Date>Unspecified</Date>
+                    <Owner/>
+                    <Publisher/>
+                    <Contact/>
+                </Access>
+                <Keys/>
+            </MediaFile>
+            <MediaFile>
+                <ResourceLink ArchiveHandle="hdl:1839/00-0000-0000-0009-A058-E">../Media/CNGT1424_S061_b.mpg</ResourceLink>
+                <Type Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Type.xml" Type="ClosedVocabulary">Unspecified</Type>
+                <Format Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Format.xml" Type="OpenVocabulary">video/x-mpeg1</Format>
+                <Size/>
+                <Quality>Unspecified</Quality>
+                <RecordingConditions/>
+                <TimePosition>
+                    <Start>Unspecified</Start>
+                    <End>Unspecified</End>
+                </TimePosition>
+                <Access>
+                    <Availability Type="OpenVocabularyList"/>
+                    <Date>Unspecified</Date>
+                    <Owner/>
+                    <Publisher/>
+                    <Contact/>
+                </Access>
+                <Keys/>
+            </MediaFile>
+            <MediaFile>
+                <ResourceLink ArchiveHandle="hdl:1839/00-0000-0000-0009-A056-C">../Media/CNGT1423_S062_f.mpg</ResourceLink>
+                <Type Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Type.xml" Type="ClosedVocabulary">Unspecified</Type>
+                <Format Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Format.xml" Type="OpenVocabulary">video/x-mpeg1</Format>
+                <Size/>
+                <Quality>Unspecified</Quality>
+                <RecordingConditions/>
+                <TimePosition>
+                    <Start>Unspecified</Start>
+                    <End>Unspecified</End>
+                </TimePosition>
+                <Access>
+                    <Availability Type="OpenVocabularyList"/>
+                    <Date>Unspecified</Date>
+                    <Owner/>
+                    <Publisher/>
+                    <Contact/>
+                </Access>
+                <Keys/>
+            </MediaFile>
+            <MediaFile>
+                <ResourceLink ArchiveHandle="hdl:1839/00-0000-0000-0009-A052-3">../Media/CNGT1423_S061_f.mpg</ResourceLink>
+                <Type Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Type.xml" Type="ClosedVocabulary">Unspecified</Type>
+                <Format Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Format.xml" Type="OpenVocabulary">video/x-mpeg1</Format>
+                <Size/>
+                <Quality>Unspecified</Quality>
+                <RecordingConditions/>
+                <TimePosition>
+                    <Start>Unspecified</Start>
+                    <End>Unspecified</End>
+                </TimePosition>
+                <Access>
+                    <Availability Type="OpenVocabularyList"/>
+                    <Date>Unspecified</Date>
+                    <Owner/>
+                    <Publisher/>
+                    <Contact/>
+                </Access>
+                <Keys/>
+            </MediaFile>
+            <MediaFile>
+                <ResourceLink ArchiveHandle="hdl:1839/00-0000-0000-0009-A055-F">../Media/CNGT1423_S062_b.mpg</ResourceLink>
+                <Type Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Type.xml" Type="ClosedVocabulary">Unspecified</Type>
+                <Format Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Format.xml" Type="OpenVocabulary">video/x-mpeg1</Format>
+                <Size/>
+                <Quality>Unspecified</Quality>
+                <RecordingConditions/>
+                <TimePosition>
+                    <Start>Unspecified</Start>
+                    <End>Unspecified</End>
+                </TimePosition>
+                <Access>
+                    <Availability Type="OpenVocabularyList"/>
+                    <Date>Unspecified</Date>
+                    <Owner/>
+                    <Publisher/>
+                    <Contact/>
+                </Access>
+                <Keys/>
+            </MediaFile>
+            <MediaFile>
+                <ResourceLink ArchiveHandle="hdl:1839/00-0000-0000-0009-A050-F">../Media/CNGT1423_S061_b.mpg</ResourceLink>
+                <Type Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Type.xml" Type="ClosedVocabulary">Unspecified</Type>
+                <Format Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Format.xml" Type="OpenVocabulary">video/x-mpeg1</Format>
+                <Size/>
+                <Quality>Unspecified</Quality>
+                <RecordingConditions/>
+                <TimePosition>
+                    <Start>Unspecified</Start>
+                    <End>Unspecified</End>
+                </TimePosition>
+                <Access>
+                    <Availability Type="OpenVocabularyList"/>
+                    <Date>Unspecified</Date>
+                    <Owner/>
+                    <Publisher/>
+                    <Contact/>
+                </Access>
+                <Keys/>
+            </MediaFile>
+            <MediaFile>
+                <ResourceLink ArchiveHandle="hdl:1839/00-0000-0000-0009-A078-5">../Media/CNGT1422_S062_f.mpg</ResourceLink>
+                <Type Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Type.xml" Type="ClosedVocabulary">Unspecified</Type>
+                <Format Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Format.xml" Type="OpenVocabulary">video/x-mpeg1</Format>
+                <Size/>
+                <Quality>Unspecified</Quality>
+                <RecordingConditions/>
+                <TimePosition>
+                    <Start>Unspecified</Start>
+                    <End>Unspecified</End>
+                </TimePosition>
+                <Access>
+                    <Availability Type="OpenVocabularyList"/>
+                    <Date>Unspecified</Date>
+                    <Owner/>
+                    <Publisher/>
+                    <Contact/>
+                </Access>
+                <Keys/>
+            </MediaFile>
+            <MediaFile>
+                <ResourceLink ArchiveHandle="hdl:1839/00-0000-0000-0009-A075-3">../Media/CNGT1422_S061_f.mpg</ResourceLink>
+                <Type Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Type.xml" Type="ClosedVocabulary">Unspecified</Type>
+                <Format Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Format.xml" Type="OpenVocabulary">video/x-mpeg1</Format>
+                <Size/>
+                <Quality>Unspecified</Quality>
+                <RecordingConditions/>
+                <TimePosition>
+                    <Start>Unspecified</Start>
+                    <End>Unspecified</End>
+                </TimePosition>
+                <Access>
+                    <Availability Type="OpenVocabularyList"/>
+                    <Date>Unspecified</Date>
+                    <Owner/>
+                    <Publisher/>
+                    <Contact/>
+                </Access>
+                <Keys/>
+            </MediaFile>
+            <MediaFile>
+                <ResourceLink ArchiveHandle="hdl:1839/00-0000-0000-0009-A077-7">../Media/CNGT1422_S062_b.mpg</ResourceLink>
+                <Type Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Type.xml" Type="ClosedVocabulary">Unspecified</Type>
+                <Format Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Format.xml" Type="OpenVocabulary">video/x-mpeg1</Format>
+                <Size/>
+                <Quality>Unspecified</Quality>
+                <RecordingConditions/>
+                <TimePosition>
+                    <Start>Unspecified</Start>
+                    <End>Unspecified</End>
+                </TimePosition>
+                <Access>
+                    <Availability Type="OpenVocabularyList"/>
+                    <Date>Unspecified</Date>
+                    <Owner/>
+                    <Publisher/>
+                    <Contact/>
+                </Access>
+                <Keys/>
+            </MediaFile>
+            <MediaFile>
+                <ResourceLink ArchiveHandle="hdl:1839/00-0000-0000-0009-A074-E">../Media/CNGT1422_S061_b.mpg</ResourceLink>
+                <Type Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Type.xml" Type="ClosedVocabulary">Unspecified</Type>
+                <Format Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Format.xml" Type="OpenVocabulary">video/x-mpeg1</Format>
+                <Size/>
+                <Quality>Unspecified</Quality>
+                <RecordingConditions/>
+                <TimePosition>
+                    <Start>Unspecified</Start>
+                    <End>Unspecified</End>
+                </TimePosition>
+                <Access>
+                    <Availability Type="OpenVocabularyList"/>
+                    <Date>Unspecified</Date>
+                    <Owner/>
+                    <Publisher/>
+                    <Contact/>
+                </Access>
+                <Keys/>
+            </MediaFile>
+            <MediaFile>
+                <ResourceLink ArchiveHandle="hdl:1839/00-0000-0000-0009-A072-C">../Media/CNGT1421_S062_f.mpg</ResourceLink>
+                <Type Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Type.xml" Type="ClosedVocabulary">Unspecified</Type>
+                <Format Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Format.xml" Type="OpenVocabulary">video/x-mpeg1</Format>
+                <Size/>
+                <Quality>Unspecified</Quality>
+                <RecordingConditions/>
+                <TimePosition>
+                    <Start>Unspecified</Start>
+                    <End>Unspecified</End>
+                </TimePosition>
+                <Access>
+                    <Availability Type="OpenVocabularyList"/>
+                    <Date>Unspecified</Date>
+                    <Owner/>
+                    <Publisher/>
+                    <Contact/>
+                </Access>
+                <Keys/>
+            </MediaFile>
+            <MediaFile>
+                <ResourceLink ArchiveHandle="hdl:1839/00-0000-0000-0009-A045-E">../Media/CNGT1421_S061_f.mpg</ResourceLink>
+                <Type Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Type.xml" Type="ClosedVocabulary">Unspecified</Type>
+                <Format Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Format.xml" Type="OpenVocabulary">video/x-mpeg1</Format>
+                <Size/>
+                <Quality>Unspecified</Quality>
+                <RecordingConditions/>
+                <TimePosition>
+                    <Start>Unspecified</Start>
+                    <End>Unspecified</End>
+                </TimePosition>
+                <Access>
+                    <Availability Type="OpenVocabularyList"/>
+                    <Date>Unspecified</Date>
+                    <Owner/>
+                    <Publisher/>
+                    <Contact/>
+                </Access>
+                <Keys/>
+            </MediaFile>
+            <MediaFile>
+                <ResourceLink ArchiveHandle="hdl:1839/00-0000-0000-0009-A048-C">../Media/CNGT1421_S062_b.mpg</ResourceLink>
+                <Type Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Type.xml" Type="ClosedVocabulary">Unspecified</Type>
+                <Format Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Format.xml" Type="OpenVocabulary">video/x-mpeg1</Format>
+                <Size/>
+                <Quality>Unspecified</Quality>
+                <RecordingConditions/>
+                <TimePosition>
+                    <Start>Unspecified</Start>
+                    <End>Unspecified</End>
+                </TimePosition>
+                <Access>
+                    <Availability Type="OpenVocabularyList"/>
+                    <Date>Unspecified</Date>
+                    <Owner/>
+                    <Publisher/>
+                    <Contact/>
+                </Access>
+                <Keys/>
+            </MediaFile>
+            <MediaFile>
+                <ResourceLink ArchiveHandle="hdl:1839/00-0000-0000-0009-A044-3">../Media/CNGT1421_S061_b.mpg</ResourceLink>
+                <Type Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Type.xml" Type="ClosedVocabulary">Unspecified</Type>
+                <Format Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Format.xml" Type="OpenVocabulary">video/x-mpeg1</Format>
+                <Size/>
+                <Quality>Unspecified</Quality>
+                <RecordingConditions/>
+                <TimePosition>
+                    <Start>Unspecified</Start>
+                    <End>Unspecified</End>
+                </TimePosition>
+                <Access>
+                    <Availability Type="OpenVocabularyList"/>
+                    <Date>Unspecified</Date>
+                    <Owner/>
+                    <Publisher/>
+                    <Contact/>
+                </Access>
+                <Keys/>
+            </MediaFile>
+            <MediaFile>
+                <ResourceLink ArchiveHandle="hdl:1839/00-0000-0000-0009-A070-6">../Media/CNGT1420_S062_f.mpg</ResourceLink>
+                <Type Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Type.xml" Type="ClosedVocabulary">Unspecified</Type>
+                <Format Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Format.xml" Type="OpenVocabulary">video/x-mpeg1</Format>
+                <Size/>
+                <Quality>Unspecified</Quality>
+                <RecordingConditions/>
+                <TimePosition>
+                    <Start>Unspecified</Start>
+                    <End>Unspecified</End>
+                </TimePosition>
+                <Access>
+                    <Availability Type="OpenVocabularyList"/>
+                    <Date>Unspecified</Date>
+                    <Owner/>
+                    <Publisher/>
+                    <Contact/>
+                </Access>
+                <Keys/>
+            </MediaFile>
+            <MediaFile>
+                <ResourceLink ArchiveHandle="hdl:1839/00-0000-0000-0009-A06D-0">../Media/CNGT1420_S061_f.mpg</ResourceLink>
+                <Type Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Type.xml" Type="ClosedVocabulary">Unspecified</Type>
+                <Format Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Format.xml" Type="OpenVocabulary">video/x-mpeg1</Format>
+                <Size/>
+                <Quality>Unspecified</Quality>
+                <RecordingConditions/>
+                <TimePosition>
+                    <Start>Unspecified</Start>
+                    <End>Unspecified</End>
+                </TimePosition>
+                <Access>
+                    <Availability Type="OpenVocabularyList"/>
+                    <Date>Unspecified</Date>
+                    <Owner/>
+                    <Publisher/>
+                    <Contact/>
+                </Access>
+                <Keys/>
+            </MediaFile>
+            <MediaFile>
+                <ResourceLink ArchiveHandle="hdl:1839/00-0000-0000-0009-A06F-6">../Media/CNGT1420_S062_b.mpg</ResourceLink>
+                <Type Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Type.xml" Type="ClosedVocabulary">Unspecified</Type>
+                <Format Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Format.xml" Type="OpenVocabulary">video/x-mpeg1</Format>
+                <Size/>
+                <Quality>Unspecified</Quality>
+                <RecordingConditions/>
+                <TimePosition>
+                    <Start>Unspecified</Start>
+                    <End>Unspecified</End>
+                </TimePosition>
+                <Access>
+                    <Availability Type="OpenVocabularyList"/>
+                    <Date>Unspecified</Date>
+                    <Owner/>
+                    <Publisher/>
+                    <Contact/>
+                </Access>
+                <Keys/>
+            </MediaFile>
+            <MediaFile>
+                <ResourceLink ArchiveHandle="hdl:1839/00-0000-0000-0009-A06C-C">../Media/CNGT1420_S061_b.mpg</ResourceLink>
+                <Type Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Type.xml" Type="ClosedVocabulary">Unspecified</Type>
+                <Format Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Format.xml" Type="OpenVocabulary">video/x-mpeg1</Format>
+                <Size/>
+                <Quality>Unspecified</Quality>
+                <RecordingConditions/>
+                <TimePosition>
+                    <Start>Unspecified</Start>
+                    <End>Unspecified</End>
+                </TimePosition>
+                <Access>
+                    <Availability Type="OpenVocabularyList"/>
+                    <Date>Unspecified</Date>
+                    <Owner/>
+                    <Publisher/>
+                    <Contact/>
+                </Access>
+                <Keys/>
+            </MediaFile>
+            <MediaFile>
+                <ResourceLink ArchiveHandle="hdl:1839/00-0000-0000-0009-A06A-5">../Media/CNGT1419_S062_f.mpg</ResourceLink>
+                <Type Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Type.xml" Type="ClosedVocabulary">Unspecified</Type>
+                <Format Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Format.xml" Type="OpenVocabulary">video/x-mpeg1</Format>
+                <Size/>
+                <Quality>Unspecified</Quality>
+                <RecordingConditions/>
+                <TimePosition>
+                    <Start>Unspecified</Start>
+                    <End>Unspecified</End>
+                </TimePosition>
+                <Access>
+                    <Availability Type="OpenVocabularyList"/>
+                    <Date>Unspecified</Date>
+                    <Owner/>
+                    <Publisher/>
+                    <Contact/>
+                </Access>
+                <Keys/>
+            </MediaFile>
+            <MediaFile>
+                <ResourceLink ArchiveHandle="hdl:1839/00-0000-0000-0009-A067-5">../Media/CNGT1419_S061_f.mpg</ResourceLink>
+                <Type Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Type.xml" Type="ClosedVocabulary">Unspecified</Type>
+                <Format Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Format.xml" Type="OpenVocabulary">video/x-mpeg1</Format>
+                <Size/>
+                <Quality>Unspecified</Quality>
+                <RecordingConditions/>
+                <TimePosition>
+                    <Start>Unspecified</Start>
+                    <End>Unspecified</End>
+                </TimePosition>
+                <Access>
+                    <Availability Type="OpenVocabularyList"/>
+                    <Date>Unspecified</Date>
+                    <Owner/>
+                    <Publisher/>
+                    <Contact/>
+                </Access>
+                <Keys/>
+            </MediaFile>
+            <MediaFile>
+                <ResourceLink ArchiveHandle="hdl:1839/00-0000-0000-0009-A069-7">../Media/CNGT1419_S062_b.mpg</ResourceLink>
+                <Type Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Type.xml" Type="ClosedVocabulary">Unspecified</Type>
+                <Format Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Format.xml" Type="OpenVocabulary">video/x-mpeg1</Format>
+                <Size/>
+                <Quality>Unspecified</Quality>
+                <RecordingConditions/>
+                <TimePosition>
+                    <Start>Unspecified</Start>
+                    <End>Unspecified</End>
+                </TimePosition>
+                <Access>
+                    <Availability Type="OpenVocabularyList"/>
+                    <Date>Unspecified</Date>
+                    <Owner/>
+                    <Publisher/>
+                    <Contact/>
+                </Access>
+                <Keys/>
+            </MediaFile>
+            <MediaFile>
+                <ResourceLink ArchiveHandle="hdl:1839/00-0000-0000-0009-A065-6">../Media/CNGT1419_S061_b.mpg</ResourceLink>
+                <Type Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Type.xml" Type="ClosedVocabulary">Unspecified</Type>
+                <Format Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Format.xml" Type="OpenVocabulary">video/x-mpeg1</Format>
+                <Size/>
+                <Quality>Unspecified</Quality>
+                <RecordingConditions/>
+                <TimePosition>
+                    <Start>Unspecified</Start>
+                    <End>Unspecified</End>
+                </TimePosition>
+                <Access>
+                    <Availability Type="OpenVocabularyList"/>
+                    <Date>Unspecified</Date>
+                    <Owner/>
+                    <Publisher/>
+                    <Contact/>
+                </Access>
+                <Keys/>
+            </MediaFile>
+            <MediaFile>
+                <ResourceLink ArchiveHandle="hdl:1839/00-0000-0000-0009-A062-6">../Media/CNGT1418_S062_f.mpg</ResourceLink>
+                <Type Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Type.xml" Type="ClosedVocabulary">Unspecified</Type>
+                <Format Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Format.xml" Type="OpenVocabulary">video/x-mpeg1</Format>
+                <Size/>
+                <Quality>Unspecified</Quality>
+                <RecordingConditions/>
+                <TimePosition>
+                    <Start>Unspecified</Start>
+                    <End>Unspecified</End>
+                </TimePosition>
+                <Access>
+                    <Availability Type="OpenVocabularyList"/>
+                    <Date>Unspecified</Date>
+                    <Owner/>
+                    <Publisher/>
+                    <Contact/>
+                </Access>
+                <Keys/>
+            </MediaFile>
+            <MediaFile>
+                <ResourceLink ArchiveHandle="hdl:1839/00-0000-0000-0009-A05F-0">../Media/CNGT1418_S061_f.mpg</ResourceLink>
+                <Type Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Type.xml" Type="ClosedVocabulary">Unspecified</Type>
+                <Format Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Format.xml" Type="OpenVocabulary">video/x-mpeg1</Format>
+                <Size/>
+                <Quality>Unspecified</Quality>
+                <RecordingConditions/>
+                <TimePosition>
+                    <Start>Unspecified</Start>
+                    <End>Unspecified</End>
+                </TimePosition>
+                <Access>
+                    <Availability Type="OpenVocabularyList"/>
+                    <Date>Unspecified</Date>
+                    <Owner/>
+                    <Publisher/>
+                    <Contact/>
+                </Access>
+                <Keys/>
+            </MediaFile>
+            <MediaFile>
+                <ResourceLink ArchiveHandle="hdl:1839/00-0000-0000-0009-A061-8">../Media/CNGT1418_S062_b.mpg</ResourceLink>
+                <Type Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Type.xml" Type="ClosedVocabulary">Unspecified</Type>
+                <Format Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Format.xml" Type="OpenVocabulary">video/x-mpeg1</Format>
+                <Size/>
+                <Quality>Unspecified</Quality>
+                <RecordingConditions/>
+                <TimePosition>
+                    <Start>Unspecified</Start>
+                    <End>Unspecified</End>
+                </TimePosition>
+                <Access>
+                    <Availability Type="OpenVocabularyList"/>
+                    <Date>Unspecified</Date>
+                    <Owner/>
+                    <Publisher/>
+                    <Contact/>
+                </Access>
+                <Keys/>
+            </MediaFile>
+            <MediaFile>
+                <ResourceLink ArchiveHandle="hdl:1839/00-0000-0000-0009-A05E-C">../Media/CNGT1418_S061_b.mpg</ResourceLink>
+                <Type Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Type.xml" Type="ClosedVocabulary">Unspecified</Type>
+                <Format Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Format.xml" Type="OpenVocabulary">video/x-mpeg1</Format>
+                <Size/>
+                <Quality>Unspecified</Quality>
+                <RecordingConditions/>
+                <TimePosition>
+                    <Start>Unspecified</Start>
+                    <End>Unspecified</End>
+                </TimePosition>
+                <Access>
+                    <Availability Type="OpenVocabularyList"/>
+                    <Date>Unspecified</Date>
+                    <Owner/>
+                    <Publisher/>
+                    <Contact/>
+                </Access>
+                <Keys/>
+            </MediaFile>
+            <MediaFile>
+                <ResourceLink ArchiveHandle="hdl:1839/00-0000-0000-0009-A05C-5">../Media/CNGT1417_S062_f.mpg</ResourceLink>
+                <Type Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Type.xml" Type="ClosedVocabulary">Unspecified</Type>
+                <Format Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Format.xml" Type="OpenVocabulary">video/x-mpeg1</Format>
+                <Size/>
+                <Quality>Unspecified</Quality>
+                <RecordingConditions/>
+                <TimePosition>
+                    <Start>Unspecified</Start>
+                    <End>Unspecified</End>
+                </TimePosition>
+                <Access>
+                    <Availability Type="OpenVocabularyList"/>
+                    <Date>Unspecified</Date>
+                    <Owner/>
+                    <Publisher/>
+                    <Contact/>
+                </Access>
+                <Keys/>
+            </MediaFile>
+            <MediaFile>
+                <ResourceLink ArchiveHandle="hdl:1839/00-0000-0000-0009-A04F-E">../Media/CNGT1417_S061_f.mpg</ResourceLink>
+                <Type Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Type.xml" Type="ClosedVocabulary">Unspecified</Type>
+                <Format Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Format.xml" Type="OpenVocabulary">video/x-mpeg1</Format>
+                <Size/>
+                <Quality>Unspecified</Quality>
+                <RecordingConditions/>
+                <TimePosition>
+                    <Start>Unspecified</Start>
+                    <End>Unspecified</End>
+                </TimePosition>
+                <Access>
+                    <Availability Type="OpenVocabularyList"/>
+                    <Date>Unspecified</Date>
+                    <Owner/>
+                    <Publisher/>
+                    <Contact/>
+                </Access>
+                <Keys/>
+            </MediaFile>
+            <MediaFile>
+                <ResourceLink ArchiveHandle="hdl:1839/00-0000-0000-0009-A053-8">../Media/CNGT1417_S062_b.mpg</ResourceLink>
+                <Type Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Type.xml" Type="ClosedVocabulary">Unspecified</Type>
+                <Format Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Format.xml" Type="OpenVocabulary">video/x-mpeg1</Format>
+                <Size/>
+                <Quality>Unspecified</Quality>
+                <RecordingConditions/>
+                <TimePosition>
+                    <Start>Unspecified</Start>
+                    <End>Unspecified</End>
+                </TimePosition>
+                <Access>
+                    <Availability Type="OpenVocabularyList"/>
+                    <Date>Unspecified</Date>
+                    <Owner/>
+                    <Publisher/>
+                    <Contact/>
+                </Access>
+                <Keys/>
+            </MediaFile>
+            <MediaFile>
+                <ResourceLink ArchiveHandle="hdl:1839/00-0000-0000-0009-A04E-5">../Media/CNGT1417_S061_b.mpg</ResourceLink>
+                <Type Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Type.xml" Type="ClosedVocabulary">Unspecified</Type>
+                <Format Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Format.xml" Type="OpenVocabulary">video/x-mpeg1</Format>
+                <Size/>
+                <Quality>Unspecified</Quality>
+                <RecordingConditions/>
+                <TimePosition>
+                    <Start>Unspecified</Start>
+                    <End>Unspecified</End>
+                </TimePosition>
+                <Access>
+                    <Availability Type="OpenVocabularyList"/>
+                    <Date>Unspecified</Date>
+                    <Owner/>
+                    <Publisher/>
+                    <Contact/>
+                </Access>
+                <Keys/>
+            </MediaFile>
+            <MediaFile>
+                <ResourceLink ArchiveHandle="hdl:1839/00-0000-0000-0009-A04C-3">../Media/CNGT1416_S062_f.mpg</ResourceLink>
+                <Type Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Type.xml" Type="ClosedVocabulary">Unspecified</Type>
+                <Format Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Format.xml" Type="OpenVocabulary">video/x-mpeg1</Format>
+                <Size/>
+                <Quality>Unspecified</Quality>
+                <RecordingConditions/>
+                <TimePosition>
+                    <Start>Unspecified</Start>
+                    <End>Unspecified</End>
+                </TimePosition>
+                <Access>
+                    <Availability Type="OpenVocabularyList"/>
+                    <Date>Unspecified</Date>
+                    <Owner/>
+                    <Publisher/>
+                    <Contact/>
+                </Access>
+                <Keys/>
+            </MediaFile>
+            <MediaFile>
+                <ResourceLink ArchiveHandle="hdl:1839/00-0000-0000-0009-A049-6">../Media/CNGT1416_S061_f.mpg</ResourceLink>
+                <Type Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Type.xml" Type="ClosedVocabulary">Unspecified</Type>
+                <Format Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Format.xml" Type="OpenVocabulary">video/x-mpeg1</Format>
+                <Size/>
+                <Quality>Unspecified</Quality>
+                <RecordingConditions/>
+                <TimePosition>
+                    <Start>Unspecified</Start>
+                    <End>Unspecified</End>
+                </TimePosition>
+                <Access>
+                    <Availability Type="OpenVocabularyList"/>
+                    <Date>Unspecified</Date>
+                    <Owner/>
+                    <Publisher/>
+                    <Contact/>
+                </Access>
+                <Keys/>
+            </MediaFile>
+            <MediaFile>
+                <ResourceLink ArchiveHandle="hdl:1839/00-0000-0000-0009-A04B-5">../Media/CNGT1416_S062_b.mpg</ResourceLink>
+                <Type Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Type.xml" Type="ClosedVocabulary">Unspecified</Type>
+                <Format Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Format.xml" Type="OpenVocabulary">video/x-mpeg1</Format>
+                <Size/>
+                <Quality>Unspecified</Quality>
+                <RecordingConditions/>
+                <TimePosition>
+                    <Start>Unspecified</Start>
+                    <End>Unspecified</End>
+                </TimePosition>
+                <Access>
+                    <Availability Type="OpenVocabularyList"/>
+                    <Date>Unspecified</Date>
+                    <Owner/>
+                    <Publisher/>
+                    <Contact/>
+                </Access>
+                <Keys/>
+            </MediaFile>
+            <MediaFile>
+                <ResourceLink ArchiveHandle="hdl:1839/00-0000-0000-0009-A046-8">../Media/CNGT1416_S061_b.mpg</ResourceLink>
+                <Type Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Type.xml" Type="ClosedVocabulary">Unspecified</Type>
+                <Format Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Format.xml" Type="OpenVocabulary">video/x-mpeg1</Format>
+                <Size/>
+                <Quality>Unspecified</Quality>
+                <RecordingConditions/>
+                <TimePosition>
+                    <Start>Unspecified</Start>
+                    <End>Unspecified</End>
+                </TimePosition>
+                <Access>
+                    <Availability Type="OpenVocabularyList"/>
+                    <Date>Unspecified</Date>
+                    <Owner/>
+                    <Publisher/>
+                    <Contact/>
+                </Access>
+                <Keys/>
+            </MediaFile>
+            <WrittenResource>
+            <ResourceLink ArchiveHandle="hdl:1839/00-0000-0000-000A-4111-2">../Annotations/CNGT1424.eaf</ResourceLink>
+            <MediaResourceLink/>
+            <Date>Unspecified</Date>
+            <Type Link="http://www.mpi.nl/IMDI/Schema/WrittenResource-Type.xml" Type="OpenVocabulary">Annotation</Type>
+            <SubType Link="http://www.mpi.nl/IMDI/Schema/WrittenResource-SubType.xml" Type="OpenVocabulary">Unspecified</SubType>
+            <Format Link="http://www.mpi.nl/IMDI/Schema/WrittenResource-Format.xml" Type="OpenVocabulary">text/x-eaf+xml</Format>
+            <Size Type="OpenVocabulary"/>
+            <Validation>
+               <Type Link="http://www.mpi.nl/IMDI/Schema/Validation-Type.xml" Type="ClosedVocabulary">Unspecified</Type>
+               <Methodology Link="http://www.mpi.nl/IMDI/Schema/Validation-Methodology.xml" Type="ClosedVocabulary">Unspecified</Methodology>
+               <Level>Unspecified</Level>
+               <Description LanguageId="" Link=""/>
+            </Validation>
+            <Derivation Link="http://www.mpi.nl/IMDI/Schema/WrittenResource-Derivation.xml" Type="ClosedVocabulary">Analysis</Derivation>
+            <CharacterEncoding/>
+            <ContentEncoding/>
+            <LanguageId Type="OpenVocabulary"/>
+            <Anonymized>Unspecified</Anonymized>
+            <Access>
+               <Availability Type="OpenVocabulary"/>
+               <Date>Unspecified</Date>
+               <Owner/>
+               <Publisher/>
+               <Contact>
+                  <Name/>
+                  <Address/>
+                  <Email/>
+                  <Organisation/>
+               </Contact>
+               <Description LanguageId="" Link=""/>
+            </Access>
+            <Description LanguageId="" Link=""/>
+            <Keys>
+               <Key Name="" Type="OpenVocabulary"/>
+            </Keys>
+         </WrittenResource>
+         <WrittenResource>
+            <ResourceLink ArchiveHandle="hdl:1839/00-0000-0000-000A-4110-6">../Annotations/CNGT1423.eaf</ResourceLink>
+            <MediaResourceLink/>
+            <Date>Unspecified</Date>
+            <Type Link="http://www.mpi.nl/IMDI/Schema/WrittenResource-Type.xml" Type="OpenVocabulary">Annotation</Type>
+            <SubType Link="http://www.mpi.nl/IMDI/Schema/WrittenResource-SubType.xml" Type="OpenVocabulary">Unspecified</SubType>
+            <Format Link="http://www.mpi.nl/IMDI/Schema/WrittenResource-Format.xml" Type="OpenVocabulary">text/x-eaf+xml</Format>
+            <Size Type="OpenVocabulary"/>
+            <Validation>
+               <Type Link="http://www.mpi.nl/IMDI/Schema/Validation-Type.xml" Type="ClosedVocabulary">Unspecified</Type>
+               <Methodology Link="http://www.mpi.nl/IMDI/Schema/Validation-Methodology.xml" Type="ClosedVocabulary">Unspecified</Methodology>
+               <Level>Unspecified</Level>
+               <Description LanguageId="" Link=""/>
+            </Validation>
+            <Derivation Link="http://www.mpi.nl/IMDI/Schema/WrittenResource-Derivation.xml" Type="ClosedVocabulary">Analysis</Derivation>
+            <CharacterEncoding/>
+            <ContentEncoding/>
+            <LanguageId Type="OpenVocabulary"/>
+            <Anonymized>Unspecified</Anonymized>
+            <Access>
+               <Availability Type="OpenVocabulary"/>
+               <Date>Unspecified</Date>
+               <Owner/>
+               <Publisher/>
+               <Contact>
+                  <Name/>
+                  <Address/>
+                  <Email/>
+                  <Organisation/>
+               </Contact>
+               <Description LanguageId="" Link=""/>
+            </Access>
+            <Description LanguageId="" Link=""/>
+            <Keys>
+               <Key Name="" Type="OpenVocabulary"/>
+            </Keys>
+         </WrittenResource>
+         <WrittenResource>
+            <ResourceLink ArchiveHandle="hdl:1839/00-0000-0000-000A-410F-A">../Annotations/CNGT1422.eaf</ResourceLink>
+            <MediaResourceLink/>
+            <Date>Unspecified</Date>
+            <Type Link="http://www.mpi.nl/IMDI/Schema/WrittenResource-Type.xml" Type="OpenVocabulary">Annotation</Type>
+            <SubType Link="http://www.mpi.nl/IMDI/Schema/WrittenResource-SubType.xml" Type="OpenVocabulary">Unspecified</SubType>
+            <Format Link="http://www.mpi.nl/IMDI/Schema/WrittenResource-Format.xml" Type="OpenVocabulary">text/x-eaf+xml</Format>
+            <Size Type="OpenVocabulary"/>
+            <Validation>
+               <Type Link="http://www.mpi.nl/IMDI/Schema/Validation-Type.xml" Type="ClosedVocabulary">Unspecified</Type>
+               <Methodology Link="http://www.mpi.nl/IMDI/Schema/Validation-Methodology.xml" Type="ClosedVocabulary">Unspecified</Methodology>
+               <Level>Unspecified</Level>
+               <Description LanguageId="" Link=""/>
+            </Validation>
+            <Derivation Link="http://www.mpi.nl/IMDI/Schema/WrittenResource-Derivation.xml" Type="ClosedVocabulary">Analysis</Derivation>
+            <CharacterEncoding/>
+            <ContentEncoding/>
+            <LanguageId Type="OpenVocabulary"/>
+            <Anonymized>Unspecified</Anonymized>
+            <Access>
+               <Availability Type="OpenVocabulary"/>
+               <Date>Unspecified</Date>
+               <Owner/>
+               <Publisher/>
+               <Contact>
+                  <Name/>
+                  <Address/>
+                  <Email/>
+                  <Organisation/>
+               </Contact>
+               <Description LanguageId="" Link=""/>
+            </Access>
+            <Description LanguageId="" Link=""/>
+            <Keys>
+               <Key Name="" Type="OpenVocabulary"/>
+            </Keys>
+         </WrittenResource>
+         <WrittenResource>
+            <ResourceLink ArchiveHandle="hdl:1839/00-0000-0000-000A-410E-2">../Annotations/CNGT1421.eaf</ResourceLink>
+            <MediaResourceLink/>
+            <Date>Unspecified</Date>
+            <Type Link="http://www.mpi.nl/IMDI/Schema/WrittenResource-Type.xml" Type="OpenVocabulary">Annotation</Type>
+            <SubType Link="http://www.mpi.nl/IMDI/Schema/WrittenResource-SubType.xml" Type="OpenVocabulary">Unspecified</SubType>
+            <Format Link="http://www.mpi.nl/IMDI/Schema/WrittenResource-Format.xml" Type="OpenVocabulary">text/x-eaf+xml</Format>
+            <Size Type="OpenVocabulary"/>
+            <Validation>
+               <Type Link="http://www.mpi.nl/IMDI/Schema/Validation-Type.xml" Type="ClosedVocabulary">Unspecified</Type>
+               <Methodology Link="http://www.mpi.nl/IMDI/Schema/Validation-Methodology.xml" Type="ClosedVocabulary">Unspecified</Methodology>
+               <Level>Unspecified</Level>
+               <Description LanguageId="" Link=""/>
+            </Validation>
+            <Derivation Link="http://www.mpi.nl/IMDI/Schema/WrittenResource-Derivation.xml" Type="ClosedVocabulary">Analysis</Derivation>
+            <CharacterEncoding/>
+            <ContentEncoding/>
+            <LanguageId Type="OpenVocabulary"/>
+            <Anonymized>Unspecified</Anonymized>
+            <Access>
+               <Availability Type="OpenVocabulary"/>
+               <Date>Unspecified</Date>
+               <Owner/>
+               <Publisher/>
+               <Contact>
+                  <Name/>
+                  <Address/>
+                  <Email/>
+                  <Organisation/>
+               </Contact>
+               <Description LanguageId="" Link=""/>
+            </Access>
+            <Description LanguageId="" Link=""/>
+            <Keys>
+               <Key Name="" Type="OpenVocabulary"/>
+            </Keys>
+         </WrittenResource>
+         <WrittenResource>
+            <ResourceLink ArchiveHandle="hdl:1839/00-0000-0000-000A-410D-F">../Annotations/CNGT1420.eaf</ResourceLink>
+            <MediaResourceLink/>
+            <Date>Unspecified</Date>
+            <Type Link="http://www.mpi.nl/IMDI/Schema/WrittenResource-Type.xml" Type="OpenVocabulary">Annotation</Type>
+            <SubType Link="http://www.mpi.nl/IMDI/Schema/WrittenResource-SubType.xml" Type="OpenVocabulary">Unspecified</SubType>
+            <Format Link="http://www.mpi.nl/IMDI/Schema/WrittenResource-Format.xml" Type="OpenVocabulary">text/x-eaf+xml</Format>
+            <Size Type="OpenVocabulary"/>
+            <Validation>
+               <Type Link="http://www.mpi.nl/IMDI/Schema/Validation-Type.xml" Type="ClosedVocabulary">Unspecified</Type>
+               <Methodology Link="http://www.mpi.nl/IMDI/Schema/Validation-Methodology.xml" Type="ClosedVocabulary">Unspecified</Methodology>
+               <Level>Unspecified</Level>
+               <Description LanguageId="" Link=""/>
+            </Validation>
+            <Derivation Link="http://www.mpi.nl/IMDI/Schema/WrittenResource-Derivation.xml" Type="ClosedVocabulary">Analysis</Derivation>
+            <CharacterEncoding/>
+            <ContentEncoding/>
+            <LanguageId Type="OpenVocabulary"/>
+            <Anonymized>Unspecified</Anonymized>
+            <Access>
+               <Availability Type="OpenVocabulary"/>
+               <Date>Unspecified</Date>
+               <Owner/>
+               <Publisher/>
+               <Contact>
+                  <Name/>
+                  <Address/>
+                  <Email/>
+                  <Organisation/>
+               </Contact>
+               <Description LanguageId="" Link=""/>
+            </Access>
+            <Description LanguageId="" Link=""/>
+            <Keys>
+               <Key Name="" Type="OpenVocabulary"/>
+            </Keys>
+         </WrittenResource>
+         <WrittenResource>
+            <ResourceLink ArchiveHandle="hdl:1839/00-0000-0000-000A-410C-C">../Annotations/CNGT1419.eaf</ResourceLink>
+            <MediaResourceLink/>
+            <Date>Unspecified</Date>
+            <Type Link="http://www.mpi.nl/IMDI/Schema/WrittenResource-Type.xml" Type="OpenVocabulary">Annotation</Type>
+            <SubType Link="http://www.mpi.nl/IMDI/Schema/WrittenResource-SubType.xml" Type="OpenVocabulary">Unspecified</SubType>
+            <Format Link="http://www.mpi.nl/IMDI/Schema/WrittenResource-Format.xml" Type="OpenVocabulary">text/x-eaf+xml</Format>
+            <Size Type="OpenVocabulary"/>
+            <Validation>
+               <Type Link="http://www.mpi.nl/IMDI/Schema/Validation-Type.xml" Type="ClosedVocabulary">Unspecified</Type>
+               <Methodology Link="http://www.mpi.nl/IMDI/Schema/Validation-Methodology.xml" Type="ClosedVocabulary">Unspecified</Methodology>
+               <Level>Unspecified</Level>
+               <Description LanguageId="" Link=""/>
+            </Validation>
+            <Derivation Link="http://www.mpi.nl/IMDI/Schema/WrittenResource-Derivation.xml" Type="ClosedVocabulary">Analysis</Derivation>
+            <CharacterEncoding/>
+            <ContentEncoding/>
+            <LanguageId Type="OpenVocabulary"/>
+            <Anonymized>Unspecified</Anonymized>
+            <Access>
+               <Availability Type="OpenVocabulary"/>
+               <Date>Unspecified</Date>
+               <Owner/>
+               <Publisher/>
+               <Contact>
+                  <Name/>
+                  <Address/>
+                  <Email/>
+                  <Organisation/>
+               </Contact>
+               <Description LanguageId="" Link=""/>
+            </Access>
+            <Description LanguageId="" Link=""/>
+            <Keys>
+               <Key Name="" Type="OpenVocabulary"/>
+            </Keys>
+         </WrittenResource>
+         <WrittenResource>
+            <ResourceLink ArchiveHandle="hdl:1839/00-0000-0000-000A-410B-3">../Annotations/CNGT1418.eaf</ResourceLink>
+            <MediaResourceLink/>
+            <Date>Unspecified</Date>
+            <Type Link="http://www.mpi.nl/IMDI/Schema/WrittenResource-Type.xml" Type="OpenVocabulary">Annotation</Type>
+            <SubType Link="http://www.mpi.nl/IMDI/Schema/WrittenResource-SubType.xml" Type="OpenVocabulary">Unspecified</SubType>
+            <Format Link="http://www.mpi.nl/IMDI/Schema/WrittenResource-Format.xml" Type="OpenVocabulary">text/x-eaf+xml</Format>
+            <Size Type="OpenVocabulary"/>
+            <Validation>
+               <Type Link="http://www.mpi.nl/IMDI/Schema/Validation-Type.xml" Type="ClosedVocabulary">Unspecified</Type>
+               <Methodology Link="http://www.mpi.nl/IMDI/Schema/Validation-Methodology.xml" Type="ClosedVocabulary">Unspecified</Methodology>
+               <Level>Unspecified</Level>
+               <Description LanguageId="" Link=""/>
+            </Validation>
+            <Derivation Link="http://www.mpi.nl/IMDI/Schema/WrittenResource-Derivation.xml" Type="ClosedVocabulary">Analysis</Derivation>
+            <CharacterEncoding/>
+            <ContentEncoding/>
+            <LanguageId Type="OpenVocabulary"/>
+            <Anonymized>Unspecified</Anonymized>
+            <Access>
+               <Availability Type="OpenVocabulary"/>
+               <Date>Unspecified</Date>
+               <Owner/>
+               <Publisher/>
+               <Contact>
+                  <Name/>
+                  <Address/>
+                  <Email/>
+                  <Organisation/>
+               </Contact>
+               <Description LanguageId="" Link=""/>
+            </Access>
+            <Description LanguageId="" Link=""/>
+            <Keys>
+               <Key Name="" Type="OpenVocabulary"/>
+            </Keys>
+         </WrittenResource>
+         <WrittenResource>
+            <ResourceLink ArchiveHandle="hdl:1839/00-0000-0000-000A-410A-2">../Annotations/CNGT1417.eaf</ResourceLink>
+            <MediaResourceLink/>
+            <Date>Unspecified</Date>
+            <Type Link="http://www.mpi.nl/IMDI/Schema/WrittenResource-Type.xml" Type="OpenVocabulary">Annotation</Type>
+            <SubType Link="http://www.mpi.nl/IMDI/Schema/WrittenResource-SubType.xml" Type="OpenVocabulary">Unspecified</SubType>
+            <Format Link="http://www.mpi.nl/IMDI/Schema/WrittenResource-Format.xml" Type="OpenVocabulary">text/x-eaf+xml</Format>
+            <Size Type="OpenVocabulary"/>
+            <Validation>
+               <Type Link="http://www.mpi.nl/IMDI/Schema/Validation-Type.xml" Type="ClosedVocabulary">Unspecified</Type>
+               <Methodology Link="http://www.mpi.nl/IMDI/Schema/Validation-Methodology.xml" Type="ClosedVocabulary">Unspecified</Methodology>
+               <Level>Unspecified</Level>
+               <Description LanguageId="" Link=""/>
+            </Validation>
+            <Derivation Link="http://www.mpi.nl/IMDI/Schema/WrittenResource-Derivation.xml" Type="ClosedVocabulary">Analysis</Derivation>
+            <CharacterEncoding/>
+            <ContentEncoding/>
+            <LanguageId Type="OpenVocabulary"/>
+            <Anonymized>Unspecified</Anonymized>
+            <Access>
+               <Availability Type="OpenVocabulary"/>
+               <Date>Unspecified</Date>
+               <Owner/>
+               <Publisher/>
+               <Contact>
+                  <Name/>
+                  <Address/>
+                  <Email/>
+                  <Organisation/>
+               </Contact>
+               <Description LanguageId="" Link=""/>
+            </Access>
+            <Description LanguageId="" Link=""/>
+            <Keys>
+               <Key Name="" Type="OpenVocabulary"/>
+            </Keys>
+         </WrittenResource>
+         <WrittenResource>
+            <ResourceLink ArchiveHandle="hdl:1839/00-0000-0000-000A-4109-8">../Annotations/CNGT1416.eaf</ResourceLink>
+            <MediaResourceLink/>
+            <Date>Unspecified</Date>
+            <Type Link="http://www.mpi.nl/IMDI/Schema/WrittenResource-Type.xml" Type="OpenVocabulary">Annotation</Type>
+            <SubType Link="http://www.mpi.nl/IMDI/Schema/WrittenResource-SubType.xml" Type="OpenVocabulary">Unspecified</SubType>
+            <Format Link="http://www.mpi.nl/IMDI/Schema/WrittenResource-Format.xml" Type="OpenVocabulary">text/x-eaf+xml</Format>
+            <Size Type="OpenVocabulary"/>
+            <Validation>
+               <Type Link="http://www.mpi.nl/IMDI/Schema/Validation-Type.xml" Type="ClosedVocabulary">Unspecified</Type>
+               <Methodology Link="http://www.mpi.nl/IMDI/Schema/Validation-Methodology.xml" Type="ClosedVocabulary">Unspecified</Methodology>
+               <Level>Unspecified</Level>
+               <Description LanguageId="" Link=""/>
+            </Validation>
+            <Derivation Link="http://www.mpi.nl/IMDI/Schema/WrittenResource-Derivation.xml" Type="ClosedVocabulary">Analysis</Derivation>
+            <CharacterEncoding/>
+            <ContentEncoding/>
+            <LanguageId Type="OpenVocabulary"/>
+            <Anonymized>Unspecified</Anonymized>
+            <Access>
+               <Availability Type="OpenVocabulary"/>
+               <Date>Unspecified</Date>
+               <Owner/>
+               <Publisher/>
+               <Contact>
+                  <Name/>
+                  <Address/>
+                  <Email/>
+                  <Organisation/>
+               </Contact>
+               <Description LanguageId="" Link=""/>
+            </Access>
+            <Description LanguageId="" Link=""/>
+            <Keys>
+               <Key Name="" Type="OpenVocabulary"/>
+            </Keys>
+         </WrittenResource>
+         <Anonyms>
+                <ResourceLink/>
+                <Access>
+                    <Availability Type="OpenVocabulary"/>
+                    <Date>Unspecified</Date>
+                    <Owner/>
+                    <Publisher/>
+                    <Contact>
+                        <Name/>
+                        <Address/>
+                        <Email/>
+                        <Organisation/>
+                    </Contact>
+                    <Description LanguageId="" Link=""/>
+                </Access>
+            </Anonyms>
+        </Resources>
+        <References>
+            <Description LanguageId="" Link=""/>
+        </References>
+    </Session>
 </METATRANSCRIPT>

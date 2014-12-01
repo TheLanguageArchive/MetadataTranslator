@@ -1,13 +1,491 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <METATRANSCRIPT xmlns="http://www.mpi.nl/IMDI/Schema/IMDI"
                 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-                xmlns:tla="http://tla.mpi.nl"
+                ArchiveHandle="hdl:1839/00-0000-0000-0001-55CD-D"
+                Date="2004-02-12"
                 FormatId="IMDI 3.0"
-                Type="CORPUS"
-                Version="0"
-                xsi:schemaLocation="http://www.mpi.nl/IMDI/Schema/IMDI http://www.mpi.nl/IMDI/Schema/IMDI_3.0.xsd"
-                ArchiveHandle="hdl:1839/00-0000-0000-0001-55CD-D@format=imdi"
-                Originator="Metadata Translator: tlasession2corpus.xslt hdl:1839/00-0000-0000-0001-55CD-D"
-                Date="2014-11-25">
-   <Corpus/>
+                Originator=""
+                Type="SESSION"
+                Version="4"
+                xsi:schemaLocation="http://www.mpi.nl/IMDI/Schema/IMDI ./IMDI_3.0.xsd">
+    <History>NAME:UPGRADE1-CGN_3_0 DATE:2004-08-12T17:37:24+0200. NAME:IMDI_1_9_TO_3_0 DATE:2004-05-18T12:29:33-02:00.</History>
+    <Session>
+      <Name>fn000056</Name>
+      <Title>presentation</Title>
+      <Date>1999</Date>
+      <Description LanguageId="ISO639:eng">Responsibility.Type = SAMPLING</Description>
+      <Description LanguageId="ISO639:eng">Responsibility.Name = SPEX</Description>
+      <Description LanguageId="ISO639:eng">Responsibility.Type = ORTHOGRAPHIC TRANSCRIPTION</Description>
+      <Description LanguageId="ISO639:eng">Responsibility.Name = SPEX</Description>
+      <Description LanguageId="ISO639:eng">Responsibility.Type = PART-OF-SPEECH TAGGING</Description>
+      <Description LanguageId="ISO639:eng">Responsibility.Name = CLS-KUN</Description>
+      <Description LanguageId="ISO639:eng">Responsibility.Type = LEMMATISATION</Description>
+      <Description LanguageId="ISO639:eng">Responsibility.Name = CLS-KUN</Description>
+      <Description LanguageId="ISO639:eng">Responsibility.Type = LEXICON LINK-UP</Description>
+      <Description LanguageId="ISO639:eng">Responsibility.Name = CLS-KUN</Description>
+      <Description LanguageId="ISO639:eng">Responsibility.Type = WORD SEGMENTATION</Description>
+      <Description LanguageId="ISO639:eng">Responsibility.Name = CLS-KUN</Description>
+      <Description LanguageId="ISO639:eng">Responsibility.Type = PHONETIC TRANSCRIPTION</Description>
+      <Description LanguageId="ISO639:eng">Responsibility.Name = SPEX</Description>
+      <Description LanguageId="ISO639:eng">Responsibility.Type = SYNTACTIC ANNOTATION</Description>
+      <Description LanguageId="ISO639:eng">Responsibility.Name = OTS</Description>
+      <Description LanguageId="ISO639:eng">Total number of words = 3393</Description>
+      <Description LanguageId="ISO639:eng">CGN Header Date = 1-1-2004</Description>
+      <MDGroup>
+         <Location>
+            <Continent Link="http://www.mpi.nl/IMDI/Schema/Continents.xml" Type="ClosedVocabulary">Europe</Continent>
+            <Country Link="http://www.mpi.nl/IMDI/Schema/Countries.xml" Type="ClosedVocabulary">Netherlands</Country>
+            <Region>Unspecified</Region>
+            <Address>Unspecified</Address>
+         </Location>
+         <Project>
+            <Name/>
+            <Title/>
+            <Id/>
+            <Contact>
+               <Name/>
+               <Address/>
+               <Email/>
+               <Organisation/>
+            </Contact>
+            <Description/>
+         </Project>
+         <Keys>
+            <Key DefaultLink="" Link="http://www.mpi.nl/CGN/Schema/CGN.wordCount.xml" Name="CGN.wordCount" Type="OpenVocabulary">3393</Key>
+            <Key Name="CGN.secCount" Type="OpenVocabulary">1245</Key>
+            <Key DefaultLink="" Link="http://www.mpi.nl/CGN/Schema/CGN.byteCount.xml" Name="CGN.byteCount" Type="OpenVocabulary">38000000</Key>
+            <Key DefaultLink="" Link="http://www.mpi.nl/CGN/Schema/CGN.tempoAv.xml" Name="CGN.tempoAv" Type="OpenVocabulary">9811</Key>
+            <Key DefaultLink="" Link="http://www.mpi.nl/CGN/Schema/CGN.recDate.xml" Name="CGN.recDate" Type="ClosedVocabulary">1999</Key>
+            <Key DefaultLink="" Link="http://www.mpi.nl/CGN/Schema/CGN.locName.xml" Name="CGN.locName" Type="OpenVocabulary">Unspecified</Key>
+            <Key DefaultLink="" Link="http://www.mpi.nl/CGN/Schema/CGN.Locale.xml" Name="CGN.locale" Type="ClosedVocabulary">Unspecified</Key>
+            <Key DefaultLink="" Link="http://www.mpi.nl/CGN/Schema/CGN.availability.xml" Name="CGN.availability" Type="OpenVocabulary">CGN_WAV_29</Key>
+            <Key DefaultLink="" Link="http://www.mpi.nl/CGN/Schema/CGN.segmentation.xml" Name="CGN.segmentation" Type="ClosedVocabulary">manual</Key>
+            <Key Name="CGN.fon.available" Type="OpenVocabulary">true</Key>
+            <Key Name="CGN.pro.available" Type="OpenVocabulary">false</Key>
+            <Key Name="CGN.syn.available" Type="OpenVocabulary">true</Key>
+            <Key Name="CGN.wrd.available" Type="OpenVocabulary">true</Key>
+         </Keys>
+         <Content>
+            <Genre Link="http://www.mpi.nl/IMDI/Schema/Content-Genre.xml" Type="OpenVocabulary">Discourse</Genre>
+            <SubGenre Link="http://www.mpi.nl/IMDI/Schema/Content-SubGenre-Discourse.xml" Type="OpenVocabulary">Lecture,Seminar</SubGenre>
+            <Task Link="http://www.mpi.nl/IMDI/Schema/Content-Task.xml" Type="OpenVocabulary">Activity: Unspecified</Task>
+            <Modalities Link="http://www.mpi.nl/IMDI/Schema/Content-Modalities.xml" Type="OpenVocabularyList">speech</Modalities>
+            <CommunicationContext>
+               <Interactivity Link="http://www.mpi.nl/IMDI/Schema/Content-Interactivity.xml" Type="ClosedVocabulary">semi-interactive</Interactivity>
+               <PlanningType Link="http://www.mpi.nl/IMDI/Schema/Content-PlanningType.xml" Type="ClosedVocabulary">semi-spontaneous</PlanningType>
+               <Involvement Link="http://www.mpi.nl/IMDI/Schema/Content-Involvement.xml" Type="ClosedVocabulary">non-elicited</Involvement>
+               <SocialContext Link="" Type="OpenVocabulary">Public</SocialContext>
+               <EventStructure Link="" Type="OpenVocabulary">Monologue</EventStructure>
+               <Channel Link="" Type="OpenVocabulary">Face to Face</Channel>
+            </CommunicationContext>
+            <Languages>
+               <Language>
+                  <Id>RFC1766:x-sil-DUT</Id>
+                  <Name Link="http://www.mpi.nl/IMDI/Schema/MPI-Languages.xml" Type="OpenVocabulary">Dutch</Name>
+               </Language>
+            </Languages>
+            <Keys>
+               <Key DefaultLink="" Link="http://www.mpi.nl/IMDI/Schema/Content-Genre-Interactional.xml" Name="IMDI__1_9.Interactional" Type="OpenVocabularyList"/>
+               <Key DefaultLink="" Link="http://www.mpi.nl/IMDI/Schema/Content-Genre-Discursive.xml" Name="IMDI__1_9.Discursive" Type="OpenVocabularyList"/>
+               <Key DefaultLink="" Link="http://www.mpi.nl/IMDI/Schema/Content-Genre-Performance.xml" Name="IMDI__1_9.Interactional" Type="OpenVocabularyList"/>
+               <Key DefaultLink="" Link="http://www.mpi.nl/CGN/Schema/CGN.textClass.target.xml" Name="CGN.textClass.target" Type="OpenVocabulary">ttn,prep1,mod3,dom2</Key>
+               <Key DefaultLink="" Link="http://www.mpi.nl/CGN/Schema/CGN.textClass.keywords.xml" Name="CGN.textClass.keywords" Type="OpenVocabulary"/>
+               <Key DefaultLink="" Link="http://www.mpi.nl/CGN/Schema/CGN.activity.xml" Name="CGN.activity" Type="OpenVocabulary">Unspecified</Key>
+            </Keys>
+            <Description LanguageId="ISO639:eng" Link="">This file was generated from an IMDI 1.9 file and transformed to IMDI 3.0. The substructure of Genre is replaced by two elements named &quot;Genre&quot; and &quot;SubGenre&quot;. The original content of Genre substructure was: Interactional = '', Discursive = '', Performance = ''. These values have been added as Keys to the Content information.</Description>
+            <Description LanguageId="" Link=""/>
+         </Content>
+         <Actors>
+            <Description LanguageId="ISO639:eng">
+  	Participant interaction = 
+  			NOT APPLICABLE
+  		
+  	Number of active participants = 1
+  	Number of passive participants = no
+  	---------------------------------------------------
+  	Active Speaker: not used
+  	Passive Speaker: not used
+  	Relation: not used
+  	Mutual: not used
+  	---------------------------------------------------
+  </Description>
+            <Actor>
+               <Role Link="http://www.mpi.nl/IMDI/Schema/Actor-Role.xml" Type="OpenVocabulary">presenter</Role>
+               <Name/>
+               <FullName/>
+               <Code>N00056</Code>
+               <FamilySocialRole Link="http://www.mpi.nl/IMDI/Schema/Actor-FamilySocialRole.xml" Type="OpenVocabularyList"/>
+               <Languages>
+                  <Language>
+                     <Id>RFC1766:x-sil-DUT</Id>
+                     <Name Link="http://www.mpi.nl/IMDI/Schema/IMDI-Languages.xml" Type="OpenVocabulary">Dutch</Name>
+                     <Description LanguageId="ISO639:eng">First Language</Description>
+                  </Language>
+                  <Language>
+                     <Id>RFC1766:x-sil-DUT</Id>
+                     <Name Link="http://www.mpi.nl/IMDI/Schema/IMDI-Languages.xml" Type="OpenVocabulary">Dutch</Name>
+                     <Description LanguageId="ISO639:eng">Home Language</Description>
+                  </Language>
+                  <Language>
+                     <Id>RFC1766:x-sil-DUT</Id>
+                     <Name Link="http://www.mpi.nl/IMDI/Schema/IMDI-Languages.xml" Type="OpenVocabulary">Dutch</Name>
+                     <Description LanguageId="ISO639:eng">Work Language</Description>
+                  </Language>
+               </Languages>
+               <EthnicGroup Type="OpenVocabulary"/>
+               <Age>32</Age>
+               <BirthDate>Unspecified</BirthDate>
+               <Sex Type="OpenVocabulary">Male</Sex>
+               <Education>high</Education>
+               <Anonymized Type="ClosedVocabulary">true</Anonymized>
+               <Contact/>
+               <Keys>
+                  <Key Name="CGN.age" Type="OpenVocabulary">age2</Key>
+                  <Key Name="CGN.birth.year" Type="OpenVocabulary">1967</Key>
+                  <Key DefaultLink="" Link="http://www.mpi.nl/CGN/Schema/CGN.birth.place.xml" Name="CGN.birth.place" Type="OpenVocabulary">NL-469</Key>
+                  <Key Name="CGN.birth.reg" Type="OpenVocabulary">regN2a</Key>
+                  <Key DefaultLink="" Link="http://www.mpi.nl/CGN/Schema/CGN.Language.xml" Name="CGN.firstLang" Type="ClosedVocabulary">SD</Key>
+                  <Key DefaultLink="" Link="http://www.mpi.nl/CGN/Schema/CGN.Language.xml" Name="CGN.homeLang" Type="ClosedVocabulary">SD</Key>
+                  <Key DefaultLink="" Link="http://www.mpi.nl/CGN/Schema/CGN.Language.xml" Name="CGN.workLang" Type="ClosedVocabulary">SD</Key>
+                  <Key DefaultLink="" Link="http://www.mpi.nl/CGN/Schema/CGN.residence.place.xml" Name="CGN.residence.place" Type="OpenVocabulary">NL-46-</Key>
+                  <Key DefaultLink="" Link="http://www.mpi.nl/CGN/Schema/CGN.Region.xml" Name="CGN.residence.reg" Type="ClosedVocabulary">regN4a</Key>
+                  <Key DefaultLink="" Link="http://www.mpi.nl/CGN/Schema/CGN.communitySize.xml" Name="CGN.education.placesize" Type="ClosedVocabulary">size3</Key>
+                  <Key DefaultLink="" Link="http://www.mpi.nl/CGN/Schema/CGN.education.place.xml" Name="CGN.education.place" Type="OpenVocabulary">NL-46-</Key>
+                  <Key DefaultLink="" Link="http://www.mpi.nl/CGN/Schema/CGN.Region.xml" Name="CGN.education.reg" Type="ClosedVocabulary">regN4a</Key>
+                  <Key Name="CGN.education.type" Type="OpenVocabulary">universiteit</Key>
+                  <Key DefaultLink="" Link="http://www.mpi.nl/CGN/Schema/CGN.EducationLevel.xml" Name="CGN.education.level" Type="ClosedVocabulary">edu1</Key>
+                  <Key DefaultLink="" Link="http://www.mpi.nl/CGN/Schema/CGN.occupation.xml" Name="CGN.occupation" Type="OpenVocabulary">consultant</Key>
+                  <Key DefaultLink="" Link="http://www.mpi.nl/CGN/Schema/CGN.OccupationLevel.xml" Name="CGN.occupation.level" Type="ClosedVocabulary">occ2</Key>
+               </Keys>
+               <Description LanguageId="ISO639:eng">none</Description>
+            </Actor>
+            <Actor>
+               <Role Link="http://www.mpi.nl/IMDI/Schema/Actor-Role.xml" Type="OpenVocabulary">Collector</Role>
+               <Name/>
+               <FullName/>
+               <Code>Unspecified</Code>
+               <FamilySocialRole Link="http://www.mpi.nl/IMDI/Schema/Actor-FamilySocialRole.xml" Type="OpenVocabularyList">Unspecified</FamilySocialRole>
+               <Languages/>
+               <EthnicGroup Type="OpenVocabulary"/>
+               <Age>Unspecified</Age>
+               <BirthDate>Unspecified</BirthDate>
+               <Sex Type="OpenVocabulary">Unspecified</Sex>
+               <Education/>
+               <Anonymized Type="ClosedVocabulary">false</Anonymized>
+               <Contact>
+                  <Name>CLS-KUN</Name>
+                  <Address/>
+                  <Email/>
+                  <Organisation>CLS-KUN</Organisation>
+               </Contact>
+               <Keys/>
+               <Description/>
+            </Actor>
+         </Actors>
+      </MDGroup>
+      <Resources>
+         <MediaFile>
+            <ResourceLink ArchiveHandle="hdl:1839/00-0000-0000-000D-841C-8">../MediaFile/fn000056.m4a</ResourceLink>
+            <Type Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Type.xml" Type="ClosedVocabulary">audio</Type>
+            <Format Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Format.xml" Type="OpenVocabulary">audio/mp4</Format>
+            <Size>61336662</Size>
+            <Quality Type="ClosedVocabulary">Unspecified</Quality>
+            <RecordingConditions/>
+            <TimePosition>
+               <Start>Unspecified</Start>
+               <End>Unspecified</End>
+            </TimePosition>
+            <Access>
+               <Availability Type="OpenVocabulary"/>
+               <Date>Unspecified</Date>
+               <Owner/>
+               <Publisher/>
+               <Contact>
+                  <Name/>
+                  <Address/>
+                  <Email/>
+                  <Organisation/>
+               </Contact>
+               <Description LanguageId="" Link=""/>
+            </Access>
+            <Description LanguageId="" Link=""/>
+            <Keys>
+               <Key Name="" Type="OpenVocabulary"/>
+            </Keys>
+         </MediaFile>
+         <MediaFile ResourceId="N0x80564c0.0x808c360">
+            <ResourceLink ArchiveHandle="hdl:1839/00-0000-0000-0001-55CE-3">../MediaFile/fn000056.wav</ResourceLink>
+            <Type Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Type.xml" Type="ClosedVocabulary">audio</Type>
+            <Format Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Format.xml" Type="OpenVocabulary">audio/x-wav</Format>
+            <Size>38M</Size>
+            <Quality Type="ClosedVocabulary">Unknown</Quality>
+            <RecordingConditions>CGN.locale= Unspecified Medium= CAS tape microphone= Unspecified noise= Unspecified digitisation.recording= DIG1 digitisation.processing= DIG1 digitisation.status= DIG2</RecordingConditions>
+            <TimePosition>
+               <Start>Unknown</Start>
+               <End>Unknown</End>
+            </TimePosition>
+            <Access>
+               <Availability Type="OpenVocabulary"/>
+               <Date>Unspecified</Date>
+               <Owner/>
+               <Publisher>ELDA</Publisher>
+               <Contact>
+                  <Name/>
+                  <Address/>
+                  <Email/>
+                  <Organisation/>
+               </Contact>
+               <Description/>
+            </Access>
+            <Description/>
+            <Keys/>
+         </MediaFile>
+         <WrittenResource ResourceId="N0x80564c0.0x808c7c0">
+            <ResourceLink ArchiveHandle="hdl:1839/00-0000-0000-0001-55CF-9">../Annotations/fn000056.bpt</ResourceLink>
+            <MediaResourceLink>../MediaFile/fn000056.wav</MediaResourceLink>
+            <Date/>
+            <Type Type="OpenVocabulary">Annotation</Type>
+            <SubType Link="http://www.mpi.nl/IMDI/Schema/AnnotationUnit-Type.xml" Type="OpenVocabularyList">phonetics</SubType>
+            <Format Link="http://www.mpi.nl/IMDI/Schema/AnnotationUnit-Format.xml" Type="OpenVocabulary">text/x-cgn-bpt+xml</Format>
+            <Size Type="OpenVocabulary">Unspecified</Size>
+            <Validation>
+               <Type Link="http://www.mpi.nl/IMDI/Schema/Validation-Type.xml" Type="ClosedVocabulary">Unspecified</Type>
+               <Methodology Link="http://www.mpi.nl/IMDI/Schema/Validation-Methodology.xml" Type="ClosedVocabulary">Unspecified</Methodology>
+               <Description LanguageId="" Link=""/>
+            </Validation>
+            <Derivation Link="http://www.mpi.nl/IMDI/Schema/WrittenResource-Derivation.xml" Type="ClosedVocabulary" XXX-Type="FixedCV">Annotation</Derivation>
+            <CharacterEncoding>ASCII</CharacterEncoding>
+            <ContentEncoding/>
+            <LanguageId Type="OpenVocabulary"/>
+            <Anonymized Type="ClosedVocabulary">false</Anonymized>
+            <Access>
+               <Availability Type="OpenVocabulary"/>
+               <Date>Unspecified</Date>
+               <Owner/>
+               <Publisher/>
+               <Contact>
+                  <Name/>
+                  <Address/>
+                  <Email/>
+                  <Organisation/>
+               </Contact>
+               <Description/>
+            </Access>
+            <Description/>
+            <Keys/>
+         </WrittenResource>
+         <WrittenResource ResourceId="N0x80564c0.0x808ccc8">
+            <ResourceLink ArchiveHandle="hdl:1839/00-0000-0000-0001-55D0-D">../Annotations/fn000056.tag</ResourceLink>
+            <MediaResourceLink>../MediaFile/fn000056.wav</MediaResourceLink>
+            <Date/>
+            <Type Type="OpenVocabulary">Annotation</Type>
+            <SubType Link="http://www.mpi.nl/IMDI/Schema/AnnotationUnit-Type.xml" Type="OpenVocabularyList">pos, lemma, marked</SubType>
+            <Format Link="http://www.mpi.nl/IMDI/Schema/AnnotationUnit-Format.xml" Type="OpenVocabulary">text/x-cgn-tag+xml</Format>
+            <Size Type="OpenVocabulary">Unspecified</Size>
+            <Validation>
+               <Type Link="http://www.mpi.nl/IMDI/Schema/Validation-Type.xml" Type="ClosedVocabulary">Unspecified</Type>
+               <Methodology Link="http://www.mpi.nl/IMDI/Schema/Validation-Methodology.xml" Type="ClosedVocabulary">Unspecified</Methodology>
+               <Description LanguageId="" Link=""/>
+            </Validation>
+            <Derivation Link="http://www.mpi.nl/IMDI/Schema/WrittenResource-Derivation.xml" Type="ClosedVocabulary" XXX-Type="FixedCV">Annotation</Derivation>
+            <CharacterEncoding>ASCII</CharacterEncoding>
+            <ContentEncoding/>
+            <LanguageId Type="OpenVocabulary"/>
+            <Anonymized Type="ClosedVocabulary">false</Anonymized>
+            <Access>
+               <Availability Type="OpenVocabulary"/>
+               <Date>Unspecified</Date>
+               <Owner/>
+               <Publisher/>
+               <Contact>
+                  <Name/>
+                  <Address/>
+                  <Email/>
+                  <Organisation/>
+               </Contact>
+               <Description/>
+            </Access>
+            <Description/>
+            <Keys/>
+         </WrittenResource>
+         <WrittenResource ResourceId="N0x80564c0.0x808d1d0">
+            <ResourceLink ArchiveHandle="hdl:1839/00-0000-0000-0001-55D1-C">../Annotations/fn000056.pri</ResourceLink>
+            <MediaResourceLink>../MediaFile/fn000056.wav</MediaResourceLink>
+            <Date/>
+            <Type Type="OpenVocabulary">Annotation</Type>
+            <SubType Link="http://www.mpi.nl/IMDI/Schema/AnnotationUnit-Type.xml" Type="OpenVocabularyList">orthography</SubType>
+            <Format Link="http://www.mpi.nl/IMDI/Schema/AnnotationUnit-Format.xml" Type="OpenVocabulary">text/x-cgn-pri+xml</Format>
+            <Size Type="OpenVocabulary">Unspecified</Size>
+            <Validation>
+               <Type Link="http://www.mpi.nl/IMDI/Schema/Validation-Type.xml" Type="ClosedVocabulary">Unspecified</Type>
+               <Methodology Link="http://www.mpi.nl/IMDI/Schema/Validation-Methodology.xml" Type="ClosedVocabulary">Unspecified</Methodology>
+               <Description LanguageId="" Link=""/>
+            </Validation>
+            <Derivation Link="http://www.mpi.nl/IMDI/Schema/WrittenResource-Derivation.xml" Type="ClosedVocabulary" XXX-Type="FixedCV">Annotation</Derivation>
+            <CharacterEncoding>ASCII</CharacterEncoding>
+            <ContentEncoding/>
+            <LanguageId Type="OpenVocabulary"/>
+            <Anonymized Type="ClosedVocabulary">false</Anonymized>
+            <Access>
+               <Availability Type="OpenVocabulary"/>
+               <Date>Unspecified</Date>
+               <Owner/>
+               <Publisher/>
+               <Contact>
+                  <Name/>
+                  <Address/>
+                  <Email/>
+                  <Organisation/>
+               </Contact>
+               <Description/>
+            </Access>
+            <Description/>
+            <Keys/>
+         </WrittenResource>
+         <WrittenResource>
+            <ResourceLink>../Annotations/fn000056.eaf</ResourceLink>
+            <MediaResourceLink>../MediaFile/fn000056.wav</MediaResourceLink>
+            <Date/>
+            <Type Type="OpenVocabulary">Annotation</Type>
+            <SubType Link="http://www.mpi.nl/IMDI/Schema/AnnotationUnit-Type.xml" Type="OpenVocabularyList">phonetics</SubType>
+            <Format Link="http://www.mpi.nl/IMDI/Schema/AnnotationUnit-Format.xml" Type="OpenVocabulary">text/x-eaf+xml</Format>
+            <Size Type="OpenVocabulary">Unspecified</Size>
+            <Validation>
+               <Type Link="http://www.mpi.nl/IMDI/Schema/Validation-Type.xml" Type="ClosedVocabulary">Unspecified</Type>
+               <Methodology Link="http://www.mpi.nl/IMDI/Schema/Validation-Methodology.xml" Type="ClosedVocabulary">Unspecified</Methodology>
+               <Description LanguageId="" Link=""/>
+            </Validation>
+            <Derivation Link="http://www.mpi.nl/IMDI/Schema/WrittenResource-Derivation.xml" Type="ClosedVocabulary" XXX-Type="FixedCV">Annotation</Derivation>
+            <CharacterEncoding>ASCII</CharacterEncoding>
+            <ContentEncoding/>
+            <LanguageId Type="OpenVocabulary"/>
+            <Anonymized Type="ClosedVocabulary">false</Anonymized>
+            <Access>
+               <Availability Type="OpenVocabulary"/>
+               <Date>Unspecified</Date>
+               <Owner/>
+               <Publisher/>
+               <Contact>
+                  <Name/>
+                  <Address/>
+                  <Email/>
+                  <Organisation/>
+               </Contact>
+               <Description/>
+            </Access>
+            <Description/>
+            <Keys/>
+         </WrittenResource>
+         <WrittenResource ResourceId="N0x80564c0.0x8091d98">
+            <ResourceLink ArchiveHandle="hdl:1839/00-0000-0000-0001-55D3-F">../Annotations/fn000056.skp</ResourceLink>
+            <MediaResourceLink>../MediaFile/fn000056.wav</MediaResourceLink>
+            <Date/>
+            <Type Type="OpenVocabulary">Annotation</Type>
+            <SubType Link="http://www.mpi.nl/IMDI/Schema/AnnotationUnit-Type.xml" Type="OpenVocabularyList">labelling</SubType>
+            <Format Link="http://www.mpi.nl/IMDI/Schema/AnnotationUnit-Format.xml" Type="OpenVocabulary">text/x-cgn-skp+xml</Format>
+            <Size Type="OpenVocabulary">Unspecified</Size>
+            <Validation>
+               <Type Link="http://www.mpi.nl/IMDI/Schema/Validation-Type.xml" Type="ClosedVocabulary">Unspecified</Type>
+               <Methodology Link="http://www.mpi.nl/IMDI/Schema/Validation-Methodology.xml" Type="ClosedVocabulary">Unspecified</Methodology>
+               <Description LanguageId="" Link=""/>
+            </Validation>
+            <Derivation Link="http://www.mpi.nl/IMDI/Schema/WrittenResource-Derivation.xml" Type="ClosedVocabulary" XXX-Type="FixedCV">Annotation</Derivation>
+            <CharacterEncoding>ASCII</CharacterEncoding>
+            <ContentEncoding/>
+            <LanguageId Type="OpenVocabulary"/>
+            <Anonymized Type="ClosedVocabulary">false</Anonymized>
+            <Access>
+               <Availability Type="OpenVocabulary"/>
+               <Date>Unspecified</Date>
+               <Owner/>
+               <Publisher/>
+               <Contact>
+                  <Name/>
+                  <Address/>
+                  <Email/>
+                  <Organisation/>
+               </Contact>
+               <Description/>
+            </Access>
+            <Description/>
+            <Keys/>
+         </WrittenResource>
+         <WrittenResource ResourceId="N0x80564c0.0x80922a0">
+            <ResourceLink ArchiveHandle="hdl:1839/00-0000-0000-0001-55D4-A">../Annotations/fn000056.tig</ResourceLink>
+            <MediaResourceLink>../MediaFile/fn000056.wav</MediaResourceLink>
+            <Date/>
+            <Type Type="OpenVocabulary">Annotation</Type>
+            <SubType Link="http://www.mpi.nl/IMDI/Schema/AnnotationUnit-Type.xml" Type="OpenVocabularyList">syntax</SubType>
+            <Format Link="http://www.mpi.nl/IMDI/Schema/AnnotationUnit-Format.xml" Type="OpenVocabulary">text/x-cgn-tig+xml</Format>
+            <Size Type="OpenVocabulary">Unspecified</Size>
+            <Validation>
+               <Type Link="http://www.mpi.nl/IMDI/Schema/Validation-Type.xml" Type="ClosedVocabulary">Unspecified</Type>
+               <Methodology Link="http://www.mpi.nl/IMDI/Schema/Validation-Methodology.xml" Type="ClosedVocabulary">Unspecified</Methodology>
+               <Description LanguageId="" Link=""/>
+            </Validation>
+            <Derivation Link="http://www.mpi.nl/IMDI/Schema/WrittenResource-Derivation.xml" Type="ClosedVocabulary" XXX-Type="FixedCV">Annotation</Derivation>
+            <CharacterEncoding>ASCII</CharacterEncoding>
+            <ContentEncoding/>
+            <LanguageId Type="OpenVocabulary"/>
+            <Anonymized Type="ClosedVocabulary">false</Anonymized>
+            <Access>
+               <Availability Type="OpenVocabulary"/>
+               <Date>Unspecified</Date>
+               <Owner/>
+               <Publisher/>
+               <Contact>
+                  <Name/>
+                  <Address/>
+                  <Email/>
+                  <Organisation/>
+               </Contact>
+               <Description/>
+            </Access>
+            <Description/>
+            <Keys/>
+         </WrittenResource>
+      
+      
+         <Source>
+            <Id>CGN_WAV_29</Id>
+            <Format Link="http://www.mpi.nl/IMDI/Schema/Source-Format.xml" Type="OpenVocabulary">DVD</Format>
+            <Quality Type="ClosedVocabulary">Unknown</Quality>
+            <CounterPosition>
+               <Start>Unknown</Start>
+               <End>Unknown</End>
+            </CounterPosition>
+            <Access>
+               <Availability Type="OpenVocabulary"/>
+               <Date>Unspecified</Date>
+               <Owner/>
+               <Publisher/>
+               <Contact>
+                  <Name/>
+                  <Address/>
+                  <Email/>
+                  <Organisation/>
+               </Contact>
+               <Description/>
+            </Access>
+            <Description LanguageId="ISO639:eng">
+	Author: not applicable
+    
+	Title: presentation
+    
+	Publisher: not applicable
+    
+	Place: not applicable
+    
+	Date: not applicable
+    
+	Recording date: 1999
+	Recording time: Unspecified
+	From: Transferbureau KUN
+   
+	Produced from: CGN
+   </Description>
+            <Keys/>
+         </Source>
+      </Resources>
+  </Session>
 </METATRANSCRIPT>
