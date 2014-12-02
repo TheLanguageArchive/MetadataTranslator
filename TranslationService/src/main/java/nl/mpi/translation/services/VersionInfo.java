@@ -40,6 +40,7 @@ public class VersionInfo {
 
     private final static Logger logger = LoggerFactory.getLogger(VersionInfo.class);
     public static final String VERSION_PROPERTY_NAME = "Service-Version";
+    public static final String BUILDNUMBER_PROPERTY_NAME = "Service-BuildNumber";
     public static final String MANIFEST_FILE = "/META-INF/MANIFEST.MF";
     @Context
     private ServletContext servletContext;
@@ -47,33 +48,35 @@ public class VersionInfo {
     @GET
     @Produces(MediaType.TEXT_PLAIN)
     public String version() {
-	try {
-	    final String version = readManifestProperties().getProperty(VERSION_PROPERTY_NAME);
-	    logger.debug("Read version property from manifest: {} = {}", VERSION_PROPERTY_NAME, version);
+        try {
+            final String version = readManifestProperties().getProperty(VERSION_PROPERTY_NAME);
+            logger.debug("Read version property from manifest: {} = {}", VERSION_PROPERTY_NAME, version);
+            final String buildNumber = readManifestProperties().getProperty(BUILDNUMBER_PROPERTY_NAME);
+            logger.debug("Read build number property from manifest: {} = {}", BUILDNUMBER_PROPERTY_NAME, buildNumber);
 
-	    if (version == null) {
-		logger.warn("Version property not present in manifest. Returning 'UNKNWON'.");
-		return "UNKNOWN";
-	    } else {
-		return version;
-	    }
-	} catch (IOException ioEx) {
-	    logger.warn("Could not read version info from manifest", ioEx);
-	    return ioEx.getMessage();
-	}
+            if (version == null) {
+                logger.warn("Version property not present in manifest. Returning 'UNKNWON'.");
+                return "UNKNOWN";
+            } else {
+                return String.format("%s r%s", version, buildNumber);
+            }
+        } catch (IOException ioEx) {
+            logger.warn("Could not read version info from manifest", ioEx);
+            return ioEx.getMessage();
+        }
     }
 
     /**
-     * 
+     *
      * @return properties read from MANIFEST.MF file
-     * @throws IOException 
+     * @throws IOException
      */
     private Properties readManifestProperties() throws IOException {
-	logger.debug("Reading manifest from {}", MANIFEST_FILE);
-	final InputStream resourceAsStream = servletContext.getResourceAsStream(MANIFEST_FILE);
+        logger.debug("Reading manifest from {}", MANIFEST_FILE);
+        final InputStream resourceAsStream = servletContext.getResourceAsStream(MANIFEST_FILE);
 
-	final Properties properties = new Properties();
-	properties.load(new InputStreamReader(resourceAsStream));
-	return properties;
+        final Properties properties = new Properties();
+        properties.load(new InputStreamReader(resourceAsStream));
+        return properties;
     }
 }

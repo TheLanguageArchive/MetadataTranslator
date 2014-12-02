@@ -9,7 +9,7 @@ UPGRADING FROM ANY EARLIER VERSION TO 1.4
 
 The following optional context parameter can now be set:
 
-	nl.mpi.metadatatranslatorr.handleResolutionCacheExpiry
+	nl.mpi.metadatatranslator.handleResolutionCacheExpiry
 	
 It determines the amount of time to keep handle resolution results (in seconds).
 Set to 0 to disable caching. Default value is 600 (ten minutes).

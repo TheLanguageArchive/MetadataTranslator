@@ -157,6 +157,7 @@
 			<manifestEntries>
 			    <!-- Add project version number to manifest -->
 			    <Service-Version>${project.version}</Service-Version>
+                            <Service-BuildNumber>${buildNumber}</Service-BuildNumber>
 			</manifestEntries>
 		    </archive>
 		</configuration>
