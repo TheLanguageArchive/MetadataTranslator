@@ -45,6 +45,13 @@
     </xsl:template>
     
     <xsl:template match="lat-corpus" mode="TLACOLLECTION2CORPUS">
+        <xsl:choose>
+            <xsl:when test="normalize-space(child::History)!=''">
+                <History>
+                    <xsl:value-of select="child::History"/>
+                </History>
+            </xsl:when>
+        </xsl:choose>
         <Name>
             <xsl:value-of select="child::Name"/>
         </Name>

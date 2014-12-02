@@ -23,31 +23,18 @@
             </xsl:attribute>
             <Session>
                 <xsl:apply-templates select="//lat-session" mode="TLASESSION2IMDISESSION"/>
-                <xsl:for-each select="//ResourceProxy">
-                    <xsl:apply-templates select="."/>
-                </xsl:for-each>
-                
             </Session>
         </METATRANSCRIPT>
     </xsl:template>
     
-    <xsl:template match="ResourceProxy" mode="TLASESSION2IMDISESSION">
-         <xsl:choose>
-             <xsl:when test="child::ResourceType = 'Metadata'">
-                 <CorpusLink>
-                     <xsl:variable name="idref"><xsl:value-of select="@id" /></xsl:variable>
-                     <xsl:attribute name="Name"><xsl:value-of select="//CorpusLink[@ref=$idref]/CorpusLinkContent/@Name"/></xsl:attribute>
-                     <xsl:variable name="handle" select="tla:getHandleWithoutFormat(ResourceRef,'imdi')"/>
-                     <xsl:if test="string-length($handle) > 0">
-                         <xsl:attribute name="ArchiveHandle" select="tla:getHandleWithoutFormat(ResourceRef,'imdi')" />
-                     </xsl:if>
-                     <xsl:value-of select="//CorpusLink[@ref=$idref]/CorpusLinkContent"/>                     
-                 </CorpusLink>
-             </xsl:when>
-          </xsl:choose> 
-    </xsl:template>
-    
     <xsl:template match="lat-session" mode="TLASESSION2IMDISESSION">
+        <xsl:choose>
+            <xsl:when test="normalize-space(child::History)!=''">
+                <History>
+                    <xsl:value-of select="child::History"/>
+                </History>
+            </xsl:when>
+        </xsl:choose>
         <Name>
             <xsl:value-of select="child::Name"/>
         </Name>
@@ -192,7 +179,15 @@
                     <Description>
                         <xsl:choose>
                             <xsl:when test="normalize-space(@xml:lang)!=''">
-                                <xsl:attribute name="LanguageId" select="concat('ISO639-3:',@xml:lang)" /> <!-- this probably needs to be more sophisticated to cover all cases -->
+                                <xsl:choose>
+                                    <xsl:when test="string-length(@xml:lang)=3">
+                                        <xsl:attribute name="LanguageId" select="concat('ISO639-3:',@xml:lang)" /> <!-- this probably needs to be more sophisticated to cover all cases -->                                        
+                                    </xsl:when>
+                                    <xsl:otherwise>
+                                        <xsl:message>WARN: encountered xml:lang attribute with a length != 3, skipped.</xsl:message>
+                                    </xsl:otherwise>
+                                </xsl:choose>
+                                
                             </xsl:when>
                         </xsl:choose>                
                         <xsl:value-of select="."/>
