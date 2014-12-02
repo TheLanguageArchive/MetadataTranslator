@@ -61,9 +61,25 @@ $LastChangedDate: 2013-08-14 11:25:31 +0200 (Wed, 14 Aug 2013) $
         <xsl:param name="profile"/>
         <xsl:param name="type"/>
         <Header>
-            <MdCreator>imdi2clarin.xsl</MdCreator>
+            <MdCreator>
+            	<xsl:choose>
+            		<xsl:when test="normalize-space(@Originator)!=''">
+            			<xsl:value-of select="@Originator"/>
+            		</xsl:when>
+            		<xsl:otherwise>
+            			<xsl:text>imdi2cmdi.xsl</xsl:text>
+            		</xsl:otherwise>
+            	</xsl:choose>
+            </MdCreator>
             <MdCreationDate>
-                <xsl:value-of select="format-date(current-date(), '[Y]-[M01]-[D01]')"/>
+            	<xsl:choose>
+            		<xsl:when test="normalize-space(@Date)!=''">
+            			<xsl:value-of select="@Date"/>
+            		</xsl:when>
+            		<xsl:otherwise>
+            			<xsl:value-of select="format-date(current-date(), '[Y]-[M01]-[D01]')"/>
+            		</xsl:otherwise>
+            	</xsl:choose>
             </MdCreationDate>
             <MdSelfLink>
                 <xsl:choose>
@@ -146,6 +162,7 @@ $LastChangedDate: 2013-08-14 11:25:31 +0200 (Wed, 14 Aug 2013) $
 
     <xsl:template match="Corpus">
         <lat-corpus>
+        	<xsl:apply-templates select="preceding-sibling::History"/>
             <xsl:apply-templates select="child::Name"/>
             <xsl:apply-templates select="child::Title"/>
             <xsl:variable name="descriptions" select="Description[normalize-space(@ArchiveHandle)='' and normalize-space(@Link)=''][normalize-space(.)!='']"/>
@@ -521,6 +538,10 @@ $LastChangedDate: 2013-08-14 11:25:31 +0200 (Wed, 14 Aug 2013) $
 	<xsl:template match="child::History">
 		<History>
 			<xsl:value-of select="."/>
+			<!--<xsl:value-of select="system-property('line.separator')"/>-->
+			<xsl:text> NAME:imdi2cmdi.xsl DATE:</xsl:text>
+			<xsl:value-of select="current-dateTime()"/>
+			<xsl:text>.</xsl:text>
 		</History>
 	</xsl:template>
 	
