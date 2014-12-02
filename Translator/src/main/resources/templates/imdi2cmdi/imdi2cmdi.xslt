@@ -171,11 +171,9 @@ $LastChangedDate: 2013-08-14 11:25:31 +0200 (Wed, 14 Aug 2013) $
             <xsl:if test="exists(child::CorpusLink)">
                 <xsl:for-each select="CorpusLink">
                     <CorpusLink ref="{generate-id(.)}">
-                        <CorpusLinkContent>
-                            <!--<xsl:attribute name="ArchiveHandle" select="@ArchiveHandle"/>-->
-                            <xsl:attribute name="Name" select="@Name"/>
-                            <xsl:value-of select="."/>
-                        </CorpusLinkContent>
+						<Name>
+							<xsl:value-of select="@Name"/>
+						</Name>
                     </CorpusLink>
                 </xsl:for-each>
             </xsl:if>
@@ -490,6 +488,7 @@ $LastChangedDate: 2013-08-14 11:25:31 +0200 (Wed, 14 Aug 2013) $
 
     <xsl:template match="Session">
         <lat-session>
+        	<xsl:apply-templates select="preceding-sibling::History"/>
             <xsl:apply-templates select="child::Name"/>
             <xsl:apply-templates select="child::Title"/>
             <xsl:apply-templates select="child::Date"/>
@@ -519,7 +518,13 @@ $LastChangedDate: 2013-08-14 11:25:31 +0200 (Wed, 14 Aug 2013) $
         </lat-session>
     </xsl:template>
 
-    <xsl:template match="child::Name">
+	<xsl:template match="child::History">
+		<History>
+			<xsl:value-of select="."/>
+		</History>
+	</xsl:template>
+	
+	<xsl:template match="child::Name">
         <Name>
             <xsl:value-of select="."/>
         </Name>
