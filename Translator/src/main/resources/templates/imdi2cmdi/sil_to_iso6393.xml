@@ -1,4 +1,4 @@
-<languages>
+<languages xmlns="http://www.sil.org/">
 
 <!-- 
  mapping from x-sil- codes to ISO-639-3 codes, to be used by olac2cmdi.xsl

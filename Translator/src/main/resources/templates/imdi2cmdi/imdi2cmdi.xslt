@@ -4,7 +4,7 @@ $Rev: 3378 $
 $LastChangedDate: 2013-08-14 11:25:31 +0200 (Wed, 14 Aug 2013) $
 -->
 <xsl:stylesheet xmlns="http://www.clarin.eu/cmd/" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-	version="2.0" xpath-default-namespace="http://www.mpi.nl/IMDI/Schema/IMDI" xmlns:imdi="http://www.mpi.nl/IMDI/Schema/IMDI" xmlns:lat="http://lat.mpi.nl/">
+	version="2.0" xpath-default-namespace="http://www.mpi.nl/IMDI/Schema/IMDI" xmlns:imdi="http://www.mpi.nl/IMDI/Schema/IMDI" xmlns:lat="http://lat.mpi.nl/" xmlns:iso="http://www.iso.org/" xmlns:sil="http://www.sil.org/">
     <!-- this is a version of imdi2clarin.xsl that batch processes a whole directory structure of imdi files, call it from the command line like this:
         java -jar saxon8.jar -it main batch-imdi2clarin.xsl
         the last template in this file has to be modified to reflect the actual directory name
@@ -28,10 +28,18 @@ $LastChangedDate: 2013-08-14 11:25:31 +0200 (Wed, 14 Aug 2013) $
 	
 	<xsl:param name="formatCMDI" select="true()"/>
 	
-	<xsl:variable name="lang-top" select="document('sil_to_iso6393.xml')/languages"/>
-	<xsl:key name="iso-lookup" match="lang" use="sil"/>
+	<xsl:param name="base" select="base-uri(document(''))"/>
 	
-    <!-- definition of the SRU-searchable collections at TLA (for use later on) -->
+	<xsl:variable name="sil-lang-top" select="document(resolve-uri('sil_to_iso6393.xml',$base))/sil:languages"/>
+	<xsl:key name="sil-lookup" match="sil:lang" use="sil:sil"/>
+	
+	<xsl:variable name="iso-lang-uri" select="resolve-uri('iso2iso.xml',$base)"/>
+	<xsl:variable name="iso-lang-doc" select="document($iso-lang-uri)"/>
+	<xsl:variable name="iso-lang-top" select="$iso-lang-doc/iso:m"/>
+	<xsl:key name="iso639_1-lookup" match="iso:e" use="iso:o"/>
+	<xsl:key name="iso639_2-lookup" match="iso:e" use="iso:b|iso:t"/>
+	
+	<!-- definition of the SRU-searchable collections at TLA (for use later on) -->
     <xsl:variable name="SruSearchable">childes,ESF corpus,IFA corpus,MPI CGN,talkbank</xsl:variable>
     
 
@@ -539,7 +547,7 @@ $LastChangedDate: 2013-08-14 11:25:31 +0200 (Wed, 14 Aug 2013) $
 		<History>
 			<xsl:value-of select="."/>
 			<!--<xsl:value-of select="system-property('line.separator')"/>-->
-			<xsl:text> NAME:imdi2cmdi.xsl DATE:</xsl:text>
+			<xsl:text> NAME:imdi2cmdi.xslt DATE:</xsl:text>
 			<xsl:value-of select="current-dateTime()"/>
 			<xsl:text>.</xsl:text>
 		</History>
@@ -1158,11 +1166,81 @@ $LastChangedDate: 2013-08-14 11:25:31 +0200 (Wed, 14 Aug 2013) $
 		<xsl:variable name="codestr" select="substring-after($language,':')"/>
 		<xsl:variable name="code">
 			<xsl:choose>
+				<xsl:when test="$codeset='ISO639-1'">
+					<xsl:choose>
+						<xsl:when test="$codestr='xxx'">
+							<xsl:value-of select="'und'"/>
+						</xsl:when>
+						<xsl:otherwise>
+							<xsl:variable name="iso" select="key('iso639_1-lookup', $codestr, $iso-lang-top)/iso:i"/>
+							<xsl:choose>
+								<xsl:when test="$iso!='xxx'">
+									<xsl:value-of select="$iso"/>
+								</xsl:when>
+								<xsl:otherwise>
+									<xsl:value-of select="'und'"/>
+								</xsl:otherwise>
+							</xsl:choose>
+						</xsl:otherwise>
+					</xsl:choose>
+				</xsl:when>
+				<xsl:when test="$codeset='ISO639-2'">
+					<xsl:choose>
+						<xsl:when test="$codestr='xxx'">
+							<xsl:value-of select="'und'"/>
+						</xsl:when>
+						<xsl:otherwise>
+							<xsl:variable name="iso" select="key('iso639_2-lookup', $codestr, $iso-lang-top)/iso:i"/>
+							<xsl:choose>
+								<xsl:when test="$iso!='xxx'">
+									<xsl:value-of select="$iso"/>
+								</xsl:when>
+								<xsl:otherwise>
+									<xsl:value-of select="'und'"/>
+								</xsl:otherwise>
+							</xsl:choose>
+						</xsl:otherwise>
+					</xsl:choose>
+				</xsl:when>
 				<xsl:when test="$codeset='ISO639-3'">
 					<xsl:choose>
 						<xsl:when test="$codestr='xxx'">
-							<xsl:message>WRN: IMDI source[<xsl:value-of select="$uri-base"/>]: 'xxx' is a potential valid ISO 639-3 code, but for now mapped to 'und'!</xsl:message>
 							<xsl:value-of select="'und'"/>
+						</xsl:when>
+						<xsl:when test="matches($codestr,'^[a-z]{3}$')">
+							<xsl:value-of select="$codestr"/>
+						</xsl:when>
+						<xsl:otherwise>
+							<xsl:value-of select="'und'"/>
+						</xsl:otherwise>
+					</xsl:choose>
+				</xsl:when>
+				<xsl:when test="$codeset='ISO639'">
+					<xsl:choose>
+						<xsl:when test="$codestr='xxx'">
+							<xsl:value-of select="'und'"/>
+						</xsl:when>
+						<xsl:when test="exists(key('iso639_2-lookup', $codestr, $iso-lang-top))">
+							<xsl:variable name="iso" select="key('iso639_2-lookup', $codestr, $iso-lang-top)/iso:i"/>
+							<xsl:choose>
+								<xsl:when test="$iso!='xxx'">
+									<xsl:value-of select="$iso"/>
+								</xsl:when>
+								<xsl:otherwise>
+									<xsl:value-of select="'und'"/>
+								</xsl:otherwise>
+							</xsl:choose>
+						</xsl:when>
+						<xsl:when test="exists(key('iso639_1-lookup', $codestr, $iso-lang-top))">
+							<xsl:variable name="iso" select="key('iso639_1-lookup', $codestr, $iso-lang-top)/iso:i"/>
+							<xsl:choose>
+								<xsl:when test="$iso!='xxx'">
+									<xsl:value-of select="$iso"/>
+								</xsl:when>
+								<xsl:otherwise>
+									<xsl:value-of select="'und'"/>
+								</xsl:otherwise>
+							</xsl:choose>
 						</xsl:when>
 						<xsl:when test="matches($codestr,'^[a-z]{3}$')">
 							<xsl:value-of select="$codestr"/>
@@ -1175,7 +1253,7 @@ $LastChangedDate: 2013-08-14 11:25:31 +0200 (Wed, 14 Aug 2013) $
 				<xsl:when test="$codeset='RFC1766'">
 					<xsl:choose>
 						<xsl:when test="starts-with($codestr,'x-sil-')">
-							<xsl:variable name="iso" select="key('iso-lookup', lower-case(replace($codestr, 'x-sil-', '')), $lang-top)/iso"/>
+							<xsl:variable name="iso" select="key('sil-lookup', lower-case(replace($codestr, 'x-sil-', '')), $sil-lang-top)/sil:iso"/>
 							<xsl:choose>
 								<xsl:when test="$iso!='xxx'">
 									<xsl:value-of select="$iso"/>
