@@ -4,26 +4,23 @@
     xmlns:lat="http://lat.mpi.nl/" FormatId="IMDI 3.0" Type="SESSION" Version="0"
     xsi:schemaLocation="http://www.mpi.nl/IMDI/Schema/IMDI http://www.mpi.nl/IMDI/Schema/IMDI_3.0.xsd"
     ArchiveHandle="hdl:1839/00-0000-0000-0009-56D7-A@format=imdi"
-    Originator="Metadata Translator: TLASESSION2IMDISESSION.xslt hdl:1839/00-0000-0000-0009-56D7-A"
-    Date="2014-11-25">
-    <History>NAME:IMDI_1_9_TO_3_0 DATE:2008-06-19T11:43:27-02:00. NAME:imdi2cmdi.xslt DATE:2014-12-03T14:44:30.851+01:00.</History>
+    Originator="Metadata Translator: TLASESSION2IMDISESSION.xslt hdl:1839/00-0000-0000-0009-56D7-A@format=cmdi"
+    Date="2008-06-19">
+    <History>NAME:IMDI_1_9_TO_3_0 DATE:xx. NAME:imdi2cmdi.xslt DATE:xx.</History>
     <Session>
         <Name>NAR_Annalena_2a</Name>
         <Title>given-new experiment eliciting narratives</Title>
         <Date>Unspecified</Date>
-        <Description LanguageId="" Link="">Child data from an elicited narrative task based on a
-            stimulus set involving reference to a given (introduced) and a new item presented
-            simultaneously. </Description>
+        <Description LanguageId="ISO639-3:eng">Child data from an elicited narrative task based on a stimulus set involving reference to a given (introduced) and a new item presented simultaneously. </Description>
         <MDGroup>
             <Location>
-                <Continent Type="OpenVocabulary">Europe</Continent>
-                <Country Type="OpenVocabulary">Germany</Country>
+                <Continent Link="http://www.mpi.nl/IMDI/Schema/Continents.xml" Type="ClosedVocabulary">Europe</Continent>
+                <Country Link="http://www.mpi.nl/IMDI/Schema/Countries.xml" Type="OpenVocabulary">Germany</Country>
                 <Region/>
                 <Address/>
             </Location>
             <Project>
-                <Name>nformation structure in child language: word order in co-ordinate noun phrases
-                    in childrens' elicited narratives</Name>
+                <Name>nformation structure in child language: word order in co-ordinate noun phrases in childrens' elicited narratives</Name>
                 <Title/>
                 <Id/>
                 <Contact>
@@ -32,10 +29,7 @@
                     <Email/>
                     <Organisation/>
                 </Contact>
-                <Description LanguageId="" Link="">This project wants to investigate effects of
-                    information structure (given vs. new) on word order in co-ordinate noun phrases.
-                    Word order produced by 3 to 5 year old children acquiring German is studied in
-                    an elicited narrative task.</Description>
+                <Description>This project wants to investigate effects of information structure (given vs. new) on word order in co-ordinate noun phrases. Word order produced by 3 to 5 year old children acquiring German is studied in an elicited narrative task.</Description>
             </Project>
             <Keys>
                 <Key Name="Recording_place" Type="OpenVocabulary">St. Anna Kindergarten</Key>

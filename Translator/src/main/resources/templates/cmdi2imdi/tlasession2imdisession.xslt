@@ -21,9 +21,7 @@
             <xsl:attribute name="Date">
                 <xsl:value-of select="//Header/MdCreationDate" />
             </xsl:attribute>
-            <Session>
-                <xsl:apply-templates select="//lat-session" mode="TLASESSION2IMDISESSION"/>
-            </Session>
+            <xsl:apply-templates select="//lat-session" mode="TLASESSION2IMDISESSION"/>
         </METATRANSCRIPT>
     </xsl:template>
     
@@ -35,29 +33,30 @@
                 </History>
             </xsl:when>
         </xsl:choose>
-        <Name>
-            <xsl:value-of select="child::Name"/>
-        </Name>
-        <Title>
-            <xsl:value-of select="child::Title"/>
-        </Title>   
-        <Date>
-            <xsl:value-of select="child::Date"/>
-        </Date>
-        <xsl:apply-templates select="descriptions" mode="TLASESSION2IMDISESSION"/>
-        <xsl:apply-templates select="InfoLink" mode="TLASESSION2IMDISESSION"/>
-        <MDGroup>
-            <xsl:apply-templates select="Location" mode="TLASESSION2IMDISESSION"/>
-            <xsl:apply-templates select="Project" mode="TLASESSION2IMDISESSION"/>
-            <Keys />
-            <xsl:apply-templates select="Content" mode="TLASESSION2IMDISESSION"/>
-            <Actors>
-                <xsl:apply-templates select="//Actor" mode="TLASESSION2IMDISESSION"/>                
-            </Actors>
-        </MDGroup>
-        <xsl:apply-templates select="Resources" mode="TLASESSION2IMDISESSION"/>
-        <References>
-        </References>
+        <Session>
+            <Name>
+                <xsl:value-of select="child::Name"/>
+            </Name>
+            <Title>
+                <xsl:value-of select="child::Title"/>
+            </Title>   
+            <Date>
+                <xsl:value-of select="child::Date"/>
+            </Date>
+            <xsl:apply-templates select="descriptions" mode="TLASESSION2IMDISESSION"/>
+            <xsl:apply-templates select="InfoLink" mode="TLASESSION2IMDISESSION"/>
+            <MDGroup>
+                <xsl:apply-templates select="Location" mode="TLASESSION2IMDISESSION"/>
+                <xsl:apply-templates select="Project" mode="TLASESSION2IMDISESSION"/>
+                <xsl:apply-templates select="Keys" mode="TLASESSION2IMDISESSION"/>
+                <xsl:apply-templates select="Content" mode="TLASESSION2IMDISESSION"/>
+                <Actors>
+                    <xsl:apply-templates select="//Actor" mode="TLASESSION2IMDISESSION"/>                
+                </Actors>
+            </MDGroup>
+            <xsl:apply-templates select="Resources" mode="TLASESSION2IMDISESSION"/>
+            <References />
+        </Session>
     </xsl:template>
     
     <xsl:template match="Project" mode="TLASESSION2IMDISESSION">
@@ -239,7 +238,7 @@
                 <xsl:attribute name="ArchiveHandle"><xsl:value-of select="//ResourceProxy[@id eq current()/@ref]/ResourceRef/text()"/></xsl:attribute>
                 <xsl:value-of select="//ResourceProxy[@id eq current()/@ref]/ResourceRef/@lat:localURI"/>
             </ResourceLink>
-            <MediaResourceLink></MediaResourceLink> <!-- to do -->            
+            <MediaResourceLink></MediaResourceLink> <!-- todo -->            
             <Date><xsl:value-of select="Date"/></Date>
             <Type><xsl:value-of select="Type"/></Type>
             <SubType><xsl:value-of select="SubType"/></SubType>
