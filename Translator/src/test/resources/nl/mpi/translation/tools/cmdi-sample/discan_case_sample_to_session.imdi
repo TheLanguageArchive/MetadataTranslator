@@ -74,7 +74,7 @@
       </MDGroup>
       <Resources>
          <WrittenResource>
-            <ResourceLink ArchiveHandle="hdl:1234-abc"/>
+            <ResourceLink ArchiveHandle="hdl:1234-abc">resource1.xml</ResourceLink>
             <MediaResourceLink/>
             <Date/>
             <Type>Annotation</Type>

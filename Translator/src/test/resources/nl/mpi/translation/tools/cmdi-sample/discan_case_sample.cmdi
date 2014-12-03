@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CMD xmlns="http://www.clarin.eu/cmd/"
      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+     xmlns:lat="http://lat.mpi.nl/"
      CMDVersion="1.1"
      xsi:schemaLocation="http://www.clarin.eu/cmd/ http://catalog.clarin.eu/ds/ComponentRegistry/rest/registry/profiles/clarin.eu:cr1:p_1366895758243/xsd ">
    <Header>
@@ -11,7 +12,7 @@
       <ResourceProxyList>
          <ResourceProxy id="rbace7544-fa3d-43a1-85f5-18d40c532cc2">
             <ResourceType mimetype="text/xml">Resource</ResourceType>
-            <ResourceRef>hdl:1234-abc</ResourceRef>
+            <ResourceRef lat:localURI="resource1.xml">hdl:1234-abc</ResourceRef>
          </ResourceProxy>
          <ResourceProxy id="r288f55c5-2419-4764-b3b5-b1e94bfadaba">
             <ResourceType mimetype="text/xml">Resource</ResourceType>

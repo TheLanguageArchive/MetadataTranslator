@@ -3,6 +3,7 @@
     xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:tla="http://tla.mpi.nl"
+    xmlns:lat="http://lat.mpi.nl/"
     version="2.0" xpath-default-namespace="http://www.clarin.eu/cmd/">
     
     <xsl:include href="iprosla2imdi.xslt"/>
@@ -89,6 +90,10 @@
                 <xsl:attribute name="ArchiveHandle">
                     <xsl:value-of select="concat('hdl:',$handle)"/>
                 </xsl:attribute>
+                <xsl:variable name="localUri" select="ResourceRef/@lat:localURI" />
+                <xsl:if test="$localUri">
+                    <xsl:value-of select="ResourceRef/@lat:localURI"/>
+                </xsl:if>
             </xsl:when>
             <xsl:otherwise>
                 <xsl:value-of select="ResourceRef"/>

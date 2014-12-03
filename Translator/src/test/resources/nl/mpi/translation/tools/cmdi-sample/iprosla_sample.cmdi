@@ -3,6 +3,7 @@
      xmlns:dcr="http://www.isocat.org/ns/dcr"
      xmlns:ann="http://www.clarin.eu"
      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+     xmlns:lat="http://lat.mpi.nl/"
      xsi:schemaLocation="http://www.clarin.eu/cmd/ http://catalog.clarin.eu/ds/ComponentRegistry/rest/registry/profiles/clarin.eu:cr1:p_1331113992512/xsd" CMDVersion="1.1">
     <Header>
 	<MdCreator>MdCreator0</MdCreator>
@@ -15,7 +16,7 @@
 	<ResourceProxyList>
 	    <ResourceProxy id="ID001">
 		<ResourceType mimetype="mimetype1">Resource</ResourceType>
-		<ResourceRef>hdl:1234</ResourceRef>
+		<ResourceRef lat:localURI="myresource.mpg">hdl:1234</ResourceRef>
 	    </ResourceProxy>
 	    <ResourceProxy id="ID003">
 		<ResourceType mimetype="mimetype3">Resource</ResourceType>
