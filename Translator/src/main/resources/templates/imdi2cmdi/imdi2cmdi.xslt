@@ -301,34 +301,19 @@ $LastChangedDate: 2013-08-14 11:25:31 +0200 (Wed, 14 Aug 2013) $
             										<xsl:value-of select=" ./Name"/>
             									</Name>
             									<Dominant>
-            										<xsl:choose>
-            											<xsl:when test="normalize-space(Dominant)!=''">
-            												<xsl:value-of select="Dominant"/>
-            											</xsl:when>
-            											<xsl:otherwise>
-            												<xsl:text>Unspecified</xsl:text>
-            											</xsl:otherwise>
-            										</xsl:choose>
+            										<xsl:call-template name="orUnspecified">
+            											<xsl:with-param name="value" select="Dominant"/>
+            										</xsl:call-template>
             									</Dominant>
             									<SourceLanguage>
-            										<xsl:choose>
-            											<xsl:when test="normalize-space(SourceLanguage)!=''">
-            												<xsl:value-of select="SourceLanguage"/>
-            											</xsl:when>
-            											<xsl:otherwise>
-            												<xsl:text>Unspecified</xsl:text>
-            											</xsl:otherwise>
-            										</xsl:choose>
+            										<xsl:call-template name="orUnspecified">
+            											<xsl:with-param name="value" select="SourceLanguage"/>
+            										</xsl:call-template>
             									</SourceLanguage>
             									<TargetLanguage>
-            										<xsl:choose>
-            											<xsl:when test="normalize-space(TargetLanguage)!=''">
-            												<xsl:value-of select="TargetLanguage"/>
-            											</xsl:when>
-            											<xsl:otherwise>
-            												<xsl:text>Unspecified</xsl:text>
-            											</xsl:otherwise>
-            										</xsl:choose>
+            										<xsl:call-template name="orUnspecified">
+            											<xsl:with-param name="value" select="TargetLanguage"/>
+            										</xsl:call-template>
             									</TargetLanguage>
             									<xsl:variable name="descriptions" select="Description[normalize-space()!='']"/>
             									<xsl:if test="exists($descriptions)">
@@ -568,7 +553,9 @@ $LastChangedDate: 2013-08-14 11:25:31 +0200 (Wed, 14 Aug 2013) $
 
     <xsl:template match="child::Date">
         <Date>
-            <xsl:value-of select="."/>
+        	<xsl:call-template name="orUnspecified">
+        		<xsl:with-param name="value" select="."/>
+        	</xsl:call-template>
         </Date>
     </xsl:template>
 
@@ -583,14 +570,9 @@ $LastChangedDate: 2013-08-14 11:25:31 +0200 (Wed, 14 Aug 2013) $
     <xsl:template match="Location">
         <Location>
             <Continent>
-            	<xsl:choose>
-            		<xsl:when test="normalize-space(Continent)!=''">
-            			<xsl:value-of select="child::Continent"/>
-            		</xsl:when>
-            		<xsl:otherwise>
-            			<xsl:text>Unspecified</xsl:text>
-            		</xsl:otherwise>
-            	</xsl:choose>
+            	<xsl:call-template name="orUnspecified">
+            		<xsl:with-param name="value" select="Continent"/>
+            	</xsl:call-template>
             </Continent>
             <Country>
                 <xsl:value-of select="child::Country"/>
@@ -716,7 +698,9 @@ $LastChangedDate: 2013-08-14 11:25:31 +0200 (Wed, 14 Aug 2013) $
             </xsl:if>
             <xsl:if test="exists(child::PlanningType)">
                 <PlanningType>
-                    <xsl:value-of select="child::PlanningType"/>
+                	<xsl:call-template name="orUnspecified">
+                		<xsl:with-param name="value" select="PlanningType"/>
+                	</xsl:call-template>
                 </PlanningType>
             </xsl:if>
             <xsl:if test="exists(child::Involvement)">
@@ -764,34 +748,19 @@ $LastChangedDate: 2013-08-14 11:25:31 +0200 (Wed, 14 Aug 2013) $
     						<xsl:value-of select=" ./Name"/>
     					</Name>
     					<Dominant>
-    						<xsl:choose>
-    							<xsl:when test="normalize-space(Dominant)!=''">
-    								<xsl:value-of select="Dominant"/>
-    							</xsl:when>
-    							<xsl:otherwise>
-    								<xsl:text>Unspecified</xsl:text>
-    							</xsl:otherwise>
-    						</xsl:choose>
+    						<xsl:call-template name="orUnspecified">
+    							<xsl:with-param name="value" select="Dominant"/>
+    						</xsl:call-template>
     					</Dominant>
     					<SourceLanguage>
-    						<xsl:choose>
-    							<xsl:when test="normalize-space(SourceLanguage)!=''">
-    								<xsl:value-of select="SourceLanguage"/>
-    							</xsl:when>
-    							<xsl:otherwise>
-    								<xsl:text>Unspecified</xsl:text>
-    							</xsl:otherwise>
-    						</xsl:choose>
+    						<xsl:call-template name="orUnspecified">
+    							<xsl:with-param name="value" select="SourceLanguage"/>
+    						</xsl:call-template>
     					</SourceLanguage>
     					<TargetLanguage>
-    						<xsl:choose>
-    							<xsl:when test="normalize-space(TargetLanguage)!=''">
-    								<xsl:value-of select="TargetLanguage"/>
-    							</xsl:when>
-    							<xsl:otherwise>
-    								<xsl:text>Unspecified</xsl:text>
-    							</xsl:otherwise>
-    						</xsl:choose>
+    						<xsl:call-template name="orUnspecified">
+    							<xsl:with-param name="value" select="TargetLanguage"/>
+    						</xsl:call-template>
     					</TargetLanguage>
     					<xsl:if test="exists(child::Description)">
     						<descriptions>
@@ -895,24 +864,14 @@ $LastChangedDate: 2013-08-14 11:25:31 +0200 (Wed, 14 Aug 2013) $
                         <xsl:value-of select=" ./Name"/>
                     </Name>
                     <MotherTongue>
-                    	<xsl:choose>
-                    		<xsl:when test="normalize-space(MotherTongue)!=''">
-                    			<xsl:value-of select="MotherTongue"/>
-                    		</xsl:when>
-                    		<xsl:otherwise>
-                    			<xsl:text>Unspecified</xsl:text>
-                    		</xsl:otherwise>
-                    	</xsl:choose>
+                    	<xsl:call-template name="orUnspecified">
+                    		<xsl:with-param name="value" select="MotherTongue"/>
+                    	</xsl:call-template>
                     </MotherTongue>
                     <PrimaryLanguage>
-                    	<xsl:choose>
-                    		<xsl:when test="normalize-space(PrimaryLanguage)!=''">
-                    			<xsl:value-of select="PrimaryLanguage"/>
-                    		</xsl:when>
-                    		<xsl:otherwise>
-                    			<xsl:text>Unspecified</xsl:text>
-                    		</xsl:otherwise>
-                    	</xsl:choose>
+                    	<xsl:call-template name="orUnspecified">
+                    		<xsl:with-param name="value" select="PrimaryLanguage"/>
+                    	</xsl:call-template>
                     </PrimaryLanguage>
                     <xsl:if test="exists(child::Description)">
                         <descriptions>
@@ -965,7 +924,9 @@ $LastChangedDate: 2013-08-14 11:25:31 +0200 (Wed, 14 Aug 2013) $
                 </Start>
                 <xsl:if test="exists(descendant::End)">
                     <End>
-                        <xsl:apply-templates select="TimePosition/End"/>
+                    	<xsl:call-template name="orUnspecified">
+                    		<xsl:with-param name="value" select="TimePosition/End"/>
+                    	</xsl:call-template>
                     </End>
                 </xsl:if>
             </TimePosition>
@@ -1112,7 +1073,9 @@ $LastChangedDate: 2013-08-14 11:25:31 +0200 (Wed, 14 Aug 2013) $
                     </Start>
                     <xsl:if test="exists(descendant::End)">
                         <End>
-                            <xsl:apply-templates select="CounterPosition/End"/>
+                        	<xsl:call-template name="orUnspecified">
+                        		<xsl:with-param name="value" select="CounterPosition/End"/>
+                        	</xsl:call-template>
                         </End>
                     </xsl:if>
                 </CounterPosition>
@@ -1293,6 +1256,17 @@ $LastChangedDate: 2013-08-14 11:25:31 +0200 (Wed, 14 Aug 2013) $
 		</xsl:if>
 	</xsl:template>
 	
+	<xsl:template name="orUnspecified">
+		<xsl:param name="value"/>
+		<xsl:choose>
+			<xsl:when test="normalize-space($value)!=''">
+				<xsl:value-of select="$value"/>
+			</xsl:when>
+			<xsl:otherwise>
+				<xsl:text>Unspecified</xsl:text>
+			</xsl:otherwise>
+		</xsl:choose>
+	</xsl:template>
 
     <xsl:template name="main">
         <xsl:for-each
