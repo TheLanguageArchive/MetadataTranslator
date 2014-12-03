@@ -28,7 +28,8 @@ $LastChangedDate: 2013-08-14 11:25:31 +0200 (Wed, 14 Aug 2013) $
 	
 	<xsl:param name="formatCMDI" select="true()"/>
 	
-	<xsl:param name="base" select="base-uri(document(''))"/>
+	<!--<xsl:param name="base" select="base-uri(document(''))"/>-->
+	<xsl:param name="base" select="static-base-uri()"/>
 	
 	<xsl:variable name="sil-lang-top" select="document(resolve-uri('sil_to_iso6393.xml',$base))/sil:languages"/>
 	<xsl:key name="sil-lookup" match="sil:lang" use="sil:sil"/>
@@ -1015,6 +1016,13 @@ $LastChangedDate: 2013-08-14 11:25:31 +0200 (Wed, 14 Aug 2013) $
         <WrittenResource>
         	<xsl:if test="exists(ResourceLink[normalize-space(.)!=''])">
         		<xsl:attribute name="ref" select="generate-id(ResourceLink)"/>
+        	</xsl:if>
+        	<xsl:if test="exists(MediaResourceLink[normalize-space(.)!=''])">
+        		<xsl:variable name="loc" select="MediaResourceLink"/>
+        		<xsl:variable name="res" select="//ResourceLink[.=$loc]"/>
+        		<xsl:if test="exists($res)">
+        			<xsl:attribute name="mediaRef" select="generate-id($res)"/>
+        		</xsl:if>
         	</xsl:if>
         	<Date>
                 <xsl:value-of select=" ./Date"/>
