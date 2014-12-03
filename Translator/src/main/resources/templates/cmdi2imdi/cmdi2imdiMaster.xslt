@@ -22,7 +22,7 @@
     <xsl:param name="datum" select="//MdCreationDate" />
     
     <xsl:param name="service-base-uri" select="'http://lux16.mpi.nl/ds/TranslationService/translate'"/>
-    <xsl:param name="source-location"/>
+    <xsl:param name="source-location" select="base-uri()"/>
     
     
     <xsl:template match="/">
