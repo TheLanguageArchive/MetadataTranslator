@@ -6,7 +6,7 @@
      CMDVersion="1.1"
      xsi:schemaLocation="http://www.clarin.eu/cmd/ http://catalog.clarin.eu/ds/ComponentRegistry/rest/registry/profiles/clarin.eu:cr1:p_1407745712035/xsd">
    <Header>
-      <MdCreator>imdi2clarin.xsl</MdCreator>
+      <MdCreator>jacrin</MdCreator>
       <MdCreationDate>xx</MdCreationDate>
       <MdSelfLink>hdl:1839/00-0000-0000-0009-294C-9@format=cmdi</MdSelfLink>
       <MdProfile>clarin.eu:cr1:p_1407745712035</MdProfile>
@@ -43,12 +43,13 @@
    </Resources>
    <Components>
       <lat-session>
+         <History>NAME:IMDI_1_9_TO_3_0 DATE:xx. NAME:imdi2cmdi.xslt DATE:xx.</History>
          <Name>kleve-route</Name>
          <Title>route description to Kleve</Title>
          <Date>2002-10-30</Date>
          <descriptions>
-            <Description>This  recording was made to generate a freely available test resource including speech and gestures. The annotations were created by Peter and Kita who is gesture researcher at the MPI for Psycholinguistics.</Description>
-            <Description>Diese Aufnahme wurde erzeugt, um eine frei verfügbare Test Resource zur Verfügung stellen zu können, die Sprache und Gestik umfasst. Die Annotationen wurden von Peter und Kita, dem Gestik Researcher am MPI erzeugt.</Description>
+            <Description xml:lang="eng">This  recording was made to generate a freely available test resource including speech and gestures. The annotations were created by Peter and Kita who is gesture researcher at the MPI for Psycholinguistics.</Description>
+            <Description xml:lang="deu">Diese Aufnahme wurde erzeugt, um eine frei verfügbare Test Resource zur Verfügung stellen zu können, die Sprache und Gestik umfasst. Die Annotationen wurden von Peter und Kita, dem Gestik Researcher am MPI erzeugt.</Description>
          </descriptions>
          <Location>
             <Continent>Europe</Continent>
@@ -107,8 +108,8 @@
                <Key Name="IMDI__1_9.Interactional">Unspecified</Key>
             </Keys>
             <descriptions>
-               <Description>This file was generated from an IMDI 1.9 file and transformed to IMDI 3.0. The substructure of Genre is replaced by two elements named "Genre" and "SubGenre". The original content of Genre substructure was: Interactional = 'conversation', Discursive = 'explanation', Performance = 'Unspecified'. These values have been added as Keys to the Content information.</Description>
-               <Description>Peter explains how to come from Nijmegen to Kleve by car, such that Kita would be able to get there.</Description>
+               <Description xml:lang="eng">This file was generated from an IMDI 1.9 file and transformed to IMDI 3.0. The substructure of Genre is replaced by two elements named "Genre" and "SubGenre". The original content of Genre substructure was: Interactional = 'conversation', Discursive = 'explanation', Performance = 'Unspecified'. These values have been added as Keys to the Content information.</Description>
+               <Description xml:lang="eng">Peter explains how to come from Nijmegen to Kleve by car, such that Kita would be able to get there.</Description>
             </descriptions>
          </Content>
          <Actors>
@@ -375,7 +376,7 @@
                   </descriptions>
                </Access>
                <descriptions>
-                  <Description>This image is a screenshot from the planner http://www.viamichelin.nl/</Description>
+                  <Description xml:lang="eng">This image is a screenshot from the planner http://www.viamichelin.nl/</Description>
                </descriptions>
                <Keys>
                   <Key Name="Title">Route to Kleve</Key>
@@ -409,7 +410,7 @@
                   </descriptions>
                </Access>
                <descriptions>
-                  <Description>This image is a screenshot from the planner http://www.viamichelin.nl/</Description>
+                  <Description xml:lang="eng">This image is a screenshot from the planner http://www.viamichelin.nl/</Description>
                </descriptions>
                <Keys>
                   <Key Name="Title">Route to Kleve (map)</Key>

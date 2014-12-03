@@ -56,6 +56,8 @@ public class TranslatorImplTest {
     public static final String DISCAN_CASE__TO_SESSION_IMDI = CMDI_SAMPLES_LOCATION + "/discan_case_sample_to_session.imdi";
     public static final String SOUNDBITES_CMDI = CMDI_SAMPLES_LOCATION + "/soundbites_sample.cmdi";
     public static final String SOUNDBITES_TO_SESSION_IMDI = CMDI_SAMPLES_LOCATION + "/soundbites_sample_to_session.imdi";
+    public static final String LAT_SESSION = CMDI_SAMPLES_LOCATION + "/imdi_session_sample.cmdi";
+    public static final String LAT_SESSION_TO_IMDI = CMDI_SAMPLES_LOCATION + "/imdi_session_sample.imdi";
     // IMDI Sample locations
     public static final String IMDI_SAMPLES_LOCATION = "/nl/mpi/translation/tools/imdi-sample";
     public static final String IMDI_SAMPLE = IMDI_SAMPLES_LOCATION + "/kleve_route.imdi";
@@ -114,7 +116,7 @@ public class TranslatorImplTest {
     public void testGetIMDIForSoundBites() throws Exception {
 	logger.info("Testing translation of DiscAn case instance to IMDI");
 	testGetIMDI(SOUNDBITES_CMDI, SOUNDBITES_TO_SESSION_IMDI);
-    }
+    }    
 
     /**
      * Requests translation of an IPROSLA (profile clarin.eu:cr1:p_1331113992512) instance with a self link.
@@ -284,7 +286,9 @@ public class TranslatorImplTest {
      * @return normalized xml
      */
     private String normalizeIds(String xml) {
-	return xml.replaceAll("id=\"(.*)\"", "id=\"xx\"").replaceAll("ref=\"(.*)\"", "ref=\"xx\"");
+	return xml
+                .replaceAll("id=\"(.*)\"", "id=\"xx\"")
+                .replaceAll("ref=\"(.*)\"", "ref=\"xx\"");
     }
 
     /**
@@ -295,6 +299,8 @@ public class TranslatorImplTest {
      * @return normalized xml
      */
     private String normalizeDate(String xml) {
-	return xml.replaceAll("<MdCreationDate>.*</MdCreationDate>", "<MdCreationDate>xx</MdCreationDate>");
+	return xml
+                .replaceAll("<MdCreationDate>.*</MdCreationDate>", "<MdCreationDate>xx</MdCreationDate>")
+                .replaceAll("DATE:\\S+\\.", "DATE:xx.");
     }
 }

@@ -1,23 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<CMD xmlns:xsii="http://www.w3.org/2001/XMLSchema-instance"
+<CMD xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
      xmlns="http://www.clarin.eu/cmd/"
      xmlns:imdi="http://www.mpi.nl/IMDI/Schema/IMDI"
      xmlns:lat="http://lat.mpi.nl/"
+     xmlns:iso="http://www.iso.org/"
+     xmlns:sil="http://www.sil.org/"
      CMDVersion="1.1"
-     xsii:schemaLocation="http://www.clarin.eu/cmd/ http://catalog.clarin.eu/ds/ComponentRegistry/rest/registry/profiles/clarin.eu:cr1:p_1407745712035/xsd">
+     xsi:schemaLocation="http://www.clarin.eu/cmd/ http://catalog.clarin.eu/ds/ComponentRegistry/rest/registry/profiles/clarin.eu:cr1:p_1407745712035/xsd">
    <Header>
-      <MdCreator>imdi2clarin.xsl</MdCreator>
-      <MdCreationDate>2014-11-25</MdCreationDate>
-      <MdSelfLink>hdl:1839/00-0000-0000-0009-56D7-A</MdSelfLink>
+      <MdCreator>imdi2cmdi.xsl</MdCreator>
+      <MdCreationDate>2008-06-19</MdCreationDate>
+      <MdSelfLink>hdl:1839/00-0000-0000-0009-56D7-A@format=cmdi</MdSelfLink>
       <MdProfile>clarin.eu:cr1:p_1407745712035</MdProfile>
    </Header>
    <Resources>
       <ResourceProxyList>
-         <ResourceProxy id="d2e403">
+         <ResourceProxy id="d2e405">
             <ResourceType mimetype="audio/x-wav">Resource</ResourceType>
             <ResourceRef lat:localURI="../Media/NAR_Annalena_2a.wav">hdl:1839/00-0000-0000-0009-56D9-E</ResourceRef>
          </ResourceProxy>
-         <ResourceProxy id="d2e462">
+         <ResourceProxy id="d2e464">
             <ResourceType mimetype="text/x-eaf+xml">Resource</ResourceType>
             <ResourceRef lat:localURI="../Annotations/NAR_Annalena_2a.eaf">hdl:1839/00-0000-0000-0009-56D8-1</ResourceRef>
          </ResourceProxy>
@@ -27,6 +29,7 @@
    </Resources>
    <Components>
       <lat-session>
+         <History>NAME:IMDI_1_9_TO_3_0 DATE:2008-06-19T11:43:27-02:00. NAME:imdi2cmdi.xslt DATE:2014-12-03T14:44:30.851+01:00.</History>
          <Name>NAR_Annalena_2a</Name>
          <Title>given-new experiment eliciting narratives</Title>
          <Date>Unspecified</Date>
@@ -90,7 +93,7 @@
                <Key Name="IMDI__1_9.Interactional"/>
             </Keys>
             <descriptions>
-               <Description>This file was generated from an IMDI 1.9 file and transformed to IMDI 3.0. The substructure of Genre is replaced by two elements named "Genre" and "SubGenre". The original content of Genre substructure was: Interactional = '', Discursive = '', Performance = ''. These values have been added as Keys to the Content information. </Description>
+               <Description xml:lang="eng">This file was generated from an IMDI 1.9 file and transformed to IMDI 3.0. The substructure of Genre is replaced by two elements named "Genre" and "SubGenre". The original content of Genre substructure was: Interactional = '', Discursive = '', Performance = ''. These values have been added as Keys to the Content information. </Description>
                <Description>Child data from an elicited narrative task based on a stimulus set involving reference to a given (introduced) and a new item presented simultaneously. </Description>
             </descriptions>
          </Content>
@@ -242,7 +245,7 @@
             </Actor>
          </Actors>
          <Resources>
-            <MediaFile ref="d2e403">
+            <MediaFile ref="d2e405">
                <Type>audio</Type>
                <Format>audio/x-wav</Format>
                <Size/>
@@ -271,7 +274,7 @@
                   <Description/>
                </descriptions>
             </MediaFile>
-            <WrittenResource ref="d2e462">
+            <WrittenResource ref="d2e464">
                <Date>Unspecified</Date>
                <Type>Annotation</Type>
                <SubType/>

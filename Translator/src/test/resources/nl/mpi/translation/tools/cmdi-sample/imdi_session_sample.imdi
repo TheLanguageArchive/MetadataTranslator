@@ -1,11 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<METATRANSCRIPT xmlns="http://www.mpi.nl/IMDI/Schema/IMDI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ArchiveHandle="hdl:1839/00-0000-0000-0009-56D7-A" Date="2008-06-19" FormatId="IMDI 3.0" Type="SESSION" Version="2" xsi:schemaLocation="http://www.mpi.nl/IMDI/Schema/IMDI ./IMDI_3.0.xsd">
-    <History>NAME:IMDI_1_9_TO_3_0 DATE:2008-06-19T11:43:27-02:00.</History>
+<METATRANSCRIPT xmlns="http://www.mpi.nl/IMDI/Schema/IMDI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:tla="http://tla.mpi.nl"
+    xmlns:lat="http://lat.mpi.nl/" FormatId="IMDI 3.0" Type="SESSION" Version="0"
+    xsi:schemaLocation="http://www.mpi.nl/IMDI/Schema/IMDI http://www.mpi.nl/IMDI/Schema/IMDI_3.0.xsd"
+    ArchiveHandle="hdl:1839/00-0000-0000-0009-56D7-A@format=imdi"
+    Originator="Metadata Translator: TLASESSION2IMDISESSION.xslt hdl:1839/00-0000-0000-0009-56D7-A"
+    Date="2014-11-25">
+    <History>NAME:IMDI_1_9_TO_3_0 DATE:2008-06-19T11:43:27-02:00. NAME:imdi2cmdi.xslt DATE:2014-12-03T14:44:30.851+01:00.</History>
     <Session>
         <Name>NAR_Annalena_2a</Name>
         <Title>given-new experiment eliciting narratives</Title>
         <Date>Unspecified</Date>
-        <Description LanguageId="" Link="">Child data from an elicited narrative task based on a stimulus set involving reference to a given (introduced) and a new item presented simultaneously. </Description>
+        <Description LanguageId="" Link="">Child data from an elicited narrative task based on a
+            stimulus set involving reference to a given (introduced) and a new item presented
+            simultaneously. </Description>
         <MDGroup>
             <Location>
                 <Continent Type="OpenVocabulary">Europe</Continent>
@@ -14,7 +22,8 @@
                 <Address/>
             </Location>
             <Project>
-                <Name>nformation structure in child language: word order in co-ordinate noun phrases in childrens' elicited narratives</Name>
+                <Name>nformation structure in child language: word order in co-ordinate noun phrases
+                    in childrens' elicited narratives</Name>
                 <Title/>
                 <Id/>
                 <Contact>
@@ -23,7 +32,10 @@
                     <Email/>
                     <Organisation/>
                 </Contact>
-                <Description LanguageId="" Link="">This project wants to investigate effects of information structure (given vs. new) on word order in co-ordinate noun phrases. Word order produced by 3 to 5 year old children acquiring German is studied in an elicited narrative task.</Description>
+                <Description LanguageId="" Link="">This project wants to investigate effects of
+                    information structure (given vs. new) on word order in co-ordinate noun phrases.
+                    Word order produced by 3 to 5 year old children acquiring German is studied in
+                    an elicited narrative task.</Description>
             </Project>
             <Keys>
                 <Key Name="Recording_place" Type="OpenVocabulary">St. Anna Kindergarten</Key>
@@ -54,8 +66,14 @@
                     <Key Link="http://www.mpi.nl/IMDI/Schema/Content-Genre-Discursive.xml" Name="IMDI__1_9.Discursive" Type="OpenVocabularyList"/>
                     <Key Link="http://www.mpi.nl/IMDI/Schema/Content-Genre-Interactional.xml" Name="IMDI__1_9.Interactional" Type="OpenVocabularyList"/>
                 </Keys>
-                <Description LanguageId="ISO639:eng" Link="">This file was generated from an IMDI 1.9 file and transformed to IMDI 3.0. The substructure of Genre is replaced by two elements named "Genre" and "SubGenre". The original content of Genre substructure was: Interactional = '', Discursive = '', Performance = ''. These values have been added as Keys to the Content information. </Description>
-                <Description LanguageId="" Link="">Child data from an elicited narrative task based on a stimulus set involving reference to a given (introduced) and a new item presented simultaneously. </Description>
+                <Description LanguageId="ISO639:eng" Link="">This file was generated from an IMDI
+                    1.9 file and transformed to IMDI 3.0. The substructure of Genre is replaced by
+                    two elements named "Genre" and "SubGenre". The original content of Genre
+                    substructure was: Interactional = '', Discursive = '', Performance = ''. These
+                    values have been added as Keys to the Content information. </Description>
+                <Description LanguageId="" Link="">Child data from an elicited narrative task based
+                    on a stimulus set involving reference to a given (introduced) and a new item
+                    presented simultaneously. </Description>
             </Content>
             <Actors>
                 <Actor>
@@ -169,7 +187,8 @@
         </MDGroup>
         <Resources>
             <MediaFile ResourceId="N0x5128b0N0x5364d0">
-                <ResourceLink ArchiveHandle="hdl:1839/00-0000-0000-0009-56D9-E">../Media/NAR_Annalena_2a.wav</ResourceLink>
+                <ResourceLink ArchiveHandle="hdl:1839/00-0000-0000-0009-56D9-E"
+                    >../Media/NAR_Annalena_2a.wav</ResourceLink>
                 <Type Type="OpenVocabulary">audio</Type>
                 <Format Type="OpenVocabulary">audio/x-wav</Format>
                 <Size/>
@@ -196,7 +215,8 @@
                 <Keys/>
             </MediaFile>
             <WrittenResource ResourceId="N0x5128b0N0x541190">
-                <ResourceLink ArchiveHandle="hdl:1839/00-0000-0000-0009-56D8-1">../Annotations/NAR_Annalena_2a.eaf</ResourceLink>
+                <ResourceLink ArchiveHandle="hdl:1839/00-0000-0000-0009-56D8-1"
+                    >../Annotations/NAR_Annalena_2a.eaf</ResourceLink>
                 <MediaResourceLink/>
                 <Date>Unspecified</Date>
                 <Type Type="OpenVocabulary">Annotation</Type>
