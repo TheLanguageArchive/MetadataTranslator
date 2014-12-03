@@ -48,7 +48,9 @@
             <MDGroup>
                 <xsl:apply-templates select="Location" mode="TLASESSION2IMDISESSION"/>
                 <xsl:apply-templates select="Project" mode="TLASESSION2IMDISESSION"/>
+                <Keys>
                 <xsl:apply-templates select="Keys" mode="TLASESSION2IMDISESSION"/>
+                </Keys>
                 <xsl:apply-templates select="Content" mode="TLASESSION2IMDISESSION"/>
                 <Actors>
                     <xsl:apply-templates select="//Actor" mode="TLASESSION2IMDISESSION"/>                
@@ -90,10 +92,22 @@
     <xsl:template match="Content" mode="TLASESSION2IMDISESSION">
         <Content>
             <Genre Link="http://www.mpi.nl/IMDI/Schema/Content-Genre.xml" Type="OpenVocabulary"><xsl:value-of select="child::Genre"/></Genre>
-            <SubGenre Link="http://www.mpi.nl/IMDI/Schema/Content-SubGenre.xml" Type="OpenVocabularyList"><xsl:value-of select="child::SubGenre"/></SubGenre>
-            <Task Link="http://www.mpi.nl/IMDI/Schema/Content-Task.xml" Type="OpenVocabulary" />
-            <Modalities Link="http://www.mpi.nl/IMDI/Schema/Content-Modalities.xml" Type="OpenVocabularyList"><xsl:value-of select="child::Modalities"/></Modalities>
-            <Subject Link="http://www.mpi.nl/IMDI/Schema/Content-Subject.xml" Type="OpenVocabularyList"><xsl:value-of select="child::Subject"/></Subject>
+            <xsl:if test="normalize-space(child::SubGenre)!=''">
+                <!-- removed the following attributes: 
+                            Link="http://www.mpi.nl/IMDI/Schema/Content-SubGenre.xml" Type="OpenVocabularyList"
+                     because the subgenre link depends on the selected genre
+                    -->
+                <SubGenre><xsl:value-of select="child::SubGenre"/></SubGenre>
+            </xsl:if>
+            <xsl:if test="normalize-space(child::Task)!=''">
+                <Task Link="http://www.mpi.nl/IMDI/Schema/Content-Task.xml" Type="OpenVocabulary"><xsl:value-of select="child::Task" /></Task>
+            </xsl:if>
+            <xsl:if test="normalize-space(child::Modalities)!=''"> 
+                <Modalities Link="http://www.mpi.nl/IMDI/Schema/Content-Modalities.xml" Type="OpenVocabularyList"><xsl:value-of select="child::Modalities"/></Modalities>
+            </xsl:if>
+            <xsl:if test="normalize-space(child::Subject)!=''">
+                <Subject Link="http://www.mpi.nl/IMDI/Schema/Content-Subject.xml" Type="OpenVocabularyList"><xsl:value-of select="child::Subject"/></Subject>
+            </xsl:if>
             <CommunicationContext>
                 <Interactivity Link="http://www.mpi.nl/IMDI/Schema/Content-Interactivity.xml" Type="ClosedVocabulary"><xsl:value-of select="child::CommunicationContext/Interactivity"/></Interactivity>
                 <PlanningType Link="http://www.mpi.nl/IMDI/Schema/Content-PlanningType.xml" Type="ClosedVocabulary"><xsl:value-of select="child::CommunicationContext/PlanningType"/></PlanningType>
@@ -106,7 +120,9 @@
                 <xsl:apply-templates select="descriptions" mode="TLASESSION2IMDISESSION"/>  
                 <xsl:apply-templates select="//Content_Language" mode="TLASESSION2IMDISESSION"/>
             </Languages>
+            <Keys>
             <xsl:apply-templates select="Keys" mode="TLASESSION2IMDISESSION"/>           
+            </Keys>
             <xsl:apply-templates select="descriptions" mode="TLASESSION2IMDISESSION"/>  
         </Content>
     </xsl:template>
@@ -128,8 +144,10 @@
             <Sex Link="http://www.mpi.nl/IMDI/Schema/Actor-Sex.xml" Type="ClosedVocabulary"><xsl:value-of select="child::Sex"/></Sex>
             <Education><xsl:value-of select="child::Education"/></Education>
             <Anonymized Link="http://www.mpi.nl/IMDI/Schema/Boolean.xml" Type="ClosedVocabulary"><xsl:value-of select="child::Anonymized"/></Anonymized>
-            <xsl:apply-templates select="Contact" mode="TLASESSION2IMDISESSION"/>            
-            <xsl:apply-templates select="Keys" mode="TLASESSION2IMDISESSION"/>            
+            <xsl:apply-templates select="Contact" mode="TLASESSION2IMDISESSION"/>      
+            <Keys>
+                <xsl:apply-templates select="Keys" mode="TLASESSION2IMDISESSION"/>
+            </Keys>
             <xsl:apply-templates select="descriptions" mode="TLASESSION2IMDISESSION"/>  
         </Actor>
     </xsl:template>
@@ -228,7 +246,9 @@
                 <xsl:apply-templates select="descriptions" mode="TLASESSION2IMDISESSION"/>                
             </Access>
             <xsl:apply-templates select="descriptions" mode="TLASESSION2IMDISESSION"/>
-            <xsl:apply-templates select="Keys" mode="TLASESSION2IMDISESSION"/>            
+            <Keys>
+                <xsl:apply-templates select="Keys" mode="TLASESSION2IMDISESSION"/>
+            </Keys>
         </MediaFile>
     </xsl:template>
     
@@ -271,8 +291,7 @@
     
     <xsl:template match="Keys" mode="TLASESSION2IMDISESSION">
         <xsl:choose>
-            <xsl:when test="normalize-space(child::Key)!=''">
-                <Keys>
+            <xsl:when test="normalize-space(child::Key[1])!=''">
                     <xsl:for-each select="child::Key">
                         <Key>
                             <xsl:attribute name="Name">
@@ -281,11 +300,7 @@
                             <xsl:value-of select="./text()"/>
                         </Key>
                     </xsl:for-each>
-                </Keys>
             </xsl:when>
-            <xsl:otherwise>
-                <Keys/>
-            </xsl:otherwise>
         </xsl:choose>
     </xsl:template>
 </xsl:stylesheet>

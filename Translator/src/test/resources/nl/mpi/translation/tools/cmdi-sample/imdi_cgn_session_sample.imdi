@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <METATRANSCRIPT xmlns="http://www.mpi.nl/IMDI/Schema/IMDI"
                 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-                ArchiveHandle="hdl:1839/00-0000-0000-0001-55CD-D"
+                ArchiveHandle="hdl:1839/00-0000-0000-0001-55CD-D@format=imdi"
                 Date="2004-02-12"
                 FormatId="IMDI 3.0"
-                Originator=""
+                Originator="Metadata Translator: TLASESSION2IMDISESSION.xslt hdl:1839/00-0000-0000-0001-55CD-D@format=cmdi"
                 Type="SESSION"
                 Version="4"
                 xsi:schemaLocation="http://www.mpi.nl/IMDI/Schema/IMDI ./IMDI_3.0.xsd">
-    <History>NAME:UPGRADE1-CGN_3_0 DATE:2004-08-12T17:37:24+0200. NAME:IMDI_1_9_TO_3_0 DATE:2004-05-18T12:29:33-02:00.</History>
-    <Session>
+   <History>NAME:UPGRADE1-CGN_3_0 DATE:xx. NAME:IMDI_1_9_TO_3_0 DATE:xx. NAME:imdi2cmdi.xslt DATE:xx.</History>
+   <Session>
       <Name>fn000056</Name>
       <Title>presentation</Title>
       <Date>1999</Date>
@@ -242,7 +242,7 @@
          </MediaFile>
          <WrittenResource ResourceId="N0x80564c0.0x808c7c0">
             <ResourceLink ArchiveHandle="hdl:1839/00-0000-0000-0001-55CF-9">../Annotations/fn000056.bpt</ResourceLink>
-            <MediaResourceLink>../MediaFile/fn000056.wav</MediaResourceLink>
+            <MediaResourceLink ArchiveHandle="hdl:1839/00-0000-0000-0001-55CE-3">../MediaFile/fn000056.wav</MediaResourceLink>
             <Date/>
             <Type Type="OpenVocabulary">Annotation</Type>
             <SubType Link="http://www.mpi.nl/IMDI/Schema/AnnotationUnit-Type.xml" Type="OpenVocabularyList">phonetics</SubType>

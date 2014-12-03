@@ -32,20 +32,26 @@
                 <Description>This project wants to investigate effects of information structure (given vs. new) on word order in co-ordinate noun phrases. Word order produced by 3 to 5 year old children acquiring German is studied in an elicited narrative task.</Description>
             </Project>
             <Keys>
-                <Key Name="Recording_place" Type="OpenVocabulary">St. Anna Kindergarten</Key>
+                <Key Name="Recording_place">St. Anna Kindergarten</Key>
             </Keys>
             <Content>
                 <Genre Link="http://www.mpi.nl/IMDI/Schema/Content-Genre.xml" Type="OpenVocabulary">Unspecified</Genre>
-                <SubGenre Link="http://www.mpi.nl/IMDI/Schema/Content-SubGenre-Discourse.xml" Type="OpenVocabulary">Unspecified</SubGenre>
-                <Task Type="OpenVocabulary">elicited production</Task>
-                <Modalities Type="OpenVocabulary">Speech</Modalities>
+                <SubGenre>Unspecified</SubGenre>
+                <Task Link="http://www.mpi.nl/IMDI/Schema/Content-Task.xml" Type="OpenVocabulary">elicited production</Task>
+                <Modalities Link="http://www.mpi.nl/IMDI/Schema/Content-Modalities.xml" Type="OpenVocabularyList">Speech</Modalities>
                 <CommunicationContext>
-                    <Interactivity Type="OpenVocabulary">interactive</Interactivity>
-                    <PlanningType Type="OpenVocabulary">planned</PlanningType>
-                    <Involvement Type="OpenVocabulary">elicited</Involvement>
-                    <SocialContext Link="" Type="OpenVocabulary">Unspecified</SocialContext>
-                    <EventStructure Link="" Type="OpenVocabulary">Unspecified</EventStructure>
-                    <Channel Link="" Type="OpenVocabulary">Unspecified</Channel>
+                    <Interactivity Link="http://www.mpi.nl/IMDI/Schema/Content-Interactivity.xml"
+                        Type="ClosedVocabulary">interactive</Interactivity>
+                    <PlanningType Link="http://www.mpi.nl/IMDI/Schema/Content-PlanningType.xml"
+                        Type="ClosedVocabulary">planned</PlanningType>
+                    <Involvement Link="http://www.mpi.nl/IMDI/Schema/Content-Involvement.xml"
+                        Type="ClosedVocabulary">elicited</Involvement>
+                    <SocialContext Link="http://www.mpi.nl/IMDI/Schema/Content-SocialContext.xml"
+                        Type="ClosedVocabulary">Unspecified</SocialContext>
+                    <EventStructure Link="http://www.mpi.nl/IMDI/Schema/Content-EventStructure.xml"
+                        Type="ClosedVocabulary">Unspecified</EventStructure>
+                    <Channel Link="http://www.mpi.nl/IMDI/Schema/Content-Channel.xml"
+                        Type="ClosedVocabulary">Unspecified</Channel>
                 </CommunicationContext>
                 <Languages>
                     <Description LanguageId="" Link=""/>
