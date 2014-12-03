@@ -106,7 +106,7 @@
                 <xsl:apply-templates select="descriptions" mode="TLASESSION2IMDISESSION"/>  
                 <xsl:apply-templates select="//Content_Language" mode="TLASESSION2IMDISESSION"/>
             </Languages>
-            <Keys />            
+            <xsl:apply-templates select="Keys" mode="TLASESSION2IMDISESSION"/>           
             <xsl:apply-templates select="descriptions" mode="TLASESSION2IMDISESSION"/>  
         </Content>
     </xsl:template>
@@ -129,7 +129,7 @@
             <Education><xsl:value-of select="child::Education"/></Education>
             <Anonymized Link="http://www.mpi.nl/IMDI/Schema/Boolean.xml" Type="ClosedVocabulary"><xsl:value-of select="child::Anonymized"/></Anonymized>
             <xsl:apply-templates select="Contact" mode="TLASESSION2IMDISESSION"/>            
-            <Keys />            
+            <xsl:apply-templates select="Keys" mode="TLASESSION2IMDISESSION"/>            
             <xsl:apply-templates select="descriptions" mode="TLASESSION2IMDISESSION"/>  
         </Actor>
     </xsl:template>
@@ -270,6 +270,22 @@
     </xsl:template>
     
     <xsl:template match="Keys" mode="TLASESSION2IMDISESSION">
-        <Keys/> <!-- todo: handle Keys -->
+        <xsl:choose>
+            <xsl:when test="normalize-space(child::Key)!=''">
+                <Keys>
+                    <xsl:for-each select="child::Key">
+                        <Key>
+                            <xsl:attribute name="Name">
+                                <xsl:value-of select="@Name"/>
+                            </xsl:attribute>
+                            <xsl:value-of select="./text()"/>
+                        </Key>
+                    </xsl:for-each>
+                </Keys>
+            </xsl:when>
+            <xsl:otherwise>
+                <Keys/>
+            </xsl:otherwise>
+        </xsl:choose>
     </xsl:template>
 </xsl:stylesheet>
