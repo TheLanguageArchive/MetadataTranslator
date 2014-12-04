@@ -645,9 +645,9 @@ $LastChangedDate: 2013-08-14 11:25:31 +0200 (Wed, 14 Aug 2013) $
     </xsl:template>
 
     <xsl:template match="Keys">
-    	<xsl:if test="exists(Key)">
+    	<xsl:if test="exists(Key[normalize-space(@Name)!='' or normalize-space(.)!=''])">
     		<Keys>
-    			<xsl:for-each select="Key">
+    			<xsl:for-each select="Key[normalize-space(@Name)!='' or normalize-space(.)!='']">
     				<Key>
     					<xsl:attribute name="Name">
     						<xsl:value-of select="@Name"/>
@@ -687,9 +687,9 @@ $LastChangedDate: 2013-08-14 11:25:31 +0200 (Wed, 14 Aug 2013) $
             <xsl:apply-templates select="child::CommunicationContext"/>
             <xsl:apply-templates select="child::Languages" mode="content"/>
             <xsl:apply-templates select="child::Keys"/>
-            <xsl:if test="exists(child::Description)">
+        	<xsl:if test="exists(child::Description[normalize-space()!=''])">
                 <descriptions>
-                    <xsl:for-each select="Description">
+                	<xsl:for-each select="Description[normalize-space()!='']">
                         <Description>
                         	<xsl:call-template name="xmlLang"/>
                             <xsl:value-of select="."/>
@@ -751,9 +751,9 @@ $LastChangedDate: 2013-08-14 11:25:31 +0200 (Wed, 14 Aug 2013) $
     <xsl:template match="Languages" mode="content">
     	<xsl:if test="exists(Description[normalize-space(.)!='']|Language)">
     		<Content_Languages>
-    			<xsl:if test="exists(child::Description)">
+    			<xsl:if test="exists(child::Description[normalize-space(.)!=''])">
     				<descriptions>
-    					<xsl:for-each select="Description">
+    					<xsl:for-each select="Description[normalize-space(.)!='']">
     						<Description>
     							<xsl:call-template name="xmlLang"/>
     							<xsl:value-of select="."/>
@@ -786,9 +786,9 @@ $LastChangedDate: 2013-08-14 11:25:31 +0200 (Wed, 14 Aug 2013) $
     							<xsl:with-param name="value" select="TargetLanguage"/>
     						</xsl:call-template>
     					</TargetLanguage>
-    					<xsl:if test="exists(child::Description)">
+    					<xsl:if test="exists(child::Description[normalize-space(.)!=''])">
     						<descriptions>
-    							<xsl:for-each select="Description">
+    							<xsl:for-each select="Description[normalize-space(.)!='']">
     								<Description>
     									<xsl:call-template name="xmlLang"/>
     									<xsl:value-of select="."/>
