@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <METATRANSCRIPT xmlns="http://www.mpi.nl/IMDI/Schema/IMDI"
                 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-                ArchiveHandle="hdl:1839/00-0000-0000-0001-305B-C"
+                ArchiveHandle="hdl:1839/00-0000-0000-0001-305B-C@format=imdi"
                 Date="2005-06-10"
                 FormatId="IMDI 3.0"
                 Originator="hand rs"
                 Type="CORPUS"
-                Version="4"
-                xsi:schemaLocation="http://www.mpi.nl/IMDI/Schema/IMDI ./IMDI_3.0.xsd">
-    <History>NAME:IMDI_1_9_TO_3_0 DATE:2004-06-03T15:19:09-02:00.</History>
-    <Corpus>
+                Version="0"
+                xsi:schemaLocation="http://www.mpi.nl/IMDI/Schema/IMDI http://www.mpi.nl/IMDI/Schema/IMDI_3.0.xsd">
+    <History>NAME:IMDI_1_9_TO_3_0 DATE:xx. NAME:imdi2cmdi.xslt DATE:xx.</History>
+  <Corpus>
         <Name>DoBeS archive</Name>
         <Title>Documentation of endangered languages</Title>
         <Description LanguageId="" Link="">Approximately 6500 languages are currently spoken world-wide. It can be assumed that about two-thirds of these languages will become extinct in the 21st century. All languages are intimately interlinked with the culture of their speakers, and all languages and cultures represent specific expressions of human thought and social organisation. Therefore, with every language which becomes extinct priceless intellectual values will be lost forever. The project DOBES will contribute to the conservation of this cultural heritage. The MPI for Psycholinguistics in Nijmegen (NL) will house the data archive which will cover sound material, video recordings, photos, and various textual annotations.</Description>

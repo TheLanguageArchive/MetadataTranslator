@@ -21,6 +21,7 @@
             <xsl:attribute name="Date">
                 <xsl:value-of select="//Header/MdCreationDate" />
             </xsl:attribute>
+            <xsl:apply-templates select="//lat-corpus" mode="TLACOLLECTION2CORPUS_HISTORY"/>
             <Corpus>
                 <xsl:apply-templates select="//lat-corpus" mode="TLACOLLECTION2CORPUS"/>
                 <xsl:apply-templates select="//ResourceProxy" mode="TLACOLLECTION2CORPUS"/>
@@ -44,7 +45,7 @@
           </xsl:choose> 
     </xsl:template>
     
-    <xsl:template match="lat-corpus" mode="TLACOLLECTION2CORPUS">
+    <xsl:template match="lat-corpus" mode="TLACOLLECTION2CORPUS_HISTORY">
         <xsl:choose>
             <xsl:when test="normalize-space(child::History)!=''">
                 <History>
@@ -52,6 +53,9 @@
                 </History>
             </xsl:when>
         </xsl:choose>
+    </xsl:template>
+        
+    <xsl:template match="lat-corpus" mode="TLACOLLECTION2CORPUS">
         <Name>
             <xsl:value-of select="child::Name"/>
         </Name>
