@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet version="2.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" 
-    xmlns:tla="http://tla.mpi.nl">
+    xmlns:tla="http://tla.mpi.nl"
+    xmlns:cmd="http://www.clarin.eu/cmd/"
+    xmlns:lat="http://lat.mpi.nl/">
     
     <!-- 
         If the provided href is a handle, returns it has handle (always with hdl:-prefix). 
@@ -73,4 +75,20 @@
         </xsl:choose>
     </xsl:function>
 
+    <!--
+        Returns either the localURI value or, if that is empty/non-existant, returns the handle.
+        The input parameter is a ResourceProxy node.
+    -->
+    <xsl:function name="tla:getlocalURIorfallback">
+        <xsl:param name="resproxy"/>
+        <xsl:choose>
+            <xsl:when test="normalize-space($resproxy/cmd:ResourceRef/@lat:localURI)!=''">
+                <xsl:value-of select="$resproxy/cmd:ResourceRef/@lat:localURI"/>
+            </xsl:when>
+            <xsl:otherwise>
+                <xsl:value-of select="$resproxy/cmd:ResourceRef"/>
+            </xsl:otherwise>
+        </xsl:choose>
+    </xsl:function>
+    
 </xsl:stylesheet>
