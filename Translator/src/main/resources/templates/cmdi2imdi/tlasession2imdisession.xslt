@@ -117,7 +117,6 @@
                 <Channel Link="http://www.mpi.nl/IMDI/Schema/Content-Channel.xml" Type="ClosedVocabulary"><xsl:value-of select="child::CommunicationContext/Channel"/></Channel>
             </CommunicationContext>
             <Languages>
-                <xsl:apply-templates select="descriptions" mode="TLASESSION2IMDISESSION"/>  
                 <xsl:apply-templates select="//Content_Language" mode="TLASESSION2IMDISESSION"/>
             </Languages>
             <Keys>
@@ -153,6 +152,7 @@
     </xsl:template>
     
     <xsl:template match="Content_Language" mode="TLASESSION2IMDISESSION">
+        <xsl:apply-templates select="descriptions" mode="TLASESSION2IMDISESSION"/>  
         <Language>
             <Id><xsl:value-of select="child::Id"/></Id>
             <Name Link="http://www.mpi.nl/IMDI/Schema/MPI-Languages.xml" Type="OpenVocabulary"><xsl:value-of select="child::Name"/></Name>
@@ -291,7 +291,7 @@
     
     <xsl:template match="Keys" mode="TLASESSION2IMDISESSION">
         <xsl:choose>
-            <xsl:when test="normalize-space(child::Key[1])!=''">
+            <xsl:when test="child::Key[1]">
                     <xsl:for-each select="child::Key">
                         <Key>
                             <xsl:attribute name="Name">
