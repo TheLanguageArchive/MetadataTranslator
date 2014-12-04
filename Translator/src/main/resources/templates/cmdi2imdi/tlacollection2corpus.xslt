@@ -38,7 +38,7 @@
                      <xsl:if test="string-length($handle) > 0">
                          <xsl:attribute name="ArchiveHandle" select="$handle" />
                      </xsl:if>
-                     <xsl:value-of select="tla:getTranslationUri(//CorpusLink[@ref=$idref]/CorpusLinkContent, 'imdi')"/>                     
+                     <xsl:value-of select="tla:getTranslationUri(tla:getlocalURIorfallback(.), 'imdi')"/>                     
                  </CorpusLink>
              </xsl:when>
           </xsl:choose> 
