@@ -188,10 +188,12 @@ $LastChangedDate: 2013-08-14 11:25:31 +0200 (Wed, 14 Aug 2013) $
             </xsl:if>
             <xsl:for-each select="$infoLinks">
             	<InfoLink ref="{generate-id(.)}">
-            		<Description>
-            			<xsl:call-template name="xmlLang"/>
-            			<xsl:value-of select="."/>
-            		</Description>
+            		<xsl:if test="normalize-space(.)!=''">
+            			<Description>
+            				<xsl:call-template name="xmlLang"/>
+            				<xsl:value-of select="."/>
+            			</Description>
+            		</xsl:if>
             	</InfoLink>
             </xsl:for-each>
             <xsl:if test="exists(child::CorpusLink)">
@@ -219,12 +221,16 @@ $LastChangedDate: 2013-08-14 11:25:31 +0200 (Wed, 14 Aug 2013) $
             					</xsl:for-each>
             					<xsl:if test="normalize-space(SmallestAnnotationUnit)!=''">
             						<SmallestAnnotationUnit>
-            							<xsl:value-of select="SmallestAnnotationUnit"/>
+            							<xsl:call-template name="orUnspecified">
+            								<xsl:with-param name="value" select="SmallestAnnotationUnit"/>
+            							</xsl:call-template>
             						</SmallestAnnotationUnit>
             					</xsl:if>
             					<xsl:if test="normalize-space(Date)!=''">
             						<Date>
-            							<xsl:value-of select="Date"/>
+            							<xsl:call-template name="orUnspecified">
+            								<xsl:with-param name="value" select="Date"/>
+            							</xsl:call-template>
             						</Date>
             					</xsl:if>
             					<xsl:for-each select="Publisher[normalize-space()!='']">
@@ -244,7 +250,9 @@ $LastChangedDate: 2013-08-14 11:25:31 +0200 (Wed, 14 Aug 2013) $
             					</xsl:if>
             					<xsl:if test="normalize-space(DistributionForm)!=''">
             						<DistributionForm>
-            							<xsl:value-of select="DistributionForm"/>
+            							<xsl:call-template name="orUnspecified">
+            								<xsl:with-param name="value" select="DistributionForm"/>
+            							</xsl:call-template>
             						</DistributionForm>
             					</xsl:if>
             					<xsl:if test="normalize-space(Pricing)!=''">
@@ -263,10 +271,9 @@ $LastChangedDate: 2013-08-14 11:25:31 +0200 (Wed, 14 Aug 2013) $
             						</Publications>
             					</xsl:if>
             					<!-- CMD Components -->
-            					<xsl:variable name="descriptions" select="Description[normalize-space()!='']"/>
-            					<xsl:if test="exists($descriptions)">
+            					<xsl:if test="exists(Description[normalize-space()!=''])">
             						<descriptions>
-            							<xsl:for-each select="$descriptions">
+            							<xsl:for-each select="Description[normalize-space()!='']">
             								<Description>
             									<xsl:call-template name="xmlLang"/>
             									<xsl:value-of select="."/>
@@ -280,7 +287,9 @@ $LastChangedDate: 2013-08-14 11:25:31 +0200 (Wed, 14 Aug 2013) $
             							<xsl:for-each select="$doclangs">
             								<Document_Language>
             									<Id>
-            										<xsl:value-of select=" ./Id"/>
+            										<xsl:call-template name="orUnspecified">
+            											<xsl:with-param name="value" select="Id"/>
+            										</xsl:call-template>
             									</Id>
             									<Name>
             										<xsl:value-of select=" ./Name"/>
@@ -295,7 +304,9 @@ $LastChangedDate: 2013-08-14 11:25:31 +0200 (Wed, 14 Aug 2013) $
             							<xsl:for-each select="$sublangs">
             								<Subject_Language>
             									<Id>
-            										<xsl:value-of select=" ./Id"/>
+            										<xsl:call-template name="orUnspecified">
+            											<xsl:with-param name="value" select="Id"/>
+            										</xsl:call-template>
             									</Id>
             									<Name>
             										<xsl:value-of select=" ./Name"/>
@@ -315,10 +326,9 @@ $LastChangedDate: 2013-08-14 11:25:31 +0200 (Wed, 14 Aug 2013) $
             											<xsl:with-param name="value" select="TargetLanguage"/>
             										</xsl:call-template>
             									</TargetLanguage>
-            									<xsl:variable name="descriptions" select="Description[normalize-space()!='']"/>
-            									<xsl:if test="exists($descriptions)">
+            									<xsl:if test="exists(Description[normalize-space()!=''])">
             										<descriptions>
-            											<xsl:for-each select="$descriptions">
+            											<xsl:for-each select="Description[normalize-space()!='']">
             												<Description>
             													<xsl:call-template name="xmlLang"/>
             													<xsl:value-of select="."/>
@@ -349,7 +359,9 @@ $LastChangedDate: 2013-08-14 11:25:31 +0200 (Wed, 14 Aug 2013) $
             								<xsl:variable name="name" select="local-name()"/>
             								<xsl:for-each select="tokenize(.,',')">
             									<xsl:element name="{$name}">
-            										<xsl:value-of select="normalize-space(.)"/>
+            										<xsl:call-template name="orUnspecified">
+            											<xsl:with-param name="value" select="."/>
+            										</xsl:call-template>
             									</xsl:element>
             								</xsl:for-each>
             							</xsl:for-each>
@@ -602,9 +614,9 @@ $LastChangedDate: 2013-08-14 11:25:31 +0200 (Wed, 14 Aug 2013) $
                 <xsl:value-of select="child::Id"/>
             </Id>
             <xsl:apply-templates select="Contact"/>
-            <xsl:if test="exists(child::Description)">
+            <xsl:if test="exists(Description[normalize-space(.)!=''])">
                 <descriptions>
-                    <xsl:for-each select="Description">
+                	<xsl:for-each select="Description[normalize-space(.)!='']">
                         <Description>
                         	<xsl:call-template name="xmlLang"/>
                             <xsl:value-of select="."/>
@@ -693,7 +705,9 @@ $LastChangedDate: 2013-08-14 11:25:31 +0200 (Wed, 14 Aug 2013) $
         <CommunicationContext>
             <xsl:if test="exists(child::Interactivity)">
                 <Interactivity>
-                    <xsl:value-of select="child::Interactivity"/>
+                	<xsl:call-template name="orUnspecified">
+                		<xsl:with-param name="value" select="Interactivity"/>
+                	</xsl:call-template>
                 </Interactivity>
             </xsl:if>
             <xsl:if test="exists(child::PlanningType)">
@@ -705,22 +719,30 @@ $LastChangedDate: 2013-08-14 11:25:31 +0200 (Wed, 14 Aug 2013) $
             </xsl:if>
             <xsl:if test="exists(child::Involvement)">
                 <Involvement>
-                    <xsl:value-of select="child::Involvement"/>
+                	<xsl:call-template name="orUnspecified">
+                		<xsl:with-param name="value" select="Involvement"/>
+                	</xsl:call-template>
                 </Involvement>
             </xsl:if>
             <xsl:if test="exists(child::SocialContext)">
                 <SocialContext>
-                    <xsl:value-of select="child::SocialContext"/>
+                	<xsl:call-template name="orUnspecified">
+                		<xsl:with-param name="value" select="SocialContext"/>
+                	</xsl:call-template>
                 </SocialContext>
             </xsl:if>
             <xsl:if test="exists(child::EventStructure)">
                 <EventStructure>
-                    <xsl:value-of select="child::EventStructure"/>
+                	<xsl:call-template name="orUnspecified">
+                		<xsl:with-param name="value" select="EventStructure"/>
+                	</xsl:call-template>
                 </EventStructure>
             </xsl:if>
             <xsl:if test="exists(child::Channel)">
                 <Channel>
-                    <xsl:value-of select="child::Channel"/>
+                	<xsl:call-template name="orUnspecified">
+                		<xsl:with-param name="value" select="Channel"/>
+                	</xsl:call-template>
                 </Channel>
             </xsl:if>
         </CommunicationContext>
@@ -742,7 +764,9 @@ $LastChangedDate: 2013-08-14 11:25:31 +0200 (Wed, 14 Aug 2013) $
     			<xsl:for-each select="Language">
     				<Content_Language>
     					<Id>
-    						<xsl:value-of select=" ./Id"/>
+    						<xsl:call-template name="orUnspecified">
+    							<xsl:with-param name="value" select="Id"/>
+    						</xsl:call-template>
     					</Id>
     					<Name>
     						<xsl:value-of select=" ./Name"/>
@@ -780,9 +804,9 @@ $LastChangedDate: 2013-08-14 11:25:31 +0200 (Wed, 14 Aug 2013) $
 
     <xsl:template match="Actors">
         <Actors>
-            <xsl:if test="exists(child::Description)">
+            <xsl:if test="exists(child::Description[normalize-space(.)!=''])">
                 <descriptions>
-                    <xsl:for-each select="Description">
+                	<xsl:for-each select="Description[normalize-space(.)!='']">
                         <Description>
                         	<xsl:call-template name="xmlLang"/>
                             <xsl:value-of select="."/>
@@ -811,25 +835,33 @@ $LastChangedDate: 2013-08-14 11:25:31 +0200 (Wed, 14 Aug 2013) $
                         <xsl:value-of select=" ./EthnicGroup"/>
                     </EthnicGroup>
                     <Age>
-                        <xsl:value-of select=" ./Age"/>
+                    	<xsl:call-template name="orUnspecified">
+                    		<xsl:with-param name="value" select="Age"/>
+                    	</xsl:call-template>
                     </Age>
                     <BirthDate>
-                        <xsl:value-of select=" ./BirthDate"/>
+                    	<xsl:call-template name="orUnspecified">
+                    		<xsl:with-param name="value" select="BirthDate"/>
+                    	</xsl:call-template>
                     </BirthDate>
                     <Sex>
-                        <xsl:value-of select=" ./Sex"/>
+                    	<xsl:call-template name="orUnspecified">
+                    		<xsl:with-param name="value" select="Sex"/>
+                    	</xsl:call-template>
                     </Sex>
                     <Education>
                         <xsl:value-of select=" ./Education"/>
                     </Education>
                     <Anonymized>
-                        <xsl:value-of select=" ./Anonymized"/>
+                    	<xsl:call-template name="orUnspecified">
+                    		<xsl:with-param name="value" select="Anonymized"/>
+                    	</xsl:call-template>
                     </Anonymized>
                     <xsl:apply-templates select="Contact"/>
                     <xsl:apply-templates select="child::Keys"/>
-                    <xsl:if test="exists(child::Description)">
+                    <xsl:if test="exists(child::Description[normalize-space(.)!=''])">
                         <descriptions>
-                            <xsl:for-each select="Description">
+                            <xsl:for-each select="Description[normalize-space(.)!='']">
                                 <Description>
                                 	<xsl:call-template name="xmlLang"/>
                                     <xsl:value-of select="."/>
@@ -845,9 +877,9 @@ $LastChangedDate: 2013-08-14 11:25:31 +0200 (Wed, 14 Aug 2013) $
 
     <xsl:template match="Languages" mode="actor">
         <Actor_Languages>
-            <xsl:if test="exists(child::Description)">
+            <xsl:if test="exists(child::Description[normalize-space(.)!=''])">
                 <descriptions>
-                    <xsl:for-each select="Description">
+                	<xsl:for-each select="Description[normalize-space(.)!='']">
                         <Description>
                         	<xsl:call-template name="xmlLang"/>
                             <xsl:value-of select="."/>
@@ -858,7 +890,9 @@ $LastChangedDate: 2013-08-14 11:25:31 +0200 (Wed, 14 Aug 2013) $
             <xsl:for-each select="Language">
                 <Actor_Language>
                     <Id>
-                        <xsl:value-of select=" ./Id"/>
+                    	<xsl:call-template name="orUnspecified">
+                    		<xsl:with-param name="value" select="Id"/>
+                    	</xsl:call-template>
                     </Id>
                     <Name>
                         <xsl:value-of select=" ./Name"/>
@@ -873,9 +907,9 @@ $LastChangedDate: 2013-08-14 11:25:31 +0200 (Wed, 14 Aug 2013) $
                     		<xsl:with-param name="value" select="PrimaryLanguage"/>
                     	</xsl:call-template>
                     </PrimaryLanguage>
-                    <xsl:if test="exists(child::Description)">
+                	<xsl:if test="exists(child::Description[normalize-space(.)!=''])">
                         <descriptions>
-                            <xsl:for-each select="Description">
+                        	<xsl:for-each select="Description[normalize-space(.)!='']">
                                 <Description>
                                 	<xsl:call-template name="xmlLang"/>
                                     <xsl:value-of select="."/>
@@ -887,7 +921,6 @@ $LastChangedDate: 2013-08-14 11:25:31 +0200 (Wed, 14 Aug 2013) $
             </xsl:for-each>
         </Actor_Languages>
     </xsl:template>
-
 
     <xsl:template match="child::Resources" mode="regular">
         <Resources>
@@ -904,7 +937,9 @@ $LastChangedDate: 2013-08-14 11:25:31 +0200 (Wed, 14 Aug 2013) $
         		<xsl:attribute name="ref" select="generate-id(ResourceLink)"/>
         	</xsl:if>
         	<Type>
-                <xsl:value-of select=" ./Type"/>
+        		<xsl:call-template name="orUnspecified">
+        			<xsl:with-param name="value" select="Type"/>
+        		</xsl:call-template>
             </Type>
             <Format>
                 <xsl:value-of select=" ./Format"/>
@@ -913,14 +948,18 @@ $LastChangedDate: 2013-08-14 11:25:31 +0200 (Wed, 14 Aug 2013) $
                 <xsl:value-of select=" ./Size"/>
             </Size>
             <Quality>
-                <xsl:value-of select=" ./Quality"/>
+            	<xsl:call-template name="orUnspecified">
+            		<xsl:with-param name="value" select="Quality"/>
+            	</xsl:call-template>
             </Quality>
             <RecordingConditions>
                 <xsl:value-of select=" ./RecordingConditions"/>
             </RecordingConditions>
             <TimePosition>
                 <Start>
-                    <xsl:apply-templates select="TimePosition/Start"/>
+                	<xsl:call-template name="orUnspecified">
+                		<xsl:with-param name="value" select="TimePosition/Start"/>
+                	</xsl:call-template>
                 </Start>
                 <xsl:if test="exists(descendant::End)">
                     <End>
@@ -931,9 +970,9 @@ $LastChangedDate: 2013-08-14 11:25:31 +0200 (Wed, 14 Aug 2013) $
                 </xsl:if>
             </TimePosition>
             <xsl:apply-templates select="Access"/>
-            <xsl:if test="exists(child::Description)">
+            <xsl:if test="exists(child::Description[normalize-space(.)!=''])">
                 <descriptions>
-                    <xsl:for-each select="Description">
+                	<xsl:for-each select="Description[normalize-space(.)!='']">
                         <Description>
                         	<xsl:call-template name="xmlLang"/>
                             <xsl:value-of select="."/>
@@ -951,7 +990,9 @@ $LastChangedDate: 2013-08-14 11:25:31 +0200 (Wed, 14 Aug 2013) $
                 <xsl:value-of select=" ./Availability"/>
             </Availability>
             <Date>
-                <xsl:value-of select=" ./Date"/>
+            	<xsl:call-template name="orUnspecified">
+            		<xsl:with-param name="value" select="Date"/>
+            	</xsl:call-template>
             </Date>
             <Owner>
                 <xsl:value-of select=" ./Owner"/>
@@ -960,9 +1001,9 @@ $LastChangedDate: 2013-08-14 11:25:31 +0200 (Wed, 14 Aug 2013) $
                 <xsl:value-of select=" ./Publisher"/>
             </Publisher>
             <xsl:apply-templates select="Contact"/>
-            <xsl:if test="exists(child::Description)">
+        	<xsl:if test="exists(child::Description[normalize-space(.)!=''])">
                 <descriptions>
-                    <xsl:for-each select="Description">
+                	<xsl:for-each select="Description[normalize-space(.)!='']">
                         <Description>
                         	<xsl:call-template name="xmlLang"/>
                             <xsl:value-of select="."/>
@@ -986,8 +1027,10 @@ $LastChangedDate: 2013-08-14 11:25:31 +0200 (Wed, 14 Aug 2013) $
         		</xsl:if>
         	</xsl:if>
         	<Date>
-                <xsl:value-of select=" ./Date"/>
-            </Date>
+        		<xsl:call-template name="orUnspecified">
+        			<xsl:with-param name="value" select="Date"/>
+        		</xsl:call-template>
+        	</Date>
             <Type>
                 <xsl:value-of select=" ./Type"/>
             </Type>
@@ -1001,7 +1044,9 @@ $LastChangedDate: 2013-08-14 11:25:31 +0200 (Wed, 14 Aug 2013) $
                 <xsl:value-of select=" ./Size"/>
             </Size>
             <Derivation>
-                <xsl:value-of select=" ./Derivation"/>
+            	<xsl:call-template name="orUnspecified">
+            		<xsl:with-param name="value" select="Derivation"/>
+            	</xsl:call-template>
             </Derivation>
             <CharacterEncoding>
                 <xsl:value-of select=" ./CharacterEncoding"/>
@@ -1010,16 +1055,20 @@ $LastChangedDate: 2013-08-14 11:25:31 +0200 (Wed, 14 Aug 2013) $
                 <xsl:value-of select=" ./ContentEncoding"/>
             </ContentEncoding>
             <LanguageId>
-                <xsl:value-of select=" ./LanguageId"/>
+            	<xsl:call-template name="orUnspecified">
+            		<xsl:with-param name="value" select="LanguageId"/>
+            	</xsl:call-template>
             </LanguageId>
             <Anonymized>
-                <xsl:value-of select=" ./Anonymized"/>
+            	<xsl:call-template name="orUnspecified">
+            		<xsl:with-param name="value" select="Anonymized"/>
+            	</xsl:call-template>
             </Anonymized>
             <xsl:apply-templates select="Validation"/>
             <xsl:apply-templates select="Access"/>
-            <xsl:if test="exists(child::Description)">
+        	<xsl:if test="exists(child::Description[normalize-space(.)!=''])">
                 <descriptions>
-                    <xsl:for-each select="Description">
+                	<xsl:for-each select="Description[normalize-space(.)!='']">
                         <Description>
                         	<xsl:call-template name="xmlLang"/>
                             <xsl:value-of select="."/>
@@ -1034,17 +1083,21 @@ $LastChangedDate: 2013-08-14 11:25:31 +0200 (Wed, 14 Aug 2013) $
     <xsl:template match="Validation">
         <Validation>
             <Type>
-                <xsl:value-of select=" ./Type"/>
+            	<xsl:call-template name="orUnspecified">
+            		<xsl:with-param name="value" select="Type"/>
+            	</xsl:call-template>
             </Type>
             <Methodology>
-                <xsl:value-of select=" ./Methodology"/>
+            	<xsl:call-template name="orUnspecified">
+            		<xsl:with-param name="value" select="Methodology"/>
+            	</xsl:call-template>
             </Methodology>
             <Level>
                 <xsl:value-of select=" ./Level"/>
             </Level>
-            <xsl:if test="exists(child::Description)">
+        	<xsl:if test="exists(child::Description[normalize-space(.)!=''])">
                 <descriptions>
-                    <xsl:for-each select="Description">
+                	<xsl:for-each select="Description[normalize-space(.)!='']">
                         <Description>
                         	<xsl:call-template name="xmlLang"/>
                             <xsl:value-of select="."/>
@@ -1064,12 +1117,16 @@ $LastChangedDate: 2013-08-14 11:25:31 +0200 (Wed, 14 Aug 2013) $
                 <xsl:value-of select=" ./Format"/>
             </Format>
             <Quality>
-                <xsl:value-of select=" ./Quality"/>
+            	<xsl:call-template name="orUnspecified">
+            		<xsl:with-param name="value" select="Quality"/>
+            	</xsl:call-template>
             </Quality>
             <xsl:if test="exists(child::CounterPosition)">
                 <CounterPosition>
                     <Start>
-                        <xsl:apply-templates select="CounterPosition/Start"/>
+                    	<xsl:call-template name="orUnspecified">
+                    		<xsl:with-param name="value" select="CounterPosition/Start"/>
+                    	</xsl:call-template>
                     </Start>
                     <xsl:if test="exists(descendant::End)">
                         <End>
@@ -1083,19 +1140,23 @@ $LastChangedDate: 2013-08-14 11:25:31 +0200 (Wed, 14 Aug 2013) $
             <xsl:if test="exists(child::TimePosition)">
                 <TimePosition>
                     <Start>
-                        <xsl:apply-templates select="TimePosition/Start"/>
+                    	<xsl:call-template name="orUnspecified">
+                    		<xsl:with-param name="value" select="TimePosition/Start"/>
+                    	</xsl:call-template>
                     </Start>
                     <xsl:if test="exists(descendant::End)">
                         <End>
-                            <xsl:apply-templates select="TimePosition/End"/>
+                        	<xsl:call-template name="orUnspecified">
+                        		<xsl:with-param name="value" select="TimePosition/End"/>
+                        	</xsl:call-template>
                         </End>
                     </xsl:if>
                 </TimePosition>
             </xsl:if>
             <xsl:apply-templates select="Access"/>
-            <xsl:if test="exists(child::Description)">
+        	<xsl:if test="exists(child::Description[normalize-space(.)!=''])">
                 <descriptions>
-                    <xsl:for-each select="Description">
+                	<xsl:for-each select="Description[normalize-space(.)!='']">
                         <Description>
                         	<xsl:call-template name="xmlLang"/>
                             <xsl:value-of select="."/>
@@ -1118,9 +1179,9 @@ $LastChangedDate: 2013-08-14 11:25:31 +0200 (Wed, 14 Aug 2013) $
 
     <xsl:template match="child::References">
         <References>
-            <xsl:if test="exists(child::Description)">
+        	<xsl:if test="exists(child::Description[normalize-space(.)!=''])">
                 <descriptions>
-                    <xsl:for-each select="Description">
+                	<xsl:for-each select="Description[normalize-space(.)!='']">
                         <Description>
                         	<xsl:call-template name="xmlLang"/>
                             <xsl:value-of select="."/>
