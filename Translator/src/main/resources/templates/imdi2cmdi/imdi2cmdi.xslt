@@ -627,22 +627,30 @@ $LastChangedDate: 2013-08-14 11:25:31 +0200 (Wed, 14 Aug 2013) $
         </Project>
     </xsl:template>
 
-    <xsl:template match="Contact">
-        <Contact>
-            <Name>
-                <xsl:value-of select="child::Name"/>
-            </Name>
-            <Address>
-                <xsl:value-of select="child::Address"/>
-            </Address>
-            <Email>
-                <xsl:value-of select="child::Email"/>
-            </Email>
-            <Organisation>
-                <xsl:value-of select="child::Organisation"/>
-            </Organisation>
-        </Contact>
-    </xsl:template>
+	<xsl:template match="Contact">
+		<Contact>
+			<xsl:if test="normalize-space(Name)!=''">
+				<Name>
+					<xsl:value-of select="child::Name"/>
+				</Name>
+			</xsl:if>
+			<xsl:if test="normalize-space(Address)!=''">
+				<Address>
+					<xsl:value-of select="child::Address"/>
+				</Address>
+			</xsl:if>
+			<xsl:if test="normalize-space(Email)!=''">
+				<Email>
+					<xsl:value-of select="child::Email"/>
+				</Email>
+			</xsl:if>
+			<xsl:if test="normalize-space(Organisation)!=''">
+				<Organisation>
+					<xsl:value-of select="child::Organisation"/>
+				</Organisation>
+			</xsl:if>
+		</Contact>
+	</xsl:template>
 
     <xsl:template match="Keys">
     	<xsl:if test="exists(Key[normalize-space(@Name)!='' or normalize-space(.)!=''])">
@@ -985,33 +993,35 @@ $LastChangedDate: 2013-08-14 11:25:31 +0200 (Wed, 14 Aug 2013) $
     </xsl:template>
 
     <xsl:template match="Access">
-        <Access>
-            <Availability>
-                <xsl:value-of select=" ./Availability"/>
-            </Availability>
-            <Date>
-            	<xsl:call-template name="orUnspecified">
-            		<xsl:with-param name="value" select="Date"/>
-            	</xsl:call-template>
-            </Date>
-            <Owner>
-                <xsl:value-of select=" ./Owner"/>
-            </Owner>
-            <Publisher>
-                <xsl:value-of select=" ./Publisher"/>
-            </Publisher>
-            <xsl:apply-templates select="Contact"/>
-        	<xsl:if test="exists(child::Description[normalize-space(.)!=''])">
-                <descriptions>
-                	<xsl:for-each select="Description[normalize-space(.)!='']">
-                        <Description>
-                        	<xsl:call-template name="xmlLang"/>
-                            <xsl:value-of select="."/>
-                        </Description>
-                    </xsl:for-each>
-                </descriptions>
-            </xsl:if>
-        </Access>
+    	<xsl:if test="normalize-space(.)">
+    		<Access>
+    			<Availability>
+    				<xsl:value-of select=" ./Availability"/>
+    			</Availability>
+    			<Date>
+    				<xsl:call-template name="orUnspecified">
+    					<xsl:with-param name="value" select="Date"/>
+    				</xsl:call-template>
+    			</Date>
+    			<Owner>
+    				<xsl:value-of select=" ./Owner"/>
+    			</Owner>
+    			<Publisher>
+    				<xsl:value-of select=" ./Publisher"/>
+    			</Publisher>
+    			<xsl:apply-templates select="Contact"/>
+    			<xsl:if test="exists(child::Description[normalize-space(.)!=''])">
+    				<descriptions>
+    					<xsl:for-each select="Description[normalize-space(.)!='']">
+    						<Description>
+    							<xsl:call-template name="xmlLang"/>
+    							<xsl:value-of select="."/>
+    						</Description>
+    					</xsl:for-each>
+    				</descriptions>
+    			</xsl:if>
+    		</Access>
+    	</xsl:if>
     </xsl:template>
 
     <xsl:template match="WrittenResource">
