@@ -24,6 +24,7 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.StringWriter;
 import java.net.URL;
+import java.util.regex.Pattern;
 import javax.xml.stream.XMLInputFactory;
 import javax.xml.stream.XMLStreamException;
 import javax.xml.stream.XMLStreamReader;
@@ -61,6 +62,10 @@ public class TranslatorImpl implements Translator {
     private final static String SAXON_TRANSFORMER_IMPL_CLASS_NAME = "net.sf.saxon.TransformerFactoryImpl";
     private final static String cmdi2imdiStyleSheet = "templates/cmdi2imdi/cmdi2imdiMaster.xslt";
     private final static String imdi2cmdiStyleSheet = "templates/imdi2cmdi/imdi2cmdi.xslt";
+
+    private final static Pattern CMDI_URL_PATTERN = Pattern.compile("^.*\\.cmdi(\\?.*)?$", Pattern.CASE_INSENSITIVE);
+    private final static Pattern IMDI_URL_PATTERN = Pattern.compile("^.*\\.imdi(\\?.*)?$", Pattern.CASE_INSENSITIVE);
+    
     private final TransformerFactory transfFactory;
     private final XMLInputFactory xmlInputFactory;
     private final Templates cmdi2imdiCachedXSLT;
@@ -172,8 +177,7 @@ public class TranslatorImpl implements Translator {
                     writeURLContentsToStream(cmdiFileURL, sw);
                 } else {
                     if (!isCmdiUrl(inputUrl)) {
-                        //TODO: throw an exception instead
-                        logger.warn("Input document language could not be confirmed! CMDI assumed.");
+                        logger.info("Input document language could not be confirmed! CMDI assumed.");
                     }
                     //translate document
                     final Transformer transformer = cmdi2imdiCachedXSLT.newTransformer();
@@ -219,15 +223,14 @@ public class TranslatorImpl implements Translator {
                 final StringWriter sw = new StringWriter();
                 final Result result = new StreamResult(sw);
                 final String inputUrl = imdiFileURL.toString();
-                
+
                 //return the original document for documents already with cmdi extension. 
                 if (isCmdiUrl(inputUrl)) {
                     logger.warn("Input document seems to be already CMDI! Returning original document.");
                     writeURLContentsToStream(imdiFileURL, sw);
                 } else {
                     if (!isImdiURl(inputUrl)) {
-                        //TODO: throw exception instead!
-                        logger.warn("Input document language could not be confirmed! IMDI assumed.");
+                        logger.info("Input document language could not be confirmed! IMDI assumed.");
                     }
                     //translate document
                     Transformer transformer = imdi2cmdiCachedXSLT.newTransformer();
@@ -264,10 +267,10 @@ public class TranslatorImpl implements Translator {
     }
 
     private static boolean isCmdiUrl(String cmdiFileURL) {
-        return cmdiFileURL.endsWith(".cmdi"); //TODO: case insensitive check
+        return CMDI_URL_PATTERN.matcher(cmdiFileURL).matches();
     }
 
-    private static boolean isImdiURl(String cmdiFileURL) {
-        return cmdiFileURL.endsWith(".imdi"); //TODO: case insensitive check
+    private static boolean isImdiURl(String imdiFileURL) {
+        return IMDI_URL_PATTERN.matcher(imdiFileURL).matches();
     }
 }
