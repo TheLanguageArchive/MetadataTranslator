@@ -4,7 +4,7 @@ $Rev: 3378 $
 $LastChangedDate: 2013-08-14 11:25:31 +0200 (Wed, 14 Aug 2013) $
 -->
 <xsl:stylesheet xmlns="http://www.clarin.eu/cmd/" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-	version="2.0" xpath-default-namespace="http://www.mpi.nl/IMDI/Schema/IMDI" xmlns:imdi="http://www.mpi.nl/IMDI/Schema/IMDI" xmlns:lat="http://lat.mpi.nl/" xmlns:iso="http://www.iso.org/" xmlns:sil="http://www.sil.org/">
+	version="2.0" xpath-default-namespace="http://www.mpi.nl/IMDI/Schema/IMDI" xmlns:imdi="http://www.mpi.nl/IMDI/Schema/IMDI" xmlns:lat="http://lat.mpi.nl/" xmlns:iso="http://www.iso.org/" xmlns:sil="http://www.sil.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:functx="http://www.functx.com">
     <!-- this is a version of imdi2clarin.xsl that batch processes a whole directory structure of imdi files, call it from the command line like this:
         java -jar saxon8.jar -it main batch-imdi2clarin.xsl
         the last template in this file has to be modified to reflect the actual directory name
@@ -43,6 +43,21 @@ $LastChangedDate: 2013-08-14 11:25:31 +0200 (Wed, 14 Aug 2013) $
 	<!-- definition of the SRU-searchable collections at TLA (for use later on) -->
     <xsl:variable name="SruSearchable">childes,ESF corpus,IFA corpus,MPI CGN,talkbank</xsl:variable>
     
+    <!-- profiles -->
+	<xsl:variable name="SL_PROFILE" select="'clarin.eu:cr1:p_1417617523856'"/>
+
+	<xsl:function name="lat:sessionProfileRoot">
+		<xsl:param name="profile"/>
+		<xsl:choose>
+			<xsl:when test="$profile=$SL_PROFILE">
+				<xsl:sequence select="'lat-SL-session'"/>
+			</xsl:when>
+			<xsl:otherwise>
+				<xsl:sequence select="'lat-session'"/>
+			</xsl:otherwise>
+		</xsl:choose>
+	</xsl:function>
+
 
 	<!-- fix the closed vocabularies -->
 	<xsl:template match="@*|node()" mode="fixVocab">
@@ -134,15 +149,28 @@ $LastChangedDate: 2013-08-14 11:25:31 +0200 (Wed, 14 Aug 2013) $
             <ResourceRelationList> </ResourceRelationList>
         </Resources>
         <Components>
-            <xsl:apply-templates select="Session"/>
-            <xsl:apply-templates select="Corpus"/>
+            <xsl:apply-templates select="Session">
+            	<xsl:with-param name="profile" select="$profile" tunnel="yes"/>
+            </xsl:apply-templates>
+            <xsl:apply-templates select="Corpus">
+            	<xsl:with-param name="profile" select="$profile" tunnel="yes"/>
+            </xsl:apply-templates>
         </Components>
     </xsl:template>
 
     <xsl:template match="METATRANSCRIPT">
         <xsl:choose>
             <xsl:when test=".[@Type='SESSION'] or .[@Type='SESSION.Profile']">
-            	<xsl:variable name="profile" select="'clarin.eu:cr1:p_1407745712035'"/>
+            	<xsl:variable name="profile">
+            		<xsl:choose>
+            			<xsl:when test="contains(@Originator,'CNGT.Profile') or contains(@Originator,'Sign Language') or contains(@Originator,'SignLanguage.Profile')">
+            				<xsl:sequence select="$SL_PROFILE"/>
+            			</xsl:when>
+            			<xsl:otherwise>
+            				<xsl:sequence select="'clarin.eu:cr1:p_1407745712035'"/>
+            			</xsl:otherwise>
+            		</xsl:choose>
+            	</xsl:variable>
                 <CMD CMDVersion="1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
                     xsi:schemaLocation="http://www.clarin.eu/cmd/ http://catalog.clarin.eu/ds/ComponentRegistry/rest/registry/profiles/{$profile}/xsd">
                     <xsl:call-template name="metatranscriptDelegate">
@@ -510,7 +538,8 @@ $LastChangedDate: 2013-08-14 11:25:31 +0200 (Wed, 14 Aug 2013) $
 	
 
     <xsl:template match="Session">
-        <lat-session>
+    	<xsl:param name="profile" tunnel="yes"/>
+        <xsl:element name="{lat:sessionProfileRoot($profile)}">
         	<xsl:apply-templates select="preceding-sibling::History"/>
             <xsl:apply-templates select="child::Name"/>
             <xsl:apply-templates select="child::Title"/>
@@ -538,7 +567,7 @@ $LastChangedDate: 2013-08-14 11:25:31 +0200 (Wed, 14 Aug 2013) $
         	<xsl:apply-templates select="child::MDGroup"/>
             <xsl:apply-templates select="child::Resources" mode="regular"/>
             <xsl:apply-templates select="child::References"/>
-        </lat-session>
+        </xsl:element>
     </xsl:template>
 
 	<xsl:template match="child::History">
@@ -572,9 +601,34 @@ $LastChangedDate: 2013-08-14 11:25:31 +0200 (Wed, 14 Aug 2013) $
     </xsl:template>
 
     <xsl:template match="child::MDGroup">
+    	<xsl:param name="profile" tunnel="yes"/>
         <xsl:apply-templates select="child::Location"/>
         <xsl:apply-templates select="child::Project"/>
-        <xsl:apply-templates select="child::Keys"/>
+    	<xsl:if test="$profile=$SL_PROFILE">
+    		<xsl:call-template name="keysToElements">
+    			<xsl:with-param name="group" select="'SL_CreativeCommonsLicense'"/>
+    			<xsl:with-param name="prefix" select="'CreativeCommonsLicense.'"/>
+    			<xsl:with-param name="keys" select="(
+    				'CreativeCommonsLicense.AnnotationFiles',
+    				'CreativeCommonsLicense.AnnotationFiles.URL',
+    				'CreativeCommonsLicense.MediaFiles',
+    				'CreativeCommonsLicense.MediaFiles.URL')"/>
+    		</xsl:call-template>
+    	</xsl:if>
+    	<xsl:choose>
+    		<xsl:when test="$profile=$SL_PROFILE">
+    			<xsl:apply-templates select="child::Keys">
+    				<xsl:with-param name="skip" select="(
+    					'CreativeCommonsLicense.AnnotationFiles',
+    					'CreativeCommonsLicense.AnnotationFiles.URL',
+    					'CreativeCommonsLicense.MediaFiles',
+    					'CreativeCommonsLicense.MediaFiles.URL')"/>
+    			</xsl:apply-templates>
+    		</xsl:when>
+    		<xsl:otherwise>
+    			<xsl:apply-templates select="child::Keys"/>
+    		</xsl:otherwise>
+    	</xsl:choose>
         <xsl:apply-templates select="child::Content"/>
         <xsl:apply-templates select="child::Actors"/>
     </xsl:template>
@@ -653,9 +707,11 @@ $LastChangedDate: 2013-08-14 11:25:31 +0200 (Wed, 14 Aug 2013) $
 	</xsl:template>
 
     <xsl:template match="Keys">
-    	<xsl:if test="exists(Key[normalize-space(@Name)!='' or normalize-space(.)!=''])">
+    	<xsl:param name="skip" select="()"/>
+    	<xsl:variable name="keys" select="Key[normalize-space(@Name)!=''][normalize-space(.)!=''][not(@Name=$skip)]"/>
+    	<xsl:if test="exists($keys)">
     		<Keys>
-    			<xsl:for-each select="Key[normalize-space(@Name)!='' or normalize-space(.)!='']">
+    			<xsl:for-each select="$keys">
     				<Key>
     					<xsl:attribute name="Name">
     						<xsl:value-of select="@Name"/>
@@ -668,6 +724,7 @@ $LastChangedDate: 2013-08-14 11:25:31 +0200 (Wed, 14 Aug 2013) $
     </xsl:template>
 
     <xsl:template match="Content">
+    <xsl:param name="profile" tunnel="yes"/>
         <Content>
             <Genre>
                 <xsl:value-of select="child::Genre"/>
@@ -692,9 +749,39 @@ $LastChangedDate: 2013-08-14 11:25:31 +0200 (Wed, 14 Aug 2013) $
                     <xsl:value-of select="child::Subject"/>
                 </Subject>
             </xsl:if>
-            <xsl:apply-templates select="child::CommunicationContext"/>
+        	<xsl:if test="$profile=$SL_PROFILE">
+        		<xsl:call-template name="keyToElement">
+        			<xsl:with-param name="key" select="'ElicitationMethod'"/>
+        		</xsl:call-template>
+        	</xsl:if>
+        	<xsl:apply-templates select="child::CommunicationContext"/>
             <xsl:apply-templates select="child::Languages" mode="content"/>
-            <xsl:apply-templates select="child::Keys"/>
+        	<xsl:if test="$profile=$SL_PROFILE">
+        		<xsl:call-template name="keysToElements">
+        			<xsl:with-param name="group" select="'SL_Interpreting'"/>
+        			<xsl:with-param name="prefix" select="'Interpreting.'"/>
+        			<xsl:with-param name="keys" select="(
+        				'Interpreting.Source',
+        				'Interpreting.Target',
+        				'Interpreting.Visibility',
+        				'Interpreting.Audience')"/>
+        		</xsl:call-template>
+        	</xsl:if>
+        	<xsl:choose>
+        		<xsl:when test="$profile=$SL_PROFILE">
+        			<xsl:apply-templates select="child::Keys">
+        				<xsl:with-param name="skip" select="(
+        					'ElicitationMethod',
+        					'Interpreting.Audience',
+        					'Interpreting.Source',
+        					'Interpreting.Target',
+        					'Interpreting.Visibility')"/>
+        			</xsl:apply-templates>
+        		</xsl:when>
+        		<xsl:otherwise>
+        			<xsl:apply-templates select="child::Keys"/>
+        		</xsl:otherwise>
+        	</xsl:choose>
         	<xsl:if test="exists(child::Description[normalize-space()!=''])">
                 <descriptions>
                 	<xsl:for-each select="Description[normalize-space()!='']">
@@ -811,6 +898,7 @@ $LastChangedDate: 2013-08-14 11:25:31 +0200 (Wed, 14 Aug 2013) $
     </xsl:template>
 
     <xsl:template match="Actors">
+    	<xsl:param name="profile" tunnel="yes"/>
         <Actors>
             <xsl:if test="exists(child::Description[normalize-space(.)!=''])">
                 <descriptions>
@@ -865,8 +953,100 @@ $LastChangedDate: 2013-08-14 11:25:31 +0200 (Wed, 14 Aug 2013) $
                     		<xsl:with-param name="value" select="Anonymized"/>
                     	</xsl:call-template>
                     </Anonymized>
-                    <xsl:apply-templates select="Contact"/>
-                    <xsl:apply-templates select="child::Keys"/>
+                	<xsl:if test="$profile=$SL_PROFILE">
+                		<xsl:call-template name="keyToElement">
+                			<xsl:with-param name="key" select="'Handedness'"/>
+                		</xsl:call-template>
+                		<xsl:call-template name="keyToElement">
+                			<xsl:with-param name="key" select="'Region'"/>
+                		</xsl:call-template>
+                	</xsl:if>
+                	<xsl:apply-templates select="Contact"/>
+                	<xsl:if test="$profile=$SL_PROFILE">
+                		<xsl:call-template name="keysToElements">
+                			<xsl:with-param name="group" select="'SL_Deafness'"/>
+                			<xsl:with-param name="prefix" select="'Deafness.'"/>
+                			<xsl:with-param name="keys" select="(
+                				'Deafness.Status',
+                				'Deafness.AidType')"/>
+                		</xsl:call-template>
+                		<xsl:call-template name="keysToElements">
+                			<xsl:with-param name="group" select="'SL_SignLanguageExperience'"/>
+                			<xsl:with-param name="prefix" select="'SignLanguageExperience.'"/>
+                			<xsl:with-param name="keys" select="(
+                				'SignLanguageExperience.ExposureAge',
+                				'SignLanguageExperience.AcquisitionLocation',
+                				'SignLanguageExperience.SignTeaching')"/>
+                		</xsl:call-template>
+                		<xsl:variable name="family" as="element()*">
+                			<xsl:call-template name="keysToElements">
+                				<xsl:with-param name="group" select="'SL_Mother'"/>
+                				<xsl:with-param name="prefix" select="'Family.Mother.'"/>
+                				<xsl:with-param name="keys" select="(
+                					'Family.Mother.Deafness',
+                					'Family.Mother.PrimaryCommunicationForm')"/>
+                			</xsl:call-template>
+                			<xsl:call-template name="keysToElements">
+                				<xsl:with-param name="group" select="'SL_Father'"/>
+                				<xsl:with-param name="prefix" select="'Family.Father.'"/>
+                				<xsl:with-param name="keys" select="(
+                					'Family.Father.Deafness',
+                					'Family.Father.PrimaryCommunicationForm')"/>
+                			</xsl:call-template>
+                			<xsl:call-template name="keysToElements">
+                				<xsl:with-param name="group" select="'SL_Partner'"/>
+                				<xsl:with-param name="prefix" select="'Family.Partner.'"/>
+                				<xsl:with-param name="keys" select="(
+                					'Family.Partner.Deafness',
+                					'Family.Partner.PrimaryCommunicationForm')"/>
+                			</xsl:call-template>
+                		</xsl:variable>
+                		<xsl:if test="exists($family)">
+                			<SL_Family>
+                				<xsl:copy-of select="$family"/>
+                			</SL_Family>
+                		</xsl:if>
+                		<xsl:call-template name="keysToElements">
+                			<xsl:with-param name="group" select="'SL_Education'"/>
+                			<xsl:with-param name="prefix" select="'Education.'"/>
+                			<xsl:with-param name="keys" select="(
+                				'Education.Age',
+                				'Education.SchoolType',
+                				'Education.ClassKind',
+                				'Education.EducationModel',
+                				'Education.Location',
+                				'Education.BoardingSchool')"/>
+                		</xsl:call-template>
+                	</xsl:if>
+                	<xsl:choose>
+                		<xsl:when test="$profile=$SL_PROFILE">
+                			<xsl:apply-templates select="child::Keys">
+                				<xsl:with-param name="skip" select="(
+                					'Deafness.Status',
+                					'Deafness.AidType',
+                					'SignLanguageExperience.ExposureAge',
+                					'SignLanguageExperience.AcquisitionLocation',
+                					'SignLanguageExperience.SignTeaching',
+                					'Family.Mother.Deafness',
+                					'Family.Mother.PrimaryCommunicationForm',
+                					'Family.Father.Deafness',
+                					'Family.Father.PrimaryCommunicationForm',
+                					'Family.Partner.Deafness',
+                					'Family.Partner.PrimaryCommunicationForm',
+                					'Education.Age',
+                					'Education.SchoolType',
+                					'Education.ClassKind',
+                					'Education.EducationModel',
+                					'Education.Location',
+                					'Education.BoardingSchool',
+                					'Handedness',
+                					'Region')"/>
+                			</xsl:apply-templates>
+                		</xsl:when>
+                		<xsl:otherwise>
+                			<xsl:apply-templates select="child::Keys"/>
+                		</xsl:otherwise>
+                	</xsl:choose>
                     <xsl:if test="exists(child::Description[normalize-space(.)!=''])">
                         <descriptions>
                             <xsl:for-each select="Description[normalize-space(.)!='']">
@@ -988,6 +1168,12 @@ $LastChangedDate: 2013-08-14 11:25:31 +0200 (Wed, 14 Aug 2013) $
                     </xsl:for-each>
                 </descriptions>
             </xsl:if>
+			<!-- 
+			1029 <Key Name="MultipleCameras.Number"
+			1029 <Key Name="MultipleCameras.Layout"
+			1029 <Key Name="MultipleCameras.Viewpoints"
+			1029 <Key Name="MultipleCameras.Focus"
+			-->
             <xsl:apply-templates select="child::Keys"/>
         </MediaFile>
     </xsl:template>
@@ -1337,6 +1523,35 @@ $LastChangedDate: 2013-08-14 11:25:31 +0200 (Wed, 14 Aug 2013) $
 				<xsl:text>Unspecified</xsl:text>
 			</xsl:otherwise>
 		</xsl:choose>
+	</xsl:template>
+		
+	<xsl:template name="keysToElements">
+		<xsl:param name="group"/>
+		<xsl:param name="prefix" select="''"/>
+		<xsl:param name="keys" select="()"/>
+		<xsl:variable name="grp" as="element()*">
+			<xsl:for-each select="Keys/Key[@Name=$keys][normalize-space(.)!='']">
+				<xsl:sort select="index-of($keys,@Name)"/>
+				<xsl:element name="{replace(substring-after(@Name,$prefix),'\.','_')}">
+					<xsl:value-of select="."/>
+				</xsl:element>
+			</xsl:for-each>
+		</xsl:variable>
+		<xsl:if test="exists($grp)">
+			<xsl:element name="{$group}">
+				<xsl:copy-of select="$grp"/>
+			</xsl:element>
+		</xsl:if>
+	</xsl:template>
+	
+	<xsl:template name="keyToElement">
+		<xsl:param name="key"/>
+		<xsl:param name="element" select="$key"/>
+		<xsl:for-each select="Keys/Key[@Name=$key][normalize-space(.)!='']">
+			<xsl:element name="{$element}">
+				<xsl:value-of select="."/>
+			</xsl:element>
+		</xsl:for-each>
 	</xsl:template>
 
     <xsl:template name="main">
