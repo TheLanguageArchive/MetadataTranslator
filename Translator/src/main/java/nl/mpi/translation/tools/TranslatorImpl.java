@@ -43,11 +43,12 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * Implemenation of Rest translation library to convert CMDI into IMDI and vice-versa.
+ * Implemenation of Rest translation library to convert CMDI into IMDI and
+ * vice-versa.
  * <br/><br/>
- * This class uses STAx for parsing the input document and Saxon
- * as XSLT processor. The transformer for the underlying XSLT
- * stylesheet is cached in a Template object.<br/>
+ * This class uses STAx for parsing the input document and Saxon as XSLT
+ * processor. The transformer for the underlying XSLT stylesheet is cached in a
+ * Template object.<br/>
  * Saxon is used to provide an XSLT 2.0 implementation.
  *
  * @author andmor <andre.moreira@mpi.nl>
@@ -72,76 +73,79 @@ public class TranslatorImpl implements Translator {
      * @throws IOException
      */
     public TranslatorImpl() throws TransformerConfigurationException, IOException {
-	transfFactory = createTransformerFactory();
-	transfFactory.setErrorListener(new TranslationServiceErrorListener(logger));
-	logger.debug("Instantiated XML transformer factory of type {}", transfFactory.getClass());
+        transfFactory = createTransformerFactory();
+        transfFactory.setErrorListener(new TranslationServiceErrorListener(logger));
+        logger.debug("Instantiated XML transformer factory of type {}", transfFactory.getClass());
 
-	xmlInputFactory = XMLInputFactory.newInstance();
-	logger.debug("Instantiated XML input factory of type {}", xmlInputFactory.getClass());
+        xmlInputFactory = XMLInputFactory.newInstance();
+        logger.debug("Instantiated XML input factory of type {}", xmlInputFactory.getClass());
 
-	cmdi2imdiCachedXSLT = initCmdi2CmdiXslt();
-	imdi2cmdiCachedXSLT = initImdi2CmdiXslt();
+        cmdi2imdiCachedXSLT = initCmdi2CmdiXslt();
+        imdi2cmdiCachedXSLT = initImdi2CmdiXslt();
 
-	logger.info("Translator initialized");
-	logger.debug("Using XSLT Transformer: '{}'", cmdi2imdiCachedXSLT.getClass());
-	logger.debug("Using CMDI2IMDI stylesheet: '{}'", cmdi2imdiStyleSheet);
-	logger.debug("Using IMDI2CMDI stylesheet: '{}'", imdi2cmdiStyleSheet);
+        logger.info("Translator initialized");
+        logger.debug("Using XSLT Transformer: '{}'", cmdi2imdiCachedXSLT.getClass());
+        logger.debug("Using CMDI2IMDI stylesheet: '{}'", cmdi2imdiStyleSheet);
+        logger.debug("Using IMDI2CMDI stylesheet: '{}'", imdi2cmdiStyleSheet);
     }
 
     private Templates initCmdi2CmdiXslt() throws FileNotFoundException, TransformerConfigurationException, IOException {
-	//Create a source with the cmdi2imdi stylesheet
-	final URL xsltURL = this.getClass().getClassLoader().getResource(cmdi2imdiStyleSheet);
-	if (xsltURL == null) {
-	    throw new FileNotFoundException("CMDI2IMDI stylesheet: '" + cmdi2imdiStyleSheet
-		    + "' (no such file or directory)");
-	}
-	final Source sourceXSLT = new StreamSource(xsltURL.openStream(), xsltURL.toExternalForm());
+        //Create a source with the cmdi2imdi stylesheet
+        final URL xsltURL = this.getClass().getClassLoader().getResource(cmdi2imdiStyleSheet);
+        if (xsltURL == null) {
+            throw new FileNotFoundException("CMDI2IMDI stylesheet: '" + cmdi2imdiStyleSheet
+                    + "' (no such file or directory)");
+        }
+        final Source sourceXSLT = new StreamSource(xsltURL.openStream(), xsltURL.toExternalForm());
 
-	//Create a cached cmdi 2 imdi the transformer
-	return transfFactory.newTemplates(sourceXSLT);
+        //Create a cached cmdi 2 imdi the transformer
+        return transfFactory.newTemplates(sourceXSLT);
     }
 
     private Templates initImdi2CmdiXslt() throws IOException, FileNotFoundException, TransformerConfigurationException {
-	//Create a source with the imdi2cmdi stylesheet
-	final URL xsltURL = this.getClass().getClassLoader().getResource(imdi2cmdiStyleSheet);
-	if (xsltURL == null) {
-	    throw new FileNotFoundException("IMDI2IMDI stylesheet: '" + imdi2cmdiStyleSheet
-		    + "' (no such file or directory)");
-	}
-	final Source sourceXSLT = new StreamSource(xsltURL.openStream(), xsltURL.toExternalForm());
+        //Create a source with the imdi2cmdi stylesheet
+        final URL xsltURL = this.getClass().getClassLoader().getResource(imdi2cmdiStyleSheet);
+        if (xsltURL == null) {
+            throw new FileNotFoundException("IMDI2IMDI stylesheet: '" + imdi2cmdiStyleSheet
+                    + "' (no such file or directory)");
+        }
+        final Source sourceXSLT = new StreamSource(xsltURL.openStream(), xsltURL.toExternalForm());
 
-	//Create a cached imdi 2 cmdi the transformer
-	return transfFactory.newTemplates(sourceXSLT);
+        //Create a cached imdi 2 cmdi the transformer
+        return transfFactory.newTemplates(sourceXSLT);
     }
 
     /**
-     * Creates a new transformer factory, using Saxon as the preferred implementation. Falls back to the default procedure through
+     * Creates a new transformer factory, using Saxon as the preferred
+     * implementation. Falls back to the default procedure through
      * {@link TransformerFactory#newInstance()}.
      *
      * @return an implementation instance of TransformerFactory, never null
-     * @throws TransformerFactoryConfigurationError as thrown by {@link TransformerFactory#newInstance() } in case the Saxon implementation
-     * cannot be instantiated
+     * @throws TransformerFactoryConfigurationError as thrown by {@link TransformerFactory#newInstance()
+     * } in case the Saxon implementation cannot be instantiated
      */
     private TransformerFactory createTransformerFactory() throws TransformerFactoryConfigurationError {
-	try {
-	    // Try Saxon first:
-	    logger.debug("Trying to get instance of '{}' transformer implementation", SAXON_TRANSFORMER_IMPL_CLASS_NAME);
-	    return TransformerFactory.newInstance(SAXON_TRANSFORMER_IMPL_CLASS_NAME, null);
-	} catch (TransformerFactoryConfigurationError tfc) {
-	    // Backup plan: use whatever is available to Java through the default procedure 
-	    logger.warn("Could not load class for Saxon transformer, trying default as backup. This will probably lead to runtime errors!");
-	    logger.debug("javax.xml.transform.TransformerFactory={}", System.getProperty("javax.xml.transform.TransformerFactory"));
-	    logger.debug("Exception thrown by TransformerFactory.newInstance()", tfc);
-	    return TransformerFactory.newInstance();
-	}
+        try {
+            // Try Saxon first:
+            logger.debug("Trying to get instance of '{}' transformer implementation", SAXON_TRANSFORMER_IMPL_CLASS_NAME);
+            return TransformerFactory.newInstance(SAXON_TRANSFORMER_IMPL_CLASS_NAME, null);
+        } catch (TransformerFactoryConfigurationError tfc) {
+            // Backup plan: use whatever is available to Java through the default procedure 
+            logger.warn("Could not load class for Saxon transformer, trying default as backup. This will probably lead to runtime errors!");
+            logger.debug("javax.xml.transform.TransformerFactory={}", System.getProperty("javax.xml.transform.TransformerFactory"));
+            logger.debug("Exception thrown by TransformerFactory.newInstance()", tfc);
+            return TransformerFactory.newInstance();
+        }
     }
 
     /**
-     * This method reads an CMDI XML document form the supplied URL and returns it converted
-     * to IMDI. If the input document specified by <b>cmdiFileURL</b> has <i>.imdi</i> extension,
-     * the original file is returned.
+     * This method reads an CMDI XML document form the supplied URL and returns
+     * it converted to IMDI. If the input document specified by
+     * <b>cmdiFileURL</b> has <i>.imdi</i> extension, the original file is
+     * returned.
      *
      * @param cmdiFileURL - The URL pointing to the CMDI file to convert.
+     * @param serviceURI
      * @return IMDI file converted from CMDI.
      * @throws TransformerException
      * @throws XMLStreamException
@@ -150,49 +154,52 @@ public class TranslatorImpl implements Translator {
     @Override
     public String getIMDI(URL cmdiFileURL, String serviceURI) throws TransformerException, XMLStreamException, IOException {
 
-	//set up input
-	final InputStream input = cmdiFileURL.openStream();
-	try {
-	    final XMLStreamReader xmlStreamReader = xmlInputFactory.createXMLStreamReader(input, "UTF-8");
-	    try {
-		final Source source = new StAXSource(xmlStreamReader);
+        //set up input
+        final InputStream input = cmdiFileURL.openStream();
+        try {
+            final XMLStreamReader xmlStreamReader = xmlInputFactory.createXMLStreamReader(input, "UTF-8");
+            try {
+                final Source source = new StAXSource(xmlStreamReader);
 
-		//set up output
-		final StringWriter sw = new StringWriter();
-		final Result result = new StreamResult(sw);
+                //set up output
+                final StringWriter sw = new StringWriter();
+                final Result result = new StreamResult(sw);
+                final String inputUrl = cmdiFileURL.toString();
 
-		//return the original document for documents already with imdi extension. 
-		if (!cmdiFileURL.toString().endsWith(".imdi")) { //TODO: case insensitive check
-		    if (!cmdiFileURL.toString().endsWith(".cmdi")) { //TODO: case insensitive check
+                //return the original document for documents already with imdi extension. 
+                if (isImdiURl(inputUrl)) {
+                    logger.warn("Input document seems to be already IMDI! Returning original document.");
+                    writeURLContentsToStream(cmdiFileURL, sw);
+                } else {
+                    if (!isCmdiUrl(inputUrl)) {
                         //TODO: throw an exception instead
-			logger.warn("Input document language could not be confirmed! IMDI assumed.");
-		    }
-		    //translate document
-		    final Transformer transformer = cmdi2imdiCachedXSLT.newTransformer();
-		    transformer.setParameter("service-base-uri", serviceURI);
-		    transformer.setParameter("source-location", cmdiFileURL.toString());
-		    transformer.transform(source, result);
-		} else {
-		    logger.warn("Input document seems to be already IMDI! Returning original document.");
-		    writeURLContentsToStream(cmdiFileURL, sw);
-		}
+                        logger.warn("Input document language could not be confirmed! CMDI assumed.");
+                    }
+                    //translate document
+                    final Transformer transformer = cmdi2imdiCachedXSLT.newTransformer();
+                    transformer.setParameter("service-base-uri", serviceURI);
+                    transformer.setParameter("source-location", inputUrl);
+                    transformer.transform(source, result);
+                }
 
-		sw.flush();
-		return sw.toString();
-	    } finally {
-		xmlStreamReader.close();
-	    }
-	} finally {
-	    input.close();
-	}
+                sw.flush();
+                return sw.toString();
+            } finally {
+                xmlStreamReader.close();
+            }
+        } finally {
+            input.close();
+        }
     }
 
     /**
-     * This method reads an IMDI XML document form the supplied URL and returns it converted
-     * to CMDI. If the input document specified by <b>imdiFileURL</b> has <i>.cmdi</i> extension,
-     * the original file is returned.
+     * This method reads an IMDI XML document form the supplied URL and returns
+     * it converted to CMDI. If the input document specified by
+     * <b>imdiFileURL</b> has <i>.cmdi</i> extension, the original file is
+     * returned.
      *
      * @param imdiFileURL - The URL pointing to the IMDI file to convert.
+     * @param serviceURI
      * @return CMDI file converted from IMDI.
      * @throws TransformerException
      * @throws XMLStreamException
@@ -201,57 +208,66 @@ public class TranslatorImpl implements Translator {
     @Override
     public String getCMDI(URL imdiFileURL, String serviceURI) throws TransformerException, XMLStreamException, IOException {
 
-	//set up input
-	final InputStream input = imdiFileURL.openStream();
-	try {
-	    XMLStreamReader xmlStreamReader = xmlInputFactory.createXMLStreamReader(input, "UTF-8");
-	    try {
-		final Source source = new StAXSource(xmlStreamReader);
+        //set up input
+        final InputStream input = imdiFileURL.openStream();
+        try {
+            XMLStreamReader xmlStreamReader = xmlInputFactory.createXMLStreamReader(input, "UTF-8");
+            try {
+                final Source source = new StAXSource(xmlStreamReader);
 
-		//set up output
-		final StringWriter sw = new StringWriter();
-		final Result result = new StreamResult(sw);
-
-		//return the original document for documents already with cmdi extension. 
-		if (!imdiFileURL.toString().endsWith(".cmdi")) { //TODO: case insensitive check
-		    if (!imdiFileURL.toString().endsWith(".imdi")) { //TODO: case insensitive check
+                //set up output
+                final StringWriter sw = new StringWriter();
+                final Result result = new StreamResult(sw);
+                final String inputUrl = imdiFileURL.toString();
+                
+                //return the original document for documents already with cmdi extension. 
+                if (isCmdiUrl(inputUrl)) {
+                    logger.warn("Input document seems to be already CMDI! Returning original document.");
+                    writeURLContentsToStream(imdiFileURL, sw);
+                } else {
+                    if (!isImdiURl(inputUrl)) {
                         //TODO: throw exception instead!
-			logger.warn("Input document language could not be confirmed! CMDI assumed.");
-		    }
-		    //translate document
-		    Transformer transformer = imdi2cmdiCachedXSLT.newTransformer();
-		    transformer.setParameter("service-base-uri", serviceURI);
-		    transformer.setParameter("source-location", imdiFileURL.toString());
-		    transformer.transform(source, result);
-		} else {
-		    logger.warn("Input document seems to be already CMDI! Returning original document.");
-		    writeURLContentsToStream(imdiFileURL, sw);
-		}
+                        logger.warn("Input document language could not be confirmed! IMDI assumed.");
+                    }
+                    //translate document
+                    Transformer transformer = imdi2cmdiCachedXSLT.newTransformer();
+                    transformer.setParameter("service-base-uri", serviceURI);
+                    transformer.setParameter("source-location", inputUrl);
+                    transformer.transform(source, result);
+                }
 
-		sw.flush();
-		return sw.toString();
-	    } finally {
-		xmlStreamReader.close();
-	    }
-	} finally {
-	    input.close();
-	}
+                sw.flush();
+                return sw.toString();
+            } finally {
+                xmlStreamReader.close();
+            }
+        } finally {
+            input.close();
+        }
     }
 
     private void writeURLContentsToStream(URL cmdiFileURL, StringWriter sw) throws IOException {
-	final InputStream urlInputStream = cmdiFileURL.openConnection().getInputStream();
-	try {
-	    final BufferedReader rd = new BufferedReader(new InputStreamReader(urlInputStream, "UTF-8"));
-	    try {
-		String line;
-		while ((line = rd.readLine()) != null) {
-		    sw.write(line);
-		}
-	    } finally {
-		rd.close();
-	    }
-	} finally {
-	    urlInputStream.close();
-	}
+        final InputStream urlInputStream = cmdiFileURL.openConnection().getInputStream();
+        try {
+            final BufferedReader rd = new BufferedReader(new InputStreamReader(urlInputStream, "UTF-8"));
+            try {
+                String line;
+                while ((line = rd.readLine()) != null) {
+                    sw.write(line);
+                }
+            } finally {
+                rd.close();
+            }
+        } finally {
+            urlInputStream.close();
+        }
+    }
+
+    private static boolean isCmdiUrl(String cmdiFileURL) {
+        return cmdiFileURL.endsWith(".cmdi"); //TODO: case insensitive check
+    }
+
+    private static boolean isImdiURl(String cmdiFileURL) {
+        return cmdiFileURL.endsWith(".imdi"); //TODO: case insensitive check
     }
 }

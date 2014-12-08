@@ -58,6 +58,8 @@ public class TranslatorImplTest {
     public static final String SOUNDBITES_TO_SESSION_IMDI = CMDI_SAMPLES_LOCATION + "/soundbites_sample_to_session.imdi";
     public static final String LAT_SESSION = CMDI_SAMPLES_LOCATION + "/imdi_session_sample.cmdi";
     public static final String LAT_SESSION_TO_IMDI = CMDI_SAMPLES_LOCATION + "/imdi_session_sample.imdi";
+    public static final String CGN_LAT_SESSION = CMDI_SAMPLES_LOCATION + "/imdi_cgn_session_sample.cmdi";
+    public static final String CGN_LAT_SESSION_TO_IMDI = CMDI_SAMPLES_LOCATION + "/imdi_cgn_session_sample.imdi";
     // IMDI Sample locations
     public static final String IMDI_SAMPLES_LOCATION = "/nl/mpi/translation/tools/imdi-sample";
     public static final String IMDI_SAMPLE = IMDI_SAMPLES_LOCATION + "/kleve_route.imdi";
@@ -116,7 +118,25 @@ public class TranslatorImplTest {
     public void testGetIMDIForSoundBites() throws Exception {
 	logger.info("Testing translation of DiscAn case instance to IMDI");
 	testGetIMDI(SOUNDBITES_CMDI, SOUNDBITES_TO_SESSION_IMDI);
-    }    
+    }     
+    
+    /**
+     * Requests translation of an DiscAn instance
+     */
+    @Test
+    public void testGetIMDIForLatSession() throws Exception {
+	logger.info("Testing translation of a LAT session (converted original IMDI) instance (back) to IMDI");
+	testGetIMDI(LAT_SESSION, LAT_SESSION_TO_IMDI);
+    } 
+    
+    /**
+     * Requests translation of an DiscAn instance
+     */
+    @Test
+    public void testGetIMDIForCGNSession() throws Exception {
+	logger.info("Testing translation of a LAT session (converted original IMDI) instance (back) to IMDI");
+	testGetIMDI(CGN_LAT_SESSION, CGN_LAT_SESSION_TO_IMDI);
+    } 
 
     /**
      * Requests translation of an IPROSLA (profile clarin.eu:cr1:p_1331113992512) instance with a self link.
@@ -251,7 +271,7 @@ public class TranslatorImplTest {
      * @throws UnsupportedEncodingException
      */
     private String normalizeImdiOutput(String xml, URL cmdiFileUrl) throws UnsupportedEncodingException {
-	return normalizeSourceLocation(normalizeOriginator(xml, cmdiFileUrl.toString()));
+	return normalizeDate(normalizeSourceLocation(normalizeOriginator(xml, cmdiFileUrl.toString())));
     }
 
     /**
