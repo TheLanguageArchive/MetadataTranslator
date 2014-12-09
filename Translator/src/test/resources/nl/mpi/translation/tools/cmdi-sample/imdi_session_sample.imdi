@@ -54,11 +54,12 @@
                         Type="ClosedVocabulary">Unspecified</Channel>
                 </CommunicationContext>
                 <Languages>
-                    <Description LanguageId="" Link=""/>
                     <Language>
                         <Id>ISO639-3:deu</Id>
-                        <Name Type="OpenVocabulary">German</Name>
-                        <Description LanguageId="" Link=""/>
+                        <Name Link="http://www.mpi.nl/IMDI/Schema/MPI-Languages.xml" Type="OpenVocabulary">German</Name>
+                        <Dominant Type="ClosedVocabulary">Unspecified</Dominant>
+                        <SourceLanguage Type="ClosedVocabulary">Unspecified</SourceLanguage>
+                        <TargetLanguage Type="ClosedVocabulary">Unspecified</TargetLanguage>
                     </Language>
                 </Languages>
                 <Keys>
@@ -66,28 +67,22 @@
                     <Key Link="http://www.mpi.nl/IMDI/Schema/Content-Genre-Discursive.xml" Name="IMDI__1_9.Discursive" Type="OpenVocabularyList"/>
                     <Key Link="http://www.mpi.nl/IMDI/Schema/Content-Genre-Interactional.xml" Name="IMDI__1_9.Interactional" Type="OpenVocabularyList"/>
                 </Keys>
-                <Description LanguageId="ISO639:eng" Link="">This file was generated from an IMDI
-                    1.9 file and transformed to IMDI 3.0. The substructure of Genre is replaced by
-                    two elements named "Genre" and "SubGenre". The original content of Genre
-                    substructure was: Interactional = '', Discursive = '', Performance = ''. These
-                    values have been added as Keys to the Content information. </Description>
-                <Description LanguageId="" Link="">Child data from an elicited narrative task based
-                    on a stimulus set involving reference to a given (introduced) and a new item
-                    presented simultaneously. </Description>
+                <Description LanguageId="ISO639-3:eng">This file was generated from an IMDI 1.9 file and transformed to IMDI 3.0. The substructure of Genre is replaced by two elements named "Genre" and "SubGenre". The original content of Genre substructure was: Interactional = '', Discursive = '', Performance = ''. These values have been added as Keys to the Content information. </Description>
+                <Description>Child data from an elicited narrative task based on a stimulus set involving reference to a given (introduced) and a new item presented simultaneously. </Description>
             </Content>
             <Actors>
                 <Actor>
-                    <Role Link="http://www.mpi.nl/IMDI/Schema/Actor-Role.xml" Type="OpenVocabulary">Unspecified</Role>
+                    <Role Link="http://www.mpi.nl/IMDI/Schema/Actor-Role.xml" Type="OpenVocabularyList">Unspecified</Role>
                     <Name>Annalena</Name>
                     <FullName/>
                     <Code>ANNALENA</Code>
                     <FamilySocialRole Link="http://www.mpi.nl/IMDI/Schema/Actor-FamilySocialRole.xml" Type="OpenVocabularyList">Unspecified</FamilySocialRole>
                     <Languages>
-                        <Description LanguageId="" Link=""/>
                         <Language>
                             <Id>ISO639-3:deu</Id>
-                            <Name Type="OpenVocabulary">German</Name>
-                            <Description LanguageId="" Link=""/>
+                            <Name>German</Name>
+                            <MotherTongue Type="ClosedVocabulary">Unspecified</MotherTongue>
+                            <PrimaryLanguage Type="ClosedVocabulary">Unspecified</PrimaryLanguage>
                         </Language>
                     </Languages>
                     <EthnicGroup Type="OpenVocabulary"/>
@@ -100,7 +95,7 @@
                     <Keys>
                         <Key Name="BirthDate" Type="OpenVocabulary">2003-05-23</Key>
                     </Keys>
-                    <Description LanguageId="" Link="">child</Description>
+                    <Description>child</Description>
                 </Actor>
                 <Actor>
                     <Role Link="http://www.mpi.nl/IMDI/Schema/Actor-Role.xml" Type="OpenVocabulary">Unspecified</Role>
@@ -109,7 +104,7 @@
                     <Code/>
                     <FamilySocialRole Link="http://www.mpi.nl/IMDI/Schema/Actor-FamilySocialRole.xml" Type="OpenVocabularyList">Unspecified</FamilySocialRole>
                     <Languages>
-                        <Description LanguageId="" Link=""/>
+                       
                     </Languages>
                     <EthnicGroup Type="OpenVocabulary"/>
                     <Age>Unspecified</Age>
@@ -121,7 +116,6 @@
                     <Keys>
                         <Key Name="Role" Type="OpenVocabulary">investigator</Key>
                     </Keys>
-                    <Description LanguageId="" Link=""/>
                 </Actor>
                 <Actor>
                     <Role Link="http://www.mpi.nl/IMDI/Schema/Actor-Role.xml" Type="OpenVocabulary">Unspecified</Role>
@@ -130,7 +124,6 @@
                     <Code/>
                     <FamilySocialRole Link="http://www.mpi.nl/IMDI/Schema/Actor-FamilySocialRole.xml" Type="OpenVocabularyList">Unspecified</FamilySocialRole>
                     <Languages>
-                        <Description LanguageId="" Link=""/>
                     </Languages>
                     <EthnicGroup Type="OpenVocabulary"/>
                     <Age>Unspecified</Age>
@@ -142,7 +135,6 @@
                     <Keys>
                         <Key Name="Role" Type="OpenVocabulary">investigator</Key>
                     </Keys>
-                    <Description LanguageId="" Link=""/>
                 </Actor>
                 <Actor>
                     <Role Link="http://www.mpi.nl/IMDI/Schema/Actor-Role.xml" Type="OpenVocabulary">Collector</Role>
@@ -164,7 +156,7 @@
                         <Organisation/>
                     </Contact>
                     <Keys/>
-                    <Description LanguageId="" Link="">Description</Description>
+                    <Description>Description</Description>
                 </Actor>
                 <Actor ResourceRef="N0x5128b0N0x541190">
                     <Role Link="http://www.mpi.nl/IMDI/Schema/Actor-Role.xml" Type="OpenVocabulary">Annotator</Role>
@@ -181,14 +173,12 @@
                     <Anonymized>false</Anonymized>
                     <Contact/>
                     <Keys/>
-                    <Description LanguageId="" Link=""/>
                 </Actor>
             </Actors>
         </MDGroup>
         <Resources>
             <MediaFile ResourceId="N0x5128b0N0x5364d0">
-                <ResourceLink ArchiveHandle="hdl:1839/00-0000-0000-0009-56D9-E"
-                    >../Media/NAR_Annalena_2a.wav</ResourceLink>
+                <ResourceLink ArchiveHandle="hdl:1839/00-0000-0000-0009-56D9-E">http://archive/corpus/my-collection/Media/NAR_Annalena_2a.wav</ResourceLink>
                 <Type Type="OpenVocabulary">audio</Type>
                 <Format Type="OpenVocabulary">audio/x-wav</Format>
                 <Size/>
@@ -209,14 +199,13 @@
                         <Email/>
                         <Organisation/>
                     </Contact>
-                    <Description LanguageId="" Link=""/>
+                    <Description/>
                 </Access>
-                <Description LanguageId="" Link=""/>
+                <Description/>
                 <Keys/>
             </MediaFile>
             <WrittenResource ResourceId="N0x5128b0N0x541190">
-                <ResourceLink ArchiveHandle="hdl:1839/00-0000-0000-0009-56D8-1"
-                    >../Annotations/NAR_Annalena_2a.eaf</ResourceLink>
+                <ResourceLink ArchiveHandle="hdl:1839/00-0000-0000-0009-56D8-1">http://archive/corpus/my-collection/Annotations/NAR_Annalena_2a.eaf</ResourceLink>
                 <MediaResourceLink/>
                 <Date>Unspecified</Date>
                 <Type Type="OpenVocabulary">Annotation</Type>
@@ -227,7 +216,7 @@
                     <Type Link="http://www.mpi.nl/IMDI/Schema/Validation-Type.xml" Type="ClosedVocabulary">Unspecified</Type>
                     <Methodology Link="http://www.mpi.nl/IMDI/Schema/Validation-Methodology.xml" Type="ClosedVocabulary">Unspecified</Methodology>
                     <Level>Unspecified</Level>
-                    <Description LanguageId="" Link=""/>
+                    <Description/>
                 </Validation>
                 <Derivation Link="http://www.mpi.nl/IMDI/Schema/WrittenResource-Derivation.xml" Type="ClosedVocabulary">Annotation</Derivation>
                 <CharacterEncoding/>
@@ -245,9 +234,9 @@
                         <Email/>
                         <Organisation/>
                     </Contact>
-                    <Description LanguageId="" Link=""/>
+                    <Description/>
                 </Access>
-                <Description LanguageId="" Link=""/>
+                <Description/>
                 <Keys/>
             </WrittenResource>
             <Source>
@@ -269,9 +258,9 @@
                         <Email/>
                         <Organisation/>
                     </Contact>
-                    <Description LanguageId="" Link=""/>
+                    <Description/>
                 </Access>
-                <Description LanguageId="" Link=""/>
+                <Description/>
                 <Keys/>
             </Source>
         </Resources>

@@ -67,7 +67,7 @@ public class TranslatorImplTest {
     public static final String IMDI_TO_CMDI = IMDI_SAMPLES_LOCATION + "/kleve_route.cmdi";
     // URIs used in sample expectations
     public static final String SERVICE_URI = "http://my-service/translate";
-    public static final String COLLECTION_BASE_URI = "http://my-collection";
+    public static final String COLLECTION_BASE_URI = "http://archive/corpus/my-collection/Metadata";
     public static final String ORIGINAL_LOCATION_PLACEHOLDER = "{ORIGINAL_LOCATION}";
     /**
      * Instance to test on (new instance gets created for each test in {@link #setUp() })

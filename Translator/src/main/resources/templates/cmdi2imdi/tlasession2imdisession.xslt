@@ -134,7 +134,7 @@
             <Code><xsl:value-of select="child::Code"/></Code>
             <FamilySocialRole Link="http://www.mpi.nl/IMDI/Schema/Actor-FamilySocialRole.xml" Type="OpenVocabularyList"><xsl:value-of select="child::FamilySocialRole"/></FamilySocialRole>
             <Languages>
-                <xsl:apply-templates select="descriptions" mode="TLASESSION2IMDISESSION"/>  
+                <xsl:apply-templates select="Actor_Languages/descriptions" mode="TLASESSION2IMDISESSION"/>  
                 <xsl:apply-templates select="descendant::Actor_Language" mode="TLASESSION2IMDISESSION"/>
             </Languages>
             <EthnicGroup><xsl:value-of select="child::EthnicGroup"/></EthnicGroup>
@@ -166,7 +166,7 @@
     <xsl:template match="Actor_Language" mode="TLASESSION2IMDISESSION">
         <Language>
             <Id><xsl:value-of select="child::Id"/></Id>
-            <Name Link="http://www.mpi.nl/IMDI/Schema/MPI-Languages.xml" Type="OpenVocabulary"><xsl:value-of select="child::Name"/></Name>
+            <Name><xsl:value-of select="child::Name"/></Name>
             <MotherTongue Type="ClosedVocabulary"><xsl:value-of select="child::MotherTongue"/></MotherTongue>
             <PrimaryLanguage Type="ClosedVocabulary"><xsl:value-of select="child::PrimaryLanguage"/></PrimaryLanguage>
             <xsl:apply-templates select="descriptions"/>
@@ -224,10 +224,7 @@
     
     <xsl:template match="MediaFile" mode="TLASESSION2IMDISESSION">
         <MediaFile>
-            <ResourceLink>
-                <xsl:attribute name="ArchiveHandle"><xsl:value-of select="//ResourceProxy[@id eq current()/@ref]/ResourceRef/text()"/></xsl:attribute>
-                <xsl:value-of select="//ResourceProxy[@id eq current()/@ref]/ResourceRef/@lat:localURI"/>
-            </ResourceLink>
+            <ResourceLink><xsl:apply-templates select="//ResourceProxy[@id eq current()/@ref]" mode="create-resource-link-content"/></ResourceLink>
             <Type><xsl:value-of select="Type"/></Type>
             <Format><xsl:value-of select="Format"/></Format>
             <Size><xsl:value-of select="Size"/></Size>
@@ -254,10 +251,7 @@
     
     <xsl:template match="WrittenResource" mode="TLASESSION2IMDISESSION">
         <WrittenResource>
-            <ResourceLink>
-                <xsl:attribute name="ArchiveHandle"><xsl:value-of select="//ResourceProxy[@id eq current()/@ref]/ResourceRef/text()"/></xsl:attribute>
-                <xsl:value-of select="//ResourceProxy[@id eq current()/@ref]/ResourceRef/@lat:localURI"/>
-            </ResourceLink>
+            <ResourceLink><xsl:apply-templates select="//ResourceProxy[@id eq current()/@ref]" mode="create-resource-link-content"/></ResourceLink>
             <MediaResourceLink></MediaResourceLink> <!-- todo -->            
             <Date><xsl:value-of select="Date"/></Date>
             <Type><xsl:value-of select="Type"/></Type>

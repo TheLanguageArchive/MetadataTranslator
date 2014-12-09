@@ -84,19 +84,25 @@
     </xsl:function>
     
     <xsl:template match="ResourceProxy" mode="create-resource-link-content">
+        <!-- ResourceRef is usually a handle, check this -->
         <xsl:variable name="handle" select="tla:getBaseHandle(ResourceRef)"/>
         <xsl:choose>
             <xsl:when  test="$handle">
+                <!-- We found a handle; put it in the attribute -->
                 <xsl:attribute name="ArchiveHandle">
                     <xsl:value-of select="concat('hdl:',$handle)"/>
                 </xsl:attribute>
+                
+                <!-- See if we have a URL to use as ResourceLink element content -->
                 <xsl:variable name="localUri" select="ResourceRef/@lat:localURI" />
+                <!-- Assuming the ResourceRef content is not a handle... -->
                 <xsl:if test="$localUri">
-                    <xsl:value-of select="ResourceRef/@lat:localURI"/>
+                    <xsl:value-of select="resolve-uri(ResourceRef/@lat:localURI, $source-location)"/>
                 </xsl:if>
             </xsl:when>
             <xsl:otherwise>
-                <xsl:value-of select="ResourceRef"/>
+                <!-- Content is not a handle, make sure it is absolute and skip the ArchiveHandle -->
+                <xsl:value-of select="resolve-uri(ResourceRef,$source-location)"/>
             </xsl:otherwise>
         </xsl:choose>
     </xsl:template>
