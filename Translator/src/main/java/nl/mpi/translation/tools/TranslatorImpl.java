@@ -118,8 +118,8 @@ public class TranslatorImpl implements Translator {
 
         logger.info("Translator initialized");
         logger.debug("Using XSLT Transformer: '{}'", cmdi2imdiCachedXSLT.getClass());
-        logger.debug("Using CMDI2IMDI stylesheet: '{}'", cmdi2ImdiXsltLocation);
-        logger.debug("Using IMDI2CMDI stylesheet: '{}'", imdi2CmdiXsltLocation);
+        logger.info("Using CMDI2IMDI stylesheet: '{}'", cmdi2ImdiXsltLocation);
+        logger.info("Using IMDI2CMDI stylesheet: '{}'", imdi2CmdiXsltLocation);
     }
 
     private Templates initTemplates(URL xsltURL) throws FileNotFoundException, TransformerConfigurationException, IOException {
