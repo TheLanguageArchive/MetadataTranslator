@@ -17,6 +17,7 @@
  */
 package nl.mpi.translation.tools;
 
+import com.google.common.base.Strings;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -90,8 +91,8 @@ public class TranslatorImpl implements Translator {
      */
     public TranslatorImpl(String imdi2cmdiXsltPath, String cmdi2imdiXsltPath) throws MalformedURLException, TransformerConfigurationException, IOException {
         this(
-                (imdi2cmdiXsltPath == null ? DEFAULT_IMDI2CMDI_XSLT : new File(imdi2cmdiXsltPath).toURI().toURL()),
-                (cmdi2imdiXsltPath == null ? DEFAULT_CMDI2IMDI_XSLT : new File(cmdi2imdiXsltPath).toURI().toURL()));
+                (Strings.isNullOrEmpty(imdi2cmdiXsltPath) ? DEFAULT_IMDI2CMDI_XSLT : new File(imdi2cmdiXsltPath).toURI().toURL()),
+                (Strings.isNullOrEmpty(cmdi2imdiXsltPath) ? DEFAULT_CMDI2IMDI_XSLT : new File(cmdi2imdiXsltPath).toURI().toURL()));
     }
 
     /**

@@ -7,9 +7,25 @@ to the servlet container where MetadataTranslator was previously running.
 
 UPGRADING FROM ANY EARLIER VERSION TO 1.4
 
-The following optional context parameter can now be set:
+The following optional context parameters can now be set:
 
-	nl.mpi.metadatatranslator.handleResolutionCacheExpiry
+	- 'nl.mpi.metadatatranslator.handleResolutionCacheExpiry'
+
+		It determines the amount of time to keep handle resolution results (in seconds).
+		Set to 0 to disable caching. Default value is 600 (ten minutes).
 	
-It determines the amount of time to keep handle resolution results (in seconds).
-Set to 0 to disable caching. Default value is 600 (ten minutes).
+	- 'nl.mpi.translation.imdi2cmdiXSLT'
+	
+		Path on the local file system to the (master) IMDI to CMDI stylesheet. Leave empty
+		or unspecified to fall back to internal stylesheet 'imdi2cmdi.xslt'.
+	
+	- 'nl.mpi.translation.cmdi2imdiXSLT'
+
+		Path on the local file system to the (master) CMDI to IMDI stylesheet. Leave empty
+		or unspecified to fall back to internal stylesheet 'cmdi2imdiMaster.xslt'.
+		
+Using the latter two parameters, stylesheets can be maintained outside the application
+context, allowing for fixes and other updates without redeploying the translation service.
+To bootstrap this, copy the embedded stylesheets from the 'xslt-templates' directory
+in this package. Notice that these are *not* used by the application by default, as it
+takes by default the stylesheets packaged as resources in the metadata-translator JAR.

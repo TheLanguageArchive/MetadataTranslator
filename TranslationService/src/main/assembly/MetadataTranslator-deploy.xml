@@ -31,5 +31,13 @@
 		<exclude>legal</exclude>
 	    </excludes>
 	</fileSet>
+        <!-- XSLTs -->
+        <fileSet>
+	    <directory>${project.parent.basedir}/Translator/src/main/resources/templates</directory>
+	    <outputDirectory>/xslt-templates</outputDirectory>
+	    <includes>
+		<include>**/*.xslt</include>
+	    </includes>
+	</fileSet>
     </fileSets>         
 </assembly>

@@ -13,11 +13,14 @@
      <!-- Load properties from context.xml via servlet container -->
     <bean
         class="org.springframework.web.context.support.ServletContextPropertyPlaceholderConfigurer">
-        <property name="ignoreUnresolvablePlaceholders" value="false" />
+        <property name="ignoreUnresolvablePlaceholders" value="true" />
     </bean>
 
     <!-- Running instance of the translator service should use the actual implementations of the translator -->
-    <bean id="translator" class="nl.mpi.translation.tools.TranslatorImpl" />
+    <bean id="translator" class="nl.mpi.translation.tools.TranslatorImpl">
+        <constructor-arg name="imdi2cmdiXsltPath" value="${nl.mpi.translation.imdi2cmdiXSLT:}" />
+        <constructor-arg name="cmdi2imdiXsltPath" value="${nl.mpi.translation.cmdi2imdiXSLT:}" />
+    </bean>
  
 
     <!-- Running instance of the translator service should use the http handle resolver -->     
