@@ -1344,7 +1344,7 @@ $LastChangedDate: 2013-08-14 11:25:31 +0200 (Wed, 14 Aug 2013) $
                 </TimePosition>
             </xsl:if>
         	<xsl:choose>
-        		<xsl:when test="exists(Access)">
+        		<xsl:when test="normalize-space(Access)!=''">
         			<xsl:apply-templates select="Access"/>
         		</xsl:when>
         		<xsl:otherwise>
@@ -1377,7 +1377,7 @@ $LastChangedDate: 2013-08-14 11:25:31 +0200 (Wed, 14 Aug 2013) $
         		<xsl:attribute name="ref" select="generate-id(ResourceLink)"/>
         	</xsl:if>
         	<xsl:choose>
-        		<xsl:when test="exists(Access)">
+        		<xsl:when test="normalize-space(Access)!=''">
         			<xsl:apply-templates select="Access"/>
         		</xsl:when>
         		<xsl:otherwise>
