@@ -3,6 +3,8 @@
      xmlns="http://www.clarin.eu/cmd/"
      xmlns:imdi="http://www.mpi.nl/IMDI/Schema/IMDI"
      xmlns:lat="http://lat.mpi.nl/"
+     xmlns:iso="http://www.iso.org/"
+     xmlns:sil="http://www.sil.org/"
      CMDVersion="1.1"
      xsi:schemaLocation="http://www.clarin.eu/cmd/ http://catalog.clarin.eu/ds/ComponentRegistry/rest/registry/profiles/clarin.eu:cr1:p_1407745712035/xsd">
    <Header>
@@ -67,9 +69,6 @@
                <Email>peter.wittenburg@mpi.nl</Email>
                <Organisation>Max Planck Institute for Psycholinguistics</Organisation>
             </Contact>
-            <descriptions>
-               <Description/>
-            </descriptions>
          </Project>
          <Keys>
             <Key Name="conversion.IMDI.1.9to3.0.warning">Unknown mapping of Genre: conversation|explanation|unspecified --&gt; ???</Key>
@@ -88,18 +87,12 @@
                <Channel>Unspecified</Channel>
             </CommunicationContext>
             <Content_Languages>
-               <descriptions>
-                  <Description/>
-               </descriptions>
                <Content_Language>
                   <Id>ISO639-3:eng</Id>
                   <Name>English</Name>
                   <Dominant>Unspecified</Dominant>
                   <SourceLanguage>Unspecified</SourceLanguage>
                   <TargetLanguage>Unspecified</TargetLanguage>
-                  <descriptions>
-                     <Description/>
-                  </descriptions>
                </Content_Language>
             </Content_Languages>
             <Keys>
@@ -113,9 +106,6 @@
             </descriptions>
          </Content>
          <Actors>
-            <descriptions>
-               <Description/>
-            </descriptions>
             <Actor>
                <Role>interviewee</Role>
                <Name>Peter</Name>
@@ -128,45 +118,25 @@
                <Sex>Unknown</Sex>
                <Education>university</Education>
                <Anonymized>true</Anonymized>
-               <Contact>
-                  <Name/>
-                  <Address/>
-                  <Email/>
-                  <Organisation/>
-               </Contact>
-               <descriptions>
-                  <Description/>
-               </descriptions>
+               <Contact/>
                <Actor_Languages>
-                  <descriptions>
-                     <Description/>
-                  </descriptions>
                   <Actor_Language>
                      <Id>ISO639-3:nld</Id>
                      <Name>Dutch</Name>
                      <MotherTongue>Unspecified</MotherTongue>
                      <PrimaryLanguage>Unspecified</PrimaryLanguage>
-                     <descriptions>
-                        <Description/>
-                     </descriptions>
                   </Actor_Language>
                   <Actor_Language>
                      <Id>ISO639-3:deu</Id>
                      <Name>German</Name>
                      <MotherTongue>Unspecified</MotherTongue>
                      <PrimaryLanguage>Unspecified</PrimaryLanguage>
-                     <descriptions>
-                        <Description/>
-                     </descriptions>
                   </Actor_Language>
                   <Actor_Language>
                      <Id>ISO639-3:eng</Id>
                      <Name>English</Name>
                      <MotherTongue>Unspecified</MotherTongue>
                      <PrimaryLanguage>Unspecified</PrimaryLanguage>
-                     <descriptions>
-                        <Description/>
-                     </descriptions>
                   </Actor_Language>
                </Actor_Languages>
             </Actor>
@@ -182,36 +152,19 @@
                <Sex>Unknown</Sex>
                <Education>university</Education>
                <Anonymized>true</Anonymized>
-               <Contact>
-                  <Name/>
-                  <Address/>
-                  <Email/>
-                  <Organisation/>
-               </Contact>
-               <descriptions>
-                  <Description/>
-               </descriptions>
+               <Contact/>
                <Actor_Languages>
-                  <descriptions>
-                     <Description/>
-                  </descriptions>
                   <Actor_Language>
                      <Id>ISO639-3:eng</Id>
                      <Name>English</Name>
                      <MotherTongue>Unspecified</MotherTongue>
                      <PrimaryLanguage>Unspecified</PrimaryLanguage>
-                     <descriptions>
-                        <Description/>
-                     </descriptions>
                   </Actor_Language>
                   <Actor_Language>
                      <Id>ISO639-3:jpn</Id>
                      <Name>Japanese</Name>
                      <MotherTongue>Unspecified</MotherTongue>
                      <PrimaryLanguage>Unspecified</PrimaryLanguage>
-                     <descriptions>
-                        <Description/>
-                     </descriptions>
                   </Actor_Language>
                </Actor_Languages>
             </Actor>
@@ -233,9 +186,6 @@
                   <Email>peter.wittenburg@mpi.nl</Email>
                   <Organisation>Max-Planck-Institute for Psycholinguistics</Organisation>
                </Contact>
-               <descriptions>
-                  <Description/>
-               </descriptions>
                <Actor_Languages/>
             </Actor>
             <Actor>
@@ -250,15 +200,7 @@
                <Sex>Unspecified</Sex>
                <Education>Unspecified</Education>
                <Anonymized>false</Anonymized>
-               <Contact>
-                  <Name/>
-                  <Address/>
-                  <Email/>
-                  <Organisation/>
-               </Contact>
-               <descriptions>
-                  <Description/>
-               </descriptions>
+               <Contact/>
                <Actor_Languages/>
             </Actor>
          </Actors>
@@ -280,17 +222,8 @@
                   <Publisher/>
                   <Contact>
                      <Name>Romuald Skiba</Name>
-                     <Address/>
-                     <Email/>
-                     <Organisation/>
                   </Contact>
-                  <descriptions>
-                     <Description/>
-                  </descriptions>
                </Access>
-               <descriptions>
-                  <Description/>
-               </descriptions>
             </MediaFile>
             <MediaFile ref="xx">
                <Type>video</Type>
@@ -309,17 +242,8 @@
                   <Publisher/>
                   <Contact>
                      <Name>Romuald Skiba</Name>
-                     <Address/>
-                     <Email/>
-                     <Organisation/>
                   </Contact>
-                  <descriptions>
-                     <Description/>
-                  </descriptions>
                </Access>
-               <descriptions>
-                  <Description/>
-               </descriptions>
             </MediaFile>
             <MediaFile ref="xx">
                <Type>audio</Type>
@@ -338,17 +262,8 @@
                   <Publisher/>
                   <Contact>
                      <Name>Romuald Skiba</Name>
-                     <Address/>
-                     <Email/>
-                     <Organisation/>
                   </Contact>
-                  <descriptions>
-                     <Description/>
-                  </descriptions>
                </Access>
-               <descriptions>
-                  <Description/>
-               </descriptions>
             </MediaFile>
             <MediaFile ref="xx">
                <Type>image</Type>
@@ -365,15 +280,7 @@
                   <Date>Unspecified</Date>
                   <Owner/>
                   <Publisher/>
-                  <Contact>
-                     <Name/>
-                     <Address/>
-                     <Email/>
-                     <Organisation/>
-                  </Contact>
-                  <descriptions>
-                     <Description/>
-                  </descriptions>
+                  <Contact/>
                </Access>
                <descriptions>
                   <Description xml:lang="eng">This image is a screenshot from the planner http://www.viamichelin.nl/</Description>
@@ -399,15 +306,7 @@
                   <Date>Unspecified</Date>
                   <Owner/>
                   <Publisher/>
-                  <Contact>
-                     <Name/>
-                     <Address/>
-                     <Email/>
-                     <Organisation/>
-                  </Contact>
-                  <descriptions>
-                     <Description/>
-                  </descriptions>
+                  <Contact/>
                </Access>
                <descriptions>
                   <Description xml:lang="eng">This image is a screenshot from the planner http://www.viamichelin.nl/</Description>
@@ -425,34 +324,20 @@
                <Derivation>Annotation</Derivation>
                <CharacterEncoding>Unicode UTF-8</CharacterEncoding>
                <ContentEncoding>no special schema</ContentEncoding>
-               <LanguageId/>
+               <LanguageId>Unspecified</LanguageId>
                <Anonymized>true</Anonymized>
                <Validation>
                   <Type>Unspecified</Type>
                   <Methodology>Unspecified</Methodology>
                   <Level>Unspecified</Level>
-                  <descriptions>
-                     <Description/>
-                  </descriptions>
                </Validation>
                <Access>
                   <Availability/>
                   <Date>2003-02-12</Date>
                   <Owner/>
                   <Publisher/>
-                  <Contact>
-                     <Name/>
-                     <Address/>
-                     <Email/>
-                     <Organisation/>
-                  </Contact>
-                  <descriptions>
-                     <Description/>
-                  </descriptions>
+                  <Contact/>
                </Access>
-               <descriptions>
-                  <Description/>
-               </descriptions>
             </WrittenResource>
             <Anonyms>
                <Access>
@@ -460,23 +345,11 @@
                   <Date>2002-12-09</Date>
                   <Owner/>
                   <Publisher/>
-                  <Contact>
-                     <Name/>
-                     <Address/>
-                     <Email/>
-                     <Organisation/>
-                  </Contact>
-                  <descriptions>
-                     <Description/>
-                  </descriptions>
+                  <Contact/>
                </Access>
             </Anonyms>
          </Resources>
-         <References>
-            <descriptions>
-               <Description/>
-            </descriptions>
-         </References>
+         <References/>
       </lat-session>
    </Components>
 </CMD>

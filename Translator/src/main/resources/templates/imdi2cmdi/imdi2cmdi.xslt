@@ -22,7 +22,8 @@ $LastChangedDate: 2013-08-14 11:25:31 +0200 (Wed, 14 Aug 2013) $
     instead. All links (ResourceProxy elements) that contain relative
     paths are resolved into absolute URIs in the context of the base
     URI. Omit this if you are unsure. -->
-	<xsl:param name="uri-base" select="base-uri()"/>
+	<xsl:param name="source-location" select="''"/>
+	<xsl:param name="uri-base" select="if (normalize-space($source-location)!='') then $source-location else base-uri()"/>
 	
 	<xsl:param name="localURI" select="true()"/>
 	
@@ -395,7 +396,6 @@ $LastChangedDate: 2013-08-14 11:25:31 +0200 (Wed, 14 Aug 2013) $
             							</xsl:for-each>
             						</Quality>
             					</xsl:if>
-            					<!-- TODO -->
             					<xsl:apply-templates select="Project"/>
             					<xsl:apply-templates select="Access"/>
             					<xsl:apply-templates select="Keys"/>
@@ -1168,12 +1168,6 @@ $LastChangedDate: 2013-08-14 11:25:31 +0200 (Wed, 14 Aug 2013) $
                     </xsl:for-each>
                 </descriptions>
             </xsl:if>
-			<!-- 
-			1029 <Key Name="MultipleCameras.Number"
-			1029 <Key Name="MultipleCameras.Layout"
-			1029 <Key Name="MultipleCameras.Viewpoints"
-			1029 <Key Name="MultipleCameras.Focus"
-			-->
             <xsl:apply-templates select="child::Keys"/>
         </MediaFile>
     </xsl:template>
@@ -1349,7 +1343,20 @@ $LastChangedDate: 2013-08-14 11:25:31 +0200 (Wed, 14 Aug 2013) $
                     </xsl:if>
                 </TimePosition>
             </xsl:if>
-            <xsl:apply-templates select="Access"/>
+        	<xsl:choose>
+        		<xsl:when test="exists(Access)">
+        			<xsl:apply-templates select="Access"/>
+        		</xsl:when>
+        		<xsl:otherwise>
+        			<Access>
+        				<Availability/>
+        				<Date>Unspecified</Date>
+        				<Owner/>
+        				<Publisher/>
+        				<Contact/>
+        			</Access>
+        		</xsl:otherwise>
+        	</xsl:choose>
         	<xsl:if test="exists(child::Description[normalize-space(.)!=''])">
                 <descriptions>
                 	<xsl:for-each select="Description[normalize-space(.)!='']">
@@ -1369,7 +1376,20 @@ $LastChangedDate: 2013-08-14 11:25:31 +0200 (Wed, 14 Aug 2013) $
         	<xsl:if test="exists(ResourceLink[normalize-space(.)!=''])">
         		<xsl:attribute name="ref" select="generate-id(ResourceLink)"/>
         	</xsl:if>
-            <xsl:apply-templates select="Access"/>
+        	<xsl:choose>
+        		<xsl:when test="exists(Access)">
+        			<xsl:apply-templates select="Access"/>
+        		</xsl:when>
+        		<xsl:otherwise>
+        			<Access>
+        				<Availability/>
+        				<Date>Unspecified</Date>
+        				<Owner/>
+        				<Publisher/>
+        				<Contact/>
+        			</Access>
+        		</xsl:otherwise>
+        	</xsl:choose>
         </Anonyms>
     </xsl:template>
 
