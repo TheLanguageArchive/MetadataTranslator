@@ -18,11 +18,13 @@
 package nl.mpi.translation.tools;
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.StringWriter;
+import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.regex.Pattern;
 import javax.xml.stream.XMLInputFactory;
@@ -60,24 +62,49 @@ public class TranslatorImpl implements Translator {
 
     private final static Logger logger = LoggerFactory.getLogger(TranslatorImpl.class);
     private final static String SAXON_TRANSFORMER_IMPL_CLASS_NAME = "net.sf.saxon.TransformerFactoryImpl";
-    private final static String cmdi2imdiStyleSheet = "templates/cmdi2imdi/cmdi2imdiMaster.xslt";
-    private final static String imdi2cmdiStyleSheet = "templates/imdi2cmdi/imdi2cmdi.xslt";
+
+    private final static URL DEFAULT_CMDI2IMDI_XSLT = TranslatorImpl.class.getClassLoader().getResource("templates/cmdi2imdi/cmdi2imdiMaster.xslt");
+    private final static URL DEFAULT_IMDI2CMDI_XSLT = TranslatorImpl.class.getClassLoader().getResource("templates/imdi2cmdi/imdi2cmdi.xslt");
 
     private final static Pattern CMDI_URL_PATTERN = Pattern.compile("^.*\\.cmdi(\\?.*)?$", Pattern.CASE_INSENSITIVE);
     private final static Pattern IMDI_URL_PATTERN = Pattern.compile("^.*\\.imdi(\\?.*)?$", Pattern.CASE_INSENSITIVE);
-    
+
     private final TransformerFactory transfFactory;
     private final XMLInputFactory xmlInputFactory;
     private final Templates cmdi2imdiCachedXSLT;
     private final Templates imdi2cmdiCachedXSLT;
 
+    public TranslatorImpl() throws TransformerConfigurationException, IOException {
+        this(DEFAULT_IMDI2CMDI_XSLT, DEFAULT_CMDI2IMDI_XSLT);
+    }
+
     /**
-     * Initializes the translator.
      *
+     * @param imdi2cmdiXsltPath path to local file location of the IMDI to CMDI
+     * transformation stylesheet (null to use default)
+     * @param cmdi2imdiXsltPath path to local file location of the CMDI to IMDI
+     * transformation stylesheet (null to use default)
+     * @throws MalformedURLException
      * @throws TransformerConfigurationException
      * @throws IOException
      */
-    public TranslatorImpl() throws TransformerConfigurationException, IOException {
+    public TranslatorImpl(String imdi2cmdiXsltPath, String cmdi2imdiXsltPath) throws MalformedURLException, TransformerConfigurationException, IOException {
+        this(
+                (imdi2cmdiXsltPath == null ? DEFAULT_IMDI2CMDI_XSLT : new File(imdi2cmdiXsltPath).toURI().toURL()),
+                (cmdi2imdiXsltPath == null ? DEFAULT_CMDI2IMDI_XSLT : new File(cmdi2imdiXsltPath).toURI().toURL()));
+    }
+
+    /**
+     * Initializes the translator with the specified stylesheets
+     *
+     * @param imdi2CmdiXsltLocation location of the IMDI to CMDI transformation
+     * stylesheet (cannot be null)
+     * @param cmdi2ImdiXsltLocation location of the CMDI to IMDI transformation
+     * stylesheet (cannot be null)
+     * @throws TransformerConfigurationException
+     * @throws IOException
+     */
+    public TranslatorImpl(final URL imdi2CmdiXsltLocation, final URL cmdi2ImdiXsltLocation) throws TransformerConfigurationException, IOException {
         transfFactory = createTransformerFactory();
         transfFactory.setErrorListener(new TranslationServiceErrorListener(logger));
         logger.debug("Instantiated XML transformer factory of type {}", transfFactory.getClass());
@@ -85,38 +112,23 @@ public class TranslatorImpl implements Translator {
         xmlInputFactory = XMLInputFactory.newInstance();
         logger.debug("Instantiated XML input factory of type {}", xmlInputFactory.getClass());
 
-        cmdi2imdiCachedXSLT = initCmdi2CmdiXslt();
-        imdi2cmdiCachedXSLT = initImdi2CmdiXslt();
+        cmdi2imdiCachedXSLT = initTemplates(cmdi2ImdiXsltLocation);
+        imdi2cmdiCachedXSLT = initTemplates(imdi2CmdiXsltLocation);
 
         logger.info("Translator initialized");
         logger.debug("Using XSLT Transformer: '{}'", cmdi2imdiCachedXSLT.getClass());
-        logger.debug("Using CMDI2IMDI stylesheet: '{}'", cmdi2imdiStyleSheet);
-        logger.debug("Using IMDI2CMDI stylesheet: '{}'", imdi2cmdiStyleSheet);
+        logger.debug("Using CMDI2IMDI stylesheet: '{}'", cmdi2ImdiXsltLocation);
+        logger.debug("Using IMDI2CMDI stylesheet: '{}'", imdi2CmdiXsltLocation);
     }
 
-    private Templates initCmdi2CmdiXslt() throws FileNotFoundException, TransformerConfigurationException, IOException {
-        //Create a source with the cmdi2imdi stylesheet
-        final URL xsltURL = this.getClass().getClassLoader().getResource(cmdi2imdiStyleSheet);
+    private Templates initTemplates(URL xsltURL) throws FileNotFoundException, TransformerConfigurationException, IOException {
         if (xsltURL == null) {
-            throw new FileNotFoundException("CMDI2IMDI stylesheet: '" + cmdi2imdiStyleSheet
+            throw new FileNotFoundException("CMDI2IMDI stylesheet: '" + xsltURL
                     + "' (no such file or directory)");
         }
+        //Create a source with the stylesheet
         final Source sourceXSLT = new StreamSource(xsltURL.openStream(), xsltURL.toExternalForm());
-
-        //Create a cached cmdi 2 imdi the transformer
-        return transfFactory.newTemplates(sourceXSLT);
-    }
-
-    private Templates initImdi2CmdiXslt() throws IOException, FileNotFoundException, TransformerConfigurationException {
-        //Create a source with the imdi2cmdi stylesheet
-        final URL xsltURL = this.getClass().getClassLoader().getResource(imdi2cmdiStyleSheet);
-        if (xsltURL == null) {
-            throw new FileNotFoundException("IMDI2IMDI stylesheet: '" + imdi2cmdiStyleSheet
-                    + "' (no such file or directory)");
-        }
-        final Source sourceXSLT = new StreamSource(xsltURL.openStream(), xsltURL.toExternalForm());
-
-        //Create a cached imdi 2 cmdi the transformer
+        //Create a cached transformer
         return transfFactory.newTemplates(sourceXSLT);
     }
 
