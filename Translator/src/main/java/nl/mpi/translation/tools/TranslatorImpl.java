@@ -27,6 +27,8 @@ import java.io.InputStreamReader;
 import java.io.StringWriter;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.Map;
+import java.util.Map.Entry;
 import java.util.regex.Pattern;
 import javax.xml.stream.XMLInputFactory;
 import javax.xml.stream.XMLStreamException;
@@ -60,21 +62,22 @@ import org.slf4j.LoggerFactory;
  *
  */
 public class TranslatorImpl implements Translator {
-
+    
     private final static Logger logger = LoggerFactory.getLogger(TranslatorImpl.class);
     private final static String SAXON_TRANSFORMER_IMPL_CLASS_NAME = "net.sf.saxon.TransformerFactoryImpl";
-
+    
     private final static URL DEFAULT_CMDI2IMDI_XSLT = TranslatorImpl.class.getClassLoader().getResource("templates/cmdi2imdi/cmdi2imdiMaster.xslt");
     private final static URL DEFAULT_IMDI2CMDI_XSLT = TranslatorImpl.class.getClassLoader().getResource("templates/imdi2cmdi/imdi2cmdi.xslt");
-
+    
     private final static Pattern CMDI_URL_PATTERN = Pattern.compile("^.*\\.cmdi(\\?.*)?$", Pattern.CASE_INSENSITIVE);
     private final static Pattern IMDI_URL_PATTERN = Pattern.compile("^.*\\.imdi(\\?.*)?$", Pattern.CASE_INSENSITIVE);
-
+    
     private final TransformerFactory transfFactory;
     private final XMLInputFactory xmlInputFactory;
     private final Templates cmdi2imdiCachedXSLT;
     private final Templates imdi2cmdiCachedXSLT;
-
+    private Map<String, Object> transformationParameters;
+    
     public TranslatorImpl() throws TransformerConfigurationException, IOException {
         this(DEFAULT_IMDI2CMDI_XSLT, DEFAULT_CMDI2IMDI_XSLT);
     }
@@ -109,19 +112,19 @@ public class TranslatorImpl implements Translator {
         transfFactory = createTransformerFactory();
         transfFactory.setErrorListener(new TranslationServiceErrorListener(logger));
         logger.debug("Instantiated XML transformer factory of type {}", transfFactory.getClass());
-
+        
         xmlInputFactory = XMLInputFactory.newInstance();
         logger.debug("Instantiated XML input factory of type {}", xmlInputFactory.getClass());
-
+        
         cmdi2imdiCachedXSLT = initTemplates(cmdi2ImdiXsltLocation);
         imdi2cmdiCachedXSLT = initTemplates(imdi2CmdiXsltLocation);
-
+        
         logger.info("Translator initialized");
         logger.debug("Using XSLT Transformer: '{}'", cmdi2imdiCachedXSLT.getClass());
         logger.info("Using CMDI2IMDI stylesheet: '{}'", cmdi2ImdiXsltLocation);
         logger.info("Using IMDI2CMDI stylesheet: '{}'", imdi2CmdiXsltLocation);
     }
-
+    
     private Templates initTemplates(URL xsltURL) throws FileNotFoundException, TransformerConfigurationException, IOException {
         if (xsltURL == null) {
             throw new FileNotFoundException("CMDI2IMDI stylesheet: '" + xsltURL
@@ -193,12 +196,9 @@ public class TranslatorImpl implements Translator {
                         logger.info("Input document language could not be confirmed! CMDI assumed.");
                     }
                     //translate document
-                    final Transformer transformer = cmdi2imdiCachedXSLT.newTransformer();
-                    transformer.setParameter("service-base-uri", serviceURI);
-                    transformer.setParameter("source-location", inputUrl);
-                    transformer.transform(source, result);
+                    transform(cmdi2imdiCachedXSLT, source, result, serviceURI, inputUrl);
                 }
-
+                
                 sw.flush();
                 return sw.toString();
             } finally {
@@ -245,13 +245,9 @@ public class TranslatorImpl implements Translator {
                     if (!isImdiURl(inputUrl)) {
                         logger.info("Input document language could not be confirmed! IMDI assumed.");
                     }
-                    //translate document
-                    Transformer transformer = imdi2cmdiCachedXSLT.newTransformer();
-                    transformer.setParameter("service-base-uri", serviceURI);
-                    transformer.setParameter("source-location", inputUrl);
-                    transformer.transform(source, result);
+                    transform(imdi2cmdiCachedXSLT, source, result, serviceURI, inputUrl);
                 }
-
+                
                 sw.flush();
                 return sw.toString();
             } finally {
@@ -261,7 +257,20 @@ public class TranslatorImpl implements Translator {
             input.close();
         }
     }
-
+    
+    private void transform(final Templates templates, final Source source, final Result result, String serviceURI, final String inputUrl) throws TransformerException, TransformerConfigurationException {
+        final Transformer transformer = templates.newTransformer();
+        transformer.setParameter("service-base-uri", serviceURI);
+        transformer.setParameter("source-location", inputUrl);
+        if (transformationParameters != null) {
+            for (Entry<String, Object> param : transformationParameters.entrySet()) {
+                logger.trace("Setting additional transformation parameter: {} = '{}'", param.getKey(), param.getValue());
+                transformer.setParameter(param.getKey(), param.getValue());
+            }
+        }
+        transformer.transform(source, result);
+    }
+    
     private void writeURLContentsToStream(URL cmdiFileURL, StringWriter sw) throws IOException {
         final InputStream urlInputStream = cmdiFileURL.openConnection().getInputStream();
         try {
@@ -278,11 +287,16 @@ public class TranslatorImpl implements Translator {
             urlInputStream.close();
         }
     }
-
+    
+    @Override
+    public void setTransformationParameters(Map<String, Object> params) {
+        this.transformationParameters = params;
+    }
+    
     private static boolean isCmdiUrl(String cmdiFileURL) {
         return CMDI_URL_PATTERN.matcher(cmdiFileURL).matches();
     }
-
+    
     private static boolean isImdiURl(String imdiFileURL) {
         return IMDI_URL_PATTERN.matcher(imdiFileURL).matches();
     }

@@ -19,11 +19,13 @@ package nl.mpi.translation.tools;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.Map;
 import javax.xml.stream.XMLStreamException;
 import javax.xml.transform.TransformerException;
 
 /**
- * Interface for rest translation library to convert CMDI into IMDI and vice-versa.
+ * Interface for rest translation library to convert CMDI into IMDI and
+ * vice-versa.
  * <br/><br/>
  *
  * @author andmor <andre.moreira@mpi.nl>
@@ -32,11 +34,13 @@ import javax.xml.transform.TransformerException;
 public interface Translator {
 
     /**
-     * This method reads an IMDI XML document form the supplied URL and returns it converted
-     * to CMDI. If the input document specified by <b>imdiFileURL</b> has <i>.cmdi</i> extension,
-     * the original file is returned.
+     * This method reads an IMDI XML document form the supplied URL and returns
+     * it converted to CMDI. If the input document specified by
+     * <b>imdiFileURL</b> has <i>.cmdi</i> extension, the original file is
+     * returned.
      *
-     * @param imdiFileURL - The URL pointing to the IMDI file to convert.
+     * @param imdiFileURL - The URL pointing to the IMDI file to convert
+     * @param serviceURI - The public URI of the translation service
      * @return CMDI file converted from IMDI.
      * @throws TransformerException
      * @throws XMLStreamException
@@ -45,15 +49,24 @@ public interface Translator {
     String getCMDI(URL imdiFileURL, String serviceURI) throws TransformerException, XMLStreamException, IOException;
 
     /**
-     * This method reads an CMDI XML document form the supplied URL and returns it converted
-     * to IMDI. If the input document specified by <b>cmdiFileURL</b> has <i>.imdi</i> extension,
-     * the original file is returned.
+     * This method reads an CMDI XML document form the supplied URL and returns
+     * it converted to IMDI. If the input document specified by
+     * <b>cmdiFileURL</b> has <i>.imdi</i> extension, the original file is
+     * returned.
      *
-     * @param cmdiFileURL - The URL pointing to the CMDI file to convert.
+     * @param cmdiFileURL - The URL pointing to the CMDI file to convert
+     * @param serviceURI - The public URI of the translation service
      * @return IMDI file converted from CMDI.
      * @throws TransformerException
      * @throws XMLStreamException
      * @throws IOException
      */
     String getIMDI(URL cmdiFileURL, String serviceURI) throws TransformerException, XMLStreamException, IOException;
+
+    /**
+     * Sets additional parameters to be applied to the transformations
+     *
+     * @param params map of parameters to apply, with the parameter name as key 
+     */
+    void setTransformationParameters(Map<String, Object> params);
 }
