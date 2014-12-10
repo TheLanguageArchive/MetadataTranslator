@@ -291,6 +291,16 @@
                             <xsl:attribute name="Name">
                                 <xsl:value-of select="@Name"/>
                             </xsl:attribute>
+                            <xsl:if test="normalize-space(@Link)!=''">
+                                <xsl:attribute name="Link">
+                                    <xsl:value-of select="@Link"/>    							
+                                </xsl:attribute>
+                            </xsl:if>
+                            <xsl:if test="normalize-space(@Type)!=''">
+                                <xsl:attribute name="Type">
+                                    <xsl:value-of select="@Type"/>    							
+                                </xsl:attribute>
+                            </xsl:if>
                             <xsl:value-of select="./text()"/>
                         </Key>
                     </xsl:for-each>
