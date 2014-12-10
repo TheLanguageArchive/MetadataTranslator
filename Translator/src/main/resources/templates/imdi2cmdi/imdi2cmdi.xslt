@@ -109,11 +109,20 @@ $LastChangedDate: 2013-08-14 11:25:31 +0200 (Wed, 14 Aug 2013) $
             <MdSelfLink>
                 <xsl:choose>
                     <!-- MPI handle prefix? Use handle + @format=cmdi suffix -->
-                    <xsl:when test="starts-with(normalize-space(@ArchiveHandle), 'hdl:1839/')"><xsl:value-of select="@ArchiveHandle"/>@format=cmdi</xsl:when>
+                    <xsl:when test="starts-with(normalize-space(@ArchiveHandle), 'hdl:1839/')">
+                    	<xsl:value-of select="@ArchiveHandle"/>
+                    	<xsl:if test="$formatCMDI">
+                    		<xsl:text>@format=cmdi</xsl:text>
+                    	</xsl:if>
+                    </xsl:when>
                     <!-- No handle? Then just use the URL -->
-                    <xsl:when test="not($uri-base='') and normalize-space(@ArchiveHandle)=''"><xsl:value-of select="$uri-base"/></xsl:when>
+                    <xsl:when test="not($uri-base='') and normalize-space(@ArchiveHandle)=''">
+                    	<xsl:value-of select="$uri-base"/>
+                    </xsl:when>
                     <!-- Other handle prefix? Use handle (e.g. Lund) -->
-                    <xsl:otherwise><xsl:value-of select="@ArchiveHandle"/></xsl:otherwise>
+                    <xsl:otherwise>
+                    	<xsl:value-of select="@ArchiveHandle"/>
+                    </xsl:otherwise>
                 </xsl:choose>
             </MdSelfLink>
             <MdProfile>
@@ -225,15 +234,16 @@ $LastChangedDate: 2013-08-14 11:25:31 +0200 (Wed, 14 Aug 2013) $
             		</xsl:if>
             	</InfoLink>
             </xsl:for-each>
-            <xsl:if test="exists(child::CorpusLink)">
-                <xsl:for-each select="CorpusLink">
-                    <CorpusLink ref="{generate-id(.)}">
-						<Name>
-							<xsl:value-of select="@Name"/>
-						</Name>
-                    </CorpusLink>
-                </xsl:for-each>
-            </xsl:if>
+            <xsl:for-each select="CorpusLink[normalize-space(@ArchiveHandle)!='' or normalize-space(.)!='' or normalize-space(@Name)!='']">
+                <CorpusLink>
+                    <xsl:if test="normalize-space(@ArchiveHandle)!='' or normalize-space(.)!=''">
+                    	<xsl:attribute name="ref" select="generate-id(.)"/>
+                    </xsl:if>
+                    <Name>
+                    	<xsl:value-of select="@Name"/>
+                    </Name>
+                </CorpusLink>
+            </xsl:for-each>
             <xsl:if test="normalize-space(@CatalogueLink)!=''">
             	<!--<xsl:variable name="cat" select="resolve-uri(@CatalogueLink,$uri-base)"/>-->
             	<xsl:variable name="cat" select="replace(@CatalogueHandle,'hdl:','http://hdl.handle.net/')"/>
@@ -411,7 +421,7 @@ $LastChangedDate: 2013-08-14 11:25:31 +0200 (Wed, 14 Aug 2013) $
     </xsl:template>
 
     <xsl:template match="Corpus" mode="linking">
-        <xsl:for-each select="CorpusLink">
+    	<xsl:for-each select="CorpusLink[normalize-space(@ArchiveHandle)!='' or normalize-space(.)!='']">
             <ResourceProxy id="{generate-id(.)}">
                 <!-- Do we have both archive handle and link (text content)? -->
                 <xsl:if test="not($localURI) and (not(normalize-space(./@ArchiveHandle)='' or normalize-space(.)=''))">
