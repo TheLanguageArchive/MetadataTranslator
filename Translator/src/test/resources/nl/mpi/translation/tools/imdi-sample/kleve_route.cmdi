@@ -71,7 +71,7 @@
             </Contact>
          </Project>
          <Keys>
-            <Key Name="conversion.IMDI.1.9to3.0.warning">Unknown mapping of Genre: conversation|explanation|unspecified --&gt; ???</Key>
+            <Key Name="conversion.IMDI.1.9to3.0.warning" Type="OpenVocabulary">Unknown mapping of Genre: conversation|explanation|unspecified --&gt; ???</Key>
          </Keys>
          <Content>
             <Genre>Unspecified</Genre>
@@ -96,9 +96,9 @@
                </Content_Language>
             </Content_Languages>
             <Keys>
-               <Key Name="IMDI__1_9.Interactional">conversation</Key>
-               <Key Name="IMDI__1_9.Discursive">explanation</Key>
-               <Key Name="IMDI__1_9.Interactional">Unspecified</Key>
+               <Key Link="http://www.mpi.nl/IMDI/Schema/Content-Genre-Interactional.xml" Name="IMDI__1_9.Interactional" Type="OpenVocabularyList">conversation</Key>
+               <Key Link="http://www.mpi.nl/IMDI/Schema/Content-Genre-Discursive.xml" Name="IMDI__1_9.Discursive" Type="OpenVocabularyList">explanation</Key>
+               <Key Link="http://www.mpi.nl/IMDI/Schema/Content-Genre-Performance.xml" Name="IMDI__1_9.Interactional" Type="OpenVocabularyList">Unspecified</Key>
             </Keys>
             <descriptions>
                <Description xml:lang="eng">This file was generated from an IMDI 1.9 file and transformed to IMDI 3.0. The substructure of Genre is replaced by two elements named "Genre" and "SubGenre". The original content of Genre substructure was: Interactional = 'conversation', Discursive = 'explanation', Performance = 'Unspecified'. These values have been added as Keys to the Content information.</Description>
@@ -286,9 +286,9 @@
                   <Description xml:lang="eng">This image is a screenshot from the planner http://www.viamichelin.nl/</Description>
                </descriptions>
                <Keys>
-                  <Key Name="Title">Route to Kleve</Key>
-                  <Key Name="Date">2008-05-26</Key>
-                  <Key Name="Lexical term">Route map</Key>
+                  <Key Name="Title" Type="OpenVocabulary">Route to Kleve</Key>
+                  <Key Name="Date" Type="OpenVocabulary">2008-05-26</Key>
+                  <Key Name="Lexical term" Type="OpenVocabulary">Route map</Key>
                </Keys>
             </MediaFile>
             <MediaFile ref="xx">
@@ -312,7 +312,7 @@
                   <Description xml:lang="eng">This image is a screenshot from the planner http://www.viamichelin.nl/</Description>
                </descriptions>
                <Keys>
-                  <Key Name="Title">Route to Kleve (map)</Key>
+                  <Key Name="Title" Type="OpenVocabulary">Route to Kleve (map)</Key>
                </Keys>
             </MediaFile>
             <WrittenResource ref="xx">
