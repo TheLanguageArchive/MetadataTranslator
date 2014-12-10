@@ -7,34 +7,34 @@
                 Originator="Metadata Translator: TLASESSION2IMDISESSION.xslt hdl:1839/00-0000-0000-0001-55CD-D@format=cmdi"
                 Type="SESSION"
                 Version="0"
-                xsi:schemaLocation="http://www.mpi.nl/IMDI/Schema/IMDI ./IMDI_3.0.xsd">
+                xsi:schemaLocation="http://www.mpi.nl/IMDI/Schema/IMDI http://www.mpi.nl/IMDI/Schema/IMDI_3.0.xsd">
    <History>NAME:UPGRADE1-CGN_3_0 DATE:xx. NAME:IMDI_1_9_TO_3_0 DATE:xx. NAME:imdi2cmdi.xslt DATE:xx.</History>
    <Session>
       <Name>fn000056</Name>
       <Title>presentation</Title>
       <Date>1999</Date>
-      <Description LanguageId="ISO639:eng">Responsibility.Type = SAMPLING</Description>
-      <Description LanguageId="ISO639:eng">Responsibility.Name = SPEX</Description>
-      <Description LanguageId="ISO639:eng">Responsibility.Type = ORTHOGRAPHIC TRANSCRIPTION</Description>
-      <Description LanguageId="ISO639:eng">Responsibility.Name = SPEX</Description>
-      <Description LanguageId="ISO639:eng">Responsibility.Type = PART-OF-SPEECH TAGGING</Description>
-      <Description LanguageId="ISO639:eng">Responsibility.Name = CLS-KUN</Description>
-      <Description LanguageId="ISO639:eng">Responsibility.Type = LEMMATISATION</Description>
-      <Description LanguageId="ISO639:eng">Responsibility.Name = CLS-KUN</Description>
-      <Description LanguageId="ISO639:eng">Responsibility.Type = LEXICON LINK-UP</Description>
-      <Description LanguageId="ISO639:eng">Responsibility.Name = CLS-KUN</Description>
-      <Description LanguageId="ISO639:eng">Responsibility.Type = WORD SEGMENTATION</Description>
-      <Description LanguageId="ISO639:eng">Responsibility.Name = CLS-KUN</Description>
-      <Description LanguageId="ISO639:eng">Responsibility.Type = PHONETIC TRANSCRIPTION</Description>
-      <Description LanguageId="ISO639:eng">Responsibility.Name = SPEX</Description>
-      <Description LanguageId="ISO639:eng">Responsibility.Type = SYNTACTIC ANNOTATION</Description>
-      <Description LanguageId="ISO639:eng">Responsibility.Name = OTS</Description>
-      <Description LanguageId="ISO639:eng">Total number of words = 3393</Description>
-      <Description LanguageId="ISO639:eng">CGN Header Date = 1-1-2004</Description>
+      <Description LanguageId="ISO639-3:eng">Responsibility.Type = SAMPLING</Description>
+      <Description LanguageId="ISO639-3:eng">Responsibility.Name = SPEX</Description>
+      <Description LanguageId="ISO639-3:eng">Responsibility.Type = ORTHOGRAPHIC TRANSCRIPTION</Description>
+      <Description LanguageId="ISO639-3:eng">Responsibility.Name = SPEX</Description>
+      <Description LanguageId="ISO639-3:eng">Responsibility.Type = PART-OF-SPEECH TAGGING</Description>
+      <Description LanguageId="ISO639-3:eng">Responsibility.Name = CLS-KUN</Description>
+      <Description LanguageId="ISO639-3:eng">Responsibility.Type = LEMMATISATION</Description>
+      <Description LanguageId="ISO639-3:eng">Responsibility.Name = CLS-KUN</Description>
+      <Description LanguageId="ISO639-3:eng">Responsibility.Type = LEXICON LINK-UP</Description>
+      <Description LanguageId="ISO639-3:eng">Responsibility.Name = CLS-KUN</Description>
+      <Description LanguageId="ISO639-3:eng">Responsibility.Type = WORD SEGMENTATION</Description>
+      <Description LanguageId="ISO639-3:eng">Responsibility.Name = CLS-KUN</Description>
+      <Description LanguageId="ISO639-3:eng">Responsibility.Type = PHONETIC TRANSCRIPTION</Description>
+      <Description LanguageId="ISO639-3:eng">Responsibility.Name = SPEX</Description>
+      <Description LanguageId="ISO639-3:eng">Responsibility.Type = SYNTACTIC ANNOTATION</Description>
+      <Description LanguageId="ISO639-3:eng">Responsibility.Name = OTS</Description>
+      <Description LanguageId="ISO639-3:eng">Total number of words = 3393</Description>
+      <Description LanguageId="ISO639-3:eng">CGN Header Date = 1-1-2004</Description>
       <MDGroup>
          <Location>
             <Continent Link="http://www.mpi.nl/IMDI/Schema/Continents.xml" Type="ClosedVocabulary">Europe</Continent>
-            <Country Link="http://www.mpi.nl/IMDI/Schema/Countries.xml" Type="ClosedVocabulary">Netherlands</Country>
+            <Country Link="http://www.mpi.nl/IMDI/Schema/Countries.xml" Type="OpenVocabulary">Netherlands</Country>
             <Region>Unspecified</Region>
             <Address>Unspecified</Address>
          </Location>
@@ -48,18 +48,17 @@
                <Email/>
                <Organisation/>
             </Contact>
-            <Description/>
          </Project>
          <Keys>
-            <Key DefaultLink="" Link="http://www.mpi.nl/CGN/Schema/CGN.wordCount.xml" Name="CGN.wordCount" Type="OpenVocabulary">3393</Key>
+            <Key Link="http://www.mpi.nl/CGN/Schema/CGN.wordCount.xml" Name="CGN.wordCount" Type="OpenVocabulary">3393</Key>
             <Key Name="CGN.secCount" Type="OpenVocabulary">1245</Key>
-            <Key DefaultLink="" Link="http://www.mpi.nl/CGN/Schema/CGN.byteCount.xml" Name="CGN.byteCount" Type="OpenVocabulary">38000000</Key>
-            <Key DefaultLink="" Link="http://www.mpi.nl/CGN/Schema/CGN.tempoAv.xml" Name="CGN.tempoAv" Type="OpenVocabulary">9811</Key>
-            <Key DefaultLink="" Link="http://www.mpi.nl/CGN/Schema/CGN.recDate.xml" Name="CGN.recDate" Type="ClosedVocabulary">1999</Key>
-            <Key DefaultLink="" Link="http://www.mpi.nl/CGN/Schema/CGN.locName.xml" Name="CGN.locName" Type="OpenVocabulary">Unspecified</Key>
-            <Key DefaultLink="" Link="http://www.mpi.nl/CGN/Schema/CGN.Locale.xml" Name="CGN.locale" Type="ClosedVocabulary">Unspecified</Key>
-            <Key DefaultLink="" Link="http://www.mpi.nl/CGN/Schema/CGN.availability.xml" Name="CGN.availability" Type="OpenVocabulary">CGN_WAV_29</Key>
-            <Key DefaultLink="" Link="http://www.mpi.nl/CGN/Schema/CGN.segmentation.xml" Name="CGN.segmentation" Type="ClosedVocabulary">manual</Key>
+            <Key Link="http://www.mpi.nl/CGN/Schema/CGN.byteCount.xml" Name="CGN.byteCount" Type="OpenVocabulary">38000000</Key>
+            <Key Link="http://www.mpi.nl/CGN/Schema/CGN.tempoAv.xml" Name="CGN.tempoAv" Type="OpenVocabulary">9811</Key>
+            <Key Link="http://www.mpi.nl/CGN/Schema/CGN.recDate.xml" Name="CGN.recDate" Type="ClosedVocabulary">1999</Key>
+            <Key Link="http://www.mpi.nl/CGN/Schema/CGN.locName.xml" Name="CGN.locName" Type="OpenVocabulary">Unspecified</Key>
+            <Key Link="http://www.mpi.nl/CGN/Schema/CGN.Locale.xml" Name="CGN.locale" Type="ClosedVocabulary">Unspecified</Key>
+            <Key Link="http://www.mpi.nl/CGN/Schema/CGN.availability.xml" Name="CGN.availability" Type="OpenVocabulary">CGN_WAV_29</Key>
+            <Key Link="http://www.mpi.nl/CGN/Schema/CGN.segmentation.xml" Name="CGN.segmentation" Type="ClosedVocabulary">manual</Key>
             <Key Name="CGN.fon.available" Type="OpenVocabulary">true</Key>
             <Key Name="CGN.pro.available" Type="OpenVocabulary">false</Key>
             <Key Name="CGN.syn.available" Type="OpenVocabulary">true</Key>
@@ -85,18 +84,18 @@
                </Language>
             </Languages>
             <Keys>
-               <Key DefaultLink="" Link="http://www.mpi.nl/IMDI/Schema/Content-Genre-Interactional.xml" Name="IMDI__1_9.Interactional" Type="OpenVocabularyList"/>
-               <Key DefaultLink="" Link="http://www.mpi.nl/IMDI/Schema/Content-Genre-Discursive.xml" Name="IMDI__1_9.Discursive" Type="OpenVocabularyList"/>
-               <Key DefaultLink="" Link="http://www.mpi.nl/IMDI/Schema/Content-Genre-Performance.xml" Name="IMDI__1_9.Interactional" Type="OpenVocabularyList"/>
-               <Key DefaultLink="" Link="http://www.mpi.nl/CGN/Schema/CGN.textClass.target.xml" Name="CGN.textClass.target" Type="OpenVocabulary">ttn,prep1,mod3,dom2</Key>
-               <Key DefaultLink="" Link="http://www.mpi.nl/CGN/Schema/CGN.textClass.keywords.xml" Name="CGN.textClass.keywords" Type="OpenVocabulary"/>
-               <Key DefaultLink="" Link="http://www.mpi.nl/CGN/Schema/CGN.activity.xml" Name="CGN.activity" Type="OpenVocabulary">Unspecified</Key>
+               <Key Link="http://www.mpi.nl/IMDI/Schema/Content-Genre-Interactional.xml" Name="IMDI__1_9.Interactional" Type="OpenVocabularyList"/>
+               <Key Link="http://www.mpi.nl/IMDI/Schema/Content-Genre-Discursive.xml" Name="IMDI__1_9.Discursive" Type="OpenVocabularyList"/>
+               <Key Link="http://www.mpi.nl/IMDI/Schema/Content-Genre-Performance.xml" Name="IMDI__1_9.Interactional" Type="OpenVocabularyList"/>
+               <Key Link="http://www.mpi.nl/CGN/Schema/CGN.textClass.target.xml" Name="CGN.textClass.target" Type="OpenVocabulary">ttn,prep1,mod3,dom2</Key>
+               <Key Link="http://www.mpi.nl/CGN/Schema/CGN.textClass.keywords.xml" Name="CGN.textClass.keywords" Type="OpenVocabulary"/>
+               <Key Link="http://www.mpi.nl/CGN/Schema/CGN.activity.xml" Name="CGN.activity" Type="OpenVocabulary">Unspecified</Key>
             </Keys>
-            <Description LanguageId="ISO639:eng" Link="">This file was generated from an IMDI 1.9 file and transformed to IMDI 3.0. The substructure of Genre is replaced by two elements named &quot;Genre&quot; and &quot;SubGenre&quot;. The original content of Genre substructure was: Interactional = '', Discursive = '', Performance = ''. These values have been added as Keys to the Content information.</Description>
+            <Description LanguageId="ISO639-3:eng" Link="">This file was generated from an IMDI 1.9 file and transformed to IMDI 3.0. The substructure of Genre is replaced by two elements named &quot;Genre&quot; and &quot;SubGenre&quot;. The original content of Genre substructure was: Interactional = '', Discursive = '', Performance = ''. These values have been added as Keys to the Content information.</Description>
             <Description LanguageId="" Link=""/>
          </Content>
          <Actors>
-            <Description LanguageId="ISO639:eng">
+            <Description LanguageId="ISO639-3:eng">
   	Participant interaction = 
   			NOT APPLICABLE
   		
@@ -119,17 +118,17 @@
                   <Language>
                      <Id>RFC1766:x-sil-DUT</Id>
                      <Name Link="http://www.mpi.nl/IMDI/Schema/IMDI-Languages.xml" Type="OpenVocabulary">Dutch</Name>
-                     <Description LanguageId="ISO639:eng">First Language</Description>
+                     <Description LanguageId="ISO639-3:eng">First Language</Description>
                   </Language>
                   <Language>
                      <Id>RFC1766:x-sil-DUT</Id>
                      <Name Link="http://www.mpi.nl/IMDI/Schema/IMDI-Languages.xml" Type="OpenVocabulary">Dutch</Name>
-                     <Description LanguageId="ISO639:eng">Home Language</Description>
+                     <Description LanguageId="ISO639-3:eng">Home Language</Description>
                   </Language>
                   <Language>
                      <Id>RFC1766:x-sil-DUT</Id>
                      <Name Link="http://www.mpi.nl/IMDI/Schema/IMDI-Languages.xml" Type="OpenVocabulary">Dutch</Name>
-                     <Description LanguageId="ISO639:eng">Work Language</Description>
+                     <Description LanguageId="ISO639-3:eng">Work Language</Description>
                   </Language>
                </Languages>
                <EthnicGroup Type="OpenVocabulary"/>
@@ -142,22 +141,22 @@
                <Keys>
                   <Key Name="CGN.age" Type="OpenVocabulary">age2</Key>
                   <Key Name="CGN.birth.year" Type="OpenVocabulary">1967</Key>
-                  <Key DefaultLink="" Link="http://www.mpi.nl/CGN/Schema/CGN.birth.place.xml" Name="CGN.birth.place" Type="OpenVocabulary">NL-469</Key>
+                  <Key Link="http://www.mpi.nl/CGN/Schema/CGN.birth.place.xml" Name="CGN.birth.place" Type="OpenVocabulary">NL-469</Key>
                   <Key Name="CGN.birth.reg" Type="OpenVocabulary">regN2a</Key>
-                  <Key DefaultLink="" Link="http://www.mpi.nl/CGN/Schema/CGN.Language.xml" Name="CGN.firstLang" Type="ClosedVocabulary">SD</Key>
-                  <Key DefaultLink="" Link="http://www.mpi.nl/CGN/Schema/CGN.Language.xml" Name="CGN.homeLang" Type="ClosedVocabulary">SD</Key>
-                  <Key DefaultLink="" Link="http://www.mpi.nl/CGN/Schema/CGN.Language.xml" Name="CGN.workLang" Type="ClosedVocabulary">SD</Key>
-                  <Key DefaultLink="" Link="http://www.mpi.nl/CGN/Schema/CGN.residence.place.xml" Name="CGN.residence.place" Type="OpenVocabulary">NL-46-</Key>
-                  <Key DefaultLink="" Link="http://www.mpi.nl/CGN/Schema/CGN.Region.xml" Name="CGN.residence.reg" Type="ClosedVocabulary">regN4a</Key>
-                  <Key DefaultLink="" Link="http://www.mpi.nl/CGN/Schema/CGN.communitySize.xml" Name="CGN.education.placesize" Type="ClosedVocabulary">size3</Key>
-                  <Key DefaultLink="" Link="http://www.mpi.nl/CGN/Schema/CGN.education.place.xml" Name="CGN.education.place" Type="OpenVocabulary">NL-46-</Key>
-                  <Key DefaultLink="" Link="http://www.mpi.nl/CGN/Schema/CGN.Region.xml" Name="CGN.education.reg" Type="ClosedVocabulary">regN4a</Key>
+                  <Key Link="http://www.mpi.nl/CGN/Schema/CGN.Language.xml" Name="CGN.firstLang" Type="ClosedVocabulary">SD</Key>
+                  <Key Link="http://www.mpi.nl/CGN/Schema/CGN.Language.xml" Name="CGN.homeLang" Type="ClosedVocabulary">SD</Key>
+                  <Key Link="http://www.mpi.nl/CGN/Schema/CGN.Language.xml" Name="CGN.workLang" Type="ClosedVocabulary">SD</Key>
+                  <Key Link="http://www.mpi.nl/CGN/Schema/CGN.residence.place.xml" Name="CGN.residence.place" Type="OpenVocabulary">NL-46-</Key>
+                  <Key Link="http://www.mpi.nl/CGN/Schema/CGN.Region.xml" Name="CGN.residence.reg" Type="ClosedVocabulary">regN4a</Key>
+                  <Key Link="http://www.mpi.nl/CGN/Schema/CGN.communitySize.xml" Name="CGN.education.placesize" Type="ClosedVocabulary">size3</Key>
+                  <Key Link="http://www.mpi.nl/CGN/Schema/CGN.education.place.xml" Name="CGN.education.place" Type="OpenVocabulary">NL-46-</Key>
+                  <Key Link="http://www.mpi.nl/CGN/Schema/CGN.Region.xml" Name="CGN.education.reg" Type="ClosedVocabulary">regN4a</Key>
                   <Key Name="CGN.education.type" Type="OpenVocabulary">universiteit</Key>
-                  <Key DefaultLink="" Link="http://www.mpi.nl/CGN/Schema/CGN.EducationLevel.xml" Name="CGN.education.level" Type="ClosedVocabulary">edu1</Key>
-                  <Key DefaultLink="" Link="http://www.mpi.nl/CGN/Schema/CGN.occupation.xml" Name="CGN.occupation" Type="OpenVocabulary">consultant</Key>
-                  <Key DefaultLink="" Link="http://www.mpi.nl/CGN/Schema/CGN.OccupationLevel.xml" Name="CGN.occupation.level" Type="ClosedVocabulary">occ2</Key>
+                  <Key Link="http://www.mpi.nl/CGN/Schema/CGN.EducationLevel.xml" Name="CGN.education.level" Type="ClosedVocabulary">edu1</Key>
+                  <Key Link="http://www.mpi.nl/CGN/Schema/CGN.occupation.xml" Name="CGN.occupation" Type="OpenVocabulary">consultant</Key>
+                  <Key Link="http://www.mpi.nl/CGN/Schema/CGN.OccupationLevel.xml" Name="CGN.occupation.level" Type="ClosedVocabulary">occ2</Key>
                </Keys>
-               <Description LanguageId="ISO639:eng">none</Description>
+               <Description LanguageId="ISO639-3:eng">none</Description>
             </Actor>
             <Actor>
                <Role Link="http://www.mpi.nl/IMDI/Schema/Actor-Role.xml" Type="OpenVocabulary">Collector</Role>
@@ -467,7 +466,7 @@
                </Contact>
                <Description/>
             </Access>
-            <Description LanguageId="ISO639:eng">
+            <Description LanguageId="ISO639-3:eng">
 	Author: not applicable
     
 	Title: presentation
@@ -487,5 +486,6 @@
             <Keys/>
          </Source>
       </Resources>
+      <References />
   </Session>
 </METATRANSCRIPT>
