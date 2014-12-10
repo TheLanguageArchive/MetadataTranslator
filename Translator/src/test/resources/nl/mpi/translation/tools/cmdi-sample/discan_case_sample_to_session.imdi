@@ -74,7 +74,7 @@
       </MDGroup>
       <Resources>
          <WrittenResource>
-            <ResourceLink ArchiveHandle="hdl:1234-abc">resource1.xml</ResourceLink>
+            <ResourceLink ArchiveHandle="hdl:1234-abc">http://archive/corpus/my-collection/Metadata/resource1.xml</ResourceLink>
             <MediaResourceLink/>
             <Date/>
             <Type>Annotation</Type>
@@ -136,7 +136,7 @@
             <Keys/>
          </WrittenResource>
          <WrittenResource>
-            <ResourceLink>Degand_2_2_awo_NRC_1/Degand_2_2_awo_NRC_1.feat_Admin_corpus.xml</ResourceLink>
+            <ResourceLink>http://archive/corpus/my-collection/Metadata/Degand_2_2_awo_NRC_1/Degand_2_2_awo_NRC_1.feat_Admin_corpus.xml</ResourceLink>
             <MediaResourceLink/>
             <Date/>
             <Type>Annotation</Type>
@@ -167,7 +167,7 @@
             <Keys/>
          </WrittenResource>
          <WrittenResource>
-            <ResourceLink>Degand_2_2_awo_NRC_1/Degand_2_2_awo_NRC_1.feat_Admin_dataset.xml</ResourceLink>
+            <ResourceLink>http://archive/corpus/my-collection/Metadata/Degand_2_2_awo_NRC_1/Degand_2_2_awo_NRC_1.feat_Admin_dataset.xml</ResourceLink>
             <MediaResourceLink/>
             <Date/>
             <Type>Annotation</Type>
@@ -198,7 +198,7 @@
             <Keys/>
          </WrittenResource>
          <WrittenResource>
-            <ResourceLink>Degand_2_2_awo_NRC_1/Degand_2_2_awo_NRC_1.feat_Admin_fragm_nr.xml</ResourceLink>
+            <ResourceLink>http://archive/corpus/my-collection/Metadata/Degand_2_2_awo_NRC_1/Degand_2_2_awo_NRC_1.feat_Admin_fragm_nr.xml</ResourceLink>
             <MediaResourceLink/>
             <Date/>
             <Type>Annotation</Type>
@@ -229,7 +229,7 @@
             <Keys/>
          </WrittenResource>
          <WrittenResource>
-            <ResourceLink>Degand_2_2_awo_NRC_1/Degand_2_2_awo_NRC_1.feat_Rel_BasicOp.xml</ResourceLink>
+            <ResourceLink>http://archive/corpus/my-collection/Metadata/Degand_2_2_awo_NRC_1/Degand_2_2_awo_NRC_1.feat_Rel_BasicOp.xml</ResourceLink>
             <MediaResourceLink/>
             <Date/>
             <Type>Annotation</Type>
@@ -260,7 +260,7 @@
             <Keys/>
          </WrittenResource>
          <WrittenResource>
-            <ResourceLink>Degand_2_2_awo_NRC_1/Degand_2_2_awo_NRC_1.feat_Rel_Conn.xml</ResourceLink>
+            <ResourceLink>http://archive/corpus/my-collection/Metadata/Degand_2_2_awo_NRC_1/Degand_2_2_awo_NRC_1.feat_Rel_Conn.xml</ResourceLink>
             <MediaResourceLink/>
             <Date/>
             <Type>Annotation</Type>
@@ -291,7 +291,7 @@
             <Keys/>
          </WrittenResource>
          <WrittenResource>
-            <ResourceLink>Degand_2_2_awo_NRC_1/Degand_2_2_awo_NRC_1.feat_Rel_LingMark.xml</ResourceLink>
+            <ResourceLink>http://archive/corpus/my-collection/Metadata/Degand_2_2_awo_NRC_1/Degand_2_2_awo_NRC_1.feat_Rel_LingMark.xml</ResourceLink>
             <MediaResourceLink/>
             <Date/>
             <Type>Annotation</Type>
@@ -322,7 +322,7 @@
             <Keys/>
          </WrittenResource>
          <WrittenResource>
-            <ResourceLink>Degand_2_2_awo_NRC_1/Degand_2_2_awo_NRC_1.feat_Rel_Order.xml</ResourceLink>
+            <ResourceLink>http://archive/corpus/my-collection/Metadata/Degand_2_2_awo_NRC_1/Degand_2_2_awo_NRC_1.feat_Rel_Order.xml</ResourceLink>
             <MediaResourceLink/>
             <Date/>
             <Type>Annotation</Type>
@@ -353,7 +353,7 @@
             <Keys/>
          </WrittenResource>
          <WrittenResource>
-            <ResourceLink>Degand_2_2_awo_NRC_1/Degand_2_2_awo_NRC_1.feat_Rel_Pol.xml</ResourceLink>
+            <ResourceLink>http://archive/corpus/my-collection/Metadata/Degand_2_2_awo_NRC_1/Degand_2_2_awo_NRC_1.feat_Rel_Pol.xml</ResourceLink>
             <MediaResourceLink/>
             <Date/>
             <Type>Annotation</Type>
@@ -384,7 +384,7 @@
             <Keys/>
          </WrittenResource>
          <WrittenResource>
-            <ResourceLink>Degand_2_2_awo_NRC_1/Degand_2_2_awo_NRC_1.feat_Rel_SrceofCoh.xml</ResourceLink>
+            <ResourceLink>http://archive/corpus/my-collection/Metadata/Degand_2_2_awo_NRC_1/Degand_2_2_awo_NRC_1.feat_Rel_SrceofCoh.xml</ResourceLink>
             <MediaResourceLink/>
             <Date/>
             <Type>Annotation</Type>
@@ -415,7 +415,7 @@
             <Keys/>
          </WrittenResource>
          <WrittenResource>
-            <ResourceLink>Degand_2_2_awo_NRC_1/Degand_2_2_awo_NRC_1.feat_Rel_SubjofConsc.xml</ResourceLink>
+            <ResourceLink>http://archive/corpus/my-collection/Metadata/Degand_2_2_awo_NRC_1/Degand_2_2_awo_NRC_1.feat_Rel_SubjofConsc.xml</ResourceLink>
             <MediaResourceLink/>
             <Date/>
             <Type>Annotation</Type>
@@ -446,7 +446,7 @@
             <Keys/>
          </WrittenResource>
          <WrittenResource>
-            <ResourceLink>Degand_2_2_awo_NRC_1/Degand_2_2_awo_NRC_1.feat_Rel_Vol.xml</ResourceLink>
+            <ResourceLink>http://archive/corpus/my-collection/Metadata/Degand_2_2_awo_NRC_1/Degand_2_2_awo_NRC_1.feat_Rel_Vol.xml</ResourceLink>
             <MediaResourceLink/>
             <Date/>
             <Type>Annotation</Type>
@@ -477,7 +477,7 @@
             <Keys/>
          </WrittenResource>
          <WrittenResource>
-            <ResourceLink>Degand_2_2_awo_NRC_1/Degand_2_2_awo_NRC_1.feat_Segm_ModS1.xml</ResourceLink>
+            <ResourceLink>http://archive/corpus/my-collection/Metadata/Degand_2_2_awo_NRC_1/Degand_2_2_awo_NRC_1.feat_Segm_ModS1.xml</ResourceLink>
             <MediaResourceLink/>
             <Date/>
             <Type>Annotation</Type>
@@ -508,7 +508,7 @@
             <Keys/>
          </WrittenResource>
          <WrittenResource>
-            <ResourceLink>Degand_2_2_awo_NRC_1/Degand_2_2_awo_NRC_1.feat_Segm_ModS2.xml</ResourceLink>
+            <ResourceLink>http://archive/corpus/my-collection/Metadata/Degand_2_2_awo_NRC_1/Degand_2_2_awo_NRC_1.feat_Segm_ModS2.xml</ResourceLink>
             <MediaResourceLink/>
             <Date/>
             <Type>Annotation</Type>
@@ -539,7 +539,7 @@
             <Keys/>
          </WrittenResource>
          <WrittenResource>
-            <ResourceLink>Degand_2_2_awo_NRC_1/Degand_2_2_awo_NRC_1.grouping.xml</ResourceLink>
+            <ResourceLink>http://archive/corpus/my-collection/Metadata/Degand_2_2_awo_NRC_1/Degand_2_2_awo_NRC_1.grouping.xml</ResourceLink>
             <MediaResourceLink/>
             <Date/>
             <Type>Annotation</Type>
@@ -570,7 +570,7 @@
             <Keys/>
          </WrittenResource>
          <WrittenResource>
-            <ResourceLink>Degand_2_2_awo_NRC_1/Degand_2_2_awo_NRC_1.seg.xml</ResourceLink>
+            <ResourceLink>http://archive/corpus/my-collection/Metadata/Degand_2_2_awo_NRC_1/Degand_2_2_awo_NRC_1.seg.xml</ResourceLink>
             <MediaResourceLink/>
             <Date/>
             <Type>Annotation</Type>
@@ -601,7 +601,7 @@
             <Keys/>
          </WrittenResource>
          <WrittenResource>
-            <ResourceLink>Degand_2_2_awo_NRC_1/Degand_2_2_awo_NRC_1.text.xml</ResourceLink>
+            <ResourceLink>http://archive/corpus/my-collection/Metadata/Degand_2_2_awo_NRC_1/Degand_2_2_awo_NRC_1.text.xml</ResourceLink>
             <MediaResourceLink/>
             <Date/>
             <Type>Annotation</Type>
@@ -632,7 +632,7 @@
             <Keys/>
          </WrittenResource>
          <WrittenResource>
-            <ResourceLink>Degand_2_2_awo_NRC_1/Degand_2_2_awo_NRC_1.tok.xml</ResourceLink>
+            <ResourceLink>http://archive/corpus/my-collection/Metadata/Degand_2_2_awo_NRC_1/Degand_2_2_awo_NRC_1.tok.xml</ResourceLink>
             <MediaResourceLink/>
             <Date/>
             <Type>Annotation</Type>
@@ -663,7 +663,7 @@
             <Keys/>
          </WrittenResource>
          <WrittenResource>
-            <ResourceLink>Degand_2_2_awo_NRC_1/Degand_2_2_awo_NRC_1.values.xml</ResourceLink>
+            <ResourceLink>http://archive/corpus/my-collection/Metadata/Degand_2_2_awo_NRC_1/Degand_2_2_awo_NRC_1.values.xml</ResourceLink>
             <MediaResourceLink/>
             <Date/>
             <Type>Annotation</Type>

@@ -88,9 +88,9 @@
                </Content_Language>
             </Content_Languages>
             <Keys>
-               <Key Name="IMDI__1_9.Interactional"/>
-               <Key Name="IMDI__1_9.Discursive"/>
-               <Key Name="IMDI__1_9.Interactional"/>
+               <Key Link="http://www.mpi.nl/IMDI/Schema/Content-Genre-Interactional.xml" Name="IMDI__1_9.Interactional" Type="OpenVocabularyList">Some value (original had none)</Key>
+               <Key Link="http://www.mpi.nl/IMDI/Schema/Content-Genre-Discursive.xml" Name="IMDI__1_9.Discursive" Type="OpenVocabularyList">Some value (original had none)</Key>
+               <Key Link="http://www.mpi.nl/IMDI/Schema/Content-Genre-Interactional.xml" Name="IMDI__1_9.Interactional" Type="OpenVocabularyList">Some value (original had none)</Key>
             </Keys>
             <descriptions>
                <Description xml:lang="eng">This file was generated from an IMDI 1.9 file and transformed to IMDI 3.0. The substructure of Genre is replaced by two elements named "Genre" and "SubGenre". The original content of Genre substructure was: Interactional = '', Discursive = '', Performance = ''. These values have been added as Keys to the Content information. </Description>

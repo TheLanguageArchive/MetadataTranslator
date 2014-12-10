@@ -257,7 +257,7 @@
 		<Keys/>
 	    </MediaFile>
 	    <WrittenResource>
-		<ResourceLink>myannotation.eaf</ResourceLink>
+    	<ResourceLink>http://archive/corpus/my-collection/Metadata/myannotation.eaf</ResourceLink>
 		<MediaResourceLink/>
 		<Date>Unspecified</Date>
 		<Type Link="http://www.mpi.nl/IMDI/Schema/WrittenResource-Type.xml"

@@ -284,7 +284,8 @@ public class TranslatorImplTest {
     private String normalizeSourceLocation(String xml) throws UnsupportedEncodingException {
 	return xml.replace(
 		URLEncoder.encode(getClass().getResource(CMDI_SAMPLES_LOCATION).toString(), "UTF-8"),
-		URLEncoder.encode(COLLECTION_BASE_URI, "UTF-8"));
+		URLEncoder.encode(COLLECTION_BASE_URI, "UTF-8"))
+                .replace(getClass().getResource(CMDI_SAMPLES_LOCATION).toString(), COLLECTION_BASE_URI);
     }
 
     /**
