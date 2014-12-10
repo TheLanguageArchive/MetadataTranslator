@@ -53,7 +53,8 @@
                 </Keys>
                 <xsl:apply-templates select="Content" mode="TLASESSION2IMDISESSION"/>
                 <Actors>
-                    <xsl:apply-templates select="//Actor" mode="TLASESSION2IMDISESSION"/>                
+                    <xsl:apply-templates select="Actors/descriptions" mode="TLASESSION2IMDISESSION"/> 
+                    <xsl:apply-templates select="Actors/Actor" mode="TLASESSION2IMDISESSION"/>                
                 </Actors>
             </MDGroup>
             <xsl:apply-templates select="Resources" mode="TLASESSION2IMDISESSION"/>
@@ -169,7 +170,7 @@
             <Name><xsl:value-of select="child::Name"/></Name>
             <MotherTongue Type="ClosedVocabulary"><xsl:value-of select="child::MotherTongue"/></MotherTongue>
             <PrimaryLanguage Type="ClosedVocabulary"><xsl:value-of select="child::PrimaryLanguage"/></PrimaryLanguage>
-            <xsl:apply-templates select="descriptions"/>
+            <xsl:apply-templates select="descriptions" mode="TLASESSION2IMDISESSION"/>
         </Language>
     </xsl:template>
     

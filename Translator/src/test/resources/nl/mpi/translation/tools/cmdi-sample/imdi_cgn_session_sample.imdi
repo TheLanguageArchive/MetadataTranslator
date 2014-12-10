@@ -66,33 +66,31 @@
          </Keys>
          <Content>
             <Genre Link="http://www.mpi.nl/IMDI/Schema/Content-Genre.xml" Type="OpenVocabulary">Discourse</Genre>
-            <SubGenre Link="http://www.mpi.nl/IMDI/Schema/Content-SubGenre-Discourse.xml" Type="OpenVocabulary">Lecture,Seminar</SubGenre>
+            <SubGenre>Lecture,Seminar</SubGenre>
             <Task Link="http://www.mpi.nl/IMDI/Schema/Content-Task.xml" Type="OpenVocabulary">Activity: Unspecified</Task>
             <Modalities Link="http://www.mpi.nl/IMDI/Schema/Content-Modalities.xml" Type="OpenVocabularyList">speech</Modalities>
             <CommunicationContext>
                <Interactivity Link="http://www.mpi.nl/IMDI/Schema/Content-Interactivity.xml" Type="ClosedVocabulary">semi-interactive</Interactivity>
                <PlanningType Link="http://www.mpi.nl/IMDI/Schema/Content-PlanningType.xml" Type="ClosedVocabulary">semi-spontaneous</PlanningType>
                <Involvement Link="http://www.mpi.nl/IMDI/Schema/Content-Involvement.xml" Type="ClosedVocabulary">non-elicited</Involvement>
-               <SocialContext Link="" Type="OpenVocabulary">Public</SocialContext>
-               <EventStructure Link="" Type="OpenVocabulary">Monologue</EventStructure>
-               <Channel Link="" Type="OpenVocabulary">Face to Face</Channel>
+               <SocialContext Link="http://www.mpi.nl/IMDI/Schema/Content-SocialContext.xml" Type="ClosedVocabulary">Public</SocialContext>
+               <EventStructure Link="http://www.mpi.nl/IMDI/Schema/Content-EventStructure.xml" Type="ClosedVocabulary">Monologue</EventStructure>
+               <Channel Link="http://www.mpi.nl/IMDI/Schema/Content-Channel.xml" Type="ClosedVocabulary">Face to Face</Channel>
             </CommunicationContext>
             <Languages>
                <Language>
                   <Id>RFC1766:x-sil-DUT</Id>
                   <Name Link="http://www.mpi.nl/IMDI/Schema/MPI-Languages.xml" Type="OpenVocabulary">Dutch</Name>
+                  <Dominant Type="ClosedVocabulary">Unspecified</Dominant>
+                  <SourceLanguage Type="ClosedVocabulary">Unspecified</SourceLanguage>
+                  <TargetLanguage Type="ClosedVocabulary">Unspecified</TargetLanguage>
                </Language>
             </Languages>
             <Keys>
-               <Key Link="http://www.mpi.nl/IMDI/Schema/Content-Genre-Interactional.xml" Name="IMDI__1_9.Interactional" Type="OpenVocabularyList"/>
-               <Key Link="http://www.mpi.nl/IMDI/Schema/Content-Genre-Discursive.xml" Name="IMDI__1_9.Discursive" Type="OpenVocabularyList"/>
-               <Key Link="http://www.mpi.nl/IMDI/Schema/Content-Genre-Performance.xml" Name="IMDI__1_9.Interactional" Type="OpenVocabularyList"/>
                <Key Link="http://www.mpi.nl/CGN/Schema/CGN.textClass.target.xml" Name="CGN.textClass.target" Type="OpenVocabulary">ttn,prep1,mod3,dom2</Key>
-               <Key Link="http://www.mpi.nl/CGN/Schema/CGN.textClass.keywords.xml" Name="CGN.textClass.keywords" Type="OpenVocabulary"/>
                <Key Link="http://www.mpi.nl/CGN/Schema/CGN.activity.xml" Name="CGN.activity" Type="OpenVocabulary">Unspecified</Key>
             </Keys>
-            <Description LanguageId="ISO639-3:eng" Link="">This file was generated from an IMDI 1.9 file and transformed to IMDI 3.0. The substructure of Genre is replaced by two elements named &quot;Genre&quot; and &quot;SubGenre&quot;. The original content of Genre substructure was: Interactional = '', Discursive = '', Performance = ''. These values have been added as Keys to the Content information.</Description>
-            <Description LanguageId="" Link=""/>
+            <Description LanguageId="ISO639-3:eng">This file was generated from an IMDI 1.9 file and transformed to IMDI 3.0. The substructure of Genre is replaced by two elements named &quot;Genre&quot; and &quot;SubGenre&quot;. The original content of Genre substructure was: Interactional = '', Discursive = '', Performance = ''. These values have been added as Keys to the Content information.</Description>
          </Content>
          <Actors>
             <Description LanguageId="ISO639-3:eng">
@@ -109,7 +107,7 @@
   	---------------------------------------------------
   </Description>
             <Actor>
-               <Role Link="http://www.mpi.nl/IMDI/Schema/Actor-Role.xml" Type="OpenVocabulary">presenter</Role>
+               <Role Link="http://www.mpi.nl/IMDI/Schema/Actor-Role.xml" Type="OpenVocabularyList">presenter</Role>
                <Name/>
                <FullName/>
                <Code>N00056</Code>
@@ -117,17 +115,23 @@
                <Languages>
                   <Language>
                      <Id>RFC1766:x-sil-DUT</Id>
-                     <Name Link="http://www.mpi.nl/IMDI/Schema/IMDI-Languages.xml" Type="OpenVocabulary">Dutch</Name>
+                     <Name>Dutch</Name>
+                     <MotherTongue Type="ClosedVocabulary">Unspecified</MotherTongue>
+                     <PrimaryLanguage Type="ClosedVocabulary">Unspecified</PrimaryLanguage>
                      <Description LanguageId="ISO639-3:eng">First Language</Description>
                   </Language>
                   <Language>
                      <Id>RFC1766:x-sil-DUT</Id>
-                     <Name Link="http://www.mpi.nl/IMDI/Schema/IMDI-Languages.xml" Type="OpenVocabulary">Dutch</Name>
+                     <Name>Dutch</Name>
+                     <MotherTongue Type="ClosedVocabulary">Unspecified</MotherTongue>
+                     <PrimaryLanguage Type="ClosedVocabulary">Unspecified</PrimaryLanguage>
                      <Description LanguageId="ISO639-3:eng">Home Language</Description>
                   </Language>
                   <Language>
                      <Id>RFC1766:x-sil-DUT</Id>
-                     <Name Link="http://www.mpi.nl/IMDI/Schema/IMDI-Languages.xml" Type="OpenVocabulary">Dutch</Name>
+                     <Name>Dutch</Name>
+                     <MotherTongue Type="ClosedVocabulary">Unspecified</MotherTongue>
+                     <PrimaryLanguage Type="ClosedVocabulary">Unspecified</PrimaryLanguage>
                      <Description LanguageId="ISO639-3:eng">Work Language</Description>
                   </Language>
                </Languages>
@@ -159,7 +163,7 @@
                <Description LanguageId="ISO639-3:eng">none</Description>
             </Actor>
             <Actor>
-               <Role Link="http://www.mpi.nl/IMDI/Schema/Actor-Role.xml" Type="OpenVocabulary">Collector</Role>
+               <Role Link="http://www.mpi.nl/IMDI/Schema/Actor-Role.xml" Type="OpenVocabularyList">Collector</Role>
                <Name/>
                <FullName/>
                <Code>Unspecified</Code>

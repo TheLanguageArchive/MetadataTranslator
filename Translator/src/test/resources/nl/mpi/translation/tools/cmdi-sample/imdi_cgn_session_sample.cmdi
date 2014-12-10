@@ -8,42 +8,42 @@
      CMDVersion="1.1"
      xsi:schemaLocation="http://www.clarin.eu/cmd/ http://catalog.clarin.eu/ds/ComponentRegistry/rest/registry/profiles/clarin.eu:cr1:p_1407745712035/xsd">
    <Header>
-      <MdCreator>imdi2cmdi.xsl</MdCreator>
+      <MdCreator>Metadata Translator: TLASESSION2IMDISESSION.xslt hdl:1839/00-0000-0000-0001-55CD-D@format=cmdi</MdCreator>
       <MdCreationDate>2004-02-12</MdCreationDate>
       <MdSelfLink>hdl:1839/00-0000-0000-0001-55CD-D@format=cmdi</MdSelfLink>
       <MdProfile>clarin.eu:cr1:p_1407745712035</MdProfile>
    </Header>
    <Resources>
       <ResourceProxyList>
-         <ResourceProxy id="d2e425">
+         <ResourceProxy id="d2e423">
             <ResourceType mimetype="audio/mp4">Resource</ResourceType>
             <ResourceRef lat:localURI="../MediaFile/fn000056.m4a">hdl:1839/00-0000-0000-000D-841C-8</ResourceRef>
          </ResourceProxy>
-         <ResourceProxy id="d2e488">
+         <ResourceProxy id="d2e486">
             <ResourceType mimetype="audio/x-wav">Resource</ResourceType>
             <ResourceRef lat:localURI="../MediaFile/fn000056.wav">hdl:1839/00-0000-0000-0001-55CE-3</ResourceRef>
          </ResourceProxy>
-         <ResourceProxy id="d2e550">
+         <ResourceProxy id="d2e548">
             <ResourceType mimetype="text/x-cgn-bpt+xml">Resource</ResourceType>
             <ResourceRef lat:localURI="../Annotations/fn000056.bpt">hdl:1839/00-0000-0000-0001-55CF-9</ResourceRef>
          </ResourceProxy>
-         <ResourceProxy id="d2e629">
+         <ResourceProxy id="d2e627">
             <ResourceType mimetype="text/x-cgn-tag+xml">Resource</ResourceType>
             <ResourceRef lat:localURI="../Annotations/fn000056.tag">hdl:1839/00-0000-0000-0001-55D0-D</ResourceRef>
          </ResourceProxy>
-         <ResourceProxy id="d2e708">
+         <ResourceProxy id="d2e706">
             <ResourceType mimetype="text/x-cgn-pri+xml">Resource</ResourceType>
             <ResourceRef lat:localURI="../Annotations/fn000056.pri">hdl:1839/00-0000-0000-0001-55D1-C</ResourceRef>
          </ResourceProxy>
-         <ResourceProxy id="d2e788">
+         <ResourceProxy id="d2e786">
             <ResourceType mimetype="text/x-eaf+xml">Resource</ResourceType>
             <ResourceRef lat:localURI="../Annotations/fn000056.eaf">file:/Users/twan/Documents/Repositories/svn.mpi.nl/LAT/MetadataTranslator/trunk/Translator/src/test/resources/nl/mpi/translation/tools/Annotations/fn000056.eaf</ResourceRef>
          </ResourceProxy>
-         <ResourceProxy id="d2e867">
+         <ResourceProxy id="d2e865">
             <ResourceType mimetype="text/x-cgn-skp+xml">Resource</ResourceType>
             <ResourceRef lat:localURI="../Annotations/fn000056.skp">hdl:1839/00-0000-0000-0001-55D3-F</ResourceRef>
          </ResourceProxy>
-         <ResourceProxy id="d2e946">
+         <ResourceProxy id="d2e944">
             <ResourceType mimetype="text/x-cgn-tig+xml">Resource</ResourceType>
             <ResourceRef lat:localURI="../Annotations/fn000056.tig">hdl:1839/00-0000-0000-0001-55D4-A</ResourceRef>
          </ResourceProxy>
@@ -53,7 +53,7 @@
    </Resources>
    <Components>
       <lat-session>
-         <History>NAME:UPGRADE1-CGN_3_0 DATE:2004-08-12T17:37:24+0200. NAME:IMDI_1_9_TO_3_0 DATE:2004-05-18T12:29:33-02:00. NAME:imdi2cmdi.xslt DATE:2014-12-03T16:51:44.855+01:00.</History>
+         <History>NAME:UPGRADE1-CGN_3_0 DATE:xx. NAME:IMDI_1_9_TO_3_0 DATE:xx. NAME:imdi2cmdi.xslt DATE:xx.</History>
          <Name>fn000056</Name>
          <Title>presentation</Title>
          <Date>1999</Date>
@@ -87,30 +87,38 @@
             <Name/>
             <Title/>
             <Id/>
-            <Contact>
-               <Name/>
-               <Address/>
-               <Email/>
-               <Organisation/>
-            </Contact>
-            <descriptions>
-               <Description/>
-            </descriptions>
+            <Contact/>
          </Project>
          <Keys>
-            <Key Name="CGN.wordCount">3393</Key>
-            <Key Name="CGN.secCount">1245</Key>
-            <Key Name="CGN.byteCount">38000000</Key>
-            <Key Name="CGN.tempoAv">9811</Key>
-            <Key Name="CGN.recDate">1999</Key>
-            <Key Name="CGN.locName">Unspecified</Key>
-            <Key Name="CGN.locale">Unspecified</Key>
-            <Key Name="CGN.availability">CGN_WAV_29</Key>
-            <Key Name="CGN.segmentation">manual</Key>
-            <Key Name="CGN.fon.available">true</Key>
-            <Key Name="CGN.pro.available">false</Key>
-            <Key Name="CGN.syn.available">true</Key>
-            <Key Name="CGN.wrd.available">true</Key>
+            <Key Name="CGN.wordCount"
+                 Link="http://www.mpi.nl/CGN/Schema/CGN.wordCount.xml"
+                 Type="OpenVocabulary">3393</Key>
+            <Key Name="CGN.secCount" Type="OpenVocabulary">1245</Key>
+            <Key Name="CGN.byteCount"
+                 Link="http://www.mpi.nl/CGN/Schema/CGN.byteCount.xml"
+                 Type="OpenVocabulary">38000000</Key>
+            <Key Name="CGN.tempoAv"
+                 Link="http://www.mpi.nl/CGN/Schema/CGN.tempoAv.xml"
+                 Type="OpenVocabulary">9811</Key>
+            <Key Name="CGN.recDate"
+                 Link="http://www.mpi.nl/CGN/Schema/CGN.recDate.xml"
+                 Type="ClosedVocabulary">1999</Key>
+            <Key Name="CGN.locName"
+                 Link="http://www.mpi.nl/CGN/Schema/CGN.locName.xml"
+                 Type="OpenVocabulary">Unspecified</Key>
+            <Key Name="CGN.locale"
+                 Link="http://www.mpi.nl/CGN/Schema/CGN.Locale.xml"
+                 Type="ClosedVocabulary">Unspecified</Key>
+            <Key Name="CGN.availability"
+                 Link="http://www.mpi.nl/CGN/Schema/CGN.availability.xml"
+                 Type="OpenVocabulary">CGN_WAV_29</Key>
+            <Key Name="CGN.segmentation"
+                 Link="http://www.mpi.nl/CGN/Schema/CGN.segmentation.xml"
+                 Type="ClosedVocabulary">manual</Key>
+            <Key Name="CGN.fon.available" Type="OpenVocabulary">true</Key>
+            <Key Name="CGN.pro.available" Type="OpenVocabulary">false</Key>
+            <Key Name="CGN.syn.available" Type="OpenVocabulary">true</Key>
+            <Key Name="CGN.wrd.available" Type="OpenVocabulary">true</Key>
          </Keys>
          <Content>
             <Genre>Discourse</Genre>
@@ -135,16 +143,15 @@
                </Content_Language>
             </Content_Languages>
             <Keys>
-               <Key Name="IMDI__1_9.Interactional"/>
-               <Key Name="IMDI__1_9.Discursive"/>
-               <Key Name="IMDI__1_9.Interactional"/>
-               <Key Name="CGN.textClass.target">ttn,prep1,mod3,dom2</Key>
-               <Key Name="CGN.textClass.keywords"/>
-               <Key Name="CGN.activity">Unspecified</Key>
+               <Key Name="CGN.textClass.target"
+                    Link="http://www.mpi.nl/CGN/Schema/CGN.textClass.target.xml"
+                    Type="OpenVocabulary">ttn,prep1,mod3,dom2</Key>
+               <Key Name="CGN.activity"
+                    Link="http://www.mpi.nl/CGN/Schema/CGN.activity.xml"
+                    Type="OpenVocabulary">Unspecified</Key>
             </Keys>
             <descriptions>
                <Description xml:lang="eng">This file was generated from an IMDI 1.9 file and transformed to IMDI 3.0. The substructure of Genre is replaced by two elements named "Genre" and "SubGenre". The original content of Genre substructure was: Interactional = '', Discursive = '', Performance = ''. These values have been added as Keys to the Content information.</Description>
-               <Description/>
             </descriptions>
          </Content>
          <Actors>
@@ -175,29 +182,48 @@
                <Sex>Male</Sex>
                <Education>high</Education>
                <Anonymized>true</Anonymized>
-               <Contact>
-                  <Name/>
-                  <Address/>
-                  <Email/>
-                  <Organisation/>
-               </Contact>
+               <Contact/>
                <Keys>
-                  <Key Name="CGN.age">age2</Key>
-                  <Key Name="CGN.birth.year">1967</Key>
-                  <Key Name="CGN.birth.place">NL-469</Key>
-                  <Key Name="CGN.birth.reg">regN2a</Key>
-                  <Key Name="CGN.firstLang">SD</Key>
-                  <Key Name="CGN.homeLang">SD</Key>
-                  <Key Name="CGN.workLang">SD</Key>
-                  <Key Name="CGN.residence.place">NL-46-</Key>
-                  <Key Name="CGN.residence.reg">regN4a</Key>
-                  <Key Name="CGN.education.placesize">size3</Key>
-                  <Key Name="CGN.education.place">NL-46-</Key>
-                  <Key Name="CGN.education.reg">regN4a</Key>
-                  <Key Name="CGN.education.type">universiteit</Key>
-                  <Key Name="CGN.education.level">edu1</Key>
-                  <Key Name="CGN.occupation">consultant</Key>
-                  <Key Name="CGN.occupation.level">occ2</Key>
+                  <Key Name="CGN.age" Type="OpenVocabulary">age2</Key>
+                  <Key Name="CGN.birth.year" Type="OpenVocabulary">1967</Key>
+                  <Key Name="CGN.birth.place"
+                       Link="http://www.mpi.nl/CGN/Schema/CGN.birth.place.xml"
+                       Type="OpenVocabulary">NL-469</Key>
+                  <Key Name="CGN.birth.reg" Type="OpenVocabulary">regN2a</Key>
+                  <Key Name="CGN.firstLang"
+                       Link="http://www.mpi.nl/CGN/Schema/CGN.Language.xml"
+                       Type="ClosedVocabulary">SD</Key>
+                  <Key Name="CGN.homeLang"
+                       Link="http://www.mpi.nl/CGN/Schema/CGN.Language.xml"
+                       Type="ClosedVocabulary">SD</Key>
+                  <Key Name="CGN.workLang"
+                       Link="http://www.mpi.nl/CGN/Schema/CGN.Language.xml"
+                       Type="ClosedVocabulary">SD</Key>
+                  <Key Name="CGN.residence.place"
+                       Link="http://www.mpi.nl/CGN/Schema/CGN.residence.place.xml"
+                       Type="OpenVocabulary">NL-46-</Key>
+                  <Key Name="CGN.residence.reg"
+                       Link="http://www.mpi.nl/CGN/Schema/CGN.Region.xml"
+                       Type="ClosedVocabulary">regN4a</Key>
+                  <Key Name="CGN.education.placesize"
+                       Link="http://www.mpi.nl/CGN/Schema/CGN.communitySize.xml"
+                       Type="ClosedVocabulary">size3</Key>
+                  <Key Name="CGN.education.place"
+                       Link="http://www.mpi.nl/CGN/Schema/CGN.education.place.xml"
+                       Type="OpenVocabulary">NL-46-</Key>
+                  <Key Name="CGN.education.reg"
+                       Link="http://www.mpi.nl/CGN/Schema/CGN.Region.xml"
+                       Type="ClosedVocabulary">regN4a</Key>
+                  <Key Name="CGN.education.type" Type="OpenVocabulary">universiteit</Key>
+                  <Key Name="CGN.education.level"
+                       Link="http://www.mpi.nl/CGN/Schema/CGN.EducationLevel.xml"
+                       Type="ClosedVocabulary">edu1</Key>
+                  <Key Name="CGN.occupation"
+                       Link="http://www.mpi.nl/CGN/Schema/CGN.occupation.xml"
+                       Type="OpenVocabulary">consultant</Key>
+                  <Key Name="CGN.occupation.level"
+                       Link="http://www.mpi.nl/CGN/Schema/CGN.OccupationLevel.xml"
+                       Type="ClosedVocabulary">occ2</Key>
                </Keys>
                <descriptions>
                   <Description xml:lang="eng">none</Description>
@@ -246,18 +272,13 @@
                <Anonymized>false</Anonymized>
                <Contact>
                   <Name>CLS-KUN</Name>
-                  <Address/>
-                  <Email/>
                   <Organisation>CLS-KUN</Organisation>
                </Contact>
-               <descriptions>
-                  <Description/>
-               </descriptions>
                <Actor_Languages/>
             </Actor>
          </Actors>
          <Resources>
-            <MediaFile ref="d2e425">
+            <MediaFile ref="d2e423">
                <Type>audio</Type>
                <Format>audio/mp4</Format>
                <Size>61336662</Size>
@@ -272,24 +293,10 @@
                   <Date>Unspecified</Date>
                   <Owner/>
                   <Publisher/>
-                  <Contact>
-                     <Name/>
-                     <Address/>
-                     <Email/>
-                     <Organisation/>
-                  </Contact>
-                  <descriptions>
-                     <Description/>
-                  </descriptions>
+                  <Contact/>
                </Access>
-               <descriptions>
-                  <Description/>
-               </descriptions>
-               <Keys>
-                  <Key Name=""/>
-               </Keys>
             </MediaFile>
-            <MediaFile ref="d2e488">
+            <MediaFile ref="d2e486">
                <Type>audio</Type>
                <Format>audio/x-wav</Format>
                <Size>38M</Size>
@@ -304,22 +311,11 @@
                   <Date>Unspecified</Date>
                   <Owner/>
                   <Publisher>ELDA</Publisher>
-                  <Contact>
-                     <Name/>
-                     <Address/>
-                     <Email/>
-                     <Organisation/>
-                  </Contact>
-                  <descriptions>
-                     <Description/>
-                  </descriptions>
+                  <Contact/>
                </Access>
-               <descriptions>
-                  <Description/>
-               </descriptions>
             </MediaFile>
-            <WrittenResource ref="d2e550">
-               <Date/>
+            <WrittenResource ref="d2e548" mediaRef="d2e486">
+               <Date>Unspecified</Date>
                <Type>Annotation</Type>
                <SubType>phonetics</SubType>
                <Format>text/x-cgn-bpt+xml</Format>
@@ -327,37 +323,23 @@
                <Derivation>Annotation</Derivation>
                <CharacterEncoding>ASCII</CharacterEncoding>
                <ContentEncoding/>
-               <LanguageId/>
+               <LanguageId>Unspecified</LanguageId>
                <Anonymized>false</Anonymized>
                <Validation>
                   <Type>Unspecified</Type>
                   <Methodology>Unspecified</Methodology>
                   <Level/>
-                  <descriptions>
-                     <Description/>
-                  </descriptions>
                </Validation>
                <Access>
                   <Availability/>
                   <Date>Unspecified</Date>
                   <Owner/>
                   <Publisher/>
-                  <Contact>
-                     <Name/>
-                     <Address/>
-                     <Email/>
-                     <Organisation/>
-                  </Contact>
-                  <descriptions>
-                     <Description/>
-                  </descriptions>
+                  <Contact/>
                </Access>
-               <descriptions>
-                  <Description/>
-               </descriptions>
             </WrittenResource>
-            <WrittenResource ref="d2e629">
-               <Date/>
+            <WrittenResource ref="d2e627" mediaRef="d2e486">
+               <Date>Unspecified</Date>
                <Type>Annotation</Type>
                <SubType>pos, lemma, marked</SubType>
                <Format>text/x-cgn-tag+xml</Format>
@@ -365,37 +347,23 @@
                <Derivation>Annotation</Derivation>
                <CharacterEncoding>ASCII</CharacterEncoding>
                <ContentEncoding/>
-               <LanguageId/>
+               <LanguageId>Unspecified</LanguageId>
                <Anonymized>false</Anonymized>
                <Validation>
                   <Type>Unspecified</Type>
                   <Methodology>Unspecified</Methodology>
                   <Level/>
-                  <descriptions>
-                     <Description/>
-                  </descriptions>
                </Validation>
                <Access>
                   <Availability/>
                   <Date>Unspecified</Date>
                   <Owner/>
                   <Publisher/>
-                  <Contact>
-                     <Name/>
-                     <Address/>
-                     <Email/>
-                     <Organisation/>
-                  </Contact>
-                  <descriptions>
-                     <Description/>
-                  </descriptions>
+                  <Contact/>
                </Access>
-               <descriptions>
-                  <Description/>
-               </descriptions>
             </WrittenResource>
-            <WrittenResource ref="d2e708">
-               <Date/>
+            <WrittenResource ref="d2e706" mediaRef="d2e486">
+               <Date>Unspecified</Date>
                <Type>Annotation</Type>
                <SubType>orthography</SubType>
                <Format>text/x-cgn-pri+xml</Format>
@@ -403,37 +371,23 @@
                <Derivation>Annotation</Derivation>
                <CharacterEncoding>ASCII</CharacterEncoding>
                <ContentEncoding/>
-               <LanguageId/>
+               <LanguageId>Unspecified</LanguageId>
                <Anonymized>false</Anonymized>
                <Validation>
                   <Type>Unspecified</Type>
                   <Methodology>Unspecified</Methodology>
                   <Level/>
-                  <descriptions>
-                     <Description/>
-                  </descriptions>
                </Validation>
                <Access>
                   <Availability/>
                   <Date>Unspecified</Date>
                   <Owner/>
                   <Publisher/>
-                  <Contact>
-                     <Name/>
-                     <Address/>
-                     <Email/>
-                     <Organisation/>
-                  </Contact>
-                  <descriptions>
-                     <Description/>
-                  </descriptions>
+                  <Contact/>
                </Access>
-               <descriptions>
-                  <Description/>
-               </descriptions>
             </WrittenResource>
-            <WrittenResource ref="d2e788">
-               <Date/>
+            <WrittenResource ref="d2e786" mediaRef="d2e486">
+               <Date>Unspecified</Date>
                <Type>Annotation</Type>
                <SubType>phonetics</SubType>
                <Format>text/x-eaf+xml</Format>
@@ -441,37 +395,23 @@
                <Derivation>Annotation</Derivation>
                <CharacterEncoding>ASCII</CharacterEncoding>
                <ContentEncoding/>
-               <LanguageId/>
+               <LanguageId>Unspecified</LanguageId>
                <Anonymized>false</Anonymized>
                <Validation>
                   <Type>Unspecified</Type>
                   <Methodology>Unspecified</Methodology>
                   <Level/>
-                  <descriptions>
-                     <Description/>
-                  </descriptions>
                </Validation>
                <Access>
                   <Availability/>
                   <Date>Unspecified</Date>
                   <Owner/>
                   <Publisher/>
-                  <Contact>
-                     <Name/>
-                     <Address/>
-                     <Email/>
-                     <Organisation/>
-                  </Contact>
-                  <descriptions>
-                     <Description/>
-                  </descriptions>
+                  <Contact/>
                </Access>
-               <descriptions>
-                  <Description/>
-               </descriptions>
             </WrittenResource>
-            <WrittenResource ref="d2e867">
-               <Date/>
+            <WrittenResource ref="d2e865" mediaRef="d2e486">
+               <Date>Unspecified</Date>
                <Type>Annotation</Type>
                <SubType>labelling</SubType>
                <Format>text/x-cgn-skp+xml</Format>
@@ -479,37 +419,23 @@
                <Derivation>Annotation</Derivation>
                <CharacterEncoding>ASCII</CharacterEncoding>
                <ContentEncoding/>
-               <LanguageId/>
+               <LanguageId>Unspecified</LanguageId>
                <Anonymized>false</Anonymized>
                <Validation>
                   <Type>Unspecified</Type>
                   <Methodology>Unspecified</Methodology>
                   <Level/>
-                  <descriptions>
-                     <Description/>
-                  </descriptions>
                </Validation>
                <Access>
                   <Availability/>
                   <Date>Unspecified</Date>
                   <Owner/>
                   <Publisher/>
-                  <Contact>
-                     <Name/>
-                     <Address/>
-                     <Email/>
-                     <Organisation/>
-                  </Contact>
-                  <descriptions>
-                     <Description/>
-                  </descriptions>
+                  <Contact/>
                </Access>
-               <descriptions>
-                  <Description/>
-               </descriptions>
             </WrittenResource>
-            <WrittenResource ref="d2e946">
-               <Date/>
+            <WrittenResource ref="d2e944" mediaRef="d2e486">
+               <Date>Unspecified</Date>
                <Type>Annotation</Type>
                <SubType>syntax</SubType>
                <Format>text/x-cgn-tig+xml</Format>
@@ -517,34 +443,20 @@
                <Derivation>Annotation</Derivation>
                <CharacterEncoding>ASCII</CharacterEncoding>
                <ContentEncoding/>
-               <LanguageId/>
+               <LanguageId>Unspecified</LanguageId>
                <Anonymized>false</Anonymized>
                <Validation>
                   <Type>Unspecified</Type>
                   <Methodology>Unspecified</Methodology>
                   <Level/>
-                  <descriptions>
-                     <Description/>
-                  </descriptions>
                </Validation>
                <Access>
                   <Availability/>
                   <Date>Unspecified</Date>
                   <Owner/>
                   <Publisher/>
-                  <Contact>
-                     <Name/>
-                     <Address/>
-                     <Email/>
-                     <Organisation/>
-                  </Contact>
-                  <descriptions>
-                     <Description/>
-                  </descriptions>
+                  <Contact/>
                </Access>
-               <descriptions>
-                  <Description/>
-               </descriptions>
             </WrittenResource>
             <Source>
                <Id>CGN_WAV_29</Id>
@@ -559,15 +471,7 @@
                   <Date>Unspecified</Date>
                   <Owner/>
                   <Publisher/>
-                  <Contact>
-                     <Name/>
-                     <Address/>
-                     <Email/>
-                     <Organisation/>
-                  </Contact>
-                  <descriptions>
-                     <Description/>
-                  </descriptions>
+                  <Contact/>
                </Access>
                <descriptions>
                   <Description xml:lang="eng">
@@ -590,6 +494,7 @@
                </descriptions>
             </Source>
          </Resources>
+         <References/>
       </lat-session>
    </Components>
 </CMD>
