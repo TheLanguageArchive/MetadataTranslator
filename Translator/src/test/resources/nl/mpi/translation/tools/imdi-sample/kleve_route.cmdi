@@ -188,7 +188,7 @@
                </Contact>
                <Actor_Languages/>
             </Actor>
-            <Actor>
+            <Actor ref="xx">
                <Role>Annotator</Role>
                <Name>Peter Wittenburg, Sotaro Kita</Name>
                <FullName>Peter Wittenburg, Sotaro Kita</FullName>
