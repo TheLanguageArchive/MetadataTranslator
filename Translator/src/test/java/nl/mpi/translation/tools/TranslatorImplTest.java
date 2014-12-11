@@ -77,6 +77,7 @@ public class TranslatorImplTest {
     @BeforeClass
     public static void setUpClass() {
 	XMLUnit.setIgnoreWhitespace(true);
+        XMLUnit.setIgnoreComments(true);
     }
 
     @Before

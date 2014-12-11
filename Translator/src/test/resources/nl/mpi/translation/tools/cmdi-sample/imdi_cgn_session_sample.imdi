@@ -135,12 +135,14 @@
                      <Description LanguageId="ISO639-3:eng">Work Language</Description>
                   </Language>
                </Languages>
-               <EthnicGroup Type="OpenVocabulary"/>
+               <EthnicGroup/> <!-- TODO: used to have type attribute, evaluate -->
                <Age>32</Age>
                <BirthDate>Unspecified</BirthDate>
-               <Sex Type="OpenVocabulary">Male</Sex>
+               <Sex Link="http://www.mpi.nl/IMDI/Schema/Actor-Sex.xml"
+                  Type="ClosedVocabulary">Male</Sex>
                <Education>high</Education>
-               <Anonymized Type="ClosedVocabulary">true</Anonymized>
+               <Anonymized Link="http://www.mpi.nl/IMDI/Schema/Boolean.xml"
+                  Type="ClosedVocabulary">true</Anonymized>
                <Contact/>
                <Keys>
                   <Key Name="CGN.age" Type="OpenVocabulary">age2</Key>
@@ -169,20 +171,17 @@
                <Code>Unspecified</Code>
                <FamilySocialRole Link="http://www.mpi.nl/IMDI/Schema/Actor-FamilySocialRole.xml" Type="OpenVocabularyList">Unspecified</FamilySocialRole>
                <Languages/>
-               <EthnicGroup Type="OpenVocabulary"/>
+               <EthnicGroup/> <!-- TODO: used to have type attribute (OpenVocabulary), evaluate -->
                <Age>Unspecified</Age>
                <BirthDate>Unspecified</BirthDate>
-               <Sex Type="OpenVocabulary">Unspecified</Sex>
+               <Sex Link="http://www.mpi.nl/IMDI/Schema/Actor-Sex.xml" Type="ClosedVocabulary">Unspecified</Sex>
                <Education/>
-               <Anonymized Type="ClosedVocabulary">false</Anonymized>
+               <Anonymized Link="http://www.mpi.nl/IMDI/Schema/Boolean.xml" Type="ClosedVocabulary">false</Anonymized>
                <Contact>
                   <Name>CLS-KUN</Name>
-                  <Address/>
-                  <Email/>
                   <Organisation>CLS-KUN</Organisation>
                </Contact>
                <Keys/>
-               <Description/>
             </Actor>
          </Actors>
       </MDGroup>

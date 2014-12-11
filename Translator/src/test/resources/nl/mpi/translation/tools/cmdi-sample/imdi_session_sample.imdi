@@ -85,20 +85,22 @@
                             <PrimaryLanguage Type="ClosedVocabulary">Unspecified</PrimaryLanguage>
                         </Language>
                     </Languages>
-                    <EthnicGroup Type="OpenVocabulary"/>
+                    <EthnicGroup/> <!-- TODO: used to have type attribute, evaluate -->
                     <Age>4;06.00</Age>
                     <BirthDate>Unspecified</BirthDate>
-                    <Sex Type="OpenVocabulary">Female</Sex>
+                    <Sex Link="http://www.mpi.nl/IMDI/Schema/Actor-Sex.xml"
+                        Type="ClosedVocabulary">Female</Sex>
                     <Education/>
-                    <Anonymized>Unspecified</Anonymized>
+                    <Anonymized Link="http://www.mpi.nl/IMDI/Schema/Boolean.xml"
+                        Type="ClosedVocabulary">Unspecified</Anonymized>
                     <Contact/>
                     <Keys>
-                        <Key Name="BirthDate" Type="OpenVocabulary">2003-05-23</Key>
+                        <Key Name="BirthDate">2003-05-23</Key>
                     </Keys>
                     <Description>child</Description>
                 </Actor>
                 <Actor>
-                    <Role Link="http://www.mpi.nl/IMDI/Schema/Actor-Role.xml" Type="OpenVocabulary">Unspecified</Role>
+                    <Role Link="http://www.mpi.nl/IMDI/Schema/Actor-Role.xml" Type="OpenVocabularyList">Unspecified</Role>
                     <Name>Angelika Becker</Name>
                     <FullName/>
                     <Code/>
@@ -106,49 +108,55 @@
                     <Languages>
                        
                     </Languages>
-                    <EthnicGroup Type="OpenVocabulary"/>
+                    <EthnicGroup/> <!-- TODO: used to have type attribute, evaluate -->
                     <Age>Unspecified</Age>
                     <BirthDate>Unspecified</BirthDate>
-                    <Sex Type="OpenVocabulary">Unspecified</Sex>
+                    <Sex Link="http://www.mpi.nl/IMDI/Schema/Actor-Sex.xml"
+                        Type="ClosedVocabulary">Unspecified</Sex>
                     <Education/>
-                    <Anonymized>Unspecified</Anonymized>
+                    <Anonymized Link="http://www.mpi.nl/IMDI/Schema/Boolean.xml"
+                        Type="ClosedVocabulary">Unspecified</Anonymized>
                     <Contact/>
                     <Keys>
                         <Key Name="Role" Type="OpenVocabulary">investigator</Key>
                     </Keys>
                 </Actor>
                 <Actor>
-                    <Role Link="http://www.mpi.nl/IMDI/Schema/Actor-Role.xml" Type="OpenVocabulary">Unspecified</Role>
+                    <Role Link="http://www.mpi.nl/IMDI/Schema/Actor-Role.xml" Type="OpenVocabularyList">Unspecified</Role>
                     <Name>Markus van Ackeren</Name>
                     <FullName/>
                     <Code/>
                     <FamilySocialRole Link="http://www.mpi.nl/IMDI/Schema/Actor-FamilySocialRole.xml" Type="OpenVocabularyList">Unspecified</FamilySocialRole>
                     <Languages>
                     </Languages>
-                    <EthnicGroup Type="OpenVocabulary"/>
+                    <EthnicGroup/> <!-- TODO: used to have type attribute, evaluate -->
                     <Age>Unspecified</Age>
                     <BirthDate>Unspecified</BirthDate>
-                    <Sex Type="OpenVocabulary">Unspecified</Sex>
+                    <Sex Link="http://www.mpi.nl/IMDI/Schema/Actor-Sex.xml"
+                        Type="ClosedVocabulary">Unspecified</Sex>
                     <Education/>
-                    <Anonymized>Unspecified</Anonymized>
+                    <Anonymized Link="http://www.mpi.nl/IMDI/Schema/Boolean.xml"
+                        Type="ClosedVocabulary">Unspecified</Anonymized>
                     <Contact/>
                     <Keys>
                         <Key Name="Role" Type="OpenVocabulary">investigator</Key>
                     </Keys>
                 </Actor>
                 <Actor>
-                    <Role Link="http://www.mpi.nl/IMDI/Schema/Actor-Role.xml" Type="OpenVocabulary">Collector</Role>
+                    <Role Link="http://www.mpi.nl/IMDI/Schema/Actor-Role.xml" Type="OpenVocabularyList">Collector</Role>
                     <Name>Dimroth &amp; Narasimhan</Name>
                     <FullName>Dimroth &amp; Narasimhan</FullName>
                     <Code>Unspecified</Code>
                     <FamilySocialRole Link="http://www.mpi.nl/IMDI/Schema/Actor-FamilySocialRole.xml" Type="OpenVocabularyList">Unspecified</FamilySocialRole>
                     <Languages/>
-                    <EthnicGroup Type="OpenVocabulary"/>
+                    <EthnicGroup/> <!-- TODO: used to have type attribute, evaluate -->
                     <Age>Unspecified</Age>
                     <BirthDate>Unspecified</BirthDate>
-                    <Sex Type="OpenVocabulary">Unspecified</Sex>
+                    <Sex Link="http://www.mpi.nl/IMDI/Schema/Actor-Sex.xml"
+                        Type="ClosedVocabulary">Unspecified</Sex>
                     <Education/>
-                    <Anonymized>false</Anonymized>
+                    <Anonymized Link="http://www.mpi.nl/IMDI/Schema/Boolean.xml"
+                        Type="ClosedVocabulary">false</Anonymized>
                     <Contact>
                         <Name>C. Dimroth &amp; B. Narasimhan</Name>
                         <Address/>
@@ -159,18 +167,20 @@
                     <Description>Description</Description>
                 </Actor>
                 <Actor ResourceRef="N0x5128b0N0x541190">
-                    <Role Link="http://www.mpi.nl/IMDI/Schema/Actor-Role.xml" Type="OpenVocabulary">Annotator</Role>
+                    <Role Link="http://www.mpi.nl/IMDI/Schema/Actor-Role.xml" Type="OpenVocabularyList">Annotator</Role>
                     <Name>Angelika Becker</Name>
                     <FullName>Angelika Becker</FullName>
                     <Code>Unspecified</Code>
                     <FamilySocialRole Link="http://www.mpi.nl/IMDI/Schema/Actor-FamilySocialRole.xml" Type="OpenVocabularyList">Unspecified</FamilySocialRole>
                     <Languages/>
-                    <EthnicGroup Type="OpenVocabulary">Unspecified</EthnicGroup>
+                    <EthnicGroup/> <!-- TODO: used to have type attribute, evaluate -->
                     <Age>Unspecified</Age>
                     <BirthDate>Unspecified</BirthDate>
-                    <Sex Type="OpenVocabulary">Unspecified</Sex>
+                    <Sex Link="http://www.mpi.nl/IMDI/Schema/Actor-Sex.xml"
+                        Type="ClosedVocabulary">Unspecified</Sex>
                     <Education>Unspecified</Education>
-                    <Anonymized>false</Anonymized>
+                    <Anonymized Link="http://www.mpi.nl/IMDI/Schema/Boolean.xml"
+                        Type="ClosedVocabulary">false</Anonymized>
                     <Contact/>
                     <Keys/>
                 </Actor>
@@ -183,7 +193,7 @@
                 <Format Type="OpenVocabulary">audio/x-wav</Format>
                 <Size/>
                 <Quality>Unspecified</Quality>
-                <RecordingConditions/>
+                <RecordingConditions>Unspecified</RecordingConditions>
                 <TimePosition>
                     <Start>Unspecified</Start>
                     <End>Unspecified</End>
@@ -222,7 +232,8 @@
                 <CharacterEncoding/>
                 <ContentEncoding/>
                 <LanguageId Type="OpenVocabulary"/>
-                <Anonymized>Unspecified</Anonymized>
+                <Anonymized Link="http://www.mpi.nl/IMDI/Schema/Boolean.xml"
+                    Type="ClosedVocabulary">Unspecified</Anonymized>
                 <Access>
                     <Availability Type="OpenVocabulary"/>
                     <Date>Unspecified</Date>

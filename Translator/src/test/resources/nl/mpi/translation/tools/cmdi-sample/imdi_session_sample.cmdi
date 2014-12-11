@@ -316,6 +316,10 @@
                <Id>Unspecified</Id>
                <Format>Unspecified</Format>
                <Quality>Unspecified</Quality>
+               <CounterPosition>
+                  <Start>Unspecified</Start>
+                  <End>Unspecified</End>
+               </CounterPosition>
                <TimePosition>
                   <Start>Unspecified</Start>
                   <End>Unspecified</End>

@@ -144,7 +144,7 @@
             <Sex Link="http://www.mpi.nl/IMDI/Schema/Actor-Sex.xml" Type="ClosedVocabulary"><xsl:value-of select="child::Sex"/></Sex>
             <Education><xsl:value-of select="child::Education"/></Education>
             <Anonymized Link="http://www.mpi.nl/IMDI/Schema/Boolean.xml" Type="ClosedVocabulary"><xsl:value-of select="child::Anonymized"/></Anonymized>
-            <xsl:apply-templates select="Contact" mode="TLASESSION2IMDISESSION"/>      
+            <Contact><xsl:apply-templates select="Contact" mode="TLASESSION2IMDISESSION"/></Contact>
             <Keys>
                 <xsl:apply-templates select="Keys" mode="TLASESSION2IMDISESSION"/>
             </Keys>
@@ -174,19 +174,38 @@
         </Language>
     </xsl:template>
     
+    
+    <xsl:template match="Access" mode="TLASESSION2IMDISESSION">
+        <Access>
+            <Availability><xsl:value-of select="Availability"/></Availability>
+            <Date><xsl:value-of select="Date"/></Date>
+            <Owner><xsl:value-of select="Owner"/></Owner>
+            <Publisher><xsl:value-of select="Publisher"/></Publisher>
+            <Contact><xsl:apply-templates select="Contact" mode="TLASESSION2IMDISESSION"/></Contact>
+            <xsl:apply-templates select="descriptions" mode="TLASESSION2IMDISESSION"/>                
+        </Access>
+    </xsl:template>
+
     <xsl:template match="Contact" mode="TLASESSION2IMDISESSION">
-       <Contact>
-           <Name><xsl:value-of select="Name"></xsl:value-of></Name>
-           <Address><xsl:value-of select="Address"></xsl:value-of></Address>
-           <Email><xsl:value-of select="Email"></xsl:value-of></Email>
-           <Organisation><xsl:value-of select="Organisation"></xsl:value-of></Organisation>           
-       </Contact>
+       <xsl:if test="normalize-space(Name)!=''">
+        <Name><xsl:value-of select="Name" /></Name>
+       </xsl:if>
+       <xsl:if test="normalize-space(Address)!=''">
+           <Address><xsl:value-of select="Address"/></Address>
+       </xsl:if>
+       <xsl:if test="normalize-space(Email)!=''">
+           <Email><xsl:value-of select="Email"/></Email>
+       </xsl:if>
+       <xsl:if test="normalize-space(Organisation)!=''">
+           <Organisation><xsl:value-of select="Organisation"/></Organisation>
+       </xsl:if>       
     </xsl:template>
     
     <xsl:template match="Resources" mode="TLASESSION2IMDISESSION">
         <Resources>
             <xsl:apply-templates select="MediaFile" mode="TLASESSION2IMDISESSION"/>
             <xsl:apply-templates select="WrittenResource" mode="TLASESSION2IMDISESSION"/>
+            <xsl:apply-templates select="Source" mode="TLASESSION2IMDISESSION"/>            
         </Resources>
     </xsl:template>
     
@@ -231,18 +250,8 @@
             <Size><xsl:value-of select="Size"/></Size>
             <Quality><xsl:value-of select="Quality"/></Quality>
             <RecordingConditions><xsl:value-of select="RecordingConditions"/></RecordingConditions>
-            <TimePosition>
-                <Start><xsl:value-of select="TimePosition/Start"/></Start>
-                <End><xsl:value-of select="TimePosition/End"/></End>
-            </TimePosition>
-            <Access>
-                <Availability><xsl:value-of select="Availability"/></Availability>
-                <Date><xsl:value-of select="Date"/></Date>
-                <Owner><xsl:value-of select="Owner"/></Owner>
-                <Publisher><xsl:value-of select="Publisher"/></Publisher>
-                <xsl:apply-templates select="Contact"/>
-                <xsl:apply-templates select="descriptions" mode="TLASESSION2IMDISESSION"/>                
-            </Access>
+            <xsl:apply-templates select="TimePosition" mode="TLASESSION2IMDISESSION" />
+            <xsl:apply-templates select="Access" mode="TLASESSION2IMDISESSION" />  
             <xsl:apply-templates select="descriptions" mode="TLASESSION2IMDISESSION"/>
             <Keys>
                 <xsl:apply-templates select="Keys" mode="TLASESSION2IMDISESSION"/>
@@ -259,29 +268,52 @@
             <SubType><xsl:value-of select="SubType"/></SubType>
             <Format><xsl:value-of select="Format"/></Format>
             <Size><xsl:value-of select="Size"/></Size>
+            <Validation>
+                <Type><xsl:value-of select="Type"/></Type>
+                <Methodology><xsl:value-of select="Methodology"/></Methodology>
+                <xsl:choose>
+                    <xsl:when test="normalize-space(Level)!=''">
+                        <Level><xsl:value-of select="Level"/></Level>
+                    </xsl:when>
+                    <xsl:otherwise>
+                        <Level>Unspecified</Level>
+                    </xsl:otherwise>
+                </xsl:choose>
+                <xsl:apply-templates select="descriptions" mode="TLASESSION2IMDISESSION"/>
+            </Validation>
             <Derivation><xsl:value-of select="Derivation"/></Derivation>
             <CharacterEncoding><xsl:value-of select="CharacterEncoding"/></CharacterEncoding>
             <ContentEncoding><xsl:value-of select="ContentEncoding"/></ContentEncoding>
             <LanguageId><xsl:value-of select="LanguageId"/></LanguageId>
             <Anonymized><xsl:value-of select="Anonymized"/></Anonymized>
-            <Validation>
-                <Type><xsl:value-of select="Type"/></Type>
-                <Methodology><xsl:value-of select="Methodology"/></Methodology>
-                <Level><xsl:value-of select="Level"/></Level>
-                <xsl:apply-templates select="descriptions" mode="TLASESSION2IMDISESSION"/>
-            </Validation>
-            <Access>
-                <Availability><xsl:value-of select="Availability"/></Availability>
-                <Date><xsl:value-of select="Date"/></Date>
-                <Owner><xsl:value-of select="Owner"/></Owner>
-                <Publisher><xsl:value-of select="Publisher"/></Publisher>
-                <xsl:apply-templates select="Contact"/>
-                <xsl:apply-templates select="descriptions" mode="TLASESSION2IMDISESSION"/>                
-            </Access>
+            <xsl:apply-templates select="Access" mode="TLASESSION2IMDISESSION" /> 
             <xsl:apply-templates select="descriptions" mode="TLASESSION2IMDISESSION"/>
-            <xsl:apply-templates select="Keys" mode="TLASESSION2IMDISESSION"/>
-            
+            <Keys>
+                <xsl:apply-templates select="Keys" mode="TLASESSION2IMDISESSION"/>
+            </Keys>
         </WrittenResource>
+    </xsl:template>
+    
+    <xsl:template match="Source" mode="TLASESSION2IMDISESSION">
+        <Source>
+            <Id><xsl:value-of select="Id" /></Id>
+            <Format Type="OpenVocabulary"><xsl:value-of select="Format" /></Format>
+            <Quality><xsl:value-of select="Quality" /></Quality>
+            <xsl:apply-templates select="CounterPosition" mode="TLASESSION2IMDISESSION" />
+            <xsl:apply-templates select="TimePosition" mode="TLASESSION2IMDISESSION" />
+            <xsl:apply-templates select="Access" mode="TLASESSION2IMDISESSION" />            
+            <xsl:apply-templates select="descriptions" mode="TLASESSION2IMDISESSION"/>
+            <Keys>
+                <xsl:apply-templates select="Keys" mode="TLASESSION2IMDISESSION"/>
+            </Keys>
+        </Source>
+    </xsl:template>
+    
+    <xsl:template match="CounterPosition|TimePosition" mode="TLASESSION2IMDISESSION">
+        <xsl:element name="{name()}">
+            <Start><xsl:value-of select="Start" /></Start>
+            <End><xsl:value-of select="End" /></End>
+        </xsl:element>
     </xsl:template>
     
     <xsl:template match="Keys" mode="TLASESSION2IMDISESSION">
