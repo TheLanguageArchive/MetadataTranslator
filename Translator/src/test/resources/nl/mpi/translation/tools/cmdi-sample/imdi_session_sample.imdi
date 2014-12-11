@@ -164,7 +164,7 @@
                     <Keys/>
                     <Description>Description</Description>
                 </Actor>
-                <Actor ResourceRef="N0x5128b0N0x541190">
+                <Actor ResourceRef="xx">
                     <Role Link="http://www.mpi.nl/IMDI/Schema/Actor-Role.xml" Type="OpenVocabularyList">Annotator</Role>
                     <Name>Angelika Becker</Name>
                     <FullName>Angelika Becker</FullName>
@@ -185,10 +185,10 @@
             </Actors>
         </MDGroup>
         <Resources>
-            <MediaFile ResourceId="N0x5128b0N0x5364d0">
-                <ResourceLink ArchiveHandle="hdl:1839/00-0000-0000-0009-56D9-E">http://archive/corpus/my-collection/Media/NAR_Annalena_2a.wav</ResourceLink>
-                <Type Type="OpenVocabulary">audio</Type>
-                <Format Type="OpenVocabulary">audio/x-wav</Format>
+            <MediaFile>
+                <ResourceLink ArchiveHandle="hdl:1839/00-0000-0000-0009-56D9-E">http://archive/corpus/my-collection/Metadata/Media/NAR_Annalena_2a.wav</ResourceLink>
+                <Type>audio</Type>
+                <Format>audio/x-wav</Format>
                 <Size/>
                 <Quality>Unspecified</Quality>
                 <RecordingConditions>Unspecified</RecordingConditions>
@@ -197,64 +197,56 @@
                     <End>Unspecified</End>
                 </TimePosition>
                 <Access>
-                    <Availability Type="OpenVocabulary"/>
+                    <Availability/>
                     <Date>Unspecified</Date>
                     <Owner/>
                     <Publisher/>
                     <Contact/>
-                    <Description/>
                 </Access>
-                <Description/>
                 <Keys/>
             </MediaFile>
-            <WrittenResource ResourceId="N0x5128b0N0x541190">
-                <ResourceLink ArchiveHandle="hdl:1839/00-0000-0000-0009-56D8-1">http://archive/corpus/my-collection/Annotations/NAR_Annalena_2a.eaf</ResourceLink>
+            <WrittenResource ResourceId="xx">
+                <ResourceLink ArchiveHandle="hdl:1839/00-0000-0000-0009-56D8-1">http://archive/corpus/my-collection/Metadata/Annotations/NAR_Annalena_2a.eaf</ResourceLink>
                 <MediaResourceLink/>
                 <Date>Unspecified</Date>
-                <Type Type="OpenVocabulary">Annotation</Type>
-                <SubType Type="OpenVocabulary"/>
-                <Format Type="OpenVocabulary">text/x-eaf+xml</Format>
-                <Size Type="OpenVocabulary">Unspecified</Size>
+                <Type>Annotation</Type>
+                <SubType/>
+                <Format>text/x-eaf+xml</Format>
+                <Size>Unspecified</Size>
                 <Validation>
-                    <Type Link="http://www.mpi.nl/IMDI/Schema/Validation-Type.xml" Type="ClosedVocabulary">Unspecified</Type>
-                    <Methodology Link="http://www.mpi.nl/IMDI/Schema/Validation-Methodology.xml" Type="ClosedVocabulary">Unspecified</Methodology>
+                    <Type>Unspecified</Type>
+                    <Methodology>Unspecified</Methodology>
                     <Level>Unspecified</Level>
-                    <Description/>
                 </Validation>
-                <Derivation Link="http://www.mpi.nl/IMDI/Schema/WrittenResource-Derivation.xml" Type="ClosedVocabulary">Annotation</Derivation>
+                <Derivation>Annotation</Derivation>
                 <CharacterEncoding/>
                 <ContentEncoding/>
-                <LanguageId Type="OpenVocabulary"/>
-                <Anonymized Link="http://www.mpi.nl/IMDI/Schema/Boolean.xml"
-                    Type="ClosedVocabulary">Unspecified</Anonymized>
+                <LanguageId>Unspecified</LanguageId>
+                <Anonymized>Unspecified</Anonymized>
                 <Access>
-                    <Availability Type="OpenVocabulary"/>
+                    <Availability/>
                     <Date>Unspecified</Date>
                     <Owner/>
                     <Publisher/>
                     <Contact/>
-                    <Description/>
                 </Access>
-                <Description/>
                 <Keys/>
             </WrittenResource>
             <Source>
                 <Id>Unspecified</Id>
-                <Format Type="OpenVocabulary">Unspecified</Format>
+                <Format>Unspecified</Format>
                 <Quality>Unspecified</Quality>
                 <TimePosition>
                     <Start>Unspecified</Start>
                     <End>Unspecified</End>
                 </TimePosition>
                 <Access>
-                    <Availability Type="OpenVocabulary"/>
+                    <Availability/>
                     <Date>Unspecified</Date>
                     <Owner/>
                     <Publisher/>
                     <Contact/>
-                    <Description/>
                 </Access>
-                <Description/>
                 <Keys/>
             </Source>
         </Resources>

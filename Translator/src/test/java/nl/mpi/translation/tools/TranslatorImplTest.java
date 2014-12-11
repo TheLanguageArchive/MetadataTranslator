@@ -272,7 +272,7 @@ public class TranslatorImplTest {
      * @throws UnsupportedEncodingException
      */
     private String normalizeImdiOutput(String xml, URL cmdiFileUrl) throws UnsupportedEncodingException {
-	return normalizeDate(normalizeSourceLocation(normalizeOriginator(xml, cmdiFileUrl.toString())));
+	return normalizeResourceRefs(normalizeDate(normalizeSourceLocation(normalizeOriginator(xml, cmdiFileUrl.toString()))));
     }
 
     /**
@@ -311,6 +311,11 @@ public class TranslatorImplTest {
 	return xml
                 .replaceAll("id=\"(.*)\"", "id=\"xx\"")
                 .replaceAll("ref=\"(.*)\"", "ref=\"xx\"");
+    }
+    
+    private String normalizeResourceRefs(String xml) {
+        return xml.replaceAll("ResourceId=\"(.*)\"", "ResourceId=\"xx\"")
+                .replaceAll("ResourceRef=\"(.*)\"", "ResourceRef=\"xx\"");
     }
 
     /**

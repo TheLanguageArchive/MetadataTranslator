@@ -17,11 +17,11 @@
       <ResourceProxyList>
          <ResourceProxy id="d2e405">
             <ResourceType mimetype="audio/x-wav">Resource</ResourceType>
-            <ResourceRef lat:localURI="../Media/NAR_Annalena_2a.wav">hdl:1839/00-0000-0000-0009-56D9-E</ResourceRef>
+            <ResourceRef lat:localURI="Media/NAR_Annalena_2a.wav">hdl:1839/00-0000-0000-0009-56D9-E</ResourceRef>
          </ResourceProxy>
          <ResourceProxy id="d2e464">
             <ResourceType mimetype="text/x-eaf+xml">Resource</ResourceType>
-            <ResourceRef lat:localURI="../Annotations/NAR_Annalena_2a.eaf">hdl:1839/00-0000-0000-0009-56D8-1</ResourceRef>
+            <ResourceRef lat:localURI="Annotations/NAR_Annalena_2a.eaf">hdl:1839/00-0000-0000-0009-56D8-1</ResourceRef>
          </ResourceProxy>
       </ResourceProxyList>
       <JournalFileProxyList/>
@@ -178,7 +178,7 @@
                </descriptions>
                <Actor_Languages/>
             </Actor>
-            <Actor>
+            <Actor ref="d2e464">
                <Role>Annotator</Role>
                <Name>Angelika Becker</Name>
                <FullName>Angelika Becker</FullName>

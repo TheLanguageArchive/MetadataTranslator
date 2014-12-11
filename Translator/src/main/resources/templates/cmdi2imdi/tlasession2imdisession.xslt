@@ -129,6 +129,10 @@
     
     <xsl:template match="Actor" mode="TLASESSION2IMDISESSION">
         <Actor>
+            <xsl:if test="@ref">
+                <xsl:attribute name="ResourceRef" select="@ref" />
+            </xsl:if>
+            
             <Role Link="http://www.mpi.nl/IMDI/Schema/Actor-Role.xml" Type="OpenVocabularyList"><xsl:value-of select="child::Role"/></Role>
             <Name><xsl:value-of select="child::Name"/></Name>
             <FullName><xsl:value-of select="child::FullName"/></FullName>
@@ -242,7 +246,8 @@
         </Description>
     </xsl:template>
     
-    <xsl:template match="MediaFile" mode="TLASESSION2IMDISESSION">
+    <xsl:template match="MediaFile" mode="TLASESSION2IMDISESSION">        
+        <xsl:call-template name="generate-ResourceId"></xsl:call-template>
         <MediaFile>
             <ResourceLink><xsl:apply-templates select="//ResourceProxy[@id eq current()/@ref]" mode="create-resource-link-content"/></ResourceLink>
             <Type><xsl:value-of select="Type"/></Type>
@@ -261,6 +266,7 @@
     
     <xsl:template match="WrittenResource" mode="TLASESSION2IMDISESSION">
         <WrittenResource>
+            <xsl:call-template name="generate-ResourceId"></xsl:call-template>
             <ResourceLink><xsl:apply-templates select="//ResourceProxy[@id eq current()/@ref]" mode="create-resource-link-content"/></ResourceLink>
             <MediaResourceLink></MediaResourceLink> <!-- todo -->            
             <Date><xsl:value-of select="Date"/></Date>
@@ -269,11 +275,11 @@
             <Format><xsl:value-of select="Format"/></Format>
             <Size><xsl:value-of select="Size"/></Size>
             <Validation>
-                <Type><xsl:value-of select="Type"/></Type>
-                <Methodology><xsl:value-of select="Methodology"/></Methodology>
+                <Type><xsl:value-of select="Validation/Type"/></Type>
+                <Methodology><xsl:value-of select="Validation/Methodology"/></Methodology>
                 <xsl:choose>
-                    <xsl:when test="normalize-space(Level)!=''">
-                        <Level><xsl:value-of select="Level"/></Level>
+                    <xsl:when test="normalize-space(Validation/Level)!=''">
+                        <Level><xsl:value-of select="Validation/Level"/></Level>
                     </xsl:when>
                     <xsl:otherwise>
                         <Level>Unspecified</Level>
@@ -297,7 +303,7 @@
     <xsl:template match="Source" mode="TLASESSION2IMDISESSION">
         <Source>
             <Id><xsl:value-of select="Id" /></Id>
-            <Format Type="OpenVocabulary"><xsl:value-of select="Format" /></Format>
+            <Format><xsl:value-of select="Format" /></Format>
             <Quality><xsl:value-of select="Quality" /></Quality>
             <xsl:apply-templates select="CounterPosition" mode="TLASESSION2IMDISESSION" />
             <xsl:apply-templates select="TimePosition" mode="TLASESSION2IMDISESSION" />
@@ -314,6 +320,12 @@
             <Start><xsl:value-of select="Start" /></Start>
             <End><xsl:value-of select="End" /></End>
         </xsl:element>
+    </xsl:template>
+        
+    <xsl:template name="generate-ResourceId">
+        <xsl:if test="//Actor[@ref=current()/@ref]">
+            <xsl:attribute name="ResourceId" select="@ref" />
+        </xsl:if>
     </xsl:template>
     
     <xsl:template match="Keys" mode="TLASESSION2IMDISESSION">
