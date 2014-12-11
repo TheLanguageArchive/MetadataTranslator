@@ -46,12 +46,7 @@
             <Name>nformation structure in child language: word order in co-ordinate noun phrases in childrens' elicited narratives</Name>
             <Title/>
             <Id/>
-            <Contact>
-               <Name/>
-               <Address/>
-               <Email/>
-               <Organisation/>
-            </Contact>
+            <Contact/>
             <descriptions>
                <Description>This project wants to investigate effects of information structure (given vs. new) on word order in co-ordinate noun phrases. Word order produced by 3 to 5 year old children acquiring German is studied in an elicited narrative task.</Description>
             </descriptions>
@@ -73,24 +68,24 @@
                <Channel>Unspecified</Channel>
             </CommunicationContext>
             <Content_Languages>
-               <descriptions>
-                  <Description/>
-               </descriptions>
                <Content_Language>
                   <Id>ISO639-3:deu</Id>
                   <Name>German</Name>
                   <Dominant>Unspecified</Dominant>
                   <SourceLanguage>Unspecified</SourceLanguage>
                   <TargetLanguage>Unspecified</TargetLanguage>
-                  <descriptions>
-                     <Description/>
-                  </descriptions>
                </Content_Language>
             </Content_Languages>
             <Keys>
-               <Key Link="http://www.mpi.nl/IMDI/Schema/Content-Genre-Interactional.xml" Name="IMDI__1_9.Interactional" Type="OpenVocabularyList">Some value (original had none)</Key>
-               <Key Link="http://www.mpi.nl/IMDI/Schema/Content-Genre-Discursive.xml" Name="IMDI__1_9.Discursive" Type="OpenVocabularyList">Some value (original had none)</Key>
-               <Key Link="http://www.mpi.nl/IMDI/Schema/Content-Genre-Interactional.xml" Name="IMDI__1_9.Interactional" Type="OpenVocabularyList">Some value (original had none)</Key>
+               <Key Name="IMDI__1_9.Interactional"
+                  Link="http://www.mpi.nl/IMDI/Schema/Content-Genre-Interactional.xml"
+                  Type="OpenVocabularyList">Some value (original had none)</Key>
+               <Key Name="IMDI__1_9.Discursive"
+                  Link="http://www.mpi.nl/IMDI/Schema/Content-Genre-Discursive.xml"
+                  Type="OpenVocabularyList">Some value (original had none)</Key>
+               <Key Name="IMDI__1_9.Interactional"
+                  Link="http://www.mpi.nl/IMDI/Schema/Content-Genre-Interactional.xml"
+                  Type="OpenVocabularyList">Some value (original had none)</Key>
             </Keys>
             <descriptions>
                <Description xml:lang="eng">This file was generated from an IMDI 1.9 file and transformed to IMDI 3.0. The substructure of Genre is replaced by two elements named "Genre" and "SubGenre". The original content of Genre substructure was: Interactional = '', Discursive = '', Performance = ''. These values have been added as Keys to the Content information. </Description>
@@ -110,12 +105,7 @@
                <Sex>Female</Sex>
                <Education/>
                <Anonymized>Unspecified</Anonymized>
-               <Contact>
-                  <Name/>
-                  <Address/>
-                  <Email/>
-                  <Organisation/>
-               </Contact>
+               <Contact/>
                <Keys>
                   <Key Name="BirthDate">2003-05-23</Key>
                </Keys>
@@ -123,17 +113,11 @@
                   <Description>child</Description>
                </descriptions>
                <Actor_Languages>
-                  <descriptions>
-                     <Description/>
-                  </descriptions>
                   <Actor_Language>
                      <Id>ISO639-3:deu</Id>
                      <Name>German</Name>
                      <MotherTongue>Unspecified</MotherTongue>
                      <PrimaryLanguage>Unspecified</PrimaryLanguage>
-                     <descriptions>
-                        <Description/>
-                     </descriptions>
                   </Actor_Language>
                </Actor_Languages>
             </Actor>
@@ -149,23 +133,11 @@
                <Sex>Unspecified</Sex>
                <Education/>
                <Anonymized>Unspecified</Anonymized>
-               <Contact>
-                  <Name/>
-                  <Address/>
-                  <Email/>
-                  <Organisation/>
-               </Contact>
+               <Contact/>
                <Keys>
-                  <Key Name="Role">investigator</Key>
+                  <Key Name="Role" Type="OpenVocabulary">investigator</Key>
                </Keys>
-               <descriptions>
-                  <Description/>
-               </descriptions>
-               <Actor_Languages>
-                  <descriptions>
-                     <Description/>
-                  </descriptions>
-               </Actor_Languages>
+               <Actor_Languages/>
             </Actor>
             <Actor>
                <Role>Unspecified</Role>
@@ -179,23 +151,11 @@
                <Sex>Unspecified</Sex>
                <Education/>
                <Anonymized>Unspecified</Anonymized>
-               <Contact>
-                  <Name/>
-                  <Address/>
-                  <Email/>
-                  <Organisation/>
-               </Contact>
+               <Contact/>
                <Keys>
-                  <Key Name="Role">investigator</Key>
+                  <Key Name="Role" Type="OpenVocabulary">investigator</Key>
                </Keys>
-               <descriptions>
-                  <Description/>
-               </descriptions>
-               <Actor_Languages>
-                  <descriptions>
-                     <Description/>
-                  </descriptions>
-               </Actor_Languages>
+               <Actor_Languages/>
             </Actor>
             <Actor>
                <Role>Collector</Role>
@@ -211,9 +171,7 @@
                <Anonymized>false</Anonymized>
                <Contact>
                   <Name>C. Dimroth &amp; B. Narasimhan</Name>
-                  <Address/>
                   <Email>Christine.Dimroth@mpi.nl &amp; Bhuvana.Narasimhan@mpi.nl</Email>
-                  <Organisation/>
                </Contact>
                <descriptions>
                   <Description>Description</Description>
@@ -226,21 +184,13 @@
                <FullName>Angelika Becker</FullName>
                <Code>Unspecified</Code>
                <FamilySocialRole>Unspecified</FamilySocialRole>
-               <EthnicGroup>Unspecified</EthnicGroup>
+               <EthnicGroup/>
                <Age>Unspecified</Age>
                <BirthDate>Unspecified</BirthDate>
                <Sex>Unspecified</Sex>
                <Education>Unspecified</Education>
                <Anonymized>false</Anonymized>
-               <Contact>
-                  <Name/>
-                  <Address/>
-                  <Email/>
-                  <Organisation/>
-               </Contact>
-               <descriptions>
-                  <Description/>
-               </descriptions>
+               <Contact/>
                <Actor_Languages/>
             </Actor>
          </Actors>
@@ -250,7 +200,7 @@
                <Format>audio/x-wav</Format>
                <Size/>
                <Quality>Unspecified</Quality>
-               <RecordingConditions/>
+               <RecordingConditions>Unspecified</RecordingConditions>
                <TimePosition>
                   <Start>Unspecified</Start>
                   <End>Unspecified</End>
@@ -260,19 +210,8 @@
                   <Date>Unspecified</Date>
                   <Owner/>
                   <Publisher/>
-                  <Contact>
-                     <Name/>
-                     <Address/>
-                     <Email/>
-                     <Organisation/>
-                  </Contact>
-                  <descriptions>
-                     <Description/>
-                  </descriptions>
+                  <Contact/>
                </Access>
-               <descriptions>
-                  <Description/>
-               </descriptions>
             </MediaFile>
             <WrittenResource ref="d2e464">
                <Date>Unspecified</Date>
@@ -283,15 +222,12 @@
                <Derivation>Annotation</Derivation>
                <CharacterEncoding/>
                <ContentEncoding/>
-               <LanguageId/>
+               <LanguageId>Unspecified</LanguageId>
                <Anonymized>Unspecified</Anonymized>
                <Validation>
                   <Type>Unspecified</Type>
                   <Methodology>Unspecified</Methodology>
                   <Level>Unspecified</Level>
-                  <descriptions>
-                     <Description/>
-                  </descriptions>
                </Validation>
                <Access>
                   <Availability/>
@@ -308,18 +244,11 @@
                      <Description/>
                   </descriptions>
                </Access>
-               <descriptions>
-                  <Description/>
-               </descriptions>
             </WrittenResource>
             <Source>
                <Id>Unspecified</Id>
                <Format>Unspecified</Format>
                <Quality>Unspecified</Quality>
-               <CounterPosition>
-                  <Start>Unspecified</Start>
-                  <End>Unspecified</End>
-               </CounterPosition>
                <TimePosition>
                   <Start>Unspecified</Start>
                   <End>Unspecified</End>
@@ -339,9 +268,6 @@
                      <Description/>
                   </descriptions>
                </Access>
-               <descriptions>
-                  <Description/>
-               </descriptions>
             </Source>
          </Resources>
          <References/>

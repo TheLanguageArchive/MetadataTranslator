@@ -159,9 +159,7 @@
                         Type="ClosedVocabulary">false</Anonymized>
                     <Contact>
                         <Name>C. Dimroth &amp; B. Narasimhan</Name>
-                        <Address/>
                         <Email>Christine.Dimroth@mpi.nl &amp; Bhuvana.Narasimhan@mpi.nl</Email>
-                        <Organisation/>
                     </Contact>
                     <Keys/>
                     <Description>Description</Description>
@@ -203,12 +201,7 @@
                     <Date>Unspecified</Date>
                     <Owner/>
                     <Publisher/>
-                    <Contact>
-                        <Name/>
-                        <Address/>
-                        <Email/>
-                        <Organisation/>
-                    </Contact>
+                    <Contact/>
                     <Description/>
                 </Access>
                 <Description/>
@@ -239,12 +232,7 @@
                     <Date>Unspecified</Date>
                     <Owner/>
                     <Publisher/>
-                    <Contact>
-                        <Name/>
-                        <Address/>
-                        <Email/>
-                        <Organisation/>
-                    </Contact>
+                    <Contact/>
                     <Description/>
                 </Access>
                 <Description/>
@@ -263,12 +251,7 @@
                     <Date>Unspecified</Date>
                     <Owner/>
                     <Publisher/>
-                    <Contact>
-                        <Name/>
-                        <Address/>
-                        <Email/>
-                        <Organisation/>
-                    </Contact>
+                    <Contact/>
                     <Description/>
                 </Access>
                 <Description/>
