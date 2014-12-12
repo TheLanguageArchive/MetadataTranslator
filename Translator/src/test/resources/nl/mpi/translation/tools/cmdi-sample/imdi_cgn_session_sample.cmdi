@@ -17,35 +17,35 @@
       <ResourceProxyList>
          <ResourceProxy id="d2e423">
             <ResourceType mimetype="audio/mp4">Resource</ResourceType>
-            <ResourceRef lat:localURI="../MediaFile/fn000056.m4a">hdl:1839/00-0000-0000-000D-841C-8</ResourceRef>
+            <ResourceRef lat:localURI="MediaFile/fn000056.m4a">hdl:1839/00-0000-0000-000D-841C-8</ResourceRef>
          </ResourceProxy>
          <ResourceProxy id="d2e486">
             <ResourceType mimetype="audio/x-wav">Resource</ResourceType>
-            <ResourceRef lat:localURI="../MediaFile/fn000056.wav">hdl:1839/00-0000-0000-0001-55CE-3</ResourceRef>
+            <ResourceRef lat:localURI="MediaFile/fn000056.wav">hdl:1839/00-0000-0000-0001-55CE-3</ResourceRef>
          </ResourceProxy>
          <ResourceProxy id="d2e548">
             <ResourceType mimetype="text/x-cgn-bpt+xml">Resource</ResourceType>
-            <ResourceRef lat:localURI="../Annotations/fn000056.bpt">hdl:1839/00-0000-0000-0001-55CF-9</ResourceRef>
+            <ResourceRef lat:localURI="Annotations/fn000056.bpt">hdl:1839/00-0000-0000-0001-55CF-9</ResourceRef>
          </ResourceProxy>
          <ResourceProxy id="d2e627">
             <ResourceType mimetype="text/x-cgn-tag+xml">Resource</ResourceType>
-            <ResourceRef lat:localURI="../Annotations/fn000056.tag">hdl:1839/00-0000-0000-0001-55D0-D</ResourceRef>
+            <ResourceRef lat:localURI="Annotations/fn000056.tag">hdl:1839/00-0000-0000-0001-55D0-D</ResourceRef>
          </ResourceProxy>
          <ResourceProxy id="d2e706">
             <ResourceType mimetype="text/x-cgn-pri+xml">Resource</ResourceType>
-            <ResourceRef lat:localURI="../Annotations/fn000056.pri">hdl:1839/00-0000-0000-0001-55D1-C</ResourceRef>
+            <ResourceRef lat:localURI="Annotations/fn000056.pri">hdl:1839/00-0000-0000-0001-55D1-C</ResourceRef>
          </ResourceProxy>
          <ResourceProxy id="d2e786">
             <ResourceType mimetype="text/x-eaf+xml">Resource</ResourceType>
-            <ResourceRef lat:localURI="../Annotations/fn000056.eaf">file:/Users/twan/Documents/Repositories/svn.mpi.nl/LAT/MetadataTranslator/trunk/Translator/src/test/resources/nl/mpi/translation/tools/Annotations/fn000056.eaf</ResourceRef>
+            <ResourceRef lat:localURI="Annotations/fn000056.eaf">Annotations/fn000056.eaf</ResourceRef>
          </ResourceProxy>
          <ResourceProxy id="d2e865">
             <ResourceType mimetype="text/x-cgn-skp+xml">Resource</ResourceType>
-            <ResourceRef lat:localURI="../Annotations/fn000056.skp">hdl:1839/00-0000-0000-0001-55D3-F</ResourceRef>
+            <ResourceRef lat:localURI="Annotations/fn000056.skp">hdl:1839/00-0000-0000-0001-55D3-F</ResourceRef>
          </ResourceProxy>
          <ResourceProxy id="d2e944">
             <ResourceType mimetype="text/x-cgn-tig+xml">Resource</ResourceType>
-            <ResourceRef lat:localURI="../Annotations/fn000056.tig">hdl:1839/00-0000-0000-0001-55D4-A</ResourceRef>
+            <ResourceRef lat:localURI="Annotations/fn000056.tig">hdl:1839/00-0000-0000-0001-55D4-A</ResourceRef>
          </ResourceProxy>
       </ResourceProxyList>
       <JournalFileProxyList/>

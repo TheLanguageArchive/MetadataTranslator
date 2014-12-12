@@ -6,7 +6,7 @@
     ArchiveHandle="hdl:1839/00-0000-0000-0009-56D7-A@format=imdi"
     Originator="Metadata Translator: TLASESSION2IMDISESSION.xslt hdl:1839/00-0000-0000-0009-56D7-A@format=cmdi"
     Date="2008-06-19">
-    <History>NAME:IMDI_1_9_TO_3_0 DATE:xx. NAME:imdi2cmdi.xslt DATE:xx.</History>
+    <History>NAME:IMDI_1_9_TO_3_0 DATE:xx. NAME:imdi2cmdi.xslt DATE:xx. NAME:tlasession2imdisession.xslt DATE:xx.</History>
     <Session>
         <Name>NAR_Annalena_2a</Name>
         <Title>given-new experiment eliciting narratives</Title>

@@ -30,6 +30,9 @@
             <xsl:when test="normalize-space(child::History)!=''">
                 <History>
                     <xsl:value-of select="child::History"/>
+                    <xsl:text> NAME:tlasession2imdisession.xslt DATE:</xsl:text>
+                    <xsl:value-of select="current-dateTime()"/>
+                    <xsl:text>.</xsl:text>
                 </History>
             </xsl:when>
         </xsl:choose>
@@ -268,7 +271,11 @@
         <WrittenResource>
             <xsl:call-template name="generate-ResourceId"></xsl:call-template>
             <ResourceLink><xsl:apply-templates select="//ResourceProxy[@id eq current()/@ref]" mode="create-resource-link-content"/></ResourceLink>
-            <MediaResourceLink></MediaResourceLink> <!-- todo -->            
+            <MediaResourceLink>
+                <xsl:if test="@mediaRef">
+                    <xsl:apply-templates select="//ResourceProxy[@id eq current()/@mediaRef]" mode="create-resource-link-content"/>
+                </xsl:if>
+            </MediaResourceLink>     
             <Date><xsl:value-of select="Date"/></Date>
             <Type><xsl:value-of select="Type"/></Type>
             <SubType><xsl:value-of select="SubType"/></SubType>
