@@ -7,6 +7,7 @@
     version="2.0" xpath-default-namespace="http://www.clarin.eu/cmd/">
     
     <xsl:include href="iprosla2imdi.xslt"/>
+    <xsl:include href="valid2imdi.xslt"/>
     <xsl:include href="collection2corpus.xslt"/>
     <xsl:include href="tlacollection2corpus.xslt"/>
     <xsl:include href="tlasession2imdisession.xslt"/>
@@ -30,6 +31,9 @@
         <xsl:choose>
             <xsl:when test="contains(/CMD/@xsi:schemaLocation, 'http://catalog.clarin.eu/ds/ComponentRegistry/rest/registry/profiles/clarin.eu:cr1:p_1331113992512/xsd')">
                 <xsl:call-template name="IPROSLA2IMDI"/>
+            </xsl:when>
+            <xsl:when test="contains(/CMD/@xsi:schemaLocation, 'http://catalog.clarin.eu/ds/ComponentRegistry/rest/registry/profiles/clarin.eu:cr1:p_1396012485083/xsd')">
+                <xsl:call-template name="VALID2IMDI"/>
             </xsl:when>
             <xsl:when test="contains(/CMD/@xsi:schemaLocation, 'http://catalog.clarin.eu/ds/ComponentRegistry/rest/registry/profiles/clarin.eu:cr1:p_1345561703620/xsd')">
                 <xsl:call-template name="COLLECTION2CORPUS" />
