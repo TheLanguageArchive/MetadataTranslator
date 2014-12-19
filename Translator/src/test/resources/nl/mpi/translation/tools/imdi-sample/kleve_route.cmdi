@@ -39,6 +39,10 @@
             <ResourceType mimetype="text/x-eaf+xml">Resource</ResourceType>
             <ResourceRef lat:localURI="file:/data/corpora/qfs1/media-archive/demo/pewi/Metadata/../Annotations/elan-example1.eaf">hdl:1839/00-0000-0000-0009-2951-C</ResourceRef>
          </ResourceProxy>
+         <ResourceProxy id="xx">
+            <ResourceType>LandingPage</ResourceType>
+            <ResourceRef>hdl:1839/00-0000-0000-0009-294C-9@view</ResourceRef>
+         </ResourceProxy>
       </ResourceProxyList>
       <JournalFileProxyList/>
       <ResourceRelationList/>
