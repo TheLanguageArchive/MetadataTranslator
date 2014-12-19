@@ -146,14 +146,23 @@ $LastChangedDate: 2013-08-14 11:25:31 +0200 (Wed, 14 Aug 2013) $
                     <ResourceRef>http://cqlservlet.mpi.nl/</ResourceRef>
                 </ResourceProxy>
                 </xsl:if>
-                <xsl:if test="$type='corpus' and starts-with(normalize-space(@ArchiveHandle), 'hdl:1839/')">
-                    <ResourceProxy id="searchpage">
-                        <ResourceType>SearchPage</ResourceType>
-                        <ResourceRef>
-                            <xsl:text>http://corpus1.mpi.nl/ds/trova/search.jsp?handle=</xsl:text>
-                            <xsl:value-of select="@ArchiveHandle"/></ResourceRef>
-                    </ResourceProxy>
-                </xsl:if>
+            	<xsl:if test="starts-with(normalize-space(@ArchiveHandle), 'hdl:1839/')">
+            		<ResourceProxy id="landingpage">
+            			<ResourceType>LandingPage</ResourceType>
+            			<ResourceRef>
+            				<xsl:value-of select="@ArchiveHandle"/>
+            				<xsl:text>@view</xsl:text>
+            			</ResourceRef>
+            		</ResourceProxy>
+	                <xsl:if test="$type='corpus'">
+	                    <ResourceProxy id="searchpage">
+	                        <ResourceType>SearchPage</ResourceType>
+	                        <ResourceRef>
+	                            <xsl:text>http://corpus1.mpi.nl/ds/trova/search.jsp?handle=</xsl:text>
+	                            <xsl:value-of select="@ArchiveHandle"/></ResourceRef>
+	                    </ResourceProxy>
+	                </xsl:if>
+            	</xsl:if>
             </ResourceProxyList>
             <JournalFileProxyList> </JournalFileProxyList>
             <ResourceRelationList> </ResourceRelationList>
