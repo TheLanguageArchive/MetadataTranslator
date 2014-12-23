@@ -43,11 +43,15 @@
 	</developer>
     </developers>
     
+    
+    
+
     <scm>
-	<connection>scm:svn:https://svn.mpi.nl/LAT/MetadataTranslator</connection>
-	<developerConnection>scm:svn:https://svn.mpi.nl/LAT/MetadataTranslator</developerConnection>
+        <connection>scm:git:https://github.com/TheLanguageArchive/MetadataTranslator.git</connection>
+        <developerConnection>scm:git:https://github.com/TheLanguageArchive/MetadataTranslator.git</developerConnection>
 	<url>https://svn.mpi.nl/LAT/MetadataTranslator</url>
     </scm>
+    
     <modules>
 	<module>Translator</module>
 	<module>TranslationService</module>
