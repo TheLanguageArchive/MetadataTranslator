@@ -1,0 +1,436 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CMD xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+     xmlns="http://www.clarin.eu/cmd/"
+     xmlns:imdi="http://www.mpi.nl/IMDI/Schema/IMDI"
+     xmlns:lat="http://lat.mpi.nl/"
+     xmlns:iso="http://www.iso.org/"
+     xmlns:sil="http://www.sil.org/"
+     xmlns:xs="http://www.w3.org/2001/XMLSchema"
+     xmlns:functx="http://www.functx.com"
+     CMDVersion="1.1"
+     xsi:schemaLocation="http://www.clarin.eu/cmd/ http://catalog.clarin.eu/ds/ComponentRegistry/rest/registry/profiles/clarin.eu:cr1:p_1407745712035/xsd">
+   <Header>
+      <MdCreator>Editor - Profile:local/SESSION.Profile.xml</MdCreator>
+      <MdCreationDate>xx</MdCreationDate>
+      <MdSelfLink>hdl:1839/00-0000-0000-0016-7E13-0@format=cmdi</MdSelfLink>
+      <MdProfile>clarin.eu:cr1:p_1407745712035</MdProfile>
+   </Header>
+   <Resources>
+      <ResourceProxyList>
+         <ResourceProxy id="xx">
+            <ResourceType mimetype="audio/x-wav">Resource</ResourceType>
+            <ResourceRef lat:localURI="../Media/alvin_cloud.wav">hdl:1839/00-0000-0000-0015-4A6F-2</ResourceRef>
+         </ResourceProxy>
+         <ResourceProxy id="xx">
+            <ResourceType mimetype="text/x-eaf+xml">Resource</ResourceType>
+            <ResourceRef lat:localURI="../Annotations/alvin_cloud.eaf">hdl:1839/00-0000-0000-0015-4A70-6</ResourceRef>
+         </ResourceProxy>
+         <ResourceProxy id="xx">
+            <ResourceType>LandingPage</ResourceType>
+            <ResourceRef>hdl:1839/00-0000-0000-0016-7E13-0@view</ResourceRef>
+         </ResourceProxy>
+      </ResourceProxyList>
+      <JournalFileProxyList/>
+      <ResourceRelationList/>
+   </Resources>
+   <Components>
+      <lat-session>
+         <Name>alvin_cloud</Name>
+         <Title>Alvin Cloud</Title>
+         <Date>Unspecified</Date>
+         <descriptions>
+            <Description xml:lang="eng">This story was probably recorded in 2004.</Description>
+         </descriptions>
+         <Location>
+            <Continent>North-America</Continent>
+            <Country>United States</Country>
+            <Address>Wisconsin</Address>
+         </Location>
+         <Project>
+            <Name>Hoocąk</Name>
+            <Title>Documentation of Hoocąk</Title>
+            <Id/>
+            <Contact>
+               <Name>Johannes Helmbrecht</Name>
+               <Address>Universitätsstr. 31, 93053 Regensburg, Germany</Address>
+               <Email>johannes.helmbrecht@sprachlit.uni-regensburg.de</Email>
+               <Organisation>Regensburg University</Organisation>
+            </Contact>
+            <descriptions>
+               <Description xml:lang="eng">The overall goal of the project is the documentation and preservation of the Hoocąk language. The project therefore includes the following sub-projects: (1) (audio- and video-)recording, analysing, processing and archiving a representative corpus of Hoocąk texts, (2) linguistic analysis and representation of texts that have previously been recorded by other linguists or anthropologists, (3) development of a comprehensive and linguistically consistent lexicon, (4) training of Hoocąk language instructors, (5) development of teaching material  (6) further analyses (e.g. investigation of dialectal differences among Wisconsin and Nebraska Hoocąks)</Description>
+            </descriptions>
+         </Project>
+         <Keys>
+            <Key Name="IMDI_file_creator" Type="OpenVocabularyList">Juliane Lindenlaub</Key>
+         </Keys>
+         <Content>
+            <Genre>narration</Genre>
+            <SubGenre>personal story</SubGenre>
+            <Task>Unspecified</Task>
+            <Modalities>speech</Modalities>
+            <Subject>personal experience with a grizzly bear</Subject>
+            <CommunicationContext>
+               <Interactivity>non-interactive</Interactivity>
+               <PlanningType>Unknown</PlanningType>
+               <Involvement>Unknown</Involvement>
+               <SocialContext>Controlled environment</SocialContext>
+               <EventStructure>Monologue</EventStructure>
+               <Channel>Face to Face</Channel>
+            </CommunicationContext>
+            <Content_Languages>
+               <descriptions>
+                  <Description xml:lang="eng">Hoocąk was the only language used in this session.</Description>
+               </descriptions>
+               <Content_Language>
+                  <Id>ISO639-3:win</Id>
+                  <Name>Hocák</Name>
+                  <Dominant>true</Dominant>
+                  <SourceLanguage>Unspecified</SourceLanguage>
+                  <TargetLanguage>Unspecified</TargetLanguage>
+                  <descriptions>
+                     <Description xml:lang="eng">Hoocąk is the only language used in this session.</Description>
+                  </descriptions>
+               </Content_Language>
+            </Content_Languages>
+            <Keys>
+               <Key Name="the text's relation to other texts" Type="OpenVocabularyList">not related</Key>
+               <Key Name="register" Type="OpenVocabularyList">everyday</Key>
+               <Key Name="date of translation" Type="OpenVocabularyList">March 2004</Key>
+            </Keys>
+            <descriptions>
+               <Description xml:lang="eng">This is a story about MS1's childhood. He speaks about what he was taught by his parents and that Hoocąk used to be the only language spoken (at home).</Description>
+            </descriptions>
+         </Content>
+         <Actors>
+            <Actor ref="xx">
+               <Role>Speaker/Signer</Role>
+               <Name>MS1</Name>
+               <FullName>MS1</FullName>
+               <Code>MS1</Code>
+               <FamilySocialRole>Unspecified</FamilySocialRole>
+               <EthnicGroup>Hoocąk</EthnicGroup>
+               <Age>Unspecified</Age>
+               <BirthDate>Unspecified</BirthDate>
+               <Sex>Male</Sex>
+               <Education>Unknown</Education>
+               <Anonymized>true</Anonymized>
+               <Contact>
+                  <Name>MS1</Name>
+                  <Address>Unknown</Address>
+                  <Email>Unknown</Email>
+                  <Organisation>Unknown</Organisation>
+               </Contact>
+               <Keys>
+                  <Key Name="information status" Type="OpenVocabularyList">no further information available</Key>
+               </Keys>
+               <descriptions>
+                  <Description xml:lang="eng">Further information is not available.</Description>
+               </descriptions>
+               <Actor_Languages>
+                  <descriptions>
+                     <Description xml:lang="eng">He grew up speaking both Hoocąk and English. His parents were fluent speakers.</Description>
+                  </descriptions>
+                  <Actor_Language>
+                     <Id>ISO639-3:win</Id>
+                     <Name>Hocák</Name>
+                     <MotherTongue>true</MotherTongue>
+                     <PrimaryLanguage>Unspecified</PrimaryLanguage>
+                     <descriptions>
+                        <Description xml:lang="eng">MS1's mother tongue is Hoocąk.</Description>
+                     </descriptions>
+                  </Actor_Language>
+                  <Actor_Language>
+                     <Id>ISO639-3:eng</Id>
+                     <Name>English</Name>
+                     <MotherTongue>Unspecified</MotherTongue>
+                     <PrimaryLanguage>Unspecified</PrimaryLanguage>
+                     <descriptions>
+                        <Description xml:lang="eng">no detailed information available about MS1's fluency in English</Description>
+                     </descriptions>
+                  </Actor_Language>
+               </Actor_Languages>
+            </Actor>
+            <Actor>
+               <Role>Researcher</Role>
+               <Name>Iren Hartmann</Name>
+               <FullName>Jana-Iren Hartmann</FullName>
+               <Code>IH</Code>
+               <FamilySocialRole>Unspecified</FamilySocialRole>
+               <EthnicGroup>German</EthnicGroup>
+               <Age>22;6/22;7</Age>
+               <BirthDate>1981</BirthDate>
+               <Sex>Female</Sex>
+               <Education>MA in linguistics</Education>
+               <Anonymized>false</Anonymized>
+               <Contact>
+                  <Name>Iren Hartmann</Name>
+                  <Address>Deutscher Platz 6, 04103 Leipzig, Germany</Address>
+                  <Email>iren_hartmann@eva.mpg.de</Email>
+                  <Organisation>Max Planck Institute for Evolutionary Anthropology</Organisation>
+               </Contact>
+               <Keys>
+                  <Key Name="Hocank" Type="OpenVocabularyList">very good knowledge</Key>
+                  <Key Name="English" Type="OpenVocabularyList">fluent</Key>
+                  <Key Name="occupation" Type="OpenVocabularyList">linguist</Key>
+                  <Key Name="field experience" Type="OpenVocabularyList">experienced</Key>
+               </Keys>
+               <descriptions>
+                  <Description xml:lang="eng">IH's first language is German. She is fluent in English and has good knowledge of Hoocąk.</Description>
+               </descriptions>
+               <Actor_Languages>
+                  <descriptions>
+                     <Description xml:lang="eng">IH's first language is German. She is fluent in English and has good knowledge of Hoocąk.</Description>
+                  </descriptions>
+                  <Actor_Language>
+                     <Id>ISO639-3:deu</Id>
+                     <Name>German</Name>
+                     <MotherTongue>true</MotherTongue>
+                     <PrimaryLanguage>Unspecified</PrimaryLanguage>
+                     <descriptions>
+                        <Description xml:lang="eng">German is her mother tongue.</Description>
+                     </descriptions>
+                  </Actor_Language>
+                  <Actor_Language>
+                     <Id>ISO639-3:eng</Id>
+                     <Name>English</Name>
+                     <MotherTongue>false</MotherTongue>
+                     <PrimaryLanguage>Unspecified</PrimaryLanguage>
+                  </Actor_Language>
+                  <Actor_Language>
+                     <Id>ISO639-3:win</Id>
+                     <Name>Hocák</Name>
+                     <MotherTongue>false</MotherTongue>
+                     <PrimaryLanguage>Unspecified</PrimaryLanguage>
+                     <descriptions>
+                        <Description xml:lang="eng">IH has good knowledge of Hoocąk.</Description>
+                     </descriptions>
+                  </Actor_Language>
+               </Actor_Languages>
+            </Actor>
+            <Actor>
+               <Role>Collector&amp;Annotator</Role>
+               <Name>Henning Garvin</Name>
+               <FullName>Henning Garvin</FullName>
+               <Code>HG</Code>
+               <FamilySocialRole>MS32's son</FamilySocialRole>
+               <EthnicGroup>Hoocąk</EthnicGroup>
+               <Age>36/37</Age>
+               <BirthDate>1975</BirthDate>
+               <Sex>Male</Sex>
+               <Education>BA in linguistics</Education>
+               <Anonymized>false</Anonymized>
+               <Contact>
+                  <Name>Henning Garvin</Name>
+                  <Address>Hoocąk Waaziija Haci Language Division P.O.Box 390 N4845 Hwy.58, Mauston, Wisconsin</Address>
+                  <Email>Anonymous</Email>
+                  <Organisation>Hoocąk Waaziija Haci Language Division</Organisation>
+               </Contact>
+               <Keys>
+                  <Key Name="Hocank" Type="OpenVocabulary">good knowledge</Key>
+                  <Key Name="English" Type="OpenVocabulary">fluent</Key>
+                  <Key Name="occupation" Type="OpenVocabulary">language apprentice + curriculum developer, working at HLC in Mauston, Wisconsin</Key>
+                  <Key Name="religion" Type="OpenVocabulary">member in the Medicine Lodge</Key>
+               </Keys>
+               <descriptions>
+                  <Description xml:lang="eng">HG used to work as a curriculum developer at the Hoocąk Language Division. Since 2005 he is employed as an apprentice who is learning the language in order to become a language instructor. He has contributed some data to the documentation project. HG is a member of the Hoocąk tribe. He is married to FS16.</Description>
+               </descriptions>
+               <Actor_Languages>
+                  <Actor_Language>
+                     <Id>ISO639-3:eng</Id>
+                     <Name>English</Name>
+                     <MotherTongue>false</MotherTongue>
+                     <PrimaryLanguage>Unspecified</PrimaryLanguage>
+                     <descriptions>
+                        <Description xml:lang="eng">English is HG's mother tongue.</Description>
+                     </descriptions>
+                  </Actor_Language>
+                  <Actor_Language>
+                     <Id>ISO639-3:win</Id>
+                     <Name>Hocák</Name>
+                     <MotherTongue>false</MotherTongue>
+                     <PrimaryLanguage>Unspecified</PrimaryLanguage>
+                     <descriptions>
+                        <Description xml:lang="eng">HG has good knowledge of Hoocąk. His father speaks it fluently.</Description>
+                     </descriptions>
+                  </Actor_Language>
+               </Actor_Languages>
+            </Actor>
+            <Actor>
+               <Role>Consultant</Role>
+               <Name>MS4</Name>
+               <FullName>MS4</FullName>
+               <Code>MS4</Code>
+               <FamilySocialRole>Unspecified</FamilySocialRole>
+               <EthnicGroup>Hoocąk</EthnicGroup>
+               <Age>79/80</Age>
+               <BirthDate>1932</BirthDate>
+               <Sex>Male</Sex>
+               <Education>14 years of school</Education>
+               <Anonymized>true</Anonymized>
+               <Contact>
+                  <Name>MS4</Name>
+                  <Address>Hoocąk Waaziija Haci Language Division P.O.Box 390 N4845 Hwy.58, Mauston, Wisconsin</Address>
+                  <Email>Anonymous</Email>
+                  <Organisation>Hoocąk Waaziija Haci Language Division</Organisation>
+               </Contact>
+               <Keys>
+                  <Key Name="dialect" Type="OpenVocabulary">Wisconsin</Key>
+                  <Key Name="English" Type="OpenVocabulary">fluent</Key>
+                  <Key Name="Hocank" Type="OpenVocabulary">fluent</Key>
+                  <Key Name="occupation" Type="OpenVocabulary">Hoocąk language instructor</Key>
+               </Keys>
+               <descriptions>
+                  <Description xml:lang="eng">MS4 is our main consultant and a highly respected elder and Hoocąk speaker. He worked for the movie industry (Hollywood) for 40 years as an actor. MS4 appears in several recordings.</Description>
+               </descriptions>
+               <Actor_Languages>
+                  <descriptions>
+                     <Description>MS4's first language is Hoocąk. He is also fluent in English. MS4 was forced to speak English when he started school at the age of 7.</Description>
+                  </descriptions>
+                  <Actor_Language>
+                     <Id>ISO639-3:eng</Id>
+                     <Name>English</Name>
+                     <MotherTongue>false</MotherTongue>
+                     <PrimaryLanguage>Unspecified</PrimaryLanguage>
+                     <descriptions>
+                        <Description xml:lang="eng">MS4 started speaking English when he started school. Hoocąk is his mother tongue.</Description>
+                     </descriptions>
+                  </Actor_Language>
+                  <Actor_Language>
+                     <Id>ISO639-3:win</Id>
+                     <Name>Hocák</Name>
+                     <MotherTongue>true</MotherTongue>
+                     <PrimaryLanguage>Unspecified</PrimaryLanguage>
+                     <descriptions>
+                        <Description xml:lang="eng">Hoocąk is his mother tongue.</Description>
+                     </descriptions>
+                  </Actor_Language>
+               </Actor_Languages>
+            </Actor>
+         </Actors>
+         <Resources>
+            <MediaFile ref="xx">
+               <Type>audio</Type>
+               <Format>audio/x-wav</Format>
+               <Size/>
+               <Quality>Unspecified</Quality>
+               <RecordingConditions/>
+               <TimePosition>
+                  <Start>Unspecified</Start>
+                  <End>Unspecified</End>
+               </TimePosition>
+               <Access>
+                  <Availability/>
+                  <Date>Unspecified</Date>
+                  <Owner>Iren Hartmann</Owner>
+                  <Publisher/>
+                  <Contact>
+                     <Name>Iren Hartmann</Name>
+                     <Address>Deutscher Platz 6, 04103 Leipzig, Germany</Address>
+                     <Email>iren_hartmann@eva.mpg.de</Email>
+                     <Organisation>Max Planck Institute for Evolutionary Anthropology</Organisation>
+                  </Contact>
+               </Access>
+            </MediaFile>
+            <WrittenResource ref="xx">
+               <Date>Unspecified</Date>
+               <Type>Annotation</Type>
+               <SubType>Unspecified</SubType>
+               <Format>text/x-eaf+xml</Format>
+               <Size/>
+               <Derivation>Unspecified</Derivation>
+               <CharacterEncoding/>
+               <ContentEncoding/>
+               <LanguageId>Unspecified</LanguageId>
+               <Anonymized>Unspecified</Anonymized>
+               <Validation>
+                  <Type>Unspecified</Type>
+                  <Methodology>Unspecified</Methodology>
+                  <Level>Unspecified</Level>
+               </Validation>
+               <Access>
+                  <Availability/>
+                  <Date>Unspecified</Date>
+                  <Owner>Iren Hartmann</Owner>
+                  <Publisher/>
+                  <Contact>
+                     <Name>Iren Hartmann</Name>
+                     <Address>Deutscher Platz 6, 04103 Leipzig, Germany</Address>
+                     <Email>iren_hartmann@eva.mpg.de</Email>
+                     <Organisation>Max Planck Institute for Evolutionary Anthropology</Organisation>
+                  </Contact>
+               </Access>
+            </WrittenResource>
+            <Source>
+               <Id>alvin_cloud.wav</Id>
+               <Format>DAT</Format>
+               <Quality>4</Quality>
+               <TimePosition>
+                  <Start>00:00:00</Start>
+                  <End>00:11:57</End>
+               </TimePosition>
+               <Access>
+                  <Availability>3</Availability>
+                  <Date>Unspecified</Date>
+                  <Owner>Iren Hartmann</Owner>
+                  <Publisher/>
+                  <Contact>
+                     <Name>Iren Hartmann</Name>
+                     <Address>Deutscher Platz 6, 04103 Leipzig, Germany</Address>
+                     <Email>iren_hartmann@eva.mpg.de</Email>
+                     <Organisation>Max Planck Institute for Evolutionary Anthropology</Organisation>
+                  </Contact>
+                  <descriptions>
+                     <Description xml:lang="eng">protected data</Description>
+                  </descriptions>
+               </Access>
+            </Source>
+            <Source>
+               <Id>alvin_cloud.txt</Id>
+               <Format>Unspecified</Format>
+               <Quality>Unspecified</Quality>
+               <TimePosition>
+                  <Start>Unspecified</Start>
+                  <End>Unspecified</End>
+               </TimePosition>
+               <Access>
+                  <Availability>3</Availability>
+                  <Date>Unspecified</Date>
+                  <Owner>Iren Hartmann</Owner>
+                  <Publisher/>
+                  <Contact>
+                     <Name>Iren Hartmann</Name>
+                     <Address>Deutscher Platz 6, 04103 Leipzig, Germany</Address>
+                     <Email>iren_hartmann@eva.mpg.de</Email>
+                     <Organisation>Max Planck Institute for Evolutionary Anthropology</Organisation>
+                  </Contact>
+                  <descriptions>
+                     <Description xml:lang="eng">protected data</Description>
+                  </descriptions>
+               </Access>
+               <descriptions>
+                  <Description xml:lang="eng">this file contains the original representation (as annotated in PRAAT), the text (using the Erfurt orthography), the morphemic gloss and the translation</Description>
+               </descriptions>
+            </Source>
+            <Anonyms>
+               <Access>
+                  <Availability/>
+                  <Date>Unspecified</Date>
+                  <Owner>Iren Hartmann</Owner>
+                  <Publisher/>
+                  <Contact>
+                     <Name>Iren Hartmann</Name>
+                     <Address>Deutscher Platz 6, 04103 Leipzig, Germany</Address>
+                     <Email>iren_hartmann@eva.mpg.de</Email>
+                     <Organisation>Max Planck Institute for Evolutionary Anthropology</Organisation>
+                  </Contact>
+               </Access>
+            </Anonyms>
+         </Resources>
+         <References>
+            <descriptions>
+               <Description xml:lang="eng">no references</Description>
+            </descriptions>
+         </References>
+      </lat-session>
+   </Components>
+</CMD>

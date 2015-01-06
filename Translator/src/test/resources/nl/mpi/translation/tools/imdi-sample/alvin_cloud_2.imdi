@@ -1,0 +1,415 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<METATRANSCRIPT xmlns="http://www.mpi.nl/IMDI/Schema/IMDI"
+                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                ArchiveHandle="hdl:1839/00-0000-0000-0016-7E13-0"
+                Date="2007-10-15"
+                FormatId="IMDI 3.0"
+                Originator="Editor - Profile:local/SESSION.Profile.xml"
+                Type="SESSION"
+                Version="89"
+                xsi:schemaLocation="http://www.mpi.nl/IMDI/Schema/IMDI http://www.mpi.nl/IMDI/Schema/IMDI_3.0.xsd">
+    <Session>
+        <Name>alvin_cloud</Name>
+        <Title>Alvin Cloud</Title>
+        <Date>Unspecified</Date>
+        <Description LanguageId="ISO639-2:eng" Link="">This story was probably recorded in 2004.</Description>
+        <MDGroup>
+            <Location>
+                <Continent DefaultLink="" Link="http://www.mpi.nl/IMDI/Schema/Continents.xml"
+                       Type="ClosedVocabulary">North-America</Continent>
+                <Country DefaultLink="" Link="http://www.mpi.nl/IMDI/Schema/Countries.xml"
+                     Type="ClosedVocabulary">United States</Country>
+                <Address>Wisconsin</Address>
+            </Location>
+            <Project>
+                <Name>Hoocąk</Name>
+                <Title>Documentation of Hoocąk</Title>
+                <Id/>
+                <Contact>
+                    <Name>Johannes Helmbrecht</Name>
+                    <Address>Universitätsstr. 31, 93053 Regensburg, Germany</Address>
+                    <Email>johannes.helmbrecht@sprachlit.uni-regensburg.de</Email>
+                    <Organisation>Regensburg University</Organisation>
+                </Contact>
+                <Description LanguageId="ISO639-2:eng" Link="">The overall goal of the project is the documentation and preservation of the Hoocąk language. The project therefore includes the following sub-projects: (1) (audio- and video-)recording, analysing, processing and archiving a representative corpus of Hoocąk texts, (2) linguistic analysis and representation of texts that have previously been recorded by other linguists or anthropologists, (3) development of a comprehensive and linguistically consistent lexicon, (4) training of Hoocąk language instructors, (5) development of teaching material  (6) further analyses (e.g. investigation of dialectal differences among Wisconsin and Nebraska Hoocąks)</Description>
+            </Project>
+            <Keys>
+                <Key Name="IMDI_file_creator" Type="OpenVocabularyList">Juliane Lindenlaub</Key>
+            </Keys>
+            <Content>
+                <Genre DefaultLink="" Link="http://www.mpi.nl/IMDI/Schema/Content-Genre.xml"
+                   Type="OpenVocabulary">narration</Genre>
+                <SubGenre Link="" Type="OpenVocabularyList">personal story</SubGenre>
+                <Task DefaultLink="" Link="http://www.mpi.nl/IMDI/Schema/Content-Task.xml"
+                  Type="OpenVocabulary">Unspecified</Task>
+                <Modalities DefaultLink="" Link="http://www.mpi.nl/IMDI/Schema/Content-Modalities.xml"
+                        Type="OpenVocabularyList">speech</Modalities>
+                <Subject DefaultLink="" Link="http://www.mpi.nl/IMDI/Schema/Content-Subject.xml"
+                     Type="OpenVocabularyList">personal experience with a grizzly bear</Subject>
+                <CommunicationContext>
+                    <Interactivity DefaultLink="" Link="http://www.mpi.nl/IMDI/Schema/Content-Interactivity.xml"
+                              Type="ClosedVocabulary">non-interactive</Interactivity>
+                    <PlanningType DefaultLink="" Link="http://www.mpi.nl/IMDI/Schema/Content-PlanningType.xml"
+                             Type="ClosedVocabulary">Unknown</PlanningType>
+                    <Involvement DefaultLink="" Link="http://www.mpi.nl/IMDI/Schema/Content-Involvement.xml"
+                            Type="ClosedVocabulary">Unknown</Involvement>
+                    <SocialContext DefaultLink="" Link="http://www.mpi.nl/IMDI/Schema/Content-SocialContext.xml"
+                              Type="ClosedVocabulary">Controlled environment</SocialContext>
+                    <EventStructure DefaultLink="" Link="http://www.mpi.nl/IMDI/Schema/Content-EventStructure.xml"
+                               Type="ClosedVocabulary">Monologue</EventStructure>
+                    <Channel DefaultLink="" Link="http://www.mpi.nl/IMDI/Schema/Content-Channel.xml"
+                        Type="ClosedVocabulary">Face to Face</Channel>
+                </CommunicationContext>
+                <Languages>
+                    <Description LanguageId="ISO639-2:eng" Link="">Hoocąk was the only language used in this session.</Description>
+                    <Language ResourceRef="">
+                        <Id>ISO639-3:win</Id>
+                        <Name Link="http://www.mpi.nl/IMDI/Schema/MPI-Languages.xml" Type="OpenVocabulary">Hocák</Name>
+                        <Dominant Type="ClosedVocabulary">true</Dominant>
+                        <SourceLanguage Type="ClosedVocabulary">Unspecified</SourceLanguage>
+                        <TargetLanguage Type="ClosedVocabulary">Unspecified</TargetLanguage>
+                        <Description LanguageId="ISO639-2:eng" Link="">Hoocąk is the only language used in this session.</Description>
+                    </Language>
+                </Languages>
+                <Keys>
+                    <Key Name="the text's relation to other texts" Type="OpenVocabularyList">not related</Key>
+                    <Key Name="register" Type="OpenVocabularyList">everyday</Key>
+                    <Key Name="date of translation" Type="OpenVocabularyList">March 2004</Key>
+                </Keys>
+                <Description LanguageId="ISO639-2:eng" Link="">This is a story about MS1's childhood. He speaks about what he was taught by his parents and that Hoocąk used to be the only language spoken (at home).</Description>
+            </Content>
+            <Actors>
+                <Description LanguageId="" Link=""/>
+                <Actor ResourceRef="MF-1">
+                    <Role Link="http://www.mpi.nl/IMDI/Schema/Actor-Role.xml" Type="OpenVocabularyList">Speaker/Signer</Role>
+                    <Name>MS1</Name>
+                    <FullName>MS1</FullName>
+                    <Code>MS1</Code>
+                    <FamilySocialRole Link="http://www.mpi.nl/IMDI/Schema/Actor-FamilySocialRole.xml"
+                                 Type="OpenVocabularyList">Unspecified</FamilySocialRole>
+                    <Languages>
+                        <Description LanguageId="ISO639-2:eng" Link="">He grew up speaking both Hoocąk and English. His parents were fluent speakers.</Description>
+                        <Language>
+                            <Id>ISO639-3:win</Id>
+                            <Name Link="http://www.mpi.nl/IMDI/Schema/MPI-Languages.xml" Type="OpenVocabulary">Hocák</Name>
+                            <MotherTongue Type="ClosedVocabulary">true</MotherTongue>
+                            <PrimaryLanguage Type="ClosedVocabulary">Unspecified</PrimaryLanguage>
+                            <Description LanguageId="ISO639-2:eng" Link="">MS1's mother tongue is Hoocąk.</Description>
+                        </Language>
+                        <Language>
+                            <Id>ISO639-3:eng</Id>
+                            <Name Link="http://www.mpi.nl/IMDI/Schema/MPI-Languages.xml" Type="OpenVocabulary">English</Name>
+                            <MotherTongue Type="ClosedVocabulary">Unspecified</MotherTongue>
+                            <PrimaryLanguage Type="ClosedVocabulary">Unspecified</PrimaryLanguage>
+                            <Description LanguageId="ISO639-2:eng" Link="">no detailed information available about MS1's fluency in English</Description>
+                        </Language>
+                    </Languages>
+                    <EthnicGroup Type="OpenVocabularyList">Hoocąk</EthnicGroup>
+                    <Age>Unspecified</Age>
+                    <BirthDate>Unspecified</BirthDate>
+                    <Sex Link="http://www.mpi.nl/IMDI/Schema/Actor-Sex.xml" Type="ClosedVocabulary">Male</Sex>
+                    <Education>Unknown</Education>
+                    <Anonymized Type="ClosedVocabulary">true</Anonymized>
+                    <Contact>
+                        <Name>MS1</Name>
+                        <Address>Unknown</Address>
+                        <Email>Unknown</Email>
+                        <Organisation>Unknown</Organisation>
+                    </Contact>
+                    <Keys>
+                        <Key Name="information status" Type="OpenVocabularyList">no further information available</Key>
+                    </Keys>
+                    <Description LanguageId="ISO639-2:eng" Link="">Further information is not available.</Description>
+                </Actor>
+                <Actor ResourceRef="">
+                    <Role Link="http://www.mpi.nl/IMDI/Schema/Actor-Role.xml" Type="OpenVocabularyList">Researcher</Role>
+                    <Name>Iren Hartmann</Name>
+                    <FullName>Jana-Iren Hartmann</FullName>
+                    <Code>IH</Code>
+                    <FamilySocialRole Link="http://www.mpi.nl/IMDI/Schema/Actor-FamilySocialRole.xml"
+                                 Type="OpenVocabularyList">Unspecified</FamilySocialRole>
+                    <Languages>
+                        <Description LanguageId="ISO639-2:eng" Link="">IH's first language is German. She is fluent in English and has good knowledge of Hoocąk.</Description>
+                        <Language>
+                            <Id>ISO639-3:deu</Id>
+                            <Name Link="http://www.mpi.nl/IMDI/Schema/MPI-Languages.xml" Type="OpenVocabulary">German</Name>
+                            <MotherTongue Type="ClosedVocabulary">true</MotherTongue>
+                            <PrimaryLanguage Type="ClosedVocabulary">Unspecified</PrimaryLanguage>
+                            <Description LanguageId="ISO639-2:eng" Link="">German is her mother tongue.</Description>
+                        </Language>
+                        <Language>
+                            <Id>ISO639-3:eng</Id>
+                            <Name Link="http://www.mpi.nl/IMDI/Schema/MPI-Languages.xml" Type="OpenVocabulary">English</Name>
+                            <MotherTongue Type="ClosedVocabulary">false</MotherTongue>
+                            <PrimaryLanguage Type="ClosedVocabulary">Unspecified</PrimaryLanguage>
+                            <Description LanguageId="" Link=""/>
+                        </Language>
+                        <Language>
+                            <Id>ISO639-3:win</Id>
+                            <Name Link="http://www.mpi.nl/IMDI/Schema/MPI-Languages.xml" Type="OpenVocabulary">Hocák</Name>
+                            <MotherTongue Type="ClosedVocabulary">false</MotherTongue>
+                            <PrimaryLanguage Type="ClosedVocabulary">Unspecified</PrimaryLanguage>
+                            <Description LanguageId="ISO639-2:eng" Link="">IH has good knowledge of Hoocąk.</Description>
+                        </Language>
+                    </Languages>
+                    <EthnicGroup Type="OpenVocabularyList">German</EthnicGroup>
+                    <Age>22;6/22;7</Age>
+                    <BirthDate>1981</BirthDate>
+                    <Sex Link="http://www.mpi.nl/IMDI/Schema/Actor-Sex.xml" Type="ClosedVocabulary">Female</Sex>
+                    <Education>MA in linguistics</Education>
+                    <Anonymized Type="ClosedVocabulary">false</Anonymized>
+                    <Contact>
+                        <Name>Iren Hartmann</Name>
+                        <Address>Deutscher Platz 6, 04103 Leipzig, Germany</Address>
+                        <Email>iren_hartmann@eva.mpg.de</Email>
+                        <Organisation>Max Planck Institute for Evolutionary Anthropology</Organisation>
+                    </Contact>
+                    <Keys>
+                        <Key Name="Hocank" Type="OpenVocabularyList">very good knowledge</Key>
+                        <Key Name="English" Type="OpenVocabularyList">fluent</Key>
+                        <Key Name="occupation" Type="OpenVocabularyList">linguist</Key>
+                        <Key Name="field experience" Type="OpenVocabularyList">experienced</Key>
+                    </Keys>
+                    <Description LanguageId="ISO639-2:eng" Link="">IH's first language is German. She is fluent in English and has good knowledge of Hoocąk.</Description>
+                </Actor>
+                <Actor ResourceRef="">
+                    <Role Link="http://www.mpi.nl/IMDI/Schema/Actor-Role.xml" Type="OpenVocabularyList">Collector&amp;Annotator</Role>
+                    <Name>Henning Garvin</Name>
+                    <FullName>Henning Garvin</FullName>
+                    <Code>HG</Code>
+                    <FamilySocialRole Link="http://www.mpi.nl/IMDI/Schema/Actor-FamilySocialRole.xml"
+                                 Type="OpenVocabularyList">MS32's son</FamilySocialRole>
+                    <Languages>
+                        <Description LanguageId="" Link=""/>
+                        <Language>
+                            <Id>ISO639-3:eng</Id>
+                            <Name Link="http://www.mpi.nl/IMDI/Schema/MPI-Languages.xml" Type="OpenVocabulary">English</Name>
+                            <MotherTongue Type="ClosedVocabulary">false</MotherTongue>
+                            <PrimaryLanguage Type="ClosedVocabulary">Unspecified</PrimaryLanguage>
+                            <Description LanguageId="ISO639-2:eng" Link="">English is HG's mother tongue.</Description>
+                        </Language>
+                        <Language>
+                            <Id>ISO639-3:win</Id>
+                            <Name Link="http://www.mpi.nl/IMDI/Schema/MPI-Languages.xml" Type="OpenVocabulary">Hocák</Name>
+                            <MotherTongue Type="ClosedVocabulary">false</MotherTongue>
+                            <PrimaryLanguage Type="ClosedVocabulary">Unspecified</PrimaryLanguage>
+                            <Description LanguageId="ISO639-2:eng" Link="">HG has good knowledge of Hoocąk. His father speaks it fluently.</Description>
+                        </Language>
+                    </Languages>
+                    <EthnicGroup Type="OpenVocabulary">Hoocąk</EthnicGroup>
+                    <Age>36/37</Age>
+                    <BirthDate>1975</BirthDate>
+                    <Sex Link="http://www.mpi.nl/IMDI/Schema/Actor-Sex.xml" Type="ClosedVocabulary">Male</Sex>
+                    <Education>BA in linguistics</Education>
+                    <Anonymized Type="ClosedVocabulary">false</Anonymized>
+                    <Contact>
+                        <Name>Henning Garvin</Name>
+                        <Address>Hoocąk Waaziija Haci Language Division P.O.Box 390 N4845 Hwy.58, Mauston, Wisconsin</Address>
+                        <Email>Anonymous</Email>
+                        <Organisation>Hoocąk Waaziija Haci Language Division</Organisation>
+                    </Contact>
+                    <Keys>
+                        <Key Name="Hocank" Type="OpenVocabulary">good knowledge</Key>
+                        <Key Name="English" Type="OpenVocabulary">fluent</Key>
+                        <Key Name="occupation" Type="OpenVocabulary">language apprentice + curriculum developer, working at HLC in Mauston, Wisconsin</Key>
+                        <Key Name="religion" Type="OpenVocabulary">member in the Medicine Lodge</Key>
+                    </Keys>
+                    <Description LanguageId="ISO639-2:eng" Link="">HG used to work as a curriculum developer at the Hoocąk Language Division. Since 2005 he is employed as an apprentice who is learning the language in order to become a language instructor. He has contributed some data to the documentation project. HG is a member of the Hoocąk tribe. He is married to FS16.</Description>
+                </Actor>
+                <Actor ResourceRef="">
+                    <Role Link="http://www.mpi.nl/IMDI/Schema/Actor-Role.xml" Type="OpenVocabularyList">Consultant</Role>
+                    <Name>MS4</Name>
+                    <FullName>MS4</FullName>
+                    <Code>MS4</Code>
+                    <FamilySocialRole Link="http://www.mpi.nl/IMDI/Schema/Actor-FamilySocialRole.xml"
+                                 Type="OpenVocabularyList">Unspecified</FamilySocialRole>
+                    <Languages>
+                        <Description LanguageId="" Link="">MS4's first language is Hoocąk. He is also fluent in English. MS4 was forced to speak English when he started school at the age of 7.</Description>
+                        <Language>
+                            <Id>ISO639-3:eng</Id>
+                            <Name Link="http://www.mpi.nl/IMDI/Schema/MPI-Languages.xml" Type="OpenVocabulary">English</Name>
+                            <MotherTongue Type="ClosedVocabulary">false</MotherTongue>
+                            <PrimaryLanguage Type="ClosedVocabulary">Unspecified</PrimaryLanguage>
+                            <Description LanguageId="ISO639-2:eng" Link="">MS4 started speaking English when he started school. Hoocąk is his mother tongue.</Description>
+                        </Language>
+                        <Language>
+                            <Id>ISO639-3:win</Id>
+                            <Name Link="http://www.mpi.nl/IMDI/Schema/MPI-Languages.xml" Type="OpenVocabulary">Hocák</Name>
+                            <MotherTongue Type="ClosedVocabulary">true</MotherTongue>
+                            <PrimaryLanguage Type="ClosedVocabulary">Unspecified</PrimaryLanguage>
+                            <Description LanguageId="ISO639-2:eng" Link="">Hoocąk is his mother tongue.</Description>
+                        </Language>
+                    </Languages>
+                    <EthnicGroup Type="OpenVocabulary">Hoocąk</EthnicGroup>
+                    <Age>79/80</Age>
+                    <BirthDate>1932</BirthDate>
+                    <Sex Link="http://www.mpi.nl/IMDI/Schema/Actor-Sex.xml" Type="ClosedVocabulary">Male</Sex>
+                    <Education>14 years of school</Education>
+                    <Anonymized Type="ClosedVocabulary">true</Anonymized>
+                    <Contact>
+                        <Name>MS4</Name>
+                        <Address>Hoocąk Waaziija Haci Language Division P.O.Box 390 N4845 Hwy.58, Mauston, Wisconsin</Address>
+                        <Email>Anonymous</Email>
+                        <Organisation>Hoocąk Waaziija Haci Language Division</Organisation>
+                    </Contact>
+                    <Keys>
+                        <Key Name="dialect" Type="OpenVocabulary">Wisconsin</Key>
+                        <Key Name="English" Type="OpenVocabulary">fluent</Key>
+                        <Key Name="Hocank" Type="OpenVocabulary">fluent</Key>
+                        <Key Name="occupation" Type="OpenVocabulary">Hoocąk language instructor</Key>
+                    </Keys>
+                    <Description LanguageId="ISO639-2:eng" Link="">MS4 is our main consultant and a highly respected elder and Hoocąk speaker. He worked for the movie industry (Hollywood) for 40 years as an actor. MS4 appears in several recordings.</Description>
+                </Actor>
+            </Actors>
+        </MDGroup>
+        <Resources>
+         <MediaFile ResourceId="MF-1">
+            <ResourceLink ArchiveHandle="hdl:1839/00-0000-0000-0015-4A6F-2">../Media/alvin_cloud.wav</ResourceLink>
+            <Type Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Type.xml" Type="ClosedVocabulary">audio</Type>
+            <Format Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Format.xml" Type="OpenVocabulary">audio/x-wav</Format>
+            <Size/>
+            <Quality Type="ClosedVocabulary">Unspecified</Quality>
+            <RecordingConditions/>
+            <TimePosition>
+               <Start>Unspecified</Start>
+               <End>Unspecified</End>
+            </TimePosition>
+            <Access>
+               <Availability Type="OpenVocabulary"/>
+               <Date>Unspecified</Date>
+               <Owner>Iren Hartmann</Owner>
+               <Publisher/>
+               <Contact>
+                  <Name>Iren Hartmann</Name>
+                  <Address>Deutscher Platz 6, 04103 Leipzig, Germany</Address>
+                  <Email>iren_hartmann@eva.mpg.de</Email>
+                  <Organisation>Max Planck Institute for Evolutionary Anthropology</Organisation>
+               </Contact>
+               <Description LanguageId="" Link=""/>
+            </Access>
+            <Description LanguageId="" Link=""/>
+            <Keys>
+               
+            </Keys>
+         </MediaFile>
+         
+            
+            
+            
+            
+            
+            
+         
+         <WrittenResource>
+            <ResourceLink ArchiveHandle="hdl:1839/00-0000-0000-0015-4A70-6">../Annotations/alvin_cloud.eaf</ResourceLink>
+            <MediaResourceLink/>
+            <Date>Unspecified</Date>
+            <Type Link="http://www.mpi.nl/IMDI/Schema/WrittenResource-Type.xml"
+                  Type="OpenVocabulary">Annotation</Type>
+            <SubType Link="http://www.mpi.nl/IMDI/Schema/WrittenResource-SubType.xml"
+                     Type="OpenVocabulary">Unspecified</SubType>
+            <Format Link="http://www.mpi.nl/IMDI/Schema/WrittenResource-Format.xml"
+                    Type="OpenVocabulary">text/x-eaf+xml</Format>
+            <Size Type="OpenVocabulary"/>
+            <Validation>
+               <Type Link="http://www.mpi.nl/IMDI/Schema/Validation-Type.xml"
+                     Type="ClosedVocabulary">Unspecified</Type>
+               <Methodology Link="http://www.mpi.nl/IMDI/Schema/Validation-Methodology.xml"
+                            Type="ClosedVocabulary">Unspecified</Methodology>
+               <Level>Unspecified</Level>
+               <Description LanguageId="" Link=""/>
+            </Validation>
+            <Derivation Link="http://www.mpi.nl/IMDI/Schema/WrittenResource-Derivation.xml"
+                        Type="ClosedVocabulary">Unspecified</Derivation>
+            <CharacterEncoding/>
+            <ContentEncoding/>
+            <LanguageId Type="OpenVocabulary"/>
+            <Anonymized Type="ClosedVocabulary">Unspecified</Anonymized>
+            <Access>
+               <Availability Type="OpenVocabulary"/>
+               <Date>Unspecified</Date>
+               <Owner>Iren Hartmann</Owner>
+               <Publisher/>
+               <Contact>
+                  <Name>Iren Hartmann</Name>
+                  <Address>Deutscher Platz 6, 04103 Leipzig, Germany</Address>
+                  <Email>iren_hartmann@eva.mpg.de</Email>
+                  <Organisation>Max Planck Institute for Evolutionary Anthropology</Organisation>
+               </Contact>
+               <Description LanguageId="" Link=""/>
+            </Access>
+            <Description LanguageId="" Link=""/>
+            <Keys>
+               
+            </Keys>
+         </WrittenResource>
+         <Source ResourceRefs="">
+                <Id>alvin_cloud.wav</Id>
+                <Format Link="http://www.mpi.nl/IMDI/Schema/Source-Format.xml" Type="OpenVocabulary">DAT</Format>
+                <Quality Type="ClosedVocabulary">4</Quality>
+                <TimePosition>
+                    <Start>00:00:00</Start>
+                    <End>00:11:57</End>
+                </TimePosition>
+                <Access>
+                    <Availability Type="OpenVocabularyList">3</Availability>
+                    <Date>Unspecified</Date>
+                    <Owner>Iren Hartmann</Owner>
+                    <Publisher/>
+                    <Contact>
+                        <Name>Iren Hartmann</Name>
+                        <Address>Deutscher Platz 6, 04103 Leipzig, Germany</Address>
+                        <Email>iren_hartmann@eva.mpg.de</Email>
+                        <Organisation>Max Planck Institute for Evolutionary Anthropology</Organisation>
+                    </Contact>
+                    <Description LanguageId="ISO639-2:eng" Link="">protected data</Description>
+                </Access>
+                <Description LanguageId="" Link=""/>
+                <Keys/>
+            </Source>
+            <Source ResourceRefs="">
+                <Id>alvin_cloud.txt</Id>
+                <Format Link="http://www.mpi.nl/IMDI/Schema/Source-Format.xml" Type="OpenVocabulary">Unspecified</Format>
+                <Quality Type="ClosedVocabulary">Unspecified</Quality>
+                <TimePosition>
+                    <Start>Unspecified</Start>
+                    <End>Unspecified</End>
+                </TimePosition>
+                <Access>
+                    <Availability Type="OpenVocabulary">3</Availability>
+                    <Date>Unspecified</Date>
+                    <Owner>Iren Hartmann</Owner>
+                    <Publisher/>
+                    <Contact>
+                        <Name>Iren Hartmann</Name>
+                        <Address>Deutscher Platz 6, 04103 Leipzig, Germany</Address>
+                        <Email>iren_hartmann@eva.mpg.de</Email>
+                        <Organisation>Max Planck Institute for Evolutionary Anthropology</Organisation>
+                    </Contact>
+                    <Description LanguageId="ISO639-2:eng" Link="">protected data</Description>
+                </Access>
+                <Description LanguageId="ISO639-2:eng" Link="">this file contains the original representation (as annotated in PRAAT), the text (using the Erfurt orthography), the morphemic gloss and the translation</Description>
+                <Keys/>
+            </Source>
+            <Anonyms>
+                <ResourceLink/>
+                <Access>
+                    <Availability Type="OpenVocabularyList"/>
+                    <Date>Unspecified</Date>
+                    <Owner>Iren Hartmann</Owner>
+                    <Publisher/>
+                    <Contact>
+                        <Name>Iren Hartmann</Name>
+                        <Address>Deutscher Platz 6, 04103 Leipzig, Germany</Address>
+                        <Email>iren_hartmann@eva.mpg.de</Email>
+                        <Organisation>Max Planck Institute for Evolutionary Anthropology</Organisation>
+                    </Contact>
+                    <Description LanguageId="" Link=""/>
+                </Access>
+            </Anonyms>
+        </Resources>
+        <References>
+            <Description LanguageId="ISO639-2:eng" Link="">no references</Description>
+        </References>
+    </Session>
+</METATRANSCRIPT>

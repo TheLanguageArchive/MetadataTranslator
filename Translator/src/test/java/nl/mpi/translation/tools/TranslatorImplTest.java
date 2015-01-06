@@ -65,6 +65,8 @@ public class TranslatorImplTest {
     public static final String IMDI_SAMPLE = IMDI_SAMPLES_LOCATION + "/kleve_route.imdi";
     public static final String IMDI_SAMPLE_XML = IMDI_SAMPLES_LOCATION + "/kleve_route_imdi.xml"; // Same contents as IMDI_SAMPLE
     public static final String IMDI_TO_CMDI = IMDI_SAMPLES_LOCATION + "/kleve_route.cmdi";
+    public static final String HOOCAK_IMDI_SESSION_LOCATION = IMDI_SAMPLES_LOCATION + "/alvin_cloud_2.imdi";
+    public static final String HOOCAK_IMDI_SESSION_CMDI = IMDI_SAMPLES_LOCATION + "/alvin_cloud_2.cmdi";
     // URIs used in sample expectations
     public static final String SERVICE_URI = "http://my-service/translate";
     public static final String COLLECTION_BASE_URI = "http://archive/corpus/my-collection/Metadata";
@@ -202,6 +204,20 @@ public class TranslatorImplTest {
     }
 
     /**
+     * Requests translation of an IMDI session, output should be CMDI instance of 'imdi-session' (profile clarin.eu:cr1:p_1271859438204)
+     */
+    @Test
+    public void testGetCMDIForHoocakSession() throws Exception {
+	URL imdiFileURL = getClass().getResource(HOOCAK_IMDI_SESSION_LOCATION);
+	logger.info("Testing translation of IMDI file to CMDI");
+	logger.debug(imdiFileURL.toString());
+	// Request translation
+	String result = instance.getCMDI(imdiFileURL, SERVICE_URI);
+	// Expecting output to be identical to input
+	assertTranslationResult(HOOCAK_IMDI_SESSION_CMDI, normalizeDate(normalizeIds(result)));
+    }
+
+    /**
      * Requests translation of an IMDI session that has .xml suffix
      */
     @Test
@@ -309,8 +325,8 @@ public class TranslatorImplTest {
      */
     private String normalizeIds(String xml) {
 	return xml
-                .replaceAll("id=\"(.*)\"", "id=\"xx\"")
-                .replaceAll("ref=\"(.*)\"", "ref=\"xx\"");
+                .replaceAll("id=\"(.+)\"", "id=\"xx\"")
+                .replaceAll("ref=\"(.+)\"", "ref=\"xx\"");
     }
     
     private String normalizeResourceRefs(String xml) {
