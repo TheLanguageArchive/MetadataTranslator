@@ -40,7 +40,7 @@
          <Title/>
          <Date>2000-1-11</Date>
          <descriptions>
-            <Description>mealtime conversation        </Description>
+            <Description>mealtime conversation </Description>
          </descriptions>
          <Location>
             <Continent>Europe</Continent>
@@ -78,7 +78,8 @@
                   <SourceLanguage>Unspecified</SourceLanguage>
                   <TargetLanguage>Unspecified</TargetLanguage>
                   <descriptions>
-                     <Description xml:lang="eng">##CVREPAIR## DATE:2005-10-26 Replaced 'GERMAN, STANDARD' with 'German'</Description>
+                     <Description xml:lang="eng">##CVREPAIR## DATE:2005-10-26 Replaced
+                            'GERMAN, STANDARD' with 'German'</Description>
                   </descriptions>
                </Content_Language>
             </Content_Languages>
@@ -87,7 +88,11 @@
                <Key Name="segmentingSession">KD</Key>
             </Keys>
             <descriptions>
-               <Description xml:lang="eng">This file was generated from an IMDI 1.9 file and transformed to IMDI 3.0. The substructure of Genre is replaced by two elements named "Genre" and "SubGenre". The original content of Genre substructure was: Interactional = '', Discursive = '', Performance = ''. These values have been added as Keys to the Content information. </Description>
+               <Description xml:lang="eng">This file was generated from an IMDI
+                    1.9 file and transformed to IMDI 3.0. The substructure of Genre is replaced by
+                    two elements named "Genre" and "SubGenre". The original content of Genre
+                    substructure was: Interactional = '', Discursive = '', Performance = ''. These
+                    values have been added as Keys to the Content information. </Description>
                <Description>mealtime conversation</Description>
             </descriptions>
          </Content>
@@ -115,7 +120,8 @@
                      <MotherTongue>Unspecified</MotherTongue>
                      <PrimaryLanguage>Unspecified</PrimaryLanguage>
                      <descriptions>
-                        <Description xml:lang="eng">##CVREPAIR## DATE:2005-10-26 Replaced 'GERMAN, STANDARD' with 'German'</Description>
+                        <Description xml:lang="eng">##CVREPAIR## DATE:2005-10-26
+                                Replaced 'GERMAN, STANDARD' with 'German'</Description>
                      </descriptions>
                   </Actor_Language>
                </Actor_Languages>
@@ -143,7 +149,8 @@
                      <MotherTongue>Unspecified</MotherTongue>
                      <PrimaryLanguage>Unspecified</PrimaryLanguage>
                      <descriptions>
-                        <Description xml:lang="eng">##CVREPAIR## DATE:2005-10-26 Replaced 'GERMAN, STANDARD' with 'German'</Description>
+                        <Description xml:lang="eng">##CVREPAIR## DATE:2005-10-26
+                                Replaced 'GERMAN, STANDARD' with 'German'</Description>
                      </descriptions>
                   </Actor_Language>
                </Actor_Languages>
@@ -171,7 +178,8 @@
                      <MotherTongue>Unspecified</MotherTongue>
                      <PrimaryLanguage>Unspecified</PrimaryLanguage>
                      <descriptions>
-                        <Description xml:lang="eng">##CVREPAIR## DATE:2005-10-26 Replaced 'GERMAN, STANDARD' with 'German'</Description>
+                        <Description xml:lang="eng">##CVREPAIR## DATE:2005-10-26
+                                Replaced 'GERMAN, STANDARD' with 'German'</Description>
                      </descriptions>
                   </Actor_Language>
                </Actor_Languages>
@@ -199,7 +207,8 @@
                      <MotherTongue>Unspecified</MotherTongue>
                      <PrimaryLanguage>Unspecified</PrimaryLanguage>
                      <descriptions>
-                        <Description xml:lang="eng">##CVREPAIR## DATE:2005-10-26 Replaced 'GERMAN, STANDARD' with 'German'</Description>
+                        <Description xml:lang="eng">##CVREPAIR## DATE:2005-10-26
+                                Replaced 'GERMAN, STANDARD' with 'German'</Description>
                      </descriptions>
                   </Actor_Language>
                </Actor_Languages>
@@ -227,7 +236,8 @@
                      <MotherTongue>Unspecified</MotherTongue>
                      <PrimaryLanguage>Unspecified</PrimaryLanguage>
                      <descriptions>
-                        <Description xml:lang="eng">##CVREPAIR## DATE:2005-10-26 Replaced 'GERMAN, STANDARD' with 'German'</Description>
+                        <Description xml:lang="eng">##CVREPAIR## DATE:2005-10-26
+                                Replaced 'GERMAN, STANDARD' with 'German'</Description>
                      </descriptions>
                   </Actor_Language>
                </Actor_Languages>
@@ -255,8 +265,8 @@
             </Actor>
             <Actor>
                <Role>Annotator</Role>
-               <Name>        </Name>
-               <FullName>        </FullName>
+               <Name> </Name>
+               <FullName> </FullName>
                <Code>Unspecified</Code>
                <FamilySocialRole>Unspecified</FamilySocialRole>
                <EthnicGroup>Unspecified</EthnicGroup>
@@ -331,7 +341,7 @@
                </Access>
             </WrittenResource>
             <Source>
-               <Id>ASEDVDP01Nov0001     </Id>
+               <Id>ASEDVDP01Nov0001 </Id>
                <Format>DV</Format>
                <Quality>1</Quality>
                <TimePosition>
