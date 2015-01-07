@@ -941,8 +941,12 @@ $LastChangedDate: 2013-08-14 11:25:31 +0200 (Wed, 14 Aug 2013) $
             </xsl:if>
             <xsl:for-each select="Actor">
                 <Actor>
-                	<xsl:if test="normalize-space(@ResourceRef)!=''">
-                		<xsl:attribute name="ref" select="generate-id(//(MediaFile|WrittenResource)[@ResourceId=current()/@ResourceRef]/ResourceLink)" />
+                	<xsl:variable name="ref" select="normalize-space(current()/@ResourceRef)" />
+                	<xsl:if test="$ref!=''">
+                		<xsl:variable name="target" select="//(MediaFile|WrittenResource)[@ResourceId=$ref]/ResourceLink[normalize-space(.)!='']"/>
+                		<xsl:if test="$target">
+                			<xsl:attribute name="ref" select="generate-id($target)" />
+                		</xsl:if>
                 	</xsl:if>
                     <Role>
                         <xsl:value-of select=" ./Role"/>
