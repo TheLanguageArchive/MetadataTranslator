@@ -1,0 +1,421 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<METATRANSCRIPT xmlns="http://www.mpi.nl/IMDI/Schema/IMDI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    ArchiveHandle="hdl:1839/00-0000-0000-0000-22A7-D" Date="2003-09-10" FormatId="IMDI 3.0"
+    Originator="" Type="SESSION" Version="3"
+    xsi:schemaLocation="http://www.mpi.nl/IMDI/Schema/IMDI  http://www.mpi.nl/IMDI/Schema/IMDI_3.0.xsd">
+    <History>NAME:IMDI_1_9_TO_3_0 DATE:2004-03-17T14:28:06-02:00.</History>
+    <Session>
+        <Name>ased2000Nov01a</Name>
+        <Title/>
+        <Date>2000-1-11</Date>
+        <Description LanguageId="" Link="">mealtime conversation </Description>
+        <MDGroup>
+            <Location>
+                <Continent Link="http://www.mpi.nl/IMDI/Schema/Continents.xml"
+                    Type="ClosedVocabulary">Europe</Continent>
+                <Country Link="http://www.mpi.nl/IMDI/Schema/Countries.xml" Type="ClosedVocabulary"
+                    >Germany</Country>
+                <Region/>
+                <Address/>
+            </Location>
+            <Project>
+                <Name>L - Family Corpus</Name>
+                <Title/>
+                <Id/>
+                <Contact>
+                    <Name/>
+                    <Address/>
+                    <Email/>
+                    <Organisation/>
+                </Contact>
+                <Description LanguageId="" Link="">L - Family Corpus</Description>
+            </Project>
+            <Keys/>
+            <Content>
+                <Genre Link="http://www.mpi.nl/IMDI/Schema/Content-Genre.xml" Type="OpenVocabulary"
+                    >Unspecified</Genre>
+                <SubGenre Link="http://www.mpi.nl/IMDI/Schema/Content-SubGenre-Discourse.xml"
+                    Type="OpenVocabulary">Unspecified</SubGenre>
+                <Task Link="http://www.mpi.nl/IMDI/Schema/Content-Task.xml" Type="OpenVocabulary"
+                    >Unspecified</Task>
+                <Modalities Link="http://www.mpi.nl/IMDI/Schema/Content-Modalities.xml"
+                    Type="OpenVocabularyList">Speech</Modalities>
+                <CommunicationContext>
+                    <Interactivity Link="http://www.mpi.nl/IMDI/Schema/Content-Interactivity.xml"
+                        Type="ClosedVocabulary">interactive</Interactivity>
+                    <PlanningType Link="http://www.mpi.nl/IMDI/Schema/Content-PlanningType.xml"
+                        Type="ClosedVocabulary">spontaneous</PlanningType>
+                    <Involvement Link="http://www.mpi.nl/IMDI/Schema/Content-Involvement.xml"
+                        Type="ClosedVocabulary">non-elicited</Involvement>
+                    <SocialContext Link="" Type="OpenVocabulary">Unspecified</SocialContext>
+                    <EventStructure Link="" Type="OpenVocabulary">Unspecified</EventStructure>
+                    <Channel Link="" Type="OpenVocabulary">Unspecified</Channel>
+                </CommunicationContext>
+                <Languages>
+                    <Description LanguageId="" Link=""/>
+                    <Language>
+                        <Id>ISO639-3:deu</Id>
+                        <Name Link="http://www.mpi.nl/IMDI/Schema/IMDI-Languages.xml"
+                            Type="OpenVocabulary">German</Name>
+                        <Description LanguageId="" Link=""/>
+                        <Description LanguageId="ISO639:eng">##CVREPAIR## DATE:2005-10-26 Replaced
+                            'GERMAN, STANDARD' with 'German'</Description>
+                    </Language>
+                </Languages>
+                <Keys>
+                    <Key Link="http://www.mpi.nl/IMDI/Schema/Content-Genre-Interactional.xml"
+                        Name="IMDI__1_9.Interactional" Type="OpenVocabularyList"/>
+                    <Key Link="http://www.mpi.nl/IMDI/Schema/Content-Genre-Discursive.xml"
+                        Name="IMDI__1_9.Discursive" Type="OpenVocabularyList"/>
+                    <Key Link="http://www.mpi.nl/IMDI/Schema/Content-Genre-Performance.xml"
+                        Name="IMDI__1_9.Interactional" Type="OpenVocabularyList"/>
+                    <Key Name="play_material">toys</Key>
+                    <Key Name="mealtime_conversation_meal"/>
+                    <Key Name="segmentingSession">KD</Key>
+                </Keys>
+                <Description LanguageId="ISO639:eng" Link="">This file was generated from an IMDI
+                    1.9 file and transformed to IMDI 3.0. The substructure of Genre is replaced by
+                    two elements named "Genre" and "SubGenre". The original content of Genre
+                    substructure was: Interactional = '', Discursive = '', Performance = ''. These
+                    values have been added as Keys to the Content information. </Description>
+                <Description LanguageId="" Link="">mealtime conversation</Description>
+            </Content>
+            <Actors>
+                <Actor>
+                    <Role Link="http://www.mpi.nl/IMDI/Schema/Actor-Role.xml" Type="OpenVocabulary"
+                        >Unspecified</Role>
+                    <Name>Lenny</Name>
+                    <FullName/>
+                    <Code>Ch01</Code>
+                    <FamilySocialRole
+                        Link="http://www.mpi.nl/IMDI/Schema/Actor-FamilySocialRole.xml"
+                        Type="OpenVocabularyList">Unspecified</FamilySocialRole>
+                    <Languages>
+                        <Description LanguageId="" Link=""/>
+                        <Language>
+                            <Id>ISO639-3:deu</Id>
+                            <Name Link="http://www.mpi.nl/IMDI/Schema/IMDI-Languages.xml"
+                                Type="OpenVocabulary">German</Name>
+                            <Description LanguageId="" Link=""/>
+                            <Description LanguageId="ISO639:eng">##CVREPAIR## DATE:2005-10-26
+                                Replaced 'GERMAN, STANDARD' with 'German'</Description>
+                        </Language>
+                    </Languages>
+                    <EthnicGroup/>
+                    <Age>Unspecified</Age>
+                    <BirthDate>Unspecified</BirthDate>
+                    <Sex>Male</Sex>
+                    <Education/>
+                    <Anonymized>Unspecified</Anonymized>
+                    <Contact/>
+                    <Keys>
+                        <Key Name="Birthdate">1993-10-02</Key>
+                    </Keys>
+                    <Description LanguageId="" Link=""/>
+                </Actor>
+                <Actor>
+                    <Role Link="http://www.mpi.nl/IMDI/Schema/Actor-Role.xml" Type="OpenVocabulary"
+                        >Unspecified</Role>
+                    <Name>Leon</Name>
+                    <FullName/>
+                    <Code>Ch02</Code>
+                    <FamilySocialRole
+                        Link="http://www.mpi.nl/IMDI/Schema/Actor-FamilySocialRole.xml"
+                        Type="OpenVocabularyList">Unspecified</FamilySocialRole>
+                    <Languages>
+                        <Description LanguageId="" Link=""/>
+                        <Language>
+                            <Id>ISO639-3:deu</Id>
+                            <Name Link="http://www.mpi.nl/IMDI/Schema/IMDI-Languages.xml"
+                                Type="OpenVocabulary">German</Name>
+                            <Description LanguageId="" Link=""/>
+                            <Description LanguageId="ISO639:eng">##CVREPAIR## DATE:2005-10-26
+                                Replaced 'GERMAN, STANDARD' with 'German'</Description>
+                        </Language>
+                    </Languages>
+                    <EthnicGroup/>
+                    <Age>Unspecified</Age>
+                    <BirthDate>Unspecified</BirthDate>
+                    <Sex>Male</Sex>
+                    <Education/>
+                    <Anonymized>Unspecified</Anonymized>
+                    <Contact/>
+                    <Keys>
+                        <Key Name="Birthdate">1996-12-01</Key>
+                    </Keys>
+                    <Description LanguageId="" Link=""/>
+                </Actor>
+                <Actor>
+                    <Role Link="http://www.mpi.nl/IMDI/Schema/Actor-Role.xml" Type="OpenVocabulary"
+                        >Unspecified</Role>
+                    <Name>Liam</Name>
+                    <FullName/>
+                    <Code>Ch03</Code>
+                    <FamilySocialRole
+                        Link="http://www.mpi.nl/IMDI/Schema/Actor-FamilySocialRole.xml"
+                        Type="OpenVocabularyList">Unspecified</FamilySocialRole>
+                    <Languages>
+                        <Description LanguageId="" Link=""/>
+                        <Language>
+                            <Id>ISO639-3:deu</Id>
+                            <Name Link="http://www.mpi.nl/IMDI/Schema/IMDI-Languages.xml"
+                                Type="OpenVocabulary">German</Name>
+                            <Description LanguageId="" Link=""/>
+                            <Description LanguageId="ISO639:eng">##CVREPAIR## DATE:2005-10-26
+                                Replaced 'GERMAN, STANDARD' with 'German'</Description>
+                        </Language>
+                    </Languages>
+                    <EthnicGroup/>
+                    <Age>Unspecified</Age>
+                    <BirthDate>Unspecified</BirthDate>
+                    <Sex>Male</Sex>
+                    <Education/>
+                    <Anonymized>Unspecified</Anonymized>
+                    <Contact/>
+                    <Keys>
+                        <Key Name="BirthDate">1999-01-21</Key>
+                    </Keys>
+                    <Description LanguageId="" Link=""/>
+                </Actor>
+                <Actor>
+                    <Role Link="http://www.mpi.nl/IMDI/Schema/Actor-Role.xml" Type="OpenVocabulary"
+                        >Unspecified</Role>
+                    <Name>Nathalie</Name>
+                    <FullName/>
+                    <Code>Mot</Code>
+                    <FamilySocialRole
+                        Link="http://www.mpi.nl/IMDI/Schema/Actor-FamilySocialRole.xml"
+                        Type="OpenVocabularyList">Unspecified</FamilySocialRole>
+                    <Languages>
+                        <Description LanguageId="" Link=""/>
+                        <Language>
+                            <Id>ISO639-3:deu</Id>
+                            <Name Link="http://www.mpi.nl/IMDI/Schema/IMDI-Languages.xml"
+                                Type="OpenVocabulary">German</Name>
+                            <Description LanguageId="" Link=""/>
+                            <Description LanguageId="ISO639:eng">##CVREPAIR## DATE:2005-10-26
+                                Replaced 'GERMAN, STANDARD' with 'German'</Description>
+                        </Language>
+                    </Languages>
+                    <EthnicGroup/>
+                    <Age>Unspecified</Age>
+                    <BirthDate>Unspecified</BirthDate>
+                    <Sex>Female</Sex>
+                    <Education/>
+                    <Anonymized>Unspecified</Anonymized>
+                    <Contact/>
+                    <Keys>
+                        <Key Name="Birthdate">1968-11-02</Key>
+                    </Keys>
+                    <Description LanguageId="" Link=""/>
+                </Actor>
+                <Actor>
+                    <Role Link="http://www.mpi.nl/IMDI/Schema/Actor-Role.xml" Type="OpenVocabulary"
+                        >Unspecified</Role>
+                    <Name>Ole</Name>
+                    <FullName/>
+                    <Code>Fat</Code>
+                    <FamilySocialRole
+                        Link="http://www.mpi.nl/IMDI/Schema/Actor-FamilySocialRole.xml"
+                        Type="OpenVocabularyList">Unspecified</FamilySocialRole>
+                    <Languages>
+                        <Description LanguageId="" Link=""/>
+                        <Language>
+                            <Id>ISO639-3:deu</Id>
+                            <Name Link="http://www.mpi.nl/IMDI/Schema/IMDI-Languages.xml"
+                                Type="OpenVocabulary">German</Name>
+                            <Description LanguageId="" Link=""/>
+                            <Description LanguageId="ISO639:eng">##CVREPAIR## DATE:2005-10-26
+                                Replaced 'GERMAN, STANDARD' with 'German'</Description>
+                        </Language>
+                    </Languages>
+                    <EthnicGroup/>
+                    <Age>Unspecified</Age>
+                    <BirthDate>Unspecified</BirthDate>
+                    <Sex>Male</Sex>
+                    <Education/>
+                    <Anonymized>Unspecified</Anonymized>
+                    <Contact/>
+                    <Keys>
+                        <Key Name="Birthdate">1970-11-30</Key>
+                    </Keys>
+                    <Description LanguageId="" Link=""/>
+                </Actor>
+                <Actor>
+                    <Role Link="http://www.mpi.nl/IMDI/Schema/Actor-Role.xml" Type="OpenVocabulary"
+                        >Collector</Role>
+                    <Name>Family</Name>
+                    <FullName>Family</FullName>
+                    <Code>Unspecified</Code>
+                    <FamilySocialRole
+                        Link="http://www.mpi.nl/IMDI/Schema/Actor-FamilySocialRole.xml"
+                        Type="OpenVocabularyList">Unspecified</FamilySocialRole>
+                    <Languages/>
+                    <EthnicGroup/>
+                    <Age>Unspecified</Age>
+                    <BirthDate>Unspecified</BirthDate>
+                    <Sex>Unspecified</Sex>
+                    <Education/>
+                    <Anonymized>false</Anonymized>
+                    <Contact>
+                        <Name>SonEis</Name>
+                        <Address/>
+                        <Email>soneis@mpi.nl</Email>
+                        <Organisation/>
+                    </Contact>
+                    <Keys/>
+                    <Description LanguageId="" Link="">Description</Description>
+                </Actor>
+                <Actor ResourceRef="N0x80564c0.0x808b050">
+                    <Role Link="http://www.mpi.nl/IMDI/Schema/Actor-Role.xml" Type="OpenVocabulary"
+                        >Annotator</Role>
+                    <Name> </Name>
+                    <FullName> </FullName>
+                    <Code>Unspecified</Code>
+                    <FamilySocialRole
+                        Link="http://www.mpi.nl/IMDI/Schema/Actor-FamilySocialRole.xml"
+                        Type="OpenVocabularyList">Unspecified</FamilySocialRole>
+                    <Languages/>
+                    <EthnicGroup>Unspecified</EthnicGroup>
+                    <Age>Unspecified</Age>
+                    <BirthDate>Unspecified</BirthDate>
+                    <Sex>Unspecified</Sex>
+                    <Education>Unspecified</Education>
+                    <Anonymized>false</Anonymized>
+                    <Contact/>
+                    <Keys/>
+                    <Description LanguageId="" Link=""/>
+                </Actor>
+            </Actors>
+        </MDGroup>
+        <Resources>
+            <MediaFile ResourceId="N0x80564c0.0x808a790">
+                <ResourceLink ArchiveHandle="hdl:1839/00-0000-0000-0000-22A8-B"
+                    >../Media/ased2000Nov01a.mpg</ResourceLink>
+                <Type Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Type.xml"
+                    Type="ClosedVocabulary">video</Type>
+                <Format Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Format.xml"
+                    Type="OpenVocabulary">video/x-mpeg1</Format>
+                <Size/>
+                <Quality>1</Quality>
+                <RecordingConditions/>
+                <TimePosition>
+                    <Start>Unspecified</Start>
+                    <End>Unspecified</End>
+                </TimePosition>
+                <Access>
+                    <Availability/>
+                    <Date>Unspecified</Date>
+                    <Owner/>
+                    <Publisher/>
+                    <Contact>
+                        <Name/>
+                        <Address/>
+                        <Email/>
+                        <Organisation/>
+                    </Contact>
+                    <Description LanguageId="" Link=""/>
+                </Access>
+                <Description LanguageId="" Link=""/>
+                <Keys/>
+            </MediaFile>
+            <MediaFile ResourceId="N0x80564c0.0x808abf0">
+                <ResourceLink ArchiveHandle="hdl:1839/00-0000-0000-0000-22A9-9"
+                    >../Media/ased2000Nov01a.wav</ResourceLink>
+                <Type Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Type.xml"
+                    Type="ClosedVocabulary">audio</Type>
+                <Format Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Format.xml"
+                    Type="OpenVocabulary">audio/x-wav</Format>
+                <Size/>
+                <Quality>1</Quality>
+                <RecordingConditions/>
+                <TimePosition>
+                    <Start>Unspecified</Start>
+                    <End>Unspecified</End>
+                </TimePosition>
+                <Access>
+                    <Availability/>
+                    <Date>Unspecified</Date>
+                    <Owner/>
+                    <Publisher/>
+                    <Contact>
+                        <Name/>
+                        <Address/>
+                        <Email/>
+                        <Organisation/>
+                    </Contact>
+                    <Description LanguageId="" Link=""/>
+                </Access>
+                <Description LanguageId="" Link=""/>
+                <Keys/>
+            </MediaFile>
+            <WrittenResource ResourceId="N0x80564c0.0x808b050">
+                <ResourceLink/>
+                <MediaResourceLink/>
+                <Date>Unspecified</Date>
+                <Type>Annotation</Type>
+                <SubType Link="http://www.mpi.nl/IMDI/Schema/AnnotationUnit-Type.xml"
+                    Type="OpenVocabularyList"/>
+                <Format Link="http://www.mpi.nl/IMDI/Schema/AnnotationUnit-Format.xml"
+                    Type="OpenVocabulary">text/x-eaf+xml</Format>
+                <Size>Unspecified</Size>
+                <Validation>
+                    <Type Link="http://www.mpi.nl/IMDI/Schema/Validation-Type.xml"
+                        Type="ClosedVocabulary">Unspecified</Type>
+                    <Methodology Link="http://www.mpi.nl/IMDI/Schema/Validation-Methodology.xml"
+                        Type="ClosedVocabulary">Unspecified</Methodology>
+                    <Level>Unspecified</Level>
+                    <Description LanguageId="" Link=""/>
+                </Validation>
+                <Derivation Link="http://www.mpi.nl/IMDI/Schema/WrittenResource-Derivation.xml"
+                    Type="ClosedVocabulary" XXX-Type="FixedCV">Annotation</Derivation>
+                <CharacterEncoding/>
+                <ContentEncoding/>
+                <LanguageId/>
+                <Anonymized>Unspecified</Anonymized>
+                <Access>
+                    <Availability/>
+                    <Date>Unspecified</Date>
+                    <Owner/>
+                    <Publisher/>
+                    <Contact>
+                        <Name/>
+                        <Address/>
+                        <Email/>
+                        <Organisation/>
+                    </Contact>
+                    <Description LanguageId="" Link=""/>
+                </Access>
+                <Description LanguageId="" Link=""/>
+                <Keys/>
+            </WrittenResource>
+            <Source>
+                <Id>ASEDVDP01Nov0001 </Id>
+                <Format Link="http://www.mpi.nl/IMDI/Schema/Source-Format.xml" Type="OpenVocabulary"
+                    >DV</Format>
+                <Quality>1</Quality>
+                <TimePosition>
+                    <Start>00:00:05</Start>
+                    <End>00:05:55</End>
+                </TimePosition>
+                <Access>
+                    <Availability/>
+                    <Date>Unspecified</Date>
+                    <Owner/>
+                    <Publisher/>
+                    <Contact>
+                        <Name/>
+                        <Address/>
+                        <Email/>
+                        <Organisation/>
+                    </Contact>
+                    <Description LanguageId="" Link=""/>
+                </Access>
+                <Description LanguageId="" Link=""/>
+                <Keys/>
+            </Source>
+        </Resources>
+        <References/>
+    </Session>
+</METATRANSCRIPT>

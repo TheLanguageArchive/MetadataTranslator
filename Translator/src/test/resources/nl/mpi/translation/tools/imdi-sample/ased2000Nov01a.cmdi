@@ -1,0 +1,353 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CMD xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+     xmlns="http://www.clarin.eu/cmd/"
+     xmlns:imdi="http://www.mpi.nl/IMDI/Schema/IMDI"
+     xmlns:lat="http://lat.mpi.nl/"
+     xmlns:iso="http://www.iso.org/"
+     xmlns:sil="http://www.sil.org/"
+     xmlns:xs="http://www.w3.org/2001/XMLSchema"
+     xmlns:functx="http://www.functx.com"
+     CMDVersion="1.1"
+     xsi:schemaLocation="http://www.clarin.eu/cmd/ http://catalog.clarin.eu/ds/ComponentRegistry/rest/registry/profiles/clarin.eu:cr1:p_1407745712035/xsd">
+   <Header>
+      <MdCreator>imdi2cmdi.xsl</MdCreator>
+      <MdCreationDate>xx</MdCreationDate>
+      <MdSelfLink>hdl:1839/00-0000-0000-0000-22A7-D@format=cmdi</MdSelfLink>
+      <MdProfile>clarin.eu:cr1:p_1407745712035</MdProfile>
+   </Header>
+   <Resources>
+      <ResourceProxyList>
+         <ResourceProxy id="xx">
+            <ResourceType mimetype="video/x-mpeg1">Resource</ResourceType>
+            <ResourceRef lat:localURI="../Media/ased2000Nov01a.mpg">hdl:1839/00-0000-0000-0000-22A8-B</ResourceRef>
+         </ResourceProxy>
+         <ResourceProxy id="xx">
+            <ResourceType mimetype="audio/x-wav">Resource</ResourceType>
+            <ResourceRef lat:localURI="../Media/ased2000Nov01a.wav">hdl:1839/00-0000-0000-0000-22A9-9</ResourceRef>
+         </ResourceProxy>
+         <ResourceProxy id="xx">
+            <ResourceType>LandingPage</ResourceType>
+            <ResourceRef>hdl:1839/00-0000-0000-0000-22A7-D@view</ResourceRef>
+         </ResourceProxy>
+      </ResourceProxyList>
+      <JournalFileProxyList/>
+      <ResourceRelationList/>
+   </Resources>
+   <Components>
+      <lat-session>
+         <History>NAME:IMDI_1_9_TO_3_0 DATE:xx. NAME:imdi2cmdi.xslt DATE:xx.</History>
+         <Name>ased2000Nov01a</Name>
+         <Title/>
+         <Date>2000-1-11</Date>
+         <descriptions>
+            <Description>mealtime conversation        </Description>
+         </descriptions>
+         <Location>
+            <Continent>Europe</Continent>
+            <Country>Germany</Country>
+            <Region/>
+            <Address/>
+         </Location>
+         <Project>
+            <Name>L - Family Corpus</Name>
+            <Title/>
+            <Id/>
+            <Contact/>
+            <descriptions>
+               <Description>L - Family Corpus</Description>
+            </descriptions>
+         </Project>
+         <Content>
+            <Genre>Unspecified</Genre>
+            <SubGenre>Unspecified</SubGenre>
+            <Task>Unspecified</Task>
+            <Modalities>Speech</Modalities>
+            <CommunicationContext>
+               <Interactivity>interactive</Interactivity>
+               <PlanningType>spontaneous</PlanningType>
+               <Involvement>non-elicited</Involvement>
+               <SocialContext>Unspecified</SocialContext>
+               <EventStructure>Unspecified</EventStructure>
+               <Channel>Unspecified</Channel>
+            </CommunicationContext>
+            <Content_Languages>
+               <Content_Language>
+                  <Id>ISO639-3:deu</Id>
+                  <Name>German</Name>
+                  <Dominant>Unspecified</Dominant>
+                  <SourceLanguage>Unspecified</SourceLanguage>
+                  <TargetLanguage>Unspecified</TargetLanguage>
+                  <descriptions>
+                     <Description xml:lang="eng">##CVREPAIR## DATE:2005-10-26 Replaced 'GERMAN, STANDARD' with 'German'</Description>
+                  </descriptions>
+               </Content_Language>
+            </Content_Languages>
+            <Keys>
+               <Key Name="play_material">toys</Key>
+               <Key Name="segmentingSession">KD</Key>
+            </Keys>
+            <descriptions>
+               <Description xml:lang="eng">This file was generated from an IMDI 1.9 file and transformed to IMDI 3.0. The substructure of Genre is replaced by two elements named "Genre" and "SubGenre". The original content of Genre substructure was: Interactional = '', Discursive = '', Performance = ''. These values have been added as Keys to the Content information. </Description>
+               <Description>mealtime conversation</Description>
+            </descriptions>
+         </Content>
+         <Actors>
+            <Actor>
+               <Role>Unspecified</Role>
+               <Name>Lenny</Name>
+               <FullName/>
+               <Code>Ch01</Code>
+               <FamilySocialRole>Unspecified</FamilySocialRole>
+               <EthnicGroup/>
+               <Age>Unspecified</Age>
+               <BirthDate>Unspecified</BirthDate>
+               <Sex>Male</Sex>
+               <Education/>
+               <Anonymized>Unspecified</Anonymized>
+               <Contact/>
+               <Keys>
+                  <Key Name="Birthdate">1993-10-02</Key>
+               </Keys>
+               <Actor_Languages>
+                  <Actor_Language>
+                     <Id>ISO639-3:deu</Id>
+                     <Name>German</Name>
+                     <MotherTongue>Unspecified</MotherTongue>
+                     <PrimaryLanguage>Unspecified</PrimaryLanguage>
+                     <descriptions>
+                        <Description xml:lang="eng">##CVREPAIR## DATE:2005-10-26 Replaced 'GERMAN, STANDARD' with 'German'</Description>
+                     </descriptions>
+                  </Actor_Language>
+               </Actor_Languages>
+            </Actor>
+            <Actor>
+               <Role>Unspecified</Role>
+               <Name>Leon</Name>
+               <FullName/>
+               <Code>Ch02</Code>
+               <FamilySocialRole>Unspecified</FamilySocialRole>
+               <EthnicGroup/>
+               <Age>Unspecified</Age>
+               <BirthDate>Unspecified</BirthDate>
+               <Sex>Male</Sex>
+               <Education/>
+               <Anonymized>Unspecified</Anonymized>
+               <Contact/>
+               <Keys>
+                  <Key Name="Birthdate">1996-12-01</Key>
+               </Keys>
+               <Actor_Languages>
+                  <Actor_Language>
+                     <Id>ISO639-3:deu</Id>
+                     <Name>German</Name>
+                     <MotherTongue>Unspecified</MotherTongue>
+                     <PrimaryLanguage>Unspecified</PrimaryLanguage>
+                     <descriptions>
+                        <Description xml:lang="eng">##CVREPAIR## DATE:2005-10-26 Replaced 'GERMAN, STANDARD' with 'German'</Description>
+                     </descriptions>
+                  </Actor_Language>
+               </Actor_Languages>
+            </Actor>
+            <Actor>
+               <Role>Unspecified</Role>
+               <Name>Liam</Name>
+               <FullName/>
+               <Code>Ch03</Code>
+               <FamilySocialRole>Unspecified</FamilySocialRole>
+               <EthnicGroup/>
+               <Age>Unspecified</Age>
+               <BirthDate>Unspecified</BirthDate>
+               <Sex>Male</Sex>
+               <Education/>
+               <Anonymized>Unspecified</Anonymized>
+               <Contact/>
+               <Keys>
+                  <Key Name="BirthDate">1999-01-21</Key>
+               </Keys>
+               <Actor_Languages>
+                  <Actor_Language>
+                     <Id>ISO639-3:deu</Id>
+                     <Name>German</Name>
+                     <MotherTongue>Unspecified</MotherTongue>
+                     <PrimaryLanguage>Unspecified</PrimaryLanguage>
+                     <descriptions>
+                        <Description xml:lang="eng">##CVREPAIR## DATE:2005-10-26 Replaced 'GERMAN, STANDARD' with 'German'</Description>
+                     </descriptions>
+                  </Actor_Language>
+               </Actor_Languages>
+            </Actor>
+            <Actor>
+               <Role>Unspecified</Role>
+               <Name>Nathalie</Name>
+               <FullName/>
+               <Code>Mot</Code>
+               <FamilySocialRole>Unspecified</FamilySocialRole>
+               <EthnicGroup/>
+               <Age>Unspecified</Age>
+               <BirthDate>Unspecified</BirthDate>
+               <Sex>Female</Sex>
+               <Education/>
+               <Anonymized>Unspecified</Anonymized>
+               <Contact/>
+               <Keys>
+                  <Key Name="Birthdate">1968-11-02</Key>
+               </Keys>
+               <Actor_Languages>
+                  <Actor_Language>
+                     <Id>ISO639-3:deu</Id>
+                     <Name>German</Name>
+                     <MotherTongue>Unspecified</MotherTongue>
+                     <PrimaryLanguage>Unspecified</PrimaryLanguage>
+                     <descriptions>
+                        <Description xml:lang="eng">##CVREPAIR## DATE:2005-10-26 Replaced 'GERMAN, STANDARD' with 'German'</Description>
+                     </descriptions>
+                  </Actor_Language>
+               </Actor_Languages>
+            </Actor>
+            <Actor>
+               <Role>Unspecified</Role>
+               <Name>Ole</Name>
+               <FullName/>
+               <Code>Fat</Code>
+               <FamilySocialRole>Unspecified</FamilySocialRole>
+               <EthnicGroup/>
+               <Age>Unspecified</Age>
+               <BirthDate>Unspecified</BirthDate>
+               <Sex>Male</Sex>
+               <Education/>
+               <Anonymized>Unspecified</Anonymized>
+               <Contact/>
+               <Keys>
+                  <Key Name="Birthdate">1970-11-30</Key>
+               </Keys>
+               <Actor_Languages>
+                  <Actor_Language>
+                     <Id>ISO639-3:deu</Id>
+                     <Name>German</Name>
+                     <MotherTongue>Unspecified</MotherTongue>
+                     <PrimaryLanguage>Unspecified</PrimaryLanguage>
+                     <descriptions>
+                        <Description xml:lang="eng">##CVREPAIR## DATE:2005-10-26 Replaced 'GERMAN, STANDARD' with 'German'</Description>
+                     </descriptions>
+                  </Actor_Language>
+               </Actor_Languages>
+            </Actor>
+            <Actor>
+               <Role>Collector</Role>
+               <Name>Family</Name>
+               <FullName>Family</FullName>
+               <Code>Unspecified</Code>
+               <FamilySocialRole>Unspecified</FamilySocialRole>
+               <EthnicGroup/>
+               <Age>Unspecified</Age>
+               <BirthDate>Unspecified</BirthDate>
+               <Sex>Unspecified</Sex>
+               <Education/>
+               <Anonymized>false</Anonymized>
+               <Contact>
+                  <Name>SonEis</Name>
+                  <Email>soneis@mpi.nl</Email>
+               </Contact>
+               <descriptions>
+                  <Description>Description</Description>
+               </descriptions>
+               <Actor_Languages/>
+            </Actor>
+            <Actor>
+               <Role>Annotator</Role>
+               <Name>        </Name>
+               <FullName>        </FullName>
+               <Code>Unspecified</Code>
+               <FamilySocialRole>Unspecified</FamilySocialRole>
+               <EthnicGroup>Unspecified</EthnicGroup>
+               <Age>Unspecified</Age>
+               <BirthDate>Unspecified</BirthDate>
+               <Sex>Unspecified</Sex>
+               <Education>Unspecified</Education>
+               <Anonymized>false</Anonymized>
+               <Contact/>
+               <Actor_Languages/>
+            </Actor>
+         </Actors>
+         <Resources>
+            <MediaFile ref="xx">
+               <Type>video</Type>
+               <Format>video/x-mpeg1</Format>
+               <Size/>
+               <Quality>1</Quality>
+               <RecordingConditions/>
+               <TimePosition>
+                  <Start>Unspecified</Start>
+                  <End>Unspecified</End>
+               </TimePosition>
+               <Access>
+                  <Availability/>
+                  <Date>Unspecified</Date>
+                  <Owner/>
+                  <Publisher/>
+                  <Contact/>
+               </Access>
+            </MediaFile>
+            <MediaFile ref="xx">
+               <Type>audio</Type>
+               <Format>audio/x-wav</Format>
+               <Size/>
+               <Quality>1</Quality>
+               <RecordingConditions/>
+               <TimePosition>
+                  <Start>Unspecified</Start>
+                  <End>Unspecified</End>
+               </TimePosition>
+               <Access>
+                  <Availability/>
+                  <Date>Unspecified</Date>
+                  <Owner/>
+                  <Publisher/>
+                  <Contact/>
+               </Access>
+            </MediaFile>
+            <WrittenResource>
+               <Date>Unspecified</Date>
+               <Type>Annotation</Type>
+               <SubType/>
+               <Format>text/x-eaf+xml</Format>
+               <Size>Unspecified</Size>
+               <Derivation>Annotation</Derivation>
+               <CharacterEncoding/>
+               <ContentEncoding/>
+               <LanguageId>Unspecified</LanguageId>
+               <Anonymized>Unspecified</Anonymized>
+               <Validation>
+                  <Type>Unspecified</Type>
+                  <Methodology>Unspecified</Methodology>
+                  <Level>Unspecified</Level>
+               </Validation>
+               <Access>
+                  <Availability/>
+                  <Date>Unspecified</Date>
+                  <Owner/>
+                  <Publisher/>
+                  <Contact/>
+               </Access>
+            </WrittenResource>
+            <Source>
+               <Id>ASEDVDP01Nov0001     </Id>
+               <Format>DV</Format>
+               <Quality>1</Quality>
+               <TimePosition>
+                  <Start>00:00:05</Start>
+                  <End>00:05:55</End>
+               </TimePosition>
+               <Access>
+                  <Availability/>
+                  <Date>Unspecified</Date>
+                  <Owner/>
+                  <Publisher/>
+                  <Contact/>
+               </Access>
+            </Source>
+         </Resources>
+         <References/>
+      </lat-session>
+   </Components>
+</CMD>
