@@ -2,6 +2,7 @@
 <xsl:stylesheet xmlns="http://www.mpi.nl/IMDI/Schema/IMDI" 
     xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
     xmlns:tla="http://tla.mpi.nl" 
+    xmlns:lat="http://lat.mpi.nl/"
     version="2.0" xpath-default-namespace="http://www.clarin.eu/cmd/">
     
     <xsl:template name="VALID2IMDI">
@@ -231,8 +232,9 @@
     <xsl:template match="WrittenResource" mode="VALID2IMDI">
         <WrittenResource>
             <xsl:variable name="id"><xsl:value-of select="@ref" /></xsl:variable>
+            <xsl:variable name="media_link"><xsl:value-of select="child::MediaResourceLink" /></xsl:variable>
             <ResourceLink><xsl:apply-templates select="//Resources/ResourceProxyList/ResourceProxy[@id=$id]" mode="create-resource-link-content"/></ResourceLink>
-            <MediaResourceLink><xsl:value-of select="child::MediaResourceLink"/></MediaResourceLink>
+            <MediaResourceLink><xsl:apply-templates select="//Resources/ResourceProxyList/ResourceProxy[ResourceRef/@lat:localURI=$media_link]" mode="create-resource-link-content"/></MediaResourceLink>
             <Date><xsl:value-of select="child::Date"/></Date>
             <Type Link="http://www.mpi.nl/IMDI/Schema/WrittenResource-Type.xml" Type="OpenVocabulary"><xsl:value-of select="child::Type"/></Type>
             <SubType Link="http://www.mpi.nl/IMDI/Schema/WrittenResource-SubType.xml" Type="OpenVocabularyList"><xsl:value-of select="child::SubType"/></SubType>
