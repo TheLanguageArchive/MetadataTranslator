@@ -1,4 +1,4 @@
-Current version: ${project.artifactId}-${project.version}-r${buildNumber}
+Current version: ${project.artifactId}-${project.version}-r${revisionId}
 
 Changes for metadata-translator-1.4.1:
 - Updated corpus structure 2 dependency to 1.1.2
