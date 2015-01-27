@@ -4,15 +4,9 @@
     <packaging>war</packaging>
 
     <parent>
-<<<<<<< HEAD
 	<groupId>nl.mpi.translation</groupId>
 	<artifactId>metadata-translator-parent</artifactId>
 	<version>1.5-SNAPSHOT</version>
-=======
-        <groupId>nl.mpi.translation</groupId>
-        <artifactId>metadata-translator-parent</artifactId>
-        <version>1.4-SNAPSHOT</version>
->>>>>>> MetadataTranslator-1.4
     </parent>
 
     <artifactId>metadata-translation-service</artifactId>
