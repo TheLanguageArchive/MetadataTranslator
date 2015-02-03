@@ -12,11 +12,15 @@
     <context:component-scan base-package="nl.mpi.translation.services" />
  
     <!-- Context for mocking -->
-    <bean id="mockery" class="org.jmock.integration.junit4.JUnit4Mockery" />
+    <bean id="mockery" class="org.jmock.integration.junit4.JUnit4Mockery">    
+        <property name="threadingPolicy">
+            <bean id="jmockSynchronizer" class="org.jmock.lib.concurrent.Synchroniser" />
+        </property>
+    </bean>
     
     <!-- Factory that creates mock objects in this mock context -->
     <bean id="mockObjectsFactory" class="nl.mpi.translation.services.MockObjectsFactory">
-	<constructor-arg ref="mockery" />
+        <constructor-arg ref="mockery" />
     </bean>
     
     <!-- Mocked translator -->

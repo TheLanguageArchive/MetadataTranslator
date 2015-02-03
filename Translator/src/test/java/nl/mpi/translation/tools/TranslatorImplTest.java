@@ -87,7 +87,7 @@ public class TranslatorImplTest {
 
     @Before
     public void setUp() throws Exception {
-	instance = new TranslatorImpl();
+	instance = new TranslatorImpl(new UrlStreamResolverImpl()); //TODO: Mock url stream resolver?
     }
 
     /**

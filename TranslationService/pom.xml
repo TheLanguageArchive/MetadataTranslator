@@ -17,7 +17,7 @@
     <properties>
         <log.appender>ROLL</log.appender>
         <log.level.translationservice>WARN</log.level.translationservice>
-        <jersey.version>1.18.2</jersey.version>
+        <jersey.version>1.18.3</jersey.version>
         <spring.version>3.0.7.RELEASE</spring.version>
     </properties>
 

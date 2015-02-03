@@ -30,13 +30,31 @@ security problems.
 	
 	- 'nl.mpi.translation.imdi2cmdiXSLT'
 	
-		Path on the local file system to the (master) IMDI to CMDI stylesheet. Leave empty
-		or unspecified to fall back to internal stylesheet 'imdi2cmdi.xslt'.
+		Path on the local file system to the (master) IMDI to CMDI 
+                stylesheet. Leave empty or unspecified to fall back to internal
+                stylesheet 'imdi2cmdi.xslt'.
 	
 	- 'nl.mpi.translation.cmdi2imdiXSLT'
 
-		Path on the local file system to the (master) CMDI to IMDI stylesheet. Leave empty
-		or unspecified to fall back to internal stylesheet 'cmdi2imdiMaster.xslt'.
+		Path on the local file system to the (master) CMDI to IMDI 
+                stylesheet. Leave empty or unspecified to fall back to internal
+                stylesheet 'cmdi2imdiMaster.xslt'.
+
+        - 'nl.mpi.metadatatranslator.localFilesPublicBaseUrl'
+
+                Defines a base URL for metadata resources that can be read from
+                the local filesystem by the translation services (local path to
+                be defined in the 'localFilesPathOnFilesystem' parameter).
+                Leave out or set to empty to prevent any mapping from public
+                URLs to local paths from happening.
+
+        - 'nl.mpi.metadatatranslator.localFilesPathOnFilesystem'
+
+                Defines the base location that corresponds with the base URL
+                defined in the 'localFilesPublicBaseUrl' parameter. Should be
+                a path, not a URL (i.e. should start with '/', not 'file:'.)
+                Leave out or set to empty to prevent any mapping from public
+                URLs to local paths from happening.
 
 6. Start Tomcat.
 

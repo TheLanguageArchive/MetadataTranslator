@@ -27,7 +27,6 @@ import java.io.InputStreamReader;
 import java.io.StringWriter;
 import java.net.MalformedURLException;
 import java.net.URL;
-import java.net.URLConnection;
 import java.util.Map;
 import java.util.Map.Entry;
 import java.util.regex.Pattern;
@@ -45,7 +44,6 @@ import javax.xml.transform.TransformerFactoryConfigurationError;
 import javax.xml.transform.stax.StAXSource;
 import javax.xml.transform.stream.StreamResult;
 import javax.xml.transform.stream.StreamSource;
-import nl.mpi.archiving.corpusstructure.core.URLConnections;
 import nl.mpi.translation.tools.util.TranslationServiceErrorListener;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -79,10 +77,10 @@ public class TranslatorImpl implements Translator {
     private final Templates cmdi2imdiCachedXSLT;
     private final Templates imdi2cmdiCachedXSLT;
     private Map<String, Object> transformationParameters;
-    private final URLConnections connections = new URLConnections();
+    private final UrlStreamResolver urlStreamResolver;
 
-    public TranslatorImpl() throws TransformerConfigurationException, IOException {
-        this(DEFAULT_IMDI2CMDI_XSLT, DEFAULT_CMDI2IMDI_XSLT);
+    public TranslatorImpl(UrlStreamResolver urlStreamResolver) throws TransformerConfigurationException, IOException {
+        this(DEFAULT_IMDI2CMDI_XSLT, DEFAULT_CMDI2IMDI_XSLT, urlStreamResolver);
     }
 
     /**
@@ -91,14 +89,16 @@ public class TranslatorImpl implements Translator {
      * transformation stylesheet (null to use default)
      * @param cmdi2imdiXsltPath path to local file location of the CMDI to IMDI
      * transformation stylesheet (null to use default)
+     * @param urlStreamResolver
      * @throws MalformedURLException
      * @throws TransformerConfigurationException
      * @throws IOException
      */
-    public TranslatorImpl(String imdi2cmdiXsltPath, String cmdi2imdiXsltPath) throws MalformedURLException, TransformerConfigurationException, IOException {
+    public TranslatorImpl(String imdi2cmdiXsltPath, String cmdi2imdiXsltPath, UrlStreamResolver urlStreamResolver) throws MalformedURLException, TransformerConfigurationException, IOException {
         this(
                 (Strings.isNullOrEmpty(imdi2cmdiXsltPath) ? DEFAULT_IMDI2CMDI_XSLT : new File(imdi2cmdiXsltPath).toURI().toURL()),
-                (Strings.isNullOrEmpty(cmdi2imdiXsltPath) ? DEFAULT_CMDI2IMDI_XSLT : new File(cmdi2imdiXsltPath).toURI().toURL()));
+                (Strings.isNullOrEmpty(cmdi2imdiXsltPath) ? DEFAULT_CMDI2IMDI_XSLT : new File(cmdi2imdiXsltPath).toURI().toURL()),
+                urlStreamResolver);
     }
 
     /**
@@ -111,7 +111,9 @@ public class TranslatorImpl implements Translator {
      * @throws TransformerConfigurationException
      * @throws IOException
      */
-    public TranslatorImpl(final URL imdi2CmdiXsltLocation, final URL cmdi2ImdiXsltLocation) throws TransformerConfigurationException, IOException {
+    public TranslatorImpl(final URL imdi2CmdiXsltLocation, final URL cmdi2ImdiXsltLocation, UrlStreamResolver urlStreamResolver) throws TransformerConfigurationException, IOException {
+        this.urlStreamResolver = urlStreamResolver;
+
         transfFactory = createTransformerFactory();
         transfFactory.setErrorListener(new TranslationServiceErrorListener(logger));
         logger.debug("Instantiated XML transformer factory of type {}", transfFactory.getClass());
@@ -178,7 +180,7 @@ public class TranslatorImpl implements Translator {
     @Override
     public String getIMDI(URL cmdiFileURL, String serviceURI) throws TransformerException, XMLStreamException, IOException {
         //set up input
-        final InputStream input = openConnection(cmdiFileURL);
+        final InputStream input = urlStreamResolver.getStream(cmdiFileURL);
         try {
             final XMLStreamReader xmlStreamReader = xmlInputFactory.createXMLStreamReader(input, "UTF-8");
             try {
@@ -228,7 +230,7 @@ public class TranslatorImpl implements Translator {
     public String getCMDI(URL imdiFileURL, String serviceURI) throws TransformerException, XMLStreamException, IOException {
 
         //set up input
-        final InputStream input = openConnection(imdiFileURL);
+        final InputStream input = urlStreamResolver.getStream(imdiFileURL);
         try {
             XMLStreamReader xmlStreamReader = xmlInputFactory.createXMLStreamReader(input, "UTF-8");
             try {
@@ -259,12 +261,7 @@ public class TranslatorImpl implements Translator {
             input.close();
         }
     }
-
-    private InputStream openConnection(URL cmdiFileURL) throws IOException {
-        final URLConnection connection = cmdiFileURL.openConnection();
-        return connections.openStreamCheckRedirects(connection);
-    }
-
+    
     private void transform(final Templates templates, final Source source, final Result result, String serviceURI, final String inputUrl) throws TransformerException, TransformerConfigurationException {
         final Transformer transformer = templates.newTransformer();
         transformer.setParameter("service-base-uri", serviceURI);

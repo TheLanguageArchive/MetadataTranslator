@@ -5,7 +5,28 @@ To upgrade from the previous version:
 Deploy MetadataTranslator-${project.artifactId}-${project.version}-r${buildNumber}.war 
 to the servlet container where MetadataTranslator was previously running. 
 
-UPGRADING FROM ANY EARLIER VERSION TO 1.4
+UPGRADING FROM 1.4.x TO 1.5.x
+
+The following optional context parameters can now be set to allow for internal
+rewriting of public URLs to local file system paths:
+
+        - 'nl.mpi.metadatatranslator.localFilesPublicBaseUrl'
+
+                Defines a base URL for metadata resources that can be read from
+                the local filesystem by the translation services (local path to
+                be defined in the 'localFilesPathOnFilesystem' parameter).
+                Leave out or set to empty to prevent any mapping from public
+                URLs to local paths from happening.
+
+        - 'nl.mpi.metadatatranslator.localFilesPathOnFilesystem'
+
+                Defines the base location that corresponds with the base URL
+                defined in the 'localFilesPublicBaseUrl' parameter. Should be
+                a path, not a URL (i.e. should start with '/', not 'file:'.)
+                Leave out or set to empty to prevent any mapping from public
+                URLs to local paths from happening.
+
+UPGRADING FROM ANY EARLIER VERSION TO 1.4.x
 
 The following optional context parameters can now be set:
 
