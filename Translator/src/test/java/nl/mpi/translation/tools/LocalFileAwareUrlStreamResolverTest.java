@@ -23,7 +23,6 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
-import org.hamcrest.Matchers;
 import static org.hamcrest.Matchers.instanceOf;
 import org.jmock.Expectations;
 import static org.jmock.Expectations.any;
@@ -56,11 +55,12 @@ public class LocalFileAwareUrlStreamResolverTest {
     public void setUp() throws IOException {
         baseResolver = context.mock(UrlStreamResolver.class);
         basePath = folder.newFolder();
-        instance = new LocalFileAwareUrlStreamResolver(baseResolver, BASE_URL, basePath);
+        instance = new LocalFileAwareUrlStreamResolver(baseResolver, BASE_URL, basePath.getAbsolutePath());
     }
 
     /**
      * Test of getStream method, of class LocalFileAwareUrlStreamResolver.
+     * @throws java.lang.Exception
      */
     @Test
     public void testGetStreamMatch() throws Exception {
@@ -85,6 +85,7 @@ public class LocalFileAwareUrlStreamResolverTest {
 
     /**
      * Test of getStream method, of class LocalFileAwareUrlStreamResolver.
+     * @throws java.lang.Exception
      */
     @Test
     public void testGetStreamNoMatch() throws Exception {
@@ -106,6 +107,7 @@ public class LocalFileAwareUrlStreamResolverTest {
 
     /**
      * Test of getStream method, of class LocalFileAwareUrlStreamResolver.
+     * @throws java.lang.Exception
      */
     @Test
     public void testGetStreamNonExistingMatch() throws Exception {

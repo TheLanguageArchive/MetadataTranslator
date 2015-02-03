@@ -17,6 +17,7 @@
  */
 package nl.mpi.translation.tools;
 
+import com.google.common.base.Strings;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -28,46 +29,53 @@ import org.slf4j.LoggerFactory;
 /**
  * A URL stream resolver that uses a provided mapping between a base URL and a
  * base file path to read files from the local filesystem even if they are
- * requested through their public URL
+ * requested through their public URL.
  *
  * @author Twan Goosen <twan.goosen@mpi.nl>
  */
 public class LocalFileAwareUrlStreamResolver implements UrlStreamResolver {
-
+    
     private final static Logger logger = LoggerFactory.getLogger(LocalFileAwareUrlStreamResolver.class);
-
+    
     private final UrlStreamResolver baseResolver;
-
+    
     private final String baseUrl;
     private final File basePath;
 
     /**
      * Constructs the file aware resolver with a new instance of
-     * {@link UrlStreamResolverImpl} as base resolver
+     * {@link UrlStreamResolverImpl} as base resolver. If either baseUrl or
+     * basePath is empty or null, the behaviour of this resolver will fall back
+     * to the base resolver.
      *
      * @param baseResolver resolver to use if no corresponding file can be found
      * @param baseUrl base URL
-     * @param basePath file object representing the base path that corresponds
+     * @param basePath the base path on the local file system that corresponds
      * with the base URL
      */
-    public LocalFileAwareUrlStreamResolver(UrlStreamResolver baseResolver, String baseUrl, File basePath) {
+    public LocalFileAwareUrlStreamResolver(UrlStreamResolver baseResolver, String baseUrl, String basePath) {
         this.baseResolver = baseResolver;
-        this.baseUrl = baseUrl;
-        this.basePath = basePath;
+        this.baseUrl = Strings.emptyToNull(baseUrl);
+        if (Strings.isNullOrEmpty(basePath)) {
+            this.basePath = null;
+        } else {
+            this.basePath = new File(basePath);
+        }
     }
 
     /**
      * Constructs the file aware resolver with a new instance of
-     * {@link UrlStreamResolverImpl} as base resolver
+     * {@link UrlStreamResolverImpl} as base resolver. If this object was
+     * constructed
      *
      * @param baseUrl base URL
-     * @param basePath file object representing the base path that corresponds
+     * @param basePath the base path on the local file system that corresponds
      * with the base URL
      */
-    public LocalFileAwareUrlStreamResolver(String baseUrl, File basePath) {
+    public LocalFileAwareUrlStreamResolver(String baseUrl, String basePath) {
         this(new UrlStreamResolverImpl(), baseUrl, basePath);
     }
-
+    
     @Override
     public InputStream getStream(URL url) throws IOException {
         if (baseUrl != null && basePath != null) {
@@ -76,16 +84,18 @@ public class LocalFileAwareUrlStreamResolver implements UrlStreamResolver {
                 final String child = urlString.substring(baseUrl.length());
                 final File localFile = new File(basePath, child);
                 if (localFile.exists()) {
+                    logger.debug("Resolved {} to {}", url, localFile);
                     return new FileInputStream(localFile);
                 } else {
-                    logger.warn("Requested resource '{}' was not found at expected location '{}'. Falling back to resolving requested URL.", url, localFile.getAbsolutePath());
+                    logger.warn("Requested resource '{}' was not found at expected location '{}'. Falling back to requested external URL.", url, localFile.getAbsolutePath());
                     // fall back to base resolver
                 }
             }
         }
 
         // no match on base URL or file does not exist
+        logger.debug("Falling back to base resolver for {}", url);
         return baseResolver.getStream(url);
     }
-
+    
 }

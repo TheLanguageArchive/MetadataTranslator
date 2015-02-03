@@ -29,11 +29,16 @@ import nl.mpi.archiving.corpusstructure.core.URLConnections;
  */
 public class UrlStreamResolverImpl implements UrlStreamResolver {
 
+    /**
+     * URLConnections service object that follows redirects (allowing safe
+     * scheme switches such as http -> https)
+     */
     private final URLConnections connections = new URLConnections();
 
     @Override
     public InputStream getStream(URL url) throws IOException {
         final URLConnection connection = url.openConnection();
+        // get the stream, following redirects if encountered
         return connections.openStreamCheckRedirects(connection);
     }
 
