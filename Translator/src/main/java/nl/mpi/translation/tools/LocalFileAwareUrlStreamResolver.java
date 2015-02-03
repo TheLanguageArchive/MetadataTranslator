@@ -22,6 +22,8 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * A URL stream resolver that uses a provided mapping between a base URL and a
@@ -32,6 +34,8 @@ import java.net.URL;
  */
 public class LocalFileAwareUrlStreamResolver implements UrlStreamResolver {
 
+    private final static Logger logger = LoggerFactory.getLogger(LocalFileAwareUrlStreamResolver.class);
+
     private final UrlStreamResolver baseResolver;
 
     private final String baseUrl;
@@ -41,8 +45,7 @@ public class LocalFileAwareUrlStreamResolver implements UrlStreamResolver {
      * Constructs the file aware resolver with a new instance of
      * {@link UrlStreamResolverImpl} as base resolver
      *
-     * @param baseResolver resolver to use if no corresponding file can be
-     * found
+     * @param baseResolver resolver to use if no corresponding file can be found
      * @param baseUrl base URL
      * @param basePath file object representing the base path that corresponds
      * with the base URL
@@ -67,14 +70,20 @@ public class LocalFileAwareUrlStreamResolver implements UrlStreamResolver {
 
     @Override
     public InputStream getStream(URL url) throws IOException {
-        final String urlString = url.toString();
-        if (urlString.startsWith(baseUrl)) {
-            final String child = urlString.substring(baseUrl.length());
-            final File localFile = new File(basePath, child);
-            if (localFile.exists()) {
-                return new FileInputStream(localFile);
-            } // else fall back to base resolver
+        if (baseUrl != null && basePath != null) {
+            final String urlString = url.toString();
+            if (urlString.startsWith(baseUrl)) {
+                final String child = urlString.substring(baseUrl.length());
+                final File localFile = new File(basePath, child);
+                if (localFile.exists()) {
+                    return new FileInputStream(localFile);
+                } else {
+                    logger.warn("Requested resource '{}' was not found at expected location '{}'. Falling back to resolving requested URL.", url, localFile.getAbsolutePath());
+                    // fall back to base resolver
+                }
+            }
         }
+
         // no match on base URL or file does not exist
         return baseResolver.getStream(url);
     }
