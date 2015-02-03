@@ -15,11 +15,17 @@
         class="org.springframework.web.context.support.ServletContextPropertyPlaceholderConfigurer">
         <property name="ignoreUnresolvablePlaceholders" value="true" />
     </bean>
+    
+    <bean id="urlStreamResolver" class="nl.mpi.translation.tools.LocalFileAwareUrlStreamResolver">
+        <constructor-arg name="baseUrl" value="${nl.mpi.metadatatranslator.localFilesPublicBaseUrl:}" />     <!-- context parameter -->    
+        <constructor-arg name="basePath" value="${nl.mpi.metadatatranslator.localFilesPathOnFilesystem:}" /> <!-- context parameter -->
+    </bean>
 
     <!-- Running instance of the translator service should use the actual implementations of the translator -->
     <bean id="translator" class="nl.mpi.translation.tools.TranslatorImpl">
-        <constructor-arg name="imdi2cmdiXsltPath" value="${nl.mpi.translation.imdi2cmdiXSLT:}" />
-        <constructor-arg name="cmdi2imdiXsltPath" value="${nl.mpi.translation.cmdi2imdiXSLT:}" />
+        <constructor-arg name="urlStreamResolver" ref="urlStreamResolver" />
+        <constructor-arg name="imdi2cmdiXsltPath" value="${nl.mpi.translation.imdi2cmdiXSLT:}" /> <!-- context parameter -->
+        <constructor-arg name="cmdi2imdiXsltPath" value="${nl.mpi.translation.cmdi2imdiXSLT:}" /> <!-- context parameter -->
     </bean>
  
 
