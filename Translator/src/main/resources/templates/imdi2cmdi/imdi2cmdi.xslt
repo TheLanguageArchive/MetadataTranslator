@@ -944,9 +944,18 @@ $LastChangedDate: 2013-08-14 11:25:31 +0200 (Wed, 14 Aug 2013) $
                 	<xsl:variable name="ref" select="normalize-space(current()/@ResourceRef)" />
                 	<xsl:if test="$ref!=''">
                 		<xsl:variable name="target" select="//(MediaFile|WrittenResource)[@ResourceId=$ref]/ResourceLink[normalize-space(.)!='']"/>
-                		<xsl:if test="$target">
-                			<xsl:attribute name="ref" select="generate-id($target)" />
-                		</xsl:if>
+                		<xsl:choose>
+                			<xsl:when test="count($target) gt 1">
+                				<xsl:message>ERR: Actor/@ResourceRef[<xsl:value-of select="$ref"/>] resolves to multiple Resources! Taking the first one.</xsl:message>
+                				<xsl:attribute name="ref" select="generate-id(($target)[1])" />
+                			</xsl:when>
+                			<xsl:when test="count($target) eq 1">
+                				<xsl:attribute name="ref" select="generate-id($target)" />
+                			</xsl:when>
+                			<!--<xsl:otherwise>
+                				<xsl:message>ERR: Actor/@ResourceRef[<xsl:value-of select="$ref"/>] doesn't resolve to any Resource with a ResourceLink!</xsl:message>
+                			</xsl:otherwise>-->
+                		</xsl:choose>
                 	</xsl:if>
                     <Role>
                         <xsl:value-of select=" ./Role"/>
@@ -1249,7 +1258,15 @@ $LastChangedDate: 2013-08-14 11:25:31 +0200 (Wed, 14 Aug 2013) $
         		<xsl:variable name="loc" select="MediaResourceLink"/>
         		<xsl:variable name="res" select="//ResourceLink[.=$loc]"/>
         		<xsl:if test="exists($res)">
-        			<xsl:attribute name="mediaRef" select="generate-id($res)"/>
+        			<xsl:choose>
+        				<xsl:when test="count($res) gt 1">
+        					<xsl:message>ERR: WrittenResource/MediaResourceLink[<xsl:value-of select="$loc"/>] resolved to multiple ResourceLinks! Taking the first one.</xsl:message>
+        					<xsl:attribute name="mediaRef" select="generate-id(($res)[1])"/>
+        				</xsl:when>
+        				<xsl:when test="count($res) eq 1">
+        					<xsl:attribute name="mediaRef" select="generate-id($res)"/>
+        				</xsl:when>
+        			</xsl:choose>
         		</xsl:if>
         	</xsl:if>
         	<Date>
