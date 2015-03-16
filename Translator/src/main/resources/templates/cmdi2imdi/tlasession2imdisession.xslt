@@ -26,16 +26,15 @@
     </xsl:template>
     
     <xsl:template match="lat-session" mode="TLASESSION2IMDISESSION">
-        <xsl:choose>
-            <xsl:when test="normalize-space(child::History)!=''">
-                <History>
+        <History>
+            <xsl:if test="normalize-space(child::History)!=''">
                     <xsl:value-of select="child::History"/>
-                    <xsl:text> NAME:tlasession2imdisession.xslt DATE:</xsl:text>
-                    <xsl:value-of select="current-dateTime()"/>
-                    <xsl:text>.</xsl:text>
-                </History>
-            </xsl:when>
-        </xsl:choose>
+                    <xsl:text> </xsl:text>
+            </xsl:if>                   
+            <xsl:text> NAME:tlasession2imdisession.xslt DATE:</xsl:text>
+            <xsl:value-of select="current-dateTime()"/>
+            <xsl:text>.</xsl:text>
+        </History>
         <Session>
             <Name>
                 <xsl:value-of select="child::Name"/>

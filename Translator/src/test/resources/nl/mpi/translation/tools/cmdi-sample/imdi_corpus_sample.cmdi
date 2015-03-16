@@ -15,67 +15,15 @@
       <ResourceProxyList>
          <ResourceProxy id="d2e16"><!--africa.imdi-->
             <ResourceType>Metadata</ResourceType>
-            <ResourceRef lat:localURI="africa.imdi">file:/home/alekoe/projects/being_corpman/cmdification/migration/menzo_output/test-20141112/source/africa.imdi.cmdi</ResourceRef>
+            <ResourceRef lat:localURI="africa.imdi">hdl:1839/00-0000-0000-0000-6B5C-5</ResourceRef>
          </ResourceProxy>
          <ResourceProxy id="d2e19"><!--australia.imdi-->
             <ResourceType>Metadata</ResourceType>
-            <ResourceRef lat:localURI="australia.imdi">file:/home/alekoe/projects/being_corpman/cmdification/migration/menzo_output/test-20141112/source/australia.imdi.cmdi</ResourceRef>
+            <ResourceRef lat:localURI="australia.imdi">hdl:1839/00-0000-0000-0000-70E7-D</ResourceRef>
          </ResourceProxy>
          <ResourceProxy id="d2e23"><!--eastasia.imdi-->
             <ResourceType>Metadata</ResourceType>
-            <ResourceRef lat:localURI="eastasia.imdi">file:/home/alekoe/projects/being_corpman/cmdification/migration/menzo_output/test-20141112/source/eastasia.imdi.cmdi</ResourceRef>
-         </ResourceProxy>
-         <ResourceProxy id="d2e26"><!--southeastasia.imdi-->
-            <ResourceType>Metadata</ResourceType>
-            <ResourceRef lat:localURI="southeastasia.imdi">file:/home/alekoe/projects/being_corpman/cmdification/migration/menzo_output/test-20141112/source/southeastasia.imdi.cmdi</ResourceRef>
-         </ResourceProxy>
-         <ResourceProxy id="d2e29"><!--southasia.imdi-->
-            <ResourceType>Metadata</ResourceType>
-            <ResourceRef lat:localURI="southasia.imdi">file:/home/alekoe/projects/being_corpman/cmdification/migration/menzo_output/test-20141112/source/southasia.imdi.cmdi</ResourceRef>
-         </ResourceProxy>
-         <ResourceProxy id="d2e32"><!--northamerica.imdi-->
-            <ResourceType>Metadata</ResourceType>
-            <ResourceRef lat:localURI="northamerica.imdi">file:/home/alekoe/projects/being_corpman/cmdification/migration/menzo_output/test-20141112/source/northamerica.imdi.cmdi</ResourceRef>
-         </ResourceProxy>
-         <ResourceProxy id="d2e35"><!--mesoamerica.imdi-->
-            <ResourceType>Metadata</ResourceType>
-            <ResourceRef lat:localURI="mesoamerica.imdi">file:/home/alekoe/projects/being_corpman/cmdification/migration/menzo_output/test-20141112/source/mesoamerica.imdi.cmdi</ResourceRef>
-         </ResourceProxy>
-         <ResourceProxy id="d2e38"><!--southamerica.imdi-->
-            <ResourceType>Metadata</ResourceType>
-            <ResourceRef lat:localURI="southamerica.imdi">file:/home/alekoe/projects/being_corpman/cmdification/migration/menzo_output/test-20141112/source/southamerica.imdi.cmdi</ResourceRef>
-         </ResourceProxy>
-         <ResourceProxy id="d2e42"><!--oceania.imdi-->
-            <ResourceType>Metadata</ResourceType>
-            <ResourceRef lat:localURI="oceania.imdi">file:/home/alekoe/projects/being_corpman/cmdification/migration/menzo_output/test-20141112/source/oceania.imdi.cmdi</ResourceRef>
-         </ResourceProxy>
-         <ResourceProxy id="d2e45"><!--sign.imdi-->
-            <ResourceType>Metadata</ResourceType>
-            <ResourceRef lat:localURI="sign.imdi">file:/home/alekoe/projects/being_corpman/cmdification/migration/menzo_output/test-20141112/source/sign.imdi.cmdi</ResourceRef>
-         </ResourceProxy>
-         <ResourceProxy id="d2e48"><!--../../gesture_data/Corpusstructure/gesture.imdi-->
-            <ResourceType>Metadata</ResourceType>
-            <ResourceRef lat:localURI="../../gesture_data/Corpusstructure/gesture.imdi">file:/home/alekoe/projects/being_corpman/cmdification/migration/menzo_output/gesture_data/Corpusstructure/gesture.imdi.cmdi</ResourceRef>
-         </ResourceProxy>
-         <ResourceProxy id="d2e51"><!--../conferences/Corpusstructure/conferences.imdi-->
-            <ResourceType>Metadata</ResourceType>
-            <ResourceRef lat:localURI="../conferences/Corpusstructure/conferences.imdi">file:/home/alekoe/projects/being_corpman/cmdification/migration/menzo_output/test-20141112/conferences/Corpusstructure/conferences.imdi.cmdi</ResourceRef>
-         </ResourceProxy>
-         <ResourceProxy id="d2e54"><!--europe.imdi-->
-            <ResourceType>Metadata</ResourceType>
-            <ResourceRef lat:localURI="europe.imdi">file:/home/alekoe/projects/being_corpman/cmdification/migration/menzo_output/test-20141112/source/europe.imdi.cmdi</ResourceRef>
-         </ResourceProxy>
-         <ResourceProxy id="d2e57"><!--../lc_stimuli_archive/Corpusstructure/lc_stimuli_archive.imdi-->
-            <ResourceType>Metadata</ResourceType>
-            <ResourceRef lat:localURI="../lc_stimuli_archive/Corpusstructure/lc_stimuli_archive.imdi">file:/home/alekoe/projects/being_corpman/cmdification/migration/menzo_output/test-20141112/lc_stimuli_archive/Corpusstructure/lc_stimuli_archive.imdi.cmdi</ResourceRef>
-         </ResourceProxy>
-         <ResourceProxy id="d2e61"><!--../lectures_and_interviews/Corpusstructure/lectures.imdi-->
-            <ResourceType>Metadata</ResourceType>
-            <ResourceRef lat:localURI="../lectures_and_interviews/Corpusstructure/lectures.imdi">file:/home/alekoe/projects/being_corpman/cmdification/migration/menzo_output/test-20141112/lectures_and_interviews/Corpusstructure/lectures.imdi.cmdi</ResourceRef>
-         </ResourceProxy>
-         <ResourceProxy id="d2e64"><!--../ERC_Interact/Corpusstructure/ERC_Interact.imdi-->
-            <ResourceType>Metadata</ResourceType>
-            <ResourceRef lat:localURI="../ERC_Interact/Corpusstructure/ERC_Interact.imdi">file:/home/alekoe/projects/being_corpman/cmdification/migration/menzo_output/test-20141112/ERC_Interact/Corpusstructure/ERC_Interact.imdi.cmdi</ResourceRef>
+            <ResourceRef lat:localURI="eastasia.imdi">hdl:1839/00-0000-0000-0000-71F2-2</ResourceRef>
          </ResourceProxy>
          <ResourceProxy id="searchpage">
             <ResourceType>SearchPage</ResourceType>
@@ -93,52 +41,52 @@
             <Description>This is the LAC (Language and Cognition) corpus which contains spontaneous, elicited and experimental language data.</Description>
          </descriptions>
          <CorpusLink ref="d2e16">
-            <CorpusLinkContent Name="africa">africa.imdi</CorpusLinkContent>
+            <Name>africa</Name>
          </CorpusLink>
          <CorpusLink ref="d2e19">
-            <CorpusLinkContent Name="australia">australia.imdi</CorpusLinkContent>
+            <Name>australia</Name>
          </CorpusLink>
          <CorpusLink ref="d2e23">
-            <CorpusLinkContent Name="eastasia">eastasia.imdi</CorpusLinkContent>
+            <Name>eastasia</Name>
          </CorpusLink>
          <CorpusLink ref="d2e26">
-            <CorpusLinkContent Name="southeastasia">southeastasia.imdi</CorpusLinkContent>
+            <Name>southeastasia</Name>
          </CorpusLink>
          <CorpusLink ref="d2e29">
-            <CorpusLinkContent Name="southasia">southasia.imdi</CorpusLinkContent>
+            <Name>southasia</Name>
          </CorpusLink>
          <CorpusLink ref="d2e32">
-            <CorpusLinkContent Name="northamerica">northamerica.imdi</CorpusLinkContent>
+            <Name>northamerica</Name>
          </CorpusLink>
          <CorpusLink ref="d2e35">
-            <CorpusLinkContent Name="mesoamerica">mesoamerica.imdi</CorpusLinkContent>
+            <Name>mesoamerica</Name>
          </CorpusLink>
          <CorpusLink ref="d2e38">
-            <CorpusLinkContent Name="southamerica">southamerica.imdi</CorpusLinkContent>
+            <Name>southamerica</Name>
          </CorpusLink>
          <CorpusLink ref="d2e42">
-            <CorpusLinkContent Name="oceania">oceania.imdi</CorpusLinkContent>
+            <Name>oceania</Name>
          </CorpusLink>
          <CorpusLink ref="d2e45">
-            <CorpusLinkContent Name="Sign Language">sign.imdi</CorpusLinkContent>
+            <Name>Sign Language</Name>
          </CorpusLink>
          <CorpusLink ref="d2e48">
-            <CorpusLinkContent Name="Gesture Projects">../../gesture_data/Corpusstructure/gesture.imdi</CorpusLinkContent>
+            <Name>Gesture Projects</Name>
          </CorpusLink>
          <CorpusLink ref="d2e51">
-            <CorpusLinkContent Name="conferences">../conferences/Corpusstructure/conferences.imdi</CorpusLinkContent>
+            <Name>conferences</Name>
          </CorpusLink>
          <CorpusLink ref="d2e54">
-            <CorpusLinkContent Name="europe">europe.imdi</CorpusLinkContent>
+            <Name>europe</Name>
          </CorpusLink>
          <CorpusLink ref="d2e57">
-            <CorpusLinkContent Name="Stimuli archive">../lc_stimuli_archive/Corpusstructure/lc_stimuli_archive.imdi</CorpusLinkContent>
+            <Name>Stimuli archive</Name>
          </CorpusLink>
          <CorpusLink ref="d2e61">
-            <CorpusLinkContent Name="Lectures and Interviews">../lectures_and_interviews/Corpusstructure/lectures.imdi</CorpusLinkContent>
+            <Name>Lectures and Interviews</Name>
          </CorpusLink>
          <CorpusLink ref="d2e64">
-            <CorpusLinkContent Name="ERC Interact">../ERC_Interact/Corpusstructure/ERC_Interact.imdi</CorpusLinkContent>
+            <Name>ERC Interact</Name>
          </CorpusLink>
       </lat-corpus>
    </Components>

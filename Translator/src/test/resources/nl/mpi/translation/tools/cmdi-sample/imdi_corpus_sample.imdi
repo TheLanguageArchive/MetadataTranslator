@@ -1,26 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<METATRANSCRIPT ArchiveHandle="hdl:1839/00-0000-0000-0000-6B5B-7" Date="2005-11-08" FormatId="IMDI 3.0" Originator="NB" Type="CORPUS" Version="3" xmlns="http://www.mpi.nl/IMDI/Schema/IMDI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mpi.nl/IMDI/Schema/IMDI ./IMDI_3.0.xsd">
-    <History>NAME:IMDI_1_9_TO_3_0 DATE:2004-03-17T14:05:36-02:00.</History>
-    <Corpus CorpusStructureService="corpusstructure" SearchService="">
+<METATRANSCRIPT ArchiveHandle="hdl:1839/00-0000-0000-0000-6B5B-7@format=imdi" Date="2014-11-25"
+    FormatId="IMDI 3.0"
+    Originator="Metadata Translator: tlacollection2corpus.xslt hdl:1839/00-0000-0000-0000-6B5B-7"
+    Type="CORPUS" Version="0" xmlns="http://www.mpi.nl/IMDI/Schema/IMDI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.mpi.nl/IMDI/Schema/IMDI http://www.mpi.nl/IMDI/Schema/IMDI_3.0.xsd">
+    <History>NAME:tlacollection2corpus.xslt DATE:xx.</History>
+    <Corpus>
         <Name>Language and Cognition</Name>
         <Title/>
-        <Description LanguageId="" Link="">This is the LAC (Language and Cognition) corpus which contains spontaneous, elicited and experimental language data.</Description>
-        <CorpusLink ArchiveHandle="hdl:1839/00-0000-0000-0000-6B5C-5" Name="africa">africa.imdi</CorpusLink>
-        <CorpusLink ArchiveHandle="hdl:1839/00-0000-0000-0000-70E7-D" Name="australia">australia.imdi</CorpusLink>
-        <CorpusLink ArchiveHandle="hdl:1839/00-0000-0000-0000-71F2-2" Name="eastasia">eastasia.imdi</CorpusLink>
-        <CorpusLink ArchiveHandle="hdl:1839/00-0000-0000-0000-720C-C" Name="southeastasia">southeastasia.imdi</CorpusLink>
-        <CorpusLink ArchiveHandle="hdl:1839/00-0000-0000-0000-7640-F" Name="southasia">southasia.imdi</CorpusLink>
-        <CorpusLink ArchiveHandle="hdl:1839/00-0000-0000-0000-76A0-9" Name="northamerica">northamerica.imdi</CorpusLink>
-        <CorpusLink ArchiveHandle="hdl:1839/00-0000-0000-0000-7C26-E" Name="mesoamerica">mesoamerica.imdi</CorpusLink>
-        <CorpusLink ArchiveHandle="hdl:1839/00-0000-0000-0000-82A2-E" Name="southamerica">southamerica.imdi</CorpusLink>
-        <CorpusLink ArchiveHandle="hdl:1839/00-0000-0000-0000-84E0-0" Name="oceania">oceania.imdi</CorpusLink>
-        <CorpusLink ArchiveHandle="hdl:1839/00-0000-0000-0000-C71C-C" Name="Sign Language">sign.imdi</CorpusLink>
-        <CorpusLink ArchiveHandle="hdl:1839/00-0000-0000-0000-C815-F" Name="Gesture Projects">../../gesture_data/Corpusstructure/gesture.imdi</CorpusLink>
-        <CorpusLink ArchiveHandle="hdl:1839/00-0000-0000-0001-1674-E" Name="conferences">../conferences/Corpusstructure/conferences.imdi</CorpusLink>
-        
-        <CorpusLink ArchiveHandle="hdl:1839/00-0000-0000-0001-16E0-F" Name="europe">europe.imdi</CorpusLink>
-        <CorpusLink ArchiveHandle="hdl:1839/00-0000-0000-0004-DEEE-0" Name="Stimuli archive">../lc_stimuli_archive/Corpusstructure/lc_stimuli_archive.imdi</CorpusLink>
-        <CorpusLink ArchiveHandle="hdl:1839/00-0000-0000-0007-F609-6" Name="Lectures and Interviews">../lectures_and_interviews/Corpusstructure/lectures.imdi</CorpusLink>
-	<CorpusLink ArchiveHandle="hdl:1839/00-0000-0000-0015-4B00-3" Name="ERC Interact">../ERC_Interact/Corpusstructure/ERC_Interact.imdi</CorpusLink>
+        <Description>This is the LAC (Language and Cognition) corpus which
+            contains spontaneous, elicited and experimental language data.</Description>
+        <CorpusLink ArchiveHandle="hdl:1839/00-0000-0000-0000-6B5C-5@format=imdi" Name="africa"
+            >http://my-service/translate?in=http%3A%2F%2Farchive%2Fcorpus%2Fmy-collection%2FMetadata%2Fafrica.imdi&amp;outFormat=imdi</CorpusLink>
+        <CorpusLink ArchiveHandle="hdl:1839/00-0000-0000-0000-70E7-D@format=imdi" Name="australia"
+            >http://my-service/translate?in=http%3A%2F%2Farchive%2Fcorpus%2Fmy-collection%2FMetadata%2Faustralia.imdi&amp;outFormat=imdi</CorpusLink>
+        <CorpusLink ArchiveHandle="hdl:1839/00-0000-0000-0000-71F2-2@format=imdi" Name="eastasia"
+            >http://my-service/translate?in=http%3A%2F%2Farchive%2Fcorpus%2Fmy-collection%2FMetadata%2Feastasia.imdi&amp;outFormat=imdi</CorpusLink>
     </Corpus>
 </METATRANSCRIPT>

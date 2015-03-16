@@ -58,6 +58,8 @@ public class TranslatorImplTest {
     public static final String SOUNDBITES_TO_SESSION_IMDI = CMDI_SAMPLES_LOCATION + "/soundbites_sample_to_session.imdi";
     public static final String LAT_SESSION = CMDI_SAMPLES_LOCATION + "/imdi_session_sample.cmdi";
     public static final String LAT_SESSION_TO_IMDI = CMDI_SAMPLES_LOCATION + "/imdi_session_sample.imdi";
+    public static final String LAT_CORPUS = CMDI_SAMPLES_LOCATION + "/imdi_corpus_sample.cmdi";
+    public static final String LAT_CORPUS_TO_IMDI = CMDI_SAMPLES_LOCATION + "/imdi_corpus_sample.imdi";
     public static final String CGN_LAT_SESSION = CMDI_SAMPLES_LOCATION + "/imdi_cgn_session_sample.cmdi";
     public static final String CGN_LAT_SESSION_TO_IMDI = CMDI_SAMPLES_LOCATION + "/imdi_cgn_session_sample.imdi";
     // IMDI Sample locations
@@ -133,6 +135,15 @@ public class TranslatorImplTest {
     public void testGetIMDIForLatSession() throws Exception {
 	logger.info("Testing translation of a LAT session (converted original IMDI) instance (back) to IMDI");
 	testGetIMDI(LAT_SESSION, LAT_SESSION_TO_IMDI);
+    } 
+    
+    /**
+     * Requests translation of an DiscAn instance
+     */
+    @Test
+    public void testGetIMDIForLatCorpus() throws Exception {
+	logger.info("Testing translation of a LAT session (converted original IMDI) instance (back) to IMDI");
+	testGetIMDI(LAT_CORPUS, LAT_CORPUS_TO_IMDI);
     } 
     
     /**
