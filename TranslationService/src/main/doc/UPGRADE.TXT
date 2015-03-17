@@ -5,6 +5,9 @@ To upgrade from the previous version:
 Deploy MetadataTranslator-${project.artifactId}-${project.version}-r${buildNumber}.war 
 to the servlet container where MetadataTranslator was previously running. 
 
+In the case of staging deployment on lux17, make sure to re-wire the HandleResolver
+implementation. See the installation instructions (step 5.4) for details.
+
 UPGRADING FROM 1.4.x TO 1.5.x
 
 The following optional context parameters can now be set to allow for internal

@@ -55,6 +55,15 @@ security problems.
                 a path, not a URL (i.e. should start with '/', not 'file:'.)
                 Leave out or set to empty to prevent any mapping from public
                 URLs to local paths from happening.
+                
+5.4 (Optional - but required on lux17) Reconfigure the wiring that sets the HandleResolver
+implementation. Edit WEB-INF/classes/applicationContext.xml and replace the following:
+
+		<bean class="nl.mpi.archiving.corpusstructure.core.handle.HandleApiResolver" />
+
+	with
+
+		<bean class="nl.mpi.archiving.corpusstructure.core.handle.HttpHandleResolver" />
 
 6. Start Tomcat.
 
