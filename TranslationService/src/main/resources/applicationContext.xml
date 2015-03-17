@@ -31,7 +31,7 @@
 
     <!-- Running instance of the translator service should use the http handle resolver -->     
     <bean id="handleResolver" class="nl.mpi.archiving.corpusstructure.core.handle.CachingHandleResolver">
-        <!-- Cache resolver results for 5 minutes -->
+        <!-- Cache resolver results for 10 minutes -->
         <constructor-arg>
             <bean class="nl.mpi.archiving.corpusstructure.core.handle.HandleApiResolver" />
         </constructor-arg>
