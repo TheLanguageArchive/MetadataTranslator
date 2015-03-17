@@ -29,6 +29,8 @@ $LastChangedDate: 2013-08-14 11:25:31 +0200 (Wed, 14 Aug 2013) $
 	
 	<xsl:param name="formatCMDI" select="true()"/>
 	
+	<xsl:param name="translationService" select="'http(s)?://corpus1.mpi.nl/ds/TranslationService/translate'"/>
+	
 	<!--<xsl:param name="base" select="base-uri(document(''))"/>-->
 	<xsl:param name="base" select="static-base-uri()"/>
 	
@@ -58,7 +60,6 @@ $LastChangedDate: 2013-08-14 11:25:31 +0200 (Wed, 14 Aug 2013) $
 			</xsl:otherwise>
 		</xsl:choose>
 	</xsl:function>
-
 
 	<!-- fix the closed vocabularies -->
 	<xsl:template match="@*|node()" mode="fixVocab">
@@ -117,7 +118,7 @@ $LastChangedDate: 2013-08-14 11:25:31 +0200 (Wed, 14 Aug 2013) $
                     </xsl:when>
                     <!-- No handle? Then just use the URL -->
                     <xsl:when test="not($uri-base='') and normalize-space(@ArchiveHandle)=''">
-                    	<xsl:value-of select="$uri-base"/>
+                    	<xsl:value-of select="replace($uri-base,'\.imdi$','.cmdi')"/>
                     </xsl:when>
                     <!-- Other handle prefix? Use handle (e.g. Lund) -->
                     <xsl:otherwise>
@@ -214,7 +215,6 @@ $LastChangedDate: 2013-08-14 11:25:31 +0200 (Wed, 14 Aug 2013) $
             </xsl:otherwise>
         </xsl:choose>
     </xsl:template>
-
 
     <xsl:template match="Corpus">
         <lat-corpus>
@@ -442,7 +442,14 @@ $LastChangedDate: 2013-08-14 11:25:31 +0200 (Wed, 14 Aug 2013) $
                 <ResourceType>Metadata</ResourceType>
             	<ResourceRef>
             		<xsl:if test="$localURI">
-            			<xsl:attribute name="lat:localURI" select="replace(.,'\.imdi','.cmdi')"/>
+            			<xsl:choose>
+            				<xsl:when test="matches(.,$translationService)">
+            					<!--<xsl:attribute name="lat:localURI" select="concat('hdl:',replace(.,'.*(1839/[0-9A-F\-]+).*','$1'))"/>-->
+            				</xsl:when>
+            				<xsl:otherwise>
+            					<xsl:attribute name="lat:localURI" select="replace(.,'\.imdi','.cmdi')"/>
+            				</xsl:otherwise>
+            			</xsl:choose>
             		</xsl:if>
             		<xsl:choose>
                         <!-- Check for archive handle attribute -->
@@ -450,7 +457,7 @@ $LastChangedDate: 2013-08-14 11:25:31 +0200 (Wed, 14 Aug 2013) $
                             <xsl:choose>
                                 <!-- MPI handle prefix? Use handle + @format=cmdi suffix -->
                                 <xsl:when test="starts-with(normalize-space(@ArchiveHandle), 'hdl:1839/')">
-                                	<xsl:value-of select="@ArchiveHandle"/>
+                                	<xsl:value-of select="replace(@ArchiveHandle,'@format=imdi','')"/>
                                 	<xsl:if test="$formatCMDI">
                                 		<xsl:text>@format=cmdi</xsl:text>
                                 	</xsl:if>
@@ -467,10 +474,10 @@ $LastChangedDate: 2013-08-14 11:25:31 +0200 (Wed, 14 Aug 2013) $
                         </xsl:when>
                         <!-- Fallback: use original link, append .cmdi. Resolve from base URI if available. -->
                         <xsl:when test="$uri-base=''">
-                        	<xsl:value-of select="replace(.,'\.imdi','.cmdi')"/>
+                        	<xsl:value-of select="replace(.,'\.imdi$','.cmdi')"/>
                         </xsl:when>
                         <xsl:otherwise>
-                            <xsl:value-of select="replace(resolve-uri(normalize-space(.), $uri-base),'\.imdi','.cmdi')"/>
+                            <xsl:value-of select="replace(resolve-uri(normalize-space(.), $uri-base),'\.imdi$','.cmdi')"/>
                         </xsl:otherwise>
                     </xsl:choose>
                 </ResourceRef>
