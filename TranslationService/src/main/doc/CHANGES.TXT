@@ -1,5 +1,11 @@
 Current version: ${project.artifactId}-${project.version}-r${revisionId}
 
+Changes for metadata-translator-1.5.0:
+- Reading of files from the local file system by internally rewriting public
+URLs to file paths (mapping configurable via optional context parameters)
+- Added a stylesheet (CMDI to IMDI) for the VALID profile
+- Fixes to the stylesheets for the LAT profiles
+
 Changes for metadata-translator-1.4.1:
 - Updated corpus structure 2 dependency to 1.1.2
 - Supporting redirects between HTTP and HTTPS
