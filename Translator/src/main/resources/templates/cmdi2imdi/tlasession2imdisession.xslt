@@ -5,6 +5,9 @@
     xmlns:lat="http://lat.mpi.nl/"
 	version="2.0" xpath-default-namespace="http://www.clarin.eu/cmd/">
     
+    <xsl:variable name="mediaFileMimeTypes" select="'^(video|audio|image)/.*$'" />
+    <xsl:variable name="writtenResourceMimeTypes" select="'^(^(video|audio|image))/.*$'" />
+    
     <xsl:template name="TLASESSION2IMDISESSION">
         <METATRANSCRIPT xmlns="http://www.mpi.nl/IMDI/Schema/IMDI"
             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"            
@@ -59,7 +62,7 @@
                     <xsl:apply-templates select="Actors/Actor" mode="TLASESSION2IMDISESSION"/>                
                 </Actors>
             </MDGroup>
-            <xsl:apply-templates select="Resources" mode="TLASESSION2IMDISESSION"/>
+            <xsl:apply-templates select="/CMD/Resources/ResourceProxyList" mode="TLASESSION2IMDISESSION" />
             <References />
         </Session>
     </xsl:template>
@@ -207,13 +210,17 @@
        </xsl:if>       
     </xsl:template>
     
-    <xsl:template match="Resources" mode="TLASESSION2IMDISESSION">
+    <xsl:template match="ResourceProxyList" mode="TLASESSION2IMDISESSION">
         <Resources>
-            <xsl:apply-templates select="MediaFile" mode="TLASESSION2IMDISESSION"/>
-            <xsl:apply-templates select="WrittenResource" mode="TLASESSION2IMDISESSION"/>
-            <xsl:apply-templates select="Source" mode="TLASESSION2IMDISESSION"/>            
+           <xsl:apply-templates mode="TLASESSION2IMDISESSION-MEDIAFILE" />
+           <xsl:apply-templates mode="TLASESSION2IMDISESSION-WRITTENRESOURCE" />
         </Resources>
     </xsl:template>
+    
+<!--    <xsl:template match="Resources" mode="TLASESSION2IMDISESSION">
+            <xsl:apply-templates select="WrittenResource" mode="TLASESSION2IMDISESSION"/>
+            <xsl:apply-templates select="Source" mode="TLASESSION2IMDISESSION"/>            
+    </xsl:template>-->
     
     <xsl:template match="descriptions" mode="TLASESSION2IMDISESSION">
         <xsl:for-each select="Description">
@@ -246,6 +253,26 @@
             <xsl:attribute name="Link"><xsl:value-of select="//ResourceProxy[@id eq current()/@ref]/ResourceRef/@lat:localURI"/></xsl:attribute>
             <xsl:value-of select="Description"/>
         </Description>
+    </xsl:template>
+    
+    <xsl:template match="ResourceProxy" mode="TLASESSION2IMDISESSION-MEDIAFILE">
+        <xsl:variable name="rpId" select="@id"/>
+        <xsl:choose>
+            <xsl:when test="//Resources/MediaFile[@ref=$rpId]">
+                <xsl:apply-templates select="//Resources/MediaFile[@ref=$rpId]" mode="TLASESSION2IMDISESSION"/>
+            </xsl:when>
+            <xsl:when test="matches(ResourceType/@mimetype, $mediaFileMimeTypes)">
+                <MediaFile>
+                    <ResourceLink><xsl:apply-templates select="." mode="create-resource-link-content"/></ResourceLink>
+                    <Type>...</Type>
+                    <Format><xsl:value-of select="ResourceType/@mimetype"/></Format>
+                    <Size>Unknown</Size>
+                    <Quality>Unknown</Quality>
+                    <RecordingConditions>Unknown</RecordingConditions>
+                    <Keys />
+                </MediaFile>
+            </xsl:when>
+        </xsl:choose>
     </xsl:template>
     
     <xsl:template match="MediaFile" mode="TLASESSION2IMDISESSION">        

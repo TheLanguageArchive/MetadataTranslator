@@ -23,6 +23,10 @@
             <ResourceType mimetype="text/x-eaf+xml">Resource</ResourceType>
             <ResourceRef lat:localURI="Annotations/NAR_Annalena_2a.eaf">hdl:1839/00-0000-0000-0009-56D8-1</ResourceRef>
          </ResourceProxy>
+         <ResourceProxy id="abc123">
+            <ResourceType mimetype="video/mpeg">Resource</ResourceType>
+            <ResourceRef lat:localURI="Media/video.mpg">hdl:1839/00-0000-0000-ABC-123</ResourceRef>
+         </ResourceProxy>
       </ResourceProxyList>
       <JournalFileProxyList/>
       <ResourceRelationList/>
