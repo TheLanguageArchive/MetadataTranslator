@@ -205,6 +205,27 @@
                 </Access>
                 <Keys/>
             </MediaFile>
+            
+            <MediaFile><!--CMDI2IMDI note: no MediaFile element was found for this resource, minimal information was generated on basis of ResourceProxy only-->
+                <ResourceLink ArchiveHandle="hdl:1839/00-0000-0000-ABC-123">http://archive/corpus/my-collection/Metadata/Media/video.mpg</ResourceLink>
+                <Type>Video</Type>
+                <Format>video/mpeg</Format>
+                <Size/>
+                <Quality>Unspecified</Quality>
+                <RecordingConditions>Unspecified</RecordingConditions>
+                <TimePosition>
+                    <Start>Unspecified</Start>
+                    <End>Unspecified</End>
+                </TimePosition>
+                <Access>
+                    <Availability/>
+                    <Date>Unspecified</Date>
+                    <Owner/>
+                    <Publisher/>
+                    <Contact/>
+                </Access>
+                <Keys/>
+            </MediaFile>
             <WrittenResource ResourceId="xx">
                 <ResourceLink ArchiveHandle="hdl:1839/00-0000-0000-0009-56D8-1">http://archive/corpus/my-collection/Metadata/Annotations/NAR_Annalena_2a.eaf</ResourceLink>
                 <MediaResourceLink/>
@@ -219,6 +240,34 @@
                     <Level>Unspecified</Level>
                 </Validation>
                 <Derivation>Annotation</Derivation>
+                <CharacterEncoding/>
+                <ContentEncoding/>
+                <LanguageId>Unspecified</LanguageId>
+                <Anonymized>Unspecified</Anonymized>
+                <Access>
+                    <Availability/>
+                    <Date>Unspecified</Date>
+                    <Owner/>
+                    <Publisher/>
+                    <Contact/>
+                </Access>
+                <Keys/>
+            </WrittenResource>
+            
+            <WrittenResource><!--CMDI2IMDI note: no WrittenResource element was found for this resource, minimal information was generated on basis of ResourceProxy only-->
+                <ResourceLink ArchiveHandle="hdl:1839/00-0000-0000-DEF-456">http://archive/corpus/my-collection/Metadata/Media/document.pdf</ResourceLink>
+                <MediaResourceLink/>
+                <Date>Unspecified</Date>
+                <Type>Unspecified</Type>
+                <SubType>Unspecified</SubType>
+                <Format>application/pdf</Format>
+                <Size>Unspecified</Size>
+                <Validation>
+                    <Type>Unspecified</Type>
+                    <Methodology>Unspecified</Methodology>
+                    <Level>Unspecified</Level>
+                </Validation>
+                <Derivation>Unspecified</Derivation>
                 <CharacterEncoding/>
                 <ContentEncoding/>
                 <LanguageId>Unspecified</LanguageId>
