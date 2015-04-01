@@ -212,6 +212,7 @@
     
     <xsl:template match="ResourceProxyList" mode="TLASESSION2IMDISESSION">
         <Resources>
+           <xsl:apply-templates mode="TLASESSION2IMDISESSION-SKIPPED" />
            <xsl:apply-templates mode="TLASESSION2IMDISESSION-MEDIAFILE" />
            <xsl:apply-templates mode="TLASESSION2IMDISESSION-WRITTENRESOURCE" />
            <xsl:apply-templates select="/CMD/Components/lat-session/Resources/Source" mode="TLASESSION2IMDISESSION" />
@@ -256,7 +257,22 @@
         </Description>
     </xsl:template>
     
-    <xsl:template match="ResourceProxy" mode="TLASESSION2IMDISESSION-MEDIAFILE">
+    <xsl:template match="ResourceProxy" mode="TLASESSION2IMDISESSION-SKIPPED">
+        <!-- ResourceProxies without a reference or mimetype get skipped -->
+        <xsl:if test="
+            not(matches(ResourceType/@mimetype, $mediaFileMimeTypes) 
+                or matches(ResourceType/@mimetype, $writtenResourceMimeTypes)) 
+            and not(//Resources/*[@ref=current()/@id])">
+            <xsl:message>ResourceProxy with id '<xsl:value-of select="@id" />' will be skipped. Reason: no referencing element or recognised mimetype.</xsl:message>
+            <xsl:comment>
+                <xsl:text>NOTE: CMDI2IMDI - ResourceProxy skipped because no reference or recognised mimetype present:</xsl:text>
+                <xsl:value-of select="concat(' [', @id, '] ')" />
+                <xsl:value-of select="ResourceRef"/>
+            </xsl:comment>
+        </xsl:if>
+    </xsl:template>
+    
+    <xsl:template match="ResourceProxy[ResourceType = 'Resource']" mode="TLASESSION2IMDISESSION-MEDIAFILE">
         <xsl:variable name="mediaFile" select="//Resources/MediaFile[@ref=current()/@id]" />
         <xsl:variable name="mimetype" select="ResourceType/@mimetype"/>
         <xsl:choose>
@@ -266,8 +282,9 @@
             </xsl:when>
             <xsl:when test="matches($mimetype, $mediaFileMimeTypes)">
                 <!-- No matching MediaFile, generate on basis of proxy alone -->
+                <xsl:message>A MediaFile element for ResourceProxy with id '<xsl:value-of select="@id" />' is generated on basis of mimetype <xsl:value-of select="$mimetype" /></xsl:message>
                 <MediaFile>
-                    <xsl:comment>CMDI2IMDI note: no MediaFile element was found for this resource, minimal information was generated on basis of ResourceProxy only</xsl:comment>
+                    <xsl:comment>NOTE: CMDI2IMDI - No MediaFile element was found for this resource, minimal information was generated on basis of ResourceProxy only</xsl:comment>
                     <ResourceLink><xsl:apply-templates select="." mode="create-resource-link-content"/></ResourceLink>
                     <Type>
                         <!-- Strip everything after the forward slash in the mimetype -->
@@ -323,8 +340,9 @@
             </xsl:when>
             <xsl:when test="matches(ResourceType/@mimetype, $writtenResourceMimeTypes)">
                 <!-- No matching MediaFile, generate on basis of proxy alone -->
+                <xsl:message>A WrittenResource element for ResourceProxy with id '<xsl:value-of select="@id" />' is generated on basis of mimetype <xsl:value-of select="ResourceType/@mimetype" /></xsl:message>
                 <WrittenResource>
-                    <xsl:comment>CMDI2IMDI note: no WrittenResource element was found for this resource, minimal information was generated on basis of ResourceProxy only</xsl:comment>
+                    <xsl:comment>NOTE: CMDI2IMDI - No WrittenResource element was found for this resource, minimal information was generated on basis of ResourceProxy only</xsl:comment>
                     <xsl:call-template name="generate-ResourceId"></xsl:call-template>
                     <ResourceLink><xsl:apply-templates select="." mode="create-resource-link-content"/></ResourceLink>
                     <MediaResourceLink />
