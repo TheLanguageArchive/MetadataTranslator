@@ -31,6 +31,11 @@
             <ResourceType mimetype="application/pdf">Resource</ResourceType>
             <ResourceRef lat:localURI="Media/document.pdf">hdl:1839/00-0000-0000-DEF-456</ResourceRef>
          </ResourceProxy>
+         <ResourceProxy id="ghi789">
+            <!-- Will be skipped, no mimetype or ref -->
+            <ResourceType>Resource</ResourceType>
+            <ResourceRef lat:localURI="Media/something.bmp">hdl:1839/00-0000-0000-GHI-789</ResourceRef>
+         </ResourceProxy>
       </ResourceProxyList>
       <JournalFileProxyList/>
       <ResourceRelationList/>

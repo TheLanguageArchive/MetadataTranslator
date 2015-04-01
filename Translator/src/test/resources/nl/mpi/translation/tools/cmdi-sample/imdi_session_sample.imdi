@@ -208,7 +208,7 @@
             
             <MediaFile><!--CMDI2IMDI note: no MediaFile element was found for this resource, minimal information was generated on basis of ResourceProxy only-->
                 <ResourceLink ArchiveHandle="hdl:1839/00-0000-0000-ABC-123">http://archive/corpus/my-collection/Metadata/Media/video.mpg</ResourceLink>
-                <Type>...</Type>
+                <Type>Video</Type>
                 <Format>video/mpeg</Format>
                 <Size/>
                 <Quality>Unspecified</Quality>
