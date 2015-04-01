@@ -5,8 +5,8 @@
     xmlns:lat="http://lat.mpi.nl/"
 	version="2.0" xpath-default-namespace="http://www.clarin.eu/cmd/">
     
-    <xsl:variable name="mediaFileMimeTypes" select="'^(video|audio|image)/.*$'" />
-    <xsl:variable name="writtenResourceMimeTypes" select="'^(^(video|audio|image))/.*$'" />
+    <xsl:variable name="mediaFileMimeTypes">^(video|audio|image)/.*$</xsl:variable>
+    <xsl:variable name="writtenResourceMimeTypes">^(text|application)/.*$</xsl:variable>
     
     <xsl:template name="TLASESSION2IMDISESSION">
         <METATRANSCRIPT xmlns="http://www.mpi.nl/IMDI/Schema/IMDI"
@@ -214,6 +214,7 @@
         <Resources>
            <xsl:apply-templates mode="TLASESSION2IMDISESSION-MEDIAFILE" />
            <xsl:apply-templates mode="TLASESSION2IMDISESSION-WRITTENRESOURCE" />
+           <xsl:apply-templates select="/CMD/Components/lat-session/Resources/Source" mode="TLASESSION2IMDISESSION" />
         </Resources>
     </xsl:template>
     
@@ -259,17 +260,31 @@
         <xsl:variable name="rpId" select="@id"/>
         <xsl:choose>
             <xsl:when test="//Resources/MediaFile[@ref=$rpId]">
+                <!-- A matching MediaFile element exists, transform from this -->
                 <xsl:apply-templates select="//Resources/MediaFile[@ref=$rpId]" mode="TLASESSION2IMDISESSION"/>
             </xsl:when>
             <xsl:when test="matches(ResourceType/@mimetype, $mediaFileMimeTypes)">
+                <!-- No matching MediaFile, generate on basis of proxy alone -->
                 <MediaFile>
+                    <xsl:comment>CMDI2IMDI note: no MediaFile element was found for this resource, minimal information was generated on basis of ResourceProxy only</xsl:comment>
                     <ResourceLink><xsl:apply-templates select="." mode="create-resource-link-content"/></ResourceLink>
-                    <Type>...</Type>
+                    <Type><!-- TODO --></Type>
                     <Format><xsl:value-of select="ResourceType/@mimetype"/></Format>
-                    <Size>Unknown</Size>
-                    <Quality>Unknown</Quality>
-                    <RecordingConditions>Unknown</RecordingConditions>
-                    <Keys />
+                    <Size>Unspecified</Size>
+                    <Quality>Unspecified</Quality>
+                    <RecordingConditions>Unspecified</RecordingConditions>
+                    <TimePosition>
+                        <Start>Unspecified</Start>
+                        <End>Unspecified</End>
+                    </TimePosition>
+                    <Access>
+                        <Availability/>
+                        <Date>Unspecified</Date>
+                        <Owner/>
+                        <Publisher/>
+                        <Contact/>
+                    </Access>
+                    <Keys/>
                 </MediaFile>
             </xsl:when>
         </xsl:choose>
@@ -292,7 +307,49 @@
             </Keys>
         </MediaFile>
     </xsl:template>
-    
+
+    <xsl:template match="ResourceProxy" mode="TLASESSION2IMDISESSION-WRITTENRESOURCE">
+        <xsl:variable name="rpId" select="@id"/>
+        <xsl:choose>
+            <xsl:when test="//Resources/WrittenResource[@ref=$rpId]">
+                <!-- A matching MediaFile element exists, transform from this -->
+                <xsl:apply-templates select="//Resources/WrittenResource[@ref=$rpId]" mode="TLASESSION2IMDISESSION"/>
+            </xsl:when>
+            <xsl:when test="matches(ResourceType/@mimetype, $writtenResourceMimeTypes)">
+                <!-- No matching MediaFile, generate on basis of proxy alone -->
+                <WrittenResource>
+                    <xsl:comment>CMDI2IMDI note: no WrittenResource element was found for this resource, minimal information was generated on basis of ResourceProxy only</xsl:comment>
+                    <xsl:call-template name="generate-ResourceId"></xsl:call-template>
+                    <ResourceLink><xsl:apply-templates select="." mode="create-resource-link-content"/></ResourceLink>
+                    <MediaResourceLink />
+                    <Date>Unspecified</Date>
+                    <Type>Unspecified</Type>
+                    <SubType>Unspecified</SubType>
+                    <Format><xsl:value-of select="ResourceType/@mimetype"/></Format>
+                    <Size>Unspecified</Size>
+                    <Validation>
+                        <Type>Unspecified</Type>
+                        <Methodology>Unspecified</Methodology>
+                        <Level>Unspecified</Level>
+                    </Validation>
+                    <Derivation>Unspecified</Derivation>
+                    <CharacterEncoding/>
+                    <ContentEncoding/>
+                    <LanguageId>Unspecified</LanguageId>
+                    <Anonymized>Unspecified</Anonymized>
+                    <Access>
+                        <Availability/>
+                        <Date>Unspecified</Date>
+                        <Owner/>
+                        <Publisher/>
+                        <Contact/>
+                    </Access>
+                    <Keys/>
+                </WrittenResource>
+            </xsl:when>
+        </xsl:choose>
+    </xsl:template>
+
     <xsl:template match="WrittenResource" mode="TLASESSION2IMDISESSION">
         <WrittenResource>
             <xsl:call-template name="generate-ResourceId"></xsl:call-template>

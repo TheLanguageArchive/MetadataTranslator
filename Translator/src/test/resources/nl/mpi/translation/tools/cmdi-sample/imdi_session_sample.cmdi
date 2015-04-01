@@ -27,6 +27,10 @@
             <ResourceType mimetype="video/mpeg">Resource</ResourceType>
             <ResourceRef lat:localURI="Media/video.mpg">hdl:1839/00-0000-0000-ABC-123</ResourceRef>
          </ResourceProxy>
+         <ResourceProxy id="def456">
+            <ResourceType mimetype="application/pdf">Resource</ResourceType>
+            <ResourceRef lat:localURI="Media/document.pdf">hdl:1839/00-0000-0000-DEF-456</ResourceRef>
+         </ResourceProxy>
       </ResourceProxyList>
       <JournalFileProxyList/>
       <ResourceRelationList/>
