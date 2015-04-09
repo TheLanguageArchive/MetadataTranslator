@@ -1,79 +1,91 @@
-MetadataTranslator ${project.artifactId}-${project.version}-r${buildNumber} install notes:
+MetadataTranslator ${project.artifactId}-${project.version}-r${buildNumber}
+install notes:
 
 
-Software requirements:
-----------------------
-1. Server oriented OS capable of running the specified version of Tomcat.
+Software requirements: ---------------------- 1. Server oriented OS capable of
+running the specified version of Tomcat.
 
-2. Apache Tomcat 6.x . Other JAVA servlet containers should be possible but were not tested.
+2. Apache Tomcat 6.x . Other JAVA servlet containers should be possible but were
+not tested.
 
 
-Installation:
--------------
-1. Download and install Apache Tomcat 6.x from:
-http://tomcat.apache.org
-See available documentation.
+Installation: ------------- 1. Download and install Apache Tomcat 6.x from:
+http://tomcat.apache.org See available documentation.
 
-2. Deploy MetadataTranslator-${project.artifactId}-${project.version}-r${buildNumber}.war to your Tomcat
-installation.
+2. Deploy
+MetadataTranslator-${project.artifactId}-${project.version}-r${buildNumber}.war
+to your Tomcat installation.
 
-5. On the unpacked .war:
-5.1. Set up WEB-INF/classes/log4j.xml for desired logging.
-5.2. Set up tomcat context parameter 'allowFileProtocol' (true/false). See 
-META-INF/context.xml. Warning, setting up 'allowFileProtocol' to 'true' raises
-security problems.
-5.3. (Optional) The following optional context parameters can be set:
-	- 'nl.mpi.metadatatranslator.handleResolutionCacheExpiry'
+5. On the unpacked .war: 5.1. Set up WEB-INF/classes/log4j.xml for desired
+logging. 5.2. Set up tomcat context parameter 'allowFileProtocol' (true/false).
+See META-INF/context.xml. Warning, setting up 'allowFileProtocol' to 'true'
+raises security problems. 5.3. (Optional) The following optional context
+parameters can be set: - 'nl.mpi.metadatatranslator.handleResolutionCacheExpiry'
 
-		It determines the amount of time to keep handle resolution results (in seconds).
-		Set to 0 to disable caching. Default value is 600 (ten minutes).
-	
+		It determines the amount of time to keep handle resolution results (in
+		seconds). Set to 0 to disable caching. Default value is 600 (ten
+		minutes).
+
 	- 'nl.mpi.translation.imdi2cmdiXSLT'
-	
-		Path on the local file system to the (master) IMDI to CMDI 
-                stylesheet. Leave empty or unspecified to fall back to internal
-                stylesheet 'imdi2cmdi.xslt'.
-	
+
+		Path on the local file system to the (master) IMDI to CMDI stylesheet.
+		Leave empty or unspecified to fall back to internal stylesheet
+		'imdi2cmdi.xslt'.
+
 	- 'nl.mpi.translation.cmdi2imdiXSLT'
 
-		Path on the local file system to the (master) CMDI to IMDI 
-                stylesheet. Leave empty or unspecified to fall back to internal
-                stylesheet 'cmdi2imdiMaster.xslt'.
+		Path on the local file system to the (master) CMDI to IMDI stylesheet.
+		Leave empty or unspecified to fall back to internal stylesheet
+		'cmdi2imdiMaster.xslt'.
 
         - 'nl.mpi.metadatatranslator.localFilesPublicBaseUrl'
 
                 Defines a base URL for metadata resources that can be read from
                 the local filesystem by the translation services (local path to
-                be defined in the 'localFilesPathOnFilesystem' parameter).
-                Leave out or set to empty to prevent any mapping from public
-                URLs to local paths from happening.
+                be defined in the 'localFilesPathOnFilesystem' parameter). Leave
+                out or set to empty to prevent any mapping from public URLs to
+                local paths from happening.
 
         - 'nl.mpi.metadatatranslator.localFilesPathOnFilesystem'
 
                 Defines the base location that corresponds with the base URL
-                defined in the 'localFilesPublicBaseUrl' parameter. Should be
-                a path, not a URL (i.e. should start with '/', not 'file:'.)
-                Leave out or set to empty to prevent any mapping from public
-                URLs to local paths from happening.
-                
-5.4 (Optional - but required on lux17) Reconfigure the wiring that sets the HandleResolver
-implementation. Edit WEB-INF/classes/applicationContext.xml and replace the following:
+                defined in the 'localFilesPublicBaseUrl' parameter. Should be a
+                path, not a URL (i.e. should start with '/', not 'file:'.) Leave
+                out or set to empty to prevent any mapping from public URLs to
+                local paths from happening.
 
-		<bean class="nl.mpi.archiving.corpusstructure.core.handle.HandleApiResolver" />
+    	- 'nl.mpi.translation.imdi2cmdiClientSideStylesheet'
+
+                If present and non-empty, this value gets inserted into a
+                processing instruction in the header of the IMDI to CMDI output.
+                The stylesheet is typically called 'browser_cmdi2html.xsl'. Make
+                sure that the specified URL has the SAME SCHEME and SAME HOST as
+                the translation service itself, otherwise the client's browser
+                will most likely reject the stylesheet! It can also be a
+                relative URL (e.g. "/browser_cmdi2html.xsl").
+
+5.4 (Optional - but required on lux17) Reconfigure the wiring that sets the
+HandleResolver implementation. Edit WEB-INF/classes/applicationContext.xml and
+replace the following:
+
+		<bean
+		class="nl.mpi.archiving.corpusstructure.core.handle.HandleApiResolver" />
 
 	with
 
-		<bean class="nl.mpi.archiving.corpusstructure.core.handle.HttpHandleResolver" />
+		<bean
+		class="nl.mpi.archiving.corpusstructure.core.handle.HttpHandleResolver" />
 
 6. Start Tomcat.
 
 7. Check whether the correct version of the application is running by browsing
 to {applicationBaseUrl}/version
 
-8. You can check and monitor if the running service is working properly by checking the following URL's:
-CMDI to IMDI:
-https://corpus1.mpi.nl/ds/TranslationService/translate?in=1839/00-37EBCC6D-04A5-4598-88E2-E0F390D5FCE1&outFormat=imdi
-(handle matches "leslla" CMDI collection)
+8. You can check and monitor if the running service is working properly by
+checking the following URL's: CMDI to IMDI:
+https://corpus1.mpi.nl/ds/TranslationService/translate?in=1839/00-37EBCC6D-04A5-
+4598-88E2-E0F390D5FCE1&outFormat=imdi (handle matches "leslla" CMDI collection)
 IMDI to CMDI:
-https://corpus1.mpi.nl/ds/TranslationService/translate?in=1839/00-0000-0000-0009-294C-9&outFormat=cmdi
-(handle matches "kleve-route" IMDI on the Demo PeWi corpus)
+https://corpus1.mpi.nl/ds/TranslationService/translate?in=1839/00-0000-0000-0009
+-294C-9&outFormat=cmdi (handle matches "kleve-route" IMDI on the Demo PeWi
+corpus)
