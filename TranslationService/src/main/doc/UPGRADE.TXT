@@ -19,7 +19,8 @@ The following optional context parameter can now be set to specify the URL of a
                 processing instruction in the header of the IMDI to CMDI output.
                 Make sure that the specified URL has the SAME SCHEME and SAME 
                 HOST as the translation service itself, otherwise the client's 
-                browser will most likely reject the stylesheet!
+                browser will most likely reject the stylesheet! The stylesheet
+                is typically called 'browser_cmdi2html.xsl'.
 
 UPGRADING FROM 1.4.x TO 1.5.0
 
