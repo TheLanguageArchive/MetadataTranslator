@@ -33,6 +33,9 @@ $LastChangedDate: 2013-08-14 11:25:31 +0200 (Wed, 14 Aug 2013) $
 	
 	<!--<xsl:param name="base" select="base-uri(document(''))"/>-->
 	<xsl:param name="base" select="static-base-uri()"/>
+        
+    <!-- OPTIONAL: a client side transformation URL, inserted as a processing instruction if non-empty -->
+	<xsl:param name="imdi2cmdi-client-side-stylesheet-href" required="no" />
 	
 	<xsl:variable name="sil-lang-top" select="document(resolve-uri('sil_to_iso6393.xml',$base))/sil:languages"/>
 	<xsl:key name="sil-lookup" match="sil:lang" use="sil:sil"/>
@@ -76,6 +79,13 @@ $LastChangedDate: 2013-08-14 11:25:31 +0200 (Wed, 14 Aug 2013) $
 	</xsl:template>
 	
 	<xsl:template match="/">
+		<xsl:if test="normalize-space($imdi2cmdi-client-side-stylesheet-href) != ''">
+			<!-- insert client side XML instruction -->
+			<xsl:processing-instruction name="xml-stylesheet">
+			    <xsl:value-of select="concat('type=&quot;text/xsl&quot; href=&quot;', $imdi2cmdi-client-side-stylesheet-href, '&quot;')"/>
+			</xsl:processing-instruction>
+		</xsl:if>
+            
 		<xsl:variable name="fixVocab">
 			<xsl:apply-templates mode="fixVocab"/>
 		</xsl:variable>
