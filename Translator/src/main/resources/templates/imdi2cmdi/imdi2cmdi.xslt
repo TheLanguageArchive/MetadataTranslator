@@ -253,9 +253,24 @@ $LastChangedDate: 2013-08-14 11:25:31 +0200 (Wed, 14 Aug 2013) $
                     </Name>
                 </CorpusLink>
             </xsl:for-each>
-            <xsl:if test="normalize-space(@CatalogueLink)!=''">
-            	<!--<xsl:variable name="cat" select="resolve-uri(@CatalogueLink,$uri-base)"/>-->
-            	<xsl:variable name="cat" select="replace(@CatalogueHandle,'hdl:','http://hdl.handle.net/')"/>
+            <xsl:if test="normalize-space(@CatalogueLink)!='' or normalize-space(@CatalogueHandle)!=''">
+            	<xsl:variable name="cat" as="xs:string?">
+            		<xsl:variable name="hdl" select="replace(@CatalogueHandle,'hdl:','http://hdl.handle.net/')"/>
+            		<xsl:choose>
+            			<xsl:when test="normalize-space($hdl)!='' and doc-available($hdl)">
+            				<!-- handle works -->
+            				<xsl:sequence select="$hdl"/>
+            			</xsl:when>
+            			<xsl:when test="normalize-space(@CatalogueLink)!=''">
+            				<!-- try link below -->
+            				<xsl:sequence select="@CatalogueLink"/>
+            			</xsl:when>
+            			<xsl:otherwise>
+            				<!-- report failing handle below -->
+            				<xsl:sequence select="$hdl"/>
+            			</xsl:otherwise>
+            		</xsl:choose>
+            	</xsl:variable>
             	<xsl:choose>
             		<xsl:when test="doc-available($cat)">
             			<xsl:variable name="catalogue" select="doc($cat)"/>
