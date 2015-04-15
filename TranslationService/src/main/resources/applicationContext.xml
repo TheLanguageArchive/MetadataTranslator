@@ -26,6 +26,12 @@
         <constructor-arg name="urlStreamResolver" ref="urlStreamResolver" />
         <constructor-arg name="imdi2cmdiXsltPath" value="${nl.mpi.translation.imdi2cmdiXSLT:}" /> <!-- context parameter -->
         <constructor-arg name="cmdi2imdiXsltPath" value="${nl.mpi.translation.cmdi2imdiXSLT:}" /> <!-- context parameter -->
+        <property name="transformationParameters">
+            <!-- map some context parameters (value) to XSLT parameters (key) passed to the stylesheets on every transform -->
+            <map>
+                <entry key="imdi2cmdi-client-side-stylesheet-href" value="${nl.mpi.translation.imdi2cmdiClientSideStylesheet:}" />
+            </map>
+        </property>
     </bean>
  
 

@@ -1,5 +1,9 @@
 Current version: ${project.artifactId}-${project.version}-r${revisionId}
 
+Changes for metadata-translator-1.5.1:
+- Optional insertion of client side stylesheet processing instruction for CMDI
+- Updates to the 'IMDI to CMDI' and 'lat-session to IMDI' transformations
+
 Changes for metadata-translator-1.5.0:
 - Reading of files from the local file system by internally rewriting public
 URLs to file paths (mapping configurable via optional context parameters)
