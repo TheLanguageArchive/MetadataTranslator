@@ -58,7 +58,7 @@ public class VersionInfo {
                 logger.warn("Version property not present in manifest. Returning 'UNKNWON'.");
                 return "UNKNOWN";
             } else {
-                return String.format("%s r%s", version, buildNumber);
+                return String.format("%s-%s", version, buildNumber);
             }
         } catch (IOException ioEx) {
             logger.warn("Could not read version info from manifest", ioEx);
