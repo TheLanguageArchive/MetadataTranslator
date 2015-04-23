@@ -61,7 +61,7 @@
         <dependency>
             <groupId>nl.mpi.corpusstructure</groupId>
             <artifactId>corpus-structure-2-core</artifactId>
-            <version>1.1.4</version>
+            <version>1.1.6</version>
         </dependency>
 	<!-- Testing -->
 	<dependency>
