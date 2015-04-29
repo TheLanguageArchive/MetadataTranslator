@@ -102,7 +102,7 @@
             <EthnicGroup>Unspecified</EthnicGroup>
             <Age>Unspecified</Age>
             <BirthDate><xsl:value-of select="child::birthYear"></xsl:value-of></BirthDate>
-            <Sex Link="http://www.mpi.nl/IMDI/Schema/Actor-Sex.xml" Type="ClosedVocabulary">concat(upper-case(substring(<xsl:value-of select="child::sex"/>,1,1)),substring(<xsl:value-of select="child::sex"/>, 2)</Sex>
+            <Sex Link="http://www.mpi.nl/IMDI/Schema/Actor-Sex.xml" Type="ClosedVocabulary"><xsl:value-of select="concat(upper-case(substring(child::sex,1,1)),substring(child::sex,2))"/></Sex>
             <Education/>
             <Anonymized Link="http://www.mpi.nl/IMDI/Schema/Boolean.xml" Type="ClosedVocabulary">Unspecified</Anonymized>
             <Contact>
