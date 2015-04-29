@@ -34,7 +34,7 @@
              <xsl:when test="child::ResourceType = 'Metadata'">
                  <CorpusLink>
                      <xsl:variable name="idref"><xsl:value-of select="@id" /></xsl:variable>
-                     <xsl:attribute name="Name"><xsl:value-of select="//CorpusLink[@ref=$idref]/CorpusLinkContent/@Name"/></xsl:attribute>
+                     <xsl:attribute name="Name"><xsl:value-of select="//CorpusLink[@ref=$idref]/Name"/></xsl:attribute>
                      <xsl:variable name="handle" select="tla:getHandleWithoutFormat(ResourceRef,'imdi')"/>
                      <xsl:if test="string-length($handle) > 0">
                          <xsl:attribute name="ArchiveHandle" select="$handle" />
@@ -46,13 +46,15 @@
     </xsl:template>
     
     <xsl:template match="lat-corpus" mode="TLACOLLECTION2CORPUS_HISTORY">
-        <xsl:choose>
-            <xsl:when test="normalize-space(child::History)!=''">
-                <History>
+        <History>
+            <xsl:if test="normalize-space(child::History)!=''">
                     <xsl:value-of select="child::History"/>
-                </History>
-            </xsl:when>
-        </xsl:choose>
+                    <xsl:text> </xsl:text>
+            </xsl:if>
+            <xsl:text>NAME:tlacollection2corpus.xslt DATE:</xsl:text>
+            <xsl:value-of select="current-dateTime()"/>
+            <xsl:text>.</xsl:text>
+        </History>
     </xsl:template>
         
     <xsl:template match="lat-corpus" mode="TLACOLLECTION2CORPUS">

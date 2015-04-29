@@ -2,30 +2,75 @@ GENERAL
 
 To upgrade from the previous version:
 
-Deploy MetadataTranslator-${project.artifactId}-${project.version}-r${buildNumber}.war 
-to the servlet container where MetadataTranslator was previously running. 
+Deploy the WAR file MetadataTranslator-${project.artifactId}-${project.version}-r${buildNumber}.war
+to the servlet container where MetadataTranslator was previously running.
 
-UPGRADING FROM ANY EARLIER VERSION TO 1.4
+In the case of staging deployment on lux17, make sure to re-wire the
+HandleResolver implementation. See the installation instructions (step 5.4) for
+details.
+
+UPGRADING FROM 1.5.0 TO 1.5.1
+
+The following optional context parameter can now be set to specify the URL of a
+*client side* stylesheet:
+
+    - 'nl.mpi.translation.imdi2cmdiClientSideStylesheet'
+
+                If present and non-empty, this value gets inserted into a
+                processing instruction in the header of the IMDI to CMDI output.
+                The stylesheet is typically called 'browser_cmdi2html.xsl'.
+
+                Make sure that the specified URL has the SAME SCHEME and SAME
+                HOST as the translation service itself, otherwise the client's
+                browser will most likely reject the stylesheet! It can also be a
+                relative URL (e.g. "/browser_cmdi2html.xsl").
+
+UPGRADING FROM 1.4.x TO 1.5.0
+
+The following optional context parameters can now be set to allow for internal
+rewriting of public URLs to local file system paths:
+
+        - 'nl.mpi.metadatatranslator.localFilesPublicBaseUrl'
+
+                Defines a base URL for metadata resources that can be read from
+                the local filesystem by the translation services (local path to
+                be defined in the 'localFilesPathOnFilesystem' parameter). Leave
+                out or set to empty to prevent any mapping from public URLs to
+                local paths from happening.
+
+        - 'nl.mpi.metadatatranslator.localFilesPathOnFilesystem'
+
+                Defines the base location that corresponds with the base URL
+                defined in the 'localFilesPublicBaseUrl' parameter. Should be a
+                path, not a URL (i.e. should start with '/', not 'file:'.) Leave
+                out or set to empty to prevent any mapping from public URLs to
+                local paths from happening.
+
+UPGRADING FROM ANY EARLIER VERSION TO 1.4.x
 
 The following optional context parameters can now be set:
 
 	- 'nl.mpi.metadatatranslator.handleResolutionCacheExpiry'
 
-		It determines the amount of time to keep handle resolution results (in seconds).
-		Set to 0 to disable caching. Default value is 600 (ten minutes).
-	
+		It determines the amount of time to keep handle resolution results (in
+		seconds). Set to 0 to disable caching. Default value is 600 (ten
+		minutes).
+
 	- 'nl.mpi.translation.imdi2cmdiXSLT'
-	
-		Path on the local file system to the (master) IMDI to CMDI stylesheet. Leave empty
-		or unspecified to fall back to internal stylesheet 'imdi2cmdi.xslt'.
-	
+
+		Path on the local file system to the (master) IMDI to CMDI stylesheet.
+		Leave empty or unspecified to fall back to internal stylesheet
+		'imdi2cmdi.xslt'.
+
 	- 'nl.mpi.translation.cmdi2imdiXSLT'
 
-		Path on the local file system to the (master) CMDI to IMDI stylesheet. Leave empty
-		or unspecified to fall back to internal stylesheet 'cmdi2imdiMaster.xslt'.
-		
-Using the latter two parameters, stylesheets can be maintained outside the application
-context, allowing for fixes and other updates without redeploying the translation service.
-To bootstrap this, copy the embedded stylesheets from the 'xslt-templates' directory
-in this package. Notice that these are *not* used by the application by default, as it
-takes by default the stylesheets packaged as resources in the metadata-translator JAR.
+		Path on the local file system to the (master) CMDI to IMDI stylesheet.
+		Leave empty or unspecified to fall back to internal stylesheet
+		'cmdi2imdiMaster.xslt'.
+
+Using the latter two parameters, stylesheets can be maintained outside the
+application context, allowing for fixes and other updates without redeploying
+the translation service. To bootstrap this, copy the embedded stylesheets from
+the 'xslt-templates' directory in this package. Notice that these are *not* used
+by the application by default, as it takes by default the stylesheets packaged
+as resources in the metadata-translator JAR.

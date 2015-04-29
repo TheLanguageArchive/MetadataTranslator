@@ -62,24 +62,25 @@ import org.slf4j.LoggerFactory;
  *
  */
 public class TranslatorImpl implements Translator {
-    
+
     private final static Logger logger = LoggerFactory.getLogger(TranslatorImpl.class);
     private final static String SAXON_TRANSFORMER_IMPL_CLASS_NAME = "net.sf.saxon.TransformerFactoryImpl";
-    
+
     private final static URL DEFAULT_CMDI2IMDI_XSLT = TranslatorImpl.class.getClassLoader().getResource("templates/cmdi2imdi/cmdi2imdiMaster.xslt");
     private final static URL DEFAULT_IMDI2CMDI_XSLT = TranslatorImpl.class.getClassLoader().getResource("templates/imdi2cmdi/imdi2cmdi.xslt");
-    
+
     private final static Pattern CMDI_URL_PATTERN = Pattern.compile("^.*\\.cmdi(\\?.*)?$", Pattern.CASE_INSENSITIVE);
     private final static Pattern IMDI_URL_PATTERN = Pattern.compile("^.*\\.imdi(\\?.*)?$", Pattern.CASE_INSENSITIVE);
-    
+
     private final TransformerFactory transfFactory;
     private final XMLInputFactory xmlInputFactory;
     private final Templates cmdi2imdiCachedXSLT;
     private final Templates imdi2cmdiCachedXSLT;
     private Map<String, Object> transformationParameters;
-    
-    public TranslatorImpl() throws TransformerConfigurationException, IOException {
-        this(DEFAULT_IMDI2CMDI_XSLT, DEFAULT_CMDI2IMDI_XSLT);
+    private final UrlStreamResolver urlStreamResolver;
+
+    public TranslatorImpl(UrlStreamResolver urlStreamResolver) throws TransformerConfigurationException, IOException {
+        this(DEFAULT_IMDI2CMDI_XSLT, DEFAULT_CMDI2IMDI_XSLT, urlStreamResolver);
     }
 
     /**
@@ -88,14 +89,16 @@ public class TranslatorImpl implements Translator {
      * transformation stylesheet (null to use default)
      * @param cmdi2imdiXsltPath path to local file location of the CMDI to IMDI
      * transformation stylesheet (null to use default)
+     * @param urlStreamResolver
      * @throws MalformedURLException
      * @throws TransformerConfigurationException
      * @throws IOException
      */
-    public TranslatorImpl(String imdi2cmdiXsltPath, String cmdi2imdiXsltPath) throws MalformedURLException, TransformerConfigurationException, IOException {
+    public TranslatorImpl(String imdi2cmdiXsltPath, String cmdi2imdiXsltPath, UrlStreamResolver urlStreamResolver) throws MalformedURLException, TransformerConfigurationException, IOException {
         this(
                 (Strings.isNullOrEmpty(imdi2cmdiXsltPath) ? DEFAULT_IMDI2CMDI_XSLT : new File(imdi2cmdiXsltPath).toURI().toURL()),
-                (Strings.isNullOrEmpty(cmdi2imdiXsltPath) ? DEFAULT_CMDI2IMDI_XSLT : new File(cmdi2imdiXsltPath).toURI().toURL()));
+                (Strings.isNullOrEmpty(cmdi2imdiXsltPath) ? DEFAULT_CMDI2IMDI_XSLT : new File(cmdi2imdiXsltPath).toURI().toURL()),
+                urlStreamResolver);
     }
 
     /**
@@ -108,23 +111,25 @@ public class TranslatorImpl implements Translator {
      * @throws TransformerConfigurationException
      * @throws IOException
      */
-    public TranslatorImpl(final URL imdi2CmdiXsltLocation, final URL cmdi2ImdiXsltLocation) throws TransformerConfigurationException, IOException {
+    public TranslatorImpl(final URL imdi2CmdiXsltLocation, final URL cmdi2ImdiXsltLocation, UrlStreamResolver urlStreamResolver) throws TransformerConfigurationException, IOException {
+        this.urlStreamResolver = urlStreamResolver;
+
         transfFactory = createTransformerFactory();
         transfFactory.setErrorListener(new TranslationServiceErrorListener(logger));
         logger.debug("Instantiated XML transformer factory of type {}", transfFactory.getClass());
-        
+
         xmlInputFactory = XMLInputFactory.newInstance();
         logger.debug("Instantiated XML input factory of type {}", xmlInputFactory.getClass());
-        
+
         cmdi2imdiCachedXSLT = initTemplates(cmdi2ImdiXsltLocation);
         imdi2cmdiCachedXSLT = initTemplates(imdi2CmdiXsltLocation);
-        
+
         logger.info("Translator initialized");
         logger.debug("Using XSLT Transformer: '{}'", cmdi2imdiCachedXSLT.getClass());
         logger.info("Using CMDI2IMDI stylesheet: '{}'", cmdi2ImdiXsltLocation);
         logger.info("Using IMDI2CMDI stylesheet: '{}'", imdi2CmdiXsltLocation);
     }
-    
+
     private Templates initTemplates(URL xsltURL) throws FileNotFoundException, TransformerConfigurationException, IOException {
         if (xsltURL == null) {
             throw new FileNotFoundException("CMDI2IMDI stylesheet: '" + xsltURL
@@ -174,9 +179,8 @@ public class TranslatorImpl implements Translator {
      */
     @Override
     public String getIMDI(URL cmdiFileURL, String serviceURI) throws TransformerException, XMLStreamException, IOException {
-
         //set up input
-        final InputStream input = cmdiFileURL.openStream();
+        final InputStream input = urlStreamResolver.getStream(cmdiFileURL);
         try {
             final XMLStreamReader xmlStreamReader = xmlInputFactory.createXMLStreamReader(input, "UTF-8");
             try {
@@ -198,7 +202,7 @@ public class TranslatorImpl implements Translator {
                     //translate document
                     transform(cmdi2imdiCachedXSLT, source, result, serviceURI, inputUrl);
                 }
-                
+
                 sw.flush();
                 return sw.toString();
             } finally {
@@ -226,7 +230,7 @@ public class TranslatorImpl implements Translator {
     public String getCMDI(URL imdiFileURL, String serviceURI) throws TransformerException, XMLStreamException, IOException {
 
         //set up input
-        final InputStream input = imdiFileURL.openStream();
+        final InputStream input = urlStreamResolver.getStream(imdiFileURL);
         try {
             XMLStreamReader xmlStreamReader = xmlInputFactory.createXMLStreamReader(input, "UTF-8");
             try {
@@ -247,7 +251,7 @@ public class TranslatorImpl implements Translator {
                     }
                     transform(imdi2cmdiCachedXSLT, source, result, serviceURI, inputUrl);
                 }
-                
+
                 sw.flush();
                 return sw.toString();
             } finally {
@@ -270,7 +274,7 @@ public class TranslatorImpl implements Translator {
         }
         transformer.transform(source, result);
     }
-    
+
     private void writeURLContentsToStream(URL cmdiFileURL, StringWriter sw) throws IOException {
         final InputStream urlInputStream = cmdiFileURL.openConnection().getInputStream();
         try {
@@ -287,16 +291,16 @@ public class TranslatorImpl implements Translator {
             urlInputStream.close();
         }
     }
-    
+
     @Override
     public void setTransformationParameters(Map<String, Object> params) {
         this.transformationParameters = params;
     }
-    
+
     private static boolean isCmdiUrl(String cmdiFileURL) {
         return CMDI_URL_PATTERN.matcher(cmdiFileURL).matches();
     }
-    
+
     private static boolean isImdiURl(String imdiFileURL) {
         return IMDI_URL_PATTERN.matcher(imdiFileURL).matches();
     }

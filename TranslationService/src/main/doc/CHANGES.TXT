@@ -1,7 +1,27 @@
-Current version: ${project.artifactId}-${project.version}-r${buildNumber}
+Current version: ${project.artifactId}-${project.version}-r${revisionId}
 
-Changes for metadata-translator-1.4:
-...
+Changes for metadata-translator-1.5.2:
+- Updated corpus-structure-2 dependency to version 1.1.6
+
+Changes for metadata-translator-1.5.1:
+- Optional insertion of client side stylesheet processing instruction for CMDI
+- Updates to the 'IMDI to CMDI' and 'lat-session to IMDI' transformations
+
+Changes for metadata-translator-1.5.0:
+- Reading of files from the local file system by internally rewriting public
+URLs to file paths (mapping configurable via optional context parameters)
+- Added a stylesheet (CMDI to IMDI) for the VALID profile
+- Fixes to the stylesheets for the LAT profiles
+
+Changes for metadata-translator-1.4.1:
+- Updated corpus structure 2 dependency to 1.1.2
+- Supporting redirects between HTTP and HTTPS
+
+Changes for metadata-translator-1.4.0:
+- Usage of corpus structure 2 handle resolver, by default Handle API implementation
+- Extended and additional stylesheets
+- Possibility to use detached stylesheets instead by configuring their locations on disk
+- Improved input format detection
 
 Changes for metadata-translator-1.3.1:
 - HTTP redirect codes returned by the handle server: 301, 302 and 307 are now

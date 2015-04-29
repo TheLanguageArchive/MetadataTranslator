@@ -15,17 +15,29 @@
         class="org.springframework.web.context.support.ServletContextPropertyPlaceholderConfigurer">
         <property name="ignoreUnresolvablePlaceholders" value="true" />
     </bean>
+    
+    <bean id="urlStreamResolver" class="nl.mpi.translation.tools.LocalFileAwareUrlStreamResolver">
+        <constructor-arg name="baseUrl" value="${nl.mpi.metadatatranslator.localFilesPublicBaseUrl:}" />     <!-- context parameter -->    
+        <constructor-arg name="basePath" value="${nl.mpi.metadatatranslator.localFilesPathOnFilesystem:}" /> <!-- context parameter -->
+    </bean>
 
     <!-- Running instance of the translator service should use the actual implementations of the translator -->
     <bean id="translator" class="nl.mpi.translation.tools.TranslatorImpl">
-        <constructor-arg name="imdi2cmdiXsltPath" value="${nl.mpi.translation.imdi2cmdiXSLT:}" />
-        <constructor-arg name="cmdi2imdiXsltPath" value="${nl.mpi.translation.cmdi2imdiXSLT:}" />
+        <constructor-arg name="urlStreamResolver" ref="urlStreamResolver" />
+        <constructor-arg name="imdi2cmdiXsltPath" value="${nl.mpi.translation.imdi2cmdiXSLT:}" /> <!-- context parameter -->
+        <constructor-arg name="cmdi2imdiXsltPath" value="${nl.mpi.translation.cmdi2imdiXSLT:}" /> <!-- context parameter -->
+        <property name="transformationParameters">
+            <!-- map some context parameters (value) to XSLT parameters (key) passed to the stylesheets on every transform -->
+            <map>
+                <entry key="imdi2cmdi-client-side-stylesheet-href" value="${nl.mpi.translation.imdi2cmdiClientSideStylesheet:}" />
+            </map>
+        </property>
     </bean>
  
 
     <!-- Running instance of the translator service should use the http handle resolver -->     
     <bean id="handleResolver" class="nl.mpi.archiving.corpusstructure.core.handle.CachingHandleResolver">
-        <!-- Cache resolver results for 5 minutes -->
+        <!-- Cache resolver results for 10 minutes -->
         <constructor-arg>
             <bean class="nl.mpi.archiving.corpusstructure.core.handle.HandleApiResolver" />
         </constructor-arg>

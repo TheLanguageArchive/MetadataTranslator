@@ -1,12 +1,12 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <packaging>war</packaging>
 
     <parent>
 	<groupId>nl.mpi.translation</groupId>
 	<artifactId>metadata-translator-parent</artifactId>
-	<version>1.5-SNAPSHOT</version>
+	<version>1.5.2</version>
     </parent>
 
     <artifactId>metadata-translation-service</artifactId>
@@ -15,92 +15,91 @@
     <description>A Jersey JAX-RS service to translate from CMDI to IMDI and vice-versa.</description>
 
     <properties>
-	<log.appender>ROLL</log.appender>
-	<log.level.translationservice>WARN</log.level.translationservice>
-	<jersey.version>1.18.2</jersey.version>
-	<spring.version>3.0.7.RELEASE</spring.version>
+        <log.appender>ROLL</log.appender>
+        <log.level.translationservice>WARN</log.level.translationservice>
+        <jersey.version>1.18.3</jersey.version>
+        <spring.version>3.0.7.RELEASE</spring.version>
     </properties>
 
     <dependencies>
-	<dependency>
-	    <groupId>${project.groupId}</groupId>
-	    <artifactId>metadata-translator</artifactId>
-	    <version>${project.version}</version>
-	</dependency>
-	<dependency>
-	    <groupId>javax.servlet</groupId>
-	    <artifactId>servlet-api</artifactId>
-	    <version>2.5</version>
-	    <scope>provided</scope>
-	</dependency>
-	<dependency>
-	    <groupId>org.slf4j</groupId>
-	    <artifactId>slf4j-log4j12</artifactId>
-	    <version>${project.logging.slf4jVersion}</version>
-	    <scope>compile</scope>
-	</dependency>
-	<dependency>
-	    <groupId>com.sun.jersey</groupId>
-	    <artifactId>jersey-server</artifactId>
-	    <version>${jersey.version}</version>
-	</dependency>
-	<dependency>
-	    <groupId>com.sun.jersey</groupId>
-	    <artifactId>jersey-bundle</artifactId>
-	    <version>${jersey.version}</version>
-	</dependency>
+        <dependency>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>metadata-translator</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>servlet-api</artifactId>
+            <version>2.5</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-log4j12</artifactId>
+            <version>${project.logging.slf4jVersion}</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.sun.jersey</groupId>
+            <artifactId>jersey-server</artifactId>
+            <version>${jersey.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.sun.jersey</groupId>
+            <artifactId>jersey-bundle</artifactId>
+            <version>${jersey.version}</version>
+        </dependency>
 
-	<!-- Jersey  -->
-	<dependency>
-	    <groupId>com.sun.jersey.contribs</groupId>
-	    <artifactId>jersey-spring</artifactId>
-	    <version>${jersey.version}</version>
-	    <exclusions>
-		<exclusion>
-		    <!-- Excluding inherited spring dependencies in favour of release version specified below -->
-		    <groupId>org.springframework</groupId>
-		    <artifactId>*</artifactId>
-		</exclusion>
-	    </exclusions>
-	</dependency>
+        <!-- Jersey  -->
+        <dependency>
+            <groupId>com.sun.jersey.contribs</groupId>
+            <artifactId>jersey-spring</artifactId>
+            <version>${jersey.version}</version>
+            <exclusions>
+                <exclusion>
+                    <!-- Excluding inherited spring dependencies in favour of release version specified below -->
+                    <groupId>org.springframework</groupId>
+                    <artifactId>*</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
 
-	<!--
-		Explicit spring dependencies overriding release candidate version
-		dependency via jersey-spring
-	-->
-	<dependency>
-	    <groupId>org.springframework</groupId>
-	    <artifactId>spring-web</artifactId>
-	    <version>${spring.version}</version>
-	    <exclusions>
-		<exclusion>
-		    <!-- Excluding commons logging, replaced by jcl-over-slf4j -->
-		    <artifactId>commons-logging</artifactId>
-		    <groupId>commons-logging</groupId>
-		</exclusion>
-	    </exclusions>
-	</dependency>
-	<dependency>
-	    <groupId>org.springframework</groupId>
-	    <artifactId>spring-aop</artifactId>
-	    <version>${spring.version}</version>
-	    <exclusions>
-		<exclusion>
-		    <!-- Excluding commons logging, replaced by jcl-over-slf4j -->
-		    <artifactId>commons-logging</artifactId>
-		    <groupId>commons-logging</groupId>
-		</exclusion>
-	    </exclusions>
-	</dependency>
+        <!--
+                Explicit spring dependencies overriding release candidate version
+                dependency via jersey-spring
+        -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-web</artifactId>
+            <version>${spring.version}</version>
+            <exclusions>
+                <exclusion>
+                    <!-- Excluding commons logging, replaced by jcl-over-slf4j -->
+                    <artifactId>commons-logging</artifactId>
+                    <groupId>commons-logging</groupId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-aop</artifactId>
+            <version>${spring.version}</version>
+            <exclusions>
+                <exclusion>
+                    <!-- Excluding commons logging, replaced by jcl-over-slf4j -->
+                    <artifactId>commons-logging</artifactId>
+                    <groupId>commons-logging</groupId>
+                </exclusion>
+            </exclusions>
+        </dependency>
 
 
-	<!-- Replacement of commons-logging -->
-	<dependency>
-	    <groupId>org.slf4j</groupId>
-	    <artifactId>jcl-over-slf4j</artifactId>
-	    <version>${project.logging.slf4jVersion}</version>
-	</dependency>
-
+        <!-- Replacement of commons-logging -->
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>jcl-over-slf4j</artifactId>
+            <version>${project.logging.slf4jVersion}</version>
+        </dependency>
 	<dependency>
 	    <groupId>com.sun.jersey.jersey-test-framework</groupId>
 	    <artifactId>jersey-test-framework-grizzly2</artifactId>
@@ -113,11 +112,6 @@
 	    <version>${spring.version}</version>
 	    <scope>test</scope>
 	</dependency>
-        <dependency>
-            <groupId>nl.mpi.corpusstructure</groupId>
-            <artifactId>corpus-structure-2-core</artifactId>
-            <version>1.1.0</version>
-        </dependency>
     </dependencies>
     <build>
 	<finalName>${project.artifactId}-${project.version}-${revisionId}</finalName>
@@ -141,92 +135,92 @@
               </executions>
             </plugin>
             <plugin>
-		<groupId>org.apache.tomcat.maven</groupId>
-		<artifactId>tomcat6-maven-plugin</artifactId>
-		<version>2.0</version>
-		<configuration>
-		    <path>/TranslationService</path>
-		    <warDirectory>${project.build.directory}/${project.build.finalName}</warDirectory>
-		    <configurationDir>${project.build.directory}/tomcat</configurationDir>
-		    <contextFile>${project.build.directory}/${project.build.finalName}/META-INF/context.xml</contextFile>
-		</configuration>
-	    </plugin>
-	    <plugin>
-		<groupId>org.apache.maven.plugins</groupId>
-		<artifactId>maven-war-plugin</artifactId>
-		<version>2.3</version>
-		<configuration>
-		    <webResources>
-			<resource>
-			    <!-- Put docs in root of WAR -->
-			    <directory>${project.build.directory}/doc</directory>
-			    <targetPath>/</targetPath>
-			    <excludes>
-				<exclude>legal/</exclude>
-			    </excludes>
-			</resource>
-			<resource>
-			    <!-- Put licenses in the WAR -->
-			    <directory>${project.build.directory}/doc/legal</directory>
-			    <targetPath>WEB-INF/lib/legal</targetPath>
-			</resource>
-		    </webResources>
-		    <archive>
-			<manifestEntries>
-			    <!-- Add project version number to manifest -->
-			    <Service-Version>${project.version}</Service-Version>
-                            <Service-BuildNumber>${buildNumber}</Service-BuildNumber>
-			</manifestEntries>
-		    </archive>
-		</configuration>
-	    </plugin>
-	    <plugin>
-		<artifactId>maven-assembly-plugin</artifactId>
-		<version>2.4</version>
-		<configuration>
-		    <descriptors>
-			<descriptor>${basedir}/src/main/assembly/MetadataTranslator-deploy.xml</descriptor>
-		    </descriptors>
-		</configuration>
-		<executions>
-		    <execution>
-			<id>make-assembly</id>
-			<phase>package</phase>
-			<goals>
-			    <goal>single</goal>
-			</goals>
-		    </execution>
-		</executions>
-	    </plugin>
-	</plugins>
-	<resources>
-	    <resource>
-		<directory>src/main/resources</directory>
-		<filtering>true</filtering>
-		<targetPath>${project.build.outputDirectory}</targetPath>
-	    </resource>
-	    <resource>
-		<directory>src/main/doc</directory>
-		<filtering>true</filtering>
-		<targetPath>${project.build.directory}/doc</targetPath>
-	    </resource>
-	</resources>
+                <groupId>org.apache.tomcat.maven</groupId>
+                <artifactId>tomcat6-maven-plugin</artifactId>
+                <version>2.0</version>
+                <configuration>
+                    <path>/TranslationService</path>
+                    <warDirectory>${project.build.directory}/${project.build.finalName}</warDirectory>
+                    <configurationDir>${project.build.directory}/tomcat</configurationDir>
+                    <contextFile>${project.build.directory}/${project.build.finalName}/META-INF/context.xml</contextFile>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-war-plugin</artifactId>
+                <version>2.3</version>
+                <configuration>
+                    <webResources>
+                        <resource>
+                            <!-- Put docs in root of WAR -->
+                            <directory>${project.build.directory}/doc</directory>
+                            <targetPath>/</targetPath>
+                            <excludes>
+                                <exclude>legal/</exclude>
+                            </excludes>
+                        </resource>
+                        <resource>
+                            <!-- Put licenses in the WAR -->
+                            <directory>${project.build.directory}/doc/legal</directory>
+                            <targetPath>WEB-INF/lib/legal</targetPath>
+                        </resource>
+                    </webResources>
+                    <archive>
+                        <manifestEntries>
+                            <!-- Add project version number to manifest -->
+                            <Service-Version>${project.version}</Service-Version>
+                            <Service-BuildNumber>${revisionId}</Service-BuildNumber>
+                        </manifestEntries>
+                    </archive>
+                </configuration>
+            </plugin>
+            <plugin>
+                <artifactId>maven-assembly-plugin</artifactId>
+                <version>2.4</version>
+                <configuration>
+                    <descriptors>
+                        <descriptor>${basedir}/src/main/assembly/MetadataTranslator-deploy.xml</descriptor>
+                    </descriptors>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>make-assembly</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>single</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <filtering>true</filtering>
+                <targetPath>${project.build.outputDirectory}</targetPath>
+            </resource>
+            <resource>
+                <directory>src/main/doc</directory>
+                <filtering>true</filtering>
+                <targetPath>${project.build.directory}/doc</targetPath>
+            </resource>
+        </resources>
     </build>
     <profiles>
-	<profile>
-	    <!--
-  				Builds to a predictable WAR name. Used for automated deployment,
-  				e.g. from IDE
-  				Send logs to standard out.
-  			-->
-	    <id>development</id>
-	    <properties>
-		<log.appender>STDOUT</log.appender>
-		<log.level.translationservice>DEBUG</log.level.translationservice>
-	    </properties>
-	    <build>
-		<finalName>${project.artifactId}-${project.version}</finalName>
-	    </build>
-	</profile>
+        <profile>
+            <!--
+                    Builds to a predictable WAR name. Used for automated deployment,
+                    e.g. from IDE
+                    Send logs to standard out.
+            -->
+            <id>development</id>
+            <properties>
+                <log.appender>STDOUT</log.appender>
+                <log.level.translationservice>DEBUG</log.level.translationservice>
+            </properties>
+            <build>
+                <finalName>${project.artifactId}-${project.version}</finalName>
+            </build>
+        </profile>
     </profiles>
 </project>
