@@ -11,11 +11,13 @@
     <xsl:include href="collection2corpus.xslt"/>
     <xsl:include href="tlacollection2corpus.xslt"/>
     <xsl:include href="tlasession2imdisession.xslt"/>
+    <xsl:include href="dbdsession2imdisession.xslt"/>
     <xsl:include href="discanproject2corpus.xslt"/>
     <xsl:include href="discantextcorpus2corpus.xslt"/>
     <xsl:include href="discancase2imdi.xslt"/>
     <xsl:include href="soundbites2imdi.xslt"/>
     <xsl:include href="leslla2imdi.xslt"/>
+    <xsl:include href="dlucea2imdi.xslt"/>
     <xsl:include href="../util/identity.xslt"/>
     <xsl:include href="../util/handle.xslt"/>
     
@@ -44,6 +46,9 @@
             <xsl:when test="contains(/CMD/@xsi:schemaLocation, 'http://catalog.clarin.eu/ds/ComponentRegistry/rest/registry/profiles/clarin.eu:cr1:p_1407745712035/xsd')">
                 <xsl:call-template name="TLASESSION2IMDISESSION" />
             </xsl:when>
+            <xsl:when test="contains(/CMD/@xsi:schemaLocation, 'http://catalog.clarin.eu/ds/ComponentRegistry/rest/registry/profiles/clarin.eu:cr1:p_1391763610422/xsd')">
+                <xsl:call-template name="DBDSESSION2IMDISESSION" />
+            </xsl:when>
             <xsl:when test="contains(/CMD/@xsi:schemaLocation, 'http://catalog.clarin.eu/ds/ComponentRegistry/rest/registry/profiles/clarin.eu:cr1:p_1361876010525/xsd')">
                 <xsl:call-template name="DISCANPROJECT2CORPUS" />
             </xsl:when>            
@@ -59,6 +64,11 @@
             <xsl:when test="contains(/CMD/@xsi:schemaLocation, 'http://catalog.clarin.eu/ds/ComponentRegistry/rest/registry/profiles/clarin.eu:cr1:p_1375880372947/xsd')">
                 <xsl:call-template name="LESLLA2IMDI" />
             </xsl:when>
+            <xsl:when test="contains(/CMD/@xsi:schemaLocation, 'http://catalog.clarin.eu/ds/ComponentRegistry/rest/registry/profiles/clarin.eu:cr1:p_1337778924955/xsd')">
+                <xsl:call-template name="DLUCEA2IMDI" />
+            </xsl:when>
+            
+            
             
             
             <!-- Add new profile templates here -->
