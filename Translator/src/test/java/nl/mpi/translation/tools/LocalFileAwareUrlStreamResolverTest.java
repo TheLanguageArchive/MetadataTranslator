@@ -83,7 +83,7 @@ public class LocalFileAwareUrlStreamResolverTest {
             throw new AssumptionViolatedException("Could not create temporary file required for test!");
         }
         // public URL for this file
-        final URL url = new URL(BASE_URL + "/existingfile");
+        final URL url = new URL(BASE_URL + "/existingFile");
 
         // should never consult base resolver
         context.checking(new Expectations() {
@@ -129,7 +129,7 @@ public class LocalFileAwareUrlStreamResolverTest {
     @Test
     public void testGetStreamNonExistingMatch() throws Exception {
         // public URL for a non-existing file
-        final URL url = new URL(BASE_URL + "/existingfile");
+        final URL url = new URL(BASE_URL + "/non-existentFile");
         // mock an input stream to be returned by mock resolver
         final InputStream resultStream = new ByteArrayInputStream(new byte[0]);
 
