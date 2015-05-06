@@ -32,6 +32,7 @@ import org.jmock.integration.junit4.JUnit4Mockery;
 import org.junit.Before;
 import org.junit.Test;
 import static org.junit.Assert.*;
+import org.junit.AssumptionViolatedException;
 import org.junit.Rule;
 import org.junit.rules.TemporaryFolder;
 
@@ -66,7 +67,9 @@ public class LocalFileAwareUrlStreamResolverTest {
     public void testGetStreamMatch() throws Exception {
         // create the file to be requested
         final File file = new File(basePath, "existingFile");
-        file.createNewFile();
+        if(!file.createNewFile()) {
+            throw new AssumptionViolatedException("Could not create temporary file required for test!");
+        }
         // public URL for this file
         final URL url = new URL(BASE_URL + "/existingfile");
 
