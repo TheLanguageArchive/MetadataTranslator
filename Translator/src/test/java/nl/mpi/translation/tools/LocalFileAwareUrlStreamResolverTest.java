@@ -43,18 +43,18 @@ import org.slf4j.LoggerFactory;
  * @author Twan Goosen <twan.goosen@mpi.nl>
  */
 public class LocalFileAwareUrlStreamResolverTest {
-    
+
     private final static String BASE_URL = "http://my/server/files";
     private final static Logger logger = LoggerFactory.getLogger(LocalFileAwareUrlStreamResolverTest.class);
-    
+
     @Rule
     public TemporaryFolder folder = new TemporaryFolder();
-    
+
     private final Mockery context = new JUnit4Mockery();
     private UrlStreamResolver baseResolver;
     private LocalFileAwareUrlStreamResolver instance;
     private File basePath;
-    
+
     @Before
     public void setUp() throws IOException {
         baseResolver = context.mock(UrlStreamResolver.class);
@@ -72,9 +72,13 @@ public class LocalFileAwareUrlStreamResolverTest {
     public void testGetStreamMatch() throws Exception {
         // create the file to be requested
         final File file = new File(basePath, "existingFile");
-        if (file.createNewFile()) {
+
+        final boolean created = file.createNewFile();
+        if (created) {
             logger.info("Created temporary file in base path for testing {}", file);
-        } else {
+        }
+
+        if (!created || !file.exists()) {
             logger.error("Test file {} could not be created", file);
             throw new AssumptionViolatedException("Could not create temporary file required for test!");
         }
@@ -141,5 +145,5 @@ public class LocalFileAwareUrlStreamResolverTest {
         final InputStream result = instance.getStream(url);
         assertSame("Stream should be provided by base resolver", resultStream, result);
     }
-    
+
 }
