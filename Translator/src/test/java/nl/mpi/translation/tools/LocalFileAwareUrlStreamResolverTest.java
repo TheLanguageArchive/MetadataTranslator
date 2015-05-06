@@ -35,39 +35,47 @@ import static org.junit.Assert.*;
 import org.junit.AssumptionViolatedException;
 import org.junit.Rule;
 import org.junit.rules.TemporaryFolder;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  *
  * @author Twan Goosen <twan.goosen@mpi.nl>
  */
 public class LocalFileAwareUrlStreamResolverTest {
-
+    
     private final static String BASE_URL = "http://my/server/files";
-
+    private final static Logger logger = LoggerFactory.getLogger(LocalFileAwareUrlStreamResolverTest.class);
+    
     @Rule
     public TemporaryFolder folder = new TemporaryFolder();
-
+    
     private final Mockery context = new JUnit4Mockery();
     private UrlStreamResolver baseResolver;
     private LocalFileAwareUrlStreamResolver instance;
     private File basePath;
-
+    
     @Before
     public void setUp() throws IOException {
         baseResolver = context.mock(UrlStreamResolver.class);
         basePath = folder.newFolder();
+        logger.info("Base path: {}", basePath);
         instance = new LocalFileAwareUrlStreamResolver(baseResolver, BASE_URL, basePath.getAbsolutePath());
     }
 
     /**
      * Test of getStream method, of class LocalFileAwareUrlStreamResolver.
+     *
      * @throws java.lang.Exception
      */
     @Test
     public void testGetStreamMatch() throws Exception {
         // create the file to be requested
         final File file = new File(basePath, "existingFile");
-        if(!file.createNewFile()) {
+        if (file.createNewFile()) {
+            logger.info("Created temporary file in base path for testing {}", file);
+        } else {
+            logger.error("Test file {} could not be created", file);
             throw new AssumptionViolatedException("Could not create temporary file required for test!");
         }
         // public URL for this file
@@ -88,6 +96,7 @@ public class LocalFileAwareUrlStreamResolverTest {
 
     /**
      * Test of getStream method, of class LocalFileAwareUrlStreamResolver.
+     *
      * @throws java.lang.Exception
      */
     @Test
@@ -110,6 +119,7 @@ public class LocalFileAwareUrlStreamResolverTest {
 
     /**
      * Test of getStream method, of class LocalFileAwareUrlStreamResolver.
+     *
      * @throws java.lang.Exception
      */
     @Test
@@ -131,5 +141,5 @@ public class LocalFileAwareUrlStreamResolverTest {
         final InputStream result = instance.getStream(url);
         assertSame("Stream should be provided by base resolver", resultStream, result);
     }
-
+    
 }
