@@ -31,7 +31,8 @@ $LastChangedDate: 2013-08-14 11:25:31 +0200 (Wed, 14 Aug 2013) $
 	
 	<xsl:param name="translationService" select="'http(s)?://corpus1.mpi.nl/ds/TranslationService/translate'"/>
 	
-	<!--<xsl:param name="base" select="base-uri(document(''))"/>-->
+	<xsl:param name="handlePrefix" select="'1839'"/>
+	
 	<xsl:param name="base" select="static-base-uri()"/>
         
     <!-- OPTIONAL: a client side transformation URL, inserted as a processing instruction if non-empty -->
@@ -120,7 +121,7 @@ $LastChangedDate: 2013-08-14 11:25:31 +0200 (Wed, 14 Aug 2013) $
             <MdSelfLink>
                 <xsl:choose>
                     <!-- MPI handle prefix? Use handle + @format=cmdi suffix -->
-                    <xsl:when test="starts-with(normalize-space(@ArchiveHandle), 'hdl:1839/')">
+                    <xsl:when test="starts-with(normalize-space(@ArchiveHandle), concat('hdl:',$handlePrefix,'/'))">
                     	<xsl:value-of select="@ArchiveHandle"/>
                     	<xsl:if test="$formatCMDI">
                     		<xsl:text>@format=cmdi</xsl:text>
@@ -157,7 +158,7 @@ $LastChangedDate: 2013-08-14 11:25:31 +0200 (Wed, 14 Aug 2013) $
                     <ResourceRef>http://cqlservlet.mpi.nl/</ResourceRef>
                 </ResourceProxy>
                 </xsl:if>
-            	<xsl:if test="starts-with(normalize-space(@ArchiveHandle), 'hdl:1839/')">
+            	<xsl:if test="starts-with(normalize-space(@ArchiveHandle), concat('hdl:',$handlePrefix,'/'))">
             		<ResourceProxy id="landingpage">
             			<ResourceType>LandingPage</ResourceType>
             			<ResourceRef>
@@ -469,10 +470,10 @@ $LastChangedDate: 2013-08-14 11:25:31 +0200 (Wed, 14 Aug 2013) $
             		<xsl:if test="$localURI">
             			<xsl:choose>
             				<xsl:when test="matches(.,$translationService)">
-            					<!--<xsl:attribute name="lat:localURI" select="concat('hdl:',replace(.,'.*(1839/[0-9A-F\-]+).*','$1'))"/>-->
+            					<!--<xsl:attribute name="lat:localURI" select="concat('hdl:',replace(.,concat('.*(',$handlePrefix,'/[0-9A-F\-]+).*'),'$1'))"/>-->
             				</xsl:when>
             				<xsl:otherwise>
-            					<xsl:attribute name="lat:localURI" select="replace(.,'\.imdi','.cmdi')"/>
+            					<xsl:attribute name="lat:localURI" select="replace(.,'\.imdi$','.cmdi')"/>
             				</xsl:otherwise>
             			</xsl:choose>
             		</xsl:if>
@@ -481,7 +482,7 @@ $LastChangedDate: 2013-08-14 11:25:31 +0200 (Wed, 14 Aug 2013) $
                         <xsl:when test="not(normalize-space(./@ArchiveHandle)='')">
                             <xsl:choose>
                                 <!-- MPI handle prefix? Use handle + @format=cmdi suffix -->
-                                <xsl:when test="starts-with(normalize-space(@ArchiveHandle), 'hdl:1839/')">
+                                <xsl:when test="starts-with(normalize-space(@ArchiveHandle), concat('hdl:',$handlePrefix,'/'))">
                                 	<xsl:value-of select="replace(@ArchiveHandle,'@format=imdi','')"/>
                                 	<xsl:if test="$formatCMDI">
                                 		<xsl:text>@format=cmdi</xsl:text>
