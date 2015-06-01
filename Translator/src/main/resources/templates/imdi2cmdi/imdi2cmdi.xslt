@@ -31,7 +31,8 @@ $LastChangedDate: 2013-08-14 11:25:31 +0200 (Wed, 14 Aug 2013) $
 	
 	<xsl:param name="translationService" select="'http(s)?://corpus1.mpi.nl/ds/TranslationService/translate'"/>
 	
-	<!--<xsl:param name="base" select="base-uri(document(''))"/>-->
+	<xsl:param name="handlePrefix" select="'1839'"/>
+	
 	<xsl:param name="base" select="static-base-uri()"/>
         
     <!-- OPTIONAL: a client side transformation URL, inserted as a processing instruction if non-empty -->
@@ -51,6 +52,75 @@ $LastChangedDate: 2013-08-14 11:25:31 +0200 (Wed, 14 Aug 2013) $
     
     <!-- profiles -->
 	<xsl:variable name="SL_PROFILE" select="'clarin.eu:cr1:p_1417617523856'"/>
+	
+	<!-- keys with unspecified in their value range -->
+	<xsl:variable name="keysWithUnspecified" select="(
+		'CGN.education.placesize',
+		'CGN.education.level',
+		'CGN.firstLang',
+		'CGN.homeLang',
+		'CGN.workLang',
+		'CGN.locale',
+		'CGN.occupation.level',
+		'CGN.recDate',
+		'CGN.education.reg',
+		'CGN.residence.reg',
+		'CGN.segmentation',
+		'Content-EventStructure',
+		'Content-Genre',
+		'Content-Interactivity',
+		'Content-Involvement',
+		'Content-Modalities',
+		'Content-SocialContext',
+		'Content-SubGenre-Discourse',
+		'Content-SubGenre-Singing',
+		'Countries',
+		'DBD.CountryofBirth',
+		'DBD.AgeAtImmigration',
+		'IWSong-DidjeriduStyle',
+		'IWSongNames-Jurtbirrk',
+		'IWSongNames-Kalajbari',
+		'IWSong-Tempo',
+		'IWSongTypes',
+		'IWSongNames-Jalarrkuku',
+		'IWSongNames-Jurtbirrk',
+		'IWSongNames-Kalajbari',
+		'IWSongNames-Marrwakani',
+		'IWSongNames-Mirrijbu',
+		'IWSongNames-Yanajanak',
+		'IWSongNames-Yiwarruj',
+		'IWSong-Tempo',
+		'IWSongTypes',
+		'Deafness.AidType',
+		'Deafness.Status',
+		'Family.Father.Deafness',
+		'Family.Mother.Deafness',
+		'Family.Partner.Deafness',
+		'Interpreting.Audience',
+		'Interpreting.Visibility',
+		'IWSongTypes',
+		'CGN.education.level',
+		'CGN.education.placesize',
+		'CGN.education.reg',
+		'CGN.firstLang',
+		'CGN.homeLang',
+		'CGN.locale',
+		'CGN.occupation.level',
+		'CGN.recDate',
+		'CGN.residence.reg',
+		'CGN.segmentation',
+		'CGN.workLang',
+		'Deafness.AidType',
+		'Deafness.Status',
+		'Family.Father.Deafness',
+		'Family.Mother.Deafness',
+		'Family.Partner.Deafness',
+		'Family.Partner.Deafness',
+		'Interpreting.Audience',
+		'Interpreting.Audience',
+		'Interpreting.Visibility',
+		'Interpreting.Visibility'
+		)"/>
 
 	<xsl:function name="lat:sessionProfileRoot">
 		<xsl:param name="profile"/>
@@ -64,20 +134,6 @@ $LastChangedDate: 2013-08-14 11:25:31 +0200 (Wed, 14 Aug 2013) $
 		</xsl:choose>
 	</xsl:function>
 
-	<!-- fix the closed vocabularies -->
-	<xsl:template match="@*|node()" mode="fixVocab">
-		<xsl:copy>
-			<xsl:apply-templates select="@*|node()" mode="#current"/>
-		</xsl:copy>
-	</xsl:template>
-	
-	<xsl:template match="*[@Type='ClosedVocabulary'][exists(@Link)][normalize-space()='']" mode="fixVocab">
-		<xsl:copy>
-			<xsl:apply-templates select="@*" mode="#current"/>
-			<xsl:text>Unspecified</xsl:text>
-		</xsl:copy>
-	</xsl:template>
-	
 	<xsl:template match="/">
 		<xsl:if test="normalize-space($imdi2cmdi-client-side-stylesheet-href) != ''">
 			<!-- insert client side XML instruction -->
@@ -85,11 +141,7 @@ $LastChangedDate: 2013-08-14 11:25:31 +0200 (Wed, 14 Aug 2013) $
 			    <xsl:value-of select="concat('type=&quot;text/xsl&quot; href=&quot;', $imdi2cmdi-client-side-stylesheet-href, '&quot;')"/>
 			</xsl:processing-instruction>
 		</xsl:if>
-            
-		<xsl:variable name="fixVocab">
-			<xsl:apply-templates mode="fixVocab"/>
-		</xsl:variable>
-		<xsl:apply-templates select="$fixVocab/*"/>
+		<xsl:apply-templates/>
 	</xsl:template>
 	
 	<!-- do the IMDI to CMDI conversion -->
@@ -120,7 +172,7 @@ $LastChangedDate: 2013-08-14 11:25:31 +0200 (Wed, 14 Aug 2013) $
             <MdSelfLink>
                 <xsl:choose>
                     <!-- MPI handle prefix? Use handle + @format=cmdi suffix -->
-                    <xsl:when test="starts-with(normalize-space(@ArchiveHandle), 'hdl:1839/')">
+                    <xsl:when test="starts-with(normalize-space(@ArchiveHandle), concat('hdl:',$handlePrefix,'/'))">
                     	<xsl:value-of select="@ArchiveHandle"/>
                     	<xsl:if test="$formatCMDI">
                     		<xsl:text>@format=cmdi</xsl:text>
@@ -157,7 +209,7 @@ $LastChangedDate: 2013-08-14 11:25:31 +0200 (Wed, 14 Aug 2013) $
                     <ResourceRef>http://cqlservlet.mpi.nl/</ResourceRef>
                 </ResourceProxy>
                 </xsl:if>
-            	<xsl:if test="starts-with(normalize-space(@ArchiveHandle), 'hdl:1839/')">
+            	<xsl:if test="starts-with(normalize-space(@ArchiveHandle), concat('hdl:',$handlePrefix,'/'))">
             		<ResourceProxy id="landingpage">
             			<ResourceType>LandingPage</ResourceType>
             			<ResourceRef>
@@ -469,10 +521,10 @@ $LastChangedDate: 2013-08-14 11:25:31 +0200 (Wed, 14 Aug 2013) $
             		<xsl:if test="$localURI">
             			<xsl:choose>
             				<xsl:when test="matches(.,$translationService)">
-            					<!--<xsl:attribute name="lat:localURI" select="concat('hdl:',replace(.,'.*(1839/[0-9A-F\-]+).*','$1'))"/>-->
+            					<!--<xsl:attribute name="lat:localURI" select="concat('hdl:',replace(.,concat('.*(',$handlePrefix,'/[0-9A-F\-]+).*'),'$1'))"/>-->
             				</xsl:when>
             				<xsl:otherwise>
-            					<xsl:attribute name="lat:localURI" select="replace(.,'\.imdi','.cmdi')"/>
+            					<xsl:attribute name="lat:localURI" select="replace(.,'\.imdi$','.cmdi')"/>
             				</xsl:otherwise>
             			</xsl:choose>
             		</xsl:if>
@@ -481,7 +533,7 @@ $LastChangedDate: 2013-08-14 11:25:31 +0200 (Wed, 14 Aug 2013) $
                         <xsl:when test="not(normalize-space(./@ArchiveHandle)='')">
                             <xsl:choose>
                                 <!-- MPI handle prefix? Use handle + @format=cmdi suffix -->
-                                <xsl:when test="starts-with(normalize-space(@ArchiveHandle), 'hdl:1839/')">
+                                <xsl:when test="starts-with(normalize-space(@ArchiveHandle), concat('hdl:',$handlePrefix,'/'))">
                                 	<xsl:value-of select="replace(@ArchiveHandle,'@format=imdi','')"/>
                                 	<xsl:if test="$formatCMDI">
                                 		<xsl:text>@format=cmdi</xsl:text>
@@ -692,7 +744,9 @@ $LastChangedDate: 2013-08-14 11:25:31 +0200 (Wed, 14 Aug 2013) $
             	</xsl:call-template>
             </Continent>
             <Country>
-                <xsl:value-of select="child::Country"/>
+            	<xsl:call-template name="orUnspecified">
+            		<xsl:with-param name="value" select="Country"/>
+            	</xsl:call-template>
             </Country>
             <xsl:if test="exists(child::Region)">
                 <Region>
@@ -759,28 +813,38 @@ $LastChangedDate: 2013-08-14 11:25:31 +0200 (Wed, 14 Aug 2013) $
 
     <xsl:template match="Keys">
     	<xsl:param name="skip" select="()"/>
-    	<xsl:variable name="keys" select="Key[normalize-space(@Name)!=''][normalize-space(.)!=''][not(@Name=$skip)]"/>
+    	<xsl:variable name="keys" select="Key[normalize-space(@Name)!=''][not(@Name=$skip)]"/>
     	<xsl:if test="exists($keys)">
-    		<Keys>
-    			<xsl:for-each select="$keys">
-    				<Key>
-    					<xsl:attribute name="Name">
-    						<xsl:value-of select="@Name"/>
-    					</xsl:attribute>
-    					<xsl:if test="normalize-space(@Link)!=''">
-    						<xsl:attribute name="Link">
-    							<xsl:value-of select="@Link"/>    							
-    						</xsl:attribute>
+    		<xsl:variable name="grp">
+    			<Keys>
+    				<xsl:for-each select="$keys">
+    					<xsl:variable name="key">
+    						<Key>
+    							<xsl:attribute name="Name">
+    								<xsl:value-of select="@Name"/>
+    							</xsl:attribute>
+    							<xsl:if test="normalize-space(@Link)!=''">
+    								<xsl:attribute name="Link">
+    									<xsl:value-of select="@Link"/>    							
+    								</xsl:attribute>
+    							</xsl:if>
+    							<xsl:if test="normalize-space(@Type)!=''">
+    								<xsl:attribute name="Type">
+    									<xsl:value-of select="@Type"/>    							
+    								</xsl:attribute>
+    							</xsl:if>
+    							<xsl:call-template name="keyValueOrUnspecified"/>
+    						</Key>
+    					</xsl:variable>
+    					<xsl:if test="normalize-space($key)!=''">
+    						<xsl:copy-of select="$key"/>
     					</xsl:if>
-    					<xsl:if test="normalize-space(@Type)!=''">
-    						<xsl:attribute name="Type">
-    							<xsl:value-of select="@Type"/>    							
-    						</xsl:attribute>
-    					</xsl:if>
-    					<xsl:value-of select="."/>
-    				</Key>
-    			</xsl:for-each>
-    		</Keys>
+    				</xsl:for-each>
+    			</Keys>
+    		</xsl:variable>
+    		<xsl:if test="normalize-space($grp)!=''">
+    			<xsl:copy-of select="$grp"/>
+    		</xsl:if>
     	</xsl:if>
     </xsl:template>
 
@@ -788,16 +852,22 @@ $LastChangedDate: 2013-08-14 11:25:31 +0200 (Wed, 14 Aug 2013) $
     <xsl:param name="profile" tunnel="yes"/>
         <Content>
             <Genre>
-                <xsl:value-of select="child::Genre"/>
+            	<xsl:call-template name="orUnspecified">
+            		<xsl:with-param name="value" select="Genre"/>
+            	</xsl:call-template>
             </Genre>
             <xsl:if test="exists(child::SubGenre)">
                 <SubGenre>
-                    <xsl:value-of select="child::SubGenre"/>
+                	<xsl:call-template name="orUnspecified">
+                		<xsl:with-param name="value" select="SubGenre"/>
+                	</xsl:call-template>
                 </SubGenre>
             </xsl:if>
             <xsl:if test="exists(child::Task)">
                 <Task>
-                    <xsl:value-of select="child::Task"/>
+                	<xsl:call-template name="orUnspecified">
+                		<xsl:with-param name="value" select="Task"/>
+                	</xsl:call-template>
                 </Task>
             </xsl:if>
             <xsl:if test="exists(child::Modalities)">
@@ -925,7 +995,9 @@ $LastChangedDate: 2013-08-14 11:25:31 +0200 (Wed, 14 Aug 2013) $
     						</xsl:call-template>
     					</Id>
     					<Name>
-    						<xsl:value-of select=" ./Name"/>
+    						<xsl:call-template name="orUnspecified">
+    							<xsl:with-param name="value" select="./Name"/>
+    						</xsl:call-template>
     					</Name>
     					<Dominant>
     						<xsl:call-template name="orUnspecified">
@@ -990,7 +1062,9 @@ $LastChangedDate: 2013-08-14 11:25:31 +0200 (Wed, 14 Aug 2013) $
                 		</xsl:choose>
                 	</xsl:if>
                     <Role>
-                        <xsl:value-of select=" ./Role"/>
+                    	<xsl:call-template name="orUnspecified">
+                    		<xsl:with-param name="value" select="./Role"/>
+                    	</xsl:call-template>
                     </Role>
                     <Name>
                         <xsl:value-of select=" ./Name"/>
@@ -1160,7 +1234,9 @@ $LastChangedDate: 2013-08-14 11:25:31 +0200 (Wed, 14 Aug 2013) $
                     	</xsl:call-template>
                     </Id>
                     <Name>
-                        <xsl:value-of select=" ./Name"/>
+                    	<xsl:call-template name="orUnspecified">
+                    		<xsl:with-param name="value" select="./Name"/>
+                    	</xsl:call-template>
                     </Name>
                     <MotherTongue>
                     	<xsl:call-template name="orUnspecified">
@@ -1629,20 +1705,56 @@ $LastChangedDate: 2013-08-14 11:25:31 +0200 (Wed, 14 Aug 2013) $
 			</xsl:otherwise>
 		</xsl:choose>
 	</xsl:template>
+	
+	<xsl:template name="keyValueOrUnspecified">
+		<xsl:param name="name" select="@Name"/>
+		<xsl:param name="value" select="."/>
+		<xsl:param name="keys" select="$keysWithUnspecified"/>
+		<xsl:choose>
+			<xsl:when test="exists(index-of($keys,$name))">
+				<xsl:call-template name="orUnspecified">
+					<xsl:with-param name="value" select="$value"/>
+				</xsl:call-template>
+			</xsl:when>
+			<xsl:otherwise>
+				<xsl:value-of select="$value"/>
+			</xsl:otherwise>
+		</xsl:choose>
+	</xsl:template>
+
+	<xsl:template name="keyOrUnspecified">
+		<xsl:param name="name" select="@Name"/>
+		<xsl:param name="value" select="."/>
+		<xsl:param name="element" select="replace($name,'\.','_')"/>
+		<xsl:param name="allowEmpty" select="false()"/>
+		<xsl:param name="keys" select="$keysWithUnspecified"/>
+		<xsl:variable name="val">
+			<xsl:call-template name="keyValueOrUnspecified">
+				<xsl:with-param name="name"  select="$name"/>
+				<xsl:with-param name="value" select="$value"/>
+				<xsl:with-param name="keys"  select="$keys"/>
+			</xsl:call-template>
+		</xsl:variable>
+		<xsl:if test="normalize-space($element)!='' and (normalize-space($val)!='' or $allowEmpty)">
+			<xsl:element name="{$element}">
+				<xsl:value-of select="$val"/>
+			</xsl:element>
+		</xsl:if>
+	</xsl:template>
 		
 	<xsl:template name="keysToElements">
 		<xsl:param name="group"/>
 		<xsl:param name="prefix" select="''"/>
 		<xsl:param name="keys" select="()"/>
 		<xsl:variable name="grp" as="element()*">
-			<xsl:for-each select="Keys/Key[@Name=$keys][normalize-space(.)!='']">
+			<xsl:for-each select="Keys/Key[@Name=$keys]">
 				<xsl:sort select="index-of($keys,@Name)"/>
-				<xsl:element name="{replace(substring-after(@Name,$prefix),'\.','_')}">
-					<xsl:value-of select="."/>
-				</xsl:element>
+				<xsl:call-template name="keyOrUnspecified">
+					<xsl:with-param name="element" select="replace(substring-after(@Name,$prefix),'\.','_')"/>
+				</xsl:call-template>
 			</xsl:for-each>
 		</xsl:variable>
-		<xsl:if test="exists($grp)">
+		<xsl:if test="exists($grp[normalize-space()!=''])">
 			<xsl:element name="{$group}">
 				<xsl:copy-of select="$grp"/>
 			</xsl:element>
@@ -1652,20 +1764,9 @@ $LastChangedDate: 2013-08-14 11:25:31 +0200 (Wed, 14 Aug 2013) $
 	<xsl:template name="keyToElement">
 		<xsl:param name="key"/>
 		<xsl:param name="element" select="$key"/>
-		<xsl:for-each select="Keys/Key[@Name=$key][normalize-space(.)!='']">
-			<xsl:element name="{$element}">
-				<xsl:value-of select="."/>
-			</xsl:element>
+		<xsl:for-each select="Keys/Key[@Name=$key]">
+			<xsl:call-template name="keyOrUnspecified"/>
 		</xsl:for-each>
 	</xsl:template>
-
-    <xsl:template name="main">
-        <xsl:for-each
-            select="collection('file:///home/paucas/corpus_copy/corpus_copy/data/corpora?select=*.imdi;recurse=yes;on-error=ignore')">
-            <xsl:result-document href="{document-uri(.)}.cmdi">
-                <xsl:apply-templates select="."/>
-            </xsl:result-document>
-        </xsl:for-each>
-    </xsl:template>
 
 </xsl:stylesheet>
