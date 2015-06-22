@@ -524,7 +524,7 @@ $LastChangedDate: 2013-08-14 11:25:31 +0200 (Wed, 14 Aug 2013) $
             					<!--<xsl:attribute name="lat:localURI" select="concat('hdl:',replace(.,concat('.*(',$handlePrefix,'/[0-9A-F\-]+).*'),'$1'))"/>-->
             				</xsl:when>
             				<xsl:otherwise>
-            					<xsl:attribute name="lat:localURI" select="replace(.,'\.imdi$','.cmdi')"/>
+            					<xsl:attribute name="lat:localURI" select="replace(replace(.,' ','%20'),'\.imdi$','.cmdi')"/>
             				</xsl:otherwise>
             			</xsl:choose>
             		</xsl:if>
@@ -587,7 +587,7 @@ $LastChangedDate: 2013-08-14 11:25:31 +0200 (Wed, 14 Aug 2013) $
     				</xsl:if>Resource</ResourceType>
     			<ResourceRef>
     				<xsl:if test="$localURI">
-    					<xsl:attribute name="lat:localURI" select="ResourceLink"/>
+    					<xsl:attribute name="lat:localURI" select="replace(ResourceLink,' ','%20')"/>
     				</xsl:if>
     				<xsl:choose>
     					<xsl:when test="not(normalize-space(ResourceLink/@ArchiveHandle)='')">
@@ -630,7 +630,7 @@ $LastChangedDate: 2013-08-14 11:25:31 +0200 (Wed, 14 Aug 2013) $
 				</ResourceType>
 				<ResourceRef>
 					<xsl:if test="$localURI and normalize-space(@Link)!=''">
-						<xsl:attribute name="lat:localURI" select="@Link"/>
+						<xsl:attribute name="lat:localURI" select="replace(@Link, ' ','%20')"/>
 					</xsl:if>
 					<xsl:value-of select="$res"/>
 				</ResourceRef>
