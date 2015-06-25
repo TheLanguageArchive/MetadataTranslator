@@ -49,7 +49,7 @@
                 <xsl:value-of select="child::Date"/>
             </Date>
             <xsl:apply-templates select="descriptions" mode="TLASESSION2IMDISESSION"/>
-            <xsl:apply-templates select="InfoLink" mode="TLASESSION2IMDISESSION"/>
+            <xsl:apply-templates select="InfoLink" mode="create-info-link-description"/>
             <MDGroup>
                 <xsl:apply-templates select="Location" mode="TLASESSION2IMDISESSION"/>
                 <xsl:apply-templates select="Project" mode="TLASESSION2IMDISESSION"/>
@@ -247,10 +247,6 @@
                 </xsl:when>
             </xsl:choose>
         </xsl:for-each>
-    </xsl:template>
-    
-    <xsl:template match="InfoLink" mode="TLASESSION2IMDISESSION">
-        <xsl:apply-templates select="//ResourceProxy[@id eq current()/@ref]" mode="create-info-link-description"/>
     </xsl:template>
     
     <xsl:template match="ResourceProxy" mode="TLASESSION2IMDISESSION-SKIPPED">

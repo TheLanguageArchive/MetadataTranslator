@@ -121,28 +121,35 @@
         </xsl:choose>
     </xsl:template>
     
-    <xsl:template match="ResourceProxy" mode="create-info-link-description">
+    <!-- InfoLink to Description with @ArchiveHandle and @Link -->
+    <xsl:template match="InfoLink" mode="create-info-link-description">
+        <xsl:variable name="proxy" select="//ResourceProxy[@id eq current()/@ref]" />
         <Description>
+            <xsl:if test="normalize-space(@xml:lang)!=''">
+                <xsl:attribute name="LanguageId" select="concat('ISO639-3:',@xml:lang)" /> <!-- this probably needs to be more sophisticated to cover all cases -->
+            </xsl:if>
+            
             <xsl:choose>
-                <xsl:when test="normalize-space(@xml:lang)!=''">
-                    <xsl:attribute name="LanguageId" select="concat('ISO639-3:',@xml:lang)" /> <!-- this probably needs to be more sophisticated to cover all cases -->
+                <xsl:when test="$proxy">
+                    <xsl:variable name="handle" select="tla:getBaseHandle($proxy/ResourceRef)"/>
+                    <xsl:if test="$handle">
+                        <xsl:attribute name="ArchiveHandle">
+                            <xsl:value-of select="concat('hdl:',$handle)"/>
+                        </xsl:attribute>
+                    </xsl:if>       
+                    
+                    <xsl:variable name="localUri" select="$proxy/ResourceRef/@lat:localURI" />
+                    <xsl:if test="normalize-space($localUri) != ''">
+                        <xsl:attribute name="Link">                                    
+                            <xsl:value-of select="resolve-uri($localUri, $source-location)"/>
+                        </xsl:attribute>
+                    </xsl:if>  
                 </xsl:when>
-            </xsl:choose>                
-            <xsl:variable name="id"><xsl:value-of select="@ref" /></xsl:variable>
+                <xsl:otherwise>
+                    <xsl:message>Warning: InfoLink without matching resource proxy! Description content: [<xsl:value-of select="Description" />]</xsl:message>
+                </xsl:otherwise>
+            </xsl:choose>
             
-            <xsl:variable name="handle" select="tla:getBaseHandle(ResourceRef)"/>
-            <xsl:if test="$handle">
-                <xsl:attribute name="ArchiveHandle">
-                    <xsl:value-of select="concat('hdl:',$handle)"/>
-                </xsl:attribute>
-            </xsl:if>       
-            
-            <xsl:variable name="localUri" select="ResourceRef/@lat:localURI" />
-            <xsl:if test="normalize-space($localUri) != ''">
-                <xsl:attribute name="Link">                                    
-                    <xsl:value-of select="resolve-uri($localUri, $source-location)"/>
-                </xsl:attribute>
-            </xsl:if>  
             
             <xsl:value-of select="child::Description"/>
         </Description>
