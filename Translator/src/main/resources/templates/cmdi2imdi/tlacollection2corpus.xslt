@@ -94,17 +94,21 @@
                     </xsl:when>
                 </xsl:choose>                
                 <xsl:variable name="id"><xsl:value-of select="@ref" /></xsl:variable>
+
                 <xsl:variable name="handle" select="tla:getBaseHandle(ancestor::Components/preceding-sibling::Resources/ResourceProxyList/ResourceProxy[@id=$id]/ResourceRef)"/>
-                <xsl:choose>
-                    <xsl:when test="$handle">
-                        <xsl:attribute name="ArchiveHandle">
-                            <xsl:value-of select="concat('hdl:',$handle)"/>
-                        </xsl:attribute>
-                        <xsl:attribute name="Link">
-                            <xsl:value-of select="ancestor::Components/preceding-sibling::Resources/ResourceProxyList/ResourceProxy[@id=$id]/ResourceRef/@lat:localURI"/>
-                        </xsl:attribute>
-                    </xsl:when>       
-                </xsl:choose>                
+                <xsl:if test="$handle">
+                    <xsl:attribute name="ArchiveHandle">
+                        <xsl:value-of select="concat('hdl:',$handle)"/>
+                    </xsl:attribute>
+                </xsl:if>       
+                
+                <xsl:variable name="localUri" select="ancestor::Components/preceding-sibling::Resources/ResourceProxyList/ResourceProxy[@id=$id]/ResourceRef/@lat:localURI" />
+                <xsl:if test="normalize-space($localUri) != ''">
+                    <xsl:attribute name="Link">                                    
+                        <xsl:value-of select="resolve-uri($localUri, $source-location)"/>
+                    </xsl:attribute>
+                </xsl:if>  
+                
                 <xsl:value-of select="child::Description"/>
             </Description>       
         </xsl:for-each>
