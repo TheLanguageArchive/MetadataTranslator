@@ -87,30 +87,8 @@
             </Description>       
         </xsl:for-each>
         <xsl:for-each select="child::InfoLink">
-            <Description>
-                <xsl:choose>
-                    <xsl:when test="normalize-space(@xml:lang)!=''">
-                        <xsl:attribute name="LanguageId" select="concat('ISO639-3:',@xml:lang)" /> <!-- this probably needs to be more sophisticated to cover all cases -->
-                    </xsl:when>
-                </xsl:choose>                
-                <xsl:variable name="id"><xsl:value-of select="@ref" /></xsl:variable>
-
-                <xsl:variable name="handle" select="tla:getBaseHandle(ancestor::Components/preceding-sibling::Resources/ResourceProxyList/ResourceProxy[@id=$id]/ResourceRef)"/>
-                <xsl:if test="$handle">
-                    <xsl:attribute name="ArchiveHandle">
-                        <xsl:value-of select="concat('hdl:',$handle)"/>
-                    </xsl:attribute>
-                </xsl:if>       
-                
-                <xsl:variable name="localUri" select="ancestor::Components/preceding-sibling::Resources/ResourceProxyList/ResourceProxy[@id=$id]/ResourceRef/@lat:localURI" />
-                <xsl:if test="normalize-space($localUri) != ''">
-                    <xsl:attribute name="Link">                                    
-                        <xsl:value-of select="resolve-uri($localUri, $source-location)"/>
-                    </xsl:attribute>
-                </xsl:if>  
-                
-                <xsl:value-of select="child::Description"/>
-            </Description>       
+            <xsl:variable name="id" select="@ref" />
+            <xsl:apply-templates select="ancestor::Components/preceding-sibling::Resources/ResourceProxyList/ResourceProxy[@id=$id]" mode="create-info-link-description"/>                
         </xsl:for-each>
         <xsl:if test="not(exists(child::descriptions/Description))">
             <Description/>

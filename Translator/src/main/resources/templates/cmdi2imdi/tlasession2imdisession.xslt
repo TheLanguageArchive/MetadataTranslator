@@ -250,11 +250,7 @@
     </xsl:template>
     
     <xsl:template match="InfoLink" mode="TLASESSION2IMDISESSION">
-        <Description>
-            <xsl:attribute name="ArchiveHandle"><xsl:value-of select="//ResourceProxy[@id eq current()/@ref]/ResourceRef/text()"/></xsl:attribute>
-            <xsl:attribute name="Link"><xsl:value-of select="//ResourceProxy[@id eq current()/@ref]/ResourceRef/@lat:localURI"/></xsl:attribute>
-            <xsl:value-of select="Description"/>
-        </Description>
+        <xsl:apply-templates select="//ResourceProxy[@id eq current()/@ref]" mode="create-info-link-description"/>
     </xsl:template>
     
     <xsl:template match="ResourceProxy" mode="TLASESSION2IMDISESSION-SKIPPED">

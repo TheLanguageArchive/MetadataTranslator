@@ -121,4 +121,31 @@
         </xsl:choose>
     </xsl:template>
     
+    <xsl:template match="ResourceProxy" mode="create-info-link-description">
+        <Description>
+            <xsl:choose>
+                <xsl:when test="normalize-space(@xml:lang)!=''">
+                    <xsl:attribute name="LanguageId" select="concat('ISO639-3:',@xml:lang)" /> <!-- this probably needs to be more sophisticated to cover all cases -->
+                </xsl:when>
+            </xsl:choose>                
+            <xsl:variable name="id"><xsl:value-of select="@ref" /></xsl:variable>
+            
+            <xsl:variable name="handle" select="tla:getBaseHandle(ResourceRef)"/>
+            <xsl:if test="$handle">
+                <xsl:attribute name="ArchiveHandle">
+                    <xsl:value-of select="concat('hdl:',$handle)"/>
+                </xsl:attribute>
+            </xsl:if>       
+            
+            <xsl:variable name="localUri" select="ResourceRef/@lat:localURI" />
+            <xsl:if test="normalize-space($localUri) != ''">
+                <xsl:attribute name="Link">                                    
+                    <xsl:value-of select="resolve-uri($localUri, $source-location)"/>
+                </xsl:attribute>
+            </xsl:if>  
+            
+            <xsl:value-of select="child::Description"/>
+        </Description>
+    </xsl:template>
+    
 </xsl:stylesheet>
