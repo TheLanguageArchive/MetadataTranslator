@@ -121,7 +121,7 @@
                 <Channel Link="http://www.mpi.nl/IMDI/Schema/Content-Channel.xml" Type="ClosedVocabulary"><xsl:value-of select="child::CommunicationContext/Channel"/></Channel>
             </CommunicationContext>
             <Languages>
-                <xsl:apply-templates select="//Content_Language" mode="DBDSESSION2IMDISESSION"/>
+                <xsl:apply-templates select="Languages/Language" mode="DBDSESSION2IMDISESSION_CONTENTLANG"/>
             </Languages>
             <Keys>
             <xsl:apply-templates select="Keys" mode="DBDSESSION2IMDISESSION"/>           
@@ -142,8 +142,8 @@
             <Code><xsl:value-of select="child::Code"/></Code>
             <FamilySocialRole Link="http://www.mpi.nl/IMDI/Schema/Actor-FamilySocialRole.xml" Type="OpenVocabularyList"><xsl:value-of select="child::FamilySocialRole"/></FamilySocialRole>
             <Languages>
-                <xsl:apply-templates select="Actor_Languages/descriptions" mode="DBDSESSION2IMDISESSION"/>  
-                <xsl:apply-templates select="descendant::Actor_Language" mode="DBDSESSION2IMDISESSION"/>
+                <xsl:apply-templates select="Languages/descriptions" mode="DBDSESSION2IMDISESSION"/>  
+                <xsl:apply-templates select="descendant::Language" mode="DBDSESSION2IMDISESSION_ACTORLANG"/>
             </Languages>
             <EthnicGroup><xsl:value-of select="child::EthnicGroup"/></EthnicGroup>
             <Age><xsl:value-of select="child::Age"/></Age>
@@ -159,11 +159,11 @@
         </Actor>
     </xsl:template>
     
-    <xsl:template match="Content_Language" mode="DBDSESSION2IMDISESSION">
+    <xsl:template match="Language" mode="DBDSESSION2IMDISESSION_CONTENTLANG">
         <xsl:apply-templates select="descriptions" mode="DBDSESSION2IMDISESSION"/>  
         <Language>
-            <Id><xsl:value-of select="child::Id"/></Id>
-            <Name Link="http://www.mpi.nl/IMDI/Schema/MPI-Languages.xml" Type="OpenVocabulary"><xsl:value-of select="child::Name"/></Name>
+            <Id><xsl:value-of select="child::LanguageID"/></Id>
+            <Name Link="http://www.mpi.nl/IMDI/Schema/MPI-Languages.xml" Type="OpenVocabulary"><xsl:value-of select="child::LanguageName"/></Name>
             <Dominant Type="ClosedVocabulary"><xsl:value-of select="child::Dominant"/></Dominant>
             <SourceLanguage Type="ClosedVocabulary"><xsl:value-of select="child::SourceLanguage"/></SourceLanguage>
             <TargetLanguage Type="ClosedVocabulary"><xsl:value-of select="child::TargetLanguage"/></TargetLanguage>            
@@ -171,10 +171,10 @@
         </Language>
     </xsl:template>    
     
-    <xsl:template match="Actor_Language" mode="DBDSESSION2IMDISESSION">
+    <xsl:template match="Language" mode="DBDSESSION2IMDISESSION_ACTORLANG">
         <Language>
-            <Id><xsl:value-of select="child::Id"/></Id>
-            <Name><xsl:value-of select="child::Name"/></Name>
+            <Id><xsl:value-of select="child::LanguageID"/></Id>
+            <Name><xsl:value-of select="child::LanguageName"/></Name>
             <MotherTongue Type="ClosedVocabulary"><xsl:value-of select="child::MotherTongue"/></MotherTongue>
             <PrimaryLanguage Type="ClosedVocabulary"><xsl:value-of select="child::PrimaryLanguage"/></PrimaryLanguage>
             <xsl:apply-templates select="descriptions" mode="DBDSESSION2IMDISESSION"/>
