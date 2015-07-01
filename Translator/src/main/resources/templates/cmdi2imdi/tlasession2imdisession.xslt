@@ -71,7 +71,7 @@
         <Project>
             <Name><xsl:value-of select="child::Name"/></Name>
             <Title><xsl:value-of select="child::Title"/></Title>
-            <Id><xsl:value-of select="child::ID"/></Id>
+            <Id><xsl:value-of select="child::Id"/></Id>
             <Contact>
                 <Name><xsl:value-of select="child::Contact/Name"/></Name>
                 <Address><xsl:value-of select="child::Contact/Address" /></Address>
@@ -123,6 +123,7 @@
                 <Channel Link="http://www.mpi.nl/IMDI/Schema/Content-Channel.xml" Type="ClosedVocabulary"><xsl:value-of select="child::CommunicationContext/Channel"/></Channel>
             </CommunicationContext>
             <Languages>
+                <xsl:apply-templates select="Content_Languages/descriptions" mode="TLASESSION2IMDISESSION"/>  
                 <xsl:apply-templates select="//Content_Language" mode="TLASESSION2IMDISESSION"/>
             </Languages>
             <Keys>
@@ -162,14 +163,13 @@
     </xsl:template>
     
     <xsl:template match="Content_Language" mode="TLASESSION2IMDISESSION">
-        <xsl:apply-templates select="descriptions" mode="TLASESSION2IMDISESSION"/>  
         <Language>
             <Id><xsl:value-of select="child::Id"/></Id>
             <Name Link="http://www.mpi.nl/IMDI/Schema/MPI-Languages.xml" Type="OpenVocabulary"><xsl:value-of select="child::Name"/></Name>
             <Dominant Type="ClosedVocabulary"><xsl:value-of select="child::Dominant"/></Dominant>
             <SourceLanguage Type="ClosedVocabulary"><xsl:value-of select="child::SourceLanguage"/></SourceLanguage>
             <TargetLanguage Type="ClosedVocabulary"><xsl:value-of select="child::TargetLanguage"/></TargetLanguage>            
-            <xsl:apply-templates select="descriptions"/>
+            <xsl:apply-templates select="descriptions" mode="TLASESSION2IMDISESSION"/>  
         </Language>
     </xsl:template>    
     
