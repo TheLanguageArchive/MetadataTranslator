@@ -73,7 +73,7 @@
             <Title><xsl:value-of select="child::Title"/></Title>
             <Id><xsl:value-of select="child::ID"/></Id>
             <Contact>
-                <Name><xsl:value-of select="child::Contact/Person"/></Name>
+                <Name><xsl:value-of select="child::Contact/Name"/></Name>
                 <Address><xsl:value-of select="child::Contact/Address" /></Address>
                 <Email><xsl:value-of select="child::Contact/Email"/></Email>
                 <Organisation><xsl:value-of select="child::Contact/Organisation"/></Organisation>

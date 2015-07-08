@@ -63,7 +63,9 @@
                 </Actors>
             </MDGroup>
             <xsl:apply-templates select="/CMD/Resources/ResourceProxyList" mode="TLASESSION2IMDISESSION" />
-            <References />
+            <References>
+                <xsl:apply-templates select="References/descriptions" mode="TLASESSION2IMDISESSION"/> 
+            </References>
         </Session>
     </xsl:template>
     
@@ -399,7 +401,7 @@
                         <Level>Unspecified</Level>
                     </xsl:otherwise>
                 </xsl:choose>
-                <xsl:apply-templates select="descriptions" mode="TLASESSION2IMDISESSION"/>
+                <xsl:apply-templates select="Validation/descriptions" mode="TLASESSION2IMDISESSION"/>
             </Validation>
             <Derivation><xsl:value-of select="Derivation"/></Derivation>
             <CharacterEncoding><xsl:value-of select="CharacterEncoding"/></CharacterEncoding>
