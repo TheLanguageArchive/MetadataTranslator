@@ -215,9 +215,19 @@
     <xsl:template match="ResourceProxyList" mode="TLASESSION2IMDISESSION">
         <Resources>
             <xsl:apply-templates mode="TLASESSION2IMDISESSION-SKIPPED" select="ResourceProxy"/>
+            
+            <!-- MediaFiles: first from proxies, then remaining unreferenced resources -->
             <xsl:apply-templates mode="TLASESSION2IMDISESSION-MEDIAFILE" select="ResourceProxy"/>
+            <xsl:apply-templates mode="TLASESSION2IMDISESSION" select="//MediaFile[normalize-space(@ref)='']"/>
+            
+            <!-- WrittenResources: first from proxies, then remaining unreferenced resources -->
             <xsl:apply-templates mode="TLASESSION2IMDISESSION-WRITTENRESOURCE" select="ResourceProxy"/>
+            <xsl:apply-templates mode="TLASESSION2IMDISESSION" select="//WrittenResource[normalize-space(@ref)='']"/>
+            
+            <!-- Sources -->
            <xsl:apply-templates select="/CMD/Components/lat-session/Resources/Source" mode="TLASESSION2IMDISESSION" />
+            
+            <!-- TODO: Anonyms? -->
         </Resources>
     </xsl:template>
     
@@ -255,7 +265,8 @@
         <!-- ResourceProxies without a reference or mimetype get skipped -->
         <xsl:if test="
             not(matches(ResourceType/@mimetype, $mediaFileMimeTypes) 
-                or matches(ResourceType/@mimetype, $writtenResourceMimeTypes)) 
+                or matches(ResourceType/@mimetype, $writtenResourceMimeTypes)
+                or ResourceType/text() = 'LandingPage')
             and not(//Resources/*[@ref=current()/@id])">
             <xsl:message>ResourceProxy with id '<xsl:value-of select="@id" />' will be skipped. Reason: no referencing element or recognised mimetype.</xsl:message>
             <xsl:text>
@@ -313,9 +324,13 @@
         </xsl:if>
     </xsl:template>
     
-    <xsl:template match="MediaFile" mode="TLASESSION2IMDISESSION">        
-        <xsl:call-template name="generate-ResourceId"></xsl:call-template>
+    <xsl:template match="MediaFile" mode="TLASESSION2IMDISESSION">
+        <xsl:if test="normalize-space(@ref) = ''">
+            <xsl:message>MediaFile found without a resource reference, could not generate resource link value</xsl:message>
+        </xsl:if>
+        
         <MediaFile>
+            <xsl:call-template name="generate-ResourceId"></xsl:call-template>
             <ResourceLink><xsl:apply-templates select="//ResourceProxy[@id eq current()/@ref]" mode="create-resource-link-content"/></ResourceLink>
             <Type><xsl:value-of select="Type"/></Type>
             <Format><xsl:value-of select="Format"/></Format>
@@ -377,6 +392,10 @@
     </xsl:template>
 
     <xsl:template match="WrittenResource" mode="TLASESSION2IMDISESSION">
+        <xsl:if test="normalize-space(@ref) = ''">
+            <xsl:message>WrittenResource found without a resource reference, could not generate resource link value</xsl:message>
+        </xsl:if>
+        
         <WrittenResource>
             <xsl:call-template name="generate-ResourceId"></xsl:call-template>
             <ResourceLink><xsl:apply-templates select="//ResourceProxy[@id eq current()/@ref]" mode="create-resource-link-content"/></ResourceLink>
