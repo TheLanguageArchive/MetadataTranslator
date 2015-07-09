@@ -65,6 +65,7 @@
             <xsl:apply-templates select="/CMD/Resources/ResourceProxyList" mode="TLASESSION2IMDISESSION" />
             <References>
                 <xsl:apply-templates select="References/descriptions" mode="TLASESSION2IMDISESSION"/> 
+                <xsl:apply-templates select="References/InfoLink" mode="create-info-link-description"/>
             </References>
         </Session>
     </xsl:template>
