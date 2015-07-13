@@ -44,6 +44,8 @@ import javax.xml.transform.TransformerFactoryConfigurationError;
 import javax.xml.transform.stax.StAXSource;
 import javax.xml.transform.stream.StreamResult;
 import javax.xml.transform.stream.StreamSource;
+import net.sf.saxon.Configuration;
+import net.sf.saxon.TransformerFactoryImpl;
 import nl.mpi.translation.tools.util.TranslationServiceErrorListener;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -65,6 +67,7 @@ public class TranslatorImpl implements Translator {
 
     private final static Logger logger = LoggerFactory.getLogger(TranslatorImpl.class);
     private final static String SAXON_TRANSFORMER_IMPL_CLASS_NAME = "net.sf.saxon.TransformerFactoryImpl";
+    private final static String SAXON_MESSAGE_EMITTER_CLASSNAME = "net.sf.saxon.serialize.MessageWarner";
 
     private final static URL DEFAULT_CMDI2IMDI_XSLT = TranslatorImpl.class.getClassLoader().getResource("templates/cmdi2imdi/cmdi2imdiMaster.xslt");
     private final static URL DEFAULT_IMDI2CMDI_XSLT = TranslatorImpl.class.getClassLoader().getResource("templates/imdi2cmdi/imdi2cmdi.xslt");
@@ -118,6 +121,12 @@ public class TranslatorImpl implements Translator {
         transfFactory.setErrorListener(new TranslationServiceErrorListener(logger));
         logger.debug("Instantiated XML transformer factory of type {}", transfFactory.getClass());
 
+        if(transfFactory instanceof TransformerFactoryImpl) {
+            logger.debug("Telling Saxon to send messages as warnings to logger");
+            final Configuration tfConfig = ((TransformerFactoryImpl)transfFactory).getConfiguration();
+            tfConfig.setMessageEmitterClass(SAXON_MESSAGE_EMITTER_CLASSNAME);
+        }
+        
         xmlInputFactory = XMLInputFactory.newInstance();
         logger.debug("Instantiated XML input factory of type {}", xmlInputFactory.getClass());
 
