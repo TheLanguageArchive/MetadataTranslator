@@ -45,14 +45,20 @@
             </Title>   
             <Date>
                 <xsl:value-of select="child::Date"/>
-            </Date>
+            </Date>            
             <xsl:apply-templates select="descriptions" mode="DBDSESSION2IMDISESSION"/>
             <xsl:apply-templates select="InfoLink" mode="DBDSESSION2IMDISESSION"/>
             <MDGroup>
                 <xsl:apply-templates select="Location" mode="DBDSESSION2IMDISESSION"/>
                 <xsl:apply-templates select="Project" mode="DBDSESSION2IMDISESSION"/>
                 <Keys>
-                <xsl:apply-templates select="Keys" mode="DBDSESSION2IMDISESSION"/>
+                    <xsl:if test="normalize-space(child::IMDICreator)!=''">
+                        <Key Name="IMDI_file_creator" Type="OpenVocabulary"><xsl:value-of select="child::IMDICreator" /></Key>
+                    </xsl:if>
+                    <xsl:if test="normalize-space(child::IMDICorrector)!=''">
+                        <Key Name="IMDI_file_corrector" Type="OpenVocabulary"><xsl:value-of select="child::IMDICorrector" /></Key>
+                    </xsl:if>
+                    <xsl:apply-templates select="Keys" mode="DBDSESSION2IMDISESSION"/>
                 </Keys>
                 <xsl:apply-templates select="Content" mode="DBDSESSION2IMDISESSION"/>
                 <Actors>
@@ -153,6 +159,15 @@
             <Anonymized Link="http://www.mpi.nl/IMDI/Schema/Boolean.xml" Type="ClosedVocabulary"><xsl:value-of select="child::Anonymized"/></Anonymized>
             <Contact><xsl:apply-templates select="Contact" mode="DBDSESSION2IMDISESSION"/></Contact>
             <Keys>
+                <xsl:if test="normalize-space(child::LevelOfBilingualism)!=''">
+                    <Key Name="DBD.LevelOfBilingualism" Type="OpenVocabulary"><xsl:value-of select="child::LevelOfBilingualism" /></Key>
+                </xsl:if>
+                <xsl:if test="normalize-space(child::AgeAtImmigration)!=''">
+                    <Key Name="DBD.AgeAtImmigration" Type="OpenVocabulary"><xsl:value-of select="child::AgeAtImmigration" /></Key>
+                </xsl:if>
+                <xsl:if test="normalize-space(child::BirthCountry)!=''">
+                    <Key Name="DBD.CountryOfBirth" Type="OpenVocabulary"><xsl:value-of select="child::BirthCountry" /></Key>
+                </xsl:if>
                 <xsl:apply-templates select="Keys" mode="DBDSESSION2IMDISESSION"/>
             </Keys>
             <xsl:apply-templates select="descriptions" mode="DBDSESSION2IMDISESSION"/>  
