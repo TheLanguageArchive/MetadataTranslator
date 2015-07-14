@@ -72,9 +72,6 @@
                 <xsl:call-template name="DLUCEA2IMDI" />
             </xsl:when>
             
-            
-            
-            
             <!-- Add new profile templates here -->
 			<!--        
 			<xsl:when test="exists(//Components/WHAT-EVER)">
@@ -83,6 +80,17 @@
             -->
             <!-- Not a known profile! Apply identity -->
             <xsl:otherwise>
+                <xsl:message>No matching stylesheet for input file, falling back to identity transform. 
+                    <xsl:choose>
+                        <xsl:when test="/CMD/@xsi:schemaLocation">
+                            <xsl:text>Found schema location: </xsl:text>
+                            <xsl:value-of select="/CMD/@xsi:schemaLocation"></xsl:value-of>
+                            <xsl:text></xsl:text></xsl:when>
+                        <xsl:otherwise>
+                            <xsl:text>No schema location found!</xsl:text>
+                        </xsl:otherwise>
+                    </xsl:choose>
+                    </xsl:message>
                 <xsl:call-template name="identity-transform"/>
             </xsl:otherwise>
         </xsl:choose>
@@ -128,36 +136,56 @@
     <!-- InfoLink to Description with @ArchiveHandle and @Link -->
     <xsl:template match="InfoLink" mode="create-info-link-description">
         <xsl:variable name="proxy" select="//ResourceProxy[@id eq current()/@ref]" />
-        <xsl:for-each select="Description">
-            <Description>
-                <xsl:if test="normalize-space(@xml:lang)!=''">
-                    <xsl:attribute name="LanguageId" select="concat('ISO639-3:',@xml:lang)" /> <!-- this probably needs to be more sophisticated to cover all cases -->
-                </xsl:if>
-                
-                <xsl:choose>
-                    <xsl:when test="$proxy">
-                        <xsl:variable name="handle" select="tla:getBaseHandle($proxy/ResourceRef)"/>
-                        <xsl:if test="$handle">
-                            <xsl:attribute name="ArchiveHandle">
-                                <xsl:value-of select="concat('hdl:',$handle)"/>
-                            </xsl:attribute>
-                        </xsl:if>       
-                        
-                        <xsl:variable name="localUri" select="$proxy/ResourceRef/@lat:localURI" />
-                        <xsl:if test="normalize-space($localUri) != ''">
-                            <xsl:attribute name="Link">                                    
-                                <xsl:value-of select="resolve-uri($localUri, $source-location)"/>
-                            </xsl:attribute>
-                        </xsl:if>  
-                    </xsl:when>
-                    <xsl:otherwise>
-                        <xsl:message>Warning: InfoLink without matching resource proxy! Description content: [<xsl:value-of select="Description" />]</xsl:message>
-                    </xsl:otherwise>
-                </xsl:choose>
-                
-                <xsl:value-of select="."/>
-            </Description>
-        </xsl:for-each>
+        <xsl:choose>
+            <xsl:when test="Description">
+                <xsl:for-each select="Description">
+                    <xsl:call-template name="create-info-link-description-element" >
+                        <xsl:with-param name="proxy" select="$proxy" />
+                        <xsl:with-param name="description" select="text()" />
+                    </xsl:call-template>
+                </xsl:for-each>
+            </xsl:when>
+            <xsl:otherwise>
+                <xsl:call-template name="create-info-link-description-element">
+                    <xsl:with-param name="proxy" select="$proxy" />
+                </xsl:call-template>
+            </xsl:otherwise>
+        </xsl:choose>
     </xsl:template>
-    
+
+    <xsl:template name="create-info-link-description-element">
+        <xsl:param name="proxy" />
+        <xsl:param name="description" required="no"/>
+        <Description>
+            <xsl:if test="normalize-space(@xml:lang)!=''">
+                <xsl:attribute name="LanguageId" select="concat('ISO639-3:',@xml:lang)" /> <!-- this probably needs to be more sophisticated to cover all cases -->
+            </xsl:if>
+            
+            <xsl:choose>
+                <xsl:when test="$proxy">
+                    <xsl:variable name="handle" select="tla:getBaseHandle($proxy/ResourceRef)"/>
+                    <xsl:if test="$handle">
+                        <xsl:attribute name="ArchiveHandle">
+                            <xsl:value-of select="concat('hdl:',$handle)"/>
+                        </xsl:attribute>
+                    </xsl:if>       
+                    
+                    <xsl:variable name="localUri" select="$proxy/ResourceRef/@lat:localURI" />
+                    <xsl:if test="normalize-space($localUri) != ''">
+                        <xsl:attribute name="Link">                                    
+                            <xsl:value-of select="resolve-uri($localUri, $source-location)"/>
+                        </xsl:attribute>
+                    </xsl:if>  
+                </xsl:when>
+                <xsl:otherwise>
+                    <xsl:message>Warning: InfoLink without matching resource proxy! Description content: [<xsl:value-of select="Description" />]</xsl:message>
+                </xsl:otherwise>
+            </xsl:choose>
+            
+            <xsl:if test="$description">
+                <xsl:value-of select="$description"/>
+            </xsl:if>
+        </Description>
+    </xsl:template>
+
 </xsl:stylesheet>
