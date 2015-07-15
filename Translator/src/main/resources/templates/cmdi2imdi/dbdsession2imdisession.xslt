@@ -46,7 +46,7 @@
             <Date>
                 <xsl:value-of select="child::Date"/>
             </Date>            
-            <xsl:apply-templates select="descriptions" mode="DBDSESSION2IMDISESSION"/>
+            <xsl:apply-templates select="Descriptions" mode="DBDSESSION2IMDISESSION"/>
             <xsl:apply-templates select="InfoLink" mode="DBDSESSION2IMDISESSION"/>
             <MDGroup>
                 <xsl:apply-templates select="Location" mode="DBDSESSION2IMDISESSION"/>
@@ -62,7 +62,7 @@
                 </Keys>
                 <xsl:apply-templates select="Content" mode="DBDSESSION2IMDISESSION"/>
                 <Actors>
-                    <xsl:apply-templates select="Actors/descriptions" mode="DBDSESSION2IMDISESSION"/> 
+                    <xsl:apply-templates select="Actors/Descriptions" mode="DBDSESSION2IMDISESSION"/> 
                     <xsl:apply-templates select="Actors/Actor" mode="DBDSESSION2IMDISESSION"/>                
                 </Actors>
             </MDGroup>
@@ -75,14 +75,14 @@
         <Project>
             <Name><xsl:value-of select="child::Name"/></Name>
             <Title><xsl:value-of select="child::Title"/></Title>
-            <Id><xsl:value-of select="child::ID"/></Id>
+            <Id><xsl:value-of select="child::Id"/></Id>
             <Contact>
                 <Name><xsl:value-of select="child::Contact/Person"/></Name>
                 <Address><xsl:value-of select="child::Contact/Address" /></Address>
                 <Email><xsl:value-of select="child::Contact/Email"/></Email>
                 <Organisation><xsl:value-of select="child::Contact/Organisation"/></Organisation>
             </Contact>
-            <xsl:apply-templates select="descriptions" mode="DBDSESSION2IMDISESSION"/>  
+            <xsl:apply-templates select="Descriptions" mode="DBDSESSION2IMDISESSION"/>  
         </Project>
     </xsl:template>
     
@@ -132,7 +132,7 @@
             <Keys>
             <xsl:apply-templates select="Keys" mode="DBDSESSION2IMDISESSION"/>           
             </Keys>
-            <xsl:apply-templates select="descriptions" mode="DBDSESSION2IMDISESSION"/>  
+            <xsl:apply-templates select="Descriptions" mode="DBDSESSION2IMDISESSION"/>  
         </Content>
     </xsl:template>
     
@@ -148,7 +148,7 @@
             <Code><xsl:value-of select="child::Code"/></Code>
             <FamilySocialRole Link="http://www.mpi.nl/IMDI/Schema/Actor-FamilySocialRole.xml" Type="OpenVocabularyList"><xsl:value-of select="child::FamilySocialRole"/></FamilySocialRole>
             <Languages>
-                <xsl:apply-templates select="Languages/descriptions" mode="DBDSESSION2IMDISESSION"/>  
+                <xsl:apply-templates select="Languages/Descriptions" mode="DBDSESSION2IMDISESSION"/>  
                 <xsl:apply-templates select="descendant::Language" mode="DBDSESSION2IMDISESSION_ACTORLANG"/>
             </Languages>
             <EthnicGroup><xsl:value-of select="child::EthnicGroup"/></EthnicGroup>
@@ -170,19 +170,19 @@
                 </xsl:if>
                 <xsl:apply-templates select="Keys" mode="DBDSESSION2IMDISESSION"/>
             </Keys>
-            <xsl:apply-templates select="descriptions" mode="DBDSESSION2IMDISESSION"/>  
+            <xsl:apply-templates select="Descriptions" mode="DBDSESSION2IMDISESSION"/>  
         </Actor>
     </xsl:template>
     
     <xsl:template match="Language" mode="DBDSESSION2IMDISESSION_CONTENTLANG">
-        <xsl:apply-templates select="descriptions" mode="DBDSESSION2IMDISESSION"/>  
+        <xsl:apply-templates select="Descriptions" mode="DBDSESSION2IMDISESSION"/>  
         <Language>
             <Id><xsl:value-of select="child::LanguageID"/></Id>
             <Name Link="http://www.mpi.nl/IMDI/Schema/MPI-Languages.xml" Type="OpenVocabulary"><xsl:value-of select="child::LanguageName"/></Name>
             <Dominant Type="ClosedVocabulary"><xsl:value-of select="child::Dominant"/></Dominant>
             <SourceLanguage Type="ClosedVocabulary"><xsl:value-of select="child::SourceLanguage"/></SourceLanguage>
             <TargetLanguage Type="ClosedVocabulary"><xsl:value-of select="child::TargetLanguage"/></TargetLanguage>            
-            <xsl:apply-templates select="descriptions"/>
+            <xsl:apply-templates select="Descriptions"/>
         </Language>
     </xsl:template>    
     
@@ -192,7 +192,7 @@
             <Name><xsl:value-of select="child::LanguageName"/></Name>
             <MotherTongue Type="ClosedVocabulary"><xsl:value-of select="child::MotherTongue"/></MotherTongue>
             <PrimaryLanguage Type="ClosedVocabulary"><xsl:value-of select="child::PrimaryLanguage"/></PrimaryLanguage>
-            <xsl:apply-templates select="descriptions" mode="DBDSESSION2IMDISESSION"/>
+            <xsl:apply-templates select="Descriptions" mode="DBDSESSION2IMDISESSION"/>
         </Language>
     </xsl:template>
     
@@ -204,7 +204,7 @@
             <Owner><xsl:value-of select="Owner"/></Owner>
             <Publisher><xsl:value-of select="Publisher"/></Publisher>
             <Contact><xsl:apply-templates select="Contact" mode="DBDSESSION2IMDISESSION"/></Contact>
-            <xsl:apply-templates select="descriptions" mode="DBDSESSION2IMDISESSION"/>                
+            <xsl:apply-templates select="Descriptions" mode="DBDSESSION2IMDISESSION"/>                
         </Access>
     </xsl:template>
 
@@ -231,7 +231,7 @@
         </Resources>
     </xsl:template>
     
-    <xsl:template match="descriptions" mode="DBDSESSION2IMDISESSION">
+    <xsl:template match="Descriptions" mode="DBDSESSION2IMDISESSION">
         <xsl:for-each select="Description">
             <xsl:choose>
                 <xsl:when test="normalize-space(.)!=''">                    
@@ -275,7 +275,7 @@
             <RecordingConditions><xsl:value-of select="RecordingConditions"/></RecordingConditions>
             <xsl:apply-templates select="TimePosition" mode="DBDSESSION2IMDISESSION" />
             <xsl:apply-templates select="Access" mode="DBDSESSION2IMDISESSION" />  
-            <xsl:apply-templates select="descriptions" mode="DBDSESSION2IMDISESSION"/>
+            <xsl:apply-templates select="Descriptions" mode="DBDSESSION2IMDISESSION"/>
             <Keys>
                 <xsl:apply-templates select="Keys" mode="DBDSESSION2IMDISESSION"/>
             </Keys>
@@ -307,7 +307,7 @@
                         <Level>Unspecified</Level>
                     </xsl:otherwise>
                 </xsl:choose>
-                <xsl:apply-templates select="descriptions" mode="DBDSESSION2IMDISESSION"/>
+                <xsl:apply-templates select="Descriptions" mode="DBDSESSION2IMDISESSION"/>
             </Validation>
             <Derivation><xsl:value-of select="Derivation"/></Derivation>
             <CharacterEncoding><xsl:value-of select="CharacterEncoding"/></CharacterEncoding>
@@ -315,7 +315,7 @@
             <LanguageId><xsl:value-of select="LanguageId"/></LanguageId>
             <Anonymized><xsl:value-of select="Anonymized"/></Anonymized>
             <xsl:apply-templates select="Access" mode="DBDSESSION2IMDISESSION" /> 
-            <xsl:apply-templates select="descriptions" mode="DBDSESSION2IMDISESSION"/>
+            <xsl:apply-templates select="Descriptions" mode="DBDSESSION2IMDISESSION"/>
             <Keys>
                 <xsl:apply-templates select="Keys" mode="DBDSESSION2IMDISESSION"/>
             </Keys>
@@ -330,7 +330,7 @@
             <xsl:apply-templates select="CounterPosition" mode="DBDSESSION2IMDISESSION" />
             <xsl:apply-templates select="TimePosition" mode="DBDSESSION2IMDISESSION" />
             <xsl:apply-templates select="Access" mode="DBDSESSION2IMDISESSION" />            
-            <xsl:apply-templates select="descriptions" mode="DBDSESSION2IMDISESSION"/>
+            <xsl:apply-templates select="Descriptions" mode="DBDSESSION2IMDISESSION"/>
             <Keys>
                 <xsl:apply-templates select="Keys" mode="DBDSESSION2IMDISESSION"/>
             </Keys>
