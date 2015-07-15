@@ -749,9 +749,9 @@ $LastChangedDate: 2013-08-14 11:25:31 +0200 (Wed, 14 Aug 2013) $
             	</xsl:call-template>
             </Country>
             <xsl:if test="exists(child::Region)">
-                <Region>
-                    <xsl:value-of select="child::Region"/>
-                </Region>
+            	<xsl:for-each select="child::Region">
+            		<Region><xsl:value-of select="."/></Region>
+            	</xsl:for-each>
             </xsl:if>
             <xsl:if test="exists(child::Address)">
                 <Address>

@@ -93,7 +93,9 @@
             <Country Link="http://www.mpi.nl/IMDI/Schema/Countries.xml" Type="OpenVocabulary">
                 <xsl:value-of select="child::Country"/>
             </Country>
-            <Region><xsl:value-of select="child::Region"/></Region>
+            <xsl:for-each select="child::Region">
+                <Region><xsl:value-of select="."/></Region>
+            </xsl:for-each>
             <Address><xsl:value-of select="child::Address"/></Address>
         </Location>
     </xsl:template>
@@ -283,46 +285,49 @@
     </xsl:template>
     
     <xsl:template match="ResourceProxy" mode="TLASESSION2IMDISESSION-MEDIAFILE">
-        <xsl:if test="normalize-space(ResourceType) = 'Resource'">
-            <xsl:variable name="mediaFile" select="//Resources/MediaFile[@ref=current()/@id]" />
-            <xsl:variable name="mimetype" select="ResourceType/@mimetype"/>
-            <xsl:choose>
-                <xsl:when test="$mediaFile">
-                    <!-- A matching MediaFile element exists, transform from this -->
-                    <xsl:apply-templates select="$mediaFile" mode="TLASESSION2IMDISESSION"/>
-                </xsl:when>
-                <xsl:when test="matches($mimetype, $mediaFileMimeTypes)">
-                    <!-- No matching MediaFile, generate on basis of proxy alone -->
-                    <xsl:message>A MediaFile element for ResourceProxy with id '<xsl:value-of select="@id" />' is generated on basis of mimetype <xsl:value-of select="$mimetype" /></xsl:message>
-                    <MediaFile>
-                        <xsl:comment>NOTE: CMDI2IMDI - No MediaFile element was found for this resource, minimal information was generated on basis of ResourceProxy only</xsl:comment>
-                        <ResourceLink><xsl:apply-templates select="." mode="create-resource-link-content"/></ResourceLink>
-                        <Type>
-                            <!-- Strip everything after the forward slash in the mimetype -->
-                            <xsl:variable name="mimeTypeStart" select="replace($mimetype,'/.*$','')" />
-                            <!-- Capitalise first -->
-                            <xsl:value-of select="concat(upper-case(substring($mimeTypeStart, 1, 1)), lower-case(substring($mimeTypeStart, 2)))" />
-                        </Type>
-                        <Format><xsl:value-of select="$mimetype"/></Format>
-                        <Size/>
-                        <Quality>Unspecified</Quality>
-                        <RecordingConditions>Unspecified</RecordingConditions>
-                        <TimePosition>
-                            <Start>Unspecified</Start>
-                            <End>Unspecified</End>
-                        </TimePosition>
-                        <Access>
-                            <Availability/>
-                            <Date>Unspecified</Date>
-                            <Owner/>
-                            <Publisher/>
-                            <Contact/>
-                        </Access>
-                        <Keys/>
-                    </MediaFile>
-                </xsl:when>
-            </xsl:choose>
-        </xsl:if>
+     <xsl:if test="normalize-space(ResourceType) = 'Resource'">
+         <xsl:variable name="mediaFile" select="//Resources/MediaFile[@ref=current()/@id]" />
+         <xsl:variable name="mimetype" select="ResourceType/@mimetype"/>
+         <xsl:choose>
+             <xsl:when test="$mediaFile">
+                 <!-- A matching MediaFile element exists, transform from this -->
+                 <xsl:apply-templates select="$mediaFile" mode="TLASESSION2IMDISESSION"/>
+             </xsl:when>
+             <xsl:when test="//InfoLink[@ref=current()/@id]">
+                 <!-- info link exist, processed elsewhere, skip -->
+             </xsl:when>
+             <xsl:when test="matches($mimetype, $mediaFileMimeTypes)">
+                 <!-- No matching MediaFile, generate on basis of proxy alone -->
+                 <xsl:message>A MediaFile element for ResourceProxy with id '<xsl:value-of select="@id" />' is generated on basis of mimetype <xsl:value-of select="$mimetype" /></xsl:message>
+                 <MediaFile>
+                     <xsl:comment>NOTE: CMDI2IMDI - No MediaFile element was found for this resource, minimal information was generated on basis of ResourceProxy only</xsl:comment>
+                     <ResourceLink><xsl:apply-templates select="." mode="create-resource-link-content"/></ResourceLink>
+                     <Type>
+                         <!-- Strip everything after the forward slash in the mimetype -->
+                         <xsl:variable name="mimeTypeStart" select="replace($mimetype,'/.*$','')" />
+                         <!-- Capitalise first -->
+                         <xsl:value-of select="concat(upper-case(substring($mimeTypeStart, 1, 1)), lower-case(substring($mimeTypeStart, 2)))" />
+                     </Type>
+                     <Format><xsl:value-of select="$mimetype"/></Format>
+                     <Size/>
+                     <Quality>Unspecified</Quality>
+                     <RecordingConditions>Unspecified</RecordingConditions>
+                     <TimePosition>
+                         <Start>Unspecified</Start>
+                         <End>Unspecified</End>
+                     </TimePosition>
+                     <Access>
+                         <Availability/>
+                         <Date>Unspecified</Date>
+                         <Owner/>
+                         <Publisher/>
+                         <Contact/>
+                     </Access>
+                     <Keys/>
+                 </MediaFile>
+             </xsl:when>
+         </xsl:choose>
+     </xsl:if>        
     </xsl:template>
     
     <xsl:template match="MediaFile" mode="TLASESSION2IMDISESSION">
@@ -354,6 +359,9 @@
                 <xsl:when test="$writtenResource">
                     <!-- A matching MediaFile element exists, transform from this -->
                     <xsl:apply-templates select="$writtenResource" mode="TLASESSION2IMDISESSION"/>
+                </xsl:when>
+                <xsl:when test="//InfoLink[@ref=current()/@id]">
+                    <!-- info link exist, processed elsewhere, skip -->
                 </xsl:when>
                 <xsl:when test="matches(ResourceType/@mimetype, $writtenResourceMimeTypes)">
                     <!-- No matching MediaFile, generate on basis of proxy alone -->

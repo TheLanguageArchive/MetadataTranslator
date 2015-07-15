@@ -13,3 +13,4 @@ hs_err_pid*
 /Translator/target/
 /TranslationService/target/
 /TranslationService/nb-configuration.xml
+/Translator/translator_oxygen.xpr
