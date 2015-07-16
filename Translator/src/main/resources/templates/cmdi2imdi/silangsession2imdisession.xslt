@@ -49,7 +49,7 @@
                 <xsl:value-of select="child::Date"/>
             </Date>
             <xsl:apply-templates select="descriptions" mode="COMMONTLA2IMDISESSION"/>
-            <xsl:apply-templates select="InfoLink" mode="SILANGSESSION2IMDISESSION"/>
+            <xsl:apply-templates select="InfoLink" mode="create-info-link-description"/>
             <MDGroup>
                 <xsl:apply-templates select="Location" mode="SILANGSESSION2IMDISESSION"/>
                 <xsl:apply-templates select="Project" mode="SILANGSESSION2IMDISESSION"/>
@@ -297,14 +297,6 @@
            <xsl:apply-templates mode="SILANGSESSION2IMDISESSION-WRITTENRESOURCE" />
            <xsl:apply-templates select="/CMD/Components/lat-session/Resources/Source" mode="SILANGSESSION2IMDISESSION" />
         </Resources>
-    </xsl:template>
-    
-    <xsl:template match="InfoLink" mode="SILANGSESSION2IMDISESSION">
-        <Description>
-            <xsl:attribute name="ArchiveHandle"><xsl:value-of select="//ResourceProxy[@id eq current()/@ref]/ResourceRef/text()"/></xsl:attribute>
-            <xsl:attribute name="Link"><xsl:value-of select="//ResourceProxy[@id eq current()/@ref]/ResourceRef/@lat:localURI"/></xsl:attribute>
-            <xsl:value-of select="Description"/>
-        </Description>
     </xsl:template>
     
     <xsl:template match="ResourceProxy" mode="SILANGSESSION2IMDISESSION-SKIPPED">
