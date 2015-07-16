@@ -5,6 +5,7 @@
     xmlns:lat="http://lat.mpi.nl/"
 	version="2.0" xpath-default-namespace="http://www.clarin.eu/cmd/">
     
+    
     <xsl:variable name="mediaFileMimeTypes">^(video|audio|image)/.*$</xsl:variable>
     <xsl:variable name="writtenResourceMimeTypes">^(text|application)/.*$</xsl:variable>
     
@@ -48,7 +49,7 @@
             <Date>
                 <xsl:value-of select="child::Date"/>
             </Date>
-            <xsl:apply-templates select="descriptions" mode="TLASESSION2IMDISESSION"/>
+            <xsl:apply-templates select="descriptions" mode="COMMONTLA2IMDISESSION"/>
             <xsl:apply-templates select="InfoLink" mode="create-info-link-description"/>
             <MDGroup>
                 <xsl:apply-templates select="Location" mode="TLASESSION2IMDISESSION"/>
@@ -58,13 +59,13 @@
                 </Keys>
                 <xsl:apply-templates select="Content" mode="TLASESSION2IMDISESSION"/>
                 <Actors>
-                    <xsl:apply-templates select="Actors/descriptions" mode="TLASESSION2IMDISESSION"/> 
+                    <xsl:apply-templates select="Actors/descriptions" mode="COMMONTLA2IMDISESSION"/> 
                     <xsl:apply-templates select="Actors/Actor" mode="TLASESSION2IMDISESSION"/>                
                 </Actors>
             </MDGroup>
             <xsl:apply-templates select="/CMD/Resources/ResourceProxyList" mode="TLASESSION2IMDISESSION" />
             <References>
-                <xsl:apply-templates select="References/descriptions" mode="TLASESSION2IMDISESSION"/> 
+                <xsl:apply-templates select="References/descriptions" mode="COMMONTLA2IMDISESSION"/> 
                 <xsl:apply-templates select="References/InfoLink" mode="create-info-link-description"/>
             </References>
         </Session>
@@ -81,7 +82,7 @@
                 <Email><xsl:value-of select="child::Contact/Email"/></Email>
                 <Organisation><xsl:value-of select="child::Contact/Organisation"/></Organisation>
             </Contact>
-            <xsl:apply-templates select="descriptions" mode="TLASESSION2IMDISESSION"/>  
+            <xsl:apply-templates select="descriptions" mode="COMMONTLA2IMDISESSION"/>  
         </Project>
     </xsl:template>
     
@@ -128,13 +129,13 @@
                 <Channel Link="http://www.mpi.nl/IMDI/Schema/Content-Channel.xml" Type="ClosedVocabulary"><xsl:value-of select="child::CommunicationContext/Channel"/></Channel>
             </CommunicationContext>
             <Languages>
-                <xsl:apply-templates select="Content_Languages/descriptions" mode="TLASESSION2IMDISESSION"/>  
+                <xsl:apply-templates select="Content_Languages/descriptions" mode="COMMONTLA2IMDISESSION"/>  
                 <xsl:apply-templates select="//Content_Language" mode="TLASESSION2IMDISESSION"/>
             </Languages>
             <Keys>
             <xsl:apply-templates select="Keys" mode="TLASESSION2IMDISESSION"/>           
             </Keys>
-            <xsl:apply-templates select="descriptions" mode="TLASESSION2IMDISESSION"/>  
+            <xsl:apply-templates select="descriptions" mode="COMMONTLA2IMDISESSION"/>  
         </Content>
     </xsl:template>
     
@@ -150,7 +151,7 @@
             <Code><xsl:value-of select="child::Code"/></Code>
             <FamilySocialRole Link="http://www.mpi.nl/IMDI/Schema/Actor-FamilySocialRole.xml" Type="OpenVocabularyList"><xsl:value-of select="child::FamilySocialRole"/></FamilySocialRole>
             <Languages>
-                <xsl:apply-templates select="Actor_Languages/descriptions" mode="TLASESSION2IMDISESSION"/>  
+                <xsl:apply-templates select="Actor_Languages/descriptions" mode="COMMONTLA2IMDISESSION"/>  
                 <xsl:apply-templates select="descendant::Actor_Language" mode="TLASESSION2IMDISESSION"/>
             </Languages>
             <EthnicGroup><xsl:value-of select="child::EthnicGroup"/></EthnicGroup>
@@ -163,7 +164,7 @@
             <Keys>
                 <xsl:apply-templates select="Keys" mode="TLASESSION2IMDISESSION"/>
             </Keys>
-            <xsl:apply-templates select="descriptions" mode="TLASESSION2IMDISESSION"/>  
+            <xsl:apply-templates select="descriptions" mode="COMMONTLA2IMDISESSION"/>  
         </Actor>
     </xsl:template>
     
@@ -174,7 +175,7 @@
             <Dominant Type="ClosedVocabulary"><xsl:value-of select="child::Dominant"/></Dominant>
             <SourceLanguage Type="ClosedVocabulary"><xsl:value-of select="child::SourceLanguage"/></SourceLanguage>
             <TargetLanguage Type="ClosedVocabulary"><xsl:value-of select="child::TargetLanguage"/></TargetLanguage>            
-            <xsl:apply-templates select="descriptions" mode="TLASESSION2IMDISESSION"/>  
+            <xsl:apply-templates select="descriptions" mode="COMMONTLA2IMDISESSION"/>  
         </Language>
     </xsl:template>    
     
@@ -184,7 +185,7 @@
             <Name><xsl:value-of select="child::Name"/></Name>
             <MotherTongue Type="ClosedVocabulary"><xsl:value-of select="child::MotherTongue"/></MotherTongue>
             <PrimaryLanguage Type="ClosedVocabulary"><xsl:value-of select="child::PrimaryLanguage"/></PrimaryLanguage>
-            <xsl:apply-templates select="descriptions" mode="TLASESSION2IMDISESSION"/>
+            <xsl:apply-templates select="descriptions" mode="COMMONTLA2IMDISESSION"/>
         </Language>
     </xsl:template>
     
@@ -196,7 +197,7 @@
             <Owner><xsl:value-of select="Owner"/></Owner>
             <Publisher><xsl:value-of select="Publisher"/></Publisher>
             <Contact><xsl:apply-templates select="Contact" mode="TLASESSION2IMDISESSION"/></Contact>
-            <xsl:apply-templates select="descriptions" mode="TLASESSION2IMDISESSION"/>                
+            <xsl:apply-templates select="descriptions" mode="COMMONTLA2IMDISESSION"/>                
         </Access>
     </xsl:template>
 
@@ -234,35 +235,6 @@
         </Resources>
     </xsl:template>
     
-<!--    <xsl:template match="Resources" mode="TLASESSION2IMDISESSION">
-            <xsl:apply-templates select="WrittenResource" mode="TLASESSION2IMDISESSION"/>
-            <xsl:apply-templates select="Source" mode="TLASESSION2IMDISESSION"/>            
-    </xsl:template>-->
-    
-    <xsl:template match="descriptions" mode="TLASESSION2IMDISESSION">
-        <xsl:for-each select="Description">
-            <xsl:choose>
-                <xsl:when test="normalize-space(.)!=''">                    
-                    <Description>
-                        <xsl:choose>
-                            <xsl:when test="normalize-space(@xml:lang)!=''">
-                                <xsl:choose>
-                                    <xsl:when test="string-length(@xml:lang)=3">
-                                        <xsl:attribute name="LanguageId" select="concat('ISO639-3:',@xml:lang)" /> <!-- this probably needs to be more sophisticated to cover all cases -->                                        
-                                    </xsl:when>
-                                    <xsl:otherwise>
-                                        <xsl:message>WARN: encountered xml:lang attribute with a length != 3, skipped.</xsl:message>
-                                    </xsl:otherwise>
-                                </xsl:choose>
-                                
-                            </xsl:when>
-                        </xsl:choose>                
-                        <xsl:value-of select="."/>
-                    </Description>
-                </xsl:when>
-            </xsl:choose>
-        </xsl:for-each>
-    </xsl:template>
     
     <xsl:template match="ResourceProxy" mode="TLASESSION2IMDISESSION-SKIPPED">
         <!-- ResourceProxies without a reference or mimetype get skipped -->
@@ -345,7 +317,7 @@
             <RecordingConditions><xsl:value-of select="RecordingConditions"/></RecordingConditions>
             <xsl:apply-templates select="TimePosition" mode="TLASESSION2IMDISESSION" />
             <xsl:apply-templates select="Access" mode="TLASESSION2IMDISESSION" />  
-            <xsl:apply-templates select="descriptions" mode="TLASESSION2IMDISESSION"/>
+            <xsl:apply-templates select="descriptions" mode="COMMONTLA2IMDISESSION"/>
             <Keys>
                 <xsl:apply-templates select="Keys" mode="TLASESSION2IMDISESSION"/>
             </Keys>
@@ -429,7 +401,7 @@
                         <Level>Unspecified</Level>
                     </xsl:otherwise>
                 </xsl:choose>
-                <xsl:apply-templates select="Validation/descriptions" mode="TLASESSION2IMDISESSION"/>
+                <xsl:apply-templates select="Validation/descriptions" mode="COMMONTLA2IMDISESSION"/>
             </Validation>
             <Derivation><xsl:value-of select="Derivation"/></Derivation>
             <CharacterEncoding><xsl:value-of select="CharacterEncoding"/></CharacterEncoding>
@@ -437,7 +409,7 @@
             <LanguageId><xsl:value-of select="LanguageId"/></LanguageId>
             <Anonymized><xsl:value-of select="Anonymized"/></Anonymized>
             <xsl:apply-templates select="Access" mode="TLASESSION2IMDISESSION" /> 
-            <xsl:apply-templates select="descriptions" mode="TLASESSION2IMDISESSION"/>
+            <xsl:apply-templates select="descriptions" mode="COMMONTLA2IMDISESSION"/>
             <Keys>
                 <xsl:apply-templates select="Keys" mode="TLASESSION2IMDISESSION"/>
             </Keys>
@@ -452,7 +424,7 @@
             <xsl:apply-templates select="CounterPosition" mode="TLASESSION2IMDISESSION" />
             <xsl:apply-templates select="TimePosition" mode="TLASESSION2IMDISESSION" />
             <xsl:apply-templates select="Access" mode="TLASESSION2IMDISESSION" />            
-            <xsl:apply-templates select="descriptions" mode="TLASESSION2IMDISESSION"/>
+            <xsl:apply-templates select="descriptions" mode="COMMONTLA2IMDISESSION"/>
             <Keys>
                 <xsl:apply-templates select="Keys" mode="TLASESSION2IMDISESSION"/>
             </Keys>

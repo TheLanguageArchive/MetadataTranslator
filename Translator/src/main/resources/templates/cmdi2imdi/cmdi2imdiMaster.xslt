@@ -6,6 +6,7 @@
     xmlns:lat="http://lat.mpi.nl/"
     version="2.0" xpath-default-namespace="http://www.clarin.eu/cmd/">
     
+    <xsl:include href="tlaprofilescommon.xslt"/>
     <xsl:include href="iprosla2imdi.xslt"/>
     <xsl:include href="valid2imdi.xslt"/>
     <xsl:include href="collection2corpus.xslt"/>
