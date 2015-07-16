@@ -47,7 +47,7 @@
                 <xsl:value-of select="child::Date"/>
             </Date>            
             <xsl:apply-templates select="Descriptions" mode="COMMONTLA2IMDISESSION"/>
-            <xsl:apply-templates select="InfoLink" mode="DBDSESSION2IMDISESSION"/>
+            <xsl:apply-templates select="InfoLink" mode="create-info-link-description"/>
             <MDGroup>
                 <xsl:apply-templates select="Location" mode="DBDSESSION2IMDISESSION"/>
                 <xsl:apply-templates select="Project" mode="DBDSESSION2IMDISESSION"/>
@@ -229,14 +229,6 @@
             <xsl:apply-templates select="WrittenResource" mode="DBDSESSION2IMDISESSION"/>
             <xsl:apply-templates select="Source" mode="DBDSESSION2IMDISESSION"/>            
         </Resources>
-    </xsl:template>
-    
-    <xsl:template match="InfoLink" mode="DBDSESSION2IMDISESSION">
-        <Description>
-            <xsl:attribute name="ArchiveHandle"><xsl:value-of select="//ResourceProxy[@id eq current()/@ref]/ResourceRef/text()"/></xsl:attribute>
-            <xsl:attribute name="Link"><xsl:value-of select="//ResourceProxy[@id eq current()/@ref]/ResourceRef/@lat:localURI"/></xsl:attribute>
-            <xsl:value-of select="Description"/>
-        </Description>
     </xsl:template>
     
     <xsl:template match="MediaFile" mode="DBDSESSION2IMDISESSION">        
