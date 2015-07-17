@@ -127,6 +127,7 @@
                 <Channel Link="http://www.mpi.nl/IMDI/Schema/Content-Channel.xml" Type="ClosedVocabulary"><xsl:value-of select="child::CommunicationContext/Channel"/></Channel>
             </CommunicationContext>
             <Languages>
+                <xsl:apply-templates select="Languages/Descriptions" mode="COMMONTLA2IMDISESSION"/>  
                 <xsl:apply-templates select="Languages/Language" mode="DBDSESSION2IMDISESSION_CONTENTLANG"/>
             </Languages>
             <Keys>
@@ -175,7 +176,6 @@
     </xsl:template>
     
     <xsl:template match="Language" mode="DBDSESSION2IMDISESSION_CONTENTLANG">
-        <xsl:apply-templates select="Descriptions" mode="COMMONTLA2IMDISESSION"/>  
         <Language>
             <Id><xsl:value-of select="child::LanguageID"/></Id>
             <Name Link="http://www.mpi.nl/IMDI/Schema/MPI-Languages.xml" Type="OpenVocabulary"><xsl:value-of select="child::LanguageName"/></Name>
