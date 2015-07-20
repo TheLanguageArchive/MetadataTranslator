@@ -214,7 +214,14 @@
                 <xsl:value-of select="Format"/>
             </Format>
             <Size>
-                <xsl:value-of select="Size"/>
+                <xsl:if test="Size">
+                    <xsl:value-of select="Size"/>
+                </xsl:if>
+                <xsl:if test="TotalSize">
+                   <xsl:value-of select="TotalSize/Number"/>
+                   <xsl:text> </xsl:text>
+                   <xsl:value-of select="TotalSize/SizeUnit"/>
+                </xsl:if>
             </Size>
             <Quality>
                 <xsl:value-of select="Quality"/>
@@ -224,7 +231,7 @@
             </RecordingConditions>
             <xsl:apply-templates select="TimePosition" mode="COMMONTLA2IMDISESSION"/>
             <xsl:apply-templates select="Access" mode="COMMONTLA2IMDISESSION"/>
-            <xsl:apply-templates select="descriptions" mode="COMMONTLA2IMDISESSION"/>
+            <xsl:apply-templates select="descriptions|Descriptions" mode="COMMONTLA2IMDISESSION"/>
             <Keys>
                 <xsl:apply-templates select="Keys" mode="COMMONTLA2IMDISESSION"/>
             </Keys>
@@ -317,7 +324,14 @@
                 <xsl:value-of select="Format"/>
             </Format>
             <Size>
-                <xsl:value-of select="Size"/>
+                <xsl:if test="Size">
+                    <xsl:value-of select="Size"/>
+                </xsl:if>
+                <xsl:if test="TotalSize">
+                    <xsl:value-of select="TotalSize/Number"/>
+                    <xsl:text> </xsl:text>
+                    <xsl:value-of select="TotalSize/SizeUnit"/>
+                </xsl:if>
             </Size>
             <Validation>
                 <Type>
@@ -336,7 +350,7 @@
                         <Level>Unspecified</Level>
                     </xsl:otherwise>
                 </xsl:choose>
-                <xsl:apply-templates select="Validation/descriptions" mode="COMMONTLA2IMDISESSION"/>
+                <xsl:apply-templates select="Validation/descriptions|Validation/Descriptions" mode="COMMONTLA2IMDISESSION"/>
             </Validation>
             <Derivation>
                 <xsl:value-of select="Derivation"/>
@@ -354,7 +368,7 @@
                 <xsl:value-of select="Anonymized"/>
             </Anonymized>
             <xsl:apply-templates select="Access" mode="COMMONTLA2IMDISESSION"/>
-            <xsl:apply-templates select="descriptions" mode="COMMONTLA2IMDISESSION"/>
+            <xsl:apply-templates select="descriptions|Descriptions" mode="COMMONTLA2IMDISESSION"/>
             <Keys>
                 <xsl:apply-templates select="Keys" mode="COMMONTLA2IMDISESSION"/>
             </Keys>
@@ -375,7 +389,7 @@
             <xsl:apply-templates select="CounterPosition" mode="COMMONTLA2IMDISESSION"/>
             <xsl:apply-templates select="TimePosition" mode="COMMONTLA2IMDISESSION"/>
             <xsl:apply-templates select="Access" mode="COMMONTLA2IMDISESSION"/>
-            <xsl:apply-templates select="descriptions" mode="COMMONTLA2IMDISESSION"/>
+            <xsl:apply-templates select="descriptions|Descriptions" mode="COMMONTLA2IMDISESSION"/>
             <Keys>
                 <xsl:apply-templates select="Keys" mode="COMMONTLA2IMDISESSION"/>
             </Keys>
