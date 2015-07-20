@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<METATRANSCRIPT xmlns="http://www.mpi.nl/IMDI/Schema/IMDI"
+                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                xmlns:tla="http://tla.mpi.nl"
+                xmlns:lat="http://lat.mpi.nl/"
+                FormatId="IMDI 3.0"
+                Type="SESSION"
+                Version="0"
+                xsi:schemaLocation="http://www.mpi.nl/IMDI/Schema/IMDI http://www.mpi.nl/IMDI/Schema/IMDI_3.0.xsd"
+                ArchiveHandle="hdl:1839/00-0000-0000-0008-C21A-1@format=imdi"
+                Originator="Metadata Translator: DBDSESSION2IMDISESSION.xslt hdl:1839/00-0000-0000-0008-C21A-1@format=cmdi"
+                Date="2014-02-26">
+   <Session>
+      <Name>DBD DH 009D</Name>
+      <Title>DBD_NLD_22_18_03_009D</Title>
+      <Date>Unspecified</Date>
+      <Description LanguageId="ISO639-3:eng">Recording took place during primary school hours (08:30 AM-03:30 PM) at a primary school in a separate classroom. Recording was done by Dorian de Haan between 1984-1986.</Description>
+      <MDGroup>
+         <Location>
+            <Continent Link="http://www.mpi.nl/IMDI/Schema/Continents.xml"
+                       Type="ClosedVocabulary">Europe</Continent>
+            <Country Link="http://www.mpi.nl/IMDI/Schema/Countries.xml"
+                     Type="OpenVocabulary">Netherlands</Country>
+            <Region>Den Haag</Region>
+            <Address>Unspecified</Address>
+         </Location>
+         <Project>
+            <Name>De Haan Corpus</Name>
+            <Title>De taalsituatie van Surinaamse kinderen op de basisschool in Nederland</Title>
+            <Id/>
+            <Contact>
+               <Name/>
+               <Address/>
+               <Email/>
+               <Organisation/>
+            </Contact>
+            <Description LanguageId="ISO639-3:eng">Goal of this project is to get a clear view of the command of Sarnami and/or Sranan of primary school children of Suriname origin and to study their command of Dutch.</Description>
+         </Project>
+         <Keys/>
+         <Content>
+            <Genre Link="http://www.mpi.nl/IMDI/Schema/Content-Genre.xml"
+                   Type="OpenVocabulary">Discourse</Genre>
+            <SubGenre>Conversation</SubGenre>
+            <Modalities Link="http://www.mpi.nl/IMDI/Schema/Content-Modalities.xml"
+                        Type="OpenVocabularyList">Speech</Modalities>
+            <Subject Link="http://www.mpi.nl/IMDI/Schema/Content-Subject.xml"
+                     Type="OpenVocabularyList">emotions</Subject>
+            <CommunicationContext>
+               <Interactivity Link="http://www.mpi.nl/IMDI/Schema/Content-Interactivity.xml"
+                              Type="ClosedVocabulary">interactive</Interactivity>
+               <PlanningType Link="http://www.mpi.nl/IMDI/Schema/Content-PlanningType.xml"
+                             Type="ClosedVocabulary">semi-spontaneous</PlanningType>
+               <Involvement Link="http://www.mpi.nl/IMDI/Schema/Content-Involvement.xml"
+                            Type="ClosedVocabulary">non-elicited</Involvement>
+               <SocialContext Link="http://www.mpi.nl/IMDI/Schema/Content-SocialContext.xml"
+                              Type="ClosedVocabulary">Controlled environment</SocialContext>
+               <EventStructure Link="http://www.mpi.nl/IMDI/Schema/Content-EventStructure.xml"
+                               Type="ClosedVocabulary">Conversation</EventStructure>
+               <Channel Link="http://www.mpi.nl/IMDI/Schema/Content-Channel.xml"
+                        Type="ClosedVocabulary">Face to Face</Channel>
+            </CommunicationContext>
+            <Languages>
+               <Language>
+                  <Id>ISO639-3:nld</Id>
+                  <Name Link="http://www.mpi.nl/IMDI/Schema/MPI-Languages.xml"
+                        Type="OpenVocabulary">Dutch</Name>
+                  <Dominant Type="ClosedVocabulary">true</Dominant>
+                  <SourceLanguage Type="ClosedVocabulary">Unspecified</SourceLanguage>
+                  <TargetLanguage Type="ClosedVocabulary">Unspecified</TargetLanguage>
+               </Language>
+            </Languages>
+            <Keys/>
+            <Description LanguageId="ISO639-3:eng">This is a conversation between Dorian de Haan and a Suriname Hindu girl, Aida about emotions (punishment, grief), and weddings.</Description>
+         </Content>
+         <Actors>
+            <Actor>
+               <Role Link="http://www.mpi.nl/IMDI/Schema/Actor-Role.xml"
+                     Type="OpenVocabularyList">Interviewer</Role>
+               <Name>Dorian</Name>
+               <FullName>Dorian de Haan</FullName>
+               <Code>DH</Code>
+               <FamilySocialRole Link="http://www.mpi.nl/IMDI/Schema/Actor-FamilySocialRole.xml"
+                                 Type="OpenVocabularyList">Teacher</FamilySocialRole>
+               <Languages>
+                  <Language>
+                     <Id>ISO639-3:nld</Id>
+                     <Name>Dutch</Name>
+                     <MotherTongue Type="ClosedVocabulary">Unspecified</MotherTongue>
+                     <PrimaryLanguage Type="ClosedVocabulary">Unspecified</PrimaryLanguage>
+                  </Language>
+               </Languages>
+               <EthnicGroup>Dutch</EthnicGroup>
+               <Age>Unspecified</Age>
+               <BirthDate>Unspecified</BirthDate>
+               <Sex Link="http://www.mpi.nl/IMDI/Schema/Actor-Sex.xml"
+                    Type="ClosedVocabulary">Female</Sex>
+               <Education>Unspecified</Education>
+               <Anonymized Link="http://www.mpi.nl/IMDI/Schema/Boolean.xml"
+                           Type="ClosedVocabulary">true</Anonymized>
+               <Contact/>
+               <Keys/>
+               <Description LanguageId="ISO639-3:eng">Dorian de Haan is the coordinator/collector of this project. She is of Dutch origin. She works at the University of Utrecht, The Netherlands, at the Developmental Psychology department.</Description>
+            </Actor>
+            <Actor>
+               <Role Link="http://www.mpi.nl/IMDI/Schema/Actor-Role.xml"
+                     Type="OpenVocabularyList">Speaker/Signer</Role>
+               <Name>Aida</Name>
+               <FullName>Aida</FullName>
+               <Code/>
+               <FamilySocialRole Link="http://www.mpi.nl/IMDI/Schema/Actor-FamilySocialRole.xml"
+                                 Type="OpenVocabularyList">Student</FamilySocialRole>
+               <Languages>
+                  <Language>
+                     <Id>ISO639-3:nld</Id>
+                     <Name>Dutch</Name>
+                     <MotherTongue Type="ClosedVocabulary">Unspecified</MotherTongue>
+                     <PrimaryLanguage Type="ClosedVocabulary">Unspecified</PrimaryLanguage>
+                  </Language>
+                  <Language>
+                     <Id>ISO639-3:hns</Id>
+                     <Name>Sarnami</Name>
+                     <MotherTongue Type="ClosedVocabulary">Unspecified</MotherTongue>
+                     <PrimaryLanguage Type="ClosedVocabulary">Unspecified</PrimaryLanguage>
+                  </Language>
+               </Languages>
+               <EthnicGroup>Sarnami Hindustani</EthnicGroup>
+               <Age>12</Age>
+               <BirthDate>Unspecified</BirthDate>
+               <Sex Link="http://www.mpi.nl/IMDI/Schema/Actor-Sex.xml"
+                    Type="ClosedVocabulary">Female</Sex>
+               <Education>Unspecified</Education>
+               <Anonymized Link="http://www.mpi.nl/IMDI/Schema/Boolean.xml"
+                           Type="ClosedVocabulary">true</Anonymized>
+               <Contact/>
+               <Keys/>
+               <Description LanguageId="ISO639-3:eng">This girl is born in Suriname and moved with her family to the Netherlands. In Suriname she lived in Paramaribo. She has been living in the Netherlands for 9 years. Currently she is in the last form of primary school. She is 12 years old. According to herself she speaks better Dutch than Sarnami. 
+Same girl as in 1A, 18A &amp; 18B.</Description>
+            </Actor>
+            <Actor>
+               <Role Link="http://www.mpi.nl/IMDI/Schema/Actor-Role.xml"
+                     Type="OpenVocabularyList">Collector</Role>
+               <Name>Dorian</Name>
+               <FullName>Dorian de Haan</FullName>
+               <Code>DH</Code>
+               <FamilySocialRole Link="http://www.mpi.nl/IMDI/Schema/Actor-FamilySocialRole.xml"
+                                 Type="OpenVocabularyList">Teacher</FamilySocialRole>
+               <Languages>
+                  <Language>
+                     <Id>ISO639-3:nld</Id>
+                     <Name>Dutch</Name>
+                     <MotherTongue Type="ClosedVocabulary">Unspecified</MotherTongue>
+                     <PrimaryLanguage Type="ClosedVocabulary">Unspecified</PrimaryLanguage>
+                  </Language>
+               </Languages>
+               <EthnicGroup>Dutch</EthnicGroup>
+               <Age>Unspecified</Age>
+               <BirthDate>Unspecified</BirthDate>
+               <Sex Link="http://www.mpi.nl/IMDI/Schema/Actor-Sex.xml"
+                    Type="ClosedVocabulary">Female</Sex>
+               <Education>Unspecified</Education>
+               <Anonymized Link="http://www.mpi.nl/IMDI/Schema/Boolean.xml"
+                           Type="ClosedVocabulary">true</Anonymized>
+               <Contact/>
+               <Keys/>
+               <Description LanguageId="ISO639-3:eng">Dorian de Haan is the coordinator/collector of this project. She is of Dutch origin. She works at the University of Utrecht, The Netherlands, at the Developmental Psychology department.</Description>
+            </Actor>
+         </Actors>
+      </MDGroup>
+      <Resources>
+         <MediaFile>
+            <ResourceLink ArchiveHandle="hdl:1839/00-0000-0000-0008-8139-A"/>
+            <Type>audio</Type>
+            <Format>audio/x-wav</Format>
+            <Size>139762988 bytes</Size>
+            <Quality>Unspecified</Quality>
+            <RecordingConditions/>
+            <TimePosition>
+               <Start>Unspecified</Start>
+               <End>Unspecified</End>
+            </TimePosition>
+            <Access>
+               <Availability/>
+               <Date>Unspecified</Date>
+               <Owner/>
+               <Publisher/>
+               <Contact/>
+            </Access>
+            <Keys/>
+         </MediaFile>
+      </Resources>
+      <References/>
+   </Session>
+</METATRANSCRIPT>

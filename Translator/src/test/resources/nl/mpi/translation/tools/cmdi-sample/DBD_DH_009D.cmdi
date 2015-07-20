@@ -1,0 +1,218 @@
+<CMD xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.clarin.eu/cmd/" CMDVersion="1.1" xsi:schemaLocation="http://www.clarin.eu/cmd/ http://catalog.clarin.eu/ds/ComponentRegistry/rest/registry/profiles/clarin.eu:cr1:p_1391763610422/xsd">
+  <Header>
+    <MdCreator>imdi2clarin.xsl</MdCreator>
+    <MdCreationDate>2014-02-26</MdCreationDate>
+    <MdSelfLink>hdl:1839/00-0000-0000-0008-C21A-1@format=cmdi</MdSelfLink>
+    <MdProfile>clarin.eu:cr1:p_1390399932755</MdProfile>
+  </Header>
+  <Resources>
+    <ResourceProxyList>
+      <ResourceProxy id="d240e398">
+        <ResourceType mimetype="audio/x-wav">Resource</ResourceType>
+        <ResourceRef>hdl:1839/00-0000-0000-0008-8139-A</ResourceRef>
+      </ResourceProxy>
+    </ResourceProxyList>
+    <JournalFileProxyList/>
+    <ResourceRelationList/>
+  </Resources>
+  <Components>
+    <DBD>
+      <Session>
+        <Name>DBD DH 009D</Name>
+        <Title>DBD_NLD_22_18_03_009D</Title>
+        <Date>Unspecified</Date>
+        <Descriptions>
+          <Description xml:lang="en">Recording took place during primary school hours (08:30 AM-03:30 PM) at a primary school in a separate classroom. Recording was done by Dorian de Haan between 1984-1986.</Description>
+        </Descriptions>
+        <Location>
+          <Continent>Europe</Continent>
+          <Country>Netherlands</Country>
+          <Region>Den Haag</Region>
+          <Address>Unspecified</Address>
+        </Location>
+        <Project>
+          <Name>De Haan Corpus</Name>
+          <Title>De taalsituatie van Surinaamse kinderen op de basisschool in Nederland</Title>
+          <Id/>
+          <Contact>
+            <Person/>
+            <Address/>
+            <Email/>
+            <Organisation/>
+          </Contact>
+          <Descriptions>
+            <Description xml:lang="en">Goal of this project is to get a clear view of the command of Sarnami and/or Sranan of primary school children of Suriname origin and to study their command of Dutch.</Description>
+          </Descriptions>
+        </Project>
+        <Content>
+          <Genre>Discourse</Genre>
+          <SubGenre>Conversation</SubGenre>
+          <Task/>
+          <Modalities>Speech</Modalities>
+          <Subject>emotions</Subject>
+          <CommunicationContext>
+            <Interactivity>interactive</Interactivity>
+            <PlanningType>semi-spontaneous</PlanningType>
+            <Involvement>non-elicited</Involvement>
+            <SocialContext>Controlled environment</SocialContext>
+            <EventStructure>Conversation</EventStructure>
+            <Channel>Face to Face</Channel>
+          </CommunicationContext>
+          <Languages>
+            <Language>
+              <LanguageID>ISO639-3:nld</LanguageID>
+              <LanguageName>Dutch</LanguageName>
+              <Dominant>true</Dominant>
+              <SourceLanguage>Unspecified</SourceLanguage>
+              <TargetLanguage>Unspecified</TargetLanguage>
+            </Language>
+          </Languages>
+          <Descriptions>
+            <Description xml:lang="en">This is a conversation between Dorian de Haan and a Suriname Hindu girl, Aida about emotions (punishment, grief), and weddings.</Description>
+          </Descriptions>
+        </Content>
+        <Actors>
+          <Actor>
+            <Role>Interviewer</Role>
+            <Name>Dorian</Name>
+            <FullName>Dorian de Haan</FullName>
+            <Code>DH</Code>
+            <FamilySocialRole>Teacher</FamilySocialRole>
+            <EthnicGroup>Dutch</EthnicGroup>
+            <Age>Unspecified</Age>
+            <BirthDate>Unspecified</BirthDate>
+            <Sex>Female</Sex>
+            <Education>Unspecified</Education>
+            <Anonymized>true</Anonymized>
+            <Contact>
+              <Person>Dorian de Haan</Person>
+              <Address/>
+              <Email/>
+              <Organisation/>
+            </Contact>
+            <Descriptions>
+              <Description xml:lang="en">Dorian de Haan is the coordinator/collector of this project. She is of Dutch origin. She works at the University of Utrecht, The Netherlands, at the Developmental Psychology department.</Description>
+            </Descriptions>
+            <Languages>
+              <Language>
+                <LanguageID>ISO639-3:nld</LanguageID>
+                <LanguageName>Dutch</LanguageName>
+                <MotherTongue>Unspecified</MotherTongue>
+                <PrimaryLanguage>Unspecified</PrimaryLanguage>
+                <LanguageBackground>
+                  <LanguageKnowledge/>
+                </LanguageBackground>
+              </Language>
+            </Languages>
+          </Actor>
+          <Actor>
+            <Role>Speaker/Signer</Role>
+            <Name>Aida</Name>
+            <FullName>Aida</FullName>
+            <Code/>
+            <FamilySocialRole>Student</FamilySocialRole>
+            <EthnicGroup>Sarnami Hindustani</EthnicGroup>
+            <Age>12</Age>
+            <BirthDate>Unspecified</BirthDate>
+            <Sex>Female</Sex>
+            <Education>Unspecified</Education>
+            <Anonymized>true</Anonymized>
+            <Contact>
+              <Person/>
+              <Address/>
+              <Email/>
+              <Organisation/>
+            </Contact>
+            <Descriptions>
+              <Description xml:lang="en">This girl is born in Suriname and moved with her family to the Netherlands. In Suriname she lived in Paramaribo. She has been living in the Netherlands for 9 years. Currently she is in the last form of primary school. She is 12 years old. According to herself she speaks better Dutch than Sarnami. 
+Same girl as in 1A, 18A &amp; 18B.</Description>
+            </Descriptions>
+            <Languages>
+              <Language>
+                <LanguageID>ISO639-3:nld</LanguageID>
+                <LanguageName>Dutch</LanguageName>
+                <MotherTongue>Unspecified</MotherTongue>
+                <PrimaryLanguage>Unspecified</PrimaryLanguage>
+                <LanguageBackground>
+                  <LanguageKnowledge/>
+                </LanguageBackground>
+              </Language>
+              <Language>
+                <LanguageID>ISO639-3:hns</LanguageID>
+                <LanguageName>Sarnami</LanguageName>
+                <MotherTongue>Unspecified</MotherTongue>
+                <PrimaryLanguage>Unspecified</PrimaryLanguage>
+                <LanguageBackground>
+                  <LanguageKnowledge/>
+                </LanguageBackground>
+              </Language>
+            </Languages>
+          </Actor>
+          <Actor>
+            <Role>Collector</Role>
+            <Name>Dorian</Name>
+            <FullName>Dorian de Haan</FullName>
+            <Code>DH</Code>
+            <FamilySocialRole>Teacher</FamilySocialRole>
+            <EthnicGroup>Dutch</EthnicGroup>
+            <Age>Unspecified</Age>
+            <BirthDate>Unspecified</BirthDate>
+            <Sex>Female</Sex>
+            <Education>Unspecified</Education>
+            <Anonymized>true</Anonymized>
+            <Contact>
+              <Person>Dorian de Haan</Person>
+              <Address/>
+              <Email/>
+              <Organisation/>
+            </Contact>
+            <Descriptions>
+              <Description xml:lang="en">Dorian de Haan is the coordinator/collector of this project. She is of Dutch origin. She works at the University of Utrecht, The Netherlands, at the Developmental Psychology department.</Description>
+            </Descriptions>
+            <Languages>
+              <Language>
+                <LanguageID>ISO639-3:nld</LanguageID>
+                <LanguageName>Dutch</LanguageName>
+                <MotherTongue>Unspecified</MotherTongue>
+                <PrimaryLanguage>Unspecified</PrimaryLanguage>
+                <LanguageBackground>
+                  <LanguageKnowledge/>
+                </LanguageBackground>
+              </Language>
+            </Languages>
+          </Actor>
+        </Actors>
+        <Resources>
+          <MediaFile ref="d240e398">
+            <ResourceLink>../Media/dbd_dh_09D.wav</ResourceLink>
+            <Type>audio</Type>
+            <Format>audio/x-wav</Format>
+            <Quality>Unspecified</Quality>
+            <RecordingConditions/>
+            <TotalSize>
+              <Number>139762988</Number>
+              <SizeUnit>bytes</SizeUnit>
+            </TotalSize>
+            <TimePosition>
+              <Start>Unspecified</Start>
+              <End>Unspecified</End>
+            </TimePosition>
+            <Access>
+              <Availability/>
+              <Date>Unspecified</Date>
+              <Owner/>
+              <Publisher/>
+              <Contact>
+                <Person/>
+                <Address/>
+                <Email/>
+                <Organisation/>
+              </Contact>
+            </Access>
+          </MediaFile>
+        </Resources>
+        <References/>
+      </Session>
+    </DBD>
+  </Components>
+</CMD>
