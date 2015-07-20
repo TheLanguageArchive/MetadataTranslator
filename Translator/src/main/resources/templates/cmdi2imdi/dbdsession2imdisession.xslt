@@ -182,6 +182,9 @@
                     mode="DBDSESSION2IMDISESSION_CONTENTLANG"/>
             </Languages>
             <Keys>
+                <xsl:if test="normalize-space(child::LanguageMode)!=''">
+                    <Key Name="DBD.LanguageMode" Type="OpenVocabulary"><xsl:value-of select="child::LanguageMode" /></Key>
+                </xsl:if>
                 <xsl:apply-templates select="Keys" mode="COMMONTLA2IMDISESSION"/>
             </Keys>
             <xsl:apply-templates select="Descriptions" mode="COMMONTLA2IMDISESSION"/>
@@ -319,7 +322,9 @@
                 <xsl:value-of select="Format"/>
             </Format>
             <Size>
-                <xsl:value-of select="Size"/>
+                <xsl:value-of select="TotalSize/Number"/>
+                <xsl:text> </xsl:text>
+                <xsl:value-of select="TotalSize/SizeUnit"/>
             </Size>
             <Quality>
                 <xsl:value-of select="Quality"/>
@@ -362,7 +367,9 @@
                 <xsl:value-of select="Format"/>
             </Format>
             <Size>
-                <xsl:value-of select="Size"/>
+                <xsl:value-of select="TotalSize/Number"/>
+                <xsl:text> </xsl:text>
+                <xsl:value-of select="TotalSize/SizeUnit"/>
             </Size>
             <Validation>
                 <Type>
