@@ -224,7 +224,7 @@
             </RecordingConditions>
             <xsl:apply-templates select="TimePosition" mode="COMMONTLA2IMDISESSION"/>
             <xsl:apply-templates select="Access" mode="COMMONTLA2IMDISESSION"/>
-            <xsl:apply-templates select="descriptions" mode="COMMONTLA2IMDISESSION"/>
+            <xsl:apply-templates select="descriptions|Descriptions" mode="COMMONTLA2IMDISESSION"/>
             <Keys>
                 <xsl:apply-templates select="Keys" mode="COMMONTLA2IMDISESSION"/>
             </Keys>
@@ -336,7 +336,7 @@
                         <Level>Unspecified</Level>
                     </xsl:otherwise>
                 </xsl:choose>
-                <xsl:apply-templates select="Validation/descriptions" mode="COMMONTLA2IMDISESSION"/>
+                <xsl:apply-templates select="Validation/descriptions|Validation/Descriptions" mode="COMMONTLA2IMDISESSION"/>
             </Validation>
             <Derivation>
                 <xsl:value-of select="Derivation"/>
@@ -354,7 +354,7 @@
                 <xsl:value-of select="Anonymized"/>
             </Anonymized>
             <xsl:apply-templates select="Access" mode="COMMONTLA2IMDISESSION"/>
-            <xsl:apply-templates select="descriptions" mode="COMMONTLA2IMDISESSION"/>
+            <xsl:apply-templates select="descriptions|Descriptions" mode="COMMONTLA2IMDISESSION"/>
             <Keys>
                 <xsl:apply-templates select="Keys" mode="COMMONTLA2IMDISESSION"/>
             </Keys>
@@ -375,7 +375,7 @@
             <xsl:apply-templates select="CounterPosition" mode="COMMONTLA2IMDISESSION"/>
             <xsl:apply-templates select="TimePosition" mode="COMMONTLA2IMDISESSION"/>
             <xsl:apply-templates select="Access" mode="COMMONTLA2IMDISESSION"/>
-            <xsl:apply-templates select="descriptions" mode="COMMONTLA2IMDISESSION"/>
+            <xsl:apply-templates select="descriptions|Descriptions" mode="COMMONTLA2IMDISESSION"/>
             <Keys>
                 <xsl:apply-templates select="Keys" mode="COMMONTLA2IMDISESSION"/>
             </Keys>

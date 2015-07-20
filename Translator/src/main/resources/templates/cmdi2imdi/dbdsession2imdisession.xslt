@@ -68,8 +68,11 @@
                     <xsl:apply-templates select="Actors/Actor" mode="DBDSESSION2IMDISESSION"/>
                 </Actors>
             </MDGroup>
-            <xsl:apply-templates select="Resources" mode="DBDSESSION2IMDISESSION"/>
-            <References/>
+            <xsl:apply-templates select="/CMD/Resources/ResourceProxyList" mode="COMMONTLA2IMDISESSION" />
+            <References>
+                <xsl:apply-templates select="References/descriptions" mode="COMMONTLA2IMDISESSION"/> 
+                <xsl:apply-templates select="References/InfoLink" mode="create-info-link-description"/>
+            </References>
         </Session>
     </xsl:template>
 
@@ -297,145 +300,5 @@
         </Language>
     </xsl:template>
 
-    <xsl:template match="Resources" mode="DBDSESSION2IMDISESSION">
-        <Resources>
-            <xsl:apply-templates select="MediaFile" mode="DBDSESSION2IMDISESSION"/>
-            <xsl:apply-templates select="WrittenResource" mode="DBDSESSION2IMDISESSION"/>
-            <xsl:apply-templates select="Source" mode="DBDSESSION2IMDISESSION"/>
-        </Resources>
-    </xsl:template>
-
-    <xsl:template match="MediaFile" mode="DBDSESSION2IMDISESSION">
-        <xsl:call-template name="generate-ResourceId"/>
-        <MediaFile>
-            <ResourceLink>
-                <xsl:apply-templates select="//ResourceProxy[@id eq current()/@ref]"
-                    mode="create-resource-link-content"/>
-            </ResourceLink>
-            <Type>
-                <xsl:value-of select="Type"/>
-            </Type>
-            <Format>
-                <xsl:value-of select="Format"/>
-            </Format>
-            <Size>
-                <xsl:value-of select="Size"/>
-            </Size>
-            <Quality>
-                <xsl:value-of select="Quality"/>
-            </Quality>
-            <RecordingConditions>
-                <xsl:value-of select="RecordingConditions"/>
-            </RecordingConditions>
-            <xsl:apply-templates select="TimePosition" mode="DBDSESSION2IMDISESSION"/>
-            <xsl:apply-templates select="Access" mode="COMMONTLA2IMDISESSION"/>
-            <xsl:apply-templates select="Descriptions" mode="COMMONTLA2IMDISESSION"/>
-            <Keys>
-                <xsl:apply-templates select="Keys" mode="COMMONTLA2IMDISESSION"/>
-            </Keys>
-        </MediaFile>
-    </xsl:template>
-
-    <xsl:template match="WrittenResource" mode="DBDSESSION2IMDISESSION">
-        <WrittenResource>
-            <xsl:call-template name="generate-ResourceId"/>
-            <ResourceLink>
-                <xsl:apply-templates select="//ResourceProxy[@id eq current()/@ref]"
-                    mode="create-resource-link-content"/>
-            </ResourceLink>
-            <MediaResourceLink>
-                <xsl:if test="@mediaRef">
-                    <xsl:apply-templates select="//ResourceProxy[@id eq current()/@mediaRef]"
-                        mode="create-resource-link-content"/>
-                </xsl:if>
-            </MediaResourceLink>
-            <Date>
-                <xsl:value-of select="Date"/>
-            </Date>
-            <Type>
-                <xsl:value-of select="Type"/>
-            </Type>
-            <SubType>
-                <xsl:value-of select="SubType"/>
-            </SubType>
-            <Format>
-                <xsl:value-of select="Format"/>
-            </Format>
-            <Size>
-                <xsl:value-of select="Size"/>
-            </Size>
-            <Validation>
-                <Type>
-                    <xsl:value-of select="Validation/Type"/>
-                </Type>
-                <Methodology>
-                    <xsl:value-of select="Validation/Methodology"/>
-                </Methodology>
-                <xsl:choose>
-                    <xsl:when test="normalize-space(Validation/Level)!=''">
-                        <Level>
-                            <xsl:value-of select="Validation/Level"/>
-                        </Level>
-                    </xsl:when>
-                    <xsl:otherwise>
-                        <Level>Unspecified</Level>
-                    </xsl:otherwise>
-                </xsl:choose>
-                <xsl:apply-templates select="Descriptions" mode="COMMONTLA2IMDISESSION"/>
-            </Validation>
-            <Derivation>
-                <xsl:value-of select="Derivation"/>
-            </Derivation>
-            <CharacterEncoding>
-                <xsl:value-of select="CharacterEncoding"/>
-            </CharacterEncoding>
-            <ContentEncoding>
-                <xsl:value-of select="ContentEncoding"/>
-            </ContentEncoding>
-            <LanguageId>
-                <xsl:value-of select="LanguageId"/>
-            </LanguageId>
-            <Anonymized>
-                <xsl:value-of select="Anonymized"/>
-            </Anonymized>
-            <xsl:apply-templates select="Access" mode="COMMONTLA2IMDISESSION"/>
-            <xsl:apply-templates select="Descriptions" mode="COMMONTLA2IMDISESSION"/>
-            <Keys>
-                <xsl:apply-templates select="Keys" mode="COMMONTLA2IMDISESSION"/>
-            </Keys>
-        </WrittenResource>
-    </xsl:template>
-
-    <xsl:template match="Source" mode="DBDSESSION2IMDISESSION">
-        <Source>
-            <Id>
-                <xsl:value-of select="Id"/>
-            </Id>
-            <Format>
-                <xsl:value-of select="Format"/>
-            </Format>
-            <Quality>
-                <xsl:value-of select="Quality"/>
-            </Quality>
-            <xsl:apply-templates select="CounterPosition" mode="DBDSESSION2IMDISESSION"/>
-            <xsl:apply-templates select="TimePosition" mode="DBDSESSION2IMDISESSION"/>
-            <xsl:apply-templates select="Access" mode="COMMONTLA2IMDISESSION"/>
-            <xsl:apply-templates select="Descriptions" mode="COMMONTLA2IMDISESSION"/>
-            <Keys>
-                <xsl:apply-templates select="Keys" mode="COMMONTLA2IMDISESSION"/>
-            </Keys>
-        </Source>
-    </xsl:template>
-
-    <xsl:template match="CounterPosition|TimePosition" mode="DBDSESSION2IMDISESSION">
-        <xsl:element name="{name()}">
-            <Start>
-                <xsl:value-of select="Start"/>
-            </Start>
-            <End>
-                <xsl:value-of select="End"/>
-            </End>
-        </xsl:element>
-    </xsl:template>
 
 </xsl:stylesheet>
