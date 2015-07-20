@@ -66,6 +66,13 @@ public class TranslatorImplTest {
     public static final String DBD_SESSION_TO_IMDI = CMDI_SAMPLES_LOCATION + "/dbd_ary_03_05_01_003.imdi";
     public static final String DBD_SESSION2 = CMDI_SAMPLES_LOCATION + "/DBD_DH_009D.cmdi";
     public static final String DBD_SESSION2_TO_IMDI = CMDI_SAMPLES_LOCATION + "/DBD_DH_009D.imdi";
+    public static final String SL_SESSION = CMDI_SAMPLES_LOCATION + "/137-chinga_ruwara.cmdi";
+    public static final String SL_SESSION_TO_IMDI = CMDI_SAMPLES_LOCATION + "/137-chinga_ruwara.imdi";
+    public static final String SL_SSL_SESSION = CMDI_SAMPLES_LOCATION + "/SSL_JI_fab1.cmdi";
+    public static final String SL_SSL_SESSION_TO_IMDI = CMDI_SAMPLES_LOCATION + "/SSL_JI_fab1.imdi";
+    public static final String SL_DGS_SESSION = CMDI_SAMPLES_LOCATION + "/DGS_GehSo10_GF.cmdi";
+    public static final String SL_DGS_SESSION_TO_IMDI = CMDI_SAMPLES_LOCATION + "/DGS_GehSo10_GF.imdi";
+    
     // IMDI Sample locations
     public static final String IMDI_SAMPLES_LOCATION = "/nl/mpi/translation/tools/imdi-sample";
     public static final String IMDI_SAMPLE = IMDI_SAMPLES_LOCATION + "/kleve_route.imdi";
@@ -164,7 +171,7 @@ public class TranslatorImplTest {
      */
     @Test
     public void testGetIMDIForDBDSession() throws Exception {
-	logger.info("Testing translation of a LAT session (converted original IMDI) instance (back) to IMDI");
+	logger.info("Testing translation of a DBD session instance to IMDI");
 	testGetIMDI(DBD_SESSION, DBD_SESSION_TO_IMDI);
     } 
     /**
@@ -172,8 +179,35 @@ public class TranslatorImplTest {
      */
     @Test
     public void testGetIMDIForDBDSession2() throws Exception {
-	logger.info("Testing translation of a LAT session (converted original IMDI) instance (back) to IMDI");
+	logger.info("Testing translation of a DBD session instance to IMDI");
 	testGetIMDI(DBD_SESSION2, DBD_SESSION2_TO_IMDI);
+    } 
+    
+    /**
+     * Requests translation of an DiscAn instance
+     */
+    @Test
+    public void testGetIMDIForSLSession() throws Exception {
+	logger.info("Testing translation of a Sign Language session instance to IMDI");
+	testGetIMDI(SL_SESSION, SL_SESSION_TO_IMDI);
+    } 
+    
+    /**
+     * Requests translation of an DiscAn instance
+     */
+    @Test
+    public void testGetIMDIForSSLSession() throws Exception {
+	logger.info("Testing translation of a Sign Language session instance to IMDI");
+	testGetIMDI(SL_SSL_SESSION, SL_SSL_SESSION_TO_IMDI);
+    } 
+    
+    /**
+     * Requests translation of an DiscAn instance
+     */
+    @Test
+    public void testGetIMDIForDGSSession() throws Exception {
+	logger.info("Testing translation of a Sign Language session instance to IMDI");
+	testGetIMDI(SL_DGS_SESSION, SL_DGS_SESSION_TO_IMDI);
     } 
 
     /**

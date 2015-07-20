@@ -1,0 +1,421 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CMD xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+     xmlns="http://www.clarin.eu/cmd/"
+     xmlns:imdi="http://www.mpi.nl/IMDI/Schema/IMDI"
+     xmlns:lat="http://lat.mpi.nl/"
+     xmlns:iso="http://www.iso.org/"
+     xmlns:sil="http://www.sil.org/"
+     xmlns:xs="http://www.w3.org/2001/XMLSchema"
+     xmlns:functx="http://www.functx.com"
+     CMDVersion="1.1"
+     xsi:schemaLocation="http://www.clarin.eu/cmd/ http://catalog.clarin.eu/ds/ComponentRegistry/rest/registry/profiles/clarin.eu:cr1:p_1417617523856/xsd">
+   <Header>
+      <MdCreator>Editor - Profile:local/SignLanguage.Profile.xml</MdCreator>
+      <MdCreationDate>2004-05-16</MdCreationDate>
+      <MdSelfLink>hdl:1839/00-0000-0000-0008-17CE-7</MdSelfLink>
+      <MdProfile>clarin.eu:cr1:p_1417617523856</MdProfile>
+   </Header>
+   <Resources>
+      <ResourceProxyList>
+         <ResourceProxy id="d236535e407">
+            <ResourceType mimetype="video/mp4">Resource</ResourceType>
+            <ResourceRef lat:localURI="DGS_GehSo_i.mp4">hdl:1839/00-0000-0000-000F-E30D-2</ResourceRef>
+         </ResourceProxy>
+         <ResourceProxy id="d236535e470">
+            <ResourceType mimetype="video/mp4">Resource</ResourceType>
+            <ResourceRef lat:localURI="DGS_GehSo_f.mp4">hdl:1839/00-0000-0000-000F-E30E-B</ResourceRef>
+         </ResourceProxy>
+         <ResourceProxy id="d236535e533">
+            <ResourceType mimetype="video/mp4">Resource</ResourceType>
+            <ResourceRef lat:localURI="DGS_GehSo_b.mp4">hdl:1839/00-0000-0000-000F-E30F-5</ResourceRef>
+         </ResourceProxy>
+         <ResourceProxy id="d236535e596">
+            <ResourceType mimetype="video/x-mpeg2">Resource</ResourceType>
+            <ResourceRef lat:localURI="DGS_GehSo_b.mpeg">hdl:1839/00-0000-0000-0008-17C6-5</ResourceRef>
+         </ResourceProxy>
+         <ResourceProxy id="d236535e655">
+            <ResourceType mimetype="video/x-mpeg1">Resource</ResourceType>
+            <ResourceRef lat:localURI="DGS_GehSo_b.mpg">hdl:1839/00-0000-0000-0008-17C4-A</ResourceRef>
+         </ResourceProxy>
+         <ResourceProxy id="d236535e728">
+            <ResourceType mimetype="video/x-mpeg1">Resource</ResourceType>
+            <ResourceRef lat:localURI="DGS_GehSo_f.mpg">hdl:1839/00-0000-0000-0008-17C3-C</ResourceRef>
+         </ResourceProxy>
+         <ResourceProxy id="d236535e800">
+            <ResourceType mimetype="video/x-mpeg1">Resource</ResourceType>
+            <ResourceRef lat:localURI="DGS_GehSo_i.mpg">hdl:1839/00-0000-0000-0008-17C2-E</ResourceRef>
+         </ResourceProxy>
+         <ResourceProxy id="d236535e872">
+            <ResourceType mimetype="text/x-eaf+xml">Resource</ResourceType>
+            <ResourceRef lat:localURI="DGS_GehSo10_GF.eaf">hdl:1839/00-0000-0000-0008-17CF-8</ResourceRef>
+         </ResourceProxy>
+         <ResourceProxy id="d236535e14">
+            <ResourceType>Resource</ResourceType>
+            <ResourceRef lat:localURI="http://www.signum-verlag.de">http://www.signum-verlag.de</ResourceRef>
+         </ResourceProxy>
+         <ResourceProxy id="d236535e55">
+            <ResourceType>Resource</ResourceType>
+            <ResourceRef lat:localURI="http://www.signum-verlag.de/">http://www.signum-verlag.de/</ResourceRef>
+         </ResourceProxy>
+         <ResourceProxy id="d236535e59">
+            <ResourceType>Resource</ResourceType>
+            <ResourceRef lat:localURI="http://sign-lang.ruhosting.nl/echo">http://sign-lang.ruhosting.nl/echo</ResourceRef>
+         </ResourceProxy>
+         <ResourceProxy id="landingpage">
+            <ResourceType>LandingPage</ResourceType>
+            <ResourceRef>hdl:1839/00-0000-0000-0008-17CE-7@view</ResourceRef>
+         </ResourceProxy>
+      </ResourceProxyList>
+      <JournalFileProxyList/>
+      <ResourceRelationList/>
+   </Resources>
+   <Components>
+      <lat-SL-session>
+         <Name>DGS_GehSo10_GF</Name>
+         <Title>Gehörlos So! Session 10, Günther F.: Kaukasus</Title>
+         <Date>1993-05-01</Date>
+         <InfoLink ref="d236535e14">
+            <Description xml:lang="eng">This session is part of the Gehörlos So! corpus, and consists of 7 minutes of discourse about the signer's experiences in school.</Description>
+         </InfoLink>
+         <Location>
+            <Continent>Europe</Continent>
+            <Country>Germany</Country>
+            <Address/>
+         </Location>
+         <Project>
+            <Name>Gehörlos So!</Name>
+            <Title>Gehörlos So! Materialien zur Gebärdensprache</Title>
+            <Id/>
+            <Contact>
+               <Name>Jens Heßmann</Name>
+               <Address>Hochschule Magdeburg, Breitscheidstraße 2, D-39104 Magdeburg, Germany</Address>
+               <Email>jens.hessmann@sgw.hs-magdeburg.de</Email>
+               <Organisation>Magdeburg-Stendal University of Applied Sciences</Organisation>
+            </Contact>
+            <descriptions>
+               <Description xml:lang="eng">This session is part of the Gehörlos So! corpus, published by Signum in 2001 in the form of two books and a one-hour videotape. The video and annotations of the corpus are published here as part of the ECHO project.  For background information on the signer, the language, and the corpus, we recommend that you also order the books (a two-volume set). Volume 1 also contains a lexicon of all signs that appar in the corpus, with a description of their form. All materials are in German.  Conversion of the corpus to digital video and the ELAN annotation format was done by Jens Heßmann, Onno Crasborn (University of Nijmegen), and Kees van der Veer (Max Planck Institut für Psycholinguistik).  Jens Heßmann 2001 Gehörlos So! Materialien zur Gebärdensprache. Band 1: Grundlagen und Gebärdenverzeichnis. Band 2: Gebärdensprachtexte. Hamburg: Signum. ISBN 3-927731-86-2   Signum Verlag Hans-Albersplatz 2 D-20359 Hamburg Germany. Tel: ++49-40-3192140 Fax: ++49-40-3196205 http://www.signum-verlag.de</Description>
+               <Description xml:lang="eng">The ECHO project is an effort to publish scientific data in the humanities online. See http://sign-lang.ruhosting.nl/echo for further information on the sign language case study.</Description>
+            </descriptions>
+         </Project>
+         <Content>
+            <Genre>Discourse</Genre>
+            <SubGenre>Conversation</SubGenre>
+            <Task>Unspecified</Task>
+            <Modalities>signs</Modalities>
+            <Subject>Travelling to the Caucasus,  meeting deaf people in Tiflis</Subject>
+            <ElicitationMethod>Unspecified</ElicitationMethod>
+            <CommunicationContext>
+               <Interactivity>interactive</Interactivity>
+               <PlanningType>semi-spontaneous</PlanningType>
+               <Involvement>non-elicited</Involvement>
+               <SocialContext>Unspecified</SocialContext>
+               <EventStructure>Dialogue</EventStructure>
+               <Channel>Face to Face</Channel>
+            </CommunicationContext>
+            <Content_Languages>
+               <Content_Language>
+                  <Id>ISO639-3:gsg</Id>
+                  <Name>German Sign Language</Name>
+                  <Dominant>true</Dominant>
+                  <SourceLanguage>Unspecified</SourceLanguage>
+                  <TargetLanguage>Unspecified</TargetLanguage>
+               </Content_Language>
+            </Content_Languages>
+            <SL_Interpreting>
+               <Source>Unspecified</Source>
+               <Target>Unspecified</Target>
+               <Visibility>Unspecified</Visibility>
+               <Audience>Unspecified</Audience>
+            </SL_Interpreting>
+         </Content>
+         <Actors>
+            <Actor>
+               <Role>Speaker/Signer</Role>
+               <Name>Günther F.</Name>
+               <FullName>Günther F.</FullName>
+               <Code>GüF</Code>
+               <FamilySocialRole>Unspecified</FamilySocialRole>
+               <EthnicGroup/>
+               <Age>58</Age>
+               <BirthDate>Unspecified</BirthDate>
+               <Sex>Male</Sex>
+               <Education>Unspecified</Education>
+               <Anonymized>false</Anonymized>
+               <Contact/>
+               <SL_Deafness>
+                  <Status>deaf</Status>
+                  <AidType>Unspecified</AidType>
+               </SL_Deafness>
+               <SL_SignLanguageExperience>
+                  <ExposureAge>Unspecified</ExposureAge>
+                  <AcquisitionLocation>Unspecified</AcquisitionLocation>
+                  <SignTeaching>Unspecified</SignTeaching>
+               </SL_SignLanguageExperience>
+               <SL_Family>
+                  <SL_Mother>
+                     <Deafness>deaf</Deafness>
+                     <PrimaryCommunicationForm>Unspecified</PrimaryCommunicationForm>
+                  </SL_Mother>
+                  <SL_Father>
+                     <Deafness>deaf</Deafness>
+                     <PrimaryCommunicationForm>Unspecified</PrimaryCommunicationForm>
+                  </SL_Father>
+                  <SL_Partner>
+                     <Deafness>deaf</Deafness>
+                     <PrimaryCommunicationForm>Unspecified</PrimaryCommunicationForm>
+                  </SL_Partner>
+               </SL_Family>
+               <SL_Education>
+                  <Age>Unspecified</Age>
+                  <SchoolType>Unspecified</SchoolType>
+                  <ClassKind>Unspecified</ClassKind>
+                  <EducationModel>Unspecified</EducationModel>
+                  <Location>Unspecified</Location>
+                  <BoardingSchool>Unspecified</BoardingSchool>
+               </SL_Education>
+               <Actor_Languages>
+                  <Actor_Language>
+                     <Id>ISO639-3:gsg</Id>
+                     <Name>German Sign Language</Name>
+                     <MotherTongue>Unspecified</MotherTongue>
+                     <PrimaryLanguage>Unspecified</PrimaryLanguage>
+                  </Actor_Language>
+               </Actor_Languages>
+            </Actor>
+            <Actor>
+               <Role>Interviewer</Role>
+               <Name>Hermann M.</Name>
+               <FullName>Hermann M.</FullName>
+               <Code>HeM</Code>
+               <FamilySocialRole>Unspecified</FamilySocialRole>
+               <EthnicGroup/>
+               <Age>Unspecified</Age>
+               <BirthDate>Unspecified</BirthDate>
+               <Sex>Male</Sex>
+               <Education>Unspecified</Education>
+               <Anonymized>Unspecified</Anonymized>
+               <Contact/>
+               <SL_Deafness>
+                  <Status>deaf</Status>
+                  <AidType>Unspecified</AidType>
+               </SL_Deafness>
+               <SL_SignLanguageExperience>
+                  <ExposureAge>Unspecified</ExposureAge>
+                  <AcquisitionLocation>Unspecified</AcquisitionLocation>
+                  <SignTeaching>Unspecified</SignTeaching>
+               </SL_SignLanguageExperience>
+               <SL_Family>
+                  <SL_Mother>
+                     <Deafness>Unspecified</Deafness>
+                     <PrimaryCommunicationForm>Unspecified</PrimaryCommunicationForm>
+                  </SL_Mother>
+                  <SL_Father>
+                     <Deafness>Unspecified</Deafness>
+                     <PrimaryCommunicationForm>Unspecified</PrimaryCommunicationForm>
+                  </SL_Father>
+                  <SL_Partner>
+                     <Deafness>Unspecified</Deafness>
+                     <PrimaryCommunicationForm>Unspecified</PrimaryCommunicationForm>
+                  </SL_Partner>
+               </SL_Family>
+               <SL_Education>
+                  <Age>Unspecified</Age>
+                  <SchoolType>Unspecified</SchoolType>
+                  <ClassKind>Unspecified</ClassKind>
+                  <EducationModel>Unspecified</EducationModel>
+                  <Location>Unspecified</Location>
+                  <BoardingSchool>Unspecified</BoardingSchool>
+               </SL_Education>
+               <Actor_Languages>
+                  <Actor_Language>
+                     <Id>ISO639-3:gsg</Id>
+                     <Name>German Sign Language</Name>
+                     <MotherTongue>Unspecified</MotherTongue>
+                     <PrimaryLanguage>Unspecified</PrimaryLanguage>
+                  </Actor_Language>
+               </Actor_Languages>
+            </Actor>
+         </Actors>
+         <Resources>
+            <MediaFile ref="d236535e407">
+               <Type>video</Type>
+               <Format>video/mp4</Format>
+               <Size>201542896</Size>
+               <Quality>Unspecified</Quality>
+               <RecordingConditions/>
+               <TimePosition>
+                  <Start>Unspecified</Start>
+                  <End>Unspecified</End>
+               </TimePosition>
+               <Access>
+                  <Availability/>
+                  <Date>Unspecified</Date>
+                  <Owner/>
+                  <Publisher/>
+                  <Contact/>
+               </Access>
+            </MediaFile>
+            <MediaFile ref="d236535e470">
+               <Type>video</Type>
+               <Format>video/mp4</Format>
+               <Size>201617094</Size>
+               <Quality>Unspecified</Quality>
+               <RecordingConditions/>
+               <TimePosition>
+                  <Start>Unspecified</Start>
+                  <End>Unspecified</End>
+               </TimePosition>
+               <Access>
+                  <Availability/>
+                  <Date>Unspecified</Date>
+                  <Owner/>
+                  <Publisher/>
+                  <Contact/>
+               </Access>
+            </MediaFile>
+            <MediaFile ref="d236535e533">
+               <Type>video</Type>
+               <Format>video/mp4</Format>
+               <Size>245021330</Size>
+               <Quality>Unspecified</Quality>
+               <RecordingConditions/>
+               <TimePosition>
+                  <Start>Unspecified</Start>
+                  <End>Unspecified</End>
+               </TimePosition>
+               <Access>
+                  <Availability/>
+                  <Date>Unspecified</Date>
+                  <Owner/>
+                  <Publisher/>
+                  <Contact/>
+               </Access>
+            </MediaFile>
+            <MediaFile ref="d236535e596">
+               <Type>video</Type>
+               <Format>video/x-mpeg2</Format>
+               <Size/>
+               <Quality>Unspecified</Quality>
+               <RecordingConditions/>
+               <TimePosition>
+                  <Start>Unspecified</Start>
+                  <End>Unspecified</End>
+               </TimePosition>
+               <Access>
+                  <Availability/>
+                  <Date>Unspecified</Date>
+                  <Owner/>
+                  <Publisher/>
+                  <Contact/>
+               </Access>
+            </MediaFile>
+            <MediaFile ref="d236535e655">
+               <Type>video</Type>
+               <Format>video/x-mpeg1</Format>
+               <Size/>
+               <Quality>Unspecified</Quality>
+               <RecordingConditions/>
+               <TimePosition>
+                  <Start>50:51:00:0</Start>
+                  <End>56:53:00:0</End>
+               </TimePosition>
+               <Access>
+                  <Availability/>
+                  <Date>Unspecified</Date>
+                  <Owner/>
+                  <Publisher/>
+                  <Contact/>
+               </Access>
+               <Keys>
+                  <Key Name="MultipleCameras.Number" Type="OpenVocabularyList">Unspecified</Key>
+                  <Key Name="MultipleCameras.Layout" Type="OpenVocabularyList">Unspecified</Key>
+                  <Key Name="MultipleCameras.Viewpoints" Type="OpenVocabularyList">Unspecified</Key>
+                  <Key Name="MultipleCameras.Focus" Type="OpenVocabularyList">Unspecified</Key>
+               </Keys>
+            </MediaFile>
+            <MediaFile ref="d236535e728">
+               <Type>video</Type>
+               <Format>video/x-mpeg1</Format>
+               <Size/>
+               <Quality>Unspecified</Quality>
+               <RecordingConditions/>
+               <TimePosition>
+                  <Start>50:51:00:0</Start>
+                  <End>56:53:00:0</End>
+               </TimePosition>
+               <Access>
+                  <Availability/>
+                  <Date>Unspecified</Date>
+                  <Owner/>
+                  <Publisher/>
+                  <Contact/>
+               </Access>
+               <Keys>
+                  <Key Name="MultipleCameras.Number" Type="OpenVocabularyList">Unspecified</Key>
+                  <Key Name="MultipleCameras.Layout" Type="OpenVocabularyList">Unspecified</Key>
+                  <Key Name="MultipleCameras.Viewpoints" Type="OpenVocabularyList">Unspecified</Key>
+                  <Key Name="MultipleCameras.Focus" Type="OpenVocabularyList">Unspecified</Key>
+               </Keys>
+            </MediaFile>
+            <MediaFile ref="d236535e800">
+               <Type>video</Type>
+               <Format>video/x-mpeg1</Format>
+               <Size/>
+               <Quality>Unspecified</Quality>
+               <RecordingConditions/>
+               <TimePosition>
+                  <Start>50:51:00:0</Start>
+                  <End>56:53:00:0</End>
+               </TimePosition>
+               <Access>
+                  <Availability/>
+                  <Date>Unspecified</Date>
+                  <Owner/>
+                  <Publisher/>
+                  <Contact/>
+               </Access>
+               <Keys>
+                  <Key Name="MultipleCameras.Number" Type="OpenVocabularyList">Unspecified</Key>
+                  <Key Name="MultipleCameras.Layout" Type="OpenVocabularyList">Unspecified</Key>
+                  <Key Name="MultipleCameras.Viewpoints" Type="OpenVocabularyList">Unspecified</Key>
+                  <Key Name="MultipleCameras.Focus" Type="OpenVocabularyList">Unspecified</Key>
+               </Keys>
+            </MediaFile>
+            <WrittenResource ref="d236535e872">
+               <Date>Unspecified</Date>
+               <Type>Annotation</Type>
+               <SubType>Unspecified</SubType>
+               <Format>text/x-eaf+xml</Format>
+               <Size/>
+               <Derivation>Unspecified</Derivation>
+               <CharacterEncoding/>
+               <ContentEncoding/>
+               <LanguageId>Unspecified</LanguageId>
+               <Anonymized>Unspecified</Anonymized>
+               <Validation>
+                  <Type>Unspecified</Type>
+                  <Methodology>Unspecified</Methodology>
+                  <Level/>
+               </Validation>
+               <Access>
+                  <Availability/>
+                  <Date>Unspecified</Date>
+                  <Owner/>
+                  <Publisher/>
+                  <Contact/>
+               </Access>
+            </WrittenResource>
+            <Anonyms>
+               <Access>
+                  <Availability>public</Availability>
+                  <Date>2004-05-16</Date>
+                  <Owner>Jens Heßmann</Owner>
+                  <Publisher>ECHO Project, KUN/MPI</Publisher>
+                  <Contact/>
+               </Access>
+            </Anonyms>
+         </Resources>
+         <References/>
+      </lat-SL-session>
+   </Components>
+</CMD>

@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<METATRANSCRIPT xmlns="http://www.mpi.nl/IMDI/Schema/IMDI"
+                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                xmlns:tla="http://tla.mpi.nl"
+                xmlns:lat="http://lat.mpi.nl/"
+                FormatId="IMDI 3.0"
+                Type="SESSION"
+                Version="0"
+                xsi:schemaLocation="http://www.mpi.nl/IMDI/Schema/IMDI http://www.mpi.nl/IMDI/Schema/IMDI_3.0.xsd"
+                ArchiveHandle="hdl:1839/00-0000-0000-0008-1799-C@format=imdi"
+                Originator="Metadata Translator: TLASESSION2IMDISESSION.xslt hdl:1839/00-0000-0000-0008-1799-C"
+                Date="2004-03-04">
+   <History> NAME:tlasession2imdisession.xslt DATE:xx.</History>
+   <Session>
+      <Name>SSL_JI_fab1</Name>
+      <Title>ECHO SSL JI Fable 1: The shepherd's boy and the wolf</Title>
+      <Date>2003-06-13</Date>
+      <MDGroup>
+         <Location>
+            <Continent Link="http://www.mpi.nl/IMDI/Schema/Continents.xml"
+                       Type="ClosedVocabulary">Unspecified</Continent>
+            <Country Link="http://www.mpi.nl/IMDI/Schema/Countries.xml"
+                     Type="OpenVocabulary">Unspecified</Country>
+            <Address/>
+         </Location>
+         <Project>
+            <Name>ECHO</Name>
+            <Title>European Cultural Heritage Online</Title>
+            <Id>ECHO case study 4</Id>
+            <Contact>
+               <Name>Onno Crasborn</Name>
+               <Address>Department of Lingustics, PO Box 9103, NL-6500 HD Nijmegen, The Netherlands</Address>
+               <Email>o.crasborn@let.kun.nl</Email>
+               <Organisation>Radboud University Nijmegen</Organisation>
+            </Contact>
+         </Project>
+         <Keys/>
+         <Content>
+            <Genre Link="http://www.mpi.nl/IMDI/Schema/Content-Genre.xml"
+                   Type="OpenVocabulary">Discourse</Genre>
+            <SubGenre>Narrative</SubGenre>
+            <Task Link="http://www.mpi.nl/IMDI/Schema/Content-Task.xml"
+                  Type="OpenVocabulary">Retell fable story in SSL</Task>
+            <Modalities Link="http://www.mpi.nl/IMDI/Schema/Content-Modalities.xml"
+                        Type="OpenVocabularyList">signs</Modalities>
+            <Subject Link="http://www.mpi.nl/IMDI/Schema/Content-Subject.xml"
+                     Type="OpenVocabularyList">Unspecified</Subject>
+            <CommunicationContext>
+               <Interactivity Link="http://www.mpi.nl/IMDI/Schema/Content-Interactivity.xml"
+                              Type="ClosedVocabulary">non-interactive</Interactivity>
+               <PlanningType Link="http://www.mpi.nl/IMDI/Schema/Content-PlanningType.xml"
+                             Type="ClosedVocabulary">planned</PlanningType>
+               <Involvement Link="http://www.mpi.nl/IMDI/Schema/Content-Involvement.xml"
+                            Type="ClosedVocabulary">non-elicited</Involvement>
+               <SocialContext Link="http://www.mpi.nl/IMDI/Schema/Content-SocialContext.xml"
+                              Type="ClosedVocabulary">Unspecified</SocialContext>
+               <EventStructure Link="http://www.mpi.nl/IMDI/Schema/Content-EventStructure.xml"
+                               Type="ClosedVocabulary">Unspecified</EventStructure>
+               <Channel Link="http://www.mpi.nl/IMDI/Schema/Content-Channel.xml"
+                        Type="ClosedVocabulary">Unspecified</Channel>
+            </CommunicationContext>
+            <Languages>
+               <Language>
+                  <Id>ISO639-3:swl</Id>
+                  <Name Link="http://www.mpi.nl/IMDI/Schema/MPI-Languages.xml"
+                        Type="OpenVocabulary">Swedish Sign Language</Name>
+                  <Dominant Type="ClosedVocabulary">Unspecified</Dominant>
+                  <SourceLanguage Type="ClosedVocabulary">Unspecified</SourceLanguage>
+                  <TargetLanguage Type="ClosedVocabulary">Unspecified</TargetLanguage>
+               </Language>
+            </Languages>
+            <Keys>
+               <Key Name="IMDI__1_9.Interactional"
+                    Link="http://www.mpi.nl/IMDI/Schema/Content-Genre-Interactional.xml"
+                    Type="OpenVocabularyList">Unspecified</Key>
+               <Key Name="IMDI__1_9.Discursive"
+                    Link="http://www.mpi.nl/IMDI/Schema/Content-Genre-Discursive.xml"
+                    Type="OpenVocabularyList">Unspecified</Key>
+               <Key Name="IMDI__1_9.Interactional"
+                    Link="http://www.mpi.nl/IMDI/Schema/Content-Genre-Performance.xml"
+                    Type="OpenVocabularyList">narrative</Key>
+            </Keys>
+            <Description LanguageId="ISO639-3:eng">This file was generated from an IMDI 1.9 file and transformed to IMDI 3.0. The substructure of Genre is replaced by two elements named "Genre" and "SubGenre". The original content of Genre substructure was: Interactional = 'Unspecified', Discursive = 'Unspecified', Performance = 'narrative'. These values have been added as Keys to the Content information.</Description>
+         </Content>
+         <Actors>
+            <Actor>
+               <Role Link="http://www.mpi.nl/IMDI/Schema/Actor-Role.xml"
+                     Type="OpenVocabularyList">signer</Role>
+               <Name>Jenny Ingvarsson</Name>
+               <FullName>Jenny Ingvarsson</FullName>
+               <Code>JI</Code>
+               <FamilySocialRole Link="http://www.mpi.nl/IMDI/Schema/Actor-FamilySocialRole.xml"
+                                 Type="OpenVocabularyList">signer</FamilySocialRole>
+               <Languages>
+                  <Language>
+                     <Id>ISO639-3:swe</Id>
+                     <Name>Swedish</Name>
+                     <MotherTongue Type="ClosedVocabulary">Unspecified</MotherTongue>
+                     <PrimaryLanguage Type="ClosedVocabulary">Unspecified</PrimaryLanguage>
+                  </Language>
+                  <Language>
+                     <Id>ISO639-3:swl</Id>
+                     <Name>Swedish Sign Language</Name>
+                     <MotherTongue Type="ClosedVocabulary">Unspecified</MotherTongue>
+                     <PrimaryLanguage Type="ClosedVocabulary">Unspecified</PrimaryLanguage>
+                  </Language>
+               </Languages>
+               <EthnicGroup/>
+               <Age>Unknown</Age>
+               <BirthDate>Unspecified</BirthDate>
+               <Sex Link="http://www.mpi.nl/IMDI/Schema/Actor-Sex.xml"
+                    Type="ClosedVocabulary">Female</Sex>
+               <Education/>
+               <Anonymized Link="http://www.mpi.nl/IMDI/Schema/Boolean.xml"
+                           Type="ClosedVocabulary">false</Anonymized>
+               <Contact/>
+               <Keys>
+                  <Key Name="Deafness.Status" Type="OpenVocabularyList">deaf</Key>
+                  <Key Name="Deafness.AidType" Type="OpenVocabularyList">none</Key>
+                  <Key Name="SignLanguageExperience.ExposureAge" Type="OpenVocabularyList">0</Key>
+                  <Key Name="SignLanguageExperience.AcquisitionLocation"
+                       Type="OpenVocabularyList">Stockholm</Key>
+                  <Key Name="SignLanguageExperience.SignTeaching" Type="OpenVocabularyList">good</Key>
+                  <Key Name="Family.Mother.Deafness" Type="OpenVocabularyList">deaf</Key>
+                  <Key Name="Family.Mother.PrimaryCommunicationForm" Type="OpenVocabularyList">sign language</Key>
+                  <Key Name="Family.Father.Deafness" Type="OpenVocabularyList">hard-of-hearing</Key>
+                  <Key Name="Family.Father.PrimaryCommunicationForm" Type="OpenVocabularyList">sign language</Key>
+                  <Key Name="Family.Partner.Deafness" Type="OpenVocabularyList">deaf</Key>
+                  <Key Name="Family.Partner.PrimaryCommunicationForm"
+                       Type="OpenVocabularyList">sign language</Key>
+                  <Key Name="Education.EducationModel" Type="OpenVocabularyList">bilingual</Key>
+                  <Key Name="Education.Location" Type="OpenVocabularyList">Manillaskolan</Key>
+                  <Key Name="Handedness" Type="OpenVocabularyList">right</Key>
+                  <Key Name="Dialect" Type="OpenVocabularyList">Stockholm</Key>
+                  <Key Name="GeneralEducation.CurrentOccupation" Type="OpenVocabularyList">student</Key>
+               </Keys>
+            </Actor>
+            <Actor>
+               <Role Link="http://www.mpi.nl/IMDI/Schema/Actor-Role.xml"
+                     Type="OpenVocabularyList">Collector</Role>
+               <Name>Johanna Mesch</Name>
+               <FullName>Johanna Mesch</FullName>
+               <Code>Unspecified</Code>
+               <FamilySocialRole Link="http://www.mpi.nl/IMDI/Schema/Actor-FamilySocialRole.xml"
+                                 Type="OpenVocabularyList">Unspecified</FamilySocialRole>
+               <Languages>
+                  <Language>
+                     <Id>ISO639-3:swl</Id>
+                     <Name>Swedish Sign Language</Name>
+                     <MotherTongue Type="ClosedVocabulary">Unspecified</MotherTongue>
+                     <PrimaryLanguage Type="ClosedVocabulary">Unspecified</PrimaryLanguage>
+                  </Language>
+                  <Language>
+                     <Id>ISO639-3:swe</Id>
+                     <Name>Swedish</Name>
+                     <MotherTongue Type="ClosedVocabulary">Unspecified</MotherTongue>
+                     <PrimaryLanguage Type="ClosedVocabulary">Unspecified</PrimaryLanguage>
+                  </Language>
+               </Languages>
+               <EthnicGroup/>
+               <Age>Unspecified</Age>
+               <BirthDate>Unspecified</BirthDate>
+               <Sex Link="http://www.mpi.nl/IMDI/Schema/Actor-Sex.xml"
+                    Type="ClosedVocabulary">Unspecified</Sex>
+               <Education/>
+               <Anonymized Link="http://www.mpi.nl/IMDI/Schema/Boolean.xml"
+                           Type="ClosedVocabulary">false</Anonymized>
+               <Contact>
+                  <Name>Johanna Mesch</Name>
+                  <Address>Department of Linguistics, Universitetsv&#x8a;gen 10C, S-106 91 Stockholm, Sweden</Address>
+                  <Email>johanna.mesch@ling.su.se</Email>
+                  <Organisation>Stockholm University</Organisation>
+               </Contact>
+               <Keys/>
+            </Actor>
+         </Actors>
+      </MDGroup>
+      <Resources>
+         
+         
+         
+         <!--NOTE: CMDI2IMDI - ResourceProxy skipped because no reference or recognised mimetype present: [landingpage] hdl:1839/00-0000-0000-0008-1799-C@view-->
+      
+         <MediaFile>
+            <ResourceLink ArchiveHandle="hdl:1839/00-0000-0000-0008-179A-A">http://archive/corpus/my-collection/Metadata/SSL_JI_fab1_b.mpeg</ResourceLink>
+            <Type>video</Type>
+            <Format>video/x-mpeg2</Format>
+            <Size/>
+            <Quality>Unspecified</Quality>
+            <RecordingConditions/>
+            <TimePosition>
+               <Start>Unspecified</Start>
+               <End>Unspecified</End>
+            </TimePosition>
+            <Access>
+               <Availability/>
+               <Date>Unspecified</Date>
+               <Owner/>
+               <Publisher/>
+               <Contact/>
+            </Access>
+            <Keys/>
+         </MediaFile>
+         <MediaFile>
+            <ResourceLink ArchiveHandle="hdl:1839/00-0000-0000-0008-179B-8">http://archive/corpus/my-collection/Metadata/SSL_JI_fab1_b.mpg</ResourceLink>
+            <Type>video</Type>
+            <Format>video/x-mpeg1</Format>
+            <Size/>
+            <Quality>Unknown</Quality>
+            <RecordingConditions/>
+            <TimePosition>
+               <Start>Unknown</Start>
+               <End>Unknown</End>
+            </TimePosition>
+            <Access>
+               <Availability>public</Availability>
+               <Date>2003-06-30</Date>
+               <Owner>ECHO project, Stockholm University</Owner>
+               <Publisher>ECHO project, Stockholm University</Publisher>
+               <Contact/>
+            </Access>
+            <Keys/>
+         </MediaFile>
+         
+         
+      
+         
+         
+         <WrittenResource>
+            <ResourceLink ArchiveHandle="hdl:1839/00-0000-0000-0008-179D-5">http://archive/corpus/my-collection/Metadata/SSL_JI_fab1.eaf</ResourceLink>
+            <MediaResourceLink/>
+            <Date>Unspecified</Date>
+            <Type>Annotation</Type>
+            <SubType>Unspecified</SubType>
+            <Format>text/x-eaf+xml</Format>
+            <Size/>
+            <Validation>
+               <Type>Unspecified</Type>
+               <Methodology>Unspecified</Methodology>
+               <Level>Unspecified</Level>
+            </Validation>
+            <Derivation>Unspecified</Derivation>
+            <CharacterEncoding/>
+            <ContentEncoding/>
+            <LanguageId>Unspecified</LanguageId>
+            <Anonymized>Unspecified</Anonymized>
+            <Access>
+               <Availability/>
+               <Date>Unspecified</Date>
+               <Owner/>
+               <Publisher/>
+               <Contact/>
+            </Access>
+            <Keys/>
+         </WrittenResource>
+         
+      </Resources>
+      <References/>
+   </Session>
+</METATRANSCRIPT>
