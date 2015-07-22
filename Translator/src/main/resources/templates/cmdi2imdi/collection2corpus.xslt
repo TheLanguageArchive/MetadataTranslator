@@ -35,7 +35,7 @@
                     <xsl:attribute name="ArchiveHandle" select="tla:getHandle(ResourceRef, 'imdi')"
                     />
                 </xsl:if>
-                <xsl:value-of select="tla:getTranslationUri(ResourceRef, 'imdi')"/>
+                <xsl:value-of select="tla:getTranslationUri(tla:getlocalURIorfallback(.), 'imdi')"/>
             </CorpusLink>
         </xsl:if>
     </xsl:template>
