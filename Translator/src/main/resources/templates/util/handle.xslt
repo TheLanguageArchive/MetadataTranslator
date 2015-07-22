@@ -36,8 +36,8 @@
         <xsl:choose>
             <xsl:when test="starts-with($href, 'hdl:')">
                 <xsl:value-of select="replace($href, 'hdl:', '')" /></xsl:when>
-            <xsl:when test="matches($href, '^http(s)://hdl.handle.net/')">
-                <xsl:value-of select="replace($href, 'http(s)://hdl\.handle\.net/', '')" /></xsl:when>
+            <xsl:when test="matches($href, '^http(s)?://hdl.handle.net/')">
+                <xsl:value-of select="replace($href, 'http(s)?://hdl\.handle\.net/', '')" /></xsl:when>
             <!-- otherwise return nothing -->
         </xsl:choose>
     </xsl:function>
