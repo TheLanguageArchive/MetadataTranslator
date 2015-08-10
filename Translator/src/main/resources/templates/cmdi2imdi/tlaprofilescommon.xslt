@@ -153,6 +153,9 @@
                 <xsl:when test="//InfoLink[@ref=current()/@id]">
                     <!-- info link exist, processed elsewhere, skip -->
                 </xsl:when>
+                <xsl:when test="//Resources/WrittenResource[@ref=current()/@id]">
+                    <!-- exists as written resource, skip to prevent double processing -->
+                </xsl:when>
                 <xsl:when test="matches($mimetype, $mediaFileMimeTypes)">
                     <!-- No matching MediaFile, generate on basis of proxy alone -->
                     <xsl:message>A MediaFile element for ResourceProxy with id '<xsl:value-of
@@ -249,6 +252,9 @@
                 </xsl:when>
                 <xsl:when test="//InfoLink[@ref=current()/@id]">
                     <!-- info link exist, processed elsewhere, skip -->
+                </xsl:when>
+                <xsl:when test="//Resources/MediaFile[@ref=current()/@id]">
+                    <!-- exists as written resource, skip to prevent double processing -->
                 </xsl:when>
                 <xsl:when test="matches(ResourceType/@mimetype, $writtenResourceMimeTypes)">
                     <!-- No matching MediaFile, generate on basis of proxy alone -->
