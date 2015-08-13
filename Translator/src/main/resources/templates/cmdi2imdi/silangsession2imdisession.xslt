@@ -295,7 +295,7 @@
            <xsl:apply-templates mode="SILANGSESSION2IMDISESSION-SKIPPED" />
            <xsl:apply-templates mode="SILANGSESSION2IMDISESSION-MEDIAFILE" />
            <xsl:apply-templates mode="SILANGSESSION2IMDISESSION-WRITTENRESOURCE" />
-           <xsl:apply-templates select="/CMD/Components/lat-session/Resources/Source" mode="SILANGSESSION2IMDISESSION" />
+           <xsl:apply-templates select="//Resources/Source" mode="SILANGSESSION2IMDISESSION" />
         </Resources>
     </xsl:template>
     

@@ -384,7 +384,7 @@
     <xsl:template match="Source" mode="COMMONTLA2IMDISESSION">
         <Source>
             <Id>
-                <xsl:value-of select="Id[ancestor::lat-session]|ResourceID[ancestor::DBD]"/>
+                <xsl:value-of select="Id|ResourceID"/>
             </Id>
             <Format>
                 <xsl:value-of select="Format"/>
