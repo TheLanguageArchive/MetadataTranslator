@@ -111,7 +111,7 @@
                 select="//WrittenResource[normalize-space(@ref)='']"/>
 
             <!-- Sources -->
-            <xsl:apply-templates select="/CMD/Components/lat-session/Resources/Source"
+            <xsl:apply-templates select="//Resources/Source"
                 mode="COMMONTLA2IMDISESSION"/>
 
             <!-- TODO: Anonyms? -->
@@ -384,7 +384,7 @@
     <xsl:template match="Source" mode="COMMONTLA2IMDISESSION">
         <Source>
             <Id>
-                <xsl:value-of select="Id"/>
+                <xsl:value-of select="Id[ancestor::lat-session]|ResourceID[ancestor::DBD]"/>
             </Id>
             <Format>
                 <xsl:value-of select="Format"/>

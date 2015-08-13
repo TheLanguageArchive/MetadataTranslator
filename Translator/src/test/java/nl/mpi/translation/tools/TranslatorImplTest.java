@@ -25,6 +25,7 @@ import java.io.StringReader;
 import java.io.UnsupportedEncodingException;
 import java.net.URL;
 import java.net.URLEncoder;
+import org.custommonkey.xmlunit.Validator;
 import org.custommonkey.xmlunit.XMLUnit;
 import org.junit.Before;
 import org.junit.BeforeClass;
@@ -341,6 +342,8 @@ public class TranslatorImplTest {
 	final String result = instance.getIMDI(cmdiFileURL, SERVICE_URI);
 	// Compare to expectation (loaded from resource)
 	assertTranslationResult(targetImdiResource, normalizeImdiOutput(result, cmdiFileURL));
+        
+        new Validator(result).assertIsValid();
     }
 
     /**
