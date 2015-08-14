@@ -494,7 +494,9 @@
             <xsl:for-each select="child::Region">
                 <Region><xsl:value-of select="."/></Region>
             </xsl:for-each>
-            <Address><xsl:value-of select="child::Address"/></Address>
+            <xsl:if test="child::Address">
+                <Address><xsl:value-of select="child::Address"/></Address>
+            </xsl:if>
         </Location>
     </xsl:template>
     
