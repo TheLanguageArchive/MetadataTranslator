@@ -52,7 +52,7 @@
             <xsl:apply-templates select="descriptions" mode="COMMONTLA2IMDISESSION"/>
             <xsl:apply-templates select="InfoLink" mode="create-info-link-description"/>
             <MDGroup>
-                <xsl:apply-templates select="Location" mode="TLASESSION2IMDISESSION"/>
+                <xsl:apply-templates select="Location" mode="COMMONTLA2IMDISESSION"/>
                 <xsl:apply-templates select="Project" mode="TLASESSION2IMDISESSION"/>
                 <Keys>
                     <xsl:apply-templates select="Keys" mode="COMMONTLA2IMDISESSION"/>
@@ -84,21 +84,6 @@
             </Contact>
             <xsl:apply-templates select="descriptions" mode="COMMONTLA2IMDISESSION"/>  
         </Project>
-    </xsl:template>
-    
-    <xsl:template match="Location" mode="TLASESSION2IMDISESSION">
-        <Location>
-            <Continent Link="http://www.mpi.nl/IMDI/Schema/Continents.xml" Type="ClosedVocabulary">
-                <xsl:value-of select="child::Continent"/>
-            </Continent>
-            <Country Link="http://www.mpi.nl/IMDI/Schema/Countries.xml" Type="OpenVocabulary">
-                <xsl:value-of select="child::Country"/>
-            </Country>
-            <xsl:for-each select="child::Region">
-                <Region><xsl:value-of select="."/></Region>
-            </xsl:for-each>
-            <Address><xsl:value-of select="child::Address"/></Address>
-        </Location>
     </xsl:template>
     
     <xsl:template match="Content" mode="TLASESSION2IMDISESSION">

@@ -22,8 +22,6 @@
                        Type="ClosedVocabulary">Europe</Continent>
             <Country Link="http://www.mpi.nl/IMDI/Schema/Countries.xml"
                      Type="OpenVocabulary">Germany</Country>
-            <Region/>
-            <Address/>
          </Location>
          <Project>
             <Name>Gehörlos So!</Name>

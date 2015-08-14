@@ -49,10 +49,10 @@
             <xsl:apply-templates select="descriptions" mode="COMMONTLA2IMDISESSION"/>
             <xsl:apply-templates select="InfoLink" mode="create-info-link-description"/>
             <MDGroup>
-                <xsl:apply-templates select="Location" mode="SILANGSESSION2IMDISESSION"/>
+                <xsl:apply-templates select="Location" mode="COMMONTLA2IMDISESSION"/>
                 <xsl:apply-templates select="Project" mode="SILANGSESSION2IMDISESSION"/>
                 <Keys>
-                    <xsl:apply-templates select="Keys" mode="SILANGSESSION2IMDISESSION"/>
+                    <xsl:apply-templates select="Keys" mode="COMMONTLA2IMDISESSION"/>
                 </Keys>
                 <xsl:apply-templates select="Content" mode="SILANGSESSION2IMDISESSION"/>
                 <Actors>
@@ -61,7 +61,7 @@
                 </Actors>
             </MDGroup>
             <xsl:apply-templates select="/CMD/Resources/ResourceProxyList"
-                mode="SILANGSESSION2IMDISESSION"/>
+                mode="COMMONTLA2IMDISESSION"/>
             <References/>
         </Session>
     </xsl:template>
@@ -93,23 +93,6 @@
             </Contact>
             <xsl:apply-templates select="descriptions" mode="COMMONTLA2IMDISESSION"/>
         </Project>
-    </xsl:template>
-
-    <xsl:template match="Location" mode="SILANGSESSION2IMDISESSION">
-        <Location>
-            <Continent Link="http://www.mpi.nl/IMDI/Schema/Continents.xml" Type="ClosedVocabulary">
-                <xsl:value-of select="child::Continent"/>
-            </Continent>
-            <Country Link="http://www.mpi.nl/IMDI/Schema/Countries.xml" Type="OpenVocabulary">
-                <xsl:value-of select="child::Country"/>
-            </Country>
-            <Region>
-                <xsl:value-of select="child::Region"/>
-            </Region>
-            <Address>
-                <xsl:value-of select="child::Address"/>
-            </Address>
-        </Location>
     </xsl:template>
 
     <xsl:template match="Content" mode="SILANGSESSION2IMDISESSION">
@@ -173,7 +156,7 @@
                 <xsl:apply-templates select="//Content_Language" mode="SILANGSESSION2IMDISESSION"/>
             </Languages>
             <Keys>
-                <xsl:apply-templates select="Keys" mode="SILANGSESSION2IMDISESSION"/>
+                <xsl:apply-templates select="Keys" mode="COMMONTLA2IMDISESSION"/>
                 <xsl:if test="normalize-space(child::ElicitationMethod)!=''">
                     <Key Name="ElicitationMethod">
                         <xsl:value-of select="ElicitationMethod"/>
@@ -255,10 +238,10 @@
                 <xsl:value-of select="child::Anonymized"/>
             </Anonymized>
             <Contact>
-                <xsl:apply-templates select="Contact" mode="SILANGSESSION2IMDISESSION"/>
+                <xsl:apply-templates select="Contact" mode="COMMONTLA2IMDISESSION"/>
             </Contact>
             <Keys>
-                <xsl:apply-templates select="Keys" mode="SILANGSESSION2IMDISESSION"/>
+                <xsl:apply-templates select="Keys" mode="COMMONTLA2IMDISESSION"/>
                 <xsl:apply-templates select="SL_Deafness" mode="SILANGSESSION2IMDISESSION"/>
                 <xsl:apply-templates select="SL_SignLanguageExperience"
                     mode="SILANGSESSION2IMDISESSION"/>
@@ -392,341 +375,4 @@
         </Language>
     </xsl:template>
 
-
-    <xsl:template match="Access" mode="SILANGSESSION2IMDISESSION">
-        <Access>
-            <Availability>
-                <xsl:value-of select="Availability"/>
-            </Availability>
-            <Date>
-                <xsl:value-of select="Date"/>
-            </Date>
-            <Owner>
-                <xsl:value-of select="Owner"/>
-            </Owner>
-            <Publisher>
-                <xsl:value-of select="Publisher"/>
-            </Publisher>
-            <Contact>
-                <xsl:apply-templates select="Contact" mode="SILANGSESSION2IMDISESSION"/>
-            </Contact>
-            <xsl:apply-templates select="descriptions" mode="COMMONTLA2IMDISESSION"/>
-        </Access>
-    </xsl:template>
-
-    <xsl:template match="Contact" mode="SILANGSESSION2IMDISESSION">
-        <xsl:if test="normalize-space(Name)!=''">
-            <Name>
-                <xsl:value-of select="Name"/>
-            </Name>
-        </xsl:if>
-        <xsl:if test="normalize-space(Address)!=''">
-            <Address>
-                <xsl:value-of select="Address"/>
-            </Address>
-        </xsl:if>
-        <xsl:if test="normalize-space(Email)!=''">
-            <Email>
-                <xsl:value-of select="Email"/>
-            </Email>
-        </xsl:if>
-        <xsl:if test="normalize-space(Organisation)!=''">
-            <Organisation>
-                <xsl:value-of select="Organisation"/>
-            </Organisation>
-        </xsl:if>
-    </xsl:template>
-
-    <xsl:template match="ResourceProxyList" mode="SILANGSESSION2IMDISESSION">
-        <Resources>
-            <xsl:apply-templates mode="SILANGSESSION2IMDISESSION-SKIPPED"/>
-            <xsl:apply-templates mode="SILANGSESSION2IMDISESSION-MEDIAFILE"/>
-            <xsl:apply-templates mode="SILANGSESSION2IMDISESSION-WRITTENRESOURCE"/>
-            <xsl:apply-templates select="//Resources/Source" mode="SILANGSESSION2IMDISESSION"/>
-        </Resources>
-    </xsl:template>
-
-    <xsl:template match="ResourceProxy" mode="SILANGSESSION2IMDISESSION-SKIPPED">
-        <!-- ResourceProxies without a reference or mimetype get skipped -->
-        <xsl:if
-            test="
-            not(matches(ResourceType/@mimetype, $sl-mediaFileMimeTypes) 
-                or matches(ResourceType/@mimetype, $sl-writtenResourceMimeTypes)) 
-            and not(//Resources/*[@ref=current()/@id])">
-            <xsl:message>ResourceProxy with id '<xsl:value-of select="@id"/>' will be skipped.
-                Reason: no referencing element or recognised mimetype.</xsl:message>
-            <xsl:comment>
-                <xsl:text>NOTE: CMDI2IMDI - ResourceProxy skipped because no reference or recognised mimetype present:</xsl:text>
-                <xsl:value-of select="concat(' [', @id, '] ')"/>
-                <xsl:value-of select="ResourceRef"/>
-            </xsl:comment>
-        </xsl:if>
-    </xsl:template>
-
-    <xsl:template match="ResourceProxy[ResourceType = 'LandingPage']"
-        mode="SILANGSESSION2IMDISESSION-MEDIAFILE"> </xsl:template>
-
-    <xsl:template match="ResourceProxy[ResourceType = 'Resource']"
-        mode="SILANGSESSION2IMDISESSION-MEDIAFILE">
-        <xsl:variable name="mediaFile" select="//Resources/MediaFile[@ref=current()/@id]"/>
-        <xsl:variable name="mimetype" select="ResourceType/@mimetype"/>
-        <xsl:choose>
-            <xsl:when test="$mediaFile">
-                <!-- A matching MediaFile element exists, transform from this -->
-                <xsl:apply-templates select="$mediaFile" mode="SILANGSESSION2IMDISESSION"/>
-            </xsl:when>
-            <xsl:when test="matches($mimetype, $sl-mediaFileMimeTypes)">
-                <!-- No matching MediaFile, generate on basis of proxy alone -->
-                <xsl:message>A MediaFile element for ResourceProxy with id '<xsl:value-of
-                        select="@id"/>' is generated on basis of mimetype <xsl:value-of
-                        select="$mimetype"/></xsl:message>
-                <MediaFile>
-                    <xsl:comment>NOTE: CMDI2IMDI - No MediaFile element was found for this resource, minimal information was generated on basis of ResourceProxy only</xsl:comment>
-                    <ResourceLink>
-                        <xsl:apply-templates select="." mode="create-resource-link-content"/>
-                    </ResourceLink>
-                    <Type>
-                        <!-- Strip everything after the forward slash in the mimetype -->
-                        <xsl:variable name="mimeTypeStart" select="replace($mimetype,'/.*$','')"/>
-                        <!-- Capitalise first -->
-                        <xsl:value-of
-                            select="concat(upper-case(substring($mimeTypeStart, 1, 1)), lower-case(substring($mimeTypeStart, 2)))"
-                        />
-                    </Type>
-                    <Format>
-                        <xsl:value-of select="$mimetype"/>
-                    </Format>
-                    <Size/>
-                    <Quality>Unspecified</Quality>
-                    <RecordingConditions>Unspecified</RecordingConditions>
-                    <TimePosition>
-                        <Start>Unspecified</Start>
-                        <End>Unspecified</End>
-                    </TimePosition>
-                    <Access>
-                        <Availability/>
-                        <Date>Unspecified</Date>
-                        <Owner/>
-                        <Publisher/>
-                        <Contact/>
-                    </Access>
-                    <Keys/>
-                </MediaFile>
-            </xsl:when>
-        </xsl:choose>
-    </xsl:template>
-
-    <xsl:template match="MediaFile" mode="SILANGSESSION2IMDISESSION">
-        <xsl:call-template name="sl-generate-ResourceId"/>
-        <MediaFile>
-            <ResourceLink>
-                <xsl:apply-templates select="//ResourceProxy[@id eq current()/@ref]"
-                    mode="create-resource-link-content"/>
-            </ResourceLink>
-            <Type>
-                <xsl:value-of select="Type"/>
-            </Type>
-            <Format>
-                <xsl:value-of select="Format"/>
-            </Format>
-            <Size>
-                <xsl:value-of select="Size"/>
-            </Size>
-            <Quality>
-                <xsl:value-of select="Quality"/>
-            </Quality>
-            <RecordingConditions>
-                <xsl:value-of select="RecordingConditions"/>
-            </RecordingConditions>
-            <xsl:apply-templates select="TimePosition" mode="SILANGSESSION2IMDISESSION"/>
-            <xsl:apply-templates select="Access" mode="SILANGSESSION2IMDISESSION"/>
-            <xsl:apply-templates select="descriptions" mode="COMMONTLA2IMDISESSION"/>
-            <Keys>
-                <xsl:apply-templates select="Keys" mode="SILANGSESSION2IMDISESSION"/>
-            </Keys>
-        </MediaFile>
-    </xsl:template>
-
-    <xsl:template match="ResourceProxy" mode="SILANGSESSION2IMDISESSION-WRITTENRESOURCE">
-        <xsl:variable name="writtenResource"
-            select="//Resources/WrittenResource[@ref=current()/@id]"/>
-        <xsl:choose>
-            <xsl:when test="$writtenResource">
-                <!-- A matching MediaFile element exists, transform from this -->
-                <xsl:apply-templates select="$writtenResource" mode="SILANGSESSION2IMDISESSION"/>
-            </xsl:when>
-            <xsl:when test="matches(ResourceType/@mimetype, $sl-writtenResourceMimeTypes)">
-                <!-- No matching MediaFile, generate on basis of proxy alone -->
-                <xsl:message>A WrittenResource element for ResourceProxy with id '<xsl:value-of
-                        select="@id"/>' is generated on basis of mimetype <xsl:value-of
-                        select="ResourceType/@mimetype"/></xsl:message>
-                <WrittenResource>
-                    <xsl:comment>NOTE: CMDI2IMDI - No WrittenResource element was found for this resource, minimal information was generated on basis of ResourceProxy only</xsl:comment>
-                    <xsl:call-template name="sl-generate-ResourceId"/>
-                    <ResourceLink>
-                        <xsl:apply-templates select="." mode="create-resource-link-content"/>
-                    </ResourceLink>
-                    <MediaResourceLink/>
-                    <Date>Unspecified</Date>
-                    <Type>Unspecified</Type>
-                    <SubType>Unspecified</SubType>
-                    <Format>
-                        <xsl:value-of select="ResourceType/@mimetype"/>
-                    </Format>
-                    <Size>Unspecified</Size>
-                    <Validation>
-                        <Type>Unspecified</Type>
-                        <Methodology>Unspecified</Methodology>
-                        <Level>Unspecified</Level>
-                    </Validation>
-                    <Derivation>Unspecified</Derivation>
-                    <CharacterEncoding/>
-                    <ContentEncoding/>
-                    <LanguageId>Unspecified</LanguageId>
-                    <Anonymized>Unspecified</Anonymized>
-                    <Access>
-                        <Availability/>
-                        <Date>Unspecified</Date>
-                        <Owner/>
-                        <Publisher/>
-                        <Contact/>
-                    </Access>
-                    <Keys/>
-                </WrittenResource>
-            </xsl:when>
-        </xsl:choose>
-    </xsl:template>
-
-    <xsl:template match="WrittenResource" mode="SILANGSESSION2IMDISESSION">
-        <WrittenResource>
-            <xsl:call-template name="sl-generate-ResourceId"/>
-            <ResourceLink>
-                <xsl:apply-templates select="//ResourceProxy[@id eq current()/@ref]"
-                    mode="create-resource-link-content"/>
-            </ResourceLink>
-            <MediaResourceLink>
-                <xsl:if test="@mediaRef">
-                    <xsl:apply-templates select="//ResourceProxy[@id eq current()/@mediaRef]"
-                        mode="create-resource-link-content"/>
-                </xsl:if>
-            </MediaResourceLink>
-            <Date>
-                <xsl:value-of select="Date"/>
-            </Date>
-            <Type>
-                <xsl:value-of select="Type"/>
-            </Type>
-            <SubType>
-                <xsl:value-of select="SubType"/>
-            </SubType>
-            <Format>
-                <xsl:value-of select="Format"/>
-            </Format>
-            <Size>
-                <xsl:value-of select="Size"/>
-            </Size>
-            <Validation>
-                <Type>
-                    <xsl:value-of select="Validation/Type"/>
-                </Type>
-                <Methodology>
-                    <xsl:value-of select="Validation/Methodology"/>
-                </Methodology>
-                <xsl:choose>
-                    <xsl:when test="normalize-space(Validation/Level)!=''">
-                        <Level>
-                            <xsl:value-of select="Validation/Level"/>
-                        </Level>
-                    </xsl:when>
-                    <xsl:otherwise>
-                        <Level>Unspecified</Level>
-                    </xsl:otherwise>
-                </xsl:choose>
-                <xsl:apply-templates select="descriptions" mode="COMMONTLA2IMDISESSION"/>
-            </Validation>
-            <Derivation>
-                <xsl:value-of select="Derivation"/>
-            </Derivation>
-            <CharacterEncoding>
-                <xsl:value-of select="CharacterEncoding"/>
-            </CharacterEncoding>
-            <ContentEncoding>
-                <xsl:value-of select="ContentEncoding"/>
-            </ContentEncoding>
-            <LanguageId>
-                <xsl:value-of select="LanguageId"/>
-            </LanguageId>
-            <Anonymized>
-                <xsl:value-of select="Anonymized"/>
-            </Anonymized>
-            <xsl:apply-templates select="Access" mode="SILANGSESSION2IMDISESSION"/>
-            <xsl:apply-templates select="descriptions" mode="COMMONTLA2IMDISESSION"/>
-            <Keys>
-                <xsl:apply-templates select="Keys" mode="SILANGSESSION2IMDISESSION"/>
-            </Keys>
-        </WrittenResource>
-    </xsl:template>
-
-    <xsl:template match="Source" mode="SILANGSESSION2IMDISESSION">
-        <Source>
-            <Id>
-                <xsl:value-of select="Id"/>
-            </Id>
-            <Format>
-                <xsl:value-of select="Format"/>
-            </Format>
-            <Quality>
-                <xsl:value-of select="Quality"/>
-            </Quality>
-            <xsl:apply-templates select="CounterPosition" mode="SILANGSESSION2IMDISESSION"/>
-            <xsl:apply-templates select="TimePosition" mode="SILANGSESSION2IMDISESSION"/>
-            <xsl:apply-templates select="Access" mode="SILANGSESSION2IMDISESSION"/>
-            <xsl:apply-templates select="descriptions" mode="COMMONTLA2IMDISESSION"/>
-            <Keys>
-                <xsl:apply-templates select="Keys" mode="SILANGSESSION2IMDISESSION"/>
-            </Keys>
-        </Source>
-    </xsl:template>
-
-    <xsl:template match="CounterPosition|TimePosition" mode="SILANGSESSION2IMDISESSION">
-        <xsl:element name="{name()}">
-            <Start>
-                <xsl:value-of select="Start"/>
-            </Start>
-            <End>
-                <xsl:value-of select="End"/>
-            </End>
-        </xsl:element>
-    </xsl:template>
-
-    <xsl:template name="sl-generate-ResourceId">
-        <xsl:if test="//Actor[@ref=current()/@ref]">
-            <xsl:attribute name="ResourceId" select="@ref"/>
-        </xsl:if>
-    </xsl:template>
-
-    <xsl:template match="Keys" mode="SILANGSESSION2IMDISESSION">
-        <xsl:choose>
-            <xsl:when test="child::Key[1]">
-                <xsl:for-each select="child::Key">
-                    <Key>
-                        <xsl:attribute name="Name">
-                            <xsl:value-of select="@Name"/>
-                        </xsl:attribute>
-                        <xsl:if test="normalize-space(@Link)!=''">
-                            <xsl:attribute name="Link">
-                                <xsl:value-of select="@Link"/>
-                            </xsl:attribute>
-                        </xsl:if>
-                        <xsl:if test="normalize-space(@Type)!=''">
-                            <xsl:attribute name="Type">
-                                <xsl:value-of select="@Type"/>
-                            </xsl:attribute>
-                        </xsl:if>
-                        <xsl:value-of select="./text()"/>
-                    </Key>
-                </xsl:for-each>
-            </xsl:when>
-        </xsl:choose>
-    </xsl:template>
 </xsl:stylesheet>

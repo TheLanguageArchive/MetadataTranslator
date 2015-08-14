@@ -331,7 +331,7 @@
             </Format>
             <Size>
                 <xsl:if test="Size">
-                    <xsl:value-of select="Size"/>
+                <xsl:value-of select="Size"/>
                 </xsl:if>
                 <xsl:if test="TotalSize">
                     <xsl:value-of select="TotalSize/Number"/>
@@ -482,7 +482,22 @@
             </xsl:when>
         </xsl:choose>
     </xsl:template>
-
+    
+    <xsl:template match="Location" mode="COMMONTLA2IMDISESSION">
+        <Location>
+            <Continent Link="http://www.mpi.nl/IMDI/Schema/Continents.xml" Type="ClosedVocabulary">
+                <xsl:value-of select="child::Continent"/>
+            </Continent>
+            <Country Link="http://www.mpi.nl/IMDI/Schema/Countries.xml" Type="OpenVocabulary">
+                <xsl:value-of select="child::Country"/>
+            </Country>
+            <xsl:for-each select="child::Region">
+                <Region><xsl:value-of select="."/></Region>
+            </xsl:for-each>
+            <Address><xsl:value-of select="child::Address"/></Address>
+        </Location>
+    </xsl:template>
+    
     <xsl:template name="generate-ResourceId">
         <xsl:if test="//Actor[@ref=current()/@ref]">
             <xsl:attribute name="ResourceId" select="@ref"/>
