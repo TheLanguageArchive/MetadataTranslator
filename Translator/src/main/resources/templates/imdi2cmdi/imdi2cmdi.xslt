@@ -3,7 +3,7 @@
 $Rev: 3378 $
 $LastChangedDate: 2013-08-14 11:25:31 +0200 (Wed, 14 Aug 2013) $
 -->
-<xsl:stylesheet xmlns="http://www.clarin.eu/cmd/" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+<xsl:stylesheet xmlns="http://www.clarin.eu/cmd/" xmlns:cmd="http://www.clarin.eu/cmd/" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
 	version="2.0" xpath-default-namespace="http://www.mpi.nl/IMDI/Schema/IMDI" xmlns:imdi="http://www.mpi.nl/IMDI/Schema/IMDI" xmlns:lat="http://lat.mpi.nl/" xmlns:iso="http://www.iso.org/" xmlns:sil="http://www.sil.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:functx="http://www.functx.com">
     <!-- this is a version of imdi2clarin.xsl that batch processes a whole directory structure of imdi files, call it from the command line like this:
         java -jar saxon8.jar -it main batch-imdi2clarin.xsl
@@ -137,7 +137,7 @@ $LastChangedDate: 2013-08-14 11:25:31 +0200 (Wed, 14 Aug 2013) $
 			</xsl:otherwise>
 		</xsl:choose>
 	</xsl:function>
-
+	
 	<xsl:template match="/">
 		<xsl:if test="normalize-space($imdi2cmdi-client-side-stylesheet-href) != ''">
 			<!-- insert client side XML instruction -->
@@ -145,7 +145,10 @@ $LastChangedDate: 2013-08-14 11:25:31 +0200 (Wed, 14 Aug 2013) $
 			    <xsl:value-of select="concat('type=&quot;text/xsl&quot; href=&quot;', $imdi2cmdi-client-side-stylesheet-href, '&quot;')"/>
 			</xsl:processing-instruction>
 		</xsl:if>
-		<xsl:apply-templates/>
+		<xsl:variable name="cmdi">
+			<xsl:apply-templates/>
+		</xsl:variable>
+		<xsl:apply-templates select="$cmdi" mode="cleanup"/>
 	</xsl:template>
 	
 	<!-- do the IMDI to CMDI conversion -->
@@ -231,8 +234,8 @@ $LastChangedDate: 2013-08-14 11:25:31 +0200 (Wed, 14 Aug 2013) $
 	                </xsl:if>
             	</xsl:if>
             </ResourceProxyList>
-            <JournalFileProxyList> </JournalFileProxyList>
-            <ResourceRelationList> </ResourceRelationList>
+            <JournalFileProxyList/> 
+            <ResourceRelationList/> 
         </Resources>
         <Components>
             <xsl:apply-templates select="Session">
@@ -277,7 +280,10 @@ $LastChangedDate: 2013-08-14 11:25:31 +0200 (Wed, 14 Aug 2013) $
             </xsl:when>
             <xsl:otherwise>
                 <!-- Currently we are only processing 'SESSION' and 'CORPUS' types. The error displayed can be used to filter out erroneous files after processing-->
-            	<xsl:message terminate="yes">ERROR: Invalid METATRANSCRIPT Type!</xsl:message>
+            	<!-- in JAXP the first xsl:message will reach the log as a WARN, while the last xsl:message will be a DEBUG
+            		(although the transform will terminate with an ERROR, but without the message text :-( ) -->
+            	<xsl:message>ERR: [<xsl:value-of select="@Type"/>] is a METATRANSCRIPT Type which can't be handled yet!</xsl:message>
+            	<xsl:message terminate="yes">ERR: [<xsl:value-of select="@Type"/>] is a METATRANSCRIPT Type which can't be handled yet!</xsl:message>
             </xsl:otherwise>
         </xsl:choose>
     </xsl:template>
@@ -510,6 +516,8 @@ $LastChangedDate: 2013-08-14 11:25:31 +0200 (Wed, 14 Aug 2013) $
         </lat-corpus>
     </xsl:template>
 
+	<xsl:template match="text()" mode="linking"/>
+	
     <xsl:template match="Corpus" mode="linking">
     	<xsl:for-each select="CorpusLink[normalize-space(@ArchiveHandle)!='' or normalize-space(.)!='']">
             <ResourceProxy id="{generate-id(.)}">
@@ -608,7 +616,7 @@ $LastChangedDate: 2013-08-14 11:25:31 +0200 (Wed, 14 Aug 2013) $
     </xsl:template>
 
 	<!-- Create ResourceProxy for Info files -->
-	<xsl:template match="//Description[@ArchiveHandle or @Link]" mode="linking">
+	<xsl:template match="//Description[parent::Corpus or parent::Session or parent::Project or parent::References or parent::Content][@ArchiveHandle or @Link]" mode="linking">
 		<xsl:variable name="res">
 			<xsl:choose>
 				<xsl:when test="normalize-space(@ArchiveHandle)!=''">
@@ -672,7 +680,12 @@ $LastChangedDate: 2013-08-14 11:25:31 +0200 (Wed, 14 Aug 2013) $
         		</InfoLink>
         	</xsl:for-each>
         	<xsl:for-each select="MDGroup/Content/Description[normalize-space(@ArchiveHandle)!='' or normalize-space(@Link)!='']">
-        		<InfoLink ref="{generate-id(.)}"/>
+        		<InfoLink ref="{generate-id(.)}">
+        			<Description>
+        				<xsl:call-template name="xmlLang"/>
+        				<xsl:value-of select="."/>
+        			</Description>
+        		</InfoLink>
         	</xsl:for-each>
         	<xsl:apply-templates select="child::MDGroup"/>
             <xsl:apply-templates select="child::Resources" mode="regular"/>
@@ -932,7 +945,7 @@ $LastChangedDate: 2013-08-14 11:25:31 +0200 (Wed, 14 Aug 2013) $
         			<xsl:apply-templates select="child::Keys"/>
         		</xsl:otherwise>
         	</xsl:choose>
-        	<xsl:if test="exists(child::Description[normalize-space()!=''])">
+        	<xsl:if test="exists(child::Description[normalize-space(@ArchiveHandle)='' and normalize-space(@Link)=''][normalize-space(.)!=''])">
                 <descriptions>
                 	<xsl:for-each select="Description[normalize-space()!='']">
                         <Description>
@@ -1075,9 +1088,9 @@ $LastChangedDate: 2013-08-14 11:25:31 +0200 (Wed, 14 Aug 2013) $
                 			<xsl:when test="count($target) eq 1">
                 				<xsl:attribute name="ref" select="generate-id($target)" />
                 			</xsl:when>
-                			<!--<xsl:otherwise>
+                			<xsl:otherwise>
                 				<xsl:message>ERR: Actor/@ResourceRef[<xsl:value-of select="$ref"/>] doesn't resolve to any Resource with a ResourceLink!</xsl:message>
-                			</xsl:otherwise>-->
+                			</xsl:otherwise>
                 		</xsl:choose>
                 	</xsl:if>
                     <Role>
@@ -1815,6 +1828,43 @@ $LastChangedDate: 2013-08-14 11:25:31 +0200 (Wed, 14 Aug 2013) $
 		<xsl:for-each select="Keys/Key[@Name=$key]">
 			<xsl:call-template name="keyOrUnspecified"/>
 		</xsl:for-each>
+	</xsl:template>
+	
+	<!-- cleanup:
+		- remove double ResourceProxies
+	-->
+	
+	<xsl:template match="node() | @*" mode="cleanup">
+		<xsl:copy>
+			<xsl:apply-templates select="node() | @*" mode="#current"/>
+		</xsl:copy>
+	</xsl:template>
+		
+	<xsl:template match="cmd:ResourceProxy" mode="cleanup">
+		<xsl:variable name="rt" select="cmd:ResourceType"/>
+		<xsl:variable name="rr" select="cmd:ResourceRef"/>
+		<xsl:if test="empty(preceding::cmd:ResourceProxy[cmd:ResourceType=$rt][cmd:ResourceRef=$rr])">
+			<xsl:copy>
+				<xsl:apply-templates select="node() | @*" mode="#current"/>
+			</xsl:copy>
+		</xsl:if>
+	</xsl:template>
+	
+	<xsl:template match="cmd:Components//@ref" mode="cleanup">
+		<xsl:variable name="ref" select="string(.)"/>
+		<xsl:variable name="proxies" select="/cmd:CMD/cmd:Resources/cmd:ResourceProxyList/cmd:ResourceProxy"/>
+		<xsl:attribute name="ref">
+			<xsl:for-each select="tokenize($ref,'\s+')">
+				<xsl:variable name="rp" select="$proxies[@id=current()]"/>
+				<xsl:variable name="rt" select="$rp/cmd:ResourceType"/>
+				<xsl:variable name="rr" select="$rp/cmd:ResourceRef"/>
+				<xsl:variable name="id" select="($proxies[cmd:ResourceType=$rt][cmd:ResourceRef=$rr])[1]/@id"/>
+				<xsl:sequence select="$id"/>
+				<xsl:if test="position()!=last()">
+        			<xsl:sequence select="' '"/>
+        		</xsl:if>
+			</xsl:for-each>
+		</xsl:attribute>
 	</xsl:template>
 
 </xsl:stylesheet>
