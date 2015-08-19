@@ -38,6 +38,8 @@ $LastChangedDate: 2013-08-14 11:25:31 +0200 (Wed, 14 Aug 2013) $
     <!-- OPTIONAL: a client side transformation URL, inserted as a processing instruction if non-empty -->
 	<xsl:param name="imdi2cmdi-client-side-stylesheet-href" required="no" />
 	
+	<xsl:variable name="doc" select="/"/>
+	
 	<xsl:variable name="sil-lang-top" select="document(resolve-uri('sil_to_iso6393.xml',$base))/sil:languages"/>
 	<xsl:key name="sil-lookup" match="sil:lang" use="sil:sil"/>
 	
@@ -773,16 +775,28 @@ $LastChangedDate: 2013-08-14 11:25:31 +0200 (Wed, 14 Aug 2013) $
                 <xsl:value-of select="child::Id"/>
             </Id>
             <xsl:apply-templates select="Contact"/>
-            <xsl:if test="exists(Description[normalize-space(.)!=''])">
-                <descriptions>
-                	<xsl:for-each select="Description[normalize-space(.)!='']">
-                        <Description>
-                        	<xsl:call-template name="xmlLang"/>
-                            <xsl:value-of select="."/>
-                        </Description>
-                    </xsl:for-each>
-                </descriptions>
-            </xsl:if>
+        	<xsl:variable name="descriptions" select="Description[normalize-space(@ArchiveHandle)='' and normalize-space(@Link)=''][normalize-space(.)!='']"/>
+        	<xsl:variable name="infoLinks" select="Description[normalize-space(@ArchiveHandle)!='' or normalize-space(@Link)!='']"/>
+        	<xsl:if test="exists($descriptions)">
+        		<descriptions>
+        			<xsl:for-each select="$descriptions">
+        				<Description>
+        					<xsl:call-template name="xmlLang"/>
+        					<xsl:value-of select="."/>
+        				</Description>
+        			</xsl:for-each>
+        		</descriptions>
+        	</xsl:if>
+        	<xsl:for-each select="$infoLinks">
+        		<InfoLink ref="{generate-id(.)}">
+        			<xsl:if test="normalize-space(.)!=''">
+        				<Description>
+        					<xsl:call-template name="xmlLang"/>
+        					<xsl:value-of select="."/>
+        				</Description>
+        			</xsl:if>
+        		</InfoLink>
+        	</xsl:for-each>
         </Project>
     </xsl:template>
 
@@ -1461,6 +1475,29 @@ $LastChangedDate: 2013-08-14 11:25:31 +0200 (Wed, 14 Aug 2013) $
 
     <xsl:template match="Source">
         <Source>
+        	<xsl:variable name="refs">
+        		<xsl:for-each select="tokenize(normalize-space(current()/@ResourceRefs),'\s+')[normalize-space(.)!='']">
+        			<xsl:variable name="target" select="$doc//(MediaFile|WrittenResource)[@ResourceId=current()]/ResourceLink[normalize-space(.)!='']"/>
+        			<xsl:choose>
+        				<xsl:when test="count($target) gt 1">
+        					<xsl:message>ERR: Source/@ResourceRef(s)[<xsl:value-of select="current()"/>] resolves to multiple Resources! Taking the first one.</xsl:message>
+        					<xsl:sequence select="generate-id(($target)[1])" />
+        				</xsl:when>
+        				<xsl:when test="count($target) eq 1">
+        					<xsl:sequence select="generate-id($target)" />
+        				</xsl:when>
+        				<xsl:otherwise>
+        					<xsl:message>ERR: Session/@ResourceRef(s)[<xsl:value-of select="current()"/>] doesn't resolve to any Resource with a ResourceLink!</xsl:message>
+        				</xsl:otherwise>
+        			</xsl:choose>
+        			<!--<xsl:if test="position()!=last()">
+        				<xsl:sequence select="' '"/>
+        			</xsl:if>-->
+        		</xsl:for-each>
+        	</xsl:variable>
+        	<xsl:if test="normalize-space($refs)!=''">
+        		<xsl:attribute name="ref" select="$refs"/>
+        	</xsl:if>
             <Id>
                 <xsl:value-of select=" ./Id"/>
             </Id>
@@ -1556,16 +1593,28 @@ $LastChangedDate: 2013-08-14 11:25:31 +0200 (Wed, 14 Aug 2013) $
 
     <xsl:template match="child::References">
         <References>
-        	<xsl:if test="exists(child::Description[normalize-space(.)!=''])">
-                <descriptions>
-                	<xsl:for-each select="Description[normalize-space(.)!='']">
-                        <Description>
-                        	<xsl:call-template name="xmlLang"/>
-                            <xsl:value-of select="."/>
-                        </Description>
-                    </xsl:for-each>
-                </descriptions>
-            </xsl:if>
+        	<xsl:variable name="descriptions" select="Description[normalize-space(@ArchiveHandle)='' and normalize-space(@Link)=''][normalize-space(.)!='']"/>
+        	<xsl:variable name="infoLinks" select="Description[normalize-space(@ArchiveHandle)!='' or normalize-space(@Link)!='']"/>
+        	<xsl:if test="exists($descriptions)">
+        		<descriptions>
+        			<xsl:for-each select="$descriptions">
+        				<Description>
+        					<xsl:call-template name="xmlLang"/>
+        					<xsl:value-of select="."/>
+        				</Description>
+        			</xsl:for-each>
+        		</descriptions>
+        	</xsl:if>
+        	<xsl:for-each select="$infoLinks">
+        		<InfoLink ref="{generate-id(.)}">
+        			<xsl:if test="normalize-space(.)!=''">
+        				<Description>
+        					<xsl:call-template name="xmlLang"/>
+        					<xsl:value-of select="."/>
+        				</Description>
+        			</xsl:if>
+        		</InfoLink>
+        	</xsl:for-each>
         </References>
     </xsl:template>
 	
@@ -1587,6 +1636,7 @@ $LastChangedDate: 2013-08-14 11:25:31 +0200 (Wed, 14 Aug 2013) $
 									<xsl:value-of select="$iso"/>
 								</xsl:when>
 								<xsl:otherwise>
+									<xsl:message>WRN: [<xsl:value-of select="$codestr"/>] is not a ISO 639-1 language code, falling back to und.</xsl:message>
 									<xsl:value-of select="'und'"/>
 								</xsl:otherwise>
 							</xsl:choose>
@@ -1605,6 +1655,7 @@ $LastChangedDate: 2013-08-14 11:25:31 +0200 (Wed, 14 Aug 2013) $
 									<xsl:value-of select="$iso"/>
 								</xsl:when>
 								<xsl:otherwise>
+									<xsl:message>WRN: [<xsl:value-of select="$codestr"/>] is not a ISO 639-2 language code, falling back to und.</xsl:message>
 									<xsl:value-of select="'und'"/>
 								</xsl:otherwise>
 							</xsl:choose>
@@ -1620,6 +1671,7 @@ $LastChangedDate: 2013-08-14 11:25:31 +0200 (Wed, 14 Aug 2013) $
 							<xsl:value-of select="$codestr"/>
 						</xsl:when>
 						<xsl:otherwise>
+							<xsl:message>WRN: [<xsl:value-of select="$codestr"/>] is not a ISO 639-3 language code, falling back to und.</xsl:message>
 							<xsl:value-of select="'und'"/>
 						</xsl:otherwise>
 					</xsl:choose>
@@ -1636,6 +1688,7 @@ $LastChangedDate: 2013-08-14 11:25:31 +0200 (Wed, 14 Aug 2013) $
 									<xsl:value-of select="$iso"/>
 								</xsl:when>
 								<xsl:otherwise>
+									<xsl:message>WRN: [<xsl:value-of select="$codestr"/>] is not a ISO 639-2 language code, falling back to und.</xsl:message>
 									<xsl:value-of select="'und'"/>
 								</xsl:otherwise>
 							</xsl:choose>
@@ -1647,14 +1700,17 @@ $LastChangedDate: 2013-08-14 11:25:31 +0200 (Wed, 14 Aug 2013) $
 									<xsl:value-of select="$iso"/>
 								</xsl:when>
 								<xsl:otherwise>
+									<xsl:message>WRN: [<xsl:value-of select="$codestr"/>] is not a ISO 639-1 language code, falling back to und.</xsl:message>
 									<xsl:value-of select="'und'"/>
 								</xsl:otherwise>
 							</xsl:choose>
 						</xsl:when>
 						<xsl:when test="matches($codestr,'^[a-z]{3}$')">
+							<xsl:message>WRN: [<xsl:value-of select="$codestr"/>] is assumed to be a ISO 639 code just based on regexp matching.</xsl:message>
 							<xsl:value-of select="$codestr"/>
 						</xsl:when>
 						<xsl:otherwise>
+							<xsl:message>WRN: [<xsl:value-of select="$codestr"/>] is not a ISO 639 language code, falling back to und.</xsl:message>
 							<xsl:value-of select="'und'"/>
 						</xsl:otherwise>
 					</xsl:choose>
@@ -1668,16 +1724,19 @@ $LastChangedDate: 2013-08-14 11:25:31 +0200 (Wed, 14 Aug 2013) $
 									<xsl:value-of select="$iso"/>
 								</xsl:when>
 								<xsl:otherwise>
+									<xsl:message>WRN: [<xsl:value-of select="$codestr"/>] is SIL code (?) with an unknown mapping to ISO 639, falling back to und.</xsl:message>
 									<xsl:value-of select="'und'"/>
 								</xsl:otherwise>
 							</xsl:choose>
 						</xsl:when>
 						<xsl:otherwise>
+							<xsl:message>WRN: [<xsl:value-of select="$codestr"/>] has no known mapping to ISO 639, falling back to und.</xsl:message>
 							<xsl:value-of select="'und'"/>
 						</xsl:otherwise>
 					</xsl:choose>
 				</xsl:when>
 				<xsl:otherwise>
+					<xsl:message>WRN: [<xsl:value-of select="$codestr"/>] has no known mapping to ISO 639, falling back to und.</xsl:message>
 					<xsl:value-of select="'und'"/>
 				</xsl:otherwise>
 			</xsl:choose>
