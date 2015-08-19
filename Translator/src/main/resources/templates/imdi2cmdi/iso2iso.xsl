@@ -56,7 +56,7 @@
 	<xsl:template match="row[normalize-space(.)='']" priority="1"/>
 	
 	<xsl:template match="row">
-		<e>
+		<e xmlns="http://www.iso.org/">
 			<xsl:apply-templates/>
 		</e>
 	</xsl:template>
@@ -64,31 +64,31 @@
 	<xsl:template match="elem[normalize-space(.)='']" priority="2"/>
 	
 	<xsl:template match="elem[@name='Id']" priority="1">
-		<i>
+		<i xmlns="http://www.iso.org/">
 			<xsl:value-of select="."/>
 		</i>
 	</xsl:template>
 	
 	<xsl:template match="elem[@name='Part2B']" priority="1">
-		<b>
+		<b xmlns="http://www.iso.org/">
 			<xsl:value-of select="."/>
 		</b>
 	</xsl:template>
 	
 	<xsl:template match="elem[@name='Part2T']" priority="1">
-		<t>
+		<t xmlns="http://www.iso.org/">
 			<xsl:value-of select="."/>
 		</t>
 	</xsl:template>
 	
 	<xsl:template match="elem[@name='Part1']" priority="1">
-		<o>
+		<o xmlns="http://www.iso.org/">
 			<xsl:value-of select="."/>
 		</o>
 	</xsl:template>
 	
 	<xsl:template match="elem[@name='Ref_Name']" priority="1">
-		<n>
+		<n xmlns="http://www.iso.org/">
 			<xsl:value-of select="."/>
 		</n>
 	</xsl:template>

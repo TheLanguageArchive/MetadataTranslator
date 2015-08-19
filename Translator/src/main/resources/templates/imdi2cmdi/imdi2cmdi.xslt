@@ -48,6 +48,8 @@ $LastChangedDate: 2013-08-14 11:25:31 +0200 (Wed, 14 Aug 2013) $
 	<xsl:variable name="iso-lang-top" select="$iso-lang-doc/iso:m"/>
 	<xsl:key name="iso639_1-lookup" match="iso:e" use="iso:o"/>
 	<xsl:key name="iso639_2-lookup" match="iso:e" use="iso:b|iso:t"/>
+	<xsl:key name="iso639_3-lookup" match="iso:e" use="iso:i"/>
+	<xsl:key name="iso639-lookup" match="iso:e" use="iso:i|iso:o|iso:b|iso:t"/>
 	
 	<!-- definition of the SRU-searchable collections at TLA (for use later on) -->
     <xsl:variable name="SruSearchable">childes,ESF corpus,IFA corpus,MPI CGN,talkbank</xsl:variable>
@@ -668,6 +670,9 @@ $LastChangedDate: 2013-08-14 11:25:31 +0200 (Wed, 14 Aug 2013) $
         				<xsl:value-of select="."/>
         			</Description>
         		</InfoLink>
+        	</xsl:for-each>
+        	<xsl:for-each select="MDGroup/Content/Description[normalize-space(@ArchiveHandle)!='' or normalize-space(@Link)!='']">
+        		<InfoLink ref="{generate-id(.)}"/>
         	</xsl:for-each>
         	<xsl:apply-templates select="child::MDGroup"/>
             <xsl:apply-templates select="child::Resources" mode="regular"/>
@@ -1667,7 +1672,7 @@ $LastChangedDate: 2013-08-14 11:25:31 +0200 (Wed, 14 Aug 2013) $
 						<xsl:when test="$codestr='xxx'">
 							<xsl:value-of select="'und'"/>
 						</xsl:when>
-						<xsl:when test="matches($codestr,'^[a-z]{3}$')">
+						<xsl:when test="exists(key('iso639_3-lookup', $codestr, $iso-lang-top))">
 							<xsl:value-of select="$codestr"/>
 						</xsl:when>
 						<xsl:otherwise>
@@ -1681,33 +1686,17 @@ $LastChangedDate: 2013-08-14 11:25:31 +0200 (Wed, 14 Aug 2013) $
 						<xsl:when test="$codestr='xxx'">
 							<xsl:value-of select="'und'"/>
 						</xsl:when>
-						<xsl:when test="exists(key('iso639_2-lookup', $codestr, $iso-lang-top))">
-							<xsl:variable name="iso" select="key('iso639_2-lookup', $codestr, $iso-lang-top)/iso:i"/>
+						<xsl:when test="exists(key('iso639-lookup', $codestr, $iso-lang-top))">
+							<xsl:variable name="iso" select="key('iso639-lookup', $codestr, $iso-lang-top)/iso:i"/>
 							<xsl:choose>
 								<xsl:when test="$iso!='xxx'">
 									<xsl:value-of select="$iso"/>
 								</xsl:when>
 								<xsl:otherwise>
-									<xsl:message>WRN: [<xsl:value-of select="$codestr"/>] is not a ISO 639-2 language code, falling back to und.</xsl:message>
+									<xsl:message>WRN: [<xsl:value-of select="$codestr"/>] is not a ISO 639 language code, falling back to und.</xsl:message>
 									<xsl:value-of select="'und'"/>
 								</xsl:otherwise>
 							</xsl:choose>
-						</xsl:when>
-						<xsl:when test="exists(key('iso639_1-lookup', $codestr, $iso-lang-top))">
-							<xsl:variable name="iso" select="key('iso639_1-lookup', $codestr, $iso-lang-top)/iso:i"/>
-							<xsl:choose>
-								<xsl:when test="$iso!='xxx'">
-									<xsl:value-of select="$iso"/>
-								</xsl:when>
-								<xsl:otherwise>
-									<xsl:message>WRN: [<xsl:value-of select="$codestr"/>] is not a ISO 639-1 language code, falling back to und.</xsl:message>
-									<xsl:value-of select="'und'"/>
-								</xsl:otherwise>
-							</xsl:choose>
-						</xsl:when>
-						<xsl:when test="matches($codestr,'^[a-z]{3}$')">
-							<xsl:message>WRN: [<xsl:value-of select="$codestr"/>] is assumed to be a ISO 639 code just based on regexp matching.</xsl:message>
-							<xsl:value-of select="$codestr"/>
 						</xsl:when>
 						<xsl:otherwise>
 							<xsl:message>WRN: [<xsl:value-of select="$codestr"/>] is not a ISO 639 language code, falling back to und.</xsl:message>
