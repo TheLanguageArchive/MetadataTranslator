@@ -49,8 +49,7 @@
             <Date>
                 <xsl:value-of select="child::Date"/>
             </Date>
-            <xsl:apply-templates select="descriptions" mode="COMMONTLA2IMDISESSION"/>
-            <xsl:apply-templates select="InfoLink" mode="create-info-link-description"/>
+            <xsl:apply-templates select="descriptions|InfoLink" mode="COMMONTLA2IMDISESSION"/>
             <MDGroup>
                 <xsl:apply-templates select="Location" mode="COMMONTLA2IMDISESSION"/>
                 <xsl:apply-templates select="Project" mode="TLASESSION2IMDISESSION"/>
@@ -65,8 +64,7 @@
             </MDGroup>
             <xsl:apply-templates select="/CMD/Resources/ResourceProxyList" mode="COMMONTLA2IMDISESSION" />
             <References>
-                <xsl:apply-templates select="References/descriptions" mode="COMMONTLA2IMDISESSION"/> 
-                <xsl:apply-templates select="References/InfoLink" mode="create-info-link-description"/>
+                <xsl:apply-templates select="References/descriptions|References/InfoLink" mode="COMMONTLA2IMDISESSION"/> 
             </References>
         </Session>
     </xsl:template>
@@ -83,6 +81,7 @@
                 <Organisation><xsl:value-of select="child::Contact/Organisation"/></Organisation>
             </Contact>
             <xsl:apply-templates select="descriptions" mode="COMMONTLA2IMDISESSION"/>  
+            <xsl:apply-templates select="InfoLink" mode="COMMONTLA2IMDISESSION"/>
         </Project>
     </xsl:template>
     

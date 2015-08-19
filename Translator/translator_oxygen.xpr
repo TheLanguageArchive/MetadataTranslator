@@ -10,6 +10,21 @@
                         <scenarioAssociation-array>
                             <scenarioAssociation>
                                 <field name="url">
+                                    <String>../../../../../Desktop/imdidiff/files/imdi_to_cmdi/dest/lac_data/vos/Kata_Kolok/_Semi-_Spontaneous/Dialogues/Metadata/BS29sep7.cmdi</String>
+                                </field>
+                                <field name="scenarioIds">
+                                    <list>
+                                        <String>CMDI2IMDI</String>
+                                    </list>
+                                </field>
+                                <field name="scenarioTypes">
+                                    <list>
+                                        <String>XSL</String>
+                                    </list>
+                                </field>
+                            </scenarioAssociation>
+                            <scenarioAssociation>
+                                <field name="url">
                                     <String>src/main/resources/templates/cmdi2imdi/cmdi2imdiMaster.xslt</String>
                                 </field>
                                 <field name="scenarioIds">

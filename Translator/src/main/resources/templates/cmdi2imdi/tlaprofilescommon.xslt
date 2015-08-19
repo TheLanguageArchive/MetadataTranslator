@@ -40,7 +40,7 @@
     </xsl:template>
 
     <!-- InfoLink to Description with @ArchiveHandle and @Link -->
-    <xsl:template match="InfoLink" mode="create-info-link-description">
+    <xsl:template match="InfoLink" mode="COMMONTLA2IMDISESSION">
         <xsl:variable name="proxy" select="//ResourceProxy[@id eq current()/@ref]"/>
         <xsl:choose>
             <xsl:when test="Description">
