@@ -87,7 +87,7 @@
             </Description>       
         </xsl:for-each>
         <xsl:for-each select="child::InfoLink">
-            <xsl:apply-templates select="." mode="create-info-link-description"/>
+            <xsl:apply-templates select="." mode="COMMONTLA2IMDISESSION"/>
         </xsl:for-each>
         <xsl:if test="not(exists(child::descriptions/Description))">
             <Description/>
