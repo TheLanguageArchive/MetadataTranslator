@@ -46,8 +46,7 @@
             <Date>
                 <xsl:value-of select="child::Date"/>
             </Date>
-            <xsl:apply-templates select="descriptions" mode="COMMONTLA2IMDISESSION"/>
-            <xsl:apply-templates select="InfoLink" mode="create-info-link-description"/>
+            <xsl:apply-templates select="descriptions|InfoLink" mode="COMMONTLA2IMDISESSION"/>
             <MDGroup>
                 <xsl:apply-templates select="Location" mode="COMMONTLA2IMDISESSION"/>
                 <xsl:apply-templates select="Project" mode="SILANGSESSION2IMDISESSION"/>
