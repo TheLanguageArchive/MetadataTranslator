@@ -205,7 +205,7 @@
         </xsl:if>
 
         <MediaFile>
-            <xsl:call-template name="generate-ResourceId"/>
+            <xsl:apply-templates select="." mode="generate-ResourceId"/>
             <ResourceLink>
                 <xsl:apply-templates select="//ResourceProxy[@id eq current()/@ref]"
                     mode="create-resource-link-content"/>
@@ -263,7 +263,6 @@
                             select="ResourceType/@mimetype"/></xsl:message>
                     <WrittenResource>
                         <xsl:comment>NOTE: CMDI2IMDI - No WrittenResource element was found for this resource, minimal information was generated on basis of ResourceProxy only</xsl:comment>
-                        <xsl:call-template name="generate-ResourceId"/>
                         <ResourceLink>
                             <xsl:apply-templates select="." mode="create-resource-link-content"/>
                         </ResourceLink>
@@ -306,7 +305,7 @@
         </xsl:if>
 
         <WrittenResource>
-            <xsl:call-template name="generate-ResourceId"/>
+            <xsl:apply-templates select="." mode="generate-ResourceId"/>
             <ResourceLink>
                 <xsl:apply-templates select="//ResourceProxy[@id eq current()/@ref]"
                     mode="create-resource-link-content"/>
@@ -383,6 +382,7 @@
 
     <xsl:template match="Source" mode="COMMONTLA2IMDISESSION">
         <Source>
+            <xsl:apply-templates select="@ref" />
             <Id>
                 <xsl:value-of select="Id|ResourceID"/>
             </Id>
@@ -400,6 +400,10 @@
                 <xsl:apply-templates select="Keys" mode="COMMONTLA2IMDISESSION"/>
             </Keys>
         </Source>
+    </xsl:template>
+    
+    <xsl:template match="Source/@ref">
+        <xsl:attribute name="ResourceRefs" select="." />
     </xsl:template>
 
     <xsl:template match="CounterPosition|TimePosition" mode="COMMONTLA2IMDISESSION">
@@ -500,8 +504,8 @@
         </Location>
     </xsl:template>
     
-    <xsl:template name="generate-ResourceId">
-        <xsl:if test="//Actor[@ref=current()/@ref]">
+    <xsl:template match="WrittenResource|MediaFile" mode="generate-ResourceId">
+        <xsl:if test="//Actor[contains(@ref,current()/@ref)]|//Source[contains(@ref,current()/@ref)]">
             <xsl:attribute name="ResourceId" select="@ref"/>
         </xsl:if>
     </xsl:template>

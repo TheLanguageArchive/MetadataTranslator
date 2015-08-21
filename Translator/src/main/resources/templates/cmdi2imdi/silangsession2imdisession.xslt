@@ -61,7 +61,9 @@
             </MDGroup>
             <xsl:apply-templates select="/CMD/Resources/ResourceProxyList"
                 mode="COMMONTLA2IMDISESSION"/>
-            <References/>
+            <References>
+                <xsl:apply-templates select="References/descriptions|References/InfoLink" mode="COMMONTLA2IMDISESSION"/> 
+            </References>
         </Session>
     </xsl:template>
 
@@ -90,7 +92,7 @@
                     <xsl:value-of select="child::Contact/Organisation"/>
                 </Organisation>
             </Contact>
-            <xsl:apply-templates select="descriptions" mode="COMMONTLA2IMDISESSION"/>
+            <xsl:apply-templates select="descriptions|InfoLink" mode="COMMONTLA2IMDISESSION"/>
         </Project>
     </xsl:template>
 
