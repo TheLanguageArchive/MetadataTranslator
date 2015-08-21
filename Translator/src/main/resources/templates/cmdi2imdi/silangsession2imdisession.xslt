@@ -76,7 +76,7 @@
                 <xsl:value-of select="child::Title"/>
             </Title>
             <Id>
-                <xsl:value-of select="child::ID"/>
+                <xsl:value-of select="child::Id"/>
             </Id>
             <Contact>
                 <Name>
@@ -154,6 +154,7 @@
                 </Channel>
             </CommunicationContext>
             <Languages>
+                <xsl:apply-templates select="descriptions" mode="COMMONTLA2IMDISESSION"/>
                 <xsl:apply-templates select="//Content_Language" mode="SILANGSESSION2IMDISESSION"/>
             </Languages>
             <Keys>
@@ -347,7 +348,6 @@
     </xsl:template>
 
     <xsl:template match="Content_Language" mode="SILANGSESSION2IMDISESSION">
-        <xsl:apply-templates select="descriptions" mode="COMMONTLA2IMDISESSION"/>
         <Language>
             <Id>
                 <xsl:value-of select="child::Id"/>
