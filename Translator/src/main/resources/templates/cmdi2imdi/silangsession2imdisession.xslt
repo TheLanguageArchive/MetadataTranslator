@@ -241,6 +241,16 @@
             </Contact>
             <Keys>
                 <xsl:apply-templates select="Keys" mode="COMMONTLA2IMDISESSION"/>
+                <xsl:if test="normalize-space(child::Handedness)!=''">
+                    <Key Name="Handedness">
+                        <xsl:value-of select="Handedness"/>
+                    </Key>
+                </xsl:if>
+                <xsl:if test="normalize-space(child::Region)!=''">
+                    <Key Name="Region">
+                        <xsl:value-of select="Region"/>
+                    </Key>
+                </xsl:if>
                 <xsl:apply-templates select="SL_Deafness" mode="SILANGSESSION2IMDISESSION"/>
                 <xsl:apply-templates select="SL_SignLanguageExperience"
                     mode="SILANGSESSION2IMDISESSION"/>
