@@ -154,8 +154,8 @@
                 </Channel>
             </CommunicationContext>
             <Languages>
-                <xsl:apply-templates select="descriptions" mode="COMMONTLA2IMDISESSION"/>
-                <xsl:apply-templates select="//Content_Language" mode="SILANGSESSION2IMDISESSION"/>
+                <xsl:apply-templates select="child::Content_Languages/descriptions" mode="COMMONTLA2IMDISESSION"/>
+                <xsl:apply-templates select="child::Content_Languages/Content_Language" mode="SILANGSESSION2IMDISESSION"/>
             </Languages>
             <Keys>
                 <xsl:apply-templates select="Keys" mode="COMMONTLA2IMDISESSION"/>
