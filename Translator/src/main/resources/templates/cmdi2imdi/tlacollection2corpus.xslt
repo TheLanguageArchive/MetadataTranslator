@@ -32,15 +32,30 @@
     <xsl:template match="ResourceProxy" mode="TLACOLLECTION2CORPUS">
          <xsl:choose>
              <xsl:when test="child::ResourceType = 'Metadata'">
-                 <CorpusLink>
-                     <xsl:variable name="idref"><xsl:value-of select="@id" /></xsl:variable>
-                     <xsl:attribute name="Name"><xsl:value-of select="//CorpusLink[@ref=$idref]/Name"/></xsl:attribute>
-                     <xsl:variable name="handle" select="tla:getHandleWithoutFormat(ResourceRef,'imdi')"/>
-                     <xsl:if test="string-length($handle) > 0">
-                         <xsl:attribute name="ArchiveHandle" select="$handle" />
-                     </xsl:if>
-                     <xsl:value-of select="tla:getTranslationUri(tla:getlocalURIorfallback(.), 'imdi')"/>                     
-                 </CorpusLink>
+                 <xsl:variable name="idref"><xsl:value-of select="@id" /></xsl:variable>
+                 <xsl:variable name="handle" select="tla:getHandleWithoutFormat(ResourceRef,'imdi')"/>
+                 <xsl:variable name="link" select="tla:getTranslationUri(tla:getlocalURIorfallback(.), 'imdi')"/>     
+                 <xsl:choose>
+                     <xsl:when test="//CorpusLink[@ref=$idref]">
+                         <xsl:for-each select="//CorpusLink[@ref=$idref]">
+                             <CorpusLink>
+                                 <xsl:attribute name="Name"><xsl:value-of select="Name"/></xsl:attribute>
+                                 <xsl:if test="string-length($handle) > 0">
+                                     <xsl:attribute name="ArchiveHandle" select="$handle" />
+                                 </xsl:if>
+                                 <xsl:value-of select="$link"/>                     
+                             </CorpusLink>
+                         </xsl:for-each>
+                     </xsl:when>
+                     <xsl:otherwise>
+                         <CorpusLink>
+                             <xsl:if test="string-length($handle) > 0">
+                                 <xsl:attribute name="ArchiveHandle" select="$handle" />
+                             </xsl:if>
+                             <xsl:value-of select="$link"/>                     
+                         </CorpusLink>
+                     </xsl:otherwise>
+                 </xsl:choose>
              </xsl:when>
           </xsl:choose> 
     </xsl:template>
