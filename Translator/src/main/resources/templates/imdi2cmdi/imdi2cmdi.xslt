@@ -650,7 +650,33 @@ $LastChangedDate: 2013-08-14 11:25:31 +0200 (Wed, 14 Aug 2013) $
 		</xsl:if>
 	</xsl:template> 
 	
-	
+	<!-- resolve ResourceRef(s) -->
+	<xsl:template name="ResourceRefs">
+		<xsl:variable name="node" select="current()"/>
+		<xsl:variable name="refs">
+			<xsl:for-each select="tokenize(normalize-space(current()/@ResourceRef|current()/@ResourceRefs),'\s+')[normalize-space(.)!='']">
+				<xsl:variable name="target" select="$doc//(MediaFile|WrittenResource)[@ResourceId=current()]/ResourceLink[normalize-space(.)!='']"/>
+				<xsl:choose>
+					<xsl:when test="count($target) gt 1">
+						<xsl:message>ERR: <xsl:value-of select="name($node)"/>/@ResourceRef(s)[<xsl:value-of select="current()"/>] resolves to multiple Resources! Taking the first one.</xsl:message>
+						<xsl:sequence select="generate-id(($target)[1])" />
+					</xsl:when>
+					<xsl:when test="count($target) eq 1">
+						<xsl:sequence select="generate-id($target)" />
+					</xsl:when>
+					<xsl:otherwise>
+						<xsl:message>ERR: <xsl:value-of select="name($node)"/>/@ResourceRef(s)[<xsl:value-of select="current()"/>] doesn't resolve to any Resource with a ResourceLink!</xsl:message>
+					</xsl:otherwise>
+				</xsl:choose>
+				<!--<xsl:if test="position()!=last()">
+        				<xsl:sequence select="' '"/>
+        			</xsl:if>-->
+			</xsl:for-each>
+		</xsl:variable>
+		<xsl:if test="normalize-space($refs)!=''">
+			<xsl:attribute name="ref" select="$refs"/>
+		</xsl:if>
+	</xsl:template>	
 
     <xsl:template match="Session">
     	<xsl:param name="profile" tunnel="yes"/>
@@ -947,7 +973,7 @@ $LastChangedDate: 2013-08-14 11:25:31 +0200 (Wed, 14 Aug 2013) $
         	</xsl:choose>
         	<xsl:if test="exists(child::Description[normalize-space(@ArchiveHandle)='' and normalize-space(@Link)=''][normalize-space(.)!=''])">
                 <descriptions>
-                	<xsl:for-each select="Description[normalize-space()!='']">
+                	<xsl:for-each select="Description[normalize-space(@ArchiveHandle)='' and normalize-space(@Link)=''][normalize-space()!='']">
                         <Description>
                         	<xsl:call-template name="xmlLang"/>
                             <xsl:value-of select="."/>
@@ -1021,6 +1047,7 @@ $LastChangedDate: 2013-08-14 11:25:31 +0200 (Wed, 14 Aug 2013) $
     			</xsl:if>
     			<xsl:for-each select="Language">
     				<Content_Language>
+    					<xsl:call-template name="ResourceRefs"/>
     					<Id>
     						<xsl:call-template name="orUnspecified">
     							<xsl:with-param name="value" select="Id"/>
@@ -1077,22 +1104,7 @@ $LastChangedDate: 2013-08-14 11:25:31 +0200 (Wed, 14 Aug 2013) $
             </xsl:if>
             <xsl:for-each select="Actor">
                 <Actor>
-                	<xsl:variable name="ref" select="normalize-space(current()/@ResourceRef)" />
-                	<xsl:if test="$ref!=''">
-                		<xsl:variable name="target" select="//(MediaFile|WrittenResource)[@ResourceId=$ref]/ResourceLink[normalize-space(.)!='']"/>
-                		<xsl:choose>
-                			<xsl:when test="count($target) gt 1">
-                				<xsl:message>ERR: Actor/@ResourceRef[<xsl:value-of select="$ref"/>] resolves to multiple Resources! Taking the first one.</xsl:message>
-                				<xsl:attribute name="ref" select="generate-id(($target)[1])" />
-                			</xsl:when>
-                			<xsl:when test="count($target) eq 1">
-                				<xsl:attribute name="ref" select="generate-id($target)" />
-                			</xsl:when>
-                			<xsl:otherwise>
-                				<xsl:message>ERR: Actor/@ResourceRef[<xsl:value-of select="$ref"/>] doesn't resolve to any Resource with a ResourceLink!</xsl:message>
-                			</xsl:otherwise>
-                		</xsl:choose>
-                	</xsl:if>
+                	<xsl:call-template name="ResourceRefs"/>
                     <Role>
                     	<xsl:call-template name="orUnspecified">
                     		<xsl:with-param name="value" select="./Role"/>
@@ -1260,6 +1272,7 @@ $LastChangedDate: 2013-08-14 11:25:31 +0200 (Wed, 14 Aug 2013) $
             </xsl:if>
             <xsl:for-each select="Language">
                 <Actor_Language>
+                	<xsl:call-template name="ResourceRefs"/>
                     <Id>
                     	<xsl:call-template name="orUnspecified">
                     		<xsl:with-param name="value" select="Id"/>
@@ -1493,29 +1506,7 @@ $LastChangedDate: 2013-08-14 11:25:31 +0200 (Wed, 14 Aug 2013) $
 
     <xsl:template match="Source">
         <Source>
-        	<xsl:variable name="refs">
-        		<xsl:for-each select="tokenize(normalize-space(current()/@ResourceRefs),'\s+')[normalize-space(.)!='']">
-        			<xsl:variable name="target" select="$doc//(MediaFile|WrittenResource)[@ResourceId=current()]/ResourceLink[normalize-space(.)!='']"/>
-        			<xsl:choose>
-        				<xsl:when test="count($target) gt 1">
-        					<xsl:message>ERR: Source/@ResourceRef(s)[<xsl:value-of select="current()"/>] resolves to multiple Resources! Taking the first one.</xsl:message>
-        					<xsl:sequence select="generate-id(($target)[1])" />
-        				</xsl:when>
-        				<xsl:when test="count($target) eq 1">
-        					<xsl:sequence select="generate-id($target)" />
-        				</xsl:when>
-        				<xsl:otherwise>
-        					<xsl:message>ERR: Session/@ResourceRef(s)[<xsl:value-of select="current()"/>] doesn't resolve to any Resource with a ResourceLink!</xsl:message>
-        				</xsl:otherwise>
-        			</xsl:choose>
-        			<!--<xsl:if test="position()!=last()">
-        				<xsl:sequence select="' '"/>
-        			</xsl:if>-->
-        		</xsl:for-each>
-        	</xsl:variable>
-        	<xsl:if test="normalize-space($refs)!=''">
-        		<xsl:attribute name="ref" select="$refs"/>
-        	</xsl:if>
+        	<xsl:call-template name="ResourceRefs"/>
             <Id>
                 <xsl:value-of select=" ./Id"/>
             </Id>
