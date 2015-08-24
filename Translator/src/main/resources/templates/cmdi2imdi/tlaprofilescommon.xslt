@@ -505,7 +505,11 @@
     </xsl:template>
     
     <xsl:template match="WrittenResource|MediaFile" mode="generate-ResourceId">
-        <xsl:if test="//Actor[contains(@ref,current()/@ref)]|//Source[contains(@ref,current()/@ref)]">
+        <xsl:if test="//Actor[contains(@ref,current()/@ref)]
+            |//Language[contains(@ref,current()/@ref)]
+            |//Actor_Language[contains(@ref,current()/@ref)]
+            |//Content_Language[contains(@ref,current()/@ref)]
+            |//Source[contains(@ref,current()/@ref)]">
             <xsl:attribute name="ResourceId" select="@ref"/>
         </xsl:if>
     </xsl:template>

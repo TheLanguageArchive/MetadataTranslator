@@ -349,6 +349,9 @@
 
     <xsl:template match="Content_Language" mode="SILANGSESSION2IMDISESSION">
         <Language>
+            <xsl:if test="@ref">
+                <xsl:attribute name="ResourceRef" select="@ref" />
+            </xsl:if>
             <Id>
                 <xsl:value-of select="child::Id"/>
             </Id>
@@ -370,6 +373,9 @@
 
     <xsl:template match="Actor_Language" mode="SILANGSESSION2IMDISESSION">
         <Language>
+            <xsl:if test="@ref">
+                <xsl:attribute name="ResourceRef" select="@ref" />
+            </xsl:if>
             <Id>
                 <xsl:value-of select="child::Id"/>
             </Id>

@@ -154,6 +154,9 @@
     
     <xsl:template match="Content_Language" mode="TLASESSION2IMDISESSION">
         <Language>
+            <xsl:if test="@ref">
+                <xsl:attribute name="ResourceRef" select="@ref" />
+            </xsl:if>
             <Id><xsl:value-of select="child::Id"/></Id>
             <Name Link="http://www.mpi.nl/IMDI/Schema/MPI-Languages.xml" Type="OpenVocabulary"><xsl:value-of select="child::Name"/></Name>
             <Dominant Type="ClosedVocabulary"><xsl:value-of select="child::Dominant"/></Dominant>
@@ -165,6 +168,9 @@
     
     <xsl:template match="Actor_Language" mode="TLASESSION2IMDISESSION">
         <Language>
+            <xsl:if test="@ref">
+                <xsl:attribute name="ResourceRef" select="@ref" />
+            </xsl:if>
             <Id><xsl:value-of select="child::Id"/></Id>
             <Name><xsl:value-of select="child::Name"/></Name>
             <MotherTongue Type="ClosedVocabulary"><xsl:value-of select="child::MotherTongue"/></MotherTongue>

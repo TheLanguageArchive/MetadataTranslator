@@ -264,6 +264,9 @@
 
     <xsl:template match="Language" mode="DBDSESSION2IMDISESSION_CONTENTLANG">
         <Language>
+            <xsl:if test="@ref">
+                <xsl:attribute name="ResourceRef" select="@ref" />
+            </xsl:if>
             <Id>
                 <xsl:value-of select="child::LanguageID"/>
             </Id>
@@ -285,6 +288,9 @@
 
     <xsl:template match="Language" mode="DBDSESSION2IMDISESSION_ACTORLANG">
         <Language>
+            <xsl:if test="@ref">
+                <xsl:attribute name="ResourceRef" select="@ref" />
+            </xsl:if>
             <Id>
                 <xsl:value-of select="child::LanguageID"/>
             </Id>

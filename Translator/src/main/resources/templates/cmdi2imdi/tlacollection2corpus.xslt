@@ -39,7 +39,7 @@
                      <xsl:when test="//CorpusLink[@ref=$idref]">
                          <xsl:for-each select="//CorpusLink[@ref=$idref]">
                              <CorpusLink>
-                                 <xsl:attribute name="Name"><xsl:value-of select="Name"/></xsl:attribute>
+                                 <xsl:attribute name="Name" select="Name"/>
                                  <xsl:if test="string-length($handle) > 0">
                                      <xsl:attribute name="ArchiveHandle" select="$handle" />
                                  </xsl:if>
@@ -48,7 +48,9 @@
                          </xsl:for-each>
                      </xsl:when>
                      <xsl:otherwise>
+                         <!-- no corpus link reference, insert one -->
                          <CorpusLink>
+                             <xsl:attribute name="Name" select="@id"/>
                              <xsl:if test="string-length($handle) > 0">
                                  <xsl:attribute name="ArchiveHandle" select="$handle" />
                              </xsl:if>
