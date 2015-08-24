@@ -76,7 +76,7 @@
                 <xsl:value-of select="child::Title"/>
             </Title>
             <Id>
-                <xsl:value-of select="child::ID"/>
+                <xsl:value-of select="child::Id"/>
             </Id>
             <Contact>
                 <Name>
@@ -154,6 +154,7 @@
                 </Channel>
             </CommunicationContext>
             <Languages>
+                <xsl:apply-templates select="descriptions" mode="COMMONTLA2IMDISESSION"/>
                 <xsl:apply-templates select="//Content_Language" mode="SILANGSESSION2IMDISESSION"/>
             </Languages>
             <Keys>
@@ -243,6 +244,16 @@
             </Contact>
             <Keys>
                 <xsl:apply-templates select="Keys" mode="COMMONTLA2IMDISESSION"/>
+                <xsl:if test="normalize-space(child::Handedness)!=''">
+                    <Key Name="Handedness">
+                        <xsl:value-of select="Handedness"/>
+                    </Key>
+                </xsl:if>
+                <xsl:if test="normalize-space(child::Region)!=''">
+                    <Key Name="Region">
+                        <xsl:value-of select="Region"/>
+                    </Key>
+                </xsl:if>
                 <xsl:apply-templates select="SL_Deafness" mode="SILANGSESSION2IMDISESSION"/>
                 <xsl:apply-templates select="SL_SignLanguageExperience"
                     mode="SILANGSESSION2IMDISESSION"/>
@@ -337,7 +348,6 @@
     </xsl:template>
 
     <xsl:template match="Content_Language" mode="SILANGSESSION2IMDISESSION">
-        <xsl:apply-templates select="descriptions" mode="COMMONTLA2IMDISESSION"/>
         <Language>
             <Id>
                 <xsl:value-of select="child::Id"/>
