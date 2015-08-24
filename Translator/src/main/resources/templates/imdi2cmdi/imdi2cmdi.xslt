@@ -315,17 +315,19 @@ $LastChangedDate: 2013-08-14 11:25:31 +0200 (Wed, 14 Aug 2013) $
             		</xsl:if>
             	</InfoLink>
             </xsl:for-each>
-            <xsl:for-each select="CorpusLink[normalize-space(@ArchiveHandle)!='' or normalize-space(.)!='' or normalize-space(@Name)!='']">
+            <xsl:for-each-group select="CorpusLink[normalize-space(@ArchiveHandle)!='' or normalize-space(.)!='' or normalize-space(@Name)!='']"
+            	group-by="string-join((normalize-space(@ArchiveHandle),normalize-space(.),normalize-space(@Name)),'/')">
+            	<xsl:variable name="cl" select="current-group()[1]"/>
                 <CorpusLink>
-                    <xsl:if test="normalize-space(@ArchiveHandle)!='' or normalize-space(.)!=''">
-                    	<xsl:attribute name="ref" select="generate-id(.)"/>
+                    <xsl:if test="normalize-space($cl/@ArchiveHandle)!='' or normalize-space($cl)!=''">
+                    	<xsl:attribute name="ref" select="generate-id($cl)"/>
                     </xsl:if>
                     <Name>
-                    	<xsl:value-of select="@Name"/>
+                    	<xsl:value-of select="$cl/@Name"/>
                     </Name>
                 </CorpusLink>
-            </xsl:for-each>
-            <xsl:if test="normalize-space(@CatalogueLink)!='' or normalize-space(@CatalogueHandle)!=''">
+            </xsl:for-each-group>
+        	<xsl:if test="normalize-space(@CatalogueLink)!='' or normalize-space(@CatalogueHandle)!=''">
             	<xsl:variable name="cat" as="xs:string?">
             		<xsl:variable name="hdl" select="replace(@CatalogueHandle,'hdl:','http://hdl.handle.net/')"/>
             		<xsl:choose>
