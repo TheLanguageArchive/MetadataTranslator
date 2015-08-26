@@ -513,5 +513,41 @@
             <xsl:attribute name="ResourceId" select="@ref"/>
         </xsl:if>
     </xsl:template>
-
+    
+    <!-- Creates Key elements - it assumes that the key name is the same as the name of the incoming node but that can be overridden --> 
+    <xsl:template match="node()" mode="CREATE-KEYS">
+        <xsl:param name="name" required="no"/>
+        <xsl:param name="type" required="yes"/>
+        <xsl:if test="normalize-space(.) != ''">
+            <Key>
+                <xsl:choose>
+                    <xsl:when test="normalize-space($name) != ''">
+                        <xsl:attribute name="Name" select="$name"/>
+                    </xsl:when>
+                    <xsl:otherwise>
+                        <xsl:attribute name="Name" select="name()"/>
+                    </xsl:otherwise>
+                </xsl:choose>
+                <xsl:attribute name="Type" select="$type"/>
+                <xsl:value-of select="." />
+            </Key>
+        </xsl:if>
+    </xsl:template>
+    
+    <xsl:template match="node()" mode="CREATE-KEYS-OPEN">
+        <xsl:param name="name" required="no"/>
+        <xsl:apply-templates select="." mode="CREATE-KEYS">
+            <xsl:with-param name="name" select="$name" />
+            <xsl:with-param name="type" select="'OpenVocabulary'" />
+        </xsl:apply-templates>
+    </xsl:template>
+    
+    <xsl:template match="node()" mode="CREATE-KEYS-CLOSED">
+        <xsl:param name="name" required="no"/>
+        <xsl:apply-templates select="." mode="CREATE-KEYS">
+            <xsl:with-param name="name" select="$name" />
+            <xsl:with-param name="type" select="'ClosedVocabulary'" />
+        </xsl:apply-templates>
+    </xsl:template>
+    
 </xsl:stylesheet>
