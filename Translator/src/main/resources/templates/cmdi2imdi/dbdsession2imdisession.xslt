@@ -49,16 +49,12 @@
                 <xsl:apply-templates select="Location" mode="DBDSESSION2IMDISESSION"/>
                 <xsl:apply-templates select="Project" mode="DBDSESSION2IMDISESSION"/>
                 <Keys>
-                    <xsl:if test="normalize-space(child::IMDICreator)!=''">
-                        <Key Name="IMDI_file_creator" Type="OpenVocabulary">
-                            <xsl:value-of select="child::IMDICreator"/>
-                        </Key>
-                    </xsl:if>
-                    <xsl:if test="normalize-space(child::IMDICorrector)!=''">
-                        <Key Name="IMDI_file_corrector" Type="OpenVocabulary">
-                            <xsl:value-of select="child::IMDICorrector"/>
-                        </Key>
-                    </xsl:if>
+                    <xsl:apply-templates select="child::IMDICreator" mode="CREATE-KEYS-OPEN">
+                        <xsl:with-param name="name" select="'IMDI_file_creator'" />
+                    </xsl:apply-templates>
+                    <xsl:apply-templates select="child::IMDICorrector" mode="CREATE-KEYS-OPEN">
+                        <xsl:with-param name="name" select="'IMDI_file_corrector'" />
+                    </xsl:apply-templates>
                     <xsl:apply-templates select="Keys" mode="COMMONTLA2IMDISESSION"/>
                 </Keys>
                 <xsl:apply-templates select="Content" mode="DBDSESSION2IMDISESSION"/>
@@ -183,9 +179,7 @@
                     mode="DBDSESSION2IMDISESSION_CONTENTLANG"/>
             </Languages>
             <Keys>
-                <xsl:if test="normalize-space(child::LanguageMode)!=''">
-                    <Key Name="DBD.LanguageMode" Type="OpenVocabulary"><xsl:value-of select="child::LanguageMode" /></Key>
-                </xsl:if>
+                <xsl:apply-templates select="child::LanguageMode" mode="CREATE-KEYS-DBD-OPEN" />
                 <xsl:apply-templates select="Keys" mode="COMMONTLA2IMDISESSION"/>
             </Keys>
             <xsl:apply-templates select="Descriptions" mode="COMMONTLA2IMDISESSION"/>
@@ -241,21 +235,11 @@
                 <xsl:apply-templates select="Contact" mode="COMMONTLA2IMDISESSION"/>
             </Contact>
             <Keys>
-                <xsl:if test="normalize-space(child::LevelOfBilingualism)!=''">
-                    <Key Name="DBD.LevelOfBilingualism" Type="OpenVocabulary">
-                        <xsl:value-of select="child::LevelOfBilingualism"/>
-                    </Key>
-                </xsl:if>
-                <xsl:if test="normalize-space(child::AgeAtImmigration)!=''">
-                    <Key Name="DBD.AgeAtImmigration" Type="OpenVocabulary">
-                        <xsl:value-of select="child::AgeAtImmigration"/>
-                    </Key>
-                </xsl:if>
-                <xsl:if test="normalize-space(child::BirthCountry)!=''">
-                    <Key Name="DBD.CountryOfBirth" Type="OpenVocabulary">
-                        <xsl:value-of select="child::BirthCountry"/>
-                    </Key>
-                </xsl:if>
+                <xsl:apply-templates select="child::LevelOfBilingualism" mode="CREATE-KEYS-DBD-OPEN" />
+                <xsl:apply-templates select="child::AgeAtImmigration" mode="CREATE-KEYS-DBD-OPEN" />
+                <xsl:apply-templates select="child::BirthCountry" mode="CREATE-KEYS-OPEN">
+                    <xsl:with-param name="name">DBD.CountryofBirth</xsl:with-param>
+                </xsl:apply-templates>
                 <xsl:apply-templates select="Keys" mode="COMMONTLA2IMDISESSION"/>
             </Keys>
             <xsl:apply-templates select="Descriptions" mode="COMMONTLA2IMDISESSION"/>
@@ -305,6 +289,13 @@
             </PrimaryLanguage>
             <xsl:apply-templates select="Descriptions" mode="COMMONTLA2IMDISESSION"/>
         </Language>
+    </xsl:template>
+    
+    <!-- Create keys where name is "DBD.{node name}" -->
+    <xsl:template match="node()" mode="CREATE-KEYS-DBD-OPEN">
+        <xsl:apply-templates select="." mode="CREATE-KEYS-OPEN">
+            <xsl:with-param name="name" select="concat('DBD.',name())" />
+        </xsl:apply-templates>
     </xsl:template>
 
 

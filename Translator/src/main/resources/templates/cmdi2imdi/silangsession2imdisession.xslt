@@ -52,6 +52,7 @@
                 <xsl:apply-templates select="Project" mode="SILANGSESSION2IMDISESSION"/>
                 <Keys>
                     <xsl:apply-templates select="Keys" mode="COMMONTLA2IMDISESSION"/>
+                    <xsl:apply-templates select="SL_CreativeCommonsLicense" mode="SILANGSESSION2IMDISESSION" />
                 </Keys>
                 <xsl:apply-templates select="Content" mode="SILANGSESSION2IMDISESSION"/>
                 <Actors>
@@ -154,8 +155,8 @@
                 </Channel>
             </CommunicationContext>
             <Languages>
-                <xsl:apply-templates select="descriptions" mode="COMMONTLA2IMDISESSION"/>
-                <xsl:apply-templates select="//Content_Language" mode="SILANGSESSION2IMDISESSION"/>
+                <xsl:apply-templates select="child::Content_Languages/descriptions" mode="COMMONTLA2IMDISESSION"/>
+                <xsl:apply-templates select="child::Content_Languages/Content_Language" mode="SILANGSESSION2IMDISESSION"/>
             </Languages>
             <Keys>
                 <xsl:apply-templates select="Keys" mode="COMMONTLA2IMDISESSION"/>
@@ -192,7 +193,30 @@
             </Key>
         </xsl:if>
     </xsl:template>
-
+    
+    <xsl:template match="SL_CreativeCommonsLicense" mode="SILANGSESSION2IMDISESSION">
+        <xsl:if test="normalize-space(child::AnnotationFiles)!=''">
+            <Key Name="CreativeCommonsLicense.AnnotationFiles">
+                <xsl:value-of select="AnnotationFiles"/>
+            </Key>
+        </xsl:if>
+        <xsl:if test="normalize-space(child::AnnotationFiles_URL)!=''">
+            <Key Name="CreativeCommonsLicense.AnnotationFiles.URL">
+                <xsl:value-of select="AnnotationFiles_URL"/>
+            </Key>
+        </xsl:if>
+        <xsl:if test="normalize-space(child::MediaFiles)!=''">
+            <Key Name="CreativeCommonsLicense.MediaFiles">
+                <xsl:value-of select="MediaFiles"/>
+            </Key>
+        </xsl:if>
+        <xsl:if test="normalize-space(child::MediaFiles_URL)!=''">
+            <Key Name="CreativeCommonsLicense.MediaFiles.URL">
+                <xsl:value-of select="MediaFiles_URL"/>
+            </Key>
+        </xsl:if>
+    </xsl:template>
+    
     <xsl:template match="Actor" mode="SILANGSESSION2IMDISESSION">
         <Actor>
             <xsl:if test="@ref">
