@@ -5,10 +5,6 @@ $LastChangedDate: 2013-08-14 11:25:31 +0200 (Wed, 14 Aug 2013) $
 -->
 <xsl:stylesheet xmlns="http://www.clarin.eu/cmd/" xmlns:cmd="http://www.clarin.eu/cmd/" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
 	version="2.0" xpath-default-namespace="http://www.mpi.nl/IMDI/Schema/IMDI" xmlns:imdi="http://www.mpi.nl/IMDI/Schema/IMDI" xmlns:lat="http://lat.mpi.nl/" xmlns:iso="http://www.iso.org/" xmlns:sil="http://www.sil.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:functx="http://www.functx.com">
-    <!-- this is a version of imdi2clarin.xsl that batch processes a whole directory structure of imdi files, call it from the command line like this:
-        java -jar saxon8.jar -it main batch-imdi2clarin.xsl
-        the last template in this file has to be modified to reflect the actual directory name
-    -->
     <xsl:output method="xml" indent="yes"/>
 
     <!-- A collection name can be specified for each record. This
@@ -655,7 +651,7 @@ $LastChangedDate: 2013-08-14 11:25:31 +0200 (Wed, 14 Aug 2013) $
 	<!-- resolve ResourceRef(s) -->
 	<xsl:template name="ResourceRefs">
 		<xsl:variable name="node" select="current()"/>
-		<xsl:variable name="refs">
+		<xsl:variable name="refs" as="xs:string*">
 			<xsl:for-each select="tokenize(normalize-space(current()/@ResourceRef|current()/@ResourceRefs),'\s+')[normalize-space(.)!='']">
 				<xsl:variable name="target" select="$doc//(MediaFile|WrittenResource)[@ResourceId=current()]/ResourceLink[normalize-space(.)!='']"/>
 				<xsl:choose>
@@ -667,7 +663,14 @@ $LastChangedDate: 2013-08-14 11:25:31 +0200 (Wed, 14 Aug 2013) $
 						<xsl:sequence select="generate-id($target)" />
 					</xsl:when>
 					<xsl:otherwise>
-						<xsl:message>ERR: <xsl:value-of select="name($node)"/>/@ResourceRef(s)[<xsl:value-of select="current()"/>] doesn't resolve to any Resource with a ResourceLink!</xsl:message>
+						<xsl:choose>
+							<xsl:when test="exists($doc//(MediaFile|WrittenResource)[@ResourceId=current()])">
+								<xsl:message>ERR: <xsl:value-of select="name($node)"/>/@ResourceRef(s)[<xsl:value-of select="current()"/>] does resolve to a Resource, but one without a ResourceLink!</xsl:message>
+							</xsl:when>
+							<xsl:otherwise>
+								<xsl:message>ERR: <xsl:value-of select="name($node)"/>/@ResourceRef(s)[<xsl:value-of select="current()"/>] doesn't resolve to any Resource!</xsl:message>
+							</xsl:otherwise>
+						</xsl:choose>
 					</xsl:otherwise>
 				</xsl:choose>
 				<!--<xsl:if test="position()!=last()">
@@ -675,8 +678,8 @@ $LastChangedDate: 2013-08-14 11:25:31 +0200 (Wed, 14 Aug 2013) $
         			</xsl:if>-->
 			</xsl:for-each>
 		</xsl:variable>
-		<xsl:if test="normalize-space($refs)!=''">
-			<xsl:attribute name="ref" select="$refs"/>
+		<xsl:if test="exists($refs)">
+			<xsl:attribute name="ref" select="string-join($refs,' ')"/>
 		</xsl:if>
 	</xsl:template>	
 
@@ -1409,20 +1412,26 @@ $LastChangedDate: 2013-08-14 11:25:31 +0200 (Wed, 14 Aug 2013) $
         	<xsl:if test="exists(ResourceLink[normalize-space(.)!=''])">
         		<xsl:attribute name="ref" select="generate-id(ResourceLink)"/>
         	</xsl:if>
-        	<xsl:if test="exists(MediaResourceLink[normalize-space(.)!=''])">
-        		<xsl:variable name="loc" select="MediaResourceLink"/>
-        		<xsl:variable name="res" select="//ResourceLink[.=$loc]"/>
-        		<xsl:if test="exists($res)">
+        	<xsl:variable name="refs" as="xs:string*">
+        		<xsl:for-each select="tokenize(MediaResourceLink,'\s+')[normalize-space(.)!='']">
+        			<xsl:variable name="loc" select="."/>
+        			<xsl:variable name="res" select="$doc//ResourceLink[.=$loc]"/>
         			<xsl:choose>
         				<xsl:when test="count($res) gt 1">
         					<xsl:message>ERR: WrittenResource/MediaResourceLink[<xsl:value-of select="$loc"/>] resolved to multiple ResourceLinks! Taking the first one.</xsl:message>
-        					<xsl:attribute name="mediaRef" select="generate-id(($res)[1])"/>
+        					<xsl:sequence select="generate-id(($res)[1])"/>
         				</xsl:when>
         				<xsl:when test="count($res) eq 1">
-        					<xsl:attribute name="mediaRef" select="generate-id($res)"/>
+        					<xsl:sequence select="generate-id($res)"/>
+        				</xsl:when>
+        				<xsl:when test="count($res) eq 0">
+        					<xsl:message>ERR: WrittenResource/MediaResourceLink[<xsl:value-of select="$loc"/>] couldn't be resolved!</xsl:message>
         				</xsl:when>
         			</xsl:choose>
-        		</xsl:if>
+        		</xsl:for-each>
+        	</xsl:variable>
+        	<xsl:if test="exists($refs)">
+        		<xsl:attribute name="mediaRef" select="string-join($refs,' ')"/>
         	</xsl:if>
         	<Date>
         		<xsl:call-template name="orUnspecified">
