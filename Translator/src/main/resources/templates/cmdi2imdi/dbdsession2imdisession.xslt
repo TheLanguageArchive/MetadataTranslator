@@ -238,7 +238,7 @@
                 <xsl:apply-templates select="child::LevelOfBilingualism" mode="CREATE-KEYS-DBD-OPEN" />
                 <xsl:apply-templates select="child::AgeAtImmigration" mode="CREATE-KEYS-DBD-OPEN" />
                 <xsl:apply-templates select="child::BirthCountry" mode="CREATE-KEYS-OPEN">
-                    <xsl:with-param name="name">DBD.CountryofBirth</xsl:with-param>
+                    <xsl:with-param name="name">DBD.CountryOfBirth</xsl:with-param>
                 </xsl:apply-templates>
                 <xsl:apply-templates select="Keys" mode="COMMONTLA2IMDISESSION"/>
             </Keys>

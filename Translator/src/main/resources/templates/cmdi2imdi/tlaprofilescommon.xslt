@@ -445,6 +445,12 @@
                 <xsl:value-of select="Name"/>
             </Name>
         </xsl:if>
+        <xsl:if test="normalize-space(Person)!='' and /CMD/Components/DBD">
+            <!-- DBD only -->
+            <Name>
+                <xsl:value-of select="Person"/>
+            </Name>
+        </xsl:if>        
         <xsl:if test="normalize-space(Address)!=''">
             <Address>
                 <xsl:value-of select="Address"/>
