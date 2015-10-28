@@ -99,4 +99,12 @@
 	    </plugin>
 	</plugins>
     </build>
+
+    <repositories>
+	<repository>
+	    <id>MPI</id>
+	    <name>MPI Repository</name>
+	    <url>http://lux15.mpi.nl/nexus/content/repositories/MPI</url>
+	</repository>
+    </repositories>
 </project>
