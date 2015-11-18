@@ -182,10 +182,17 @@ $LastChangedDate: 2013-08-14 11:25:31 +0200 (Wed, 14 Aug 2013) $
                     	</xsl:if>
                     </xsl:when>
                     <!-- No handle? Then just use the URL -->
-                    <xsl:when test="not($uri-base='') and normalize-space(@ArchiveHandle)=''">
+                    <xsl:when test="not(normalize-space($uri-base)='') and normalize-space(@ArchiveHandle)=''">
                     	<xsl:value-of select="replace($uri-base,'\.imdi$','.cmdi')"/>
                     </xsl:when>
-                    <!-- Other handle prefix? Use handle (e.g. Lund) -->
+                	<!-- no handle and no base URI -->
+                	<xsl:when test="normalize-space($uri-base)='' and normalize-space(@ArchiveHandle)=''">
+                		<!-- in JAXP the first xsl:message will reach the log as a WARN, while the last xsl:message will be a DEBUG
+            			(although the transform will terminate with an ERROR, but without the message text :-( ) -->
+                		<xsl:message>ERR: the MdSelfLink can't be determined! Pass on the source-location parameter or make sure the base URI is set for the input document.</xsl:message>
+                		<xsl:message terminate="yes">ERR: the MdSelfLink can't be determined!  Pass on the source-location parameter or make sure the base URI is set for the input document.</xsl:message>                		
+                	</xsl:when>
+                	<!-- Other handle prefix? Use handle (e.g. Lund) -->
                     <xsl:otherwise>
                     	<xsl:value-of select="@ArchiveHandle"/>
                     </xsl:otherwise>
@@ -560,7 +567,7 @@ $LastChangedDate: 2013-08-14 11:25:31 +0200 (Wed, 14 Aug 2013) $
                             <xsl:value-of select="."/>
                         </xsl:when>
                         <!-- Fallback: use original link, append .cmdi. Resolve from base URI if available. -->
-                        <xsl:when test="$uri-base=''">
+                        <xsl:when test="normalize-space($uri-base)=''">
                         	<xsl:value-of select="replace(.,'\.imdi$','.cmdi')"/>
                         </xsl:when>
                         <xsl:otherwise>
@@ -594,7 +601,9 @@ $LastChangedDate: 2013-08-14 11:25:31 +0200 (Wed, 14 Aug 2013) $
     					<xsl:attribute name="mimetype">
     						<xsl:value-of select="./Format"/>
     					</xsl:attribute>
-    				</xsl:if>Resource</ResourceType>
+    				</xsl:if>
+    				<xsl:text>Resource</xsl:text>
+    			</ResourceType>
     			<ResourceRef>
     				<xsl:if test="$localURI">
     					<xsl:attribute name="lat:localURI" select="replace(ResourceLink,' ','%20')"/>
@@ -603,10 +612,14 @@ $LastChangedDate: 2013-08-14 11:25:31 +0200 (Wed, 14 Aug 2013) $
     					<xsl:when test="not(normalize-space(ResourceLink/@ArchiveHandle)='')">
     						<xsl:value-of select="ResourceLink/@ArchiveHandle"/>
     					</xsl:when>
-    					<xsl:when test="not($uri-base='')">
+    					<xsl:when test="not(normalize-space($uri-base)='')">
     						<xsl:value-of
     							select="resolve-uri(normalize-space(ResourceLink/.), $uri-base)"/>
     					</xsl:when>
+    					<xsl:otherwise>
+    						<xsl:message>WRN: the ResourceLink[<xsl:value-of select="ResourceLink"/>] has no ArchiveHandle and the source location or base URI is also unknown, so the ResourceLink can't be resolved to an absolute path!</xsl:message>
+    						<xsl:value-of select="ResourceLink"/>
+    					</xsl:otherwise>
     				</xsl:choose>
     			</ResourceRef>
     		</ResourceProxy>
