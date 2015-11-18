@@ -587,9 +587,6 @@ $LastChangedDate: 2013-08-14 11:25:31 +0200 (Wed, 14 Aug 2013) $
     	<xsl:for-each select="WrittenResource">
             <xsl:call-template name="CreateResourceProxyTypeResource"/>
         </xsl:for-each>
-    	<xsl:for-each select="Anonyms">
-    		<xsl:call-template name="CreateResourceProxyTypeResource"/>
-    	</xsl:for-each>
     </xsl:template>
     
     <!-- to be called during the creation of the ResourceProxyList (in linking mode) -->
@@ -1604,9 +1601,6 @@ $LastChangedDate: 2013-08-14 11:25:31 +0200 (Wed, 14 Aug 2013) $
 
     <xsl:template match="Anonyms">
         <Anonyms>
-        	<xsl:if test="exists(ResourceLink[normalize-space(.)!=''])">
-        		<xsl:attribute name="ref" select="generate-id(ResourceLink)"/>
-        	</xsl:if>
         	<xsl:choose>
         		<xsl:when test="normalize-space(Access)!=''">
         			<xsl:apply-templates select="Access"/>
