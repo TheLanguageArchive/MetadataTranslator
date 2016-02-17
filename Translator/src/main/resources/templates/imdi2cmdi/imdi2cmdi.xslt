@@ -1,8 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--
-$Rev: 3378 $
-$LastChangedDate: 2013-08-14 11:25:31 +0200 (Wed, 14 Aug 2013) $
--->
 <xsl:stylesheet xmlns="http://www.clarin.eu/cmd/" xmlns:cmd="http://www.clarin.eu/cmd/" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
 	version="2.0" xpath-default-namespace="http://www.mpi.nl/IMDI/Schema/IMDI" xmlns:imdi="http://www.mpi.nl/IMDI/Schema/IMDI" xmlns:lat="http://lat.mpi.nl/" xmlns:iso="http://www.iso.org/" xmlns:sil="http://www.sil.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:functx="http://www.functx.com">
     <xsl:output method="xml" indent="yes"/>
@@ -293,7 +289,15 @@ $LastChangedDate: 2013-08-14 11:25:31 +0200 (Wed, 14 Aug 2013) $
 
     <xsl:template match="Corpus">
         <lat-corpus>
-        	<xsl:apply-templates select="preceding-sibling::History"/>
+        	<History>
+        		<xsl:if test="normalize-space(preceding-sibling::History)!=''">
+        			<xsl:value-of select="preceding-sibling::History"/>
+        			<xsl:text> </xsl:text>
+        		</xsl:if>
+        		<xsl:text>NAME:imdi2cmdi.xslt DATE:</xsl:text>
+        		<xsl:value-of select="current-dateTime()"/>
+        		<xsl:text>.</xsl:text>
+        	</History>
             <xsl:apply-templates select="child::Name"/>
             <xsl:apply-templates select="child::Title"/>
             <xsl:variable name="descriptions" select="Description[normalize-space(@ArchiveHandle)='' and normalize-space(@Link)=''][normalize-space(.)!='']"/>
@@ -696,8 +700,16 @@ $LastChangedDate: 2013-08-14 11:25:31 +0200 (Wed, 14 Aug 2013) $
     <xsl:template match="Session">
     	<xsl:param name="profile" tunnel="yes"/>
         <xsl:element name="{lat:sessionProfileRoot($profile)}">
-        	<xsl:apply-templates select="preceding-sibling::History"/>
-            <xsl:apply-templates select="child::Name"/>
+        	<History>
+        		<xsl:if test="normalize-space(preceding-sibling::History)!=''">
+        			<xsl:value-of select="preceding-sibling::History"/>
+        			<xsl:text> </xsl:text>
+        		</xsl:if>
+        		<xsl:text>NAME:imdi2cmdi.xslt DATE:</xsl:text>
+        		<xsl:value-of select="current-dateTime()"/>
+        		<xsl:text>.</xsl:text>
+        	</History>
+        	<xsl:apply-templates select="child::Name"/>
             <xsl:apply-templates select="child::Title"/>
             <xsl:apply-templates select="child::Date"/>
         	<xsl:variable name="descriptions" select="Description[normalize-space(@ArchiveHandle)='' and normalize-space(@Link)=''][normalize-space(.)!='']"/>
@@ -734,16 +746,6 @@ $LastChangedDate: 2013-08-14 11:25:31 +0200 (Wed, 14 Aug 2013) $
         </xsl:element>
     </xsl:template>
 
-	<xsl:template match="child::History">
-		<History>
-			<xsl:value-of select="."/>
-			<!--<xsl:value-of select="system-property('line.separator')"/>-->
-			<xsl:text> NAME:imdi2cmdi.xslt DATE:</xsl:text>
-			<xsl:value-of select="current-dateTime()"/>
-			<xsl:text>.</xsl:text>
-		</History>
-	</xsl:template>
-	
 	<xsl:template match="child::Name">
         <Name>
             <xsl:value-of select="."/>
@@ -1140,11 +1142,6 @@ $LastChangedDate: 2013-08-14 11:25:31 +0200 (Wed, 14 Aug 2013) $
                     <EthnicGroup>
                         <xsl:value-of select=" ./EthnicGroup"/>
                     </EthnicGroup>
-                    <Age>
-                    	<xsl:call-template name="orUnspecified">
-                    		<xsl:with-param name="value" select="Age"/>
-                    	</xsl:call-template>
-                    </Age>
                     <BirthDate>
                     	<xsl:call-template name="orUnspecified">
                     		<xsl:with-param name="value" select="BirthDate"/>
@@ -1171,6 +1168,78 @@ $LastChangedDate: 2013-08-14 11:25:31 +0200 (Wed, 14 Aug 2013) $
                 			<xsl:with-param name="key" select="'Region'"/>
                 		</xsl:call-template>
                 	</xsl:if>
+                	<Age>
+                		<xsl:variable name="age" select="Age"/>
+                		<xsl:choose>
+                			<xsl:when test="normalize-space($age)!=''">
+                				<xsl:analyze-string select="normalize-space($age)" regex="^([0-9]{{1,3}})(;(0?[0-9]|1[01])(\.(0?[0-9]|[12][0-9]|30))?)?/([0-9]{{1,3}})(;(0?[0-9]|1[01])(\.(0?[0-9]|[12][0-9]|30))?)?$">
+                					<xsl:matching-substring>
+                						<AgeRange>
+                							<MinimumAge>
+                								<years>
+                									<xsl:value-of select="number(regex-group(1))"/>
+                								</years>
+                								<xsl:if test="normalize-space(regex-group(2))!=''">
+                									<months>
+                										<xsl:value-of select="number(regex-group(3))"/>
+                									</months>
+                									<xsl:if test="normalize-space(regex-group(4))!=''">
+                										<days>
+                											<xsl:value-of select="number(regex-group(5))"/>
+                										</days>
+                									</xsl:if>
+                								</xsl:if>
+                							</MinimumAge>
+                							<MaximumAge>
+                								<years>
+                									<xsl:value-of select="number(regex-group(6))"/>
+                								</years>
+                								<xsl:if test="normalize-space(regex-group(7))!=''">
+                									<months>
+                										<xsl:value-of select="number(regex-group(8))"/>
+                									</months>
+                									<xsl:if test="normalize-space(regex-group(9))!=''">
+                										<days>
+                											<xsl:value-of select="number(regex-group(10))"/>
+                										</days>
+                									</xsl:if>
+                								</xsl:if>
+                							</MaximumAge>
+                						</AgeRange>
+                					</xsl:matching-substring>
+                					<xsl:non-matching-substring>
+                						<xsl:analyze-string select="normalize-space($age)" regex="^([0-9]{{1,3}})(;(0?[0-9]|1[01])(\.(0?[0-9]|[12][0-9]|30))?)?$">
+                							<xsl:matching-substring>
+                								<ExactAge>
+                									<years>
+                										<xsl:value-of select="number(regex-group(1))"/>
+                									</years>
+                									<xsl:if test="normalize-space(regex-group(2))!=''">
+                										<months>
+                											<xsl:value-of select="number(regex-group(3))"/>
+                										</months>
+                										<xsl:if test="normalize-space(regex-group(4))!=''">
+                											<days>
+                												<xsl:value-of select="number(regex-group(5))"/>
+                											</days>
+                										</xsl:if>
+                									</xsl:if>
+                								</ExactAge>
+                							</xsl:matching-substring>
+                							<xsl:non-matching-substring>
+                								<EstimatedAge>
+                									<xsl:value-of select="$age"/>
+                								</EstimatedAge>
+                							</xsl:non-matching-substring>
+                						</xsl:analyze-string>
+                					</xsl:non-matching-substring>
+                				</xsl:analyze-string>
+                			</xsl:when>
+                			<xsl:otherwise>
+                				<EstimatedAge>Unspecified</EstimatedAge>
+                			</xsl:otherwise>
+                		</xsl:choose>
+                	</Age>
                 	<xsl:apply-templates select="Contact"/>
                 	<xsl:if test="$profile=$SL_PROFILE">
                 		<xsl:call-template name="keysToElements">

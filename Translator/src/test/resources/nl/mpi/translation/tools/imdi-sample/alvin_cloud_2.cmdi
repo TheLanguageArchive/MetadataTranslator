@@ -35,6 +35,7 @@
    </Resources>
    <Components>
       <lat-session>
+         <History>NAME:imdi2cmdi.xslt DATE:xx.</History>
          <Name>alvin_cloud</Name>
          <Title>Alvin Cloud</Title>
          <Date>Unspecified</Date>
@@ -109,11 +110,13 @@
                <Code>MS1</Code>
                <FamilySocialRole>Unspecified</FamilySocialRole>
                <EthnicGroup>Hoocąk</EthnicGroup>
-               <Age>Unspecified</Age>
                <BirthDate>Unspecified</BirthDate>
                <Sex>Male</Sex>
                <Education>Unknown</Education>
                <Anonymized>true</Anonymized>
+               <Age>
+                  <EstimatedAge>Unspecified</EstimatedAge>
+               </Age>
                <Contact>
                   <Name>MS1</Name>
                   <Address>Unknown</Address>
@@ -157,11 +160,22 @@
                <Code>IH</Code>
                <FamilySocialRole>Unspecified</FamilySocialRole>
                <EthnicGroup>German</EthnicGroup>
-               <Age>22;6/22;7</Age>
                <BirthDate>1981</BirthDate>
                <Sex>Female</Sex>
                <Education>MA in linguistics</Education>
                <Anonymized>false</Anonymized>
+               <Age>
+                  <AgeRange>
+                     <MinimumAge>
+                        <years>22</years>
+                        <months>6</months>
+                     </MinimumAge>
+                     <MaximumAge>
+                        <years>22</years>
+                        <months>7</months>
+                     </MaximumAge>
+                  </AgeRange>
+               </Age>
                <Contact>
                   <Name>Iren Hartmann</Name>
                   <Address>Deutscher Platz 6, 04103 Leipzig, Germany</Address>
@@ -214,11 +228,20 @@
                <Code>HG</Code>
                <FamilySocialRole>MS32's son</FamilySocialRole>
                <EthnicGroup>Hoocąk</EthnicGroup>
-               <Age>36/37</Age>
                <BirthDate>1975</BirthDate>
                <Sex>Male</Sex>
                <Education>BA in linguistics</Education>
                <Anonymized>false</Anonymized>
+               <Age>
+                  <AgeRange>
+                     <MinimumAge>
+                        <years>36</years>
+                     </MinimumAge>
+                     <MaximumAge>
+                        <years>37</years>
+                     </MaximumAge>
+                  </AgeRange>
+               </Age>
                <Contact>
                   <Name>Henning Garvin</Name>
                   <Address>Hoocąk Waaziija Haci Language Division P.O.Box 390 N4845 Hwy.58, Mauston, Wisconsin</Address>
@@ -262,11 +285,20 @@
                <Code>MS4</Code>
                <FamilySocialRole>Unspecified</FamilySocialRole>
                <EthnicGroup>Hoocąk</EthnicGroup>
-               <Age>79/80</Age>
                <BirthDate>1932</BirthDate>
                <Sex>Male</Sex>
                <Education>14 years of school</Education>
                <Anonymized>true</Anonymized>
+               <Age>
+                  <AgeRange>
+                     <MinimumAge>
+                        <years>79</years>
+                     </MinimumAge>
+                     <MaximumAge>
+                        <years>80</years>
+                     </MaximumAge>
+                  </AgeRange>
+               </Age>
                <Contact>
                   <Name>MS4</Name>
                   <Address>Hoocąk Waaziija Haci Language Division P.O.Box 390 N4845 Hwy.58, Mauston, Wisconsin</Address>

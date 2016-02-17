@@ -86,7 +86,7 @@
                         </Language>
                     </Languages>
                     <EthnicGroup/> <!-- TODO: used to have type attribute, evaluate -->
-                    <Age>4;06.00</Age>
+                    <Age>4;6.0</Age>
                     <BirthDate>Unspecified</BirthDate>
                     <Sex Link="http://www.mpi.nl/IMDI/Schema/Actor-Sex.xml"
                         Type="ClosedVocabulary">Female</Sex>

@@ -139,7 +139,45 @@
                 <xsl:apply-templates select="descendant::Actor_Language" mode="TLASESSION2IMDISESSION"/>
             </Languages>
             <EthnicGroup><xsl:value-of select="child::EthnicGroup"/></EthnicGroup>
-            <Age><xsl:value-of select="child::Age"/></Age>
+            <Age>
+                <xsl:choose>
+                    <xsl:when test="child::Age/ExactAge">
+                        <xsl:value-of select="child::Age/ExactAge/years"/>
+                        <xsl:if test="child::Age/ExactAge/months">
+                            <xsl:text>;</xsl:text>
+                            <xsl:value-of select="child::Age/ExactAge/months"/>
+                            <xsl:if test="child::Age/ExactAge/days">
+                                <xsl:text>.</xsl:text>
+                                <xsl:value-of select="child::Age/ExactAge/days"/>
+                            </xsl:if>
+                        </xsl:if>
+                    </xsl:when>
+                    <xsl:when test="child::Age/AgeRange">
+                        <xsl:value-of select="child::Age/AgeRange/MinimumAge/years"/>
+                        <xsl:if test="child::Age/AgeRange/MinimumAge/months">
+                            <xsl:text>;</xsl:text>
+                            <xsl:value-of select="child::Age/AgeRange/MinimumAge/months"/>
+                            <xsl:if test="child::Age/AgeRange/MinimumAge/days">
+                                <xsl:text>.</xsl:text>
+                                <xsl:value-of select="child::Age/AgeRange/MinimumAge/days"/>
+                            </xsl:if>
+                        </xsl:if>
+                        <xsl:text>/</xsl:text>
+                        <xsl:value-of select="child::Age/AgeRange/MaximumAge/years"/>
+                        <xsl:if test="child::Age/AgeRange/MaximumAge/months">
+                            <xsl:text>;</xsl:text>
+                            <xsl:value-of select="child::Age/AgeRange/MaximumAge/months"/>
+                            <xsl:if test="child::Age/AgeRange/MaximumAge/days">
+                                <xsl:text>.</xsl:text>
+                                <xsl:value-of select="child::Age/AgeRange/MaximumAge/days"/>
+                            </xsl:if>
+                        </xsl:if>
+                    </xsl:when>
+                    <xsl:otherwise>
+                        <xsl:value-of select="child::Age/EstimatedAge"/>
+                    </xsl:otherwise>
+                </xsl:choose>
+            </Age>
             <BirthDate><xsl:value-of select="child::BirthDate"/></BirthDate>
             <Sex Link="http://www.mpi.nl/IMDI/Schema/Actor-Sex.xml" Type="ClosedVocabulary"><xsl:value-of select="child::Sex"/></Sex>
             <Education><xsl:value-of select="child::Education"/></Education>

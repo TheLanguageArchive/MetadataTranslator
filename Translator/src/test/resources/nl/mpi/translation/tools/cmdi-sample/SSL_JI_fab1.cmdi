@@ -104,11 +104,13 @@
                <Code>JI</Code>
                <FamilySocialRole>signer</FamilySocialRole>
                <EthnicGroup/>
-               <Age>Unknown</Age>
                <BirthDate>Unspecified</BirthDate>
                <Sex>Female</Sex>
                <Education/>
                <Anonymized>false</Anonymized>
+               <Age>
+                  <EstimatedAge>Unknown</EstimatedAge>
+               </Age>
                <Contact/>
                <Keys>
                   <Key Name="Deafness.Status" Type="OpenVocabularyList">deaf</Key>
@@ -152,11 +154,13 @@
                <Code>Unspecified</Code>
                <FamilySocialRole>Unspecified</FamilySocialRole>
                <EthnicGroup/>
-               <Age>Unspecified</Age>
                <BirthDate>Unspecified</BirthDate>
                <Sex>Unspecified</Sex>
                <Education/>
                <Anonymized>false</Anonymized>
+               <Age>
+                  <EstimatedAge>Unspecified</EstimatedAge>
+               </Age>
                <Contact>
                   <Name>Johanna Mesch</Name>
                   <Address>Department of Linguistics, Universitetsv&#x8a;gen 10C, S-106 91 Stockholm, Sweden</Address>

@@ -103,11 +103,13 @@
                <Code>Ch01</Code>
                <FamilySocialRole>Unspecified</FamilySocialRole>
                <EthnicGroup/>
-               <Age>Unspecified</Age>
                <BirthDate>Unspecified</BirthDate>
                <Sex>Male</Sex>
                <Education/>
                <Anonymized>Unspecified</Anonymized>
+               <Age>
+                  <EstimatedAge>Unspecified</EstimatedAge>
+               </Age>
                <Contact/>
                <Keys>
                   <Key Name="Birthdate">1993-10-02</Key>
@@ -131,11 +133,13 @@
                <Code>Ch02</Code>
                <FamilySocialRole>Unspecified</FamilySocialRole>
                <EthnicGroup/>
-               <Age>Unspecified</Age>
                <BirthDate>Unspecified</BirthDate>
                <Sex>Male</Sex>
                <Education/>
                <Anonymized>Unspecified</Anonymized>
+               <Age>
+                  <EstimatedAge>Unspecified</EstimatedAge>
+               </Age>
                <Contact/>
                <Keys>
                   <Key Name="Birthdate">1996-12-01</Key>
@@ -159,11 +163,13 @@
                <Code>Ch03</Code>
                <FamilySocialRole>Unspecified</FamilySocialRole>
                <EthnicGroup/>
-               <Age>Unspecified</Age>
                <BirthDate>Unspecified</BirthDate>
                <Sex>Male</Sex>
                <Education/>
                <Anonymized>Unspecified</Anonymized>
+               <Age>
+                  <EstimatedAge>Unspecified</EstimatedAge>
+               </Age>
                <Contact/>
                <Keys>
                   <Key Name="BirthDate">1999-01-21</Key>
@@ -187,11 +193,13 @@
                <Code>Mot</Code>
                <FamilySocialRole>Unspecified</FamilySocialRole>
                <EthnicGroup/>
-               <Age>Unspecified</Age>
                <BirthDate>Unspecified</BirthDate>
                <Sex>Female</Sex>
                <Education/>
                <Anonymized>Unspecified</Anonymized>
+               <Age>
+                  <EstimatedAge>Unspecified</EstimatedAge>
+               </Age>
                <Contact/>
                <Keys>
                   <Key Name="Birthdate">1968-11-02</Key>
@@ -215,11 +223,13 @@
                <Code>Fat</Code>
                <FamilySocialRole>Unspecified</FamilySocialRole>
                <EthnicGroup/>
-               <Age>Unspecified</Age>
                <BirthDate>Unspecified</BirthDate>
                <Sex>Male</Sex>
                <Education/>
                <Anonymized>Unspecified</Anonymized>
+               <Age>
+                  <EstimatedAge>Unspecified</EstimatedAge>
+               </Age>
                <Contact/>
                <Keys>
                   <Key Name="Birthdate">1970-11-30</Key>
@@ -243,11 +253,13 @@
                <Code>Unspecified</Code>
                <FamilySocialRole>Unspecified</FamilySocialRole>
                <EthnicGroup/>
-               <Age>Unspecified</Age>
                <BirthDate>Unspecified</BirthDate>
                <Sex>Unspecified</Sex>
                <Education/>
                <Anonymized>false</Anonymized>
+               <Age>
+                  <EstimatedAge>Unspecified</EstimatedAge>
+               </Age>
                <Contact>
                   <Name>SonEis</Name>
                   <Email>soneis@mpi.nl</Email>
@@ -264,11 +276,13 @@
                <Code>Unspecified</Code>
                <FamilySocialRole>Unspecified</FamilySocialRole>
                <EthnicGroup>Unspecified</EthnicGroup>
-               <Age>Unspecified</Age>
                <BirthDate>Unspecified</BirthDate>
                <Sex>Unspecified</Sex>
                <Education>Unspecified</Education>
                <Anonymized>false</Anonymized>
+               <Age>
+                  <EstimatedAge>Unspecified</EstimatedAge>
+               </Age>
                <Contact/>
                <Actor_Languages/>
             </Actor>

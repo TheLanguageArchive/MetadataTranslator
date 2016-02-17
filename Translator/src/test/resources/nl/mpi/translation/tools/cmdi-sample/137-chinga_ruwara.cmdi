@@ -78,11 +78,13 @@
                <Code>SUS</Code>
                <FamilySocialRole/>
                <EthnicGroup/>
-               <Age>Unspecified</Age>
                <BirthDate>Unspecified</BirthDate>
                <Sex>Female</Sex>
                <Education>Unspecified</Education>
                <Anonymized>false</Anonymized>
+               <Age>
+                  <EstimatedAge>Unspecified</EstimatedAge>
+               </Age>
                <Contact/>
                <Actor_Languages/>
             </Actor>
@@ -93,11 +95,13 @@
                <Code>137</Code>
                <FamilySocialRole/>
                <EthnicGroup>Aché</EthnicGroup>
-               <Age>Unspecified</Age>
                <BirthDate>Unspecified</BirthDate>
                <Sex>Female</Sex>
                <Education>Unspecified</Education>
                <Anonymized>true</Anonymized>
+               <Age>
+                  <EstimatedAge>Unspecified</EstimatedAge>
+               </Age>
                <Contact/>
                <Actor_Languages/>
             </Actor>

@@ -113,11 +113,17 @@
                <Code>ANNALENA</Code>
                <FamilySocialRole>Unspecified</FamilySocialRole>
                <EthnicGroup/>
-               <Age>4;06.00</Age>
                <BirthDate>Unspecified</BirthDate>
                <Sex>Female</Sex>
                <Education/>
                <Anonymized>Unspecified</Anonymized>
+               <Age>
+                  <ExactAge>
+                     <years>4</years>
+                     <months>6</months>
+                     <days>0</days>
+                  </ExactAge>
+               </Age>
                <Contact/>
                <Keys>
                   <Key Name="BirthDate">2003-05-23</Key>
@@ -141,11 +147,13 @@
                <Code/>
                <FamilySocialRole>Unspecified</FamilySocialRole>
                <EthnicGroup/>
-               <Age>Unspecified</Age>
                <BirthDate>Unspecified</BirthDate>
                <Sex>Unspecified</Sex>
                <Education/>
                <Anonymized>Unspecified</Anonymized>
+               <Age>
+                  <EstimatedAge>Unspecified</EstimatedAge>
+               </Age>
                <Contact/>
                <Keys>
                   <Key Name="Role" Type="OpenVocabulary">investigator</Key>
@@ -159,11 +167,13 @@
                <Code/>
                <FamilySocialRole>Unspecified</FamilySocialRole>
                <EthnicGroup/>
-               <Age>Unspecified</Age>
                <BirthDate>Unspecified</BirthDate>
                <Sex>Unspecified</Sex>
                <Education/>
                <Anonymized>Unspecified</Anonymized>
+               <Age>
+                  <EstimatedAge>Unspecified</EstimatedAge>
+               </Age>
                <Contact/>
                <Keys>
                   <Key Name="Role" Type="OpenVocabulary">investigator</Key>
@@ -177,11 +187,13 @@
                <Code>Unspecified</Code>
                <FamilySocialRole>Unspecified</FamilySocialRole>
                <EthnicGroup/>
-               <Age>Unspecified</Age>
                <BirthDate>Unspecified</BirthDate>
                <Sex>Unspecified</Sex>
                <Education/>
                <Anonymized>false</Anonymized>
+               <Age>
+                  <EstimatedAge>Unspecified</EstimatedAge>
+               </Age>
                <Contact>
                   <Name>C. Dimroth &amp; B. Narasimhan</Name>
                   <Email>Christine.Dimroth@mpi.nl &amp; Bhuvana.Narasimhan@mpi.nl</Email>
@@ -198,11 +210,13 @@
                <Code>Unspecified</Code>
                <FamilySocialRole>Unspecified</FamilySocialRole>
                <EthnicGroup/>
-               <Age>Unspecified</Age>
                <BirthDate>Unspecified</BirthDate>
                <Sex>Unspecified</Sex>
                <Education>Unspecified</Education>
                <Anonymized>false</Anonymized>
+               <Age>
+                  <EstimatedAge>Unspecified</EstimatedAge>
+               </Age>
                <Contact/>
                <Actor_Languages/>
             </Actor>

@@ -135,11 +135,15 @@
                <Code>GüF</Code>
                <FamilySocialRole>Unspecified</FamilySocialRole>
                <EthnicGroup/>
-               <Age>58</Age>
                <BirthDate>Unspecified</BirthDate>
                <Sex>Male</Sex>
                <Education>Unspecified</Education>
                <Anonymized>false</Anonymized>
+               <Age>
+                  <ExactAge>
+                     <years>58</years>
+                  </ExactAge>
+               </Age>
                <Contact/>
                <SL_Deafness>
                   <Status>deaf</Status>
@@ -188,11 +192,13 @@
                <Code>HeM</Code>
                <FamilySocialRole>Unspecified</FamilySocialRole>
                <EthnicGroup/>
-               <Age>Unspecified</Age>
                <BirthDate>Unspecified</BirthDate>
                <Sex>Male</Sex>
                <Education>Unspecified</Education>
                <Anonymized>Unspecified</Anonymized>
+               <Age>
+                  <EstimatedAge>Unspecified</EstimatedAge>
+               </Age>
                <Contact/>
                <SL_Deafness>
                   <Status>deaf</Status>
