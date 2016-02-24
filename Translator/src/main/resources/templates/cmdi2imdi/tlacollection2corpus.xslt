@@ -32,15 +32,32 @@
     <xsl:template match="ResourceProxy" mode="TLACOLLECTION2CORPUS">
          <xsl:choose>
              <xsl:when test="child::ResourceType = 'Metadata'">
-                 <CorpusLink>
-                     <xsl:variable name="idref"><xsl:value-of select="@id" /></xsl:variable>
-                     <xsl:attribute name="Name"><xsl:value-of select="//CorpusLink[@ref=$idref]/Name"/></xsl:attribute>
-                     <xsl:variable name="handle" select="tla:getHandleWithoutFormat(ResourceRef,'imdi')"/>
-                     <xsl:if test="string-length($handle) > 0">
-                         <xsl:attribute name="ArchiveHandle" select="$handle" />
-                     </xsl:if>
-                     <xsl:value-of select="tla:getTranslationUri(tla:getlocalURIorfallback(.), 'imdi')"/>                     
-                 </CorpusLink>
+                 <xsl:variable name="idref"><xsl:value-of select="@id" /></xsl:variable>
+                 <xsl:variable name="handle" select="tla:getHandleWithoutFormat(ResourceRef,'imdi')"/>
+                 <xsl:variable name="link" select="tla:getTranslationUri(tla:getlocalURIorfallback(.), 'imdi')"/>     
+                 <xsl:choose>
+                     <xsl:when test="//CorpusLink[@ref=$idref]">
+                         <xsl:for-each select="//CorpusLink[@ref=$idref]">
+                             <CorpusLink>
+                                 <xsl:attribute name="Name" select="Name"/>
+                                 <xsl:if test="string-length($handle) > 0">
+                                     <xsl:attribute name="ArchiveHandle" select="$handle" />
+                                 </xsl:if>
+                                 <xsl:value-of select="$link"/>                     
+                             </CorpusLink>
+                         </xsl:for-each>
+                     </xsl:when>
+                     <xsl:otherwise>
+                         <!-- no corpus link reference, insert one -->
+                         <CorpusLink>
+                             <xsl:attribute name="Name" select="@id"/>
+                             <xsl:if test="string-length($handle) > 0">
+                                 <xsl:attribute name="ArchiveHandle" select="$handle" />
+                             </xsl:if>
+                             <xsl:value-of select="$link"/>                     
+                         </CorpusLink>
+                     </xsl:otherwise>
+                 </xsl:choose>
              </xsl:when>
           </xsl:choose> 
     </xsl:template>
@@ -87,26 +104,7 @@
             </Description>       
         </xsl:for-each>
         <xsl:for-each select="child::InfoLink">
-            <Description>
-                <xsl:choose>
-                    <xsl:when test="normalize-space(@xml:lang)!=''">
-                        <xsl:attribute name="LanguageId" select="concat('ISO639-3:',@xml:lang)" /> <!-- this probably needs to be more sophisticated to cover all cases -->
-                    </xsl:when>
-                </xsl:choose>                
-                <xsl:variable name="id"><xsl:value-of select="@ref" /></xsl:variable>
-                <xsl:variable name="handle" select="tla:getBaseHandle(ancestor::Components/preceding-sibling::Resources/ResourceProxyList/ResourceProxy[@id=$id]/ResourceRef)"/>
-                <xsl:choose>
-                    <xsl:when test="$handle">
-                        <xsl:attribute name="ArchiveHandle">
-                            <xsl:value-of select="concat('hdl:',$handle)"/>
-                        </xsl:attribute>
-                        <xsl:attribute name="Link">
-                            <xsl:value-of select="ancestor::Components/preceding-sibling::Resources/ResourceProxyList/ResourceProxy[@id=$id]/ResourceRef/@lat:localURI"/>
-                        </xsl:attribute>
-                    </xsl:when>       
-                </xsl:choose>                
-                <xsl:value-of select="child::Description"/>
-            </Description>       
+            <xsl:apply-templates select="." mode="COMMONTLA2IMDISESSION"/>
         </xsl:for-each>
         <xsl:if test="not(exists(child::descriptions/Description))">
             <Description/>

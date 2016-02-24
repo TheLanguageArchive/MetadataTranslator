@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CMD xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+     xmlns="http://www.clarin.eu/cmd/"
+     xmlns:imdi="http://www.mpi.nl/IMDI/Schema/IMDI"
+     xmlns:lat="http://lat.mpi.nl/"
+     xmlns:iso="http://www.iso.org/"
+     xmlns:sil="http://www.sil.org/"
+     xmlns:xs="http://www.w3.org/2001/XMLSchema"
+     xmlns:functx="http://www.functx.com"
+     CMDVersion="1.1"
+     xsi:schemaLocation="http://www.clarin.eu/cmd/ http://catalog.clarin.eu/ds/ComponentRegistry/rest/registry/profiles/clarin.eu:cr1:p_1407745712035/xsd">
+   <Header>
+      <MdCreator>mesch</MdCreator>
+      <MdCreationDate>2004-03-04</MdCreationDate>
+      <MdSelfLink>hdl:1839/00-0000-0000-0008-1799-C</MdSelfLink>
+      <MdProfile>clarin.eu:cr1:p_1407745712035</MdProfile>
+   </Header>
+   <Resources>
+      <ResourceProxyList>
+         <ResourceProxy id="d237765e389">
+            <ResourceType mimetype="video/x-mpeg2">Resource</ResourceType>
+            <ResourceRef lat:localURI="SSL_JI_fab1_b.mpeg">hdl:1839/00-0000-0000-0008-179A-A</ResourceRef>
+         </ResourceProxy>
+         <ResourceProxy id="d237765e448">
+            <ResourceType mimetype="video/x-mpeg1">Resource</ResourceType>
+            <ResourceRef lat:localURI="SSL_JI_fab1_b.mpg">hdl:1839/00-0000-0000-0008-179B-8</ResourceRef>
+         </ResourceProxy>
+         <ResourceProxy id="d237765e510">
+            <ResourceType mimetype="text/x-eaf+xml">Resource</ResourceType>
+            <ResourceRef lat:localURI="SSL_JI_fab1.eaf">hdl:1839/00-0000-0000-0008-179D-5</ResourceRef>
+         </ResourceProxy>
+         <ResourceProxy id="landingpage">
+            <ResourceType>LandingPage</ResourceType>
+            <ResourceRef>hdl:1839/00-0000-0000-0008-1799-C@view</ResourceRef>
+         </ResourceProxy>
+      </ResourceProxyList>
+      <JournalFileProxyList/>
+      <ResourceRelationList/>
+   </Resources>
+   <Components>
+      <lat-session>
+         <Name>SSL_JI_fab1</Name>
+         <Title>ECHO SSL JI Fable 1: The shepherd's boy and the wolf</Title>
+         <Date>2003-06-13</Date>
+         <Location>
+            <Continent>Unspecified</Continent>
+            <Country>Unspecified</Country>
+            <Address/>
+         </Location>
+         <Project>
+            <Name>ECHO</Name>
+            <Title>European Cultural Heritage Online</Title>
+            <Id>ECHO case study 4</Id>
+            <Contact>
+               <Name>Onno Crasborn</Name>
+               <Address>Department of Lingustics, PO Box 9103, NL-6500 HD Nijmegen, The Netherlands</Address>
+               <Email>o.crasborn@let.kun.nl</Email>
+               <Organisation>Radboud University Nijmegen</Organisation>
+            </Contact>
+         </Project>
+         <Content>
+            <Genre>Discourse</Genre>
+            <SubGenre>Narrative</SubGenre>
+            <Task>Retell fable story in SSL</Task>
+            <Modalities>signs</Modalities>
+            <Subject>Unspecified</Subject>
+            <CommunicationContext>
+               <Interactivity>non-interactive</Interactivity>
+               <PlanningType>planned</PlanningType>
+               <Involvement>non-elicited</Involvement>
+               <SocialContext>Unspecified</SocialContext>
+               <EventStructure>Unspecified</EventStructure>
+               <Channel>Unspecified</Channel>
+            </CommunicationContext>
+            <Content_Languages>
+               <Content_Language>
+                  <Id>ISO639-3:swl</Id>
+                  <Name>Swedish Sign Language</Name>
+                  <Dominant>Unspecified</Dominant>
+                  <SourceLanguage>Unspecified</SourceLanguage>
+                  <TargetLanguage>Unspecified</TargetLanguage>
+               </Content_Language>
+            </Content_Languages>
+            <Keys>
+               <Key Name="IMDI__1_9.Interactional"
+                    Link="http://www.mpi.nl/IMDI/Schema/Content-Genre-Interactional.xml"
+                    Type="OpenVocabularyList">Unspecified</Key>
+               <Key Name="IMDI__1_9.Discursive"
+                    Link="http://www.mpi.nl/IMDI/Schema/Content-Genre-Discursive.xml"
+                    Type="OpenVocabularyList">Unspecified</Key>
+               <Key Name="IMDI__1_9.Interactional"
+                    Link="http://www.mpi.nl/IMDI/Schema/Content-Genre-Performance.xml"
+                    Type="OpenVocabularyList">narrative</Key>
+            </Keys>
+            <descriptions>
+               <Description xml:lang="eng">This file was generated from an IMDI 1.9 file and transformed to IMDI 3.0. The substructure of Genre is replaced by two elements named "Genre" and "SubGenre". The original content of Genre substructure was: Interactional = 'Unspecified', Discursive = 'Unspecified', Performance = 'narrative'. These values have been added as Keys to the Content information.</Description>
+            </descriptions>
+         </Content>
+         <Actors>
+            <Actor>
+               <Role>signer</Role>
+               <Name>Jenny Ingvarsson</Name>
+               <FullName>Jenny Ingvarsson</FullName>
+               <Code>JI</Code>
+               <FamilySocialRole>signer</FamilySocialRole>
+               <EthnicGroup/>
+               <BirthDate>Unspecified</BirthDate>
+               <Sex>Female</Sex>
+               <Education/>
+               <Anonymized>false</Anonymized>
+               <Age>
+                  <EstimatedAge>Unknown</EstimatedAge>
+               </Age>
+               <Contact/>
+               <Keys>
+                  <Key Name="Deafness.Status" Type="OpenVocabularyList">deaf</Key>
+                  <Key Name="Deafness.AidType" Type="OpenVocabularyList">none</Key>
+                  <Key Name="SignLanguageExperience.ExposureAge" Type="OpenVocabularyList">0</Key>
+                  <Key Name="SignLanguageExperience.AcquisitionLocation"
+                       Type="OpenVocabularyList">Stockholm</Key>
+                  <Key Name="SignLanguageExperience.SignTeaching" Type="OpenVocabularyList">good</Key>
+                  <Key Name="Family.Mother.Deafness" Type="OpenVocabularyList">deaf</Key>
+                  <Key Name="Family.Mother.PrimaryCommunicationForm" Type="OpenVocabularyList">sign language</Key>
+                  <Key Name="Family.Father.Deafness" Type="OpenVocabularyList">hard-of-hearing</Key>
+                  <Key Name="Family.Father.PrimaryCommunicationForm" Type="OpenVocabularyList">sign language</Key>
+                  <Key Name="Family.Partner.Deafness" Type="OpenVocabularyList">deaf</Key>
+                  <Key Name="Family.Partner.PrimaryCommunicationForm"
+                       Type="OpenVocabularyList">sign language</Key>
+                  <Key Name="Education.EducationModel" Type="OpenVocabularyList">bilingual</Key>
+                  <Key Name="Education.Location" Type="OpenVocabularyList">Manillaskolan</Key>
+                  <Key Name="Handedness" Type="OpenVocabularyList">right</Key>
+                  <Key Name="Dialect" Type="OpenVocabularyList">Stockholm</Key>
+                  <Key Name="GeneralEducation.CurrentOccupation" Type="OpenVocabularyList">student</Key>
+               </Keys>
+               <Actor_Languages>
+                  <Actor_Language>
+                     <Id>ISO639-3:swe</Id>
+                     <Name>Swedish</Name>
+                     <MotherTongue>Unspecified</MotherTongue>
+                     <PrimaryLanguage>Unspecified</PrimaryLanguage>
+                  </Actor_Language>
+                  <Actor_Language>
+                     <Id>ISO639-3:swl</Id>
+                     <Name>Swedish Sign Language</Name>
+                     <MotherTongue>Unspecified</MotherTongue>
+                     <PrimaryLanguage>Unspecified</PrimaryLanguage>
+                  </Actor_Language>
+               </Actor_Languages>
+            </Actor>
+            <Actor>
+               <Role>Collector</Role>
+               <Name>Johanna Mesch</Name>
+               <FullName>Johanna Mesch</FullName>
+               <Code>Unspecified</Code>
+               <FamilySocialRole>Unspecified</FamilySocialRole>
+               <EthnicGroup/>
+               <BirthDate>Unspecified</BirthDate>
+               <Sex>Unspecified</Sex>
+               <Education/>
+               <Anonymized>false</Anonymized>
+               <Age>
+                  <EstimatedAge>Unspecified</EstimatedAge>
+               </Age>
+               <Contact>
+                  <Name>Johanna Mesch</Name>
+                  <Address>Department of Linguistics, Universitetsv&#x8a;gen 10C, S-106 91 Stockholm, Sweden</Address>
+                  <Email>johanna.mesch@ling.su.se</Email>
+                  <Organisation>Stockholm University</Organisation>
+               </Contact>
+               <Actor_Languages>
+                  <Actor_Language>
+                     <Id>ISO639-3:swl</Id>
+                     <Name>Swedish Sign Language</Name>
+                     <MotherTongue>Unspecified</MotherTongue>
+                     <PrimaryLanguage>Unspecified</PrimaryLanguage>
+                  </Actor_Language>
+                  <Actor_Language>
+                     <Id>ISO639-3:swe</Id>
+                     <Name>Swedish</Name>
+                     <MotherTongue>Unspecified</MotherTongue>
+                     <PrimaryLanguage>Unspecified</PrimaryLanguage>
+                  </Actor_Language>
+               </Actor_Languages>
+            </Actor>
+         </Actors>
+         <Resources>
+            <MediaFile ref="d237765e389">
+               <Type>video</Type>
+               <Format>video/x-mpeg2</Format>
+               <Size/>
+               <Quality>Unspecified</Quality>
+               <RecordingConditions/>
+               <TimePosition>
+                  <Start>Unspecified</Start>
+                  <End>Unspecified</End>
+               </TimePosition>
+               <Access>
+                  <Availability/>
+                  <Date>Unspecified</Date>
+                  <Owner/>
+                  <Publisher/>
+                  <Contact/>
+               </Access>
+            </MediaFile>
+            <MediaFile ref="d237765e448">
+               <Type>video</Type>
+               <Format>video/x-mpeg1</Format>
+               <Size/>
+               <Quality>Unknown</Quality>
+               <RecordingConditions/>
+               <TimePosition>
+                  <Start>Unknown</Start>
+                  <End>Unknown</End>
+               </TimePosition>
+               <Access>
+                  <Availability>public</Availability>
+                  <Date>2003-06-30</Date>
+                  <Owner>ECHO project, Stockholm University</Owner>
+                  <Publisher>ECHO project, Stockholm University</Publisher>
+                  <Contact/>
+               </Access>
+            </MediaFile>
+            <WrittenResource ref="d237765e510">
+               <Date>Unspecified</Date>
+               <Type>Annotation</Type>
+               <SubType>Unspecified</SubType>
+               <Format>text/x-eaf+xml</Format>
+               <Size/>
+               <Derivation>Unspecified</Derivation>
+               <CharacterEncoding/>
+               <ContentEncoding/>
+               <LanguageId>Unspecified</LanguageId>
+               <Anonymized>Unspecified</Anonymized>
+               <Validation>
+                  <Type>Unspecified</Type>
+                  <Methodology>Unspecified</Methodology>
+                  <Level/>
+               </Validation>
+               <Access>
+                  <Availability/>
+                  <Date>Unspecified</Date>
+                  <Owner/>
+                  <Publisher/>
+                  <Contact/>
+               </Access>
+            </WrittenResource>
+            <Anonyms>
+               <Access>
+                  <Availability/>
+                  <Date>1900-10-30</Date>
+                  <Owner/>
+                  <Publisher/>
+                  <Contact/>
+               </Access>
+            </Anonyms>
+         </Resources>
+         <References/>
+      </lat-session>
+   </Components>
+</CMD>

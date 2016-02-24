@@ -117,11 +117,13 @@
                <Code>W</Code>
                <FamilySocialRole>Unspecified</FamilySocialRole>
                <EthnicGroup/>
-               <Age>Unknown</Age>
                <BirthDate>Unspecified</BirthDate>
                <Sex>Unknown</Sex>
                <Education>university</Education>
                <Anonymized>true</Anonymized>
+               <Age>
+                  <EstimatedAge>Unknown</EstimatedAge>
+               </Age>
                <Contact/>
                <Actor_Languages>
                   <Actor_Language>
@@ -151,11 +153,13 @@
                <Code>k</Code>
                <FamilySocialRole>Unspecified</FamilySocialRole>
                <EthnicGroup/>
-               <Age>Unknown</Age>
                <BirthDate>Unspecified</BirthDate>
                <Sex>Unknown</Sex>
                <Education>university</Education>
                <Anonymized>true</Anonymized>
+               <Age>
+                  <EstimatedAge>Unknown</EstimatedAge>
+               </Age>
                <Contact/>
                <Actor_Languages>
                   <Actor_Language>
@@ -179,11 +183,13 @@
                <Code>Unspecified</Code>
                <FamilySocialRole>Unspecified</FamilySocialRole>
                <EthnicGroup/>
-               <Age>Unspecified</Age>
                <BirthDate>Unspecified</BirthDate>
                <Sex>Unspecified</Sex>
                <Education/>
                <Anonymized>false</Anonymized>
+               <Age>
+                  <EstimatedAge>Unspecified</EstimatedAge>
+               </Age>
                <Contact>
                   <Name>Peter Wittenburg</Name>
                   <Address>Wundtlaan 1, 6525 XD Nijmegen</Address>
@@ -199,11 +205,13 @@
                <Code>Unspecified</Code>
                <FamilySocialRole>Unspecified</FamilySocialRole>
                <EthnicGroup>Unspecified</EthnicGroup>
-               <Age>Unspecified</Age>
                <BirthDate>Unspecified</BirthDate>
                <Sex>Unspecified</Sex>
                <Education>Unspecified</Education>
                <Anonymized>false</Anonymized>
+               <Age>
+                  <EstimatedAge>Unspecified</EstimatedAge>
+               </Age>
                <Contact/>
                <Actor_Languages/>
             </Actor>

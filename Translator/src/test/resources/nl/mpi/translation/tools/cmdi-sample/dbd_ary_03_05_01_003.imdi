@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<METATRANSCRIPT xmlns="http://www.mpi.nl/IMDI/Schema/IMDI"
+                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                xmlns:tla="http://tla.mpi.nl"
+                xmlns:lat="http://lat.mpi.nl/"
+                FormatId="IMDI 3.0"
+                Type="SESSION"
+                Version="0"
+                xsi:schemaLocation="http://www.mpi.nl/IMDI/Schema/IMDI http://www.mpi.nl/IMDI/Schema/IMDI_3.0.xsd"
+                ArchiveHandle="hdl:1839/00-0000-0000-0008-434F-B@format=imdi"
+                Originator="Metadata Translator: DBDSESSION2IMDISESSION.xslt hdl:1839/00-0000-0000-0008-434F-B@format=cmdi"
+                Date="2014-02-26">
+   <Session>
+      <Name>Hanane</Name>
+      <Title>Amsterdam 10 Hanane; dbd_ary_03_05_01_001</Title>
+      <Date>1993-04-29</Date>
+      <Description LanguageId="ISO639-3:eng">Bos's original codes on cassette: wahan91.4mm
+No transcript available; second recording 1993-05-27.</Description>
+      <MDGroup>
+         <Location>
+            <Continent Link="http://www.mpi.nl/IMDI/Schema/Continents.xml"
+                       Type="ClosedVocabulary">Europe</Continent>
+            <Country Link="http://www.mpi.nl/IMDI/Schema/Countries.xml"
+                     Type="OpenVocabulary">Netherlands</Country>
+            <Region>Unspecified</Region>
+            <Address>Amsterdam</Address>
+         </Location>
+         <Project>
+            <Name>Development of bilingualism in school-aged Moroccan children</Name>
+            <Title>Development of bilingualism in school-aged Moroccan children in the Netherlands</Title>
+            <Id>03</Id>
+            <Contact>
+               <Name>Bos, Petra</Name>
+               <Address/>
+               <Email/>
+               <Organisation/>
+            </Contact>
+         </Project>
+         <Keys/>
+         <Content>
+            <Genre Link="http://www.mpi.nl/IMDI/Schema/Content-Genre.xml"
+                   Type="OpenVocabulary">Discourse</Genre>
+            <SubGenre>Narrative</SubGenre>
+            <Task Link="http://www.mpi.nl/IMDI/Schema/Content-Task.xml"
+                  Type="OpenVocabulary">frog story</Task>
+            <Modalities Link="http://www.mpi.nl/IMDI/Schema/Content-Modalities.xml"
+                        Type="OpenVocabularyList">Speech</Modalities>
+            <Subject Link="http://www.mpi.nl/IMDI/Schema/Content-Subject.xml"
+                     Type="OpenVocabularyList">Unspecified</Subject>
+            <CommunicationContext>
+               <Interactivity Link="http://www.mpi.nl/IMDI/Schema/Content-Interactivity.xml"
+                              Type="ClosedVocabulary">semi-interactive</Interactivity>
+               <PlanningType Link="http://www.mpi.nl/IMDI/Schema/Content-PlanningType.xml"
+                             Type="ClosedVocabulary">semi-spontaneous</PlanningType>
+               <Involvement Link="http://www.mpi.nl/IMDI/Schema/Content-Involvement.xml"
+                            Type="ClosedVocabulary">non-elicited</Involvement>
+               <SocialContext Link="http://www.mpi.nl/IMDI/Schema/Content-SocialContext.xml"
+                              Type="ClosedVocabulary">Controlled environment</SocialContext>
+               <EventStructure Link="http://www.mpi.nl/IMDI/Schema/Content-EventStructure.xml"
+                               Type="ClosedVocabulary">Monologue</EventStructure>
+               <Channel Link="http://www.mpi.nl/IMDI/Schema/Content-Channel.xml"
+                        Type="ClosedVocabulary">Face to Face</Channel>
+            </CommunicationContext>
+            <Languages>
+               <Language>
+                  <Id>ISO639-3:ary</Id>
+                  <Name Link="http://www.mpi.nl/IMDI/Schema/MPI-Languages.xml"
+                        Type="OpenVocabulary">Arabic, Moroccan Spoken</Name>
+                  <Dominant Type="ClosedVocabulary">true</Dominant>
+                  <SourceLanguage Type="ClosedVocabulary">Unspecified</SourceLanguage>
+                  <TargetLanguage Type="ClosedVocabulary">Unspecified</TargetLanguage>
+               </Language>
+            </Languages>
+            <Keys/>
+         </Content>
+         <Actors>
+            <Actor>
+               <Role Link="http://www.mpi.nl/IMDI/Schema/Actor-Role.xml"
+                     Type="OpenVocabularyList">Collector</Role>
+               <Name>Bos</Name>
+               <FullName>Petra Bos</FullName>
+               <Code/>
+               <FamilySocialRole Link="http://www.mpi.nl/IMDI/Schema/Actor-FamilySocialRole.xml"
+                                 Type="OpenVocabularyList">Unspecified</FamilySocialRole>
+               <Languages>
+                  <Language>
+                     <Id>ISO639-3:nld</Id>
+                     <Name>Dutch</Name>
+                     <MotherTongue Type="ClosedVocabulary">true</MotherTongue>
+                     <PrimaryLanguage Type="ClosedVocabulary">true</PrimaryLanguage>
+                  </Language>
+                  <Language>
+                     <Id>ISO639-3:eng</Id>
+                     <Name>English</Name>
+                     <MotherTongue Type="ClosedVocabulary">false</MotherTongue>
+                     <PrimaryLanguage Type="ClosedVocabulary">false</PrimaryLanguage>
+                  </Language>
+                  <Language>
+                     <Id>ISO639-3:fra</Id>
+                     <Name>French</Name>
+                     <MotherTongue Type="ClosedVocabulary">false</MotherTongue>
+                     <PrimaryLanguage Type="ClosedVocabulary">false</PrimaryLanguage>
+                  </Language>
+                  <Language>
+                     <Id>ISO639-3:arb</Id>
+                     <Name>Arabic, Standard</Name>
+                     <MotherTongue Type="ClosedVocabulary">false</MotherTongue>
+                     <PrimaryLanguage Type="ClosedVocabulary">false</PrimaryLanguage>
+                     <Description LanguageId="ISO639-3:eng">Bos was trained as an Arabist at the University of Leiden.</Description>
+                     <Description LanguageId="ISO639-3:eng">##CVREPAIR## DATE:2005-10-26 Replaced 'Arabic, standard' with 'Arabic, Standard'</Description>
+                  </Language>
+                  <Language>
+                     <Id>ISO639-3:arz</Id>
+                     <Name>Arabic, Egyptian Spoken</Name>
+                     <MotherTongue Type="ClosedVocabulary">false</MotherTongue>
+                     <PrimaryLanguage Type="ClosedVocabulary">false</PrimaryLanguage>
+                  </Language>
+                  <Language>
+                     <Id>ISO639-3:ary</Id>
+                     <Name>Arabic, Moroccan Spoken</Name>
+                     <MotherTongue Type="ClosedVocabulary">false</MotherTongue>
+                     <PrimaryLanguage Type="ClosedVocabulary">false</PrimaryLanguage>
+                  </Language>
+               </Languages>
+               <EthnicGroup>Dutch</EthnicGroup>
+               <Age>Unspecified</Age>
+               <BirthDate>Unspecified</BirthDate>
+               <Sex Link="http://www.mpi.nl/IMDI/Schema/Actor-Sex.xml"
+                    Type="ClosedVocabulary">Female</Sex>
+               <Education>PhD student</Education>
+               <Anonymized Link="http://www.mpi.nl/IMDI/Schema/Boolean.xml"
+                           Type="ClosedVocabulary">false</Anonymized>
+               <Contact/>
+               <Keys/>
+            </Actor>
+            <Actor>
+               <Role Link="http://www.mpi.nl/IMDI/Schema/Actor-Role.xml"
+                     Type="OpenVocabularyList">Recorder</Role>
+               <Name>Hayat</Name>
+               <FullName>Hayat El Koun</FullName>
+               <Code>HAY</Code>
+               <FamilySocialRole Link="http://www.mpi.nl/IMDI/Schema/Actor-FamilySocialRole.xml"
+                                 Type="OpenVocabularyList">Unspecified</FamilySocialRole>
+               <Languages>
+                  <Language>
+                     <Id>ISO639-3:ary</Id>
+                     <Name>Arabic, Moroccan Spoken</Name>
+                     <MotherTongue Type="ClosedVocabulary">true</MotherTongue>
+                     <PrimaryLanguage Type="ClosedVocabulary">true</PrimaryLanguage>
+                  </Language>
+               </Languages>
+               <EthnicGroup>Moroccan</EthnicGroup>
+               <Age>Unspecified</Age>
+               <BirthDate>Unspecified</BirthDate>
+               <Sex Link="http://www.mpi.nl/IMDI/Schema/Actor-Sex.xml"
+                    Type="ClosedVocabulary">Female</Sex>
+               <Education>Unspecified</Education>
+               <Anonymized Link="http://www.mpi.nl/IMDI/Schema/Boolean.xml"
+                           Type="ClosedVocabulary">false</Anonymized>
+               <Contact/>
+               <Keys/>
+            </Actor>
+            <Actor>
+               <Role Link="http://www.mpi.nl/IMDI/Schema/Actor-Role.xml"
+                     Type="OpenVocabularyList">Annotator</Role>
+               <Name>Hayat</Name>
+               <FullName>Hayat El Koun</FullName>
+               <Code/>
+               <FamilySocialRole Link="http://www.mpi.nl/IMDI/Schema/Actor-FamilySocialRole.xml"
+                                 Type="OpenVocabularyList">Unspecified</FamilySocialRole>
+               <Languages>
+                  <Language>
+                     <Id>ISO639-3:ary</Id>
+                     <Name>Arabic, Moroccan Spoken</Name>
+                     <MotherTongue Type="ClosedVocabulary">true</MotherTongue>
+                     <PrimaryLanguage Type="ClosedVocabulary">true</PrimaryLanguage>
+                  </Language>
+               </Languages>
+               <EthnicGroup>Moroccan</EthnicGroup>
+               <Age>Unspecified</Age>
+               <BirthDate>Unspecified</BirthDate>
+               <Sex Link="http://www.mpi.nl/IMDI/Schema/Actor-Sex.xml"
+                    Type="ClosedVocabulary">Female</Sex>
+               <Education>Unspecified</Education>
+               <Anonymized Link="http://www.mpi.nl/IMDI/Schema/Boolean.xml"
+                           Type="ClosedVocabulary">false</Anonymized>
+               <Contact/>
+               <Keys/>
+            </Actor>
+            <Actor>
+               <Role Link="http://www.mpi.nl/IMDI/Schema/Actor-Role.xml"
+                     Type="OpenVocabularyList">Consultant</Role>
+               <Name>Hanane</Name>
+               <FullName>Hanane el K</FullName>
+               <Code/>
+               <FamilySocialRole Link="http://www.mpi.nl/IMDI/Schema/Actor-FamilySocialRole.xml"
+                                 Type="OpenVocabularyList">Unspecified</FamilySocialRole>
+               <Languages>
+                  <Language>
+                     <Id>ISO639-3:nld</Id>
+                     <Name>Dutch</Name>
+                     <MotherTongue Type="ClosedVocabulary">false</MotherTongue>
+                     <PrimaryLanguage Type="ClosedVocabulary">Unspecified</PrimaryLanguage>
+                  </Language>
+                  <Language>
+                     <Id>ISO639-3:ary</Id>
+                     <Name>Arabic, Moroccan Spoken</Name>
+                     <MotherTongue Type="ClosedVocabulary">true</MotherTongue>
+                     <PrimaryLanguage Type="ClosedVocabulary">Unspecified</PrimaryLanguage>
+                  </Language>
+               </Languages>
+               <EthnicGroup>Moroccan</EthnicGroup>
+               <Age>9;9.27</Age>
+               <BirthDate>1983-07-02</BirthDate>
+               <Sex Link="http://www.mpi.nl/IMDI/Schema/Actor-Sex.xml"
+                    Type="ClosedVocabulary">Female</Sex>
+               <Education>Unspecified</Education>
+               <Anonymized Link="http://www.mpi.nl/IMDI/Schema/Boolean.xml"
+                           Type="ClosedVocabulary">Unspecified</Anonymized>
+               <Contact/>
+               <Keys/>
+            </Actor>
+         </Actors>
+      </MDGroup>
+      <Resources>
+         <MediaFile>
+            <ResourceLink ArchiveHandle="hdl:1839/00-0000-0000-0008-7690-2"/>
+            <Type>audio</Type>
+            <Format>audio/x-wav</Format>
+            <Size>76873772 bytes</Size>
+            <Quality>Unspecified</Quality>
+            <RecordingConditions/>
+            <TimePosition>
+               <Start>Unspecified</Start>
+               <End>Unspecified</End>
+            </TimePosition>
+            <Access>
+               <Availability/>
+               <Date>Unspecified</Date>
+               <Owner/>
+               <Publisher/>
+               <Contact/>
+            </Access>
+            <Keys/>
+         </MediaFile>
+      </Resources>
+      <References/>
+   </Session>
+</METATRANSCRIPT>

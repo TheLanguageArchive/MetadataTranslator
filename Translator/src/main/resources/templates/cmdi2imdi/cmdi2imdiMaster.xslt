@@ -6,11 +6,13 @@
     xmlns:lat="http://lat.mpi.nl/"
     version="2.0" xpath-default-namespace="http://www.clarin.eu/cmd/">
     
+    <xsl:include href="tlaprofilescommon.xslt"/>
     <xsl:include href="iprosla2imdi.xslt"/>
     <xsl:include href="valid2imdi.xslt"/>
     <xsl:include href="collection2corpus.xslt"/>
     <xsl:include href="tlacollection2corpus.xslt"/>
     <xsl:include href="tlasession2imdisession.xslt"/>
+    <xsl:include href="silangsession2imdisession.xslt"/>
     <xsl:include href="dbdsession2imdisession.xslt"/>
     <xsl:include href="discanproject2corpus.xslt"/>
     <xsl:include href="discantextcorpus2corpus.xslt"/>
@@ -49,6 +51,9 @@
             <xsl:when test="contains(/CMD/@xsi:schemaLocation, 'http://catalog.clarin.eu/ds/ComponentRegistry/rest/registry/profiles/clarin.eu:cr1:p_1391763610422/xsd')">
                 <xsl:call-template name="DBDSESSION2IMDISESSION" />
             </xsl:when>
+            <xsl:when test="contains(/CMD/@xsi:schemaLocation, 'http://catalog.clarin.eu/ds/ComponentRegistry/rest/registry/profiles/clarin.eu:cr1:p_1417617523856/xsd')">
+                <xsl:call-template name="SILANGSESSION2IMDISESSION" />
+            </xsl:when>
             <xsl:when test="contains(/CMD/@xsi:schemaLocation, 'http://catalog.clarin.eu/ds/ComponentRegistry/rest/registry/profiles/clarin.eu:cr1:p_1361876010525/xsd')">
                 <xsl:call-template name="DISCANPROJECT2CORPUS" />
             </xsl:when>            
@@ -68,9 +73,6 @@
                 <xsl:call-template name="DLUCEA2IMDI" />
             </xsl:when>
             
-            
-            
-            
             <!-- Add new profile templates here -->
 			<!--        
 			<xsl:when test="exists(//Components/WHAT-EVER)">
@@ -79,6 +81,17 @@
             -->
             <!-- Not a known profile! Apply identity -->
             <xsl:otherwise>
+                <xsl:message>No matching stylesheet for input file, falling back to identity transform. 
+                    <xsl:choose>
+                        <xsl:when test="/CMD/@xsi:schemaLocation">
+                            <xsl:text>Found schema location: </xsl:text>
+                            <xsl:value-of select="/CMD/@xsi:schemaLocation"></xsl:value-of>
+                            <xsl:text></xsl:text></xsl:when>
+                        <xsl:otherwise>
+                            <xsl:text>No schema location found!</xsl:text>
+                        </xsl:otherwise>
+                    </xsl:choose>
+                    </xsl:message>
                 <xsl:call-template name="identity-transform"/>
             </xsl:otherwise>
         </xsl:choose>
@@ -120,5 +133,5 @@
             </xsl:otherwise>
         </xsl:choose>
     </xsl:template>
-    
+
 </xsl:stylesheet>

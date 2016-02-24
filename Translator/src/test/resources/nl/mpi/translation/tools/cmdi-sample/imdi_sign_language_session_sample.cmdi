@@ -670,11 +670,15 @@ CNGT1424 - CR8
                <Code>S062</Code>
                <FamilySocialRole>Unspecified</FamilySocialRole>
                <EthnicGroup/>
-               <Age>61</Age>
                <BirthDate>Unspecified</BirthDate>
                <Sex>Female</Sex>
                <Education>Unspecified</Education>
                <Anonymized>true</Anonymized>
+               <Age>
+                  <ExactAge>
+                     <years>61</years>
+                  </ExactAge>
+               </Age>
                <Contact>
                   <Name/>
                   <Address/>
@@ -721,11 +725,15 @@ CNGT1424 - CR8
                <Code>S061</Code>
                <FamilySocialRole>Unspecified</FamilySocialRole>
                <EthnicGroup/>
-               <Age>71</Age>
                <BirthDate>Unspecified</BirthDate>
                <Sex>Female</Sex>
                <Education>Unspecified</Education>
                <Anonymized>true</Anonymized>
+               <Age>
+                  <ExactAge>
+                     <years>71</years>
+                  </ExactAge>
+               </Age>
                <Contact>
                   <Name/>
                   <Address/>
@@ -772,11 +780,13 @@ CNGT1424 - CR8
                <Code>JR</Code>
                <FamilySocialRole>Unspecified</FamilySocialRole>
                <EthnicGroup>Deaf</EthnicGroup>
-               <Age>Unspecified</Age>
                <BirthDate>Unspecified</BirthDate>
                <Sex>Male</Sex>
                <Education/>
                <Anonymized>false</Anonymized>
+               <Age>
+                  <EstimatedAge>Unspecified</EstimatedAge>
+               </Age>
                <Contact>
                   <Name/>
                   <Address/>
@@ -817,11 +827,13 @@ CNGT1424 - CR8
                <Code>OC</Code>
                <FamilySocialRole>Unspecified</FamilySocialRole>
                <EthnicGroup/>
-               <Age>Unspecified</Age>
                <BirthDate>Unspecified</BirthDate>
                <Sex>Male</Sex>
                <Education/>
                <Anonymized>false</Anonymized>
+               <Age>
+                  <EstimatedAge>Unspecified</EstimatedAge>
+               </Age>
                <Contact>
                   <Name/>
                   <Address/>
@@ -844,11 +856,13 @@ CNGT1424 - CR8
                <Code>IZ</Code>
                <FamilySocialRole>Unspecified</FamilySocialRole>
                <EthnicGroup/>
-               <Age>Unspecified</Age>
                <BirthDate>Unspecified</BirthDate>
                <Sex>Female</Sex>
                <Education/>
                <Anonymized>false</Anonymized>
+               <Age>
+                  <EstimatedAge>Unspecified</EstimatedAge>
+               </Age>
                <Contact>
                   <Name/>
                   <Address/>

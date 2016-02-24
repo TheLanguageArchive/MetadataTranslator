@@ -1,0 +1,282 @@
+<CMD xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.clarin.eu/cmd/" CMDVersion="1.1" xsi:schemaLocation="http://www.clarin.eu/cmd/ http://catalog.clarin.eu/ds/ComponentRegistry/rest/registry/profiles/clarin.eu:cr1:p_1391763610422/xsd">
+  <Header>
+    <MdCreator>imdi2clarin.xsl</MdCreator>
+    <MdCreationDate>2014-02-26</MdCreationDate>
+    <MdSelfLink>hdl:1839/00-0000-0000-0008-434F-B@format=cmdi</MdSelfLink>
+    <MdProfile>clarin.eu:cr1:p_1390399932755</MdProfile>
+  </Header>
+  <Resources>
+    <ResourceProxyList>
+      <ResourceProxy id="d1228e578">
+        <ResourceType mimetype="audio/x-wav">Resource</ResourceType>
+        <ResourceRef>hdl:1839/00-0000-0000-0008-7690-2</ResourceRef>
+      </ResourceProxy>
+    </ResourceProxyList>
+    <JournalFileProxyList/>
+    <ResourceRelationList/>
+  </Resources>
+  <Components>
+    <DBD>
+      <Session>
+        <Name>Hanane</Name>
+        <Title>Amsterdam 10 Hanane; dbd_ary_03_05_01_001</Title>
+        <Date>1993-04-29</Date>
+        <Descriptions>
+          <Description xml:lang="en">Bos's original codes on cassette: wahan91.4mm
+No transcript available; second recording 1993-05-27.</Description>
+        </Descriptions>
+        <Location>
+          <Continent>Europe</Continent>
+          <Country>Netherlands</Country>
+          <Region>Unspecified</Region>
+          <Address>Amsterdam</Address>
+        </Location>
+        <Project>
+          <Name>Development of bilingualism in school-aged Moroccan children</Name>
+          <Title>Development of bilingualism in school-aged Moroccan children in the Netherlands</Title>
+          <Id>03</Id>
+          <Contact>
+            <Person>Bos, Petra</Person>
+            <Address/>
+            <Email/>
+            <Organisation/>
+          </Contact>
+        </Project>
+        <Content>
+          <Genre>Discourse</Genre>
+          <SubGenre>Narrative</SubGenre>
+          <Task>frog story</Task>
+          <Modalities>Speech</Modalities>
+          <Subject>Unspecified</Subject>
+          <CommunicationContext>
+            <Interactivity>semi-interactive</Interactivity>
+            <PlanningType>semi-spontaneous</PlanningType>
+            <Involvement>non-elicited</Involvement>
+            <SocialContext>Controlled environment</SocialContext>
+            <EventStructure>Monologue</EventStructure>
+            <Channel>Face to Face</Channel>
+          </CommunicationContext>
+          <Languages>
+            <Language>
+              <LanguageID>ISO639-3:ary</LanguageID>
+              <LanguageName>Arabic, Moroccan Spoken</LanguageName>
+              <Dominant>true</Dominant>
+              <SourceLanguage>Unspecified</SourceLanguage>
+              <TargetLanguage>Unspecified</TargetLanguage>
+            </Language>
+          </Languages>
+        </Content>
+        <Actors>
+          <Actor>
+            <Role>Collector</Role>
+            <Name>Bos</Name>
+            <FullName>Petra Bos</FullName>
+            <Code/>
+            <FamilySocialRole>Unspecified</FamilySocialRole>
+            <EthnicGroup>Dutch</EthnicGroup>
+            <Age>Unspecified</Age>
+            <BirthDate>Unspecified</BirthDate>
+            <Sex>Female</Sex>
+            <Education>PhD student</Education>
+            <Anonymized>false</Anonymized>
+            <Contact>
+              <Person/>
+              <Address/>
+              <Email/>
+              <Organisation/>
+            </Contact>
+            <Languages>
+              <Language>
+                <LanguageID>ISO639-3:nld</LanguageID>
+                <LanguageName>Dutch</LanguageName>
+                <MotherTongue>true</MotherTongue>
+                <PrimaryLanguage>true</PrimaryLanguage>
+                <LanguageBackground>
+                  <LanguageKnowledge/>
+                </LanguageBackground>
+              </Language>
+              <Language>
+                <LanguageID>ISO639-3:eng</LanguageID>
+                <LanguageName>English</LanguageName>
+                <MotherTongue>false</MotherTongue>
+                <PrimaryLanguage>false</PrimaryLanguage>
+                <LanguageBackground>
+                  <LanguageKnowledge/>
+                </LanguageBackground>
+              </Language>
+              <Language>
+                <LanguageID>ISO639-3:fra</LanguageID>
+                <LanguageName>French</LanguageName>
+                <MotherTongue>false</MotherTongue>
+                <PrimaryLanguage>false</PrimaryLanguage>
+                <LanguageBackground>
+                  <LanguageKnowledge/>
+                </LanguageBackground>
+              </Language>
+              <Language>
+                <LanguageID>ISO639-3:arb</LanguageID>
+                <LanguageName>Arabic, Standard</LanguageName>
+                <MotherTongue>false</MotherTongue>
+                <PrimaryLanguage>false</PrimaryLanguage>
+                <LanguageBackground>
+                  <LanguageKnowledge/>
+                </LanguageBackground>
+                <Descriptions>
+                  <Description xml:lang="en">Bos was trained as an Arabist at the University of Leiden.</Description>
+                  <Description xml:lang="en">##CVREPAIR## DATE:2005-10-26 Replaced 'Arabic, standard' with 'Arabic, Standard'</Description>
+                </Descriptions>
+              </Language>
+              <Language>
+                <LanguageID>ISO639-3:arz</LanguageID>
+                <LanguageName>Arabic, Egyptian Spoken</LanguageName>
+                <MotherTongue>false</MotherTongue>
+                <PrimaryLanguage>false</PrimaryLanguage>
+                <LanguageBackground>
+                  <LanguageKnowledge/>
+                </LanguageBackground>
+              </Language>
+              <Language>
+                <LanguageID>ISO639-3:ary</LanguageID>
+                <LanguageName>Arabic, Moroccan Spoken</LanguageName>
+                <MotherTongue>false</MotherTongue>
+                <PrimaryLanguage>false</PrimaryLanguage>
+                <LanguageBackground>
+                  <LanguageKnowledge/>
+                </LanguageBackground>
+              </Language>
+            </Languages>
+          </Actor>
+          <Actor>
+            <Role>Recorder</Role>
+            <Name>Hayat</Name>
+            <FullName>Hayat El Koun</FullName>
+            <Code>HAY</Code>
+            <FamilySocialRole>Unspecified</FamilySocialRole>
+            <EthnicGroup>Moroccan</EthnicGroup>
+            <Age>Unspecified</Age>
+            <BirthDate>Unspecified</BirthDate>
+            <Sex>Female</Sex>
+            <Education>Unspecified</Education>
+            <Anonymized>false</Anonymized>
+            <Contact>
+              <Person/>
+              <Address/>
+              <Email/>
+              <Organisation/>
+            </Contact>
+            <Languages>
+              <Language>
+                <LanguageID>ISO639-3:ary</LanguageID>
+                <LanguageName>Arabic, Moroccan Spoken</LanguageName>
+                <MotherTongue>true</MotherTongue>
+                <PrimaryLanguage>true</PrimaryLanguage>
+                <LanguageBackground>
+                  <LanguageKnowledge/>
+                </LanguageBackground>
+              </Language>
+            </Languages>
+          </Actor>
+          <Actor>
+            <Role>Annotator</Role>
+            <Name>Hayat</Name>
+            <FullName>Hayat El Koun</FullName>
+            <Code/>
+            <FamilySocialRole>Unspecified</FamilySocialRole>
+            <EthnicGroup>Moroccan</EthnicGroup>
+            <Age>Unspecified</Age>
+            <BirthDate>Unspecified</BirthDate>
+            <Sex>Female</Sex>
+            <Education>Unspecified</Education>
+            <Anonymized>false</Anonymized>
+            <Contact>
+              <Person/>
+              <Address/>
+              <Email/>
+              <Organisation/>
+            </Contact>
+            <Languages>
+              <Language>
+                <LanguageID>ISO639-3:ary</LanguageID>
+                <LanguageName>Arabic, Moroccan Spoken</LanguageName>
+                <MotherTongue>true</MotherTongue>
+                <PrimaryLanguage>true</PrimaryLanguage>
+                <LanguageBackground>
+                  <LanguageKnowledge/>
+                </LanguageBackground>
+              </Language>
+            </Languages>
+          </Actor>
+          <Actor>
+            <Role>Consultant</Role>
+            <Name>Hanane</Name>
+            <FullName>Hanane el K</FullName>
+            <Code/>
+            <FamilySocialRole>Unspecified</FamilySocialRole>
+            <EthnicGroup>Moroccan</EthnicGroup>
+            <Age>9;9.27</Age>
+            <BirthDate>1983-07-02</BirthDate>
+            <Sex>Female</Sex>
+            <Education>Unspecified</Education>
+            <Anonymized>Unspecified</Anonymized>
+            <Contact>
+              <Person/>
+              <Address/>
+              <Email/>
+              <Organisation/>
+            </Contact>
+            <Languages>
+              <Language>
+                <LanguageID>ISO639-3:nld</LanguageID>
+                <LanguageName>Dutch</LanguageName>
+                <MotherTongue>false</MotherTongue>
+                <PrimaryLanguage>Unspecified</PrimaryLanguage>
+                <LanguageBackground>
+                  <LanguageKnowledge/>
+                </LanguageBackground>
+              </Language>
+              <Language>
+                <LanguageID>ISO639-3:ary</LanguageID>
+                <LanguageName>Arabic, Moroccan Spoken</LanguageName>
+                <MotherTongue>true</MotherTongue>
+                <PrimaryLanguage>Unspecified</PrimaryLanguage>
+                <LanguageBackground>
+                  <LanguageKnowledge/>
+                </LanguageBackground>
+              </Language>
+            </Languages>
+          </Actor>
+        </Actors>
+        <Resources>
+          <MediaFile ref="d1228e578">
+            <ResourceLink>../Media/dbd_ary_03_05_01_003ab.wav</ResourceLink>
+            <Type>audio</Type>
+            <Format>audio/x-wav</Format>
+            <Quality>Unspecified</Quality>
+            <RecordingConditions/>
+            <TotalSize>
+              <Number>76873772</Number>
+              <SizeUnit>bytes</SizeUnit>
+            </TotalSize>
+            <TimePosition>
+              <Start>Unspecified</Start>
+              <End>Unspecified</End>
+            </TimePosition>
+            <Access>
+              <Availability/>
+              <Date>Unspecified</Date>
+              <Owner/>
+              <Publisher/>
+              <Contact>
+                <Person/>
+                <Address/>
+                <Email/>
+                <Organisation/>
+              </Contact>
+            </Access>
+          </MediaFile>
+        </Resources>
+        <References/>
+      </Session>
+    </DBD>
+  </Components>
+</CMD>

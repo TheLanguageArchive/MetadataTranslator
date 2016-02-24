@@ -177,11 +177,15 @@
                <Code>N00056</Code>
                <FamilySocialRole/>
                <EthnicGroup/>
-               <Age>32</Age>
                <BirthDate>Unspecified</BirthDate>
                <Sex>Male</Sex>
                <Education>high</Education>
                <Anonymized>true</Anonymized>
+               <Age>
+                  <ExactAge>
+                     <years>32</years>
+                  </ExactAge>
+               </Age>
                <Contact/>
                <Keys>
                   <Key Name="CGN.age" Type="OpenVocabulary">age2</Key>
@@ -265,11 +269,13 @@
                <Code>Unspecified</Code>
                <FamilySocialRole>Unspecified</FamilySocialRole>
                <EthnicGroup/>
-               <Age>Unspecified</Age>
                <BirthDate>Unspecified</BirthDate>
                <Sex>Unspecified</Sex>
                <Education/>
                <Anonymized>false</Anonymized>
+               <Age>
+                  <EstimatedAge>Unspecified</EstimatedAge>
+               </Age>
                <Contact>
                   <Name>CLS-KUN</Name>
                   <Organisation>CLS-KUN</Organisation>

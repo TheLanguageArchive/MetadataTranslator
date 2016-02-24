@@ -32,8 +32,11 @@ import org.jmock.integration.junit4.JUnit4Mockery;
 import org.junit.Before;
 import org.junit.Test;
 import static org.junit.Assert.*;
+import org.junit.AssumptionViolatedException;
 import org.junit.Rule;
 import org.junit.rules.TemporaryFolder;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  *
@@ -42,6 +45,7 @@ import org.junit.rules.TemporaryFolder;
 public class LocalFileAwareUrlStreamResolverTest {
 
     private final static String BASE_URL = "http://my/server/files";
+    private final static Logger logger = LoggerFactory.getLogger(LocalFileAwareUrlStreamResolverTest.class);
 
     @Rule
     public TemporaryFolder folder = new TemporaryFolder();
@@ -55,20 +59,31 @@ public class LocalFileAwareUrlStreamResolverTest {
     public void setUp() throws IOException {
         baseResolver = context.mock(UrlStreamResolver.class);
         basePath = folder.newFolder();
+        logger.info("Base path: {}", basePath);
         instance = new LocalFileAwareUrlStreamResolver(baseResolver, BASE_URL, basePath.getAbsolutePath());
     }
 
     /**
      * Test of getStream method, of class LocalFileAwareUrlStreamResolver.
+     *
      * @throws java.lang.Exception
      */
     @Test
     public void testGetStreamMatch() throws Exception {
         // create the file to be requested
         final File file = new File(basePath, "existingFile");
-        file.createNewFile();
+
+        final boolean created = file.createNewFile();
+        if (created) {
+            logger.info("Created temporary file in base path for testing {}", file);
+        }
+
+        if (!created || !file.exists()) {
+            logger.error("Test file {} could not be created", file);
+            throw new AssumptionViolatedException("Could not create temporary file required for test!");
+        }
         // public URL for this file
-        final URL url = new URL(BASE_URL + "/existingfile");
+        final URL url = new URL(BASE_URL + "/existingFile");
 
         // should never consult base resolver
         context.checking(new Expectations() {
@@ -85,6 +100,7 @@ public class LocalFileAwareUrlStreamResolverTest {
 
     /**
      * Test of getStream method, of class LocalFileAwareUrlStreamResolver.
+     *
      * @throws java.lang.Exception
      */
     @Test
@@ -107,12 +123,13 @@ public class LocalFileAwareUrlStreamResolverTest {
 
     /**
      * Test of getStream method, of class LocalFileAwareUrlStreamResolver.
+     *
      * @throws java.lang.Exception
      */
     @Test
     public void testGetStreamNonExistingMatch() throws Exception {
         // public URL for a non-existing file
-        final URL url = new URL(BASE_URL + "/existingfile");
+        final URL url = new URL(BASE_URL + "/non-existentFile");
         // mock an input stream to be returned by mock resolver
         final InputStream resultStream = new ByteArrayInputStream(new byte[0]);
 

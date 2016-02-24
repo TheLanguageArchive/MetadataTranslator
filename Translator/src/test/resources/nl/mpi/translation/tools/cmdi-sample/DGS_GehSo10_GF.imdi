@@ -1,0 +1,391 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<METATRANSCRIPT xmlns="http://www.mpi.nl/IMDI/Schema/IMDI"
+                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                xmlns:tla="http://tla.mpi.nl"
+                xmlns:lat="http://lat.mpi.nl/"
+                FormatId="IMDI 3.0"
+                Type="SESSION"
+                Version="0"
+                xsi:schemaLocation="http://www.mpi.nl/IMDI/Schema/IMDI http://www.mpi.nl/IMDI/Schema/IMDI_3.0.xsd"
+                ArchiveHandle="hdl:1839/00-0000-0000-0008-17CE-7@format=imdi"
+                Originator="Metadata Translator: SILANGSESSION2IMDISESSION.xslt hdl:1839/00-0000-0000-0008-17CE-7"
+                Date="2004-05-16">
+   <History> NAME:SILANGSESSION2IMDISESSION.xslt DATE:xx.</History>
+   <Session>
+      <Name>DGS_GehSo10_GF</Name>
+      <Title>Gehörlos So! Session 10, Günther F.: Kaukasus</Title>
+      <Date>1993-05-01</Date>
+      <Description LanguageId="ISO639-3:eng" Link="http://www.signum-verlag.de">This session is part of the Gehörlos So! corpus, and consists of 7 minutes of discourse about the signer's experiences in school.</Description>
+      <MDGroup>
+         <Location>
+            <Continent Link="http://www.mpi.nl/IMDI/Schema/Continents.xml"
+                       Type="ClosedVocabulary">Europe</Continent>
+            <Country Link="http://www.mpi.nl/IMDI/Schema/Countries.xml"
+                     Type="OpenVocabulary">Germany</Country>
+         </Location>
+         <Project>
+            <Name>Gehörlos So!</Name>
+            <Title>Gehörlos So! Materialien zur Gebärdensprache</Title>
+            <Id/>
+            <Contact>
+               <Name>Jens Heßmann</Name>
+               <Address>Hochschule Magdeburg, Breitscheidstraße 2, D-39104 Magdeburg, Germany</Address>
+               <Email>jens.hessmann@sgw.hs-magdeburg.de</Email>
+               <Organisation>Magdeburg-Stendal University of Applied Sciences</Organisation>
+            </Contact>
+            <Description LanguageId="ISO639-3:eng">This session is part of the Gehörlos So! corpus, published by Signum in 2001 in the form of two books and a one-hour videotape. The video and annotations of the corpus are published here as part of the ECHO project.  For background information on the signer, the language, and the corpus, we recommend that you also order the books (a two-volume set). Volume 1 also contains a lexicon of all signs that appar in the corpus, with a description of their form. All materials are in German.  Conversion of the corpus to digital video and the ELAN annotation format was done by Jens Heßmann, Onno Crasborn (University of Nijmegen), and Kees van der Veer (Max Planck Institut für Psycholinguistik).  Jens Heßmann 2001 Gehörlos So! Materialien zur Gebärdensprache. Band 1: Grundlagen und Gebärdenverzeichnis. Band 2: Gebärdensprachtexte. Hamburg: Signum. ISBN 3-927731-86-2   Signum Verlag Hans-Albersplatz 2 D-20359 Hamburg Germany. Tel: ++49-40-3192140 Fax: ++49-40-3196205 http://www.signum-verlag.de</Description>
+            <Description LanguageId="ISO639-3:eng">The ECHO project is an effort to publish scientific data in the humanities online. See http://sign-lang.ruhosting.nl/echo for further information on the sign language case study.</Description>
+         </Project>
+         <Keys/>
+         <Content>
+            <Genre Link="http://www.mpi.nl/IMDI/Schema/Content-Genre.xml"
+                   Type="OpenVocabulary">Discourse</Genre>
+            <SubGenre>Conversation</SubGenre>
+            <Task Link="http://www.mpi.nl/IMDI/Schema/Content-Task.xml"
+                  Type="OpenVocabulary">Unspecified</Task>
+            <Modalities Link="http://www.mpi.nl/IMDI/Schema/Content-Modalities.xml"
+                        Type="OpenVocabularyList">signs</Modalities>
+            <Subject Link="http://www.mpi.nl/IMDI/Schema/Content-Subject.xml"
+                     Type="OpenVocabularyList">Travelling to the Caucasus,  meeting deaf people in Tiflis</Subject>
+            <CommunicationContext>
+               <Interactivity Link="http://www.mpi.nl/IMDI/Schema/Content-Interactivity.xml"
+                              Type="ClosedVocabulary">interactive</Interactivity>
+               <PlanningType Link="http://www.mpi.nl/IMDI/Schema/Content-PlanningType.xml"
+                             Type="ClosedVocabulary">semi-spontaneous</PlanningType>
+               <Involvement Link="http://www.mpi.nl/IMDI/Schema/Content-Involvement.xml"
+                            Type="ClosedVocabulary">non-elicited</Involvement>
+               <SocialContext Link="http://www.mpi.nl/IMDI/Schema/Content-SocialContext.xml"
+                              Type="ClosedVocabulary">Unspecified</SocialContext>
+               <EventStructure Link="http://www.mpi.nl/IMDI/Schema/Content-EventStructure.xml"
+                               Type="ClosedVocabulary">Dialogue</EventStructure>
+               <Channel Link="http://www.mpi.nl/IMDI/Schema/Content-Channel.xml"
+                        Type="ClosedVocabulary">Face to Face</Channel>
+            </CommunicationContext>
+            <Languages>
+               <Language>
+                  <Id>ISO639-3:gsg</Id>
+                  <Name Link="http://www.mpi.nl/IMDI/Schema/MPI-Languages.xml"
+                        Type="OpenVocabulary">German Sign Language</Name>
+                  <Dominant Type="ClosedVocabulary">true</Dominant>
+                  <SourceLanguage Type="ClosedVocabulary">Unspecified</SourceLanguage>
+                  <TargetLanguage Type="ClosedVocabulary">Unspecified</TargetLanguage>
+               </Language>
+            </Languages>
+            <Keys>
+               <Key Name="ElicitationMethod">Unspecified</Key>
+               <Key Name="Interpreting.Source">Unspecified</Key>
+               <Key Name="Interpreting.Target">Unspecified</Key>
+               <Key Name="Interpreting.Visibility">Unspecified</Key>
+               <Key Name="Interpreting.Audience">Unspecified</Key>
+            </Keys>
+         </Content>
+         <Actors>
+            <Actor>
+               <Role Link="http://www.mpi.nl/IMDI/Schema/Actor-Role.xml"
+                     Type="OpenVocabularyList">Speaker/Signer</Role>
+               <Name>Günther F.</Name>
+               <FullName>Günther F.</FullName>
+               <Code>GüF</Code>
+               <FamilySocialRole Link="http://www.mpi.nl/IMDI/Schema/Actor-FamilySocialRole.xml"
+                                 Type="OpenVocabularyList">Unspecified</FamilySocialRole>
+               <Languages>
+                  <Language>
+                     <Id>ISO639-3:gsg</Id>
+                     <Name>German Sign Language</Name>
+                     <MotherTongue Type="ClosedVocabulary">Unspecified</MotherTongue>
+                     <PrimaryLanguage Type="ClosedVocabulary">Unspecified</PrimaryLanguage>
+                  </Language>
+               </Languages>
+               <EthnicGroup/>
+               <Age>58</Age>
+               <BirthDate>Unspecified</BirthDate>
+               <Sex Link="http://www.mpi.nl/IMDI/Schema/Actor-Sex.xml"
+                    Type="ClosedVocabulary">Male</Sex>
+               <Education>Unspecified</Education>
+               <Anonymized Link="http://www.mpi.nl/IMDI/Schema/Boolean.xml"
+                           Type="ClosedVocabulary">false</Anonymized>
+               <Contact/>
+               <Keys>
+                  <Key Name="Deafness.Status">deaf</Key>
+                  <Key Name="Deafness.AidType">Unspecified</Key>
+                  <Key Name="SignLanguageExperience.ExposureAge">Unspecified</Key>
+                  <Key Name="SignLanguageExperience.AcquisitionLocation">Unspecified</Key>
+                  <Key Name="SignLanguageExperience.SignTeaching">Unspecified</Key>
+                  <Key Name="Family.Mother.Deafness">deaf</Key>
+                  <Key Name="Family.Mother.PrimaryCommunicationForm">Unspecified</Key>
+                  <Key Name="Family.Father.Deafness">deaf</Key>
+                  <Key Name="Family.Father.PrimaryCommunicationForm">Unspecified</Key>
+                  <Key Name="Family.Partner.Deafness">deaf</Key>
+                  <Key Name="Family.Partner.PrimaryCommunicationForm">Unspecified</Key>
+                  <Key Name="Education.Age">Unspecified</Key>
+                  <Key Name="Education.SchoolType">Unspecified</Key>
+                  <Key Name="Education.ClassKind">Unspecified</Key>
+                  <Key Name="Education.EducationModel">Unspecified</Key>
+                  <Key Name="Education.Location">Unspecified</Key>
+                  <Key Name="Education.BoardingSchool">Unspecified</Key>
+               </Keys>
+            </Actor>
+            <Actor>
+               <Role Link="http://www.mpi.nl/IMDI/Schema/Actor-Role.xml"
+                     Type="OpenVocabularyList">Interviewer</Role>
+               <Name>Hermann M.</Name>
+               <FullName>Hermann M.</FullName>
+               <Code>HeM</Code>
+               <FamilySocialRole Link="http://www.mpi.nl/IMDI/Schema/Actor-FamilySocialRole.xml"
+                                 Type="OpenVocabularyList">Unspecified</FamilySocialRole>
+               <Languages>
+                  <Language>
+                     <Id>ISO639-3:gsg</Id>
+                     <Name>German Sign Language</Name>
+                     <MotherTongue Type="ClosedVocabulary">Unspecified</MotherTongue>
+                     <PrimaryLanguage Type="ClosedVocabulary">Unspecified</PrimaryLanguage>
+                  </Language>
+               </Languages>
+               <EthnicGroup/>
+               <Age>Unspecified</Age>
+               <BirthDate>Unspecified</BirthDate>
+               <Sex Link="http://www.mpi.nl/IMDI/Schema/Actor-Sex.xml"
+                    Type="ClosedVocabulary">Male</Sex>
+               <Education>Unspecified</Education>
+               <Anonymized Link="http://www.mpi.nl/IMDI/Schema/Boolean.xml"
+                           Type="ClosedVocabulary">Unspecified</Anonymized>
+               <Contact/>
+               <Keys>
+                  <Key Name="Deafness.Status">deaf</Key>
+                  <Key Name="Deafness.AidType">Unspecified</Key>
+                  <Key Name="SignLanguageExperience.ExposureAge">Unspecified</Key>
+                  <Key Name="SignLanguageExperience.AcquisitionLocation">Unspecified</Key>
+                  <Key Name="SignLanguageExperience.SignTeaching">Unspecified</Key>
+                  <Key Name="Family.Mother.Deafness">Unspecified</Key>
+                  <Key Name="Family.Mother.PrimaryCommunicationForm">Unspecified</Key>
+                  <Key Name="Family.Father.Deafness">Unspecified</Key>
+                  <Key Name="Family.Father.PrimaryCommunicationForm">Unspecified</Key>
+                  <Key Name="Family.Partner.Deafness">Unspecified</Key>
+                  <Key Name="Family.Partner.PrimaryCommunicationForm">Unspecified</Key>
+                  <Key Name="Education.Age">Unspecified</Key>
+                  <Key Name="Education.SchoolType">Unspecified</Key>
+                  <Key Name="Education.ClassKind">Unspecified</Key>
+                  <Key Name="Education.EducationModel">Unspecified</Key>
+                  <Key Name="Education.Location">Unspecified</Key>
+                  <Key Name="Education.BoardingSchool">Unspecified</Key>
+               </Keys>
+            </Actor>
+         </Actors>
+      </MDGroup>
+      <Resources>
+         
+         
+         
+         
+         
+         
+         
+         
+         <!--NOTE: CMDI2IMDI - ResourceProxy skipped because no reference or recognised mimetype present: [d236535e14] http://www.signum-verlag.de-->
+         <!--NOTE: CMDI2IMDI - ResourceProxy skipped because no reference or recognised mimetype present: [d236535e55] http://www.signum-verlag.de/-->
+         <!--NOTE: CMDI2IMDI - ResourceProxy skipped because no reference or recognised mimetype present: [d236535e59] http://sign-lang.ruhosting.nl/echo-->
+         <!--NOTE: CMDI2IMDI - ResourceProxy skipped because no reference or recognised mimetype present: [landingpage] hdl:1839/00-0000-0000-0008-17CE-7@view-->
+      
+         <MediaFile>
+            <ResourceLink ArchiveHandle="hdl:1839/00-0000-0000-000F-E30D-2">http://archive/corpus/my-collection/Metadata/DGS_GehSo_i.mp4</ResourceLink>
+            <Type>video</Type>
+            <Format>video/mp4</Format>
+            <Size>201542896</Size>
+            <Quality>Unspecified</Quality>
+            <RecordingConditions/>
+            <TimePosition>
+               <Start>Unspecified</Start>
+               <End>Unspecified</End>
+            </TimePosition>
+            <Access>
+               <Availability/>
+               <Date>Unspecified</Date>
+               <Owner/>
+               <Publisher/>
+               <Contact/>
+            </Access>
+            <Keys/>
+         </MediaFile>
+         <MediaFile>
+            <ResourceLink ArchiveHandle="hdl:1839/00-0000-0000-000F-E30E-B">http://archive/corpus/my-collection/Metadata/DGS_GehSo_f.mp4</ResourceLink>
+            <Type>video</Type>
+            <Format>video/mp4</Format>
+            <Size>201617094</Size>
+            <Quality>Unspecified</Quality>
+            <RecordingConditions/>
+            <TimePosition>
+               <Start>Unspecified</Start>
+               <End>Unspecified</End>
+            </TimePosition>
+            <Access>
+               <Availability/>
+               <Date>Unspecified</Date>
+               <Owner/>
+               <Publisher/>
+               <Contact/>
+            </Access>
+            <Keys/>
+         </MediaFile>
+         <MediaFile>
+            <ResourceLink ArchiveHandle="hdl:1839/00-0000-0000-000F-E30F-5">http://archive/corpus/my-collection/Metadata/DGS_GehSo_b.mp4</ResourceLink>
+            <Type>video</Type>
+            <Format>video/mp4</Format>
+            <Size>245021330</Size>
+            <Quality>Unspecified</Quality>
+            <RecordingConditions/>
+            <TimePosition>
+               <Start>Unspecified</Start>
+               <End>Unspecified</End>
+            </TimePosition>
+            <Access>
+               <Availability/>
+               <Date>Unspecified</Date>
+               <Owner/>
+               <Publisher/>
+               <Contact/>
+            </Access>
+            <Keys/>
+         </MediaFile>
+         <MediaFile>
+            <ResourceLink ArchiveHandle="hdl:1839/00-0000-0000-0008-17C6-5">http://archive/corpus/my-collection/Metadata/DGS_GehSo_b.mpeg</ResourceLink>
+            <Type>video</Type>
+            <Format>video/x-mpeg2</Format>
+            <Size/>
+            <Quality>Unspecified</Quality>
+            <RecordingConditions/>
+            <TimePosition>
+               <Start>Unspecified</Start>
+               <End>Unspecified</End>
+            </TimePosition>
+            <Access>
+               <Availability/>
+               <Date>Unspecified</Date>
+               <Owner/>
+               <Publisher/>
+               <Contact/>
+            </Access>
+            <Keys/>
+         </MediaFile>
+         <MediaFile>
+            <ResourceLink ArchiveHandle="hdl:1839/00-0000-0000-0008-17C4-A">http://archive/corpus/my-collection/Metadata/DGS_GehSo_b.mpg</ResourceLink>
+            <Type>video</Type>
+            <Format>video/x-mpeg1</Format>
+            <Size/>
+            <Quality>Unspecified</Quality>
+            <RecordingConditions/>
+            <TimePosition>
+               <Start>50:51:00:0</Start>
+               <End>56:53:00:0</End>
+            </TimePosition>
+            <Access>
+               <Availability/>
+               <Date>Unspecified</Date>
+               <Owner/>
+               <Publisher/>
+               <Contact/>
+            </Access>
+            <Keys>
+               <Key Name="MultipleCameras.Number" Type="OpenVocabularyList">Unspecified</Key>
+               <Key Name="MultipleCameras.Layout" Type="OpenVocabularyList">Unspecified</Key>
+               <Key Name="MultipleCameras.Viewpoints" Type="OpenVocabularyList">Unspecified</Key>
+               <Key Name="MultipleCameras.Focus" Type="OpenVocabularyList">Unspecified</Key>
+            </Keys>
+         </MediaFile>
+         <MediaFile>
+            <ResourceLink ArchiveHandle="hdl:1839/00-0000-0000-0008-17C3-C">http://archive/corpus/my-collection/Metadata/DGS_GehSo_f.mpg</ResourceLink>
+            <Type>video</Type>
+            <Format>video/x-mpeg1</Format>
+            <Size/>
+            <Quality>Unspecified</Quality>
+            <RecordingConditions/>
+            <TimePosition>
+               <Start>50:51:00:0</Start>
+               <End>56:53:00:0</End>
+            </TimePosition>
+            <Access>
+               <Availability/>
+               <Date>Unspecified</Date>
+               <Owner/>
+               <Publisher/>
+               <Contact/>
+            </Access>
+            <Keys>
+               <Key Name="MultipleCameras.Number" Type="OpenVocabularyList">Unspecified</Key>
+               <Key Name="MultipleCameras.Layout" Type="OpenVocabularyList">Unspecified</Key>
+               <Key Name="MultipleCameras.Viewpoints" Type="OpenVocabularyList">Unspecified</Key>
+               <Key Name="MultipleCameras.Focus" Type="OpenVocabularyList">Unspecified</Key>
+            </Keys>
+         </MediaFile>
+         <MediaFile>
+            <ResourceLink ArchiveHandle="hdl:1839/00-0000-0000-0008-17C2-E">http://archive/corpus/my-collection/Metadata/DGS_GehSo_i.mpg</ResourceLink>
+            <Type>video</Type>
+            <Format>video/x-mpeg1</Format>
+            <Size/>
+            <Quality>Unspecified</Quality>
+            <RecordingConditions/>
+            <TimePosition>
+               <Start>50:51:00:0</Start>
+               <End>56:53:00:0</End>
+            </TimePosition>
+            <Access>
+               <Availability/>
+               <Date>Unspecified</Date>
+               <Owner/>
+               <Publisher/>
+               <Contact/>
+            </Access>
+            <Keys>
+               <Key Name="MultipleCameras.Number" Type="OpenVocabularyList">Unspecified</Key>
+               <Key Name="MultipleCameras.Layout" Type="OpenVocabularyList">Unspecified</Key>
+               <Key Name="MultipleCameras.Viewpoints" Type="OpenVocabularyList">Unspecified</Key>
+               <Key Name="MultipleCameras.Focus" Type="OpenVocabularyList">Unspecified</Key>
+            </Keys>
+         </MediaFile>
+         
+         
+         
+         
+         
+      
+         
+         
+         
+         
+         
+         
+         
+         <WrittenResource>
+            <ResourceLink ArchiveHandle="hdl:1839/00-0000-0000-0008-17CF-8">http://archive/corpus/my-collection/Metadata/DGS_GehSo10_GF.eaf</ResourceLink>
+            <MediaResourceLink/>
+            <Date>Unspecified</Date>
+            <Type>Annotation</Type>
+            <SubType>Unspecified</SubType>
+            <Format>text/x-eaf+xml</Format>
+            <Size/>
+            <Validation>
+               <Type>Unspecified</Type>
+               <Methodology>Unspecified</Methodology>
+               <Level>Unspecified</Level>
+            </Validation>
+            <Derivation>Unspecified</Derivation>
+            <CharacterEncoding/>
+            <ContentEncoding/>
+            <LanguageId>Unspecified</LanguageId>
+            <Anonymized>Unspecified</Anonymized>
+            <Access>
+               <Availability/>
+               <Date>Unspecified</Date>
+               <Owner/>
+               <Publisher/>
+               <Contact/>
+            </Access>
+            <Keys/>
+         </WrittenResource>
+         
+         
+         
+         
+      </Resources>
+      <References/>
+   </Session>
+</METATRANSCRIPT>

@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<METATRANSCRIPT xmlns="http://www.mpi.nl/IMDI/Schema/IMDI"
+                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                xmlns:tla="http://tla.mpi.nl"
+                xmlns:lat="http://lat.mpi.nl/"
+                FormatId="IMDI 3.0"
+                Type="SESSION"
+                Version="0"
+                xsi:schemaLocation="http://www.mpi.nl/IMDI/Schema/IMDI http://www.mpi.nl/IMDI/Schema/IMDI_3.0.xsd"
+                ArchiveHandle="hdl:1839/00-0000-0000-0017-DF38-7@format=imdi"
+                Originator="Metadata Translator: TLASESSION2IMDISESSION.xslt hdl:1839/00-0000-0000-0017-DF38-7"
+                Date="2011-01-08">
+   <History> NAME:tlasession2imdisession.xslt DATE:xx.</History>
+   <Session>
+      <Name>137-chinga_ruwara</Name>
+      <Title>137: chinga ruwara</Title>
+      <Date>1960-00-00</Date>
+      <Description LanguageId="ISO639-3:spa">Esta grabación ha sido generosamente donada al archivo de la lengua Aché por el Museo Andrés Barbero, Asunción.</Description>
+      <Description LanguageId="ISO639-3:eng">This recording has been kindly donated to the Aché language archive by the Museo Andrés Barbero, Asunción.</Description>
+      <MDGroup>
+         <Location>
+            <Continent Link="http://www.mpi.nl/IMDI/Schema/Continents.xml"
+                       Type="ClosedVocabulary">South-America</Continent>
+            <Country Link="http://www.mpi.nl/IMDI/Schema/Countries.xml"
+                     Type="OpenVocabulary">Paraguay</Country>
+            <Region>Caazapá</Region>
+            <Address>Arroyo Moroti</Address>
+         </Location>
+         <Project>
+            <Name>ADOP</Name>
+            <Title>Proyecto de documentación del Aché - Aché Documentation Project</Title>
+            <Id>ADOP</Id>
+            <Contact>
+               <Name>Aché Documentation Project</Name>
+               <Address>http://www.mpi.nl/DOBES/projects/ache/project</Address>
+               <Email>adop.dobes [AT] gmail [DOT] com</Email>
+               <Organisation>Institut für Empirische Sprachwissenschaft, J. W. Goethe-Universität, Frankfurt</Organisation>
+            </Contact>
+         </Project>
+         <Keys/>
+         <Content>
+            <Genre Link="http://www.mpi.nl/IMDI/Schema/Content-Genre.xml"
+                   Type="OpenVocabulary">Singing</Genre>
+            <SubGenre>Wailing</SubGenre>
+            <Task Link="http://www.mpi.nl/IMDI/Schema/Content-Task.xml"
+                  Type="OpenVocabulary">Unspecified</Task>
+            <Modalities Link="http://www.mpi.nl/IMDI/Schema/Content-Modalities.xml"
+                        Type="OpenVocabularyList">song</Modalities>
+            <Subject Link="http://www.mpi.nl/IMDI/Schema/Content-Subject.xml"
+                     Type="OpenVocabularyList">traditional wailing</Subject>
+            <CommunicationContext>
+               <Interactivity Link="http://www.mpi.nl/IMDI/Schema/Content-Interactivity.xml"
+                              Type="ClosedVocabulary">non-interactive</Interactivity>
+               <PlanningType Link="http://www.mpi.nl/IMDI/Schema/Content-PlanningType.xml"
+                             Type="ClosedVocabulary">semi-spontaneous</PlanningType>
+               <Involvement Link="http://www.mpi.nl/IMDI/Schema/Content-Involvement.xml"
+                            Type="ClosedVocabulary">non-elicited</Involvement>
+               <SocialContext Link="http://www.mpi.nl/IMDI/Schema/Content-SocialContext.xml"
+                              Type="ClosedVocabulary">Public</SocialContext>
+               <EventStructure Link="http://www.mpi.nl/IMDI/Schema/Content-EventStructure.xml"
+                               Type="ClosedVocabulary">Monologue</EventStructure>
+               <Channel Link="http://www.mpi.nl/IMDI/Schema/Content-Channel.xml"
+                        Type="ClosedVocabulary">Face to Face</Channel>
+            </CommunicationContext>
+            <Languages/>
+            <Keys/>
+         </Content>
+         <Actors>
+            <Actor>
+               <Role Link="http://www.mpi.nl/IMDI/Schema/Actor-Role.xml"
+                     Type="OpenVocabularyList">Recorder,Researcher</Role>
+               <Name>Branislava Susnik</Name>
+               <FullName>Branislava Susnik</FullName>
+               <Code>SUS</Code>
+               <FamilySocialRole Link="http://www.mpi.nl/IMDI/Schema/Actor-FamilySocialRole.xml"
+                                 Type="OpenVocabularyList"/>
+               <Languages/>
+               <EthnicGroup/>
+               <Age>Unspecified</Age>
+               <BirthDate>Unspecified</BirthDate>
+               <Sex Link="http://www.mpi.nl/IMDI/Schema/Actor-Sex.xml"
+                    Type="ClosedVocabulary">Female</Sex>
+               <Education>Unspecified</Education>
+               <Anonymized Link="http://www.mpi.nl/IMDI/Schema/Boolean.xml"
+                           Type="ClosedVocabulary">false</Anonymized>
+               <Contact/>
+               <Keys/>
+            </Actor>
+            <Actor>
+               <Role Link="http://www.mpi.nl/IMDI/Schema/Actor-Role.xml"
+                     Type="OpenVocabularyList">Speaker/Signer,Author</Role>
+               <Name>137</Name>
+               <FullName>137</FullName>
+               <Code>137</Code>
+               <FamilySocialRole Link="http://www.mpi.nl/IMDI/Schema/Actor-FamilySocialRole.xml"
+                                 Type="OpenVocabularyList"/>
+               <Languages/>
+               <EthnicGroup>Aché</EthnicGroup>
+               <Age>Unspecified</Age>
+               <BirthDate>Unspecified</BirthDate>
+               <Sex Link="http://www.mpi.nl/IMDI/Schema/Actor-Sex.xml"
+                    Type="ClosedVocabulary">Female</Sex>
+               <Education>Unspecified</Education>
+               <Anonymized Link="http://www.mpi.nl/IMDI/Schema/Boolean.xml"
+                           Type="ClosedVocabulary">true</Anonymized>
+               <Contact/>
+               <Keys/>
+            </Actor>
+         </Actors>
+      </MDGroup>
+      <Resources>
+            <!--NOTE: CMDI2IMDI - ResourceProxy skipped because no reference or recognised mimetype present: [landingpage] hdl:1839/00-0000-0000-0017-DF38-7@view-->
+            <MediaFile>
+            <ResourceLink ArchiveHandle="hdl:1839/00-0000-0000-0017-D25B-F">http://archive/corpus/my-collection/Metadata/137-chinga_ruwara-1960.wav</ResourceLink>
+            <Type>audio</Type>
+            <Format>audio/x-wav</Format>
+            <Size>18258KB</Size>
+            <Quality>2</Quality>
+            <RecordingConditions>Para detalles ver 'Source' - See 'Source' for details</RecordingConditions>
+            <TimePosition>
+               <Start>Unspecified</Start>
+               <End>Unspecified</End>
+            </TimePosition>
+            <Access>
+               <Availability>Recurso protegido - Protected resource</Availability>
+               <Date>2012-09-30</Date>
+               <Owner>Comunidades Aché - Aché communities</Owner>
+               <Publisher>ADOP - Aché Documentation Project</Publisher>
+               <Contact>
+                  <Name>Aché Documentation Project</Name>
+                  <Address>Institut für vergleichende Sprachwissenschaft</Address>
+                  <Email>adop.dobes [AT] gmail [DOT] com</Email>
+                  <Organisation>Johann Wolfgang Goethe Universität Frankfurt</Organisation>
+               </Contact>
+               <Description>Las comunidades Aché no han revisado la información por contenido confidencial en este recurso todavía y las personas grabadas no han determinado si se abre el material o no. Por eso los datos no son accesibles al público en este momento. Si Usted se interesa en este material, por favor contáctenos.
+
+The Aché communities have not revised this resource yet for sensitive content yet and the recorded persons have not allowed us to open the material yet. Therefore the data is not accessible to the public at this time. If you are interested in this resource, please contact us.</Description>
+            </Access>
+            <Keys/>
+         </MediaFile>
+         <Source>
+            <Id>ACHE19600000AM-SUS-137-chinga_ruwara</Id>
+            <Format>Reel</Format>
+            <Quality>2</Quality>
+            <CounterPosition>
+               <Start>Unspecified</Start>
+               <End>Unspecified</End>
+            </CounterPosition>
+            <TimePosition>
+               <Start>Unspecified</Start>
+               <End>Unspecified</End>
+            </TimePosition>
+            <Access>
+               <Availability>Recurso protegido - Protected resource</Availability>
+               <Date>2012-09-30</Date>
+               <Owner>Comunidades Aché - Aché communities</Owner>
+               <Publisher>ADOP - Aché Documentation Project</Publisher>
+               <Contact>
+                  <Name>Aché Documentation Project</Name>
+                  <Address>Institut für vergleichende Sprachwissenschaft</Address>
+                  <Email>adop.dobes [AT] gmail [DOT] com</Email>
+                  <Organisation>Johann Wolfgang Goethe Universität Frankfurt</Organisation>
+               </Contact>
+               <Description>Las comunidades Aché no han revisado la información por contenido confidencial en este recurso todavía y las personas grabadas no han determinado si se abre el material o no. Por eso los datos no son accesibles al público en este momento. Si Usted se interesa en este material, por favor contáctenos.
+
+The Aché communities have not revised this resource yet for sensitive content yet and the recorded persons have not allowed us to open the material yet. Therefore the data is not accessible to the public at this time. If you are interested in this resource, please contact us.</Description>
+            </Access>
+            <Description>Grabación analógica de sonido usando la grabadora Minifon con rollos de alambre. 
+
+Analog audio recording with a Minifon Wire Recorder on metal wire spools.</Description>
+            <Keys>
+               <Key Name="Recording Device" Type="OpenVocabulary">Minifon Portable Wire Recorder</Key>
+               <Key Name="Format" Type="OpenVocabulary">Analog recording on Minifon wire spool</Key>
+            </Keys>
+         </Source>
+      </Resources>
+      <References/>
+   </Session>
+</METATRANSCRIPT>

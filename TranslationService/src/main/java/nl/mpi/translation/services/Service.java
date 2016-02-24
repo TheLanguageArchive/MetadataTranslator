@@ -102,17 +102,15 @@ public class Service {
         if (outFormat != null && (outFormat.toLowerCase().equals("imdi"))) {
             logger.info("Requested IMDI translation for file: '{}'", inputFileURL);
             output = translator.getIMDI(inputFileURL, uriInfo.getAbsolutePath().toString());
-            logger.debug("IMDI file returned in: {} ms", (System.currentTimeMillis() - initTime));
         } else if (outFormat != null && (outFormat.toLowerCase().equals("cmdi"))) {
             logger.info("Requested CMDI translation for file: '{}'", inputFileURL);
             output = translator.getCMDI(inputFileURL, uriInfo.getAbsolutePath().toString());
-            logger.debug("CMDI file returned in: {} ms", (System.currentTimeMillis() - initTime));
         } else {
             //default is CMDI to IMDI
             logger.warn("Unknown output format requested: '{}'. IMDI assumed.\nGenerating IMDI translation for file: '{}'", outFormat, inputFileURL);
             output = translator.getIMDI(inputFileURL, uriInfo.getAbsolutePath().toString());
-            logger.debug("IMDI file returned in: {} ms", (System.currentTimeMillis() - initTime));
         }
+        logger.debug("Transformation result returned in: {} ms", (System.currentTimeMillis() - initTime));
         return output;
     }
 

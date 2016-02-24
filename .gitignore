@@ -8,8 +8,12 @@
 *.war
 *.ear
 
+# Mac stuff #
+.DS_Store
+
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
 /Translator/target/
 /TranslationService/target/
 /TranslationService/nb-configuration.xml
+/Translator/translator_oxygen.xpr

@@ -1,14 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--
-$Rev: 3378 $
-$LastChangedDate: 2013-08-14 11:25:31 +0200 (Wed, 14 Aug 2013) $
--->
-<xsl:stylesheet xmlns="http://www.clarin.eu/cmd/" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+<xsl:stylesheet xmlns="http://www.clarin.eu/cmd/" xmlns:cmd="http://www.clarin.eu/cmd/" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
 	version="2.0" xpath-default-namespace="http://www.mpi.nl/IMDI/Schema/IMDI" xmlns:imdi="http://www.mpi.nl/IMDI/Schema/IMDI" xmlns:lat="http://lat.mpi.nl/" xmlns:iso="http://www.iso.org/" xmlns:sil="http://www.sil.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:functx="http://www.functx.com">
-    <!-- this is a version of imdi2clarin.xsl that batch processes a whole directory structure of imdi files, call it from the command line like this:
-        java -jar saxon8.jar -it main batch-imdi2clarin.xsl
-        the last template in this file has to be modified to reflect the actual directory name
-    -->
     <xsl:output method="xml" indent="yes"/>
 
     <!-- A collection name can be specified for each record. This
@@ -38,6 +30,8 @@ $LastChangedDate: 2013-08-14 11:25:31 +0200 (Wed, 14 Aug 2013) $
     <!-- OPTIONAL: a client side transformation URL, inserted as a processing instruction if non-empty -->
 	<xsl:param name="imdi2cmdi-client-side-stylesheet-href" required="no" />
 	
+	<xsl:variable name="doc" select="/"/>
+	
 	<xsl:variable name="sil-lang-top" select="document(resolve-uri('sil_to_iso6393.xml',$base))/sil:languages"/>
 	<xsl:key name="sil-lookup" match="sil:lang" use="sil:sil"/>
 	
@@ -46,6 +40,8 @@ $LastChangedDate: 2013-08-14 11:25:31 +0200 (Wed, 14 Aug 2013) $
 	<xsl:variable name="iso-lang-top" select="$iso-lang-doc/iso:m"/>
 	<xsl:key name="iso639_1-lookup" match="iso:e" use="iso:o"/>
 	<xsl:key name="iso639_2-lookup" match="iso:e" use="iso:b|iso:t"/>
+	<xsl:key name="iso639_3-lookup" match="iso:e" use="iso:i"/>
+	<xsl:key name="iso639-lookup" match="iso:e" use="iso:i|iso:o|iso:b|iso:t"/>
 	
 	<!-- definition of the SRU-searchable collections at TLA (for use later on) -->
     <xsl:variable name="SruSearchable">childes,ESF corpus,IFA corpus,MPI CGN,talkbank</xsl:variable>
@@ -133,7 +129,7 @@ $LastChangedDate: 2013-08-14 11:25:31 +0200 (Wed, 14 Aug 2013) $
 			</xsl:otherwise>
 		</xsl:choose>
 	</xsl:function>
-
+	
 	<xsl:template match="/">
 		<xsl:if test="normalize-space($imdi2cmdi-client-side-stylesheet-href) != ''">
 			<!-- insert client side XML instruction -->
@@ -141,7 +137,10 @@ $LastChangedDate: 2013-08-14 11:25:31 +0200 (Wed, 14 Aug 2013) $
 			    <xsl:value-of select="concat('type=&quot;text/xsl&quot; href=&quot;', $imdi2cmdi-client-side-stylesheet-href, '&quot;')"/>
 			</xsl:processing-instruction>
 		</xsl:if>
-		<xsl:apply-templates/>
+		<xsl:variable name="cmdi">
+			<xsl:apply-templates/>
+		</xsl:variable>
+		<xsl:apply-templates select="$cmdi" mode="cleanup"/>
 	</xsl:template>
 	
 	<!-- do the IMDI to CMDI conversion -->
@@ -179,10 +178,17 @@ $LastChangedDate: 2013-08-14 11:25:31 +0200 (Wed, 14 Aug 2013) $
                     	</xsl:if>
                     </xsl:when>
                     <!-- No handle? Then just use the URL -->
-                    <xsl:when test="not($uri-base='') and normalize-space(@ArchiveHandle)=''">
+                    <xsl:when test="not(normalize-space($uri-base)='') and normalize-space(@ArchiveHandle)=''">
                     	<xsl:value-of select="replace($uri-base,'\.imdi$','.cmdi')"/>
                     </xsl:when>
-                    <!-- Other handle prefix? Use handle (e.g. Lund) -->
+                	<!-- no handle and no base URI -->
+                	<xsl:when test="normalize-space($uri-base)='' and normalize-space(@ArchiveHandle)=''">
+                		<!-- in JAXP the first xsl:message will reach the log as a WARN, while the last xsl:message will be a DEBUG
+            			(although the transform will terminate with an ERROR, but without the message text :-( ) -->
+                		<xsl:message>ERR: the MdSelfLink can't be determined! Pass on the source-location parameter or make sure the base URI is set for the input document.</xsl:message>
+                		<xsl:message terminate="yes">ERR: the MdSelfLink can't be determined!  Pass on the source-location parameter or make sure the base URI is set for the input document.</xsl:message>                		
+                	</xsl:when>
+                	<!-- Other handle prefix? Use handle (e.g. Lund) -->
                     <xsl:otherwise>
                     	<xsl:value-of select="@ArchiveHandle"/>
                     </xsl:otherwise>
@@ -227,8 +233,8 @@ $LastChangedDate: 2013-08-14 11:25:31 +0200 (Wed, 14 Aug 2013) $
 	                </xsl:if>
             	</xsl:if>
             </ResourceProxyList>
-            <JournalFileProxyList> </JournalFileProxyList>
-            <ResourceRelationList> </ResourceRelationList>
+            <JournalFileProxyList/> 
+            <ResourceRelationList/> 
         </Resources>
         <Components>
             <xsl:apply-templates select="Session">
@@ -273,14 +279,25 @@ $LastChangedDate: 2013-08-14 11:25:31 +0200 (Wed, 14 Aug 2013) $
             </xsl:when>
             <xsl:otherwise>
                 <!-- Currently we are only processing 'SESSION' and 'CORPUS' types. The error displayed can be used to filter out erroneous files after processing-->
-            	<xsl:message terminate="yes">ERROR: Invalid METATRANSCRIPT Type!</xsl:message>
+            	<!-- in JAXP the first xsl:message will reach the log as a WARN, while the last xsl:message will be a DEBUG
+            		(although the transform will terminate with an ERROR, but without the message text :-( ) -->
+            	<xsl:message>ERR: [<xsl:value-of select="@Type"/>] is a METATRANSCRIPT Type which can't be handled yet!</xsl:message>
+            	<xsl:message terminate="yes">ERR: [<xsl:value-of select="@Type"/>] is a METATRANSCRIPT Type which can't be handled yet!</xsl:message>
             </xsl:otherwise>
         </xsl:choose>
     </xsl:template>
 
     <xsl:template match="Corpus">
         <lat-corpus>
-        	<xsl:apply-templates select="preceding-sibling::History"/>
+        	<History>
+        		<xsl:if test="normalize-space(preceding-sibling::History)!=''">
+        			<xsl:value-of select="preceding-sibling::History"/>
+        			<xsl:text> </xsl:text>
+        		</xsl:if>
+        		<xsl:text>NAME:imdi2cmdi.xslt DATE:</xsl:text>
+        		<xsl:value-of select="current-dateTime()"/>
+        		<xsl:text>.</xsl:text>
+        	</History>
             <xsl:apply-templates select="child::Name"/>
             <xsl:apply-templates select="child::Title"/>
             <xsl:variable name="descriptions" select="Description[normalize-space(@ArchiveHandle)='' and normalize-space(@Link)=''][normalize-space(.)!='']"/>
@@ -305,17 +322,19 @@ $LastChangedDate: 2013-08-14 11:25:31 +0200 (Wed, 14 Aug 2013) $
             		</xsl:if>
             	</InfoLink>
             </xsl:for-each>
-            <xsl:for-each select="CorpusLink[normalize-space(@ArchiveHandle)!='' or normalize-space(.)!='' or normalize-space(@Name)!='']">
+            <xsl:for-each-group select="CorpusLink[normalize-space(@ArchiveHandle)!='' or normalize-space(.)!='' or normalize-space(@Name)!='']"
+            	group-by="string-join((normalize-space(@ArchiveHandle),normalize-space(.),normalize-space(@Name)),'/')">
+            	<xsl:variable name="cl" select="current-group()[1]"/>
                 <CorpusLink>
-                    <xsl:if test="normalize-space(@ArchiveHandle)!='' or normalize-space(.)!=''">
-                    	<xsl:attribute name="ref" select="generate-id(.)"/>
+                    <xsl:if test="normalize-space($cl/@ArchiveHandle)!='' or normalize-space($cl)!=''">
+                    	<xsl:attribute name="ref" select="generate-id($cl)"/>
                     </xsl:if>
                     <Name>
-                    	<xsl:value-of select="@Name"/>
+                    	<xsl:value-of select="$cl/@Name"/>
                     </Name>
                 </CorpusLink>
-            </xsl:for-each>
-            <xsl:if test="normalize-space(@CatalogueLink)!='' or normalize-space(@CatalogueHandle)!=''">
+            </xsl:for-each-group>
+        	<xsl:if test="normalize-space(@CatalogueLink)!='' or normalize-space(@CatalogueHandle)!=''">
             	<xsl:variable name="cat" as="xs:string?">
             		<xsl:variable name="hdl" select="replace(@CatalogueHandle,'hdl:','http://hdl.handle.net/')"/>
             		<xsl:choose>
@@ -506,6 +525,8 @@ $LastChangedDate: 2013-08-14 11:25:31 +0200 (Wed, 14 Aug 2013) $
         </lat-corpus>
     </xsl:template>
 
+	<xsl:template match="text()" mode="linking"/>
+	
     <xsl:template match="Corpus" mode="linking">
     	<xsl:for-each select="CorpusLink[normalize-space(@ArchiveHandle)!='' or normalize-space(.)!='']">
             <ResourceProxy id="{generate-id(.)}">
@@ -550,7 +571,7 @@ $LastChangedDate: 2013-08-14 11:25:31 +0200 (Wed, 14 Aug 2013) $
                             <xsl:value-of select="."/>
                         </xsl:when>
                         <!-- Fallback: use original link, append .cmdi. Resolve from base URI if available. -->
-                        <xsl:when test="$uri-base=''">
+                        <xsl:when test="normalize-space($uri-base)=''">
                         	<xsl:value-of select="replace(.,'\.imdi$','.cmdi')"/>
                         </xsl:when>
                         <xsl:otherwise>
@@ -570,9 +591,6 @@ $LastChangedDate: 2013-08-14 11:25:31 +0200 (Wed, 14 Aug 2013) $
     	<xsl:for-each select="WrittenResource">
             <xsl:call-template name="CreateResourceProxyTypeResource"/>
         </xsl:for-each>
-    	<xsl:for-each select="Anonyms">
-    		<xsl:call-template name="CreateResourceProxyTypeResource"/>
-    	</xsl:for-each>
     </xsl:template>
     
     <!-- to be called during the creation of the ResourceProxyList (in linking mode) -->
@@ -584,7 +602,9 @@ $LastChangedDate: 2013-08-14 11:25:31 +0200 (Wed, 14 Aug 2013) $
     					<xsl:attribute name="mimetype">
     						<xsl:value-of select="./Format"/>
     					</xsl:attribute>
-    				</xsl:if>Resource</ResourceType>
+    				</xsl:if>
+    				<xsl:text>Resource</xsl:text>
+    			</ResourceType>
     			<ResourceRef>
     				<xsl:if test="$localURI">
     					<xsl:attribute name="lat:localURI" select="replace(ResourceLink,' ','%20')"/>
@@ -593,10 +613,14 @@ $LastChangedDate: 2013-08-14 11:25:31 +0200 (Wed, 14 Aug 2013) $
     					<xsl:when test="not(normalize-space(ResourceLink/@ArchiveHandle)='')">
     						<xsl:value-of select="ResourceLink/@ArchiveHandle"/>
     					</xsl:when>
-    					<xsl:when test="not($uri-base='')">
+    					<xsl:when test="not(normalize-space($uri-base)='')">
     						<xsl:value-of
     							select="resolve-uri(normalize-space(ResourceLink/.), $uri-base)"/>
     					</xsl:when>
+    					<xsl:otherwise>
+    						<xsl:message>WRN: the ResourceLink[<xsl:value-of select="ResourceLink"/>] has no ArchiveHandle and the source location or base URI is also unknown, so the ResourceLink can't be resolved to an absolute path!</xsl:message>
+    						<xsl:value-of select="ResourceLink"/>
+    					</xsl:otherwise>
     				</xsl:choose>
     			</ResourceRef>
     		</ResourceProxy>
@@ -604,7 +628,7 @@ $LastChangedDate: 2013-08-14 11:25:31 +0200 (Wed, 14 Aug 2013) $
     </xsl:template>
 
 	<!-- Create ResourceProxy for Info files -->
-	<xsl:template match="//Description[@ArchiveHandle or @Link]" mode="linking">
+	<xsl:template match="//Description[parent::Corpus or parent::Session or parent::Project or parent::References or parent::Content][@ArchiveHandle or @Link]" mode="linking">
 		<xsl:variable name="res">
 			<xsl:choose>
 				<xsl:when test="normalize-space(@ArchiveHandle)!=''">
@@ -638,13 +662,54 @@ $LastChangedDate: 2013-08-14 11:25:31 +0200 (Wed, 14 Aug 2013) $
 		</xsl:if>
 	</xsl:template> 
 	
-	
+	<!-- resolve ResourceRef(s) -->
+	<xsl:template name="ResourceRefs">
+		<xsl:variable name="node" select="current()"/>
+		<xsl:variable name="refs" as="xs:string*">
+			<xsl:for-each select="tokenize(normalize-space(current()/@ResourceRef|current()/@ResourceRefs),'\s+')[normalize-space(.)!='']">
+				<xsl:variable name="target" select="$doc//(MediaFile|WrittenResource)[@ResourceId=current()]/ResourceLink[normalize-space(.)!='']"/>
+				<xsl:choose>
+					<xsl:when test="count($target) gt 1">
+						<xsl:message>ERR: <xsl:value-of select="name($node)"/>/@ResourceRef(s)[<xsl:value-of select="current()"/>] resolves to multiple Resources! Taking the first one.</xsl:message>
+						<xsl:sequence select="generate-id(($target)[1])" />
+					</xsl:when>
+					<xsl:when test="count($target) eq 1">
+						<xsl:sequence select="generate-id($target)" />
+					</xsl:when>
+					<xsl:otherwise>
+						<xsl:choose>
+							<xsl:when test="exists($doc//(MediaFile|WrittenResource)[@ResourceId=current()])">
+								<xsl:message>ERR: <xsl:value-of select="name($node)"/>/@ResourceRef(s)[<xsl:value-of select="current()"/>] does resolve to a Resource, but one without a ResourceLink!</xsl:message>
+							</xsl:when>
+							<xsl:otherwise>
+								<xsl:message>ERR: <xsl:value-of select="name($node)"/>/@ResourceRef(s)[<xsl:value-of select="current()"/>] doesn't resolve to any Resource!</xsl:message>
+							</xsl:otherwise>
+						</xsl:choose>
+					</xsl:otherwise>
+				</xsl:choose>
+				<!--<xsl:if test="position()!=last()">
+        				<xsl:sequence select="' '"/>
+        			</xsl:if>-->
+			</xsl:for-each>
+		</xsl:variable>
+		<xsl:if test="exists($refs)">
+			<xsl:attribute name="ref" select="string-join($refs,' ')"/>
+		</xsl:if>
+	</xsl:template>	
 
     <xsl:template match="Session">
     	<xsl:param name="profile" tunnel="yes"/>
         <xsl:element name="{lat:sessionProfileRoot($profile)}">
-        	<xsl:apply-templates select="preceding-sibling::History"/>
-            <xsl:apply-templates select="child::Name"/>
+        	<History>
+        		<xsl:if test="normalize-space(preceding-sibling::History)!=''">
+        			<xsl:value-of select="preceding-sibling::History"/>
+        			<xsl:text> </xsl:text>
+        		</xsl:if>
+        		<xsl:text>NAME:imdi2cmdi.xslt DATE:</xsl:text>
+        		<xsl:value-of select="current-dateTime()"/>
+        		<xsl:text>.</xsl:text>
+        	</History>
+        	<xsl:apply-templates select="child::Name"/>
             <xsl:apply-templates select="child::Title"/>
             <xsl:apply-templates select="child::Date"/>
         	<xsl:variable name="descriptions" select="Description[normalize-space(@ArchiveHandle)='' and normalize-space(@Link)=''][normalize-space(.)!='']"/>
@@ -667,22 +732,20 @@ $LastChangedDate: 2013-08-14 11:25:31 +0200 (Wed, 14 Aug 2013) $
         			</Description>
         		</InfoLink>
         	</xsl:for-each>
+        	<xsl:for-each select="MDGroup/Content/Description[normalize-space(@ArchiveHandle)!='' or normalize-space(@Link)!='']">
+        		<InfoLink ref="{generate-id(.)}">
+        			<Description>
+        				<xsl:call-template name="xmlLang"/>
+        				<xsl:value-of select="."/>
+        			</Description>
+        		</InfoLink>
+        	</xsl:for-each>
         	<xsl:apply-templates select="child::MDGroup"/>
             <xsl:apply-templates select="child::Resources" mode="regular"/>
             <xsl:apply-templates select="child::References"/>
         </xsl:element>
     </xsl:template>
 
-	<xsl:template match="child::History">
-		<History>
-			<xsl:value-of select="."/>
-			<!--<xsl:value-of select="system-property('line.separator')"/>-->
-			<xsl:text> NAME:imdi2cmdi.xslt DATE:</xsl:text>
-			<xsl:value-of select="current-dateTime()"/>
-			<xsl:text>.</xsl:text>
-		</History>
-	</xsl:template>
-	
 	<xsl:template match="child::Name">
         <Name>
             <xsl:value-of select="."/>
@@ -749,9 +812,9 @@ $LastChangedDate: 2013-08-14 11:25:31 +0200 (Wed, 14 Aug 2013) $
             	</xsl:call-template>
             </Country>
             <xsl:if test="exists(child::Region)">
-                <Region>
-                    <xsl:value-of select="child::Region"/>
-                </Region>
+            	<xsl:for-each select="child::Region">
+            		<Region><xsl:value-of select="."/></Region>
+            	</xsl:for-each>
             </xsl:if>
             <xsl:if test="exists(child::Address)">
                 <Address>
@@ -773,16 +836,28 @@ $LastChangedDate: 2013-08-14 11:25:31 +0200 (Wed, 14 Aug 2013) $
                 <xsl:value-of select="child::Id"/>
             </Id>
             <xsl:apply-templates select="Contact"/>
-            <xsl:if test="exists(Description[normalize-space(.)!=''])">
-                <descriptions>
-                	<xsl:for-each select="Description[normalize-space(.)!='']">
-                        <Description>
-                        	<xsl:call-template name="xmlLang"/>
-                            <xsl:value-of select="."/>
-                        </Description>
-                    </xsl:for-each>
-                </descriptions>
-            </xsl:if>
+        	<xsl:variable name="descriptions" select="Description[normalize-space(@ArchiveHandle)='' and normalize-space(@Link)=''][normalize-space(.)!='']"/>
+        	<xsl:variable name="infoLinks" select="Description[normalize-space(@ArchiveHandle)!='' or normalize-space(@Link)!='']"/>
+        	<xsl:if test="exists($descriptions)">
+        		<descriptions>
+        			<xsl:for-each select="$descriptions">
+        				<Description>
+        					<xsl:call-template name="xmlLang"/>
+        					<xsl:value-of select="."/>
+        				</Description>
+        			</xsl:for-each>
+        		</descriptions>
+        	</xsl:if>
+        	<xsl:for-each select="$infoLinks">
+        		<InfoLink ref="{generate-id(.)}">
+        			<xsl:if test="normalize-space(.)!=''">
+        				<Description>
+        					<xsl:call-template name="xmlLang"/>
+        					<xsl:value-of select="."/>
+        				</Description>
+        			</xsl:if>
+        		</InfoLink>
+        	</xsl:for-each>
         </Project>
     </xsl:template>
 
@@ -913,9 +988,9 @@ $LastChangedDate: 2013-08-14 11:25:31 +0200 (Wed, 14 Aug 2013) $
         			<xsl:apply-templates select="child::Keys"/>
         		</xsl:otherwise>
         	</xsl:choose>
-        	<xsl:if test="exists(child::Description[normalize-space()!=''])">
+        	<xsl:if test="exists(child::Description[normalize-space(@ArchiveHandle)='' and normalize-space(@Link)=''][normalize-space(.)!=''])">
                 <descriptions>
-                	<xsl:for-each select="Description[normalize-space()!='']">
+                	<xsl:for-each select="Description[normalize-space(@ArchiveHandle)='' and normalize-space(@Link)=''][normalize-space()!='']">
                         <Description>
                         	<xsl:call-template name="xmlLang"/>
                             <xsl:value-of select="."/>
@@ -989,6 +1064,7 @@ $LastChangedDate: 2013-08-14 11:25:31 +0200 (Wed, 14 Aug 2013) $
     			</xsl:if>
     			<xsl:for-each select="Language">
     				<Content_Language>
+    					<xsl:call-template name="ResourceRefs"/>
     					<Id>
     						<xsl:call-template name="orUnspecified">
     							<xsl:with-param name="value" select="Id"/>
@@ -1045,22 +1121,7 @@ $LastChangedDate: 2013-08-14 11:25:31 +0200 (Wed, 14 Aug 2013) $
             </xsl:if>
             <xsl:for-each select="Actor">
                 <Actor>
-                	<xsl:variable name="ref" select="normalize-space(current()/@ResourceRef)" />
-                	<xsl:if test="$ref!=''">
-                		<xsl:variable name="target" select="//(MediaFile|WrittenResource)[@ResourceId=$ref]/ResourceLink[normalize-space(.)!='']"/>
-                		<xsl:choose>
-                			<xsl:when test="count($target) gt 1">
-                				<xsl:message>ERR: Actor/@ResourceRef[<xsl:value-of select="$ref"/>] resolves to multiple Resources! Taking the first one.</xsl:message>
-                				<xsl:attribute name="ref" select="generate-id(($target)[1])" />
-                			</xsl:when>
-                			<xsl:when test="count($target) eq 1">
-                				<xsl:attribute name="ref" select="generate-id($target)" />
-                			</xsl:when>
-                			<!--<xsl:otherwise>
-                				<xsl:message>ERR: Actor/@ResourceRef[<xsl:value-of select="$ref"/>] doesn't resolve to any Resource with a ResourceLink!</xsl:message>
-                			</xsl:otherwise>-->
-                		</xsl:choose>
-                	</xsl:if>
+                	<xsl:call-template name="ResourceRefs"/>
                     <Role>
                     	<xsl:call-template name="orUnspecified">
                     		<xsl:with-param name="value" select="./Role"/>
@@ -1081,11 +1142,6 @@ $LastChangedDate: 2013-08-14 11:25:31 +0200 (Wed, 14 Aug 2013) $
                     <EthnicGroup>
                         <xsl:value-of select=" ./EthnicGroup"/>
                     </EthnicGroup>
-                    <Age>
-                    	<xsl:call-template name="orUnspecified">
-                    		<xsl:with-param name="value" select="Age"/>
-                    	</xsl:call-template>
-                    </Age>
                     <BirthDate>
                     	<xsl:call-template name="orUnspecified">
                     		<xsl:with-param name="value" select="BirthDate"/>
@@ -1112,6 +1168,78 @@ $LastChangedDate: 2013-08-14 11:25:31 +0200 (Wed, 14 Aug 2013) $
                 			<xsl:with-param name="key" select="'Region'"/>
                 		</xsl:call-template>
                 	</xsl:if>
+                	<Age>
+                		<xsl:variable name="age" select="Age"/>
+                		<xsl:choose>
+                			<xsl:when test="normalize-space($age)!=''">
+                				<xsl:analyze-string select="normalize-space($age)" regex="^([0-9]{{1,3}})(;(0?[0-9]|1[01])(\.(0?[0-9]|[12][0-9]|30))?)?/([0-9]{{1,3}})(;(0?[0-9]|1[01])(\.(0?[0-9]|[12][0-9]|30))?)?$">
+                					<xsl:matching-substring>
+                						<AgeRange>
+                							<MinimumAge>
+                								<years>
+                									<xsl:value-of select="number(regex-group(1))"/>
+                								</years>
+                								<xsl:if test="normalize-space(regex-group(2))!=''">
+                									<months>
+                										<xsl:value-of select="number(regex-group(3))"/>
+                									</months>
+                									<xsl:if test="normalize-space(regex-group(4))!=''">
+                										<days>
+                											<xsl:value-of select="number(regex-group(5))"/>
+                										</days>
+                									</xsl:if>
+                								</xsl:if>
+                							</MinimumAge>
+                							<MaximumAge>
+                								<years>
+                									<xsl:value-of select="number(regex-group(6))"/>
+                								</years>
+                								<xsl:if test="normalize-space(regex-group(7))!=''">
+                									<months>
+                										<xsl:value-of select="number(regex-group(8))"/>
+                									</months>
+                									<xsl:if test="normalize-space(regex-group(9))!=''">
+                										<days>
+                											<xsl:value-of select="number(regex-group(10))"/>
+                										</days>
+                									</xsl:if>
+                								</xsl:if>
+                							</MaximumAge>
+                						</AgeRange>
+                					</xsl:matching-substring>
+                					<xsl:non-matching-substring>
+                						<xsl:analyze-string select="normalize-space($age)" regex="^([0-9]{{1,3}})(;(0?[0-9]|1[01])(\.(0?[0-9]|[12][0-9]|30))?)?$">
+                							<xsl:matching-substring>
+                								<ExactAge>
+                									<years>
+                										<xsl:value-of select="number(regex-group(1))"/>
+                									</years>
+                									<xsl:if test="normalize-space(regex-group(2))!=''">
+                										<months>
+                											<xsl:value-of select="number(regex-group(3))"/>
+                										</months>
+                										<xsl:if test="normalize-space(regex-group(4))!=''">
+                											<days>
+                												<xsl:value-of select="number(regex-group(5))"/>
+                											</days>
+                										</xsl:if>
+                									</xsl:if>
+                								</ExactAge>
+                							</xsl:matching-substring>
+                							<xsl:non-matching-substring>
+                								<EstimatedAge>
+                									<xsl:value-of select="$age"/>
+                								</EstimatedAge>
+                							</xsl:non-matching-substring>
+                						</xsl:analyze-string>
+                					</xsl:non-matching-substring>
+                				</xsl:analyze-string>
+                			</xsl:when>
+                			<xsl:otherwise>
+                				<EstimatedAge>Unspecified</EstimatedAge>
+                			</xsl:otherwise>
+                		</xsl:choose>
+                	</Age>
                 	<xsl:apply-templates select="Contact"/>
                 	<xsl:if test="$profile=$SL_PROFILE">
                 		<xsl:call-template name="keysToElements">
@@ -1228,6 +1356,7 @@ $LastChangedDate: 2013-08-14 11:25:31 +0200 (Wed, 14 Aug 2013) $
             </xsl:if>
             <xsl:for-each select="Language">
                 <Actor_Language>
+                	<xsl:call-template name="ResourceRefs"/>
                     <Id>
                     	<xsl:call-template name="orUnspecified">
                     		<xsl:with-param name="value" select="Id"/>
@@ -1362,20 +1491,26 @@ $LastChangedDate: 2013-08-14 11:25:31 +0200 (Wed, 14 Aug 2013) $
         	<xsl:if test="exists(ResourceLink[normalize-space(.)!=''])">
         		<xsl:attribute name="ref" select="generate-id(ResourceLink)"/>
         	</xsl:if>
-        	<xsl:if test="exists(MediaResourceLink[normalize-space(.)!=''])">
-        		<xsl:variable name="loc" select="MediaResourceLink"/>
-        		<xsl:variable name="res" select="//ResourceLink[.=$loc]"/>
-        		<xsl:if test="exists($res)">
+        	<xsl:variable name="refs" as="xs:string*">
+        		<xsl:for-each select="tokenize(MediaResourceLink,'\s+')[normalize-space(.)!='']">
+        			<xsl:variable name="loc" select="."/>
+        			<xsl:variable name="res" select="$doc//ResourceLink[.=$loc]"/>
         			<xsl:choose>
         				<xsl:when test="count($res) gt 1">
         					<xsl:message>ERR: WrittenResource/MediaResourceLink[<xsl:value-of select="$loc"/>] resolved to multiple ResourceLinks! Taking the first one.</xsl:message>
-        					<xsl:attribute name="mediaRef" select="generate-id(($res)[1])"/>
+        					<xsl:sequence select="generate-id(($res)[1])"/>
         				</xsl:when>
         				<xsl:when test="count($res) eq 1">
-        					<xsl:attribute name="mediaRef" select="generate-id($res)"/>
+        					<xsl:sequence select="generate-id($res)"/>
+        				</xsl:when>
+        				<xsl:when test="count($res) eq 0">
+        					<xsl:message>ERR: WrittenResource/MediaResourceLink[<xsl:value-of select="$loc"/>] couldn't be resolved!</xsl:message>
         				</xsl:when>
         			</xsl:choose>
-        		</xsl:if>
+        		</xsl:for-each>
+        	</xsl:variable>
+        	<xsl:if test="exists($refs)">
+        		<xsl:attribute name="mediaRef" select="string-join($refs,' ')"/>
         	</xsl:if>
         	<Date>
         		<xsl:call-template name="orUnspecified">
@@ -1461,6 +1596,7 @@ $LastChangedDate: 2013-08-14 11:25:31 +0200 (Wed, 14 Aug 2013) $
 
     <xsl:template match="Source">
         <Source>
+        	<xsl:call-template name="ResourceRefs"/>
             <Id>
                 <xsl:value-of select=" ./Id"/>
             </Id>
@@ -1534,9 +1670,6 @@ $LastChangedDate: 2013-08-14 11:25:31 +0200 (Wed, 14 Aug 2013) $
 
     <xsl:template match="Anonyms">
         <Anonyms>
-        	<xsl:if test="exists(ResourceLink[normalize-space(.)!=''])">
-        		<xsl:attribute name="ref" select="generate-id(ResourceLink)"/>
-        	</xsl:if>
         	<xsl:choose>
         		<xsl:when test="normalize-space(Access)!=''">
         			<xsl:apply-templates select="Access"/>
@@ -1556,16 +1689,28 @@ $LastChangedDate: 2013-08-14 11:25:31 +0200 (Wed, 14 Aug 2013) $
 
     <xsl:template match="child::References">
         <References>
-        	<xsl:if test="exists(child::Description[normalize-space(.)!=''])">
-                <descriptions>
-                	<xsl:for-each select="Description[normalize-space(.)!='']">
-                        <Description>
-                        	<xsl:call-template name="xmlLang"/>
-                            <xsl:value-of select="."/>
-                        </Description>
-                    </xsl:for-each>
-                </descriptions>
-            </xsl:if>
+        	<xsl:variable name="descriptions" select="Description[normalize-space(@ArchiveHandle)='' and normalize-space(@Link)=''][normalize-space(.)!='']"/>
+        	<xsl:variable name="infoLinks" select="Description[normalize-space(@ArchiveHandle)!='' or normalize-space(@Link)!='']"/>
+        	<xsl:if test="exists($descriptions)">
+        		<descriptions>
+        			<xsl:for-each select="$descriptions">
+        				<Description>
+        					<xsl:call-template name="xmlLang"/>
+        					<xsl:value-of select="."/>
+        				</Description>
+        			</xsl:for-each>
+        		</descriptions>
+        	</xsl:if>
+        	<xsl:for-each select="$infoLinks">
+        		<InfoLink ref="{generate-id(.)}">
+        			<xsl:if test="normalize-space(.)!=''">
+        				<Description>
+        					<xsl:call-template name="xmlLang"/>
+        					<xsl:value-of select="."/>
+        				</Description>
+        			</xsl:if>
+        		</InfoLink>
+        	</xsl:for-each>
         </References>
     </xsl:template>
 	
@@ -1587,6 +1732,7 @@ $LastChangedDate: 2013-08-14 11:25:31 +0200 (Wed, 14 Aug 2013) $
 									<xsl:value-of select="$iso"/>
 								</xsl:when>
 								<xsl:otherwise>
+									<xsl:message>WRN: [<xsl:value-of select="$codestr"/>] is not a ISO 639-1 language code, falling back to und.</xsl:message>
 									<xsl:value-of select="'und'"/>
 								</xsl:otherwise>
 							</xsl:choose>
@@ -1605,6 +1751,7 @@ $LastChangedDate: 2013-08-14 11:25:31 +0200 (Wed, 14 Aug 2013) $
 									<xsl:value-of select="$iso"/>
 								</xsl:when>
 								<xsl:otherwise>
+									<xsl:message>WRN: [<xsl:value-of select="$codestr"/>] is not a ISO 639-2 language code, falling back to und.</xsl:message>
 									<xsl:value-of select="'und'"/>
 								</xsl:otherwise>
 							</xsl:choose>
@@ -1616,10 +1763,11 @@ $LastChangedDate: 2013-08-14 11:25:31 +0200 (Wed, 14 Aug 2013) $
 						<xsl:when test="$codestr='xxx'">
 							<xsl:value-of select="'und'"/>
 						</xsl:when>
-						<xsl:when test="matches($codestr,'^[a-z]{3}$')">
+						<xsl:when test="exists(key('iso639_3-lookup', $codestr, $iso-lang-top))">
 							<xsl:value-of select="$codestr"/>
 						</xsl:when>
 						<xsl:otherwise>
+							<xsl:message>WRN: [<xsl:value-of select="$codestr"/>] is not a ISO 639-3 language code, falling back to und.</xsl:message>
 							<xsl:value-of select="'und'"/>
 						</xsl:otherwise>
 					</xsl:choose>
@@ -1629,32 +1777,20 @@ $LastChangedDate: 2013-08-14 11:25:31 +0200 (Wed, 14 Aug 2013) $
 						<xsl:when test="$codestr='xxx'">
 							<xsl:value-of select="'und'"/>
 						</xsl:when>
-						<xsl:when test="exists(key('iso639_2-lookup', $codestr, $iso-lang-top))">
-							<xsl:variable name="iso" select="key('iso639_2-lookup', $codestr, $iso-lang-top)/iso:i"/>
+						<xsl:when test="exists(key('iso639-lookup', $codestr, $iso-lang-top))">
+							<xsl:variable name="iso" select="key('iso639-lookup', $codestr, $iso-lang-top)/iso:i"/>
 							<xsl:choose>
 								<xsl:when test="$iso!='xxx'">
 									<xsl:value-of select="$iso"/>
 								</xsl:when>
 								<xsl:otherwise>
+									<xsl:message>WRN: [<xsl:value-of select="$codestr"/>] is not a ISO 639 language code, falling back to und.</xsl:message>
 									<xsl:value-of select="'und'"/>
 								</xsl:otherwise>
 							</xsl:choose>
-						</xsl:when>
-						<xsl:when test="exists(key('iso639_1-lookup', $codestr, $iso-lang-top))">
-							<xsl:variable name="iso" select="key('iso639_1-lookup', $codestr, $iso-lang-top)/iso:i"/>
-							<xsl:choose>
-								<xsl:when test="$iso!='xxx'">
-									<xsl:value-of select="$iso"/>
-								</xsl:when>
-								<xsl:otherwise>
-									<xsl:value-of select="'und'"/>
-								</xsl:otherwise>
-							</xsl:choose>
-						</xsl:when>
-						<xsl:when test="matches($codestr,'^[a-z]{3}$')">
-							<xsl:value-of select="$codestr"/>
 						</xsl:when>
 						<xsl:otherwise>
+							<xsl:message>WRN: [<xsl:value-of select="$codestr"/>] is not a ISO 639 language code, falling back to und.</xsl:message>
 							<xsl:value-of select="'und'"/>
 						</xsl:otherwise>
 					</xsl:choose>
@@ -1668,16 +1804,19 @@ $LastChangedDate: 2013-08-14 11:25:31 +0200 (Wed, 14 Aug 2013) $
 									<xsl:value-of select="$iso"/>
 								</xsl:when>
 								<xsl:otherwise>
+									<xsl:message>WRN: [<xsl:value-of select="$codestr"/>] is SIL code (?) with an unknown mapping to ISO 639, falling back to und.</xsl:message>
 									<xsl:value-of select="'und'"/>
 								</xsl:otherwise>
 							</xsl:choose>
 						</xsl:when>
 						<xsl:otherwise>
+							<xsl:message>WRN: [<xsl:value-of select="$codestr"/>] has no known mapping to ISO 639, falling back to und.</xsl:message>
 							<xsl:value-of select="'und'"/>
 						</xsl:otherwise>
 					</xsl:choose>
 				</xsl:when>
 				<xsl:otherwise>
+					<xsl:message>WRN: [<xsl:value-of select="$codestr"/>] has no known mapping to ISO 639, falling back to und.</xsl:message>
 					<xsl:value-of select="'und'"/>
 				</xsl:otherwise>
 			</xsl:choose>
@@ -1767,6 +1906,43 @@ $LastChangedDate: 2013-08-14 11:25:31 +0200 (Wed, 14 Aug 2013) $
 		<xsl:for-each select="Keys/Key[@Name=$key]">
 			<xsl:call-template name="keyOrUnspecified"/>
 		</xsl:for-each>
+	</xsl:template>
+	
+	<!-- cleanup:
+		- remove double ResourceProxies
+	-->
+	
+	<xsl:template match="node() | @*" mode="cleanup">
+		<xsl:copy>
+			<xsl:apply-templates select="node() | @*" mode="#current"/>
+		</xsl:copy>
+	</xsl:template>
+		
+	<xsl:template match="cmd:ResourceProxy" mode="cleanup">
+		<xsl:variable name="rt" select="cmd:ResourceType"/>
+		<xsl:variable name="rr" select="cmd:ResourceRef"/>
+		<xsl:if test="empty(preceding::cmd:ResourceProxy[cmd:ResourceType=$rt][cmd:ResourceRef=$rr])">
+			<xsl:copy>
+				<xsl:apply-templates select="node() | @*" mode="#current"/>
+			</xsl:copy>
+		</xsl:if>
+	</xsl:template>
+	
+	<xsl:template match="cmd:Components//@ref" mode="cleanup">
+		<xsl:variable name="ref" select="string(.)"/>
+		<xsl:variable name="proxies" select="/cmd:CMD/cmd:Resources/cmd:ResourceProxyList/cmd:ResourceProxy"/>
+		<xsl:attribute name="ref">
+			<xsl:for-each select="tokenize($ref,'\s+')">
+				<xsl:variable name="rp" select="$proxies[@id=current()]"/>
+				<xsl:variable name="rt" select="$rp/cmd:ResourceType"/>
+				<xsl:variable name="rr" select="$rp/cmd:ResourceRef"/>
+				<xsl:variable name="id" select="($proxies[cmd:ResourceType=$rt][cmd:ResourceRef=$rr])[1]/@id"/>
+				<xsl:sequence select="$id"/>
+				<xsl:if test="position()!=last()">
+        			<xsl:sequence select="' '"/>
+        		</xsl:if>
+			</xsl:for-each>
+		</xsl:attribute>
 	</xsl:template>
 
 </xsl:stylesheet>
