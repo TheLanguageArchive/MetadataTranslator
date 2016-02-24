@@ -9,6 +9,10 @@ In the case of staging deployment on lux17, make sure to re-wire the
 HandleResolver implementation. See the installation instructions (step 5.4) for
 details.
 
+UPGRADING FROM 1.5.1 TO 1.6.0
+
+No configuration changes required
+
 UPGRADING FROM 1.5.0 TO 1.5.1
 
 The following optional context parameter can now be set to specify the URL of a
