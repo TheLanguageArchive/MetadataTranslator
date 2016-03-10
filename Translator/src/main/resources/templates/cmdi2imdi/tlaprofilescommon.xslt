@@ -92,6 +92,48 @@
             </xsl:if>
         </Description>
     </xsl:template>
+    
+    <!-- ACTORS -->
+    
+    <xsl:template match="Actor/Age" mode="COMMONTLA2IMDISESSION">
+        <xsl:choose>
+            <xsl:when test="ExactAge">
+                <xsl:value-of select="ExactAge/years"/>
+                <xsl:if test="ExactAge/months">
+                    <xsl:text>;</xsl:text>
+                    <xsl:value-of select="ExactAge/months"/>
+                    <xsl:if test="ExactAge/days">
+                        <xsl:text>.</xsl:text>
+                        <xsl:value-of select="ExactAge/days"/>
+                    </xsl:if>
+                </xsl:if>
+            </xsl:when>
+            <xsl:when test="AgeRange">
+                <xsl:value-of select="AgeRange/MinimumAge/years"/>
+                <xsl:if test="AgeRange/MinimumAge/months">
+                    <xsl:text>;</xsl:text>
+                    <xsl:value-of select="AgeRange/MinimumAge/months"/>
+                    <xsl:if test="AgeRange/MinimumAge/days">
+                        <xsl:text>.</xsl:text>
+                        <xsl:value-of select="AgeRange/MinimumAge/days"/>
+                    </xsl:if>
+                </xsl:if>
+                <xsl:text>/</xsl:text>
+                <xsl:value-of select="AgeRange/MaximumAge/years"/>
+                <xsl:if test="AgeRange/MaximumAge/months">
+                    <xsl:text>;</xsl:text>
+                    <xsl:value-of select="AgeRange/MaximumAge/months"/>
+                    <xsl:if test="AgeRange/MaximumAge/days">
+                        <xsl:text>.</xsl:text>
+                        <xsl:value-of select="AgeRange/MaximumAge/days"/>
+                    </xsl:if>
+                </xsl:if>
+            </xsl:when>
+            <xsl:otherwise>
+                <xsl:value-of select="EstimatedAge"/>
+            </xsl:otherwise>
+        </xsl:choose>
+    </xsl:template>
 
     <!-- RESOURCES -->
 

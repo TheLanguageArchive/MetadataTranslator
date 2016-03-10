@@ -249,7 +249,7 @@
                 <xsl:value-of select="child::EthnicGroup"/>
             </EthnicGroup>
             <Age>
-                <xsl:value-of select="child::Age"/>
+                <xsl:apply-templates select="child::Age" mode="COMMONTLA2IMDISESSION" />
             </Age>
             <BirthDate>
                 <xsl:value-of select="child::BirthDate"/>
