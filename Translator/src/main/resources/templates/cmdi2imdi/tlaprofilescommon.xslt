@@ -354,8 +354,26 @@
             </ResourceLink>
             <MediaResourceLink>
                 <xsl:if test="@mediaRef">
-                    <xsl:apply-templates select="//ResourceProxy[@id eq current()/@mediaRef]"
-                        mode="create-resource-link-content"/>
+                    <xsl:variable name="mediaRefs">
+                        <xsl:variable name="resourceProxyList" select="//ResourceProxy" />
+                        <!-- There can be multiple refs, look up each of them and concatenate -->
+                        <xsl:for-each select="tokenize(normalize-space(current()/@mediaRef), ' ')">
+                            <xsl:variable name="mediaRef" select="." />
+                            <xsl:variable name="rp" select="$resourceProxyList[@id eq $mediaRef]" />
+                            <xsl:variable name="localUri" select="$rp/ResourceRef/@lat:localURI" />
+                            <xsl:choose>
+                                <xsl:when test="$localUri">
+                                    <xsl:value-of select="resolve-uri($localUri, $source-location)"/>
+                                </xsl:when>
+                                <xsl:otherwise>
+                                    <xsl:value-of select="resolve-uri($rp/ResourceRef,$source-location)"/>
+                                </xsl:otherwise>
+                            </xsl:choose>
+                            <xsl:value-of select="' '"/>
+                        </xsl:for-each>
+                    </xsl:variable>
+                    <!-- Normalize to remove trailing whitespace -->
+                    <xsl:value-of select="normalize-space($mediaRefs)" />
                 </xsl:if>
             </MediaResourceLink>
             <Date>
