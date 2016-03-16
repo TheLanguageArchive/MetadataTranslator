@@ -228,7 +228,7 @@
          </MediaFile>
          <WrittenResource>
             <ResourceLink ArchiveHandle="hdl:1839/00-0000-0000-0001-55CF-9">http://archive/corpus/my-collection/Metadata/Annotations/fn000056.bpt</ResourceLink>
-            <MediaResourceLink ArchiveHandle="hdl:1839/00-0000-0000-0001-55CE-3">http://archive/corpus/my-collection/Metadata/MediaFile/fn000056.wav</MediaResourceLink>
+            <MediaResourceLink>http://archive/corpus/my-collection/Metadata/MediaFile/fn000056.wav</MediaResourceLink>
             <Date>Unspecified</Date>
             <Type>Annotation</Type>
             <SubType>phonetics</SubType>
@@ -255,7 +255,7 @@
          </WrittenResource>
          <WrittenResource>
             <ResourceLink ArchiveHandle="hdl:1839/00-0000-0000-0001-55D0-D">http://archive/corpus/my-collection/Metadata/Annotations/fn000056.tag</ResourceLink>
-            <MediaResourceLink ArchiveHandle="hdl:1839/00-0000-0000-0001-55CE-3">http://archive/corpus/my-collection/Metadata/MediaFile/fn000056.wav</MediaResourceLink>
+            <MediaResourceLink>http://archive/corpus/my-collection/Metadata/MediaFile/fn000056.wav</MediaResourceLink>
             <Date>Unspecified</Date>
             <Type>Annotation</Type>
             <SubType>pos, lemma, marked</SubType>
@@ -282,7 +282,7 @@
          </WrittenResource>
          <WrittenResource>
             <ResourceLink ArchiveHandle="hdl:1839/00-0000-0000-0001-55D1-C">http://archive/corpus/my-collection/Metadata/Annotations/fn000056.pri</ResourceLink>
-            <MediaResourceLink ArchiveHandle="hdl:1839/00-0000-0000-0001-55CE-3">http://archive/corpus/my-collection/Metadata/MediaFile/fn000056.wav</MediaResourceLink>
+            <MediaResourceLink>http://archive/corpus/my-collection/Metadata/MediaFile/fn000056.wav</MediaResourceLink>
             <Date>Unspecified</Date>
             <Type>Annotation</Type>
             <SubType>orthography</SubType>
@@ -309,7 +309,7 @@
          </WrittenResource>
          <WrittenResource>
             <ResourceLink>http://archive/corpus/my-collection/Metadata/Annotations/fn000056.eaf</ResourceLink>
-            <MediaResourceLink ArchiveHandle="hdl:1839/00-0000-0000-0001-55CE-3">http://archive/corpus/my-collection/Metadata/MediaFile/fn000056.wav</MediaResourceLink>
+            <MediaResourceLink>http://archive/corpus/my-collection/Metadata/MediaFile/fn000056.wav</MediaResourceLink>
             <Date>Unspecified</Date>
             <Type>Annotation</Type>
             <SubType>phonetics</SubType>
@@ -336,7 +336,7 @@
          </WrittenResource>
          <WrittenResource>
             <ResourceLink ArchiveHandle="hdl:1839/00-0000-0000-0001-55D3-F">http://archive/corpus/my-collection/Metadata/Annotations/fn000056.skp</ResourceLink>
-            <MediaResourceLink ArchiveHandle="hdl:1839/00-0000-0000-0001-55CE-3">http://archive/corpus/my-collection/Metadata/MediaFile/fn000056.wav</MediaResourceLink>
+            <MediaResourceLink>http://archive/corpus/my-collection/Metadata/MediaFile/fn000056.wav</MediaResourceLink>
             <Date>Unspecified</Date>
             <Type>Annotation</Type>
             <SubType>labelling</SubType>
@@ -363,7 +363,7 @@
          </WrittenResource>
          <WrittenResource>
             <ResourceLink ArchiveHandle="hdl:1839/00-0000-0000-0001-55D4-A">http://archive/corpus/my-collection/Metadata/Annotations/fn000056.tig</ResourceLink>
-            <MediaResourceLink ArchiveHandle="hdl:1839/00-0000-0000-0001-55CE-3">http://archive/corpus/my-collection/Metadata/MediaFile/fn000056.wav</MediaResourceLink>
+            <MediaResourceLink>http://archive/corpus/my-collection/Metadata/MediaFile/fn000056.wav</MediaResourceLink>
             <Date>Unspecified</Date>
             <Type>Annotation</Type>
             <SubType>syntax</SubType>
