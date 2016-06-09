@@ -1,5 +1,8 @@
 Current version: ${project.artifactId}-${project.version}-r${revisionId}
 
+Changes for metadata-translator-1.6.1:
+- Changes in transformation of Session-like CMDI metadata to IMDI
+
 Changes for metadata-translator-1.6.0:
 - Many changes and fixes to IMDI<>CMDI conversion stylesheet
 - Transformer logging output redirect to application log
