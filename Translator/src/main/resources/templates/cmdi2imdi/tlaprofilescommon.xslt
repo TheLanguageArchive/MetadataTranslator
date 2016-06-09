@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet xmlns="http://www.mpi.nl/IMDI/Schema/IMDI"
-    xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:tla="http://tla.mpi.nl"
-    xmlns:lat="http://lat.mpi.nl/" version="2.0" xpath-default-namespace="http://www.clarin.eu/cmd/">
+                xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:tla="http://tla.mpi.nl"
+                xmlns:lat="http://lat.mpi.nl/" version="2.0" xpath-default-namespace="http://www.clarin.eu/cmd/">
 
     <!-- DESCRIPTIONS AND INFO LINKS -->
 
@@ -132,7 +132,7 @@
             <xsl:otherwise>
                 <xsl:value-of select="EstimatedAge"/>
             </xsl:otherwise>
-        </xsl:choose>
+        </xsl:choose> 
     </xsl:template>
 
     <!-- RESOURCES -->
@@ -145,16 +145,16 @@
             <!-- MediaFiles: first from proxies, then remaining unreferenced resources -->
             <xsl:apply-templates mode="COMMONTLA2IMDISESSION-MEDIAFILE" select="ResourceProxy"/>
             <xsl:apply-templates mode="COMMONTLA2IMDISESSION"
-                select="//MediaFile[normalize-space(@ref)='']"/>
+                                 select="//MediaFile[normalize-space(@ref)='']"/>
 
             <!-- WrittenResources: first from proxies, then remaining unreferenced resources -->
             <xsl:apply-templates mode="COMMONTLA2IMDISESSION-WRITTENRESOURCE" select="ResourceProxy"/>
             <xsl:apply-templates mode="COMMONTLA2IMDISESSION"
-                select="//WrittenResource[normalize-space(@ref)='']"/>
+                                 select="//WrittenResource[normalize-space(@ref)='']"/>
 
             <!-- Sources -->
             <xsl:apply-templates select="//Resources/Source"
-                mode="COMMONTLA2IMDISESSION"/>
+                                 mode="COMMONTLA2IMDISESSION"/>
 
             <!-- TODO: Anonyms? -->
         </Resources>
@@ -202,7 +202,8 @@
                     <!-- No matching MediaFile, generate on basis of proxy alone -->
                     <xsl:message>A MediaFile element for ResourceProxy with id '<xsl:value-of
                             select="@id"/>' is generated on basis of mimetype <xsl:value-of
-                            select="$mimetype"/></xsl:message>
+                            select="$mimetype"/>
+                    </xsl:message>
                     <MediaFile>
                         <xsl:comment>NOTE: CMDI2IMDI - No MediaFile element was found for this resource, minimal information was generated on basis of ResourceProxy only</xsl:comment>
                         <ResourceLink>
@@ -250,7 +251,7 @@
             <xsl:apply-templates select="." mode="generate-ResourceId"/>
             <ResourceLink>
                 <xsl:apply-templates select="//ResourceProxy[@id eq current()/@ref]"
-                    mode="create-resource-link-content"/>
+                                     mode="create-resource-link-content"/>
             </ResourceLink>
             <Type>
                 <xsl:value-of select="Type"/>
@@ -263,9 +264,9 @@
                     <xsl:value-of select="Size"/>
                 </xsl:if>
                 <xsl:if test="TotalSize">
-                   <xsl:value-of select="TotalSize/Number"/>
-                   <xsl:text> </xsl:text>
-                   <xsl:value-of select="TotalSize/SizeUnit"/>
+                    <xsl:value-of select="TotalSize/Number"/>
+                    <xsl:text> </xsl:text>
+                    <xsl:value-of select="TotalSize/SizeUnit"/>
                 </xsl:if>
             </Size>
             <Quality>
@@ -286,7 +287,7 @@
     <xsl:template match="ResourceProxy" mode="COMMONTLA2IMDISESSION-WRITTENRESOURCE">
         <xsl:if test="normalize-space(ResourceType) = 'Resource'">
             <xsl:variable name="writtenResource"
-                select="//Resources/WrittenResource[@ref=current()/@id]"/>
+                          select="//Resources/WrittenResource[@ref=current()/@id]"/>
             <xsl:choose>
                 <xsl:when test="$writtenResource">
                     <!-- A matching MediaFile element exists, transform from this -->
@@ -302,7 +303,8 @@
                     <!-- No matching MediaFile, generate on basis of proxy alone -->
                     <xsl:message>A WrittenResource element for ResourceProxy with id '<xsl:value-of
                             select="@id"/>' is generated on basis of mimetype <xsl:value-of
-                            select="ResourceType/@mimetype"/></xsl:message>
+                            select="ResourceType/@mimetype"/>
+                    </xsl:message>
                     <WrittenResource>
                         <xsl:comment>NOTE: CMDI2IMDI - No WrittenResource element was found for this resource, minimal information was generated on basis of ResourceProxy only</xsl:comment>
                         <ResourceLink>
@@ -350,7 +352,7 @@
             <xsl:apply-templates select="." mode="generate-ResourceId"/>
             <ResourceLink>
                 <xsl:apply-templates select="//ResourceProxy[@id eq current()/@ref]"
-                    mode="create-resource-link-content"/>
+                                     mode="create-resource-link-content"/>
             </ResourceLink>
             <MediaResourceLink>
                 <xsl:if test="@mediaRef">
@@ -390,7 +392,7 @@
             </Format>
             <Size>
                 <xsl:if test="Size">
-                <xsl:value-of select="Size"/>
+                    <xsl:value-of select="Size"/>
                 </xsl:if>
                 <xsl:if test="TotalSize">
                     <xsl:value-of select="TotalSize/Number"/>
@@ -562,10 +564,14 @@
                 <xsl:value-of select="child::Country"/>
             </Country>
             <xsl:for-each select="child::Region">
-                <Region><xsl:value-of select="."/></Region>
+                <Region>
+                    <xsl:value-of select="."/>
+                </Region>
             </xsl:for-each>
             <xsl:if test="child::Address">
-                <Address><xsl:value-of select="child::Address"/></Address>
+                <Address>
+                    <xsl:value-of select="child::Address"/>
+                </Address>
             </xsl:if>
         </Location>
     </xsl:template>

@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet xmlns="http://www.mpi.nl/IMDI/Schema/IMDI"
-    xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:tla="http://tla.mpi.nl"
-    xmlns:lat="http://lat.mpi.nl/" version="2.0" xpath-default-namespace="http://www.clarin.eu/cmd/">
+                xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:tla="http://tla.mpi.nl"
+                xmlns:lat="http://lat.mpi.nl/" version="2.0" xpath-default-namespace="http://www.clarin.eu/cmd/">
 
     <xsl:template name="DBDSESSION2IMDISESSION">
         <METATRANSCRIPT xmlns="http://www.mpi.nl/IMDI/Schema/IMDI"
-            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" FormatId="IMDI 3.0" Type="SESSION"
-            Version="0"
-            xsi:schemaLocation="http://www.mpi.nl/IMDI/Schema/IMDI http://www.mpi.nl/IMDI/Schema/IMDI_3.0.xsd">
+                        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" FormatId="IMDI 3.0" Type="SESSION"
+                        Version="0"
+                        xsi:schemaLocation="http://www.mpi.nl/IMDI/Schema/IMDI http://www.mpi.nl/IMDI/Schema/IMDI_3.0.xsd">
             <xsl:attribute name="ArchiveHandle">
                 <xsl:value-of select="tla:getHandleWithoutFormat(//Header/MdSelfLink, 'imdi')"/>
             </xsl:attribute>
@@ -123,9 +123,9 @@
             </Genre>
             <xsl:if test="normalize-space(child::SubGenre)!=''">
                 <!-- removed the following attributes: 
-                            Link="http://www.mpi.nl/IMDI/Schema/Content-SubGenre.xml" Type="OpenVocabularyList"
-                     because the subgenre link depends on the selected genre
-                    -->
+                        Link="http://www.mpi.nl/IMDI/Schema/Content-SubGenre.xml" Type="OpenVocabularyList"
+                 because the subgenre link depends on the selected genre
+                -->
                 <SubGenre>
                     <xsl:value-of select="child::SubGenre"/>
                 </SubGenre>
@@ -137,46 +137,46 @@
             </xsl:if>
             <xsl:if test="normalize-space(child::Modalities)!=''">
                 <Modalities Link="http://www.mpi.nl/IMDI/Schema/Content-Modalities.xml"
-                    Type="OpenVocabularyList">
+                            Type="OpenVocabularyList">
                     <xsl:value-of select="child::Modalities"/>
                 </Modalities>
             </xsl:if>
             <xsl:if test="normalize-space(child::Subject)!=''">
                 <Subject Link="http://www.mpi.nl/IMDI/Schema/Content-Subject.xml"
-                    Type="OpenVocabularyList">
+                         Type="OpenVocabularyList">
                     <xsl:value-of select="child::Subject"/>
                 </Subject>
             </xsl:if>
             <CommunicationContext>
                 <Interactivity Link="http://www.mpi.nl/IMDI/Schema/Content-Interactivity.xml"
-                    Type="ClosedVocabulary">
+                               Type="ClosedVocabulary">
                     <xsl:value-of select="child::CommunicationContext/Interactivity"/>
                 </Interactivity>
                 <PlanningType Link="http://www.mpi.nl/IMDI/Schema/Content-PlanningType.xml"
-                    Type="ClosedVocabulary">
+                              Type="ClosedVocabulary">
                     <xsl:value-of select="child::CommunicationContext/PlanningType"/>
                 </PlanningType>
                 <Involvement Link="http://www.mpi.nl/IMDI/Schema/Content-Involvement.xml"
-                    Type="ClosedVocabulary">
+                             Type="ClosedVocabulary">
                     <xsl:value-of select="child::CommunicationContext/Involvement"/>
                 </Involvement>
                 <SocialContext Link="http://www.mpi.nl/IMDI/Schema/Content-SocialContext.xml"
-                    Type="ClosedVocabulary">
+                               Type="ClosedVocabulary">
                     <xsl:value-of select="child::CommunicationContext/SocialContext"/>
                 </SocialContext>
                 <EventStructure Link="http://www.mpi.nl/IMDI/Schema/Content-EventStructure.xml"
-                    Type="ClosedVocabulary">
+                                Type="ClosedVocabulary">
                     <xsl:value-of select="child::CommunicationContext/EventStructure"/>
                 </EventStructure>
                 <Channel Link="http://www.mpi.nl/IMDI/Schema/Content-Channel.xml"
-                    Type="ClosedVocabulary">
+                         Type="ClosedVocabulary">
                     <xsl:value-of select="child::CommunicationContext/Channel"/>
                 </Channel>
             </CommunicationContext>
             <Languages>
                 <xsl:apply-templates select="Languages/Descriptions" mode="COMMONTLA2IMDISESSION"/>
                 <xsl:apply-templates select="Languages/Language"
-                    mode="DBDSESSION2IMDISESSION_CONTENTLANG"/>
+                                     mode="DBDSESSION2IMDISESSION_CONTENTLANG"/>
             </Languages>
             <Keys>
                 <xsl:apply-templates select="child::LanguageMode" mode="CREATE-KEYS-DBD-OPEN" />
@@ -205,13 +205,13 @@
                 <xsl:value-of select="child::Code"/>
             </Code>
             <FamilySocialRole Link="http://www.mpi.nl/IMDI/Schema/Actor-FamilySocialRole.xml"
-                Type="OpenVocabularyList">
+                              Type="OpenVocabularyList">
                 <xsl:value-of select="child::FamilySocialRole"/>
             </FamilySocialRole>
             <Languages>
                 <xsl:apply-templates select="Languages/Descriptions" mode="COMMONTLA2IMDISESSION"/>
                 <xsl:apply-templates select="descendant::Language"
-                    mode="DBDSESSION2IMDISESSION_ACTORLANG"/>
+                                     mode="DBDSESSION2IMDISESSION_ACTORLANG"/>
             </Languages>
             <EthnicGroup>
                 <xsl:value-of select="child::EthnicGroup"/>
