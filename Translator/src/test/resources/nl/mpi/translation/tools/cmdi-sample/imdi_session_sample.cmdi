@@ -152,7 +152,18 @@
                <Education/>
                <Anonymized>Unspecified</Anonymized>
                <Age>
-                  <EstimatedAge>Unspecified</EstimatedAge>
+                  <AgeRange>
+                     <MinimumAge>
+                        <years>42</years>
+                        <months>1</months>
+                        <days>1</days>
+                     </MinimumAge>
+                     <MaximumAge>
+                        <years>43</years>
+                        <months>12</months>
+                        <days>31</days>
+                     </MaximumAge>
+                  </AgeRange>
                </Age>
                <Contact/>
                <Keys>
@@ -172,7 +183,16 @@
                <Education/>
                <Anonymized>Unspecified</Anonymized>
                <Age>
-                  <EstimatedAge>Unspecified</EstimatedAge>
+                  <AgeRange>
+                     <MinimumAge>
+                        <years>42</years>
+                        <days>1</days>
+                     </MinimumAge>
+                     <MaximumAge>
+                        <years>43</years>
+                        <days>31</days>
+                     </MaximumAge>
+                  </AgeRange>
                </Age>
                <Contact/>
                <Keys>

@@ -109,7 +109,7 @@
                        
                     </Languages>
                     <EthnicGroup/> <!-- TODO: used to have type attribute, evaluate -->
-                    <Age>Unspecified</Age>
+                    <Age>42;1.1/43;12.31</Age>
                     <BirthDate>Unspecified</BirthDate>
                     <Sex Link="http://www.mpi.nl/IMDI/Schema/Actor-Sex.xml"
                         Type="ClosedVocabulary">Unspecified</Sex>
@@ -130,7 +130,7 @@
                     <Languages>
                     </Languages>
                     <EthnicGroup/> <!-- TODO: used to have type attribute, evaluate -->
-                    <Age>Unspecified</Age>
+                    <Age>42;0.1/43;0.31</Age>
                     <BirthDate>Unspecified</BirthDate>
                     <Sex Link="http://www.mpi.nl/IMDI/Schema/Actor-Sex.xml"
                         Type="ClosedVocabulary">Unspecified</Sex>
