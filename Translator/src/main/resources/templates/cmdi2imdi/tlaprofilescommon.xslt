@@ -110,24 +110,46 @@
             </xsl:when>
             <xsl:when test="AgeRange">
                 <xsl:value-of select="AgeRange/MinimumAge/years"/>
-                <xsl:if test="AgeRange/MinimumAge/months">
-                    <xsl:text>;</xsl:text>
-                    <xsl:value-of select="AgeRange/MinimumAge/months"/>
-                    <xsl:if test="AgeRange/MinimumAge/days">
-                        <xsl:text>.</xsl:text>
-                        <xsl:value-of select="AgeRange/MinimumAge/days"/>
-                    </xsl:if>
-                </xsl:if>
+                <xsl:choose>
+                    <xsl:when test="AgeRange/MinimumAge/months">
+                        <!-- months for minimum age -->
+                        <xsl:text>;</xsl:text>
+                        <xsl:value-of select="AgeRange/MinimumAge/months"/>
+                        <xsl:if test="AgeRange/MinimumAge/days">
+                            <!-- days within months for minimum age --> 
+                            <xsl:text>.</xsl:text>
+                            <xsl:value-of select="AgeRange/MinimumAge/days"/>
+                        </xsl:if>
+                    </xsl:when>
+                    <xsl:otherwise>
+                        <xsl:if test="AgeRange/MinimumAge/days">
+                            <!-- days but no months for minimum age -->
+                            <xsl:text>;0.</xsl:text>
+                            <xsl:value-of select="AgeRange/MinimumAge/days"/>
+                        </xsl:if>
+                    </xsl:otherwise>
+                </xsl:choose>
                 <xsl:text>/</xsl:text>
                 <xsl:value-of select="AgeRange/MaximumAge/years"/>
-                <xsl:if test="AgeRange/MaximumAge/months">
-                    <xsl:text>;</xsl:text>
-                    <xsl:value-of select="AgeRange/MaximumAge/months"/>
-                    <xsl:if test="AgeRange/MaximumAge/days">
-                        <xsl:text>.</xsl:text>
-                        <xsl:value-of select="AgeRange/MaximumAge/days"/>
-                    </xsl:if>
-                </xsl:if>
+                <xsl:choose>
+                    <xsl:when test="AgeRange/MaximumAge/months">
+                      <!-- months for maximum age -->
+                      <xsl:text>;</xsl:text>
+                      <xsl:value-of select="AgeRange/MaximumAge/months"/>
+                      <xsl:if test="AgeRange/MaximumAge/days">
+                          <!-- days within months for maximum age --> 
+                          <xsl:text>.</xsl:text>
+                          <xsl:value-of select="AgeRange/MaximumAge/days"/>
+                      </xsl:if>
+                    </xsl:when>
+                    <xsl:otherwise>
+                        <xsl:if test="AgeRange/MaximumAge/days">
+                          <!-- days but no months for maximum age -->
+                          <xsl:text>;0.</xsl:text>
+                            <xsl:value-of select="AgeRange/MaximumAge/days"/>
+                        </xsl:if>
+                    </xsl:otherwise>
+                </xsl:choose>
             </xsl:when>
             <xsl:otherwise>
                 <xsl:value-of select="EstimatedAge"/>
