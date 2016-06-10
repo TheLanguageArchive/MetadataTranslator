@@ -337,14 +337,32 @@
         	<xsl:if test="normalize-space(@CatalogueLink)!='' or normalize-space(@CatalogueHandle)!=''">
             	<xsl:variable name="cat" as="xs:string?">
             		<xsl:variable name="hdl" select="replace(@CatalogueHandle,'hdl:','http://hdl.handle.net/')"/>
+            		<!-- test if document referenced by handle can be retrieved and has catalogue information --> 
+            		<xsl:variable name="hdl-doc">
+            			<xsl:if test="normalize-space($hdl)!='' and doc-available($hdl)">
+            				<xsl:if test="doc-available($hdl)">
+            					<xsl:variable name="catalogue" select="doc($hdl)"/>
+            					<xsl:if test="$catalogue/METATRANSCRIPT/Catalogue">
+            						<xsl:sequence select="$hdl" />
+            					</xsl:if>
+            				</xsl:if>
+            			</xsl:if>
+            		</xsl:variable>
             		<xsl:choose>
-            			<xsl:when test="normalize-space($hdl)!='' and doc-available($hdl)">
+            			<xsl:when test="$hdl-doc = $hdl">
             				<!-- handle works -->
             				<xsl:sequence select="$hdl"/>
             			</xsl:when>
             			<xsl:when test="normalize-space(@CatalogueLink)!=''">
-            				<!-- try link below -->
-            				<xsl:sequence select="@CatalogueLink"/>
+            				<!-- fall back to catalogue link -->
+            				<xsl:choose>
+	            				<xsl:when test="normalize-space($uri-base)=''">
+	            					<xsl:sequence select="@CatalogueLink"/>
+	            				</xsl:when>
+	            				<xsl:otherwise>
+	            					<xsl:value-of select="resolve-uri(normalize-space(@CatalogueLink), $uri-base)"/>
+	            				</xsl:otherwise>
+            				</xsl:choose>
             			</xsl:when>
             			<xsl:otherwise>
             				<!-- report failing handle below -->
@@ -352,170 +370,10 @@
             			</xsl:otherwise>
             		</xsl:choose>
             	</xsl:variable>
-            	<xsl:choose>
+        		<xsl:choose>
             		<xsl:when test="doc-available($cat)">
             			<xsl:variable name="catalogue" select="doc($cat)"/>
-            			<xsl:for-each select="$catalogue/METATRANSCRIPT/Catalogue">
-            				<Catalogue>
-            					<!-- CMD Elements -->
-            					<xsl:for-each select="ContentType[normalize-space()!='']">
-            						<ContentType>
-            							<xsl:value-of select="."/>
-            						</ContentType>
-            					</xsl:for-each>
-            					<xsl:if test="normalize-space(SmallestAnnotationUnit)!=''">
-            						<SmallestAnnotationUnit>
-            							<xsl:call-template name="orUnspecified">
-            								<xsl:with-param name="value" select="SmallestAnnotationUnit"/>
-            							</xsl:call-template>
-            						</SmallestAnnotationUnit>
-            					</xsl:if>
-            					<xsl:if test="normalize-space(Date)!=''">
-            						<Date>
-            							<xsl:call-template name="orUnspecified">
-            								<xsl:with-param name="value" select="Date"/>
-            							</xsl:call-template>
-            						</Date>
-            					</xsl:if>
-            					<xsl:for-each select="Publisher[normalize-space()!='']">
-            						<Publisher>
-            							<xsl:value-of select="."/>
-            						</Publisher>
-            					</xsl:for-each>
-            					<xsl:for-each select="Author[normalize-space()!='']">
-            						<Author>
-            							<xsl:value-of select="."/>
-            						</Author>
-            					</xsl:for-each>
-            					<xsl:if test="normalize-space(Size)!=''">
-            						<Size>
-            							<xsl:value-of select="Size"/>
-            						</Size>
-            					</xsl:if>
-            					<xsl:if test="normalize-space(DistributionForm)!=''">
-            						<DistributionForm>
-            							<xsl:call-template name="orUnspecified">
-            								<xsl:with-param name="value" select="DistributionForm"/>
-            							</xsl:call-template>
-            						</DistributionForm>
-            					</xsl:if>
-            					<xsl:if test="normalize-space(Pricing)!=''">
-            						<Pricing>
-            							<xsl:value-of select="Pricing"/>
-            						</Pricing>
-            					</xsl:if>
-            					<xsl:if test="normalize-space(ContactPerson)!=''">
-            						<ContactPerson>
-            							<xsl:value-of select="ContactPerson"/>
-            						</ContactPerson>
-            					</xsl:if>
-            					<xsl:if test="normalize-space(Publications)!=''">
-            						<Publications>
-            							<xsl:value-of select="Publications"/>
-            						</Publications>
-            					</xsl:if>
-            					<!-- CMD Components -->
-            					<xsl:if test="exists(Description[normalize-space()!=''])">
-            						<descriptions>
-            							<xsl:for-each select="Description[normalize-space()!='']">
-            								<Description>
-            									<xsl:call-template name="xmlLang"/>
-            									<xsl:value-of select="."/>
-            								</Description>
-            							</xsl:for-each>
-            						</descriptions>
-            					</xsl:if>
-            					<xsl:variable name="doclangs" select="DocumentLanguages/Language[normalize-space()!='']"/>
-            					<xsl:if test="exists($doclangs)">
-            						<Document_Languages>
-            							<xsl:for-each select="$doclangs">
-            								<Document_Language>
-            									<Id>
-            										<xsl:call-template name="orUnspecified">
-            											<xsl:with-param name="value" select="Id"/>
-            										</xsl:call-template>
-            									</Id>
-            									<Name>
-            										<xsl:value-of select=" ./Name"/>
-            									</Name>
-            								</Document_Language>
-            							</xsl:for-each>
-            						</Document_Languages>
-            					</xsl:if>
-            					<xsl:variable name="sublangs" select="SubjectLanguages/Language[normalize-space()!='']"/>
-            					<xsl:if test="exists($sublangs)">
-            						<Subject_Languages>
-            							<xsl:for-each select="$sublangs">
-            								<Subject_Language>
-            									<Id>
-            										<xsl:call-template name="orUnspecified">
-            											<xsl:with-param name="value" select="Id"/>
-            										</xsl:call-template>
-            									</Id>
-            									<Name>
-            										<xsl:value-of select=" ./Name"/>
-            									</Name>
-            									<Dominant>
-            										<xsl:call-template name="orUnspecified">
-            											<xsl:with-param name="value" select="Dominant"/>
-            										</xsl:call-template>
-            									</Dominant>
-            									<SourceLanguage>
-            										<xsl:call-template name="orUnspecified">
-            											<xsl:with-param name="value" select="SourceLanguage"/>
-            										</xsl:call-template>
-            									</SourceLanguage>
-            									<TargetLanguage>
-            										<xsl:call-template name="orUnspecified">
-            											<xsl:with-param name="value" select="TargetLanguage"/>
-            										</xsl:call-template>
-            									</TargetLanguage>
-            									<xsl:if test="exists(Description[normalize-space()!=''])">
-            										<descriptions>
-            											<xsl:for-each select="Description[normalize-space()!='']">
-            												<Description>
-            													<xsl:call-template name="xmlLang"/>
-            													<xsl:value-of select="."/>
-            												</Description>
-            											</xsl:for-each>
-            										</descriptions>
-            									</xsl:if>
-            								</Subject_Language>
-            							</xsl:for-each>
-            						</Subject_Languages>
-            					</xsl:if>
-            					<xsl:apply-templates select="Location"/>
-            					<xsl:if test="exists(Format/*[normalize-space()!=''])">
-            						<Format>
-            							<xsl:for-each select="Format/*[normalize-space()!='']">
-            								<xsl:variable name="name" select="local-name()"/>
-            								<xsl:for-each select="tokenize(.,',')">
-            									<xsl:element name="{$name}">
-            										<xsl:value-of select="normalize-space(.)"/>
-            									</xsl:element>
-            								</xsl:for-each>
-            							</xsl:for-each>
-            						</Format>
-            					</xsl:if>
-            					<xsl:if test="exists(Quality/*[normalize-space()!=''])">
-            						<Quality>
-            							<xsl:for-each select="Quality/*[normalize-space()!='']">
-            								<xsl:variable name="name" select="local-name()"/>
-            								<xsl:for-each select="tokenize(.,',')">
-            									<xsl:element name="{$name}">
-            										<xsl:call-template name="orUnspecified">
-            											<xsl:with-param name="value" select="."/>
-            										</xsl:call-template>
-            									</xsl:element>
-            								</xsl:for-each>
-            							</xsl:for-each>
-            						</Quality>
-            					</xsl:if>
-            					<xsl:apply-templates select="Project"/>
-            					<xsl:apply-templates select="Access"/>
-            					<xsl:apply-templates select="Keys"/>
-            				</Catalogue>
-            			</xsl:for-each>
+            			<xsl:apply-templates select="$catalogue/METATRANSCRIPT/Catalogue" mode="corpus-catalogue"/>
             		</xsl:when>
             		<xsl:otherwise>
             			<xsl:message>WRN: IMDI catalogue file[<xsl:value-of select="$cat"/>] couldn't be loaded!</xsl:message>
@@ -524,6 +382,168 @@
             </xsl:if>
         </lat-corpus>
     </xsl:template>
+	
+	<xsl:template match="Catalogue" mode="corpus-catalogue">
+		<Catalogue>
+			<!-- CMD Elements -->
+			<xsl:for-each select="ContentType[normalize-space()!='']">
+				<ContentType>
+					<xsl:value-of select="."/>
+				</ContentType>
+			</xsl:for-each>
+			<xsl:if test="normalize-space(SmallestAnnotationUnit)!=''">
+				<SmallestAnnotationUnit>
+					<xsl:call-template name="orUnspecified">
+						<xsl:with-param name="value" select="SmallestAnnotationUnit"/>
+					</xsl:call-template>
+				</SmallestAnnotationUnit>
+			</xsl:if>
+			<xsl:if test="normalize-space(Date)!=''">
+				<Date>
+					<xsl:call-template name="orUnspecified">
+						<xsl:with-param name="value" select="Date"/>
+					</xsl:call-template>
+				</Date>
+			</xsl:if>
+			<xsl:for-each select="Publisher[normalize-space()!='']">
+				<Publisher>
+					<xsl:value-of select="."/>
+				</Publisher>
+			</xsl:for-each>
+			<xsl:for-each select="Author[normalize-space()!='']">
+				<Author>
+					<xsl:value-of select="."/>
+				</Author>
+			</xsl:for-each>
+			<xsl:if test="normalize-space(Size)!=''">
+				<Size>
+					<xsl:value-of select="Size"/>
+				</Size>
+			</xsl:if>
+			<xsl:if test="normalize-space(DistributionForm)!=''">
+				<DistributionForm>
+					<xsl:call-template name="orUnspecified">
+						<xsl:with-param name="value" select="DistributionForm"/>
+					</xsl:call-template>
+				</DistributionForm>
+			</xsl:if>
+			<xsl:if test="normalize-space(Pricing)!=''">
+				<Pricing>
+					<xsl:value-of select="Pricing"/>
+				</Pricing>
+			</xsl:if>
+			<xsl:if test="normalize-space(ContactPerson)!=''">
+				<ContactPerson>
+					<xsl:value-of select="ContactPerson"/>
+				</ContactPerson>
+			</xsl:if>
+			<xsl:if test="normalize-space(Publications)!=''">
+				<Publications>
+					<xsl:value-of select="Publications"/>
+				</Publications>
+			</xsl:if>
+			<!-- CMD Components -->
+			<xsl:if test="exists(Description[normalize-space()!=''])">
+				<descriptions>
+					<xsl:for-each select="Description[normalize-space()!='']">
+						<Description>
+							<xsl:call-template name="xmlLang"/>
+							<xsl:value-of select="."/>
+						</Description>
+					</xsl:for-each>
+				</descriptions>
+			</xsl:if>
+			<xsl:variable name="doclangs" select="DocumentLanguages/Language[normalize-space()!='']"/>
+			<xsl:if test="exists($doclangs)">
+				<Document_Languages>
+					<xsl:for-each select="$doclangs">
+						<Document_Language>
+							<Id>
+								<xsl:call-template name="orUnspecified">
+									<xsl:with-param name="value" select="Id"/>
+								</xsl:call-template>
+							</Id>
+							<Name>
+								<xsl:value-of select=" ./Name"/>
+							</Name>
+						</Document_Language>
+					</xsl:for-each>
+				</Document_Languages>
+			</xsl:if>
+			<xsl:variable name="sublangs" select="SubjectLanguages/Language[normalize-space()!='']"/>
+			<xsl:if test="exists($sublangs)">
+				<Subject_Languages>
+					<xsl:for-each select="$sublangs">
+						<Subject_Language>
+							<Id>
+								<xsl:call-template name="orUnspecified">
+									<xsl:with-param name="value" select="Id"/>
+								</xsl:call-template>
+							</Id>
+							<Name>
+								<xsl:value-of select=" ./Name"/>
+							</Name>
+							<Dominant>
+								<xsl:call-template name="orUnspecified">
+									<xsl:with-param name="value" select="Dominant"/>
+								</xsl:call-template>
+							</Dominant>
+							<SourceLanguage>
+								<xsl:call-template name="orUnspecified">
+									<xsl:with-param name="value" select="SourceLanguage"/>
+								</xsl:call-template>
+							</SourceLanguage>
+							<TargetLanguage>
+								<xsl:call-template name="orUnspecified">
+									<xsl:with-param name="value" select="TargetLanguage"/>
+								</xsl:call-template>
+							</TargetLanguage>
+							<xsl:if test="exists(Description[normalize-space()!=''])">
+								<descriptions>
+									<xsl:for-each select="Description[normalize-space()!='']">
+										<Description>
+											<xsl:call-template name="xmlLang"/>
+											<xsl:value-of select="."/>
+										</Description>
+									</xsl:for-each>
+								</descriptions>
+							</xsl:if>
+						</Subject_Language>
+					</xsl:for-each>
+				</Subject_Languages>
+			</xsl:if>
+			<xsl:apply-templates select="Location"/>
+			<xsl:if test="exists(Format/*[normalize-space()!=''])">
+				<Format>
+					<xsl:for-each select="Format/*[normalize-space()!='']">
+						<xsl:variable name="name" select="local-name()"/>
+						<xsl:for-each select="tokenize(.,',')">
+							<xsl:element name="{$name}">
+								<xsl:value-of select="normalize-space(.)"/>
+							</xsl:element>
+						</xsl:for-each>
+					</xsl:for-each>
+				</Format>
+			</xsl:if>
+			<xsl:if test="exists(Quality/*[normalize-space()!=''])">
+				<Quality>
+					<xsl:for-each select="Quality/*[normalize-space()!='']">
+						<xsl:variable name="name" select="local-name()"/>
+						<xsl:for-each select="tokenize(.,',')">
+							<xsl:element name="{$name}">
+								<xsl:call-template name="orUnspecified">
+									<xsl:with-param name="value" select="."/>
+								</xsl:call-template>
+							</xsl:element>
+						</xsl:for-each>
+					</xsl:for-each>
+				</Quality>
+			</xsl:if>
+			<xsl:apply-templates select="Project"/>
+			<xsl:apply-templates select="Access"/>
+			<xsl:apply-templates select="Keys"/>
+		</Catalogue>
+	</xsl:template>
 
 	<xsl:template match="text()" mode="linking"/>
 	
