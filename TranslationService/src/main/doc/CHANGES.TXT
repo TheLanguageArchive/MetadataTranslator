@@ -2,6 +2,7 @@ Current version: ${project.artifactId}-${project.version}-r${revisionId}
 
 Changes for metadata-translator-1.6.1:
 - Changes in transformation of Session-like CMDI metadata to IMDI
+- More robust retrieval of catalogue file in IMDI to CMDI for corpus records
 
 Changes for metadata-translator-1.6.0:
 - Many changes and fixes to IMDI<>CMDI conversion stylesheet
