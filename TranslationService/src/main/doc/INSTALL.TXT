@@ -2,14 +2,18 @@ MetadataTranslator ${project.artifactId}-${project.version}-r${buildNumber}
 install notes:
 
 
-Software requirements: ---------------------- 1. Server oriented OS capable of
+Software requirements: 
+---------------------- 
+1. Server oriented OS capable of
 running the specified version of Tomcat.
 
 2. Apache Tomcat 6.x . Other JAVA servlet containers should be possible but were
 not tested.
 
 
-Installation: ------------- 1. Download and install Apache Tomcat 6.x from:
+Installation: 
+------------- 
+1. Download and install Apache Tomcat 6.x from:
 http://tomcat.apache.org See available documentation.
 
 2. Deploy
@@ -75,6 +79,10 @@ replace the following:
 
 		<bean
 		class="nl.mpi.archiving.corpusstructure.core.handle.HttpHandleResolver" />
+
+Note that building the application with the -Plux17 option will preconfigure this
+wiring automatically. In this case the deployment package name should normally 
+have a "httpResolver" or "lux17" qualifier!
 
 6. Start Tomcat.
 

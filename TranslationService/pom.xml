@@ -4,9 +4,9 @@
     <packaging>war</packaging>
 
     <parent>
-	<groupId>nl.mpi.translation</groupId>
-	<artifactId>metadata-translator-parent</artifactId>
-	<version>1.6.1-RC1</version>
+        <groupId>nl.mpi.translation</groupId>
+        <artifactId>metadata-translator-parent</artifactId>
+        <version>1.6.1-RC1</version>
     </parent>
 
     <artifactId>metadata-translation-service</artifactId>
@@ -19,6 +19,15 @@
         <log.level.translationservice>WARN</log.level.translationservice>
         <jersey.version>1.18.3</jersey.version>
         <spring.version>3.0.7.RELEASE</spring.version>
+        
+        <!-- 
+            Handle resolver implementation, must be an implementation of
+                nl.mpi.archiving.corpusstructure.core.handle.HandleResolver
+        -->
+        <handleResolverClass.HTTP>nl.mpi.archiving.corpusstructure.core.handle.HttpHandleResolver</handleResolverClass.HTTP>
+        <handleResolverClass.API>nl.mpi.archiving.corpusstructure.core.handle.HandleApiResolver</handleResolverClass.API>
+        <!-- Default resolver -->
+        <handleResolverClass>${handleResolverClass.API}</handleResolverClass>
     </properties>
 
     <dependencies>
@@ -100,39 +109,39 @@
             <artifactId>jcl-over-slf4j</artifactId>
             <version>${project.logging.slf4jVersion}</version>
         </dependency>
-	<dependency>
-	    <groupId>com.sun.jersey.jersey-test-framework</groupId>
-	    <artifactId>jersey-test-framework-grizzly2</artifactId>
-	    <version>${jersey.version}</version>
-	    <scope>test</scope>
-	</dependency>
-	<dependency>
-	    <groupId>org.springframework</groupId>
-	    <artifactId>spring-test</artifactId>
-	    <version>${spring.version}</version>
-	    <scope>test</scope>
-	</dependency>
+        <dependency>
+            <groupId>com.sun.jersey.jersey-test-framework</groupId>
+            <artifactId>jersey-test-framework-grizzly2</artifactId>
+            <version>${jersey.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-test</artifactId>
+            <version>${spring.version}</version>
+            <scope>test</scope>
+        </dependency>
     </dependencies>
     <build>
-	<finalName>${project.artifactId}-${project.version}-${revisionId}</finalName>
-	<plugins>
+        <finalName>${project.artifactId}-${project.version}-${revisionId}</finalName>
+        <plugins>
             <plugin>
-              <groupId>org.codehaus.mojo</groupId>
-              <artifactId>buildnumber-maven-plugin</artifactId>
-              <version>1.3</version>
-              <executions>
-                <execution>
-                  <phase>validate</phase>
-                  <goals>
-                    <goal>create</goal>
-                  </goals>
-                  <configuration>
-                      <buildNumberPropertyName>revisionId</buildNumberPropertyName>
-                      <!-- Keep only the first N digits of the Git SHA-1 hash-->
-                      <shortRevisionLength>10</shortRevisionLength>
-                  </configuration>
-                </execution>
-              </executions>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>buildnumber-maven-plugin</artifactId>
+                <version>1.3</version>
+                <executions>
+                    <execution>
+                        <phase>validate</phase>
+                        <goals>
+                            <goal>create</goal>
+                        </goals>
+                        <configuration>
+                            <buildNumberPropertyName>revisionId</buildNumberPropertyName>
+                            <!-- Keep only the first N digits of the Git SHA-1 hash-->
+                            <shortRevisionLength>10</shortRevisionLength>
+                        </configuration>
+                    </execution>
+                </executions>
             </plugin>
             <plugin>
                 <groupId>org.apache.tomcat.maven</groupId>
@@ -220,6 +229,16 @@
             </properties>
             <build>
                 <finalName>${project.artifactId}-${project.version}</finalName>
+            </build>
+        </profile>
+        <profile>
+            <!-- the handle API resolver fails on lux17, so override with the HttpHandleResolver -->
+            <id>lux17</id>
+            <properties>
+                <handleResolverClass>${handleResolverClass.HTTP}</handleResolverClass>
+            </properties>
+            <build>
+                <finalName>${project.artifactId}-${project.version}-${revisionId}-lux17</finalName>
             </build>
         </profile>
     </profiles>
