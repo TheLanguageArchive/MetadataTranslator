@@ -101,10 +101,22 @@
     </build>
 
     <repositories>
-	<repository>
-	    <id>MPI</id>
-	    <name>MPI Repository</name>
-	    <url>http://lux15.mpi.nl/nexus/content/repositories/MPI</url>
-	</repository>
+		<repository>
+			<id>MPI</id>
+			<name>MPI Repository</name>
+			<url>http://lux15.mpi.nl/nexus/content/repositories/MPI</url>
+		</repository>
     </repositories>
+
+    <distributionManagement>
+        <snapshotRepository>
+            <id>MPI-Snapshots</id>
+            <url>https://lux15.mpi.nl/nexus/content/repositories/MPI-Snapshots</url>
+        </snapshotRepository>
+        <repository>
+            <id>MPI</id>
+            <name>MPI Repository</name>
+            <url>https://lux15.mpi.nl/nexus/content/repositories/MPI</url>
+        </repository>
+    </distributionManagement>
 </project>
