@@ -1,5 +1,9 @@
 Current version: ${project.artifactId}-${project.version}-r${revisionId}
 
+Changes for metadata-translator-1.6.2:
+- Fixed an issue where passing a null value for the service URI to the 
+translator library caused a null pointer exception, while this should be allowed
+
 Changes for metadata-translator-1.6.1:
 - Changes in transformation of Session-like CMDI metadata to IMDI
 - More robust retrieval of catalogue file in IMDI to CMDI for corpus records
