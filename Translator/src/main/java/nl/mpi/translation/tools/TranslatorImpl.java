@@ -121,12 +121,12 @@ public class TranslatorImpl implements Translator {
         transfFactory.setErrorListener(new TranslationServiceErrorListener(logger));
         logger.debug("Instantiated XML transformer factory of type {}", transfFactory.getClass());
 
-        if(transfFactory instanceof TransformerFactoryImpl) {
+        if (transfFactory instanceof TransformerFactoryImpl) {
             logger.debug("Telling Saxon to send messages as warnings to logger");
-            final Configuration tfConfig = ((TransformerFactoryImpl)transfFactory).getConfiguration();
+            final Configuration tfConfig = ((TransformerFactoryImpl) transfFactory).getConfiguration();
             tfConfig.setMessageEmitterClass(SAXON_MESSAGE_EMITTER_CLASSNAME);
         }
-        
+
         xmlInputFactory = XMLInputFactory.newInstance();
         logger.debug("Instantiated XML input factory of type {}", xmlInputFactory.getClass());
 
@@ -270,11 +270,15 @@ public class TranslatorImpl implements Translator {
             input.close();
         }
     }
-    
+
     private void transform(final Templates templates, final Source source, final Result result, String serviceURI, final String inputUrl) throws TransformerException, TransformerConfigurationException {
         final Transformer transformer = templates.newTransformer();
-        transformer.setParameter("service-base-uri", serviceURI);
-        transformer.setParameter("source-location", inputUrl);
+        if (serviceURI != null) {
+            transformer.setParameter("service-base-uri", serviceURI);
+        }
+        if (inputUrl != null) {
+            transformer.setParameter("source-location", inputUrl);
+        }
         if (transformationParameters != null) {
             for (Entry<String, Object> param : transformationParameters.entrySet()) {
                 logger.trace("Setting additional transformation parameter: {} = '{}'", param.getKey(), param.getValue());
