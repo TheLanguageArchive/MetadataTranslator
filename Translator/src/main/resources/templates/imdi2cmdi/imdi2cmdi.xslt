@@ -1086,8 +1086,9 @@
     				<Content_Language>
     					<xsl:call-template name="ResourceRefs"/>
     					<Id>
+    						<xsl:variable name="code" select="imdi:lang2iso(normalize-space(Id))"/>
     						<xsl:call-template name="orUnspecified">
-    							<xsl:with-param name="value" select="Id"/>
+    							<xsl:with-param name="value" select="concat('ISO639-3:',$code)"/>
     						</xsl:call-template>
     					</Id>
     					<Name>
@@ -1378,8 +1379,9 @@
                 <Actor_Language>
                 	<xsl:call-template name="ResourceRefs"/>
                     <Id>
+                    	<xsl:variable name="code" select="imdi:lang2iso(normalize-space(Id))"/>
                     	<xsl:call-template name="orUnspecified">
-                    		<xsl:with-param name="value" select="Id"/>
+                    		<xsl:with-param name="value" select="concat('ISO639-3:',$code)"/>
                     	</xsl:call-template>
                     </Id>
                     <Name>
