@@ -945,7 +945,17 @@
 
     <xsl:template match="Content">
     <xsl:param name="profile" tunnel="yes"/>
-        <Content>
+    	<xsl:variable name="contento">
+    		<xsl:choose>
+    			<xsl:when test="$profile=$SL_PROFILE">
+    				<xsl:text>SL-Content</xsl:text>    				
+    			</xsl:when>
+    			<xsl:otherwise>
+    				<xsl:text>Content</xsl:text>
+    			</xsl:otherwise>
+    		</xsl:choose>
+    	</xsl:variable>
+    	<xsl:element name="{$contento}">
             <Genre>
             	<xsl:call-template name="orUnspecified">
             		<xsl:with-param name="value" select="Genre"/>
@@ -1018,7 +1028,7 @@
                     </xsl:for-each>
                 </descriptions>
             </xsl:if>
-        </Content>
+    	</xsl:element>        
 
     </xsl:template>
 
@@ -1128,7 +1138,27 @@
 
     <xsl:template match="Actors">
     	<xsl:param name="profile" tunnel="yes"/>
-        <Actors>
+    	<xsl:variable name="actoros">
+    		<xsl:choose>
+    			<xsl:when test="$profile=$SL_PROFILE">
+    				<xsl:text>SL-Actors</xsl:text>    				
+    			</xsl:when>
+    			<xsl:otherwise>
+    				<xsl:text>Actors</xsl:text>
+    			</xsl:otherwise>
+    		</xsl:choose>
+    	</xsl:variable>
+    	<xsl:variable name="actoro">
+    		<xsl:choose>
+    			<xsl:when test="$profile=$SL_PROFILE">
+    				<xsl:text>SL-Actor</xsl:text>    				
+    			</xsl:when>
+    			<xsl:otherwise>
+    				<xsl:text>Actor</xsl:text>
+    			</xsl:otherwise>
+    		</xsl:choose>
+    	</xsl:variable>
+    	<xsl:element name="{$actoros}">        
             <xsl:if test="exists(child::Description[normalize-space(.)!=''])">
                 <descriptions>
                 	<xsl:for-each select="Description[normalize-space(.)!='']">
@@ -1140,7 +1170,7 @@
                 </descriptions>
             </xsl:if>
             <xsl:for-each select="Actor">
-                <Actor>
+            	<xsl:element name="{$actoro}">                
                 	<xsl:call-template name="ResourceRefs"/>
                     <Role>
                     	<xsl:call-template name="orUnspecified">
@@ -1357,9 +1387,9 @@
                         </descriptions>
                     </xsl:if>
                     <xsl:apply-templates select="child::Languages" mode="actor"/>
-                </Actor>
+                </xsl:element>
             </xsl:for-each>
-        </Actors>
+        </xsl:element>
     </xsl:template>
 
     <xsl:template match="Languages" mode="actor">
