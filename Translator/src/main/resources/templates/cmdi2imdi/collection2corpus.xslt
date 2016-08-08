@@ -65,13 +65,6 @@
                                 <xsl:value-of select="resolve-uri($localUri, $source-location)"/>
                             </xsl:attribute>
                         </xsl:if>
-                        <!--<xsl:variable name="link"
-                            select="ancestor::Components/preceding-sibling::Resources/ResourceProxyList/ResourceProxy[@id=$id]/ResourceRef/@lat:localURI"/>
-                        <xsl:if test="$link">
-                            <xsl:attribute name="Link">
-                                <xsl:value-of select="$link"/>
-                            </xsl:attribute>
-                        </xsl:if>-->
                     </xsl:when>
                     <xsl:otherwise>
                         <xsl:attribute name="Link">
