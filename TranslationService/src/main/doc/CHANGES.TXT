@@ -1,5 +1,9 @@
 Current version: ${project.artifactId}-${project.version}-r${revisionId}
 
+Changes for metadata-translator-1.6.3:
+- Several fixes in the CMDI-IMDI and IMDI-CMDI transformations, related to the
+sign language profile, info links and language codes
+
 Changes for metadata-translator-1.6.2:
 - Fixed an issue where passing a null value for the service URI to the 
 translator library caused a null pointer exception, while this should be allowed
