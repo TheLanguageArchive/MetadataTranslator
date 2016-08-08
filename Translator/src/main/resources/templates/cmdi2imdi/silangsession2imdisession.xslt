@@ -54,10 +54,10 @@
                     <xsl:apply-templates select="Keys" mode="COMMONTLA2IMDISESSION"/>
                     <xsl:apply-templates select="SL_CreativeCommonsLicense" mode="SILANGSESSION2IMDISESSION" />
                 </Keys>
-                <xsl:apply-templates select="Content" mode="SILANGSESSION2IMDISESSION"/>
+                <xsl:apply-templates select="SL-Content" mode="SILANGSESSION2IMDISESSION"/>
                 <Actors>
-                    <xsl:apply-templates select="Actors/descriptions" mode="COMMONTLA2IMDISESSION"/>
-                    <xsl:apply-templates select="Actors/Actor" mode="SILANGSESSION2IMDISESSION"/>
+                    <xsl:apply-templates select="SL-Actors/descriptions" mode="COMMONTLA2IMDISESSION"/>
+                    <xsl:apply-templates select="SL-Actors/SL-Actor" mode="SILANGSESSION2IMDISESSION"/>
                 </Actors>
             </MDGroup>
             <xsl:apply-templates select="/CMD/Resources/ResourceProxyList"
@@ -97,7 +97,7 @@
         </Project>
     </xsl:template>
 
-    <xsl:template match="Content" mode="SILANGSESSION2IMDISESSION">
+    <xsl:template match="SL-Content" mode="SILANGSESSION2IMDISESSION">
         <Content>
             <Genre Link="http://www.mpi.nl/IMDI/Schema/Content-Genre.xml" Type="OpenVocabulary">
                 <xsl:value-of select="child::Genre"/>
@@ -217,7 +217,7 @@
         </xsl:if>
     </xsl:template>
     
-    <xsl:template match="Actor" mode="SILANGSESSION2IMDISESSION">
+    <xsl:template match="SL-Actor" mode="SILANGSESSION2IMDISESSION">
         <Actor>
             <xsl:if test="@ref">
                 <xsl:attribute name="ResourceRef" select="@ref"/>
