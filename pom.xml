@@ -11,7 +11,7 @@
 
     <groupId>nl.mpi.translation</groupId>
     <artifactId>metadata-translator-parent</artifactId>
-    <version>1.6.3-RC1</version>
+    <version>1.6-SNAPSHOT</version>
     <name>CMDI &lt;-&gt; IMDI metadata translator</name>
     <url>http://www.tla.mpi.nl</url>
     <description>A converter from CMDI to IMDI and vice-versa. This is an aggregator pom
