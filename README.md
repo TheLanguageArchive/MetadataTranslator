@@ -29,9 +29,9 @@ The service answers on the `/translate` path of the of the servlet URL.
 
 i.e.
 * given the translation service servlet is mapped in the URL:
-  * `https://\<server name\>/\<servlet path\>`
+  * `https://<server name>/<servlet path>`
 * the service will answer to translation requests for URLs in the form:
-  * `https://\<server name\>/\<servlet path\>/translate?\<URL parameters\>`
+  * `https://<server name>/<servlet path>/translate?<URL parameters>`
 	
 	
 ##URL parameters		
