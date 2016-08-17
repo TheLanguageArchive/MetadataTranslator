@@ -627,7 +627,7 @@
     			</ResourceType>
     			<ResourceRef>
     				<xsl:if test="$localURI">
-    					<xsl:attribute name="lat:localURI" select="replace(ResourceLink,' ','%20')"/>
+    					<xsl:attribute name="lat:localURI" select="replace(normalize-space(ResourceLink),' ','%20')"/>
     				</xsl:if>
     				<xsl:choose>
     					<xsl:when test="not(normalize-space(ResourceLink/@ArchiveHandle)='')">
