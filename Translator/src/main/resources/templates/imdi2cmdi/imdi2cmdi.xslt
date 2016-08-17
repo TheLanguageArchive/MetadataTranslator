@@ -1778,7 +1778,7 @@
 							<xsl:value-of select="'und'"/>
 						</xsl:when>
 						<xsl:otherwise>
-							<xsl:variable name="iso" select="key('iso639_1-lookup', $codestr, $iso-lang-top)/iso:i"/>
+							<xsl:variable name="iso" select="key('iso639_1-lookup', lower-case($codestr), $iso-lang-top)/iso:i"/>
 							<xsl:choose>
 								<xsl:when test="$iso!='xxx'">
 									<xsl:value-of select="$iso"/>
@@ -1797,7 +1797,7 @@
 							<xsl:value-of select="'und'"/>
 						</xsl:when>
 						<xsl:otherwise>
-							<xsl:variable name="iso" select="key('iso639_2-lookup', $codestr, $iso-lang-top)/iso:i"/>
+							<xsl:variable name="iso" select="key('iso639_2-lookup', lower-case($codestr), $iso-lang-top)/iso:i"/>
 							<xsl:choose>
 								<xsl:when test="$iso!='xxx'">
 									<xsl:value-of select="$iso"/>
@@ -1815,8 +1815,8 @@
 						<xsl:when test="$codestr='xxx'">
 							<xsl:value-of select="'und'"/>
 						</xsl:when>
-						<xsl:when test="exists(key('iso639_3-lookup', $codestr, $iso-lang-top))">
-							<xsl:value-of select="$codestr"/>
+						<xsl:when test="exists(key('iso639_3-lookup', lower-case($codestr), $iso-lang-top))">
+							<xsl:value-of select="lower-case($codestr)"/>
 						</xsl:when>
 						<xsl:otherwise>
 							<xsl:message>WRN: [<xsl:value-of select="$codestr"/>] is not a ISO 639-3 language code, falling back to und.</xsl:message>
@@ -1829,8 +1829,8 @@
 						<xsl:when test="$codestr='xxx'">
 							<xsl:value-of select="'und'"/>
 						</xsl:when>
-						<xsl:when test="exists(key('iso639-lookup', $codestr, $iso-lang-top))">
-							<xsl:variable name="iso" select="key('iso639-lookup', $codestr, $iso-lang-top)/iso:i"/>
+						<xsl:when test="exists(key('iso639-lookup', lower-case($codestr), $iso-lang-top))">
+							<xsl:variable name="iso" select="key('iso639-lookup', lower-case($codestr), $iso-lang-top)/iso:i"/>
 							<xsl:choose>
 								<xsl:when test="$iso!='xxx'">
 									<xsl:value-of select="$iso"/>
