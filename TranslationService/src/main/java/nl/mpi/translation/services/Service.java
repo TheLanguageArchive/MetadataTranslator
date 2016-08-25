@@ -5,6 +5,8 @@ import java.net.MalformedURLException;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.net.URL;
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -42,7 +44,7 @@ import org.springframework.stereotype.Component;
 @Component
 @Path("/translate")
 public class Service {
-
+    
     private final static Logger logger = LoggerFactory.getLogger(Service.class);
     @Context
     private UriInfo uriInfo;
@@ -52,6 +54,16 @@ public class Service {
     private Translator translator;
     @Autowired
     private HandleResolver handleResolver;
+    
+    @PostConstruct
+    public void init() {
+        logger.info("Translation service running");
+    }
+    
+    @PreDestroy
+    public void cleanUp() {
+        logger.info("Translation service terminating");
+    }
 
     /**
      * Handles the 'translate' (GET) requests.
@@ -70,7 +82,7 @@ public class Service {
             logger.warn("Invalid request: '{}'", uriInfo.getRequestUri());
             return Response.status(Status.BAD_REQUEST).build();
         }
-
+        
         try {
             final long initTime = System.currentTimeMillis();
 
@@ -91,19 +103,19 @@ public class Service {
         } catch (IOException e) {
             logger.error("Error reading input file to {} on {}: ", outFormat, location, e);
             return Response.status(Status.NOT_FOUND).build();
-        } catch(InvalidHandleException e){
+        } catch (InvalidHandleException e) {
             logger.error("Invalid handle in {}", location, e);
             return Response.status(Status.BAD_REQUEST).build();
         }
     }
-
+    
     private String getOutput(String outFormat, final URL inputFileURL, final long initTime) throws XMLStreamException, IOException, TransformerException {
         final String output;
         if (outFormat != null && (outFormat.toLowerCase().equals("imdi"))) {
-            logger.info("Requested IMDI translation for file: '{}'", inputFileURL);
+            logger.debug("Requested IMDI translation for file: '{}'", inputFileURL);
             output = translator.getIMDI(inputFileURL, uriInfo.getAbsolutePath().toString());
         } else if (outFormat != null && (outFormat.toLowerCase().equals("cmdi"))) {
-            logger.info("Requested CMDI translation for file: '{}'", inputFileURL);
+            logger.debug("Requested CMDI translation for file: '{}'", inputFileURL);
             output = translator.getCMDI(inputFileURL, uriInfo.getAbsolutePath().toString());
         } else {
             //default is CMDI to IMDI
@@ -127,7 +139,7 @@ public class Service {
      * @throws IOException
      */
     private URL resolveLocation(String locationStr) throws IOException, InvalidHandleException {
-
+        
         if (!fileProtocolAllowed() && locationStr.startsWith("file://")) {
             throw new WebApplicationException(Response.Status.FORBIDDEN);
         }
@@ -141,7 +153,7 @@ public class Service {
                 || locationStr.startsWith("jar://"))) {
             locationStr = "http://hdl.handle.net/" + locationStr;
         }
-
+        
         URL inputFileURL;
         try {
             inputFileURL = new URL(locationStr);
@@ -161,12 +173,12 @@ public class Service {
             return inputFileURL;
         }
     }
-
+    
     private boolean fileProtocolAllowed() {
         final String paramValue = servletContext.getInitParameter("allowFileProtocol");
         return paramValue != null && Boolean.valueOf(paramValue);
     }
-
+    
     private Response translate(final URL inputFileURL, String outFormat, final long initTime) throws XMLStreamException, TransformerException, IOException {
         //translate file based on specified output format/language
         if (translator == null) {
@@ -174,7 +186,7 @@ public class Service {
             return Response.serverError().build();
         }
         String output = getOutput(outFormat, inputFileURL, initTime);
-
+        
         final Response.ResponseBuilder response = Response.ok(output);
 
         // Expires 30 seconds from now.
@@ -183,7 +195,7 @@ public class Service {
         cc.setMaxAge(30);
         cc.setNoCache(false);
         response.cacheControl(cc);
-
+        
         return response.build();
     }
 

@@ -95,7 +95,7 @@
     
     <!-- ACTORS -->
     
-    <xsl:template match="Actor/Age" mode="COMMONTLA2IMDISESSION">
+    <xsl:template match="SL-Actor/Age|Actor/Age" mode="COMMONTLA2IMDISESSION">
         <xsl:choose>
             <xsl:when test="ExactAge">
                 <xsl:value-of select="ExactAge/years"/>

@@ -9,7 +9,7 @@
 		<Title/>
 		<Description LanguageId="ISO639-2:en-GB" Link="subcollection.cmdi">Description1</Description>
 		<Description LanguageId="ISO639-2:en-US" ArchiveHandle="hdl:1234/5678">Description2</Description>
-		<Description LanguageId="ISO639-2:en-US" ArchiveHandle="hdl:1234/abcd-efgh" Link="collection2.cmdi">Description3</Description>
+		<Description LanguageId="ISO639-2:en-US" ArchiveHandle="hdl:1234/abcd-efgh" Link="http://archive/corpus/my-collection/Metadata/collection2.cmdi">Description3</Description>
 		<CorpusLink Name=""
 			>http://my-service/translate?in=http%3A%2F%2Finfra.clarin.eu%2Fcmd%2Fexample%2Fcollection%2Flrt%2Flrt-1001.cmdi&amp;outFormat=imdi</CorpusLink>
 	</Corpus>

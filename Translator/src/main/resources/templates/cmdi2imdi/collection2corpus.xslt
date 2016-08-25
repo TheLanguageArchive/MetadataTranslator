@@ -58,11 +58,11 @@
                         <xsl:attribute name="ArchiveHandle">
                             <xsl:value-of select="concat('hdl:',$handle)"/>
                         </xsl:attribute>
-                        <xsl:variable name="link"
-                            select="ancestor::Components/preceding-sibling::Resources/ResourceProxyList/ResourceProxy[@id=$id]/ResourceRef/@lat:localURI"/>
-                        <xsl:if test="$link">
+                        <xsl:variable name="proxy" select="//ResourceProxy[@id eq $id]"/>
+                        <xsl:variable name="localUri" select="$proxy/ResourceRef/@lat:localURI"/>
+                        <xsl:if test="normalize-space($localUri) != ''">
                             <xsl:attribute name="Link">
-                                <xsl:value-of select="$link"/>
+                                <xsl:value-of select="resolve-uri($localUri, $source-location)"/>
                             </xsl:attribute>
                         </xsl:if>
                     </xsl:when>

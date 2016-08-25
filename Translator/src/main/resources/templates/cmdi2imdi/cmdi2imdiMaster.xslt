@@ -20,6 +20,7 @@
     <xsl:include href="soundbites2imdi.xslt"/>
     <xsl:include href="leslla2imdi.xslt"/>
     <xsl:include href="dlucea2imdi.xslt"/>
+    <xsl:include href="sltla2imdi.xslt"/>
     <xsl:include href="../util/identity.xslt"/>
     <xsl:include href="../util/handle.xslt"/>
     
@@ -72,6 +73,10 @@
             <xsl:when test="contains(/CMD/@xsi:schemaLocation, 'http://catalog.clarin.eu/ds/ComponentRegistry/rest/registry/profiles/clarin.eu:cr1:p_1337778924955/xsd')">
                 <xsl:call-template name="DLUCEA2IMDI" />
             </xsl:when>
+            <xsl:when test="contains(/CMD/@xsi:schemaLocation, 'http://catalog.clarin.eu/ds/ComponentRegistry/rest/registry/profiles/clarin.eu:cr1:p_1430905751641/xsd')">
+                <xsl:call-template name="SLTLA2IMDI"/>
+            </xsl:when>
+            
             
             <!-- Add new profile templates here -->
 			<!--        

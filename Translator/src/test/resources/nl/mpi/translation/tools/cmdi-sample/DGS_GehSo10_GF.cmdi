@@ -96,7 +96,7 @@
                <Description xml:lang="eng">The ECHO project is an effort to publish scientific data in the humanities online. See http://sign-lang.ruhosting.nl/echo for further information on the sign language case study.</Description>
             </descriptions>
          </Project>
-         <Content>
+         <SL-Content>
             <Genre>Discourse</Genre>
             <SubGenre>Conversation</SubGenre>
             <Task>Unspecified</Task>
@@ -126,9 +126,9 @@
                <Visibility>Unspecified</Visibility>
                <Audience>Unspecified</Audience>
             </SL_Interpreting>
-         </Content>
-         <Actors>
-            <Actor>
+         </SL-Content>
+         <SL-Actors>
+            <SL-Actor>
                <Role>Speaker/Signer</Role>
                <Name>Günther F.</Name>
                <FullName>Günther F.</FullName>
@@ -184,8 +184,8 @@
                      <PrimaryLanguage>Unspecified</PrimaryLanguage>
                   </Actor_Language>
                </Actor_Languages>
-            </Actor>
-            <Actor>
+            </SL-Actor>
+            <SL-Actor>
                <Role>Interviewer</Role>
                <Name>Hermann M.</Name>
                <FullName>Hermann M.</FullName>
@@ -239,8 +239,8 @@
                      <PrimaryLanguage>Unspecified</PrimaryLanguage>
                   </Actor_Language>
                </Actor_Languages>
-            </Actor>
-         </Actors>
+            </SL-Actor>
+         </SL-Actors>
          <Resources>
             <MediaFile ref="d236535e407">
                <Type>video</Type>

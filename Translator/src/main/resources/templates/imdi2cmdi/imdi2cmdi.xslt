@@ -627,7 +627,7 @@
     			</ResourceType>
     			<ResourceRef>
     				<xsl:if test="$localURI">
-    					<xsl:attribute name="lat:localURI" select="replace(ResourceLink,' ','%20')"/>
+    					<xsl:attribute name="lat:localURI" select="replace(normalize-space(ResourceLink),' ','%20')"/>
     				</xsl:if>
     				<xsl:choose>
     					<xsl:when test="not(normalize-space(ResourceLink/@ArchiveHandle)='')">
@@ -945,7 +945,17 @@
 
     <xsl:template match="Content">
     <xsl:param name="profile" tunnel="yes"/>
-        <Content>
+    	<xsl:variable name="contento">
+    		<xsl:choose>
+    			<xsl:when test="$profile=$SL_PROFILE">
+    				<xsl:text>SL-Content</xsl:text>    				
+    			</xsl:when>
+    			<xsl:otherwise>
+    				<xsl:text>Content</xsl:text>
+    			</xsl:otherwise>
+    		</xsl:choose>
+    	</xsl:variable>
+    	<xsl:element name="{$contento}">
             <Genre>
             	<xsl:call-template name="orUnspecified">
             		<xsl:with-param name="value" select="Genre"/>
@@ -1018,7 +1028,7 @@
                     </xsl:for-each>
                 </descriptions>
             </xsl:if>
-        </Content>
+    	</xsl:element>        
 
     </xsl:template>
 
@@ -1086,8 +1096,9 @@
     				<Content_Language>
     					<xsl:call-template name="ResourceRefs"/>
     					<Id>
+    						<xsl:variable name="code" select="imdi:lang2iso(normalize-space(Id))"/>
     						<xsl:call-template name="orUnspecified">
-    							<xsl:with-param name="value" select="Id"/>
+    							<xsl:with-param name="value" select="concat('ISO639-3:',$code)"/>
     						</xsl:call-template>
     					</Id>
     					<Name>
@@ -1128,7 +1139,27 @@
 
     <xsl:template match="Actors">
     	<xsl:param name="profile" tunnel="yes"/>
-        <Actors>
+    	<xsl:variable name="actoros">
+    		<xsl:choose>
+    			<xsl:when test="$profile=$SL_PROFILE">
+    				<xsl:text>SL-Actors</xsl:text>    				
+    			</xsl:when>
+    			<xsl:otherwise>
+    				<xsl:text>Actors</xsl:text>
+    			</xsl:otherwise>
+    		</xsl:choose>
+    	</xsl:variable>
+    	<xsl:variable name="actoro">
+    		<xsl:choose>
+    			<xsl:when test="$profile=$SL_PROFILE">
+    				<xsl:text>SL-Actor</xsl:text>    				
+    			</xsl:when>
+    			<xsl:otherwise>
+    				<xsl:text>Actor</xsl:text>
+    			</xsl:otherwise>
+    		</xsl:choose>
+    	</xsl:variable>
+    	<xsl:element name="{$actoros}">        
             <xsl:if test="exists(child::Description[normalize-space(.)!=''])">
                 <descriptions>
                 	<xsl:for-each select="Description[normalize-space(.)!='']">
@@ -1140,7 +1171,7 @@
                 </descriptions>
             </xsl:if>
             <xsl:for-each select="Actor">
-                <Actor>
+            	<xsl:element name="{$actoro}">                
                 	<xsl:call-template name="ResourceRefs"/>
                     <Role>
                     	<xsl:call-template name="orUnspecified">
@@ -1357,9 +1388,9 @@
                         </descriptions>
                     </xsl:if>
                     <xsl:apply-templates select="child::Languages" mode="actor"/>
-                </Actor>
+                </xsl:element>
             </xsl:for-each>
-        </Actors>
+        </xsl:element>
     </xsl:template>
 
     <xsl:template match="Languages" mode="actor">
@@ -1378,8 +1409,9 @@
                 <Actor_Language>
                 	<xsl:call-template name="ResourceRefs"/>
                     <Id>
+                    	<xsl:variable name="code" select="imdi:lang2iso(normalize-space(Id))"/>
                     	<xsl:call-template name="orUnspecified">
-                    		<xsl:with-param name="value" select="Id"/>
+                    		<xsl:with-param name="value" select="concat('ISO639-3:',$code)"/>
                     	</xsl:call-template>
                     </Id>
                     <Name>
@@ -1746,7 +1778,7 @@
 							<xsl:value-of select="'und'"/>
 						</xsl:when>
 						<xsl:otherwise>
-							<xsl:variable name="iso" select="key('iso639_1-lookup', $codestr, $iso-lang-top)/iso:i"/>
+							<xsl:variable name="iso" select="key('iso639_1-lookup', lower-case($codestr), $iso-lang-top)/iso:i"/>
 							<xsl:choose>
 								<xsl:when test="$iso!='xxx'">
 									<xsl:value-of select="$iso"/>
@@ -1765,7 +1797,7 @@
 							<xsl:value-of select="'und'"/>
 						</xsl:when>
 						<xsl:otherwise>
-							<xsl:variable name="iso" select="key('iso639_2-lookup', $codestr, $iso-lang-top)/iso:i"/>
+							<xsl:variable name="iso" select="key('iso639_2-lookup', lower-case($codestr), $iso-lang-top)/iso:i"/>
 							<xsl:choose>
 								<xsl:when test="$iso!='xxx'">
 									<xsl:value-of select="$iso"/>
@@ -1783,8 +1815,8 @@
 						<xsl:when test="$codestr='xxx'">
 							<xsl:value-of select="'und'"/>
 						</xsl:when>
-						<xsl:when test="exists(key('iso639_3-lookup', $codestr, $iso-lang-top))">
-							<xsl:value-of select="$codestr"/>
+						<xsl:when test="exists(key('iso639_3-lookup', lower-case($codestr), $iso-lang-top))">
+							<xsl:value-of select="lower-case($codestr)"/>
 						</xsl:when>
 						<xsl:otherwise>
 							<xsl:message>WRN: [<xsl:value-of select="$codestr"/>] is not a ISO 639-3 language code, falling back to und.</xsl:message>
@@ -1797,8 +1829,8 @@
 						<xsl:when test="$codestr='xxx'">
 							<xsl:value-of select="'und'"/>
 						</xsl:when>
-						<xsl:when test="exists(key('iso639-lookup', $codestr, $iso-lang-top))">
-							<xsl:variable name="iso" select="key('iso639-lookup', $codestr, $iso-lang-top)/iso:i"/>
+						<xsl:when test="exists(key('iso639-lookup', lower-case($codestr), $iso-lang-top))">
+							<xsl:variable name="iso" select="key('iso639-lookup', lower-case($codestr), $iso-lang-top)/iso:i"/>
 							<xsl:choose>
 								<xsl:when test="$iso!='xxx'">
 									<xsl:value-of select="$iso"/>
