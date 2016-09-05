@@ -292,13 +292,38 @@
                 </xsl:if>
             </Size>
             <Quality>
-                <xsl:value-of select="Quality"/>
+                <xsl:call-template name="orUnspecified">
+                    <xsl:with-param name="value" select="Quality"/>
+                </xsl:call-template>
             </Quality>
             <RecordingConditions>
                 <xsl:value-of select="RecordingConditions"/>
             </RecordingConditions>
-            <xsl:apply-templates select="TimePosition" mode="COMMONTLA2IMDISESSION"/>
-            <xsl:apply-templates select="Access" mode="COMMONTLA2IMDISESSION"/>
+            <xsl:choose>
+                <xsl:when test="normalize-space(TimePosition)!=''">
+                    <xsl:apply-templates select="TimePosition" mode="COMMONTLA2IMDISESSION"/>
+                </xsl:when>
+                <xsl:otherwise>
+                    <TimePosition>
+                        <Start>Unspecified</Start>
+                        <End>Unspecified</End>
+                    </TimePosition>        
+                </xsl:otherwise>
+            </xsl:choose>
+            <xsl:choose>
+                <xsl:when test="normalize-space(Access)!=''">
+                    <xsl:apply-templates select="Access" mode="COMMONTLA2IMDISESSION"/>
+                </xsl:when>
+                <xsl:otherwise>
+                    <Access>
+                        <Availability/>
+                        <Date>Unspecified</Date>
+                        <Owner/>
+                        <Publisher/>
+                        <Contact/>
+                    </Access>  
+                </xsl:otherwise>
+            </xsl:choose>            
             <xsl:apply-templates select="descriptions|Descriptions" mode="COMMONTLA2IMDISESSION"/>
             <Keys>
                 <xsl:apply-templates select="Keys" mode="COMMONTLA2IMDISESSION"/>
@@ -401,7 +426,9 @@
                 </xsl:if>
             </MediaResourceLink>
             <Date>
-                <xsl:value-of select="Date"/>
+                <xsl:call-template name="orUnspecified">
+                    <xsl:with-param name="value" select="Date"/>
+                </xsl:call-template>
             </Date>
             <Type>
                 <xsl:value-of select="Type"/>
@@ -424,21 +451,20 @@
             </Size>
             <Validation>
                 <Type>
-                    <xsl:value-of select="Validation/Type"/>
+                    <xsl:call-template name="orUnspecified">
+                        <xsl:with-param name="value" select="Validation/Type"/>
+                    </xsl:call-template>
                 </Type>
                 <Methodology>
-                    <xsl:value-of select="Validation/Methodology"/>
+                    <xsl:call-template name="orUnspecified">
+                        <xsl:with-param name="value" select="Validation/Methodology"/>
+                    </xsl:call-template>
                 </Methodology>
-                <xsl:choose>
-                    <xsl:when test="normalize-space(Validation/Level)!=''">
-                        <Level>
-                            <xsl:value-of select="Validation/Level"/>
-                        </Level>
-                    </xsl:when>
-                    <xsl:otherwise>
-                        <Level>Unspecified</Level>
-                    </xsl:otherwise>
-                </xsl:choose>
+                <Level>
+                    <xsl:call-template name="orUnspecified">
+                        <xsl:with-param name="value" select="Validation/Level"/>
+                    </xsl:call-template>
+                </Level>
                 <xsl:apply-templates select="Validation/descriptions|Validation/Descriptions" mode="COMMONTLA2IMDISESSION"/>
             </Validation>
             <Derivation>
@@ -454,9 +480,24 @@
                 <xsl:value-of select="LanguageId"/>
             </LanguageId>
             <Anonymized>
-                <xsl:value-of select="Anonymized"/>
+                <xsl:call-template name="orUnspecified">
+                    <xsl:with-param name="value" select="Anonymized"/>
+                </xsl:call-template>
             </Anonymized>
-            <xsl:apply-templates select="Access" mode="COMMONTLA2IMDISESSION"/>
+            <xsl:choose>
+                <xsl:when test="normalize-space(Access)!=''">
+                    <xsl:apply-templates select="Access" mode="COMMONTLA2IMDISESSION"/>
+                </xsl:when>
+                <xsl:otherwise>
+                    <Access>
+                        <Availability/>
+                        <Date>Unspecified</Date>
+                        <Owner/>
+                        <Publisher/>
+                        <Contact/>
+                    </Access>  
+                </xsl:otherwise>
+            </xsl:choose>            
             <xsl:apply-templates select="descriptions|Descriptions" mode="COMMONTLA2IMDISESSION"/>
             <Keys>
                 <xsl:apply-templates select="Keys" mode="COMMONTLA2IMDISESSION"/>
@@ -493,10 +534,14 @@
     <xsl:template match="CounterPosition|TimePosition" mode="COMMONTLA2IMDISESSION">
         <xsl:element name="{name()}">
             <Start>
-                <xsl:value-of select="Start"/>
+                <xsl:call-template name="orUnspecified">
+                    <xsl:with-param name="value" select="Start"/>
+                </xsl:call-template>
             </Start>
             <End>
-                <xsl:value-of select="End"/>
+                <xsl:call-template name="orUnspecified">
+                    <xsl:with-param name="value" select="End"/>
+                </xsl:call-template>
             </End>
         </xsl:element>
     </xsl:template>
@@ -508,7 +553,9 @@
                 <xsl:value-of select="Availability"/>
             </Availability>
             <Date>
-                <xsl:value-of select="Date"/>
+                <xsl:call-template name="orUnspecified">
+                    <xsl:with-param name="value" select="Date"/>
+                </xsl:call-template>
             </Date>
             <Owner>
                 <xsl:value-of select="Owner"/>
@@ -643,5 +690,5 @@
             <xsl:with-param name="type" select="'ClosedVocabulary'" />
         </xsl:apply-templates>
     </xsl:template>
-    
+        
 </xsl:stylesheet>
