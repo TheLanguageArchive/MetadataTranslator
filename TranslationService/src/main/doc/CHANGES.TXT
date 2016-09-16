@@ -1,5 +1,8 @@
 Current version: ${project.artifactId}-${project.version}-r${revisionId}
 
+Changes for metadata-translator-1.6.4:
+- Several fixes in the CMDI-IMDI transformation
+
 Changes for metadata-translator-1.6.3:
 - Several fixes in the CMDI-IMDI and IMDI-CMDI transformations, related to the
 sign language profile, info links and language codes
