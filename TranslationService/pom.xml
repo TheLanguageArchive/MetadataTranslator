@@ -6,7 +6,7 @@
     <parent>
         <groupId>nl.mpi.translation</groupId>
         <artifactId>metadata-translator-parent</artifactId>
-        <version>1.6-SNAPSHOT</version>
+        <version>1.6.4</version>
     </parent>
 
     <artifactId>metadata-translation-service</artifactId>
@@ -239,6 +239,13 @@
             </properties>
             <build>
                 <finalName>${project.artifactId}-${project.version}-${revisionId}-lux17</finalName>
+            </build>
+        </profile>
+        <profile>
+            <!-- no revision number in name -->
+            <id>stable</id>
+            <build>
+                <finalName>${project.artifactId}-${project.version}</finalName>
             </build>
         </profile>
     </profiles>
