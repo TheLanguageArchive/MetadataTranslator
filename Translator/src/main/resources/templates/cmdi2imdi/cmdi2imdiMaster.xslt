@@ -21,6 +21,7 @@
     <xsl:include href="leslla2imdi.xslt"/>
     <xsl:include href="dlucea2imdi.xslt"/>
     <xsl:include href="sltla2imdi.xslt"/>
+    <xsl:include href="bat2imdisession.xslt"/>
     <xsl:include href="../util/identity.xslt"/>
     <xsl:include href="../util/handle.xslt"/>
     
@@ -34,48 +35,51 @@
     
     <xsl:template match="/">
         <xsl:choose>
-            <xsl:when test="contains(/CMD/@xsi:schemaLocation, 'http://catalog.clarin.eu/ds/ComponentRegistry/rest/registry/profiles/clarin.eu:cr1:p_1331113992512/xsd')">
+            <xsl:when test="matches(/CMD/@xsi:schemaLocation, 'http://catalog.clarin.eu/ds/ComponentRegistry/rest/registry/(1\.1/)?profiles/clarin.eu:cr1:p_1331113992512/xsd')">
                 <xsl:call-template name="IPROSLA2IMDI"/>
             </xsl:when>
-            <xsl:when test="contains(/CMD/@xsi:schemaLocation, 'http://catalog.clarin.eu/ds/ComponentRegistry/rest/registry/profiles/clarin.eu:cr1:p_1396012485083/xsd')">
+            <xsl:when test="matches(/CMD/@xsi:schemaLocation, 'http://catalog.clarin.eu/ds/ComponentRegistry/rest/registry/(1\.1/)?profiles/clarin.eu:cr1:p_1396012485083/xsd')">
                 <xsl:call-template name="VALID2IMDI"/>
             </xsl:when>
-            <xsl:when test="contains(/CMD/@xsi:schemaLocation, 'http://catalog.clarin.eu/ds/ComponentRegistry/rest/registry/profiles/clarin.eu:cr1:p_1345561703620/xsd')">
+            <xsl:when test="matches(/CMD/@xsi:schemaLocation, 'http://catalog.clarin.eu/ds/ComponentRegistry/rest/registry/(1\.1/)?profiles/clarin.eu:cr1:p_1345561703620/xsd')">
                 <xsl:call-template name="COLLECTION2CORPUS" />
             </xsl:when>
-            <xsl:when test="contains(/CMD/@xsi:schemaLocation, 'http://catalog.clarin.eu/ds/ComponentRegistry/rest/registry/profiles/clarin.eu:cr1:p_1407745712064/xsd')">
+            <xsl:when test="matches(/CMD/@xsi:schemaLocation, 'http://catalog.clarin.eu/ds/ComponentRegistry/rest/registry/(1\.1/)?profiles/clarin.eu:cr1:p_1407745712064/xsd')">
                 <xsl:call-template name="TLACOLLECTION2CORPUS" />
             </xsl:when>
-            <xsl:when test="contains(/CMD/@xsi:schemaLocation, 'http://catalog.clarin.eu/ds/ComponentRegistry/rest/registry/profiles/clarin.eu:cr1:p_1407745712035/xsd')">
+            <xsl:when test="matches(/CMD/@xsi:schemaLocation, 'http://catalog.clarin.eu/ds/ComponentRegistry/rest/registry/(1\.1/)?profiles/clarin.eu:cr1:p_1407745712035/xsd')">
                 <xsl:call-template name="TLASESSION2IMDISESSION" />
             </xsl:when>
-            <xsl:when test="contains(/CMD/@xsi:schemaLocation, 'http://catalog.clarin.eu/ds/ComponentRegistry/rest/registry/profiles/clarin.eu:cr1:p_1391763610422/xsd')">
+            <xsl:when test="matches(/CMD/@xsi:schemaLocation, 'http://catalog.clarin.eu/ds/ComponentRegistry/rest/registry/(1\.1/)?profiles/clarin.eu:cr1:p_1391763610422/xsd')">
                 <xsl:call-template name="DBDSESSION2IMDISESSION" />
             </xsl:when>
-            <xsl:when test="contains(/CMD/@xsi:schemaLocation, 'http://catalog.clarin.eu/ds/ComponentRegistry/rest/registry/profiles/clarin.eu:cr1:p_1417617523856/xsd')">
+            <xsl:when test="matches(/CMD/@xsi:schemaLocation, 'http://catalog.clarin.eu/ds/ComponentRegistry/rest/registry/(1\.1/)?profiles/clarin.eu:cr1:p_1417617523856/xsd')">
                 <xsl:call-template name="SILANGSESSION2IMDISESSION" />
             </xsl:when>
-            <xsl:when test="contains(/CMD/@xsi:schemaLocation, 'http://catalog.clarin.eu/ds/ComponentRegistry/rest/registry/profiles/clarin.eu:cr1:p_1361876010525/xsd')">
+            <xsl:when test="matches(/CMD/@xsi:schemaLocation, 'http://catalog.clarin.eu/ds/ComponentRegistry/rest/registry/(1\.1/)?profiles/clarin.eu:cr1:p_1361876010525/xsd')">
                 <xsl:call-template name="DISCANPROJECT2CORPUS" />
             </xsl:when>            
-            <xsl:when test="contains(/CMD/@xsi:schemaLocation, 'http://catalog.clarin.eu/ds/ComponentRegistry/rest/registry/profiles/clarin.eu:cr1:p_1361876010653/xsd')">
+            <xsl:when test="matches(/CMD/@xsi:schemaLocation, 'http://catalog.clarin.eu/ds/ComponentRegistry/rest/registry/(1\.1/)?profiles/clarin.eu:cr1:p_1361876010653/xsd')">
                 <xsl:call-template name="DISCANTEXTCORPUS2CORPUS" />
             </xsl:when>            
-            <xsl:when test="contains(/CMD/@xsi:schemaLocation, 'http://catalog.clarin.eu/ds/ComponentRegistry/rest/registry/profiles/clarin.eu:cr1:p_1366895758243/xsd')">
+            <xsl:when test="matches(/CMD/@xsi:schemaLocation, 'http://catalog.clarin.eu/ds/ComponentRegistry/rest/registry/(1\.1/)?profiles/clarin.eu:cr1:p_1366895758243/xsd')">
                 <xsl:call-template name="DISCANCASE2IMDI" />
             </xsl:when> 
-            <xsl:when test="contains(/CMD/@xsi:schemaLocation, 'http://catalog.clarin.eu/ds/ComponentRegistry/rest/registry/profiles/clarin.eu:cr1:p_1328259700928/xsd')">
+            <xsl:when test="matches(/CMD/@xsi:schemaLocation, 'http://catalog.clarin.eu/ds/ComponentRegistry/rest/registry/(1\.1/)?profiles/clarin.eu:cr1:p_1328259700928/xsd')">
                 <xsl:call-template name="SOUNDBITES2IMDI" />
             </xsl:when>
-            <xsl:when test="contains(/CMD/@xsi:schemaLocation, 'http://catalog.clarin.eu/ds/ComponentRegistry/rest/registry/profiles/clarin.eu:cr1:p_1375880372947/xsd')">
+            <xsl:when test="matches(/CMD/@xsi:schemaLocation, 'http://catalog.clarin.eu/ds/ComponentRegistry/rest/registry/(1\.1/)?profiles/clarin.eu:cr1:p_1375880372947/xsd')">
                 <xsl:call-template name="LESLLA2IMDI" />
             </xsl:when>
-            <xsl:when test="contains(/CMD/@xsi:schemaLocation, 'http://catalog.clarin.eu/ds/ComponentRegistry/rest/registry/profiles/clarin.eu:cr1:p_1337778924955/xsd')">
+            <xsl:when test="matches(/CMD/@xsi:schemaLocation, 'http://catalog.clarin.eu/ds/ComponentRegistry/rest/registry/(1\.1/)?profiles/clarin.eu:cr1:p_1337778924955/xsd')">
                 <xsl:call-template name="DLUCEA2IMDI" />
             </xsl:when>
-            <xsl:when test="contains(/CMD/@xsi:schemaLocation, 'http://catalog.clarin.eu/ds/ComponentRegistry/rest/registry/profiles/clarin.eu:cr1:p_1430905751641/xsd')">
+            <xsl:when test="matches(/CMD/@xsi:schemaLocation, 'http://catalog.clarin.eu/ds/ComponentRegistry/rest/registry/(1\.1/)?profiles/clarin.eu:cr1:p_1430905751641/xsd')">
                 <xsl:call-template name="SLTLA2IMDI"/>
             </xsl:when>
+            <xsl:when test="matches(/CMD/@xsi:schemaLocation, 'http://catalog.clarin.eu/ds/ComponentRegistry/rest/registry/(1\.1/)?profiles/clarin.eu:cr1:p_1456409483202/xsd')">
+                <xsl:call-template name="BAT2IMDISESSION" />
+            </xsl:when>            
             
             
             <!-- Add new profile templates here -->
