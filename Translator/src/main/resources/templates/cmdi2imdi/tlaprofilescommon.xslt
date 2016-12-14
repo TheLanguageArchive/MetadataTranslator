@@ -75,11 +75,18 @@
                     </xsl:if>
 
                     <xsl:variable name="localUri" select="$proxy/ResourceRef/@lat:localURI"/>
-                    <xsl:if test="normalize-space($localUri) != ''">
-                        <xsl:attribute name="Link">
-                            <xsl:value-of select="resolve-uri($localUri, $source-location)"/>
-                        </xsl:attribute>
-                    </xsl:if>
+                    <xsl:choose>
+                        <xsl:when test="normalize-space($localUri) != ''">
+                            <xsl:attribute name="Link">
+                                <xsl:value-of select="resolve-uri($localUri, $source-location)"/>
+                            </xsl:attribute>            
+                        </xsl:when>
+                        <xsl:when test="normalize-space($proxy/ResourceRef/text())">
+                            <xsl:attribute name="Link">
+                                <xsl:value-of select="resolve-uri($proxy/ResourceRef/text(), $source-location)"/>
+                            </xsl:attribute>
+                        </xsl:when>
+                    </xsl:choose>
                 </xsl:when>
                 <xsl:otherwise>
                     <xsl:message>Warning: InfoLink without matching resource proxy! Description
