@@ -23,6 +23,7 @@
     <xsl:include href="sltla2imdi.xslt"/>
     <xsl:include href="bat2imdisession.xslt"/>    
     <xsl:include href="talkbank2session.xslt"/>
+    <xsl:include href="talkbanklicense2session.xslt"/>
     <xsl:include href="talkbankcollection2corpus.xslt"/>
     <xsl:include href="../util/identity.xslt"/>
     <xsl:include href="../util/handle.xslt"/>
@@ -88,6 +89,11 @@
             <xsl:when test="matches(/CMD/@xsi:schemaLocation, 'http://catalog.clarin.eu/ds/ComponentRegistry/rest/registry/(1\.1/)?profiles/clarin.eu:cr1:p_1393514855466/xsd')">
                 <xsl:call-template name="TALKBANK2IMDI"/>
             </xsl:when>
+            <xsl:when test="matches(/CMD/@xsi:schemaLocation, 'http://catalog.clarin.eu/ds/ComponentRegistry/rest/registry/(1\.1/)?profiles/clarin.eu:cr1:p_1475136016232/xsd')">
+                <xsl:call-template name="TALKBANKLICENSE2IMDI"/>
+            </xsl:when>
+            
+            
             
             <!-- Add new profile templates here -->
 			<!--        
