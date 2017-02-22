@@ -239,20 +239,7 @@
             <Type Link="http://www.mpi.nl/IMDI/Schema/WrittenResource-Type.xml" Type="OpenVocabulary"><xsl:value-of select="child::Type"/></Type>
             <SubType Link="http://www.mpi.nl/IMDI/Schema/WrittenResource-SubType.xml" Type="OpenVocabularyList"><xsl:value-of select="child::SubType"/></SubType>
             <Format Link="http://www.mpi.nl/IMDI/Schema/WrittenResource-Format.xml" Type="OpenVocabulary">
-                <xsl:choose>
-                    <xsl:when test="ends-with(child::Format,'eaf')">
-                        <xsl:text>text/x-eaf+xml</xsl:text>
-                    </xsl:when>
-                    <xsl:when test="ends-with(child::Format,'TextGrid')">
-                        <xsl:text>text/praat-textgrid</xsl:text>
-                    </xsl:when>
-                    <xsl:when test="starts-with(child::Format,'cha')">
-                        <xsl:text>text/x-chat</xsl:text>
-                    </xsl:when>
-                    <xsl:when test="ends-with(child::Format,'txt')">
-                        <xsl:text>text/plain</xsl:text>
-                    </xsl:when>
-                </xsl:choose>                
+                <xsl:value-of select="//Resources/ResourceProxyList/ResourceProxy[@id=$id]/ResourceType/@mimetype"/>          
             </Format>
             <Size><xsl:value-of select="child::TotalSize/Number"/><xsl:text> </xsl:text><xsl:value-of select="child::TotalSize/SizeUnit"/></Size>
             <Validation>
@@ -290,17 +277,7 @@
             <ResourceLink><xsl:apply-templates select="//Resources/ResourceProxyList/ResourceProxy[@id=$id]" mode="create-resource-link-content"/></ResourceLink>
             <Type Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Type.xml" Type="ClosedVocabulary"><xsl:value-of select="child::Type"/></Type>
             <Format Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Format.xml" Type="OpenVocabulary">
-                <xsl:choose>
-                    <xsl:when test="ends-with(child::Format,'wav')">
-                        <xsl:text>audio/x-wav</xsl:text>
-                    </xsl:when>
-                    <xsl:when test="ends-with(child::Format,'TextGrid')">
-                        <xsl:text>text/praat-textgrid</xsl:text>
-                    </xsl:when>
-                    <xsl:when test="ends-with(child::Format,'mpg')">
-                        <xsl:text>video/x-mpeg1</xsl:text>
-                    </xsl:when>
-                </xsl:choose>  
+                <xsl:value-of select="//Resources/ResourceProxyList/ResourceProxy[@id=$id]/ResourceType/@mimetype"/>
             </Format>
             <Size><xsl:value-of select="child::TotalSize/Number"/><xsl:text> </xsl:text><xsl:value-of select="child::TotalSize/SizeUnit"/></Size>
             <Quality Link="http://www.mpi.nl/IMDI/Schema/Quality.xml" Type="ClosedVocabulary"><xsl:value-of select="child::Quality"/></Quality>
