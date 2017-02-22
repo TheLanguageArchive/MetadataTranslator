@@ -352,7 +352,7 @@ public class TranslatorImplTest {
      */
     private void testGetIMDI(String cmdiResource, String targetImdiResource) throws Exception {
 	final URL cmdiFileURL = getClass().getResource(cmdiResource);
-	logger.debug(cmdiFileURL.toString());
+	logger.info("Testing translation of [{}]; Checking against [{}]", cmdiFileURL, targetImdiResource);
 	// Request translation
 	final String result = instance.getIMDI(cmdiFileURL, SERVICE_URI);
 	// Compare to expectation (loaded from resource)

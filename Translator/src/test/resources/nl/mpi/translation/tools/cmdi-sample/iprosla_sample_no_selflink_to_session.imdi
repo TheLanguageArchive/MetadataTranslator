@@ -231,7 +231,7 @@
 		<Type Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Type.xml"
 		  Type="ClosedVocabulary">Unknown</Type>
 		<Format Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Format.xml"
-		    Type="OpenVocabulary"/>
+		    Type="OpenVocabulary">mimetype1</Format>
 		<Size/>
 		<Quality Link="http://www.mpi.nl/IMDI/Schema/Quality.xml"
 		     Type="ClosedVocabulary">1</Quality>
@@ -265,7 +265,7 @@
 		<SubType Link="http://www.mpi.nl/IMDI/Schema/WrittenResource-SubType.xml"
 		     Type="OpenVocabularyList">SubType0</SubType>
 		<Format Link="http://www.mpi.nl/IMDI/Schema/WrittenResource-Format.xml"
-		    Type="OpenVocabulary">Format0</Format>
+		    Type="OpenVocabulary">mimetype3</Format>
 		<Size/>
 		<Validation>
 		    <Type Link="http://www.mpi.nl/IMDI/Schema/Validation-Type.xml"
