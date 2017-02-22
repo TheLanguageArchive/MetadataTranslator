@@ -241,7 +241,9 @@
             <Date>Unspecified</Date>
             <Type Link="http://www.mpi.nl/IMDI/Schema/WrittenResource-Type.xml" Type="OpenVocabulary"><xsl:value-of select="child::Type"/></Type>
             <SubType Link="http://www.mpi.nl/IMDI/Schema/WrittenResource-SubType.xml" Type="OpenVocabularyList"><xsl:value-of select="child::SubType"/></SubType>
-            <Format Link="http://www.mpi.nl/IMDI/Schema/WrittenResource-Format.xml" Type="OpenVocabulary"><xsl:value-of select="child::Format"/></Format>
+            <Format Link="http://www.mpi.nl/IMDI/Schema/WrittenResource-Format.xml" Type="OpenVocabulary">
+                <xsl:value-of select="//Resources/ResourceProxyList/ResourceProxy[@id=$id]/ResourceType/@mimetype"/>
+            </Format>
             <Size/>
             <Validation>
                 <Type Link="http://www.mpi.nl/IMDI/Schema/Validation-Type.xml" Type="ClosedVocabulary"/>
@@ -277,7 +279,9 @@
             <xsl:variable name="id"><xsl:value-of select="@ref" /></xsl:variable>
             <ResourceLink><xsl:apply-templates select="//Resources/ResourceProxyList/ResourceProxy[@id=$id]" mode="create-resource-link-content"/></ResourceLink>
             <Type Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Type.xml" Type="ClosedVocabulary"><xsl:value-of select="child::Type"/></Type>
-            <Format Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Format.xml" Type="OpenVocabulary"/>
+            <Format Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Format.xml" Type="OpenVocabulary">
+                <xsl:value-of select="//Resources/ResourceProxyList/ResourceProxy[@id=$id]/ResourceType/@mimetype"/>
+            </Format>
             <Size/>
             <Quality Link="http://www.mpi.nl/IMDI/Schema/Quality.xml" Type="ClosedVocabulary"><xsl:value-of select="child::Quality"/></Quality>
             <RecordingConditions><xsl:value-of select="child::RecordingConditions"/></RecordingConditions>

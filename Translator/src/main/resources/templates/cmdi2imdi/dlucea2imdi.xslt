@@ -163,7 +163,9 @@
             <xsl:variable name="id"><xsl:value-of select="@ref" /></xsl:variable>
             <ResourceLink><xsl:apply-templates select="//Resources/ResourceProxyList/ResourceProxy[@id=$id]" mode="create-resource-link-content"/></ResourceLink>
             <Type Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Type.xml" Type="ClosedVocabulary"><xsl:value-of select="child::Type"/></Type>
-            <Format Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Format.xml" Type="OpenVocabulary"><xsl:value-of select="replace(SpeechTechnicalMetadata/MimeType/MimeType,'wav','x-wav')"/></Format>
+            <Format Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Format.xml" Type="OpenVocabulary">
+                <xsl:value-of select="//Resources/ResourceProxyList/ResourceProxy[@id=$id]/ResourceType/@mimetype"/>
+            </Format>
             <Size/>
             <Quality Link="http://www.mpi.nl/IMDI/Schema/Quality.xml" Type="ClosedVocabulary"><xsl:value-of select="child::Quality"/></Quality>
             <RecordingConditions><xsl:value-of select="child::RecordingConditions"/></RecordingConditions>

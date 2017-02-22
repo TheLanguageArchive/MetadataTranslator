@@ -153,7 +153,9 @@
             <xsl:variable name="id"><xsl:value-of select="@ref" /></xsl:variable>
             <ResourceLink><xsl:apply-templates select="//Resources/ResourceProxyList/ResourceProxy[@id=$id]" mode="create-resource-link-content" /></ResourceLink>
             <Type Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Type.xml" Type="ClosedVocabulary"><xsl:value-of select="substring-before(child::MimeType,'/')" /></Type>
-            <Format Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Format.xml" Type="OpenVocabulary"><xsl:value-of select="child::MimeType" /></Format>
+            <Format Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Format.xml" Type="OpenVocabulary">
+                <xsl:value-of select="//Resources/ResourceProxyList/ResourceProxy[@id=$id]/ResourceType/@mimetype"/>
+            </Format>
             <Size><xsl:value-of select="child::Size/TotalSize[last()]/Number" /><xsl:text> </xsl:text><xsl:value-of select="child::Size/TotalSize[last()]/SizeUnit" /></Size>
             <Quality Link="http://www.mpi.nl/IMDI/Schema/Quality.xml" Type="ClosedVocabulary">Unspecified</Quality>
             <RecordingConditions/>
