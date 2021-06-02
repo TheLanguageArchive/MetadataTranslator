@@ -17,3 +17,11 @@ hs_err_pid*
 /TranslationService/target/
 /TranslationService/nb-configuration.xml
 /Translator/translator_oxygen.xpr
+.project
+TranslationService/.classpath
+TranslationService/.settings/
+.settings/
+Translator/.classpath
+.settings/
+.vscode/
+Translator/.settings/

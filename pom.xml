@@ -83,6 +83,22 @@
 	    <version>${project.logging.slf4jVersion}</version>
 	    <scope>test</scope>
 	</dependency>
+        <!-- for java 11 -->
+        <dependency>
+            <groupId>javax.annotation</groupId>
+            <artifactId>javax.annotation-api</artifactId>
+            <version>1.3.2</version>
+        </dependency>
+        <dependency>
+            <groupId>javax.xml.bind</groupId>
+            <artifactId>jaxb-api</artifactId>
+            <version>2.4.0-b180725.0427</version>
+        </dependency>
+        <dependency>
+            <groupId>org.glassfish.jaxb</groupId>
+            <artifactId>jaxb-runtime</artifactId>
+            <version>2.4.0-b180725.0644</version>
+        </dependency>
     </dependencies>
     
     <build>
@@ -104,11 +120,21 @@
 		<repository>
 			<id>MPI</id>
 			<name>MPI Repository</name>
-			<url>http://lux15.mpi.nl/nexus/content/repositories/MPI</url>
+			<url>https://lux15.mpi.nl/nexus/content/repositories/MPI</url>
 		</repository>
-    </repositories>
+        <repository>
+           <id>CLARIN</id>
+           <name>CLARIN Repository</name>
+           <url>https://nexus.clarin.eu/content/repositories/Clarin</url>
+        </repository>
+        <repository>
+           <id>CLARIN-Snapshot</id>
+           <name>CLARIN Snapshot Repository</name>
+           <url>https://nexus.clarin.eu/content/repositories/clarin-snapshot</url>
+        </repository>
+</repositories>
 
-    <distributionManagement>
+    <!--<distributionManagement>
         <snapshotRepository>
             <id>MPI-Snapshots</id>
             <url>https://lux15.mpi.nl/nexus/content/repositories/MPI-Snapshots</url>
@@ -118,5 +144,5 @@
             <name>MPI Repository</name>
             <url>https://lux15.mpi.nl/nexus/content/repositories/MPI</url>
         </repository>
-    </distributionManagement>
+    </distributionManagement>-->
 </project>
